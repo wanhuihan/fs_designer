@@ -8,6 +8,7 @@
 	<link rel="stylesheet" type="text/css" href="assets/bootstrap/css/bootstrap.min.css">
 
 	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="css/orders.css">
 	<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
 
 	<script type="text/javascript" src="js/jquery.3.1.1.min.js"></script>
@@ -346,23 +347,932 @@
 					</div>
 
 					<div role="tabpanel" class="tab-pane fade" id="report" aria-labelledby="report-tab">
-						<div class="row">
-							
-							<div class="col-md-4">
-								<span>1</span>
-							</div>
+						<div class="reoprt_pageone">
+							<div class="row">
+								
+								<div class="col-md-3 report_tab_stepone">
+									<h3>客户基本情况</h3>
+									<span>1</span>
+									<div></div>
+								</div>
 
-							<div class="col-md-4">
-								<span>1</span>
-							</div>
+								<div class="col-md-3 report_tab_stepone report_tab_steptwo">
+									<h3>首要观察内容</h3>
+									<span>2</span>
+									<div></div>
+								</div>
 
-							<div class="col-md-4 report_tab_stepone">
-								<span>1</span>
-							</div>
+								<div class="col-md-3 report_tab_stepone report_tab_steptwo">
+									<h3>与业主沟通内容</h3>
+									<span>3</span>
+									<div></div>
+								</div>
 
-						</div>	
+								<div class="col-md-3 report_tab_stepone report_tab_steptwo">
+									<h3>完成</h3>
+									<span>4</span>
+								</div>
 
+							</div>	
+							<form action="" class="report_tab_listone">
+								<div class="row">
+									<div class="col-md-12">					    
+									      <p> 1.请填写您实际的量房日期：<span>*</span></p>
+									      <input type="text">
+									</div>
+								</div>
+		                        <div class="row">
+									<div class="col-md-12">					    
+									      <p> 2.请填写业主真实姓名：<span>*</span></p>
+									      <input type="text">
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-md-12">					    
+									    <p> 3.请填写业主性别：<span>*</span></p>
+									    <input type="radio" name="radiosex" value="radiosex" checked>女士
+										<input type="radio" name="radiosex" value="radiosex"> 先生 
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-md-12">					    
+									    <p> 4.请填写业主年龄：<span>*</span></p>
+									    <input type="radio" name="radioage" value="radioage" checked>18~28岁
+										<input type="radio" name="radioage" value="radioage"> 29~38岁
+										<input type="radio" name="radioage" value="radioage" >39岁~48岁
+										<input type="radio" name="radioage" value="radioage" >49岁~58岁
+										<input type="radio" name="radioage" value="radioage"> 59岁以上
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-md-12">					    
+									      <p>5.请填写所该装修房屋的建筑面积：<span>*</span></p>
+									      <input type="text">&nbsp;&nbsp;m*2
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-md-12">					    
+									      <p> 6.请填写该装修房屋的使用面积：<span>*</span></p>
+									      <input type="text">&nbsp;&nbsp;m*2
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-md-12">					    
+									      <p> 7.请填写该房屋装修计划投资：（&nbsp;<input type="radio">&nbsp;含主材）<span>*</span></p>
+									      <input type="text">
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-md-12">					    
+									      <p> 8.请填写该房屋的计划装修时间：<span>*</span></p>
+									      <input type="text">
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-md-12">					    
+									      	<p>9.请填写该房屋具体地址：<span>*</span></p>
+									      	<span>选择省份</span>
+											<select id="first">
+											</select>
+											<span>选择城市</span>
+											<select id="second">
+											</select>
+											<span>选择县区</span>
+											<select id="third">
+											</select>
+									      <input type="text" placeholder="详细地址">
+									</div>
+								</div>
+							</form>
+						</div>
+
+						<div class="report_page_two">
+							<form action="" class="report_tab_listone">
+								<div class="row">
+									<div class="col-md-12">					    
+									      	<p> 1.请选择该房屋原结构：<span>*</span></p>
+									      	<input type="radio" name="radiostruct" value="radiostruct" >&nbsp;砖砼结构
+											<input type="radio" name="radiostruct" value="radiostruct">&nbsp;框架结构 
+									</div>
+								</div>
+		                        <div class="row">
+									<div class="col-md-12">					    
+									      	<p> 2.请填写原房屋结构是否有缺陷之处（如：墙体裂开、平整度、顶面漏水）：<span>*</span></p>
+									      	<input type="radio" name="radiodefect" value="radiodefect" >&nbsp;是
+											<input type="radio" name="radiodefect" value="radiodefect">&nbsp;否 
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-md-12">					    
+									    <p> 3.请选择暖气是否需改动：<span>*</span></p>
+									    <input type="radio" name="radioheating" value="radioheating" >&nbsp;是
+										<input type="radio" name="radioheating" value="radioheating">&nbsp;否 
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-md-12">					    
+									    <p> 4.请选择媒气是否需改动：<span>*</span></p>
+									    <input type="radio" name="radiocoal" value="radiocoal" >&nbsp;是
+										<input type="radio" name="radiocoal" value="radiocoal">&nbsp;否 
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-md-12">					    
+									        <p>5.请选择倾向的采暖方式：<span>*</span></p>
+									        <input type="radio" name="radiomethod" value="radiomethod" >&nbsp;暖气
+										    <input type="radio" name="radiomethod" value="radiomethod">&nbsp;煤气 
+										    <input type="radio" name="radiomethod" value="radiomethod" >&nbsp;地暖
+										    <input type="radio" name="radiomethod" value="radiomethod">&nbsp;中央空调
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-md-12">					    
+									      	<p> 6.是否已经安装中央空调：<span>*</span></p>
+									      	<input type="radio" name="radioair" value="radioair" >&nbsp;未安装
+											<input type="radio" name="radioair" value="radioair">&nbsp;已安装
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-md-12">					    
+									      	<p> 7. 厨房整体橱柜是否已安装：（&nbsp;<input type="radio">&nbsp;含主材）<span>*</span></p>
+									      	<input type="radio" name="radiocabinet" value="radiocabinet" >&nbsp;未安装
+											<input type="radio" name="radiocabinet" value="radiocabinet">&nbsp;已安装
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-md-12">					    
+									      	<p> 8.阳台墙地面是否已铺砖：<span>*</span></p>
+									      	<input type="radio" name="radiobrick" value="radiobrick" >&nbsp;已铺装
+											<input type="radio" name="radiobrick" value="radiobrick">&nbsp;未铺装
+									      	&nbsp;&nbsp;&nbsp;&nbsp;局部<input type="text">
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-md-12">					    
+									      	<p>9. 厨房是否已铺砖及吊顶：<span>*</span></p>
+									      	<input type="radio" name="radiobricko" value="radiobricko" >&nbsp;已铺装
+											<input type="radio" name="radiobricko" value="radiobricko">&nbsp;未铺装
+											<input type="radio" name="radioroof" value="radioroof" >&nbsp;已吊顶
+											<input type="radio" name="radioroof" value="radioroof">&nbsp;未吊顶
+											<input type="radio" name="radiomaterial" value="radiomaterial" >&nbsp;PVC
+											<input type="radio" name="radiomaterial" value="radiomaterial">&nbsp;铝扣板
+											<input type="radio" name="radiomaterial" value="radiomaterial" >&nbsp;石膏板
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-md-12">					    
+									      	<p> 10.  卫生间是否铺砖及吊顶：<span>*</span></p>
+									      	<input type="radio" name="radiocookb" value="radiocookb" >&nbsp;已铺装
+											<input type="radio" name="radiocookb" value="radiocookb">&nbsp;未铺装
+											<input type="radio" name="radiocookr" value="radiocookr" >&nbsp;已吊顶
+											<input type="radio" name="radiocookr" value="radiocookr">&nbsp;未吊顶
+											<input type="radio" name="radiocookm" value="radiocookm" >&nbsp;PVC
+											<input type="radio" name="radiocookm" value="radiocookm">&nbsp;铝扣板
+											<input type="radio" name="radiocookm" value="radiocookm" >&nbsp;石膏板
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-md-12">					    
+									      <p> 11. 其他</p>
+									      <textarea name="" id="" cols="70" rows="10"></textarea>
+									</div>
+								</div>
+							</form>
+						</div>
+
+						<div class="report_page_three">
+							<form action="" class="report_tab_listtwo">
+								<h3>绿色科技部分</h3>
+								<div class="partall">
+									<div class="row">
+										<div class="col-md-12">					    
+										      	<p> 1. 是否需要智能家居系统：<span>*</span></p>
+										      	<input type="radio" name="radiohome" value="radiohome" >&nbsp;是
+												<input type="radio" name="radiohome" value="radiohome">&nbsp;否
+												<input type="text" placeholder="请输入其他参考意见">
+										</div>
+									</div>
+			                        <div class="row">
+										<div class="col-md-12">					    
+										      	<p> 2.是否需要毛细管系统：<span>*</span></p>
+										      	<input type="radio" name="radiopipe" value="radiopipe" >&nbsp;是
+												<input type="radio" name="radiopipe" value="radiopipe">&nbsp;否
+												<input type="text" placeholder="请输入其他参考意见">
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-md-12">					    
+										    <p> 3.是否需要置换式新风系统：<span>*</span></p>
+										    <input type="radio" name="radiowind" value="radiowind" >&nbsp;是
+											<input type="radio" name="radiowind" value="radiowind">&nbsp;否
+											<input type="text" placeholder="请输入其他参考意见">
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-md-12">					    
+										    <p> 4.是否需要卫生间净化水系统：<span>*</span></p>
+										    <input type="radio" name="radioclean" value="radioclean" >&nbsp;是
+											<input type="radio" name="radioclean" value="radioclean">&nbsp;否 
+											<input type="text" placeholder="请输入其他参考意见">
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-md-12">					    
+										        <p>5.是否需要同层排水系统：<span>*</span></p>
+										        <input type="radio" name="radiodrain" value="radiodrain" >&nbsp;是
+											    <input type="radio" name="radiodrain" value="radiodrain">&nbsp;否
+												<input type="text" placeholder="请输入其他参考意见">
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-md-12">					    
+										      	<p> 6.是否需要隔声降噪系统：<span>*</span></p>
+										      	<input type="radio" name="radionoise" value="radionoise" >&nbsp;是
+												<input type="radio" name="radionoise" value="radionoise">&nbsp;否
+												<input type="text" placeholder="请输入其他参考意见">
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-md-12">					    
+										      	<p> 7. 是否需要垃圾处理系统：<span>*</span></p>
+										      	<input type="radio" name="radiorubbish" value="radiorubbish" >&nbsp;是
+												<input type="radio" name="radiorubbish" value="radiorubbish">&nbsp;否
+												<input type="text" placeholder="请输入其他参考意见">
+										</div>
+									</div>
+								</div>
+
+
+								<h3>玄关部分(门厅)</h3>
+								<div class="partall">
+									<div class="row">
+										<div class="col-md-12">					    
+										      	<p> 1.是否有考虑设置：<span>*</span></p>
+										      	<input type="checkbox" name="checkboxset" value="checkbox" >&nbsp;鞋柜
+												<input type="checkbox" name="checkboxset" value="checkbox">&nbsp;衣柜
+										      	<input type="checkbox" name="checkboxset" value="checkbox" >&nbsp;镜子(整装)
+												<input type="checkbox" name="checkboxset" value="checkbox">&nbsp;纯装饰性
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-md-12">					    
+										      	<p> 2. 是否介意入门能够直观全室：<span>*</span></p>
+										      	<input type="radio" name="radiodoor" value="radiodoor" >&nbsp;是
+												<input type="radio" name="radiodoor" value="radiodoor">&nbsp;否
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-md-12">					    
+										      	<p> 3.玄关是否考虑其他文化属性或气氛（例如：字画、古董、雕塑等）</p>
+										      	<input type="radio" name="radioculture" value="radioculture" >&nbsp;是
+												<input type="radio" name="radioculture" value="radioculture">&nbsp;否
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-md-12">					    
+										      	<p> 4.入户门更换为霍曼品牌</p>
+										     	<input type="radio" name="radiobrand" value="radiobrand" >&nbsp;是
+												<input type="radio" name="radiobrand" value="radiobrand">&nbsp;否
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-md-12">					    
+										      	<p> 5.对玄关是有特殊要求（例如：灯光、色彩、特殊造型等）</p>
+										      	<input type="text" placeholder="请填写参考意见">
+										</div>
+									</div>
+								</div>
+
+								<h3>客厅部分</h3>
+								<div class="partall">
+									<div class="row">
+										<div class="col-md-12">					    
+										      	<p> 1. 客厅的主要功能：<span>*</span></p>
+										      	<input type="checkbox" name="checkboxset" value="checkbox" >&nbsp;会客
+												<input type="checkbox" name="checkboxset" value="checkbox">&nbsp;休息
+										      	<input type="checkbox" name="checkboxset" value="checkbox" >&nbsp;娱乐
+												<input type="checkbox" name="checkboxset" value="checkbox">&nbsp;阅读
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-md-12">					    
+										      	<p> 2.接待客人：<span>*</span></p>
+										      	<input type="text" placeholder="人数">
+										      	<input type="radio" name="radiodoor" value="radiodoor" >&nbsp;经常
+												<input type="radio" name="radiodoor" value="radiodoor">&nbsp;偶尔
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-md-12">					    
+										      	<p> 3. 是否与餐厅为一体：<span>*</span></p>
+										      	<input type="radio" name="radiowhole" value="radiowhole" >&nbsp;是
+												<input type="radio" name="radiowhole" value="radiowhole">&nbsp;否
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-md-12">					    
+										      	<p> 4.客厅的基本色调：<span>*</span></p>
+										     	<input type="radio" name="radiotone" value="radiotone" >&nbsp;暖色系
+												<input type="radio" name="radiotone" value="radiotone">&nbsp;冷色系
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-md-12">					    
+										      	<p> 5. 客人来家中聚会内容：<span>*</span></p>
+										      	<input type="checkbox" name="checkboxset" value="checkbox" >&nbsp;聊天
+												<input type="checkbox" name="checkboxset" value="checkbox">&nbsp;PARTY
+										      	<input type="checkbox" name="checkboxset" value="checkbox" >&nbsp;卡拉OK
+										      	<input type="text" placeholder="请填写其他参考意见">
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-md-12">					    
+										      	<p> 6. 是否需要影视墙背景造型：<span>*</span></p>
+										      	<input type="radio" name="radiobg" value="radiobg" >&nbsp;是
+												<input type="radio" name="radiobg" value="radiobg">&nbsp;否
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-md-12">					    
+										      	<p> 7. 客厅地面材料要求：<span>*</span></p>
+										      	<input type="radio" name="radiorequire" value="radiorequire" >&nbsp;实木地板
+												<input type="radio" name="radiorequire" value="radiorequire">&nbsp;复合地板
+												<input type="radio" name="radiorequire" value="radiorequire" >&nbsp;地砖
+												<input type="radio" name="radiorequire" value="radiorequire">&nbsp;石材
+												<input type="radio" name="radiorequire" value="radiorequire" >&nbsp;拼花
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-md-12">					    
+										      	<p> 8.  音像制品数量：<span>*</span></p>
+										      	<input type="text" placeholder="数量">
+										      	<sapn>是否需要特别设置：</sapn>
+										      	<input type="radio" name="radioset" value="radioset" >&nbsp;是
+												<input type="radio" name="radioset" value="radioset">&nbsp;否
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-md-12">					    
+										      	<p> 9.  是否需要吊顶：<span>*</span></p>
+										      	<input type="radio" name="radiorooff" value="radiorooff" >&nbsp;是
+												<input type="radio" name="radiorooff" value="radiorooff">&nbsp;否
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-md-12">					    
+										      	<p>10.  客厅内的视听设备有哪些：<span>*</span></p>
+										      	<input type="text" placeholder="请填写试听设备">
+										      	<input type="text" placeholder="请填写相关规格">
+										</div>
+									</div>
+	                                <div class="row">
+										<div class="col-md-12">					    
+										      	<p>11.是否有其他使用功能要求：<span>*</span></p>
+										      	<input type="text" placeholder="请填写要求">
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-md-12">					    
+										      	<p>12.对客厅有无特别的灯光设计要求：<span>*</span></p>
+										      	<input type="text" placeholder="">
+										</div>
+									</div>
+								</div>
+
+
+								<h3>餐厅部分</h3>
+								<div class="cook">
+									<div class="row">
+										<div class="col-md-12">
+									      	<p>1.餐厅使用人数：<span>*</span></p>
+									      	<input type="text" placeholder="人数">
+									      	<span>频率：</span>
+									      	<input type="checkbox" name="checkperson" value="checkbox" >&nbsp;晚餐
+											<input type="checkbox" name="checkperson" value="checkbox">&nbsp;午餐
+									      	<input type="checkbox" name="checkperson" value="checkbox" >&nbsp;早餐
+									      	<input type="checkbox" name="checkperson" value="checkbox" >&nbsp;偶尔
+								      	</div>
+									</div>
+									<div class="row">
+										<div class="col-md-12">					    
+									      	<p>2.餐桌餐椅配置：<span>*</span></p>
+									      	<input type="radio" name="radiodesk" value="radiodesk">&nbsp;1*4
+									      	<input type="radio" name="radiodesk" value="radiodesk">&nbsp;1*6
+									      	<input type="radio" name="radiodesk" value="radiodesk">&nbsp;其他
+									      	<input type="text" placeholder="请填写餐桌配置">
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-md-12">					    
+									      	<p>3.是否需要配备：<span>*</span></p>
+									      	<input type="checkbox" name="checkeq" value="checkeq">&nbsp;餐柜
+									      	<input type="checkbox" name="checkeq" value="checkeq">&nbsp;酒柜
+									      	<input type="checkbox" name="checkeq" value="checkeq">&nbsp;陈列柜
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-md-12">					    
+									      	<p>4.有无藏酒：<span>*</span></p>
+									      	<input type="radio" name="radiowine" value="radiowine">&nbsp;是
+									      	<input type="radio" name="radiowine" value="radiowine">&nbsp;否  
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-md-12">					    
+									      	<p>5.  是否是聚会的主要场所：<span>*</span></p>
+									      	<input type="radio" name="radiosite" value="radiosite">&nbsp;是
+									      	<input type="radio" name="radiosite" value="radiosite">&nbsp;否
+									      
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-md-12">					    
+									      	<p>6.  是否需要在餐厅看电视：<span>*</span></p>
+									      	<input type="radio" name="radiolw" value="radiolw">&nbsp;是
+									      	<input type="radio" name="radiolw" value="radiolw">&nbsp;否
+									      
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-md-12">					    
+									      	<p>7.  家庭烹饪的特点：<span>*</span></p>
+									      	<input type="radio" name="radiocook" value="radiocook">&nbsp;中餐
+									      	<input type="radio" name="radiocook" value="radiocook">&nbsp;西餐
+									      
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-md-12">					    
+									      	<p>8.  娱乐活动：<span>*</span></p>
+									      	<input type="radio" name="radioet" value="radioet">&nbsp;棋
+									      	<input type="radio" name="radioet" value="radioet">&nbsp;牌
+									      	<input type="radio" name="radioet" value="radioet">&nbsp;其他
+									      
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-md-12">					    
+									      	<p>9.  对餐厅色彩要求：<span>*</span></p>
+									      	<input type="text" placeholder="请填写要求">
+										</div>
+									</div>
+								</div>
+
+
+								<h3>厨房部分</h3>
+								<div class="cook">
+									<div class="cooker">
+										<p> 1.  电气设备(电源问题)：<span>*</span></p>
+									   <input type="text" placeholder="请输入相关要求">
+									</div>
+									<div class="cooker">
+										<p> 2.  对墙、地材料或色彩要求：<span>*</span></p>
+									   <input type="text" placeholder="请输入相关要求">
+									</div>
+									<div class="cooker">
+										<p> 3.  对水、电设备要求(冷\热水设施)：<span>*</span></p>
+									   <input type="text" placeholder="请输入相关要求">
+									</div>
+									<div class="cooker">
+										<p>4.  对橱柜档次\品质\品牌要求：<span>*</span></p>
+									   <input type="text" placeholder="请输入相关要求">
+									</div>
+									<div class="cooker">
+										<p>5.  吊顶材料：<span>*</span></p>
+										<input type="radio" name="radioroofc" value="radioroofc" >&nbsp;PVC
+										<input type="radio" name="radioroofc" value="radioroofc">&nbsp;铝扣板
+										<input type="radio" name="radioroofc" value="radioroofc" >&nbsp;防水石膏板
+										<input type="radio" name="radioroofc" value="radioroofc">&nbsp;铝塑板
+									</div>
+									<div class="cooker">
+										<p> 6.  照明要求：<span>*</span></p>
+									   <input type="text" placeholder="请输入相关要求">
+									</div>
+								</div>
+
+
+								<h3>书房部分</h3>
+
+								<div class="cook">
+									<div class="cooker">
+										<p> 1.书房功能：<span>*</span></p>
+									  	<input type="checkbox" name="checkboxset" value="checkbox" >&nbsp;读书
+										<input type="checkbox" name="checkboxset" value="checkbox">&nbsp;写作
+									    <input type="checkbox" name="checkboxset" value="checkbox" >&nbsp;会客
+									    <input type="checkbox" name="checkboxset" value="checkbox" >&nbsp;品茶
+									    <input type="checkbox" name="checkboxset" value="checkbox" >&nbsp;电脑操作
+									    <input type="text" placeholder="请输入相关要求">
+									</div>
+									<div class="cooker">
+										<p> 2.  书房使用以何人为主：<span>*</span></p>
+									   <input type="text" placeholder="书房使用人">
+									</div>
+									<div class="cooker">
+										<p> 3.  共有几人同时使用书房：<span>*</span></p>
+									   <input type="text" placeholder="书房使用人">
+									</div>
+									<div class="cooker">
+										<p>4.  存书种类以及数量：<span>*</span></p>
+									   	<input type="checkbox" name="checkboxset" value="checkbox" >&nbsp;藏书类
+										<input type="checkbox" name="checkboxset" value="checkbox">&nbsp;工具类
+									    <input type="checkbox" name="checkboxset" value="checkbox" >&nbsp;杂志类
+									    <input type="text" placeholder="请输入相关要求">
+									    <input type="text" placeholder="书房使用人">
+									</div>
+									<div class="cooker">
+										<p>5.  惯以何种方式看书（如：坐着看、躺着看）：<span>*</span></p>
+										<input type="text" placeholder="请输入相关要求">
+									</div>
+									<div class="cooker">
+										<p>6.  书房使用频率：<span>*</span></p>
+									   		<input type="radio" name="radiobf" value="radiobf" >&nbsp;每天
+											<input type="radio" name="radiobf" value="radiobf">&nbsp;经常
+											<input type="radio" name="radiobf" value="radiobf">&nbsp;偶尔
+									</div>
+									<div class="cooker">
+										<p> 7.  书房是否当客厅使用：<span>*</span></p>
+									    <input type="radio" name="radioparlour" value="radioparlour" >&nbsp;是
+										<input type="radio" name="radioparlour" value="radioparlour">&nbsp;否
+									</div>
+									<div class="cooker">
+										<p>8.  是否需要：<span>*</span></p>
+									   	<input type="checkbox" name="checkboxset" value="checkbox" >&nbsp;电话
+										<input type="checkbox" name="checkboxset" value="checkbox">&nbsp;网线
+									    <input type="checkbox" name="checkboxset" value="checkbox" >&nbsp;打印机
+									    <input type="checkbox" name="checkboxset" value="checkbox" >&nbsp;扫描机
+									</div>
+								</div>
+
+								<h3>主卧室部分</h3>
+								<div class="cook">
+									<div class="cooker">
+										<p> 1.  业主对寝具的选择：<span>*</span></p>
+									  	<input type="checkbox" name="checkboxset" value="checkbox" >&nbsp;读书
+										<input type="checkbox" name="checkboxset" value="checkbox">&nbsp;写作
+									    <input type="checkbox" name="checkboxset" value="checkbox" >&nbsp;会客
+									    <input type="checkbox" name="checkboxset" value="checkbox" >&nbsp;品茶
+									    <input type="checkbox" name="checkboxset" value="checkbox" >&nbsp;电脑操作
+									    <input type="text" placeholder="请输入相关要求">
+									</div>
+									<div class="cooker">
+										<p> 2. 业主对寝具品牌和颜色的选择：<span>*</span></p>
+									   <input type="text" placeholder="书房使用人">
+									</div>
+									<div class="cooker">
+										<p> 3.  共有几人同时使用书房：<span>*</span></p>
+									   <input type="text" placeholder="书房使用人">
+									</div>
+									<div class="cooker">
+										<p>4.  存书种类以及数量：<span>*</span></p>
+									   	<input type="checkbox" name="checkboxset" value="checkbox" >&nbsp;藏书类
+										<input type="checkbox" name="checkboxset" value="checkbox">&nbsp;工具类
+									    <input type="checkbox" name="checkboxset" value="checkbox" >&nbsp;杂志类
+									    <input type="text" placeholder="请输入相关要求">
+									    <input type="text" placeholder="书房使用人">
+									</div>
+									<div class="cooker">
+										<p>5.  惯以何种方式看书（如：坐着看、躺着看）：<span>*</span></p>
+										<input type="text" placeholder="请输入相关要求">
+									</div>
+									<div class="cooker">
+										<p>6.  书房使用频率：<span>*</span></p>
+									   		<input type="radio" name="radiobf" value="radiobf" >&nbsp;每天
+											<input type="radio" name="radiobf" value="radiobf">&nbsp;经常
+											<input type="radio" name="radiobf" value="radiobf">&nbsp;偶尔
+									</div>
+									<div class="cooker">
+										<p> 7.  书房是否当客厅使用：<span>*</span></p>
+									    <input type="radio" name="radioparlour" value="radioparlour" >&nbsp;是
+										<input type="radio" name="radioparlour" value="radioparlour">&nbsp;否
+									</div>
+									<div class="cooker">
+										<p>8.  是否需要：<span>*</span></p>
+									   	<input type="checkbox" name="checkboxset" value="checkbox" >&nbsp;电话
+										<input type="checkbox" name="checkboxset" value="checkbox">&nbsp;网线
+									    <input type="checkbox" name="checkboxset" value="checkbox" >&nbsp;打印机
+									    <input type="checkbox" name="checkboxset" value="checkbox" >&nbsp;扫描机
+									</div>
+								</div>
+
+								<h3>儿童房（老人房）部分</h3>
+								<div class="cook">
+									<div class="cooker">
+										<p> 1.书房功能：<span>*</span></p>
+									  	<input type="checkbox" name="checkboxset" value="checkbox" >&nbsp;读书
+										<input type="checkbox" name="checkboxset" value="checkbox">&nbsp;写作
+									    <input type="checkbox" name="checkboxset" value="checkbox" >&nbsp;会客
+									    <input type="checkbox" name="checkboxset" value="checkbox" >&nbsp;品茶
+									    <input type="checkbox" name="checkboxset" value="checkbox" >&nbsp;电脑操作
+									    <input type="text" placeholder="请输入相关要求">
+									</div>
+									<div class="cooker">
+										<p> 2.  书房使用以何人为主：<span>*</span></p>
+									   <input type="text" placeholder="书房使用人">
+									</div>
+									<div class="cooker">
+										<p> 3.  共有几人同时使用书房：<span>*</span></p>
+									   <input type="text" placeholder="书房使用人">
+									</div>
+									<div class="cooker">
+										<p>4.  存书种类以及数量：<span>*</span></p>
+									   	<input type="checkbox" name="checkboxset" value="checkbox" >&nbsp;藏书类
+										<input type="checkbox" name="checkboxset" value="checkbox">&nbsp;工具类
+									    <input type="checkbox" name="checkboxset" value="checkbox" >&nbsp;杂志类
+									    <input type="text" placeholder="请输入相关要求">
+									    <input type="text" placeholder="书房使用人">
+									</div>
+									<div class="cooker">
+										<p>5.  惯以何种方式看书（如：坐着看、躺着看）：<span>*</span></p>
+										<input type="text" placeholder="请输入相关要求">
+									</div>
+									<div class="cooker">
+										<p>6.  书房使用频率：<span>*</span></p>
+									   		<input type="radio" name="radiobf" value="radiobf" >&nbsp;每天
+											<input type="radio" name="radiobf" value="radiobf">&nbsp;经常
+											<input type="radio" name="radiobf" value="radiobf">&nbsp;偶尔
+									</div>
+									<div class="cooker">
+										<p> 7.  书房是否当客厅使用：<span>*</span></p>
+									    <input type="radio" name="radioparlour" value="radioparlour" >&nbsp;是
+										<input type="radio" name="radioparlour" value="radioparlour">&nbsp;否
+									</div>
+									<div class="cooker">
+										<p>8.  是否需要：<span>*</span></p>
+									   	<input type="checkbox" name="checkboxset" value="checkbox" >&nbsp;电话
+										<input type="checkbox" name="checkboxset" value="checkbox">&nbsp;网线
+									    <input type="checkbox" name="checkboxset" value="checkbox" >&nbsp;打印机
+									    <input type="checkbox" name="checkboxset" value="checkbox" >&nbsp;扫描机
+									</div>
+								</div>
+
+
+								<h3>客房部分</h3>
+								<div class="cook">
+									<div class="cooker">
+										<p> 1.书房功能：<span>*</span></p>
+									  	<input type="checkbox" name="checkboxset" value="checkbox" >&nbsp;读书
+										<input type="checkbox" name="checkboxset" value="checkbox">&nbsp;写作
+									    <input type="checkbox" name="checkboxset" value="checkbox" >&nbsp;会客
+									    <input type="checkbox" name="checkboxset" value="checkbox" >&nbsp;品茶
+									    <input type="checkbox" name="checkboxset" value="checkbox" >&nbsp;电脑操作
+									    <input type="text" placeholder="请输入相关要求">
+									</div>
+									<div class="cooker">
+										<p> 2.  书房使用以何人为主：<span>*</span></p>
+									   <input type="text" placeholder="书房使用人">
+									</div>
+									<div class="cooker">
+										<p> 3.  共有几人同时使用书房：<span>*</span></p>
+									   <input type="text" placeholder="书房使用人">
+									</div>
+									<div class="cooker">
+										<p>4.  存书种类以及数量：<span>*</span></p>
+									   	<input type="checkbox" name="checkboxset" value="checkbox" >&nbsp;藏书类
+										<input type="checkbox" name="checkboxset" value="checkbox">&nbsp;工具类
+									    <input type="checkbox" name="checkboxset" value="checkbox" >&nbsp;杂志类
+									    <input type="text" placeholder="请输入相关要求">
+									    <input type="text" placeholder="书房使用人">
+									</div>
+									<div class="cooker">
+										<p>5.  惯以何种方式看书（如：坐着看、躺着看）：<span>*</span></p>
+										<input type="text" placeholder="请输入相关要求">
+									</div>
+									<div class="cooker">
+										<p>6.  书房使用频率：<span>*</span></p>
+									   		<input type="radio" name="radiobf" value="radiobf" >&nbsp;每天
+											<input type="radio" name="radiobf" value="radiobf">&nbsp;经常
+											<input type="radio" name="radiobf" value="radiobf">&nbsp;偶尔
+									</div>
+									<div class="cooker">
+										<p> 7.  书房是否当客厅使用：<span>*</span></p>
+									    <input type="radio" name="radioparlour" value="radioparlour" >&nbsp;是
+										<input type="radio" name="radioparlour" value="radioparlour">&nbsp;否
+									</div>
+									<div class="cooker">
+										<p>8.  是否需要：<span>*</span></p>
+									   	<input type="checkbox" name="checkboxset" value="checkbox" >&nbsp;电话
+										<input type="checkbox" name="checkboxset" value="checkbox">&nbsp;网线
+									    <input type="checkbox" name="checkboxset" value="checkbox" >&nbsp;打印机
+									    <input type="checkbox" name="checkboxset" value="checkbox" >&nbsp;扫描机
+									</div>
+								</div>
+
+								<h3>卫生间部分</h3>
+								<div class="cook">
+									<div class="cooker">
+										<p> 1.书房功能：<span>*</span></p>
+									  	<input type="checkbox" name="checkboxset" value="checkbox" >&nbsp;读书
+										<input type="checkbox" name="checkboxset" value="checkbox">&nbsp;写作
+									    <input type="checkbox" name="checkboxset" value="checkbox" >&nbsp;会客
+									    <input type="checkbox" name="checkboxset" value="checkbox" >&nbsp;品茶
+									    <input type="checkbox" name="checkboxset" value="checkbox" >&nbsp;电脑操作
+									    <input type="text" placeholder="请输入相关要求">
+									</div>
+									<div class="cooker">
+										<p> 2.  书房使用以何人为主：<span>*</span></p>
+									   <input type="text" placeholder="书房使用人">
+									</div>
+									<div class="cooker">
+										<p> 3.  共有几人同时使用书房：<span>*</span></p>
+									   <input type="text" placeholder="书房使用人">
+									</div>
+									<div class="cooker">
+										<p>4.  存书种类以及数量：<span>*</span></p>
+									   	<input type="checkbox" name="checkboxset" value="checkbox" >&nbsp;藏书类
+										<input type="checkbox" name="checkboxset" value="checkbox">&nbsp;工具类
+									    <input type="checkbox" name="checkboxset" value="checkbox" >&nbsp;杂志类
+									    <input type="text" placeholder="请输入相关要求">
+									    <input type="text" placeholder="书房使用人">
+									</div>
+									<div class="cooker">
+										<p>5.  惯以何种方式看书（如：坐着看、躺着看）：<span>*</span></p>
+										<input type="text" placeholder="请输入相关要求">
+									</div>
+									<div class="cooker">
+										<p>6.  书房使用频率：<span>*</span></p>
+									   		<input type="radio" name="radiobf" value="radiobf" >&nbsp;每天
+											<input type="radio" name="radiobf" value="radiobf">&nbsp;经常
+											<input type="radio" name="radiobf" value="radiobf">&nbsp;偶尔
+									</div>
+									<div class="cooker">
+										<p> 7.  书房是否当客厅使用：<span>*</span></p>
+									    <input type="radio" name="radioparlour" value="radioparlour" >&nbsp;是
+										<input type="radio" name="radioparlour" value="radioparlour">&nbsp;否
+									</div>
+									<div class="cooker">
+										<p>8.  是否需要：<span>*</span></p>
+									   	<input type="checkbox" name="checkboxset" value="checkbox" >&nbsp;电话
+										<input type="checkbox" name="checkboxset" value="checkbox">&nbsp;网线
+									    <input type="checkbox" name="checkboxset" value="checkbox" >&nbsp;打印机
+									    <input type="checkbox" name="checkboxset" value="checkbox" >&nbsp;扫描机
+									</div>
+								</div>
+
+
+								<h3>阳台部分</h3>
+								<div class="cook">
+									<div class="cooker">
+										<p> 1.书房功能：<span>*</span></p>
+									  	<input type="checkbox" name="checkboxset" value="checkbox" >&nbsp;读书
+										<input type="checkbox" name="checkboxset" value="checkbox">&nbsp;写作
+									    <input type="checkbox" name="checkboxset" value="checkbox" >&nbsp;会客
+									    <input type="checkbox" name="checkboxset" value="checkbox" >&nbsp;品茶
+									    <input type="checkbox" name="checkboxset" value="checkbox" >&nbsp;电脑操作
+									    <input type="text" placeholder="请输入相关要求">
+									</div>
+									<div class="cooker">
+										<p> 2.  书房使用以何人为主：<span>*</span></p>
+									   <input type="text" placeholder="书房使用人">
+									</div>
+									<div class="cooker">
+										<p> 3.  共有几人同时使用书房：<span>*</span></p>
+									   <input type="text" placeholder="书房使用人">
+									</div>
+									<div class="cooker">
+										<p>4.  存书种类以及数量：<span>*</span></p>
+									   	<input type="checkbox" name="checkboxset" value="checkbox" >&nbsp;藏书类
+										<input type="checkbox" name="checkboxset" value="checkbox">&nbsp;工具类
+									    <input type="checkbox" name="checkboxset" value="checkbox" >&nbsp;杂志类
+									    <input type="text" placeholder="请输入相关要求">
+									    <input type="text" placeholder="书房使用人">
+									</div>
+									<div class="cooker">
+										<p>5.  惯以何种方式看书（如：坐着看、躺着看）：<span>*</span></p>
+										<input type="text" placeholder="请输入相关要求">
+									</div>
+									<div class="cooker">
+										<p>6.  书房使用频率：<span>*</span></p>
+									   		<input type="radio" name="radiobf" value="radiobf" >&nbsp;每天
+											<input type="radio" name="radiobf" value="radiobf">&nbsp;经常
+											<input type="radio" name="radiobf" value="radiobf">&nbsp;偶尔
+									</div>
+									<div class="cooker">
+										<p> 7.  书房是否当客厅使用：<span>*</span></p>
+									    <input type="radio" name="radioparlour" value="radioparlour" >&nbsp;是
+										<input type="radio" name="radioparlour" value="radioparlour">&nbsp;否
+									</div>
+									<div class="cooker">
+										<p>8.  是否需要：<span>*</span></p>
+									   	<input type="checkbox" name="checkboxset" value="checkbox" >&nbsp;电话
+										<input type="checkbox" name="checkboxset" value="checkbox">&nbsp;网线
+									    <input type="checkbox" name="checkboxset" value="checkbox" >&nbsp;打印机
+									    <input type="checkbox" name="checkboxset" value="checkbox" >&nbsp;扫描机
+									</div>
+								</div>
+
+
+								<h3>补充部分</h3>
+								<div class="cook">
+									<div class="cooker">
+										<p> 1.书房功能：<span>*</span></p>
+									  	<input type="checkbox" name="checkboxset" value="checkbox" >&nbsp;读书
+										<input type="checkbox" name="checkboxset" value="checkbox">&nbsp;写作
+									    <input type="checkbox" name="checkboxset" value="checkbox" >&nbsp;会客
+									    <input type="checkbox" name="checkboxset" value="checkbox" >&nbsp;品茶
+									    <input type="checkbox" name="checkboxset" value="checkbox" >&nbsp;电脑操作
+									    <input type="text" placeholder="请输入相关要求">
+									</div>
+									<div class="cooker">
+										<p> 2.  书房使用以何人为主：<span>*</span></p>
+									   <input type="text" placeholder="书房使用人">
+									</div>
+									<div class="cooker">
+										<p> 3.  共有几人同时使用书房：<span>*</span></p>
+									   <input type="text" placeholder="书房使用人">
+									</div>
+									<div class="cooker">
+										<p>4.  存书种类以及数量：<span>*</span></p>
+									   	<input type="checkbox" name="checkboxset" value="checkbox" >&nbsp;藏书类
+										<input type="checkbox" name="checkboxset" value="checkbox">&nbsp;工具类
+									    <input type="checkbox" name="checkboxset" value="checkbox" >&nbsp;杂志类
+									    <input type="text" placeholder="请输入相关要求">
+									    <input type="text" placeholder="书房使用人">
+									</div>
+									<div class="cooker">
+										<p>5.  惯以何种方式看书（如：坐着看、躺着看）：<span>*</span></p>
+										<input type="text" placeholder="请输入相关要求">
+									</div>
+									<div class="cooker">
+										<p>6.  书房使用频率：<span>*</span></p>
+									   		<input type="radio" name="radiobf" value="radiobf" >&nbsp;每天
+											<input type="radio" name="radiobf" value="radiobf">&nbsp;经常
+											<input type="radio" name="radiobf" value="radiobf">&nbsp;偶尔
+									</div>
+									<div class="cooker">
+										<p> 7.  书房是否当客厅使用：<span>*</span></p>
+									    <input type="radio" name="radioparlour" value="radioparlour" >&nbsp;是
+										<input type="radio" name="radioparlour" value="radioparlour">&nbsp;否
+									</div>
+									<div class="cooker">
+										<p>8.  是否需要：<span>*</span></p>
+									   	<input type="checkbox" name="checkboxset" value="checkbox" >&nbsp;电话
+										<input type="checkbox" name="checkboxset" value="checkbox">&nbsp;网线
+									    <input type="checkbox" name="checkboxset" value="checkbox" >&nbsp;打印机
+									    <input type="checkbox" name="checkboxset" value="checkbox" >&nbsp;扫描机
+									</div>
+								</div>
+
+
+								<h3>其他部分</h3>
+								<div class="cook">
+									<div class="cooker">
+										<p> 1.书房功能：<span>*</span></p>
+									  	<input type="checkbox" name="checkboxset" value="checkbox" >&nbsp;读书
+										<input type="checkbox" name="checkboxset" value="checkbox">&nbsp;写作
+									    <input type="checkbox" name="checkboxset" value="checkbox" >&nbsp;会客
+									    <input type="checkbox" name="checkboxset" value="checkbox" >&nbsp;品茶
+									    <input type="checkbox" name="checkboxset" value="checkbox" >&nbsp;电脑操作
+									    <input type="text" placeholder="请输入相关要求">
+									</div>
+									<div class="cooker">
+										<p> 2.  书房使用以何人为主：<span>*</span></p>
+									   <input type="text" placeholder="书房使用人">
+									</div>
+									<div class="cooker">
+										<p> 3.  共有几人同时使用书房：<span>*</span></p>
+									   <input type="text" placeholder="书房使用人">
+									</div>
+									<div class="cooker">
+										<p>4.  存书种类以及数量：<span>*</span></p>
+									   	<input type="checkbox" name="checkboxset" value="checkbox" >&nbsp;藏书类
+										<input type="checkbox" name="checkboxset" value="checkbox">&nbsp;工具类
+									    <input type="checkbox" name="checkboxset" value="checkbox" >&nbsp;杂志类
+									    <input type="text" placeholder="请输入相关要求">
+									    <input type="text" placeholder="书房使用人">
+									</div>
+									<div class="cooker">
+										<p>5.  惯以何种方式看书（如：坐着看、躺着看）：<span>*</span></p>
+										<input type="text" placeholder="请输入相关要求">
+									</div>
+									<div class="cooker">
+										<p>6.  书房使用频率：<span>*</span></p>
+									   		<input type="radio" name="radiobf" value="radiobf" >&nbsp;每天
+											<input type="radio" name="radiobf" value="radiobf">&nbsp;经常
+											<input type="radio" name="radiobf" value="radiobf">&nbsp;偶尔
+									</div>
+									<div class="cooker">
+										<p> 7.  书房是否当客厅使用：<span>*</span></p>
+									    <input type="radio" name="radioparlour" value="radioparlour" >&nbsp;是
+										<input type="radio" name="radioparlour" value="radioparlour">&nbsp;否
+									</div>
+									<div class="cooker">
+										<p>8.  是否需要：<span>*</span></p>
+									   	<input type="checkbox" name="checkboxset" value="checkbox" >&nbsp;电话
+										<input type="checkbox" name="checkboxset" value="checkbox">&nbsp;网线
+									    <input type="checkbox" name="checkboxset" value="checkbox" >&nbsp;打印机
+									    <input type="checkbox" name="checkboxset" value="checkbox" >&nbsp;扫描机
+									</div>
+								</div>
+
+
+								</div>
+							</form>
+						</div>
 					</div>
+
+
+
+
 					<div role="tabpanel" class="tab-pane fade" id="bill" aria-labelledby="bill-tab">
 2
 					</div>
@@ -384,5 +1294,44 @@
 
 	</div>
 
+	<script type="text/javascript">
+		var $first=document.getElementById('first');
+		var $second=document.getElementById('second');
+		var $third=document.getElementById('third');
+		var arr1=['所有','山东','河南'];
+		var arr2=[	['选择'],
+					['选择','日照','临沂'],['选择','郑州','洛阳']
+				 ];
+		var arr3=[
+					[['所有']],
+					[	['选择'],
+						['选择','岚山','五莲'],
+						['选择','兰山区','河东区'] 
+					],
+					[	
+						['选择'],
+						['选择','上街','中牟'],
+						['选择','孟津', '关林']
+					],
+				];
+
+
+		function changecity(arr){
+			var str="";
+			for(var i=0;i<arr.length;i++){
+				str=str+"<option value='" +i+ "'>"+arr[i]+"</option>";
+			}
+			return str;
+		}
+		$first.innerHTML=changecity(arr1);
+
+		$first.onchange=function(){
+			$second.innerHTML=changecity(arr2[this.value]);
+		}
+		$second.onchange=function(){
+
+			$third.innerHTML=changecity(arr3[$first.value][this.value]);
+		}
+</script>
 </body>
 </html>

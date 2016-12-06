@@ -4,15 +4,65 @@
 --------------- */
 /* order details - 订单详情 */
 /* measuring report 量房报告 */
-.report_tab_stepone span {
-  display: inline-block;
-  width: 50px;
-  height: 50px;
-  line-height: 50px;
-  text-align: center;
-  color: #fff;
-  background: #123456;
-  border-radius: 50%; }
+.report_tab_stepone {
+  position: relative;
+  text-align: center; }
+  .report_tab_stepone h3 {
+    font-size: 14px;
+    color: #169BD5; }
+  .report_tab_stepone span {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    color: #fff;
+    background: #169BD5;
+    border-radius: 50%; }
+  .report_tab_stepone div {
+    position: absolute;
+    z-index: -1;
+    left: 200px;
+    top: 65px;
+    width: 400px;
+    height: 9px;
+    background-color: #169bd5;
+    border: none;
+    border-radius: 10px;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none; }
+
+.report_tab_steptwo h3 {
+  color: #555; }
+
+.report_tab_steptwo span {
+  background: #999; }
+
+.report_tab_steptwo div {
+  background: #eee; }
+
+.report_tab_listone {
+  margin: 60px 170px 0 160px; }
+  .report_tab_listone > div {
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid #eee; }
+    .report_tab_listone > div > div > p span {
+      color: #f00; }
+    .report_tab_listone > div > div > input {
+      margin-left: 20px; }
+
+.report_tab_listtwo {
+  margin: 60px 170px 0 160px; }
+  .report_tab_listtwo > div > div {
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid #eee; }
+    .report_tab_listtwo > div > div > div > p span {
+      color: #f00; }
+    .report_tab_listtwo > div > div > div > input {
+      margin-left: 20px; }
 
 /* material bill  物料清单 */
 /* design drawing 设计图 */
