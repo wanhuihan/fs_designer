@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<meta name="viewport" content="width=device-width,initial-scale=1, user-scalable=no">
+
+	<link rel="stylesheet" type="text/css" href="assets/bootstrap/css/bootstrap.min.css">
+
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+
+</head>
+
+<body id="dashboard">
+
+	<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+	  <div class="container-fluid">
+	    <!-- Brand and toggle get grouped for better mobile display -->
+	    <div class="navbar-header">
+	      <a class="navbar-brand" href="#">生命屋 - 设计平台</a>
+	    </div>
+
+	    <!-- Collect the nav links, forms, and other content for toggling -->
+	    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+	      <ul class="nav navbar-nav navbar-right">
+				<li><a href="#">Link</a></li>
+				<li class="dropdown">
+				<a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <span class="caret"></span></a>
+				<ul class="dropdown-menu" role="menu">
+				<li><a href="#">Action</a></li>
+				<li><a href="#">Another action</a></li>
+				<li><a href="#">Something else here</a></li>
+				<li class="divider"></li>
+				<li><a href="#">Separated link</a></li>
+				</ul>
+				</li>
+	      </ul>
+	    </div><!-- /.navbar-collapse -->
+	  </div><!-- /.container-fluid -->
+	</nav>	
+
+
+	<div class="container-fluid">
+		
+		<div class="row">
+			<div class="col-md-2 sidebar">
+
+				<ul class="list-group ">
+
+					<li class="myOrder active">
+						
+						<a href=""><i class="fa fa-reorder" aria-hidden="true"></i>我的订单</a>
+
+						<ul>
+							<li><a>订单详情</a></li>
+							<li><a>量房报告</a></li>
+							<li><a>物料清单</a></li>
+							<li><a>设计图</a></li>
+							<li><a href="workAmount.html">工程量</a></li>
+						</ul>
+					</li>
+
+					<li class="myAccount">
+					
+						<a href="">	<i class="fa fa-user-circle-o" aria-hidden="true"></i>我的账户</a>
+					</li>	
+
+					<li class="myAccount">
+					
+						<a href="">	<i class="fa fa-file-image-o" aria-hidden="true"></i>图库</a>
+					</li>
+
+				</ul>
+
+
+			
+			
+			</div>
+			<div class="col-md-10 mainSection">
+				<ol class="breadcrumb">
+					<li class="active"><a href="#">我的订单</a></li>
+
+				</ol>
+
+				<form role="form" class="form-horizontal" id="quickSearch">
+
+					<div class="form-group col-md-3">
+
+						<label class="col-md-3" for="">业主姓名</label>
+						<div class="col-md-9">
+							<input type="text" class="form-control" id="" placeholder="">
+						</div>
+					
+					</div>
+
+					<div class="form-group col-md-3">
+
+						<label class="col-md-3" for="">联系方式</label>
+						<div class="col-md-9">
+							<input type="text" class="form-control" id="" placeholder="">
+						</div>
+					
+					</div>
+
+					<div class="form-group col-md-3">
+
+						<label class="col-md-3" for="">地址</label>
+						<div class="col-md-9">
+							<input type="text" class="form-control" id="" placeholder="">
+						</div>
+					
+					</div>					
+
+					<div class="form-group col-md-3">
+
+						<button type="submit" class="btn btn-primary">确认搜索</button>
+						<button type="reset" class="btn btn-default">重置</button>
+
+					</div>					
+
+
+				</form>
+
+				
+				<table class="table table-hover table-striped">
+					<thead>
+						<tr>
+							<th>#</th>
+							<th width="10%">业主姓名</th>
+							<th width="10%">联系方式</th>
+							<th width="30%">地址</th>
+							<th><span>建筑面积</span></th>
+							<th><span>派单时间</span></th>
+							<th><span>剩余时间</span></th>
+							<th></th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>1</td>
+							<td>Mark</td>
+							<td>13911442668</td>
+							<td>重庆国际新城E3栋26层</td>
+							<td>116 <b>㎡</b></td>
+							<td>2016-10-31 12:00:00</td>
+							<td class="surplus">
+								<time class="">
+									<b>20</b>天
+									<b>00</b>小时
+								</time>
+							</td>
+							<td>
+								<a href="details.html" class="btn btn-info btn-xs">查看详情</a>
+
+							</td>
+						</tr>
+						<tr>
+							<td>1</td>
+							<td>Mark</td>
+							<td>13911442668</td>
+							<td>重庆国际新城E3栋26层</td>
+							<td>116 <b>㎡</b></td>
+							<td>2016-10-31 12:00:00</td>
+							<td class="surplus enough">
+								<time>
+									<b>15</b>天
+									<b>00</b>小时
+								</time>
+							</td>
+							<td><a href="" class="btn btn-info btn-xs">查看详情</a></td>
+						</tr>
+						<tr>
+							<td>1</td>
+							<td>Mark</td>
+							<td>13911442668</td>
+							<td>重庆国际新城E3栋26层</td>
+							<td>116 <b>㎡</b></td>
+							<td>2016-10-31 12:00:00</td>
+							<td class="surplus normal">
+								<time class="">
+									<b>11</b>天
+									<b>00</b>小时
+								</time>
+							</td>
+							<td><a href="" class="btn btn-info btn-xs">查看详情</a></td>
+						</tr>
+
+						<tr>
+							<td>1</td>
+							<td>Mark</td>
+							<td>13911442668</td>
+							<td>新开门南路与曲江池南路十字西南角雅居乐御宾府16号楼</td>
+							<td>116 <b>㎡</b></td>
+							<td>2016-10-31 12:00:00</td>
+							<td class="surplus urgent">
+								<time class="">
+									<b>8</b>天
+									<b>00</b>小时
+								</time>
+							</td>
+							<td><a href="" class="btn btn-info btn-xs">查看详情</a></td>
+						</tr>						
+
+						<tr>
+							<td>1</td>
+							<td>Mark</td>
+							<td>13911442668</td>
+							<td>南三环与芙蓉西路十字东南角中海凯旋门5号楼</td>
+							<td>116 <b>㎡</b></td>
+							<td>2016-10-31 12:00:00</td>
+							<td class="surplus">
+								<time class="">
+									<b>20</b>天
+									<b>00</b>小时
+								</time>
+							</td>
+							<td>
+								<a href="" class="btn btn-info btn-xs">查看详情</a>
+
+							</td>
+						</tr>
+						<tr>
+							<td>1</td>
+							<td>Mark</td>
+							<td>13911442668</td>
+							<td>重庆国际新城E3栋26层</td>
+							<td>116 <b>㎡</b></td>
+							<td>2016-10-31 12:00:00</td>
+							<td class="surplus enough">
+								<time>
+									<b>15</b>天
+									<b>00</b>小时
+								</time>
+							</td>
+							<td><a href="" class="btn btn-info btn-xs">查看详情</a></td>
+						</tr>
+						<tr>
+							<td>1</td>
+							<td>Mark</td>
+							<td>13911442668</td>
+							<td>重庆国际新城E3栋26层</td>
+							<td>116 <b>㎡</b></td>
+							<td>2016-10-31 12:00:00</td>
+							<td class="surplus normal">
+								<time class="">
+									<b>11</b>天
+									<b>00</b>小时
+								</time>
+							</td>
+							<td><a href="" class="btn btn-info btn-xs">查看详情</a></td>
+						</tr>
+
+						<tr>
+							<td>1</td>
+							<td>Mark</td>
+							<td>13911442668</td>
+							<td>重庆国际新城E3栋26层</td>
+							<td>116 <b>㎡</b></td>
+							<td>2016-10-31 12:00:00</td>
+							<td class="surplus urgent">
+								<time class="">
+									<b>8</b>天
+									<b>00</b>小时
+								</time>
+							</td>
+							<td><a href="" class="btn btn-info btn-xs">查看详情</a></td>
+						</tr>
+						<tr>
+							<td>1</td>
+							<td>Mark</td>
+							<td>13911442668</td>
+							<td>重庆国际新城E3栋26层</td>
+							<td>116 <b>㎡</b></td>
+							<td>2016-10-31 12:00:00</td>
+							<td class="surplus">
+								<time class="">
+									<b>20</b>天
+									<b>00</b>小时
+								</time>
+							</td>
+							<td>
+								<a href="" class="btn btn-info btn-xs">查看详情</a>
+
+							</td>
+						</tr>
+						<tr>
+							<td>1</td>
+							<td>Mark</td>
+							<td>13911442668</td>
+							<td>重庆国际新城E3栋26层</td>
+							<td>116 <b>㎡</b></td>
+							<td>2016-10-31 12:00:00</td>
+							<td class="surplus enough">
+								<time>
+									<b>15</b>天
+									<b>00</b>小时
+								</time>
+							</td>
+							<td><a href="" class="btn btn-info btn-xs">查看详情</a></td>
+						</tr>
+						<tr>
+							<td>1</td>
+							<td>Mark</td>
+							<td>13911442668</td>
+							<td>重庆国际新城E3栋26层</td>
+							<td>116 <b>㎡</b></td>
+							<td>2016-10-31 12:00:00</td>
+							<td class="surplus normal">
+								<time class="">
+									<b>11</b>天
+									<b>00</b>小时
+								</time>
+							</td>
+							<td><a href="" class="btn btn-info btn-xs">查看详情</a></td>
+						</tr>
+
+						<tr>
+							<td>1</td>
+							<td>Mark</td>
+							<td>13911442668</td>
+							<td>重庆国际新城E3栋26层</td>
+							<td>116 <b>㎡</b></td>
+							<td>2016-10-31 12:00:00</td>
+							<td class="surplus urgent">
+								<time class="">
+									<b>8</b>天
+									<b>00</b>小时
+								</time>
+							</td>
+							<td><a href="" class="btn btn-info btn-xs">查看详情</a></td>
+						</tr>
+
+						<tr>
+							<td>1</td>
+							<td>Mark</td>
+							<td>13911442668</td>
+							<td>重庆国际新城E3栋26层</td>
+							<td>116 <b>㎡</b></td>
+							<td>2016-10-31 12:00:00</td>
+							<td class="surplus">
+								<time class="">
+									<b>20</b>天
+									<b>00</b>小时
+								</time>
+							</td>
+							<td>
+								<a href="" class="btn btn-info btn-xs">查看详情</a>
+
+							</td>
+						</tr>
+
+
+
+					</tbody>
+
+				</table>
+
+			</div>
+		</div>
+
+	</div>
+
+</body>
+</html>

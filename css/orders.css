@@ -1,0 +1,49 @@
+@charset "UTF-8";
+/* -------------
+    # 工程量
+--------------- */
+.box {
+  position: relative;
+  z-index: 1; }
+  .box:after {
+    clear: both;
+    content: "";
+    display: block; }
+
+/* left side bar */
+.left-side-bar {
+  padding: 15px;
+  width: 30%;
+  float: left; }
+  .left-side-bar ul {
+    margin: 15px;
+    border: 1px solid #ccc;
+    line-height: 30px;
+    padding: 15px; }
+    .left-side-bar ul li:hover {
+      background: #eee; }
+    .left-side-bar ul li a {
+      display: block; }
+
+/* main section */
+.main {
+  float: left;
+  padding: 15px;
+  width: 70%; }
+  .main .work_amount {
+    border: 1px solid #ccc;
+    margin: 15px 15px 15px 0; }
+  .main .table {
+    border: 1px solid;
+    border-collapse: collapse; }
+
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  box-sizing: border-box;
+  font-size: 13px; }
+
+a {
+  text-decoration: none;
+  color: #000; }

@@ -1,0 +1,173 @@
+@charset "UTF-8";
+* {
+  padding: 0;
+  margin: 0;
+  list-style: none; }
+
+body, html {
+  height: 100%;
+  width: 100%; }
+
+#loginPage .container-fluid {
+  padding: 0;
+  height: 100%;
+  background: url("../images/bg.png") no-repeat;
+  background-size: cover; }
+  #loginPage .container-fluid .overwrap {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3); }
+    #loginPage .container-fluid .overwrap .login {
+      width: 350px;
+      position: absolute;
+      background: rgba(3, 56, 81, 0.4);
+      border-radius: 5px;
+      padding: 20px;
+      margin: auto;
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      height: 213px; }
+      #loginPage .container-fluid .overwrap .login .checkbox {
+        text-align: right; }
+      #loginPage .container-fluid .overwrap .login .btn {
+        margin: 15px 0;
+        border-radius: 3px; }
+
+#dashboard nav {
+  margin-bottom: 0; }
+  #dashboard nav .navbar-header a {
+    font-family: '华文细黑'; }
+
+#dashboard .container-fluid {
+  height: 100%; }
+  #dashboard .container-fluid .row {
+    height: inherit; }
+
+#dashboard .sidebar {
+  position: fixed;
+  height: 100%;
+  background: #033851;
+  padding-top: 70px;
+  padding-left: 0;
+  padding-right: 0;
+  box-sizing: border-box; }
+  #dashboard .sidebar .list-group {
+    font-family: '华文细黑'; }
+    #dashboard .sidebar .list-group li a {
+      padding: 15px;
+      color: #fff;
+      display: block; }
+      #dashboard .sidebar .list-group li a i {
+        margin-right: 10px; }
+    #dashboard .sidebar .list-group li i {
+      color: #fff;
+      font-size: 20px;
+      vertical-align: middle; }
+    #dashboard .sidebar .list-group li.active {
+      background: rgba(0, 0, 0, 0.2); }
+    #dashboard .sidebar .list-group li:hover {
+      background: rgba(0, 0, 0, 0.2); }
+
+#dashboard .mainSection {
+  padding-top: 70px;
+  margin-left: 16.66666667%; }
+  #dashboard .mainSection .table td {
+    vertical-align: middle;
+    font-size: 13px; }
+    #dashboard .mainSection .table td:last-child {
+      text-align: right; }
+  #dashboard .mainSection .table thead tr th {
+    font-family: "华文细黑"; }
+    #dashboard .mainSection .table thead tr th span {
+      display: block;
+      font-family: "华文细黑"; }
+      #dashboard .mainSection .table thead tr th span:after {
+        content: '';
+        background: url(../images/order.png) no-repeat;
+        display: inline-block;
+        background-size: 100%;
+        width: 15px;
+        height: 15px;
+        vertical-align: middle;
+        margin-left: 2px; }
+  #dashboard .mainSection .table .surplus b {
+    font-family: impact;
+    font-size: 20px;
+    font-weight: normal;
+    vertical-align: middle; }
+  #dashboard .mainSection .table .surplus.enough b {
+    color: #0c6e02; }
+  #dashboard .mainSection .table .surplus.urgent {
+    color: #de0000; }
+  #dashboard .mainSection .table .surplus.normal {
+    color: #ffcc00; }
+  #dashboard .mainSection #quickSearch .form-group label {
+    line-height: 34px;
+    padding: 0;
+    font-family: "华文细黑"; }
+  #dashboard .mainSection #quickSearch .form-group div.col-md-9 {
+    padding-left: 0; }
+  #dashboard .mainSection.orderContent .thumbnail .caption li span:first-child {
+    font-weight: bold; }
+  #dashboard .mainSection #tableCont .designDrawingList {
+    margin-top: 10px; }
+    #dashboard .mainSection #tableCont .designDrawingList:after {
+      clear: both;
+      display: block;
+      content: ""; }
+    #dashboard .mainSection #tableCont .designDrawingList .row {
+      position: relative; }
+      #dashboard .mainSection #tableCont .designDrawingList .row .col-md-4 {
+        position: static; }
+        #dashboard .mainSection #tableCont .designDrawingList .row .col-md-4 img {
+          margin: 10px 0; }
+        #dashboard .mainSection #tableCont .designDrawingList .row .col-md-4 .btn {
+          position: absolute; }
+          #dashboard .mainSection #tableCont .designDrawingList .row .col-md-4 .btn.setAsFinal {
+            transform: translateY(-50%);
+            top: 50%;
+            right: 15px; }
+          #dashboard .mainSection #tableCont .designDrawingList .row .col-md-4 .btn.modify {
+            transform: translateY(-50%);
+            top: 50%;
+            right: 110px; }
+      #dashboard .mainSection #tableCont .designDrawingList .row p span {
+        display: inline-block;
+        padding-right: 20px; }
+      #dashboard .mainSection #tableCont .designDrawingList .row .fileList a {
+        display: inline-block;
+        padding-right: 10px;
+        text-decoration: underline; }
+      #dashboard .mainSection #tableCont .designDrawingList .row.col-md-6 {
+        padding: 0;
+        margin: 0px; }
+        #dashboard .mainSection #tableCont .designDrawingList .row.col-md-6 .col-md-4, #dashboard .mainSection #tableCont .designDrawingList .row.col-md-6 .col-md-8 {
+          position: relative;
+          z-index: 1; }
+        #dashboard .mainSection #tableCont .designDrawingList .row.col-md-6 .operationBox {
+          display: none;
+          width: 100%;
+          min-height: 166px;
+          background: rgba(0, 0, 0, 0.3);
+          z-index: 10;
+          position: relative; }
+          #dashboard .mainSection #tableCont .designDrawingList .row.col-md-6 .operationBox > div {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%); }
+        #dashboard .mainSection #tableCont .designDrawingList .row.col-md-6:hover .operationBox {
+          display: block; }
+    #dashboard .mainSection #tableCont .designDrawingList .well > div span {
+      color: #333; }
+      #dashboard .mainSection #tableCont .designDrawingList .well > div span:after {
+        content: "|";
+        margin: 0 10px; }
+      #dashboard .mainSection #tableCont .designDrawingList .well > div span:last-child:after {
+        content: ''; }
+    #dashboard .mainSection #tableCont .designDrawingList .well > div input::-webkit-input-placeholder {
+      color: #ddd;
+      font-size: 12px; }
