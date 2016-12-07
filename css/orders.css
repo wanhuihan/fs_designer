@@ -70,6 +70,18 @@
     .report_tab_listtwo > div > div > div > input {
       margin-left: 20px; }
 
+.report_page_four table {
+  width: 80%;
+  margin: 0 auto; }
+  .report_page_four table .tabletitle {
+    font-size: 20px;
+    text-align: center; }
+  .report_page_four table .trtitle {
+    font-size: 16px;
+    text-align: center; }
+  .report_page_four table .leftmenu {
+    width: 2%; }
+
 /* material bill  物料清单 */
 /* design drawing 设计图 */
 /* project amount 工程量 */
