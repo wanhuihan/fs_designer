@@ -139,7 +139,14 @@
 }
 .report_tab_listtwo{
 	margin:60px 170px 0 160px;
-	& > div >div{
+	&  h3{
+		padding-bottom:20px;
+		color:#169BD5;
+		font-size:16px;
+		font-weight:700;
+		border-bottom:2px solid #eee;
+	}
+	& > div > div{
 		margin-bottom:20px;
 		padding-bottom:20px;
 		border-bottom:2px solid #eee;
