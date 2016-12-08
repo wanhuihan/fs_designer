@@ -90,6 +90,26 @@
 
 /* material bill  物料清单 */
 /* design drawing 设计图 */
+.blueprints {
+  padding-top: 50px;
+  width: 88%;
+  margin: 0 auto; }
+  .blueprints > div {
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #eee; }
+    .blueprints > div h3 {
+      font-size: 18px;
+      color: #333; }
+    .blueprints > div > div > div {
+      margin-bottom: 20px; }
+  .blueprints button:nth-child(1) {
+    width: 30%; }
+  .blueprints button:nth-child(2) {
+    width: 50%; }
+  .blueprints .alreadyend {
+    color: #999; }
+
 /* project amount 工程量 */
 #amount {
   position: relative; }

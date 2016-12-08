@@ -189,7 +189,35 @@
 
 /* design drawing 设计图 */
 
-// 
+
+.blueprints{
+	padding-top:50px;
+	width:88%;
+	margin:0 auto;
+	& > div{
+		padding-bottom:20px;
+		margin-bottom:20px;
+		border-bottom:2px solid #eee;
+		h3{
+			font-size:18px;
+			color:#333;
+		}
+		& > div >div{
+			margin-bottom:20px;
+		}
+	}
+	& button:nth-child(1){
+		width:30%;
+	}
+	& button:nth-child(2){
+		width:50%;
+	}
+	.alreadyend{
+		color:#999;
+	}
+
+}
+
 
 
 /* project amount 工程量 */
