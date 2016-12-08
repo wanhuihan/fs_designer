@@ -2,6 +2,12 @@
 /* -------------
     # 工程量
 --------------- */
+/* public style */
+.btn_group button {
+  background: #fff;
+  border: 1px solid;
+  padding: 5px 15px; }
+
 /* order details - 订单详情 */
 /* measuring report 量房报告 */
 .report_tab_stepone {
@@ -85,3 +91,55 @@
 /* material bill  物料清单 */
 /* design drawing 设计图 */
 /* project amount 工程量 */
+#amount {
+  position: relative; }
+  #amount .designer_list_head, #amount .designer_list_content {
+    margin: 0; }
+    #amount .designer_list_head li, #amount .designer_list_content li {
+      padding: 5px 15px; }
+    #amount .designer_list_head span, #amount .designer_list_content span {
+      display: inline-block;
+      padding: 5px 15px; }
+    #amount .designer_list_head .designer_list_num, #amount .designer_list_content .designer_list_num {
+      width: 5%; }
+    #amount .designer_list_head .designer_list_name, #amount .designer_list_content .designer_list_name {
+      width: 20%; }
+    #amount .designer_list_head .designer_list_description, #amount .designer_list_content .designer_list_description {
+      width: 30%;
+      vertical-align: middle; }
+    #amount .designer_list_head .designer_list_position, #amount .designer_list_content .designer_list_position {
+      width: 10%; }
+    #amount .designer_list_head .designer_list_unit, #amount .designer_list_content .designer_list_unit {
+      width: 10%;
+      text-align: center; }
+    #amount .designer_list_head .designer_list_amount, #amount .designer_list_content .designer_list_amount {
+      width: 20%; }
+    #amount .designer_list_head:after, #amount .designer_list_content:after {
+      clear: both;
+      content: "";
+      display: block; }
+  #amount .designer_list_head {
+    background: #eee;
+    margin-top: 15px; }
+  #amount .designer_list_content li {
+    padding: 0; }
+    #amount .designer_list_content li span:last-child:after {
+      content: "";
+      display: block;
+      clear: both; }
+  #amount .designer_list_content ul li {
+    float: none; }
+    #amount .designer_list_content ul li span.designer_list_name {
+      text-align: right; }
+      #amount .designer_list_content ul li span.designer_list_name img {
+        display: inline-block; }
+    #amount .designer_list_content ul li ul li .designer_list_description {
+      padding-left: 50px; }
+  #amount .btn_group {
+    position: fixed;
+    width: 100%;
+    left: 0px;
+    bottom: 0;
+    padding: 15px 0;
+    text-align: center;
+    background: #eee; }

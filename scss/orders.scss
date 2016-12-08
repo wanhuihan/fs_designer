@@ -72,7 +72,15 @@
 // 	color: #000;
 // }
 
+/* public style */
 
+.btn_group {
+	button {
+		background: #fff;
+		border:1px solid;
+		padding: 5px 15px;
+	} 
+}
 /* order details - 订单详情 */
 
 // 
@@ -183,5 +191,108 @@
 
 // 
 
+
 /* project amount 工程量 */
 
+#amount {
+	
+	position: relative;
+	.designer_list_head, .designer_list_content {
+		margin: 0;
+		li {
+			// float: left;
+			padding: 5px 15px;
+		}
+		span {
+			display: inline-block;
+			// float: left;
+
+			padding: 5px 15px;
+		}
+		.designer_list_num {
+			width: 5%;
+		}
+		.designer_list_name {
+			width: 20%;
+		}
+		.designer_list_description {
+			width: 30%;
+			vertical-align: middle;
+		}
+		.designer_list_position {
+			width: 10%;
+		}
+		.designer_list_unit {
+			width: 10%;
+			text-align: center;
+		}
+		.designer_list_amount {
+			width: 20%;
+		}
+
+		&:after {
+			clear: both;
+			content: "";
+			display: block;
+		}
+	}
+	.designer_list_head {
+		background: #eee;
+		margin-top: 15px;
+	}
+
+	.designer_list_content {
+		li {
+			padding: 0;
+			span:last-child {
+				&:after {
+					content: "";
+					display: block;
+					clear: both;
+				}
+			}
+		}
+		ul {
+			li {
+				float: none;
+				span.designer_list_name {
+					text-align: right;
+					img {
+						display: inline-block;
+					}
+				}
+				ul {
+					li {
+						.designer_list_description {
+							padding-left:50px;
+						}
+					}
+				}
+			}			
+		}
+	}
+
+	.btn_group {
+		position: fixed;
+		width: 100%;
+		left: 0px;
+		bottom: 0;
+		padding: 15px 0;
+		text-align: center;
+		background: #eee;
+		button {
+
+			&.save {
+
+			}
+
+			&.sub {
+
+			}
+
+			&.reset {
+
+			}
+		}
+	}
+}

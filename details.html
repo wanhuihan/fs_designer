@@ -8,15 +8,27 @@
 	<link rel="stylesheet" type="text/css" href="assets/bootstrap/css/bootstrap.min.css">
 
 	<link rel="stylesheet" type="text/css" href="css/style.css">
-	<link rel="stylesheet" type="text/css" href="css/orders.css">
 	<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+
+	<link rel="stylesheet" type="text/css" href="css/orders.css">
+
+	<script type="text/javascript" src="js/lib/angular.js"></script>
+
+	<script type="text/javascript" src="js/app.js"></script>
+
+	<script type="text/javascript" src="js/controller.js"></script>
+
+	<script type="text/javascript" src="js/lib/loading-bar.js"></script>
+	<link rel="stylesheet" 
+	type="text/css"
+	href="css/loading-bar.css" >
 
 	<script type="text/javascript" src="js/jquery.3.1.1.min.js"></script>
 	<script type="text/javascript" src="js/bootstrap.min.js"></script>
 
 </head>
 
-<body id="dashboard">
+<body id="dashboard" ng-app="designer" ng-controller="designer">
 
 	<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
 	  <div class="container-fluid">
@@ -69,7 +81,6 @@
 					</li>
 
 				</ul>
-
 		
 			</div>
 			<div class="col-md-10 mainSection orderContent">
@@ -97,7 +108,7 @@
 					</li>
 
 					<li role="presentation" class="">
-						<a href="#amount" role="tab" id="amount-tab" data-toggle="tab" aria-controls="profile" aria-expanded="false">工程量</a>
+						<a href="#amount" role="tab" id="amount-tab" data-toggle="tab" aria-controls="profile" aria-expanded="false" ng-click="getWorkAmount()" >工程量</a>
 					</li>										
 				</ul>
 
@@ -197,34 +208,34 @@
 									<div class="panel-heading">预约信息</div>
 									<ul class="row panel-body">
 										<li class="col-md-6">
-											<span>合同名称：</span>
-											<span>重庆阳光100E3楼大户型装修</span>
+											<span>预约业主</span>
+											<span>二愣子</span>
 										<li class="col-md-6">
-											<span>联系方式：</span>
+											<span>联系方式</span>
 											<span>13888888888</span>											
 										</li>
 										<li class="col-md-6">
-											<span>合同类型：</span>
-											<span>普通装修合同</span>											
+											<span>建筑面积</span>
+											<span>250m2</span>											
 										</li>
 										<li class="col-md-6">
-											<span>签署日期：</span>
-											<span>2016-03-31</span>											
+											<span>户型</span>
+											<span>三室一厅一卫</span>											
 										</li>																		
 										<li class="col-md-6">
-											<span>签署人：</span>
-											<span>李东</span>											
+											<span>装修预算</span>
+											<span>20-50万</span>											
 										</li>								
 										<li class="col-md-6">
-											<span>合同金额：</span>
-											<span>60,0000   元</span>											
+											<span>房屋地址</span>
+											<span>南山换玉泉营路250</span>											
 										</li>								
 										<li class="col-md-6">
-											<span>备注信息：</span>
+											<span>备注信息</span>
 											<span>请尽快与我联系</span>											
 										</li>								
 										<li class="col-md-6">
-											<span>预约时间：</span>
+											<span>预约时间</span>
 											<span>2016-3-12-13:3:20</span>											
 										</li>																							
 									</ul>								
@@ -238,105 +249,36 @@
 									<div class="panel-heading">预约信息</div>
 									<ul class="row panel-body">
 										<li class="col-md-6">
-											<span>预约业主：</span>
-											<span>重庆阳光100E3楼大户型装修</span>
+											<span>预约业主</span>
+											<span>二愣子</span>
 										<li class="col-md-6">
-											<span>合同编号：</span>
+											<span>联系方式</span>
 											<span>13888888888</span>											
 										</li>
 										<li class="col-md-6">
-											<span>建筑面积：</span>
-											<span>普通装修合同</span>											
+											<span>建筑面积</span>
+											<span>250m2</span>											
 										</li>
 										<li class="col-md-6">
-											<span>签署日期：</span>
-											<span>2016-03-31</span>											
+											<span>户型</span>
+											<span>三室一厅一卫</span>											
 										</li>																		
 										<li class="col-md-6">
-											<span>签署人：</span>
-											<span>李东</span>											
+											<span>装修预算</span>
+											<span>20-50万</span>											
 										</li>								
 										<li class="col-md-6">
-											<span>合同金额：</span>
-											<span>60,0000   元</span>										
+											<span>房屋地址</span>
+											<span>南山换玉泉营路250</span>										
 										</li>								
 										<li class="col-md-6">
-											<span>备注信息：</span>
+											<span>备注信息</span>
 											<span>请尽快与我联系</span>			
 										</li>								
 										<li class="col-md-6">
-											<span>预约时间：</span>
+											<span>预约时间</span>
 											<span>2016-3-12-13:3:20</span>		
 										</li>												
-									</ul>								
-									
-								</div>
-							</div>
-
-						</div>
-						<div class="row">
-							
-							<div class="col-md-6">
-								<div class="panel panel-default">
-									
-									<div class="panel-heading">合同信息</div>
-									<ul class="row panel-body">
-										<li class="col-md-6">
-											<span>预约业主：</span>
-											<span>二愣子</span>
-										<li class="col-md-6">
-											<span>合同编号：</span>
-											<span>BJWEIRUF20160722</span>											
-										</li>
-										<li class="col-md-6">
-											<span>建筑面积：</span>
-											<span>250m2</span>											
-										</li>
-										<li class="col-md-6">
-											<span>户型：</span>
-											<span>三室一厅一卫</span>											
-										</li>																		
-										<li class="col-md-6">
-											<span>装修预算：</span>
-											<span>20-50万</span>											
-										</li>								
-										<li class="col-md-6">
-											<span>房屋地址：</span>
-											<span>南山换玉泉营路250</span>											
-										</li>																												
-									</ul>								
-									
-								</div>
-							</div>
-
-							<div class="col-md-6">
-								<div class="panel panel-default">
-									
-									<div class="panel-heading">合同信息</div>
-									<ul class="row panel-body">
-										<li class="col-md-6">
-											<span>合同名称：</span>
-											<span>二愣子</span>
-										<li class="col-md-6">
-											<span>联系方式：</span>
-											<span>BJWEIRUF20160722</span>											
-										</li>
-										<li class="col-md-6">
-											<span>合同类型：</span>
-											<span>250m2</span>											
-										</li>
-										<li class="col-md-6">
-											<span>户型：</span>
-											<span>三室一厅一卫</span>											
-										</li>																		
-										<li class="col-md-6">
-											<span>装修预算：</span>
-											<span>20-50万</span>											
-										</li>								
-										<li class="col-md-6">
-											<span>房屋地址：</span>
-											<span>南山换玉泉营路250</span>										
-										</li>														
 									</ul>								
 									
 								</div>
@@ -1944,18 +1886,115 @@
 						</div>
 
 					</div>
-
-
 					<div role="tabpanel" class="tab-pane fade" id="bill" aria-labelledby="bill-tab">
-					2
+2
 					</div>
 
 					<div role="tabpanel" class="tab-pane fade" id="drawing" aria-labelledby="drawing-tab">
-					1
+1
 					</div>
 
-					<div role="tabpanel" class="tab-pane fade" id="amount" aria-labelledby="amount-tab">
-					1
+					<div role="tabpanel" class="tab-pane fade" id="amount" aria-labelledby="amount-tab" ng-app="designer" ng-controller="designer">
+						<form name="workAmount">
+							<ul class="designer_list_head">
+								<li>
+								<span class="designer_list_num">
+									序号
+								</span>
+								<span class="designer_list_name">
+									发单工程名称
+								</span>
+								<span class="designer_list_description">
+									工程项目内容描述
+								</span>
+
+								<span class="designer_list_position">部位</span>
+
+								<span class="designer_list_unit">单位</span>
+
+								<span class="designer_list_amount">工程量</span>
+
+								</li>
+							</ul>
+
+							<ul class="designer_list_content" id="designer_list_content">
+								<li ng-repeat="item in data">
+									<span class="designer_list_num">
+										{{item.seq}}
+										
+									</span>
+
+									<span class="designer_list_name">{{item.projectName}}</span>
+
+									<span class="designer_list_description">{{item.constructionDescription}}</span>
+
+									<span class="designer_list_position">&nbsp;</span>
+
+									<span class="designer_list_unit">{{item.unit}}</span>
+
+									<span class="designer_list_amount">
+										<input type="text" name="workLoad" value="{{item.engineeringQuantity}}">
+										<input type="hidden" name="level1" value="{{item.hasLevel1}}" >
+										<input type="hidden" name="collectId" value="{{item.collectId}}" >
+									</span>
+
+									
+
+									<ul ng-if="item.hasDetail" class="designer_list_content">
+										<li ng-repeat="i in item.detailsList">
+											<span class="designer_list_num">
+												{{i.seq}} 
+											</span>
+
+											<span class="designer_list_name">{{i.projectName}} </span>
+
+											<span class="designer_list_description">
+											<img src="images/level-down.png">{{i.constructionDescription}}</span>
+
+											<span class="designer_list_position">&nbsp;</span>
+
+											<span class="designer_list_unit">{{i.unit}}</span>
+
+											<span class="designer_list_amount">
+												<input type="text" name="workLoad" value="{{i.engineeringQuantity}}">
+												<input type="hidden" name="level1" value="{{i.hasLevel1}}" >
+												<input type="hidden" name="collectId" value="{{i.collectDetailsId}}" >												
+											</span>	
+
+											<ul ng-if="i.hasDetail" class="designer_list_content">	
+													<li  ng-repeat="b in i.subList">
+														<span class="designer_list_num">
+															{{b.seq}}
+														</span>
+
+														<span class="designer_list_name">{{b.projectName}} </span>
+
+														<span class="designer_list_description">
+														<img src="images/level-down.png">{{b.constructionDescription}}</span>
+
+														<span class="designer_list_position">&nbsp;</span>
+
+														<span class="designer_list_unit">{{b.unit}}</span>
+
+														<span class="designer_list_amount">
+															<input type="text" name="workLoad" value="{{b.engineeringQuantity}}">
+															<input type="hidden" name="level1" value="{{b.hasLevel1}}" >
+															<input type="hidden" name="collectId" value="{{b.collectDetailsId}}" >															
+														</span>														
+													</li>
+											</ul>				
+										</li>
+									</ul>
+			
+								</li>
+							</ul>
+						</form>
+						<div class="btn_group">
+							<button ng-click="saveWorkAmount()"> 保存</button>
+							<button>提交</button>
+							<button>清空</button>
+						</div>
+
 					</div>
 
 
@@ -1967,66 +2006,5 @@
 
 	</div>
 
-	<script type="text/javascript">
-		var provincearr=['所有','北京','上海','山东','河北','河南']
-		var cityarr=[
-			['请选择'],
-			['北京'],
-			['上海'],
-			['济南','青岛','烟台','威海','德州'],
-			['石家庄','唐山','秦皇岛','邯郸','邢台'],
-			['郑州','濮阳','南阳','洛阳','周口'],
-		]
-		var districtarr=[
-			[['请选择 ']],
-			[['海淀区','昌平区','朝阳区','丰台区','大兴区']],
-			[['徐汇区','杨浦区','青浦区','松江区']],
-			[	
-				['章丘','长清区','槐荫区','天桥区'],
-				['平度市','崂山区','即墨市','胶州市'],
-				['文登区','荣成市','乳山市','海阳市'],
-				['莱山区','福山区','牟平区'],
-				['陵城区','临邑县','宁津']
-			],
-			[
-				['正定县','栾城区','赵县','灵寿县'],
-				['路北区','路南区','古冶区','开平区'],
-				['北戴河区','海港区','山海关区'],
-				['邯山','丛台','复兴'],
-				['沙河市','邢台县',' 临城县']
-			],
-			[
-				['金水区','二七区','中原区','巩义市'],
-				['平度市','崂山区','即墨市','胶州市'],
-				['莱山区','福山区','牟平区'],
-				['文登区','荣成市','乳山市','海阳市']
-			]
-		];
-
-
-		var $myprovince=document.getElementById('first_level');
-			var $mycity=document.getElementById('second_level');
-			var $mydis=document.getElementById('third_level');
-			
-			function newcity(_arr){
-				var str="";
-				for(var i=0;i<_arr.length;i++){
-					str=str+"<option value='"+i+"'>"+_arr[i]+"</option>"
-				}
-				return str;
-			}
-			$myprovince.innerHTML=newcity(provincearr);
-			$myprovince.onchange=function(){
-				// console.log(this.value);
-				$mycity.innerHTML=newcity(cityarr[this.value]);
-				$mydis.innerHTML=newcity(districtarr[this.value][0]);
-			}
-			
-			$mycity.onchange=function(){
-				// console.log(this.value);
-				$mydis.innerHTML=newcity(districtarr[$myprovince.value][this.value]);
-			}
-
-</script>
 </body>
 </html>
