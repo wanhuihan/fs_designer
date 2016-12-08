@@ -10,12 +10,25 @@
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
 
+	<link rel="stylesheet" type="text/css" href="css/orders.css">
+
+	<script type="text/javascript" src="js/lib/angular.js"></script>
+
+	<script type="text/javascript" src="js/app.js"></script>
+
+	<script type="text/javascript" src="js/controller.js"></script>
+
+	<script type="text/javascript" src="js/lib/loading-bar.js"></script>
+	<link rel="stylesheet" 
+	type="text/css"
+	href="css/loading-bar.css" >
+
 	<script type="text/javascript" src="js/jquery.3.1.1.min.js"></script>
 	<script type="text/javascript" src="js/bootstrap.min.js"></script>
 
 </head>
 
-<body id="dashboard">
+<body id="dashboard" ng-app="designer" ng-controller="designer">
 
 	<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
 	  <div class="container-fluid">
@@ -68,7 +81,6 @@
 					</li>
 
 				</ul>
-
 		
 			</div>
 			<div class="col-md-10 mainSection orderContent">
@@ -96,7 +108,7 @@
 					</li>
 
 					<li role="presentation" class="">
-						<a href="#amount" role="tab" id="amount-tab" data-toggle="tab" aria-controls="profile" aria-expanded="false">工程量</a>
+						<a href="#amount" role="tab" id="amount-tab" data-toggle="tab" aria-controls="profile" aria-expanded="false" ng-click="getWorkAmount()" >工程量</a>
 					</li>										
 				</ul>
 
@@ -205,8 +217,107 @@
 1
 					</div>
 
-					<div role="tabpanel" class="tab-pane fade" id="amount" aria-labelledby="amount-tab">
-1
+					<div role="tabpanel" class="tab-pane fade" id="amount" aria-labelledby="amount-tab" ng-app="designer" ng-controller="designer">
+						<form name="workAmount">
+							<ul class="designer_list_head">
+								<li>
+								<span class="designer_list_num">
+									序号
+								</span>
+								<span class="designer_list_name">
+									发单工程名称
+								</span>
+								<span class="designer_list_description">
+									工程项目内容描述
+								</span>
+
+								<span class="designer_list_position">部位</span>
+
+								<span class="designer_list_unit">单位</span>
+
+								<span class="designer_list_amount">工程量</span>
+
+								</li>
+							</ul>
+
+							<ul class="designer_list_content" id="designer_list_content">
+								<li ng-repeat="item in data">
+									<span class="designer_list_num">
+										{{item.seq}}
+										
+									</span>
+
+									<span class="designer_list_name">{{item.projectName}}</span>
+
+									<span class="designer_list_description">{{item.constructionDescription}}</span>
+
+									<span class="designer_list_position">&nbsp;</span>
+
+									<span class="designer_list_unit">{{item.unit}}</span>
+
+									<span class="designer_list_amount">
+										<input type="text" name="workLoad" value="{{item.engineeringQuantity}}">
+										<input type="hidden" name="level1" value="{{item.hasLevel1}}" >
+										<input type="hidden" name="collectId" value="{{item.collectId}}" >
+									</span>
+
+									
+
+									<ul ng-if="item.hasDetail" class="designer_list_content">
+										<li ng-repeat="i in item.detailsList">
+											<span class="designer_list_num">
+												{{i.seq}} 
+											</span>
+
+											<span class="designer_list_name">{{i.projectName}} </span>
+
+											<span class="designer_list_description">
+											<img src="images/level-down.png">{{i.constructionDescription}}</span>
+
+											<span class="designer_list_position">&nbsp;</span>
+
+											<span class="designer_list_unit">{{i.unit}}</span>
+
+											<span class="designer_list_amount">
+												<input type="text" name="workLoad" value="{{i.engineeringQuantity}}">
+												<input type="hidden" name="level1" value="{{i.hasLevel1}}" >
+												<input type="hidden" name="collectId" value="{{i.collectDetailsId}}" >												
+											</span>	
+
+											<ul ng-if="i.hasDetail" class="designer_list_content">	
+													<li  ng-repeat="b in i.subList">
+														<span class="designer_list_num">
+															{{b.seq}}
+														</span>
+
+														<span class="designer_list_name">{{b.projectName}} </span>
+
+														<span class="designer_list_description">
+														<img src="images/level-down.png">{{b.constructionDescription}}</span>
+
+														<span class="designer_list_position">&nbsp;</span>
+
+														<span class="designer_list_unit">{{b.unit}}</span>
+
+														<span class="designer_list_amount">
+															<input type="text" name="workLoad" value="{{b.engineeringQuantity}}">
+															<input type="hidden" name="level1" value="{{b.hasLevel1}}" >
+															<input type="hidden" name="collectId" value="{{b.collectDetailsId}}" >															
+														</span>														
+													</li>
+											</ul>				
+										</li>
+									</ul>
+			
+								</li>
+							</ul>
+						</form>
+						<div class="btn_group">
+							<button ng-click="saveWorkAmount()"> 保存</button>
+							<button>提交</button>
+							<button>清空</button>
+						</div>
+
 					</div>
 
 
