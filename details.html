@@ -431,15 +431,19 @@
 								<div class="row">
 									<div class="col-md-12">					    
 									      	<p>9.请填写该房屋具体地址：<span>*</span></p>
-									      	<span>选择省份</span>
-											<select id="first">
-											</select>
-											<span>选择城市</span>
-											<select id="second">
-											</select>
-											<span>选择县区</span>
-											<select id="third">
-											</select>
+									      	<p>
+												请选择省份：
+												<select name="" id="first_level">
+												</select>
+												请选择城市：
+												<select name="" id="second_level">
+													<option value="0">请选择</option>
+												</select>
+												请选择县/区：
+												<select name="" id="third_level">
+													<option value="0">请选择</option>
+												</select>	
+											</p>
 									      <input type="text" placeholder="详细地址">
 									</div>
 								</div>
@@ -1964,43 +1968,65 @@
 	</div>
 
 	<script type="text/javascript">
-		var $first=document.getElementById('first');
-		var $second=document.getElementById('second');
-		var $third=document.getElementById('third');
-		var arr1=['所有','山东','河南'];
-		var arr2=[	['选择'],
-					['选择','日照','临沂'],['选择','郑州','洛阳']
-				 ];
-		var arr3=[
-					[['所有']],
-					[	['选择'],
-						['选择','岚山','五莲'],
-						['选择','兰山区','河东区'] 
-					],
-					[	
-						['选择'],
-						['选择','上街','中牟'],
-						['选择','孟津', '关林']
-					],
-				];
+		var provincearr=['所有','北京','上海','山东','河北','河南']
+		var cityarr=[
+			['请选择'],
+			['北京'],
+			['上海'],
+			['济南','青岛','烟台','威海','德州'],
+			['石家庄','唐山','秦皇岛','邯郸','邢台'],
+			['郑州','濮阳','南阳','洛阳','周口'],
+		]
+		var districtarr=[
+			[['请选择 ']],
+			[['海淀区','昌平区','朝阳区','丰台区','大兴区']],
+			[['徐汇区','杨浦区','青浦区','松江区']],
+			[	
+				['章丘','长清区','槐荫区','天桥区'],
+				['平度市','崂山区','即墨市','胶州市'],
+				['文登区','荣成市','乳山市','海阳市'],
+				['莱山区','福山区','牟平区'],
+				['陵城区','临邑县','宁津']
+			],
+			[
+				['正定县','栾城区','赵县','灵寿县'],
+				['路北区','路南区','古冶区','开平区'],
+				['北戴河区','海港区','山海关区'],
+				['邯山','丛台','复兴'],
+				['沙河市','邢台县',' 临城县']
+			],
+			[
+				['金水区','二七区','中原区','巩义市'],
+				['平度市','崂山区','即墨市','胶州市'],
+				['莱山区','福山区','牟平区'],
+				['文登区','荣成市','乳山市','海阳市']
+			]
+		];
 
 
-		function changecity(arr){
-			var str="";
-			for(var i=0;i<arr.length;i++){
-				str=str+"<option value='" +i+ "'>"+arr[i]+"</option>";
+		var $myprovince=document.getElementById('first_level');
+			var $mycity=document.getElementById('second_level');
+			var $mydis=document.getElementById('third_level');
+			
+			function newcity(_arr){
+				var str="";
+				for(var i=0;i<_arr.length;i++){
+					str=str+"<option value='"+i+"'>"+_arr[i]+"</option>"
+				}
+				return str;
 			}
-			return str;
-		}
-		$first.innerHTML=changecity(arr1);
+			$myprovince.innerHTML=newcity(provincearr);
+			$myprovince.onchange=function(){
+				// console.log(this.value);
+				$mycity.innerHTML=newcity(cityarr[this.value]);
+				$mydis.innerHTML=newcity(districtarr[this.value][0]);
+			}
+			
+			$mycity.onchange=function(){
+				// console.log(this.value);
+				$mydis.innerHTML=newcity(districtarr[$myprovince.value][this.value]);
+			}
 
-		$first.onchange=function(){
-			$second.innerHTML=changecity(arr2[this.value]);
-		}
-		$second.onchange=function(){
-
-			$third.innerHTML=changecity(arr3[$first.value][this.value]);
-		}
 </script>
 </body>
 </html>
