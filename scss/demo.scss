@@ -1,12 +1,13 @@
 // 
 
-*,dl, dt,dd {
+*,dl, dt,dd, ul, li {
 	text-decoration: none;
 	font-size: 13px;
 	color: #000;
 	margin: 0;
 	padding: 0;
 	font-family: arial;
+	list-style: none;
 }
 
 /*--------------
@@ -185,7 +186,35 @@
 	}
 
 	.order_detail_info {
+		width: 1000px;
+		float: left;
 
+		.row {
+			&> .col-md-6 {
+				width: 50%;
+				float: left;
+			}
+
+			&:after {
+				clear: both;
+				content: "";
+				display: block;
+			}
+			.panel {
+				border: 1px solid;
+				padding: 10px;
+				margin: 0 10px 10px;
+			}
+			.panel-heading {
+				font-weight: bold;
+				line-height: 30px;
+			}
+		}
+		.row:last-child {
+			.col-md-6 {
+
+			}
+		}
 	}
 	
 	&:after {

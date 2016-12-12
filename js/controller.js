@@ -5,9 +5,7 @@
 */
 
 
-// app.controller("workamount", function($scope, $http, $location) {
 
-// })
 
 // app.controller("designer", function($scope, $http) {
 
@@ -85,9 +83,6 @@
 
 // })
 
-/*
- * 新添加的
-*/
 
 app.controller("orders", function($http, $scope) {
 
@@ -101,48 +96,6 @@ app.controller("orders", function($http, $scope) {
 	})
 
 })
-
-
-
-<<<<<<< HEAD
-=======
-	var id = $location.$$absUrl.indexOf("?")+1;
-
-	id = $location.$$absUrl.substring(id);
-
-	$http({
-		url: 'http://192.168.0.224:8080/decoration_designer/decorationTask/order/view?token=designer_13600136000',
-		method: 'post',
-		data: {
-			decorationTaskId: id
-		},
-
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8' },
-        
-        transformRequest: function(obj) {    
-            var str = [];    
-            for (var p in obj) {    
-                
-                if (typeof obj[p] == 'object' ) {
-                    // console.log(p, JSON.stringify(obj[p]));
-                    str.push(encodeURIComponent(p) + "=" + encodeURIComponent(JSON.stringify(obj[p])))
-                } else {
-                    str.push(encodeURIComponent(p) + "=" + encodeURIComponent(obj[p]));  
-                }                     
-            }    
-            return str.join("&");    
-        },		
-	}).success(function(data) {
-		$scope.data = data.datas;
-
-		console.log($scope.data)
-	})
-
-
-
-})
->>>>>>> 566d82dfa258ce1d01d71a96f8897ddc4d5fcbdd
-
 
 /*-------------------
 	#login page
@@ -253,7 +206,7 @@ app.controller("orderDetails", function($http, $scope, $location) {
 
 	// console.log($location.$$absUrl);
 
-	var orderId = $location.$$url.split("=")[1];
+	$scope.orderId = $location.$$url.split("=")[1];
 
 	// id = $location.$$absUrl.substring(id);
 
@@ -261,7 +214,7 @@ app.controller("orderDetails", function($http, $scope, $location) {
 		url: 'http://192.168.0.224:8080/decoration_designer/decorationTask/order/view?token=designer_13600136000',
 		method: 'post',
 		data: {
-			decorationTaskId: orderId
+			decorationTaskId: $scope.orderId
 		},
 
         headers: { 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8' },
@@ -282,8 +235,20 @@ app.controller("orderDetails", function($http, $scope, $location) {
 	}).success(function(data) {
 		$scope.data = data.datas;
 
-		// console.table($scope.data)
+		// console.log($scope.data)
 	})
+
+})
+
+
+/*----------------------------
+	# project workload  工程量
+-----------------------------*/
+
+app.controller("workLoad", function($scope, $http, $location) {
+
+	console.log(123);
+	$scope.data ="";
 
 })
 

@@ -87,4 +87,23 @@ app.config(function($stateProvider, $urlRouterProvider) {
         }
     })
 
+    // 工程量
+    $stateProvider.state("dashboard.orders.workload", {
+        url: '/workload?id',
+        resolve: {
+
+        },
+
+        views: {
+            "mainBody@": {
+                templateUrl: 'templates/workLoad.html',
+                controller: 'workLoad'
+            },
+            // 'sideBar': {
+            //     // templateUrl: 'templates/sideBar.html',
+            //     template: ''
+            // },            
+        }
+    })
+
 })
