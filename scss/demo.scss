@@ -9,6 +9,27 @@
 }
 // home page
 
+/*--------------
+	#button style 
+ ---------------*/
+.btn {
+	border:1px solid #000;
+	padding: 10px 20px;
+	box-sizing: border-box;
+	font-size: 14px;
+}
+
+.btn_primary {
+	background: #000;
+	color: #fff;
+}
+.btn_secondary {
+	background: #fff;
+}
+.btn_thirdary {
+	background: #eee;
+}
+
 
 #home {
 	ul {

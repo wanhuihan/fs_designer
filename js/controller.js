@@ -119,6 +119,7 @@ app.controller("orderdetails", function($http, $scope, $location) {
 		data: {
 			decorationTaskId: id
 		},
+
         headers: { 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8' },
         
         transformRequest: function(obj) {    
@@ -143,6 +144,73 @@ app.controller("orderdetails", function($http, $scope, $location) {
 
 
 })
+
+
+/*-------------------
+	#login page
+---------------------*/
+app.controller("login", function($http, $scope, $location) {
+
+	// console.log(123)
+
+	$scope.data = {
+		user: '',
+		pwd: '',
+		role: '11',
+	}
+
+	$scope.sub = function() {
+
+		// console.log($scope.data);
+
+		$http({
+
+			method: 'post',
+			url: g.host+'/decoration_designer/login/login',
+
+			data: {
+				userName: $scope.data.user,
+				pwd: $scope.data.pwd,
+				roleCode: $scope.data.role
+			},
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8' },
+            // 处理接口的问题，传给后端的参数有问题，需要重新解析成json字符串
+            transformRequest: function(obj) {    
+                var str = [];    
+                for (var p in obj) {    
+                    
+                    if (typeof obj[p] == 'object' ) {
+                        // console.log(p, JSON.stringify(obj[p]));
+                        str.push(encodeURIComponent(p) + "=" + encodeURIComponent(JSON.stringify(obj[p])))
+                    } else {
+                        str.push(encodeURIComponent(p) + "=" + encodeURIComponent(obj[p]));  
+                    }
+                      
+                }    
+                // console.log(str)
+                return str.join("&");    
+            }, 	
+
+		}).success(function(data) {
+
+			if (g.checkData(data)) {
+
+				g.setCookie(data);
+				// $location.path("http://www.baidu.com");
+			}
+
+			// console.log(data);
+
+		}).error(function(data) {
+
+			console.log('error is occured');
+
+		})
+	}
+
+})
+
+
 
 
 /*
