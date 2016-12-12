@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<meta name="viewport" content="width=device-width,initial-scale=1, user-scalable=no">
+
+	<link rel="stylesheet" type="text/css" href="assets/bootstrap/css/bootstrap.min.css">
+
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+
+	<link rel="stylesheet" type="text/css" href="css/account.css">
+
+	<script type="text/javascript" src="js/lib/angular.js"></script>
+
+	<script type="text/javascript" src="js/app.js"></script>
+
+	<script type="text/javascript" src="js/controller.js"></script>
+
+	<script type="text/javascript" src="js/lib/loading-bar.js"></script>
+	<link rel="stylesheet" 
+	type="text/css"
+	href="css/loading-bar.css" >
+
+	<script type="text/javascript" src="js/jquery.3.1.1.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+
+</head>
+
+<body id="dashboard" ng-app="designer" ng-controller="designer">
+
+	<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+	  <div class="container-fluid">
+	    <!-- Brand and toggle get grouped for better mobile display -->
+	    <div class="navbar-header">
+	      <a class="navbar-brand" href="#">生命屋 - 设计平台</a>
+	    </div>
+
+	    <!-- Collect the nav links, forms, and other content for toggling -->
+	    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+	      <ul class="nav navbar-nav navbar-right">
+				<li><a href="#">Link</a></li>
+				<li class="dropdown">
+				<a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <span class="caret"></span></a>
+				<ul class="dropdown-menu" role="menu">
+				<li><a href="#">Action</a></li>
+				<li><a href="#">Another action</a></li>
+				<li><a href="#">Something else here</a></li>
+				<li class="divider"></li>
+				<li><a href="#">Separated link</a></li>
+				</ul>
+				</li>
+	      </ul>
+	    </div><!-- /.navbar-collapse -->
+	  </div><!-- /.container-fluid -->
+	</nav>	
+
+
+	<div class="container-fluid">
+		
+		<div class="row">
+			<div class="col-md-2 sidebar">
+
+				<ul class="list-group ">
+
+					<li class="myOrder ">
+						
+						<a href=""><i class="fa fa-reorder" aria-hidden="true"></i>我的订单</a>
+					</li>
+
+					<li class="myAccount active">
+					
+						<a href="">	<i class="fa fa-user-circle-o" aria-hidden="true"></i>我的账户</a>
+					</li>	
+
+					<li class="myAccount">
+					
+						<a href="">	<i class="fa fa-file-image-o" aria-hidden="true"></i>图库</a>
+					</li>
+
+				</ul>
+		
+			</div>
+			<div class="col-md-10 mainSection orderContent">
+
+				<ol class="breadcrumb">
+					<li ><a href="#">我的账户</a></li>
+					<li class="active">账户详情</li>
+				</ol>
+				<div class="account_details container">
+					<div class="row account_delails_money">
+						<div class="col-md-8">
+							<div class="row">
+								<div class="col-md-2">
+									<h3>账户余额：</h3>
+									<span>500.00元</span>
+								</div>
+								<div class="col-md-3">
+									<p>锁定金额：<span>300</span>元</p>
+									<p>可用金额：<span>200</span>元</p>
+								</div>
+								<div class="col-md-2">
+									<button type="button" class="btn btn-primary">充值</button>
+									<button type="button" class="btn btn-primary">提现</button>
+								</div>
+							
+							
+								<div class="col-md-2">
+									<h3>总收入：</h3>
+									<span>200.00元</span>
+								</div>
+								<div class="col-md-3">
+									<p>惩罚金额：<span>300</span>元</p>
+									<p>收入金额：<span>200</span>元</p>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-2">
+							<p><a href="#" class=""><i  class="fa fa-search"></i>交易查询</a></p>
+							<p><span>交易记录</span><span>收支明细</span></p>
+							<p><span>提现记录</span><span>充值记录</span></p>
+						</div>
+						<div class="col-md-2">
+							<p><a href="#"><i class="fa fa-pencil-square-o"></i>账户管理</a></p>
+							<p><span>账户信息</span><span>实名认证</span></p>
+							<p><span>授权管理</span></p>
+						</div>
+					</div>
+					<div class="row account_delails_list">
+						<p><span>近三个月收支明细</span><span>三个月前收支明细</span></p>
+						<ul>
+							<li>
+								<div class="row">
+									<div class="col-md-2">
+										<span>2017.07.28</span>
+									</div>
+									<div class="col-md-5">
+										<span>中海凯旋门5号楼翻新工程保证金</span>
+									</div>
+									<div class="col-md-2">
+										<span>-100.00</span>
+									</div>
+									<div class="col-md-2">
+										<span>交易成功</span>
+									</div>
+									<div class="col-md-1">
+										<a href="#">详情<i class="fa fa-sort-desc"></i></a>
+									</div>
+								</div>
+							</li>
+							<li>
+								<div class="row">
+									<div class="col-md-2">
+										<span>2017.07.24</span>
+									</div>
+									<div class="col-md-5">
+										<span>重庆国际新城精装修项目收入</span>
+									</div>
+									<div class="col-md-2">
+										<span>+200.00</span>
+									</div>
+									<div class="col-md-2">
+										<span>交易成功</span>
+									</div>
+									<div class="col-md-1">
+										<a href="#">详情<i class="fa fa-sort-desc"></i></a>
+									</div>
+								</div>
+							</li>
+							<li>
+								<div class="row">
+									<div class="col-md-2">
+										<span>2017.07.26</span>
+									</div>
+									<div class="col-md-5">
+										<span>雅居乐御宾府16号楼精装修项目收入</span>
+									</div>
+									<div class="col-md-2">
+										<span>-300.00</span>
+									</div>
+									<div class="col-md-2">
+										<span>交易成功</span>
+									</div>
+									<div class="col-md-1">
+										<a href="#">详情<i class="fa fa-sort-desc"></i></a>
+									</div>
+								</div>
+							</li>
+							<li>
+								<div class="row">
+									<div class="col-md-2">
+										<span>2017.07.12</span>
+									</div>
+									<div class="col-md-5">
+										<span>雅居乐御宾府16号楼精装修项目保证金</span>
+									</div>
+									<div class="col-md-2">
+										<span>-100.00</span>
+									</div>
+									<div class="col-md-2">
+										<span>交易成功</span>
+									</div>
+									<div class="col-md-1">
+										<a href="#">详情<i class="fa fa-sort-desc"></i></a>
+									</div>
+								</div>
+							</li>
+							<li>
+								<div class="row">
+									<div class="col-md-2">
+										<span>2017.07.15</span>
+									</div>
+									<div class="col-md-5">
+										<span>双威理想城24号楼翻新工程收入</span>
+									</div>
+									<div class="col-md-2">
+										<span>-100.00</span>
+									</div>
+									<div class="col-md-2">
+										<span>交易成功</span>
+									</div>
+									<div class="col-md-1">
+										<a href="#">详情<i class="fa fa-sort-desc"></i></a>
+									</div>
+								</div>
+							</li>
+							<li>
+								<div class="row">
+									<div class="col-md-2">
+										<span>2017.07.27</span>
+									</div>
+									<div class="col-md-5">
+										<span>中海凯旋门5号楼翻新工程保证金</span>
+									</div>
+									<div class="col-md-2">
+										<span>+400.00</span>
+									</div>
+									<div class="col-md-2">
+										<span>交易成功</span>
+									</div>
+									<div class="col-md-1">
+										<a href="#">详情<i class="fa fa-sort-desc"></i></a>
+									</div>
+								</div>
+							</li>
+							<li>
+								<div class="row">
+									<div class="col-md-2">
+										<span>2017.07.28</span>
+									</div>
+									<div class="col-md-5">
+										<span>双威理想城24号楼翻新工程收入</span>
+									</div>
+									<div class="col-md-2">
+										<span>-500.00</span>
+									</div>
+									<div class="col-md-2">
+										<span>交易成功</span>
+									</div>
+									<div class="col-md-1">
+										<a href="#">详情<i class="fa fa-sort-desc"></i></a>
+									</div>
+								</div>
+							</li>
+							<li>
+								<div class="row">
+									<div class="col-md-2">
+										<span>2017.07.28</span>
+									</div>
+									<div class="col-md-5">
+										<span>雅居乐御宾府16号楼精装修项目保证金</span>
+									</div>
+									<div class="col-md-2">
+										<span>+300.00</span>
+									</div>
+									<div class="col-md-2">
+										<span>交易成功</span>
+									</div>
+									<div class="col-md-1">
+										<a href="#">详情<i class="fa fa-sort-desc"></i></a>
+									</div>
+								</div>
+							</li>
+							<li>
+								<div class="row">
+									<div class="col-md-2">
+										<span>2017.07.28</span>
+									</div>
+									<div class="col-md-5">
+										<span>中海凯旋门5号楼翻新工程保证金</span>
+									</div>
+									<div class="col-md-2">
+										<span>-200.00</span>
+									</div>
+									<div class="col-md-2">
+										<span>交易成功</span>
+									</div>
+									<div class="col-md-1">
+										<a href="#">详情<i class="fa fa-sort-desc"></i></a>
+									</div>
+								</div>
+							</li>
+							<li>
+								<div class="row">
+									<div class="col-md-2">
+										<span>2017.07.28</span>
+									</div>
+									<div class="col-md-5">
+										<span>雅居乐御宾府16号楼精装修项目收入</span>
+									</div>
+									<div class="col-md-2">
+										<span>+500.00</span>
+									</div>
+									<div class="col-md-2">
+										<span>交易成功</span>
+									</div>
+									<div class="col-md-1">
+										<a href="#">详情<i class="fa fa-sort-desc"></i></a>
+									</div>
+								</div>
+							</li>
+							<li>
+								<div class="row">
+									<div class="col-md-2">
+										<span>2017.07.28</span>
+									</div>
+									<div class="col-md-5">
+										<span>雅居乐御宾府16号楼精装修项目保证金</span>
+									</div>
+									<div class="col-md-2">
+										<span>+100.00</span>
+									</div>
+									<div class="col-md-2">
+										<span>交易成功</span>
+									</div>
+									<div class="col-md-1">
+										<a href="#">详情<i class="fa fa-sort-desc"></i></a>
+									</div>
+								</div>
+							</li>
+							<li>
+								<div class="row">
+									<div class="col-md-2">
+										<span>2017.07.28</span>
+									</div>
+									<div class="col-md-5">
+										<span>中海凯旋门5号楼翻新工程保证金</span>
+									</div>
+									<div class="col-md-2">
+										<span>-300.00</span>
+									</div>
+									<div class="col-md-2">
+										<span>交易成功</span>
+									</div>
+									<div class="col-md-1">
+										<a href="#">详情<i class="fa fa-sort-desc"></i></a>
+									</div>
+								</div>
+							</li>
+							<li>
+								<div class="row">
+									<div class="col-md-2">
+										<span>2017.07.28</span>
+									</div>
+									<div class="col-md-5">
+										<span>雅居乐御宾府16号楼精装修项目收入</span>
+									</div>
+									<div class="col-md-2">
+										<span>-400.00</span>
+									</div>
+									<div class="col-md-2">
+										<span>交易成功</span>
+									</div>
+									<div class="col-md-1">
+										<a href="#">详情<i class="fa fa-sort-desc"></i></a>
+									</div>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+						
+						
+
+
+
+
+
+			</div>
+		</div>
+
+	</div>
+
+</body>
+</html>
