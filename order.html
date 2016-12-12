@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+
+	<script type="text/javascript" src="js/lib/angular.js"></script>
+
+	<script type="text/javascript" src="js/app.js"></script>
+
+	<script type="text/javascript" src="js/controller.js"></script>
+
+	<link rel="stylesheet" type="text/css" href="css/demo.css">
+
+</head>
+<body ng-app="designer">
+
+
+	<div ng-controller="orders" id="orders">
+
+		<ul>
+			<li ng-repeat="item in data">
+				<dl>
+					<dt>业主姓名</dt>
+					<dd>{{item.ownerName}}</dd>
+				</dl>
+				<dl>
+					<dt>地址</dt>
+					<dd>{{item.address}}</dd>
+				</dl>			
+				
+				<dl>
+					<dt>业主电话</dt>
+					<dd>{{item.ownerPhone}}</dd>
+				</dl>	
+				<dl>
+					<dt>实际面积</dt>
+					<dd>{{item.actualArea}}</dd>
+				</dl>
+
+				<dl>
+					<dt>时间</dt>
+					<dd>{{item.contractStartTime | date}}</dd>
+				</dl>
+
+				<a href="orderDetail.html?{{item.decorationTaskId}}">{{item.decorationTaskId}}</a>
+			</li>
+		</ul>
+	</div>
+
+
+</body>
+</html>

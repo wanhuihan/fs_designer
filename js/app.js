@@ -1,5 +1,7 @@
 
-var app = angular.module("designer", ['chieffancypants.loadingBar']);
+// var app = angular.module("designer", ['chieffancypants.loadingBar']);
+
+var app = angular.module("designer", []);
 
 var g = {
 	

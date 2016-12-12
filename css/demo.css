@@ -1,0 +1,38 @@
+*, dl, dt, dd {
+  text-decoration: none;
+  font-size: 13px;
+  color: #000;
+  margin: 0;
+  padding: 0; }
+
+#home ul {
+  margin: 0;
+  padding: 0;
+  list-style: none; }
+  #home ul li {
+    padding: 0 5px;
+    float: left;
+    list-style: none; }
+    #home ul li a {
+      background: #eee;
+      padding: 5px 10px; }
+
+#home dl {
+  list-style: none; }
+
+#orders ul {
+  list-style: none; }
+  #orders ul li {
+    list-style: none;
+    border-bottom: 1px solid #ddd;
+    padding: 5px 10px; }
+    #orders ul li:after {
+      clear: both;
+      display: block;
+      content: ""; }
+
+#orders dl {
+  float: left;
+  width: 150px; }
+  #orders dl dt {
+    font-weight: bold; }

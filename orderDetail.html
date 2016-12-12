@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+		
+	</title>
+	<script type="text/javascript" src="js/lib/angular.js"></script>
+
+	<script type="text/javascript" src="js/app.js"></script>
+
+	<script type="text/javascript" src="js/controller.js"></script>
+
+	<link rel="stylesheet" type="text/css" href="css/demo.css">	
+</head>
+
+<body ng-app="designer">
+
+
+	<div  ng-controller="orderdetails">
+
+		<ul>
+			<li ng-repeat="(key, value) in data">
+				{{key}} => {{value}}
+				{{key.value}}
+			</li>
+		</ul>
+	</div>
+
+
+</body>
+</html>
