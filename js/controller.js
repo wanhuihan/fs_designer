@@ -210,6 +210,33 @@ app.controller("login", function($http, $scope, $location) {
 
 })
 
+/*
+modifyByzhangna
+cont:date 插件
+*/
+	app.controller("providerPurchaseOrder", function($scope, $http, $location) {
+
+
+	jQuery('#datePick').daterangepicker({
+
+	    "autoApply": true,
+	    "linkedCalendars": false,
+	    "startDate": "11/16/2016",
+	    "endDate": "11/22/2016",
+	    "opens": "left",
+
+
+	}, function(start, end, label) {
+
+		console.log(start.format('YYYY-MM-DD'))	
+	  console.log("New date range selected: ' + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD') + ' (predefined range: ' + label + ')");
+	});
+
+
+
+
+})
+
 
 
 
