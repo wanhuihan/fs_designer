@@ -7,9 +7,79 @@
 	</title>
 
 	<script type="text/javascript" src="js/lib/angular.js"></script>
+    <script type="text/javascript" src="js/lib/angular-route.min.js"></script>
+    <script src="js/lib/angular-ui-router.min.js"></script>
+
+
+    <script type="text/javascript" src="js/app.js"></script>
+    <script type="text/javascript" src="js/router.js"></script>
+	<script type="text/javascript" src="js/controller.js"></script>
+
+
+	<script type="text/javascript" src="js/lib/loading-bar.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/loading-bar.css" >
+
+
 	<link rel="stylesheet" type="text/css" href="css/demo.css">
+
+	<link rel="stylesheet" type="text/css" href="css/login.css">
+
+
 </head>
-<body id="home">
+
+	<body ng-app="designer">
+	
+		<div class="login" ng-controller="login">
+			<form name="login" ng-submit="sub()">
+				<fieldset>
+					<label>用户名</label>
+					<input type="text" name="" ng-model="data.user">
+				</fieldset>
+				<fieldset>
+					<label>密码</label>
+					<input type="password" name="" ng-model="data.pwd">
+				</fieldset>
+
+				<fieldset>
+					<label>角色</label>
+					<select ng-model="data.role">
+						<option value="11" selected>
+							建筑设计师
+						</option>
+						<option value="12">
+							给排水设计师
+						</option>
+						<option value="13">
+							电气化设计师
+						</option>
+
+						<option value="14">
+							暖通设计师14
+						</option>
+						<option value="15">
+							量房师
+						</option>
+
+						<option value="16">
+							效果图设计师
+						</option>
+					</select>
+				</fieldset>
+				<fieldset>
+					<p>{{data}}</p>
+					<button class="btn btn_primary">
+						登录
+					</button>
+					<button class="btn btn_secondary">
+						忘记密码
+					</button>					
+				</fieldset>
+			</form>
+		</div>	
+
+	</body>
+
+<!-- <body id="home">
 
 	<div>
 		
@@ -43,5 +113,5 @@
 
 	</div>	
  
-</body>
+</body> -->
 </html>

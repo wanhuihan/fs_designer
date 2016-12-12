@@ -1,0 +1,22 @@
+
+// login page
+
+.login {
+
+	width: 240px;
+	border:1px solid #ddd;
+	position: absolute;
+	// left: 50%;
+	// top: 50%;
+	height: 100px;
+	margin: auto;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	padding: 20px;
+	fieldset {
+		width: 100%;
+		border: 0;
+	}
+}
