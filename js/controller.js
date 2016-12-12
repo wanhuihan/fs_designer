@@ -104,6 +104,44 @@ app.controller("orders", function($http, $scope) {
 
 
 
+<<<<<<< HEAD
+=======
+	var id = $location.$$absUrl.indexOf("?")+1;
+
+	id = $location.$$absUrl.substring(id);
+
+	$http({
+		url: 'http://192.168.0.224:8080/decoration_designer/decorationTask/order/view?token=designer_13600136000',
+		method: 'post',
+		data: {
+			decorationTaskId: id
+		},
+
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8' },
+        
+        transformRequest: function(obj) {    
+            var str = [];    
+            for (var p in obj) {    
+                
+                if (typeof obj[p] == 'object' ) {
+                    // console.log(p, JSON.stringify(obj[p]));
+                    str.push(encodeURIComponent(p) + "=" + encodeURIComponent(JSON.stringify(obj[p])))
+                } else {
+                    str.push(encodeURIComponent(p) + "=" + encodeURIComponent(obj[p]));  
+                }                     
+            }    
+            return str.join("&");    
+        },		
+	}).success(function(data) {
+		$scope.data = data.datas;
+
+		console.log($scope.data)
+	})
+
+
+
+})
+>>>>>>> 566d82dfa258ce1d01d71a96f8897ddc4d5fcbdd
 
 
 /*-------------------
@@ -166,6 +204,33 @@ app.controller("login", function($http, $scope, $location) {
 
 		})
 	}
+
+})
+
+/*
+modifyByzhangna
+cont:date 插件
+*/
+	app.controller("providerPurchaseOrder", function($scope, $http, $location) {
+
+
+	jQuery('#datePick').daterangepicker({
+
+	    "autoApply": true,
+	    "linkedCalendars": false,
+	    "startDate": "11/16/2016",
+	    "endDate": "11/22/2016",
+	    "opens": "left",
+
+
+	}, function(start, end, label) {
+
+		console.log(start.format('YYYY-MM-DD'))	
+	  console.log("New date range selected: ' + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD') + ' (predefined range: ' + label + ')");
+	});
+
+
+
 
 })
 
