@@ -3,6 +3,10 @@
 
 var app = angular.module("designer", ["ui.router", 'angular-loading-bar']);
 
+/*
+ * 设计端cookie fs_designer_token
+ *
+*/
 var g = {
 	
 	// host server
@@ -16,10 +20,13 @@ var g = {
 
 		var now = new Date();
 
-		var exp = now.setTime(now.getTime() + time);
+		now.setTime(now.getTime()+time);
+		// console.log(exp);
+		document.cookie = 'fs_designer_token =' + token + "; expires="+now.toGMTString();
 
-		console.log(exp)
 	},
+
+
 
 	// check the json data from back end
 	checkData: function(data) {

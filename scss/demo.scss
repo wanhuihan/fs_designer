@@ -6,8 +6,8 @@
 	color: #000;
 	margin: 0;
 	padding: 0;
+	font-family: arial;
 }
-// home page
 
 /*--------------
 	#button style 
@@ -31,6 +31,46 @@
 }
 
 
+/* ------------------------------------------ 
+	# header
+--------------------------------------------- */
+.header {
+
+	ul {
+		list-style: none;
+		li {
+			float: left;
+			padding: 5px 10px;
+			a {
+				border:1px solid;
+				padding: 10px 20px;
+				display: block;
+			}
+		}
+		&:after {
+			clear: both;
+			content: "";
+			display: block;
+		}
+	}
+
+} 
+
+/*------------------------------------------ 
+	#sidebar
+ ------------------------------------------*/
+.side_bar {
+	// border: 1px solid #ccc;
+	// width: 200px;
+	// margin: 10px;
+	// padding: 5px;
+	// display: none;
+}
+
+
+
+// home page
+
 #home {
 	ul {
 		margin: 0;
@@ -51,31 +91,107 @@
 	}
 }
 
-#orders {
-	ul {
-		list-style: none;
-		li {
+/* ----------------------------
+	#my orders
+------------------------------ */
+.my_orders {
+
+	padding: 10px;
+	
+	.main_body {
+		width: 1200px;
+		border:1px solid ;
+		float: left;
+		padding: 10px;
+		// smargin-left: 10px;
+		ul {
 			list-style: none;
-			border-bottom: 1px solid #ddd;
-			padding: 5px 10px;
-			&:after {
-				clear: both;
-				display: block;
-				content: "";
+			li {
+				list-style: none;
+				border-bottom: 1px dashed #ddd;
+				padding: 5px 10px;
+				&:after {
+					clear: both;
+					display: block;
+					content: "";
+				}
+			}
+		}
+
+		dl {
+			float: left;
+			width: 170px;
+			// clear: both;
+			dt {
+				// float: left;
+				font-weight: bold;
+			}
+			dd {
+				// float: right;
+			}
+		}	
+		.order_list {
+			
+			li {
+				position: relative;
+				dl {
+					vertical-align: middle;
+				}
+				a {
+					vertical-align: middle;
+					display: block;
+					background: #eee;
+					right: 10px;
+					position: absolute;
+					top: 30%;
+				}
+			}
+		
+		}	
+	}
+	&:after {
+		clear: both;
+		display: block;
+		content: "";
+	}
+}
+
+
+/*--------------------------------
+	#order details page
+ --------------------------------*/
+.order_details {
+	
+	padding: 10px;
+
+	.left_side_bar {
+		float: left;
+		width: 200px;
+		border: 1px solid ;
+		ul {
+			padding: 10px;
+			list-style: none;
+			li {
+				line-height: 30px;
+				a {
+					display: block;
+					padding: 0 10px;
+				}
+				a:hover {
+					background: #eee;
+				}
 			}
 		}
 	}
 
-	dl {
-		float: left;
-		width: 150px;
-		// clear: both;
-		dt {
-			// float: left;
-			font-weight: bold;
-		}
-		dd {
-			// float: right;
-		}
+	.order_detail_info {
+
+	}
+	
+	&:after {
+		content: "";
+		display: block;
+		clear: both;
+
 	}
 }

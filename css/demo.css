@@ -3,7 +3,8 @@
   font-size: 13px;
   color: #000;
   margin: 0;
-  padding: 0; }
+  padding: 0;
+  font-family: arial; }
 
 /*--------------
 	#button style 
@@ -24,6 +25,26 @@
 .btn_thirdary {
   background: #eee; }
 
+/* ------------------------------------------ 
+	# header
+--------------------------------------------- */
+.header ul {
+  list-style: none; }
+  .header ul li {
+    float: left;
+    padding: 5px 10px; }
+    .header ul li a {
+      border: 1px solid;
+      padding: 10px 20px;
+      display: block; }
+  .header ul:after {
+    clear: both;
+    content: "";
+    display: block; }
+
+/*------------------------------------------ 
+	#sidebar
+ ------------------------------------------*/
 #home ul {
   margin: 0;
   padding: 0;
@@ -39,19 +60,67 @@
 #home dl {
   list-style: none; }
 
-#orders ul {
-  list-style: none; }
-  #orders ul li {
-    list-style: none;
-    border-bottom: 1px solid #ddd;
-    padding: 5px 10px; }
-    #orders ul li:after {
-      clear: both;
-      display: block;
-      content: ""; }
+/* ----------------------------
+	#my orders
+------------------------------ */
+.my_orders {
+  padding: 10px; }
+  .my_orders .main_body {
+    width: 1200px;
+    border: 1px solid;
+    float: left;
+    padding: 10px; }
+    .my_orders .main_body ul {
+      list-style: none; }
+      .my_orders .main_body ul li {
+        list-style: none;
+        border-bottom: 1px dashed #ddd;
+        padding: 5px 10px; }
+        .my_orders .main_body ul li:after {
+          clear: both;
+          display: block;
+          content: ""; }
+    .my_orders .main_body dl {
+      float: left;
+      width: 170px; }
+      .my_orders .main_body dl dt {
+        font-weight: bold; }
+    .my_orders .main_body .order_list li {
+      position: relative; }
+      .my_orders .main_body .order_list li dl {
+        vertical-align: middle; }
+      .my_orders .main_body .order_list li a {
+        vertical-align: middle;
+        display: block;
+        background: #eee;
+        right: 10px;
+        position: absolute;
+        top: 30%; }
+  .my_orders:after {
+    clear: both;
+    display: block;
+    content: ""; }
 
-#orders dl {
-  float: left;
-  width: 150px; }
-  #orders dl dt {
-    font-weight: bold; }
+/*--------------------------------
+	#order details page
+ --------------------------------*/
+.order_details {
+  padding: 10px; }
+  .order_details .left_side_bar {
+    float: left;
+    width: 200px;
+    border: 1px solid; }
+    .order_details .left_side_bar ul {
+      padding: 10px;
+      list-style: none; }
+      .order_details .left_side_bar ul li {
+        line-height: 30px; }
+        .order_details .left_side_bar ul li a {
+          display: block;
+          padding: 0 10px; }
+        .order_details .left_side_bar ul li a:hover {
+          background: #eee; }
+  .order_details:after {
+    content: "";
+    display: block;
+    clear: both; }
