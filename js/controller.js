@@ -137,7 +137,7 @@ app.controller("orderdetails", function($http, $scope, $location) {
 	}).success(function(data) {
 		$scope.data = data.datas;
 
-		console.table($scope.data)
+		console.log($scope.data)
 	})
 
 
