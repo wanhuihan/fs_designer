@@ -5,9 +5,7 @@
 */
 
 
-// app.controller("workamount", function($scope, $http, $location) {
 
-// })
 
 // app.controller("designer", function($scope, $http) {
 
@@ -85,13 +83,8 @@
 
 // })
 
-/*
- * 新添加的
-*/
 
 app.controller("orders", function($http, $scope) {
-
-	// console.log(sdf);
 
 	$scope.data  = '';
 
@@ -104,55 +97,12 @@ app.controller("orders", function($http, $scope) {
 
 })
 
-
-app.controller("orderdetails", function($http, $scope, $location) {
-
-	// console.log($location.$$absUrl);
-
-	var id = $location.$$absUrl.indexOf("?")+1;
-
-	id = $location.$$absUrl.substring(id);
-
-	$http({
-		url: 'http://192.168.0.224:8080/decoration_designer/decorationTask/order/view?token=designer_13600136000',
-		method: 'post',
-		data: {
-			decorationTaskId: id
-		},
-
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8' },
-        
-        transformRequest: function(obj) {    
-            var str = [];    
-            for (var p in obj) {    
-                
-                if (typeof obj[p] == 'object' ) {
-                    // console.log(p, JSON.stringify(obj[p]));
-                    str.push(encodeURIComponent(p) + "=" + encodeURIComponent(JSON.stringify(obj[p])))
-                } else {
-                    str.push(encodeURIComponent(p) + "=" + encodeURIComponent(obj[p]));  
-                }                     
-            }    
-            return str.join("&");    
-        },		
-	}).success(function(data) {
-		$scope.data = data.datas;
-
-		console.log($scope.data)
-	})
-
-
-
-})
-
-
 /*-------------------
 	#login page
 ---------------------*/
 app.controller("login", function($http, $scope, $location) {
 
 	// console.log(123)
-
 	$scope.data = {
 		user: '',
 		pwd: '',
@@ -162,7 +112,6 @@ app.controller("login", function($http, $scope, $location) {
 	$scope.sub = function() {
 
 		// console.log($scope.data);
-
 		$http({
 
 			method: 'post',
@@ -196,6 +145,7 @@ app.controller("login", function($http, $scope, $location) {
 			if (g.checkData(data)) {
 
 				g.setCookie(data);
+				$location.path("/dashboard");
 				// $location.path("http://www.baidu.com");
 			}
 
@@ -203,7 +153,7 @@ app.controller("login", function($http, $scope, $location) {
 
 		}).error(function(data) {
 
-			console.log('error is occured');
+			// console.log('error is occured');
 
 		})
 	}
@@ -238,6 +188,69 @@ cont:date 插件
 })
 
 
+/* --------------
+	# dashboard
+-----------------*/
+
+app.controller("dashboard", function($scope, $http) {
+
+	$scope.leftSideBar = false;
+
+})
+
+/* ----------------
+	# order details page
+------------------*/
+
+app.controller("orderDetails", function($http, $scope, $location) {
+
+	// console.log($location.$$absUrl);
+
+	$scope.orderId = $location.$$url.split("=")[1];
+
+	// id = $location.$$absUrl.substring(id);
+
+	$http({
+		url: 'http://192.168.0.224:8080/decoration_designer/decorationTask/order/view?token=designer_13600136000',
+		method: 'post',
+		data: {
+			decorationTaskId: $scope.orderId
+		},
+
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8' },
+        
+        transformRequest: function(obj) {    
+            var str = [];    
+            for (var p in obj) {    
+                
+                if (typeof obj[p] == 'object' ) {
+                    // console.log(p, JSON.stringify(obj[p]));
+                    str.push(encodeURIComponent(p) + "=" + encodeURIComponent(JSON.stringify(obj[p])))
+                } else {
+                    str.push(encodeURIComponent(p) + "=" + encodeURIComponent(obj[p]));  
+                }                     
+            }    
+            return str.join("&");    
+        },		
+	}).success(function(data) {
+		$scope.data = data.datas;
+
+		// console.log($scope.data)
+	})
+
+})
+
+
+/*----------------------------
+	# project workload  工程量
+-----------------------------*/
+
+app.controller("workLoad", function($scope, $http, $location) {
+
+	console.log(123);
+	$scope.data ="";
+
+})
 
 
 /*

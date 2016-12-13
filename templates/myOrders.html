@@ -1,0 +1,33 @@
+<div class="my_orders">
+
+	<div class="main_body">
+		<ul class="order_list">
+			<li ng-repeat="item in data">
+				<dl>
+					<dt>业主姓名</dt>
+					<dd>{{item.ownerName}}</dd>
+				</dl>
+				<dl>
+					<dt>地址</dt>
+					<dd>{{item.address}}</dd>
+				</dl>			
+				
+				<dl>
+					<dt>业主电话</dt>
+					<dd>{{item.ownerPhone}}</dd>
+				</dl>	
+				<dl>
+					<dt>实际面积</dt>
+					<dd>{{item.actualArea}}</dd>
+				</dl>
+
+				<dl>
+					<dt>时间</dt>
+					<dd>{{item.contractStartTime | date}}</dd>
+				</dl>
+
+				<a class="" title="{{item.decorationTaskId}}" ui-sref="dashboard.orders.details({id:item.decorationTaskId})">查看详情</a>
+			</li>
+		</ul>
+	</div>
+</div>
