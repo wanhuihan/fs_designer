@@ -361,7 +361,6 @@ app.controller("report", function($scope, $http, $location){
 	$scope.orderId = $location.search().id;
 	$scope.orderCode = $location.search().code;
 
-	// $scope.a = 1212312312;
 })
 
 
@@ -384,6 +383,7 @@ app.controller("bom", function($scope, $http, $location){
 app.controller("design", function($scope, $http, $location){
 	
 })
+
 /*
 ================================================================
 	ng-model 也可以在循环中使用，
