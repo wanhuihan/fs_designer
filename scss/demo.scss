@@ -78,26 +78,26 @@
 	// margin: 10px;
 	// padding: 5px;
 	// display: none;
-.left_side_bar {
-	float: left;
-	width: 200px;
-	border: 1px solid ;
-	ul {
-		padding: 10px;
-		list-style: none;
-		li {
-			line-height: 30px;
-			a {
-				display: block;
-				padding: 0 10px;
-			}
-			a:hover {
-				background: #eee;
+	.left_side_bar {
+		float: left;
+		width: 200px;
+		border: 1px solid ;
+		ul {
+			padding: 10px;
+			list-style: none;
+			li {
+				line-height: 30px;
+				a {
+					display: block;
+					padding: 0 10px;
+				}
+				a:hover {
+					background: #eee;
+				}
 			}
 		}
 	}
 }
-
 
 
 // home page
@@ -215,9 +215,7 @@
 		}
 	}
 
-	.order_detail_info {
-
-	.order_detail_info ,.report_details_form{
+	.order_detail_info, .report_details_form{
 		width: 1000px;
 		float: left;
 

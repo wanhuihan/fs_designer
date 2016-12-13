@@ -356,23 +356,16 @@ app.controller("workLoad", function($scope, $http, $location) {
 	# report 量房报告页
 -----------------------------*/
 app.controller("report", function($scope, $http, $location){
-<<<<<<< HEAD
-	// console.log($location);
 
-	// $scope.test = $location.$$url;
-=======
 
 	$scope.orderId = $location.search().id;
 	$scope.orderCode = $location.search().code;
 
-	// $scope.test = $location.search().id;
->>>>>>> 308e65037fc4adeb5790351cedbf1445516976b9
 
 	// $scope.a = 1212312312;
 })
 
 
-<<<<<<< HEAD
 /* ---------------------------
 	# bom 物料清单页
 -----------------------------*/
@@ -392,8 +385,7 @@ app.controller("bom", function($scope, $http, $location){
 app.controller("design", function($scope, $http, $location){
 	
 })
-=======
->>>>>>> 308e65037fc4adeb5790351cedbf1445516976b9
+
 /*
 ================================================================
 	ng-model 也可以在循环中使用，
