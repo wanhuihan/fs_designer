@@ -26,8 +26,6 @@ var g = {
 
 	},
 
-
-
 	// check the json data from back end
 	checkData: function(data) {
 
