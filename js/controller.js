@@ -382,29 +382,28 @@ app.controller("design", function($scope, $http, $location){
 	$http({
 		method: 'post',
 		url: 'http://192.168.0.87/decoration_designer/decorationDesignDraw/selectDecorationDesignDrawList',		
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8' },
+        // headers: { 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8' },
         
-        transformRequest: function(obj) {    
-            var str = [];    
-            for (var p in obj) {    
+        // transformRequest: function(obj) {    
+        //     var str = [];    
+        //     for (var p in obj) {    
                 
-                if (typeof obj[p] == 'object' ) {
-                    // console.log(p, JSON.stringify(obj[p]));
-                    str.push(encodeURIComponent(p) + "=" + encodeURIComponent(JSON.stringify(obj[p])))
-                } else {
-                    str.push(encodeURIComponent(p) + "=" + encodeURIComponent(obj[p]));  
-                }                     
-            }    
-            return str.join("&");    
-        }		
+        //         if (typeof obj[p] == 'object' ) {
+        //             // console.log(p, JSON.stringify(obj[p]));
+        //             str.push(encodeURIComponent(p) + "=" + encodeURIComponent(JSON.stringify(obj[p])))
+        //         } else {
+        //             str.push(encodeURIComponent(p) + "=" + encodeURIComponent(obj[p]));  
+        //         }                     
+        //     }    
+        //     return str.join("&");    
+        // }
+
 	}).success(function(data) {
 
-		console.log();
-
-
-	}).error(function(data) {
-
-		console.log(data);
+		// console.log(data);
+		if (g.checkData(data)) {
+			$scope.data = data.decorationDesignDrawList;			
+		}
 
 	})
 })
