@@ -166,24 +166,11 @@ cont:date 插件
 */
 	app.controller("providerPurchaseOrder", function($scope, $http, $location) {
 
-
 	jQuery('#datePick').daterangepicker({
 
-	    "autoApply": true,
-	    "linkedCalendars": false,
-	    "startDate": "11/16/2016",
-	    "endDate": "11/22/2016",
-	    "opens": "left",
+		singleDatePicker: true,
 
-
-	}, function(start, end, label) {
-
-		console.log(start.format('YYYY-MM-DD'))	
-	  console.log("New date range selected: ' + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD') + ' (predefined range: ' + label + ')");
-	});
-
-
-
+	}, null);
 
 })
 
@@ -252,6 +239,17 @@ app.controller("workLoad", function($scope, $http, $location) {
 
 })
 
+
+/* ---------------------------
+	# report 量房报告页
+-----------------------------*/
+app.controller("report", function($scope, $http, $location){
+	console.log($location);
+
+	$scope.test = $location.$$url;
+
+	$scope.a = 1212312312;
+})
 
 /*
 ================================================================

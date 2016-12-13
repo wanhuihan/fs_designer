@@ -106,4 +106,18 @@ app.config(function($stateProvider, $urlRouterProvider) {
         }
     })
 
+    // 量房报告
+    $stateProvider.state("dashboard.report", {
+
+        url: '/report?id',
+
+        views: {
+            "mainBody@": {
+                templateUrl: 'templates/report.html',
+                controller: 'report'
+            }
+        }
+
+    })
+
 })

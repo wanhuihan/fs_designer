@@ -10,7 +10,7 @@ var app = angular.module("designer", ["ui.router", 'angular-loading-bar']);
 var g = {
 	
 	// host server
-	host: 'http://192.168.0.224:8089',
+	host: 'http://192.168.0.224:8080',
 
 	// cookie set
 	setCookie: function(data) {
