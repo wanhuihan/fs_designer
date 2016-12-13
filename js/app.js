@@ -26,8 +26,6 @@ var g = {
 
 	},
 
-
-
 	// check the json data from back end
 	checkData: function(data) {
 
@@ -38,7 +36,9 @@ var g = {
 
 		} else {
 
-			alert(data.msg);
+			if (data.msg) {
+				alert(data.msg);
+			}
 			return true;
 		}
 	}

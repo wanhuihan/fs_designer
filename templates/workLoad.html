@@ -1,14 +1,14 @@
-<div class="workLoad">
-	<div class="left_side_bar">
+<div class="work_load clrfix">
 
+	<div class="left_side_bar">
 		<ul>
 			
 			<li>
-				<a  ui-sref="dashboard.orders.details({id:orderId})">订单详情</a>
+				<a  ui-sref="dashboard.orders.details({id:orderId,code:orderCode})">订单详情</a>
 			</li>
 
 			<li>
-				<a ui-sref="dashboard.report({id:orderId})">量房报告</a>
+				<a ui-sref="dashboard.orders.report({id:orderId,code:orderCode})">量房报告</a>
 			</li>
 
 			<li>
@@ -20,9 +20,110 @@
 			</li>
 
 			<li>
-				<a ui-sref="dashboard.orders.workload({id:orderId})">工程量</a>
+				<a ui-sref="dashboard.orders.workload({id:orderId,code:orderCode})">工程量</a>
 			</li>			
 
 		</ul>
+	</div>
+
+	<div class="work_load_list">
+		<ul class="clrfix work_load_list_title">
+			<li class="order_num">
+				序号
+			</li>
+			<li class="name">
+				发单工程名称
+			</li>
+			<li class="description">
+				工程项目内容描述
+			</li>
+			<Li class="position">部位</LI>
+			<li class="unit">单位</li>
+			<li class="work_qty">工程量</li>
+		</ul>
+		<form >
+			<ul class="clrfix">
+				
+				<li ng-repeat="item in data" class="clrfix">
+					<span>
+						{{item.seq}}
+					</span>
+
+					<span>{{item.projectName}}</span>
+
+					<span>{{item.constructionDescription}}</span>
+
+					<span>&nbsp;-</span>
+
+					<span>{{item.unit}}</span>
+
+					<span class="clrfix">
+						<input type="text" name="workLoad" value="{{item.engineeringQuantity}}" ng-disabled="inputDisabled">
+
+						<input type="hidden" name="level1" value="{{item.hasLevel1}}">
+						 
+						 <input type="hidden" name="collectId" value="{{item.businessId}}" >
+					</span>
+					<hr class="btn_line">
+					<ul ng-if="item.hasDetail" class="clrfix" >
+						<li ng-repeat="i in item.detailsList" class="clrfix">
+							<span>
+								{{i.seq}}
+							</span>
+
+							<span>{{i.projectName}}</span>
+
+							<span>
+							<img src="../images/level-down.png" >{{i.constructionDescription}}</span>
+
+							<span>&nbsp;-</span>
+
+							<span>{{i.unit}}</span>
+
+							<span class="clrfix">
+								<input type="text" name="workLoad" value="{{i.engineeringQuantity}}" ng-disabled="inputDisabled">
+								<input type="hidden" name="level1" value="{{i.hasLevel1}}">
+								 
+								 <input type="hidden" name="collectId" value="{{i.businessId}}">								
+							</span>	
+							
+							<hr class="btn_line">
+							<ul ng-if="i.hasDetail" class="clrfix" >
+								<li ng-repeat="a in i.subList" class="clrfix">
+
+									<span>
+										{{a.seq}}
+									</span>
+
+									<span>{{a.projectName}}</span>
+
+									<span>
+									<img src="../images/level-down.png" >
+									{{a.constructionDescription}}</span>
+
+									<span>&nbsp;-</span>
+
+									<span>{{a.unit}}</span>
+
+									<span class="clrfix">
+										<input type="text" name="workLoad" value="{{a.engineeringQuantity}}" ng-disabled="inputDisabled">
+										<input type="hidden" name="level1" value="{{a.hasLevel1}}">
+										 
+										 <input type="hidden" name="collectId" value="{{a.businessId}}">								
+									</span>	
+									<hr class="btn_line">							
+								</li>
+							</ul>												
+						</li>
+					</ul>
+
+				</li>
+			</ul>
+
+			<button class="btn btn_primary" ng-click="saveWorkAmount()"> 保存</button>
+			<button class="btn btn_secondary" ng-click="subWorkAmount()">提交</button>
+
+		</form>
+		
 	</div>
 </div>

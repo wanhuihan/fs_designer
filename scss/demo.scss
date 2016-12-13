@@ -10,6 +10,18 @@
 	list-style: none;
 }
 
+// public style
+.clrfix:after {
+	clear: both;
+	content: "";
+	display: block;
+}
+.btn_line {
+	border-bottom: 1px solid #eee;
+	box-shadow: 0;
+	clear: both;
+}
+
 /*--------------
 	#button style 
  ---------------*/
@@ -66,6 +78,24 @@
 	// margin: 10px;
 	// padding: 5px;
 	// display: none;
+.left_side_bar {
+	float: left;
+	width: 200px;
+	border: 1px solid ;
+	ul {
+		padding: 10px;
+		list-style: none;
+		li {
+			line-height: 30px;
+			a {
+				display: block;
+				padding: 0 10px;
+			}
+			a:hover {
+				background: #eee;
+			}
+		}
+	}
 }
 
 
@@ -161,7 +191,7 @@
 /*--------------------------------
 	#order details page
  --------------------------------*/
-.order_details,.report_details,.design_details,.workLoad,.bom_details{
+.order_details {
 	
 	padding: 10px;
 
@@ -184,6 +214,8 @@
 			}
 		}
 	}
+
+	.order_detail_info {
 
 	.order_detail_info ,.report_details_form{
 		width: 1000px;
@@ -224,6 +256,106 @@
 
 	}
 }
+
+
+/* --------------------------- 
+	# work load page 工程量页
+ -----------------------------*/
+
+ .work_load {
+	padding: 10px;
+	.work_load_list {
+		float: left;
+		width: 1000px;
+		padding: 10px;
+		box-sizing: border-box;
+
+		.work_load_list_title {
+			font-size: 0;
+			position: relative;
+			li {
+				float: left;
+				display: inline-block;
+				border-bottom:1px solid;
+				box-sizing: border-box;
+				&.order_num {
+					width: 5%;
+				}
+				&.name {
+					width: 10%;
+				}
+				&.description {
+					width: 50%;
+				}
+				&.position {
+					width: 10%;
+				}
+				&.unit {
+					width: 5%;
+				}
+				&.work_qty {
+					width: 20%;
+				}					
+			}
+		}
+
+		ul {
+			li {
+
+				ul {
+					clear: both;
+
+					li {
+						span {
+							&:nth-child(3) {
+								padding-left:30px;
+							}
+						}
+						ul {
+
+							li {
+								span {
+									&:nth-child(3) {
+										padding-left:60px;
+									}
+								}
+							}
+						}
+					}
+				}
+				span {
+					display: inline-block;
+					float: left;
+					box-sizing: border-box;
+					// border-bottom:1px solid;
+					// min-height: 35px;
+					padding: 5px 2px;
+
+					&:nth-child(1) {
+						width: 5%;
+					}
+					&:nth-child(2) {
+						width: 10%;
+					}
+					&:nth-child(3) {
+						width: 50%;
+					}
+					&:nth-child(4) {
+						width: 10%;
+					}
+					&:nth-child(5) {
+						width: 5%;
+					}
+					&:nth-child(6) {
+						width: 20%;
+					}
+				}
+			}			
+		}
+
+		
+	}
+ }
 
 /*-------------------
 	量房报告 
@@ -362,3 +494,40 @@
 	margin: 10px  auto;
 	padding-left:4%;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

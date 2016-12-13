@@ -1,16 +1,16 @@
 
-<div class="order_details">
+<div class="order_details clrfix">
 	
 	<div class="left_side_bar">
 
 		<ul>
 			
 			<li>
-				<a  ui-sref="dashboard.orders.details({id:orderId})">订单详情</a>
+				<a  ui-sref="dashboard.orders.details({id:orderId,code:orderCode})">订单详情</a>
 			</li>
 
 			<li>
-				<a ui-sref="dashboard.report({id:orderId})">量房报告</a>
+				<a ui-sref="dashboard.orders.report({id:orderId,code:orderCode})">量房报告</a>
 			</li>
 
 			<li>
@@ -22,7 +22,7 @@
 			</li>
 
 			<li>
-				<a ui-sref="dashboard.orders.workload({id:orderId})">工程量</a>
+				<a ui-sref="dashboard.orders.workload({id:orderId,code:orderCode})">工程量</a>
 			</li>			
 
 		</ul>
