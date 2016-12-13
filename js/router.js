@@ -70,7 +70,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
 
     // 订单详情
     $stateProvider.state("dashboard.orders.details", {
-        url: '/details?id',
+        url: '/details?id&code',
         resolve: {
 
         },
@@ -89,7 +89,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
 
     // 工程量
     $stateProvider.state("dashboard.orders.workload", {
-        url: '/workload?id',
+        url: '/workload?id&code',
         resolve: {
 
         },
@@ -107,9 +107,9 @@ app.config(function($stateProvider, $urlRouterProvider) {
     })
 
     // 量房报告
-    $stateProvider.state("dashboard.report", {
+    $stateProvider.state("dashboard.orders.report", {
 
-        url: '/report?id',
+        url: '/report?id&code',
 
         views: {
             "mainBody@": {
@@ -118,6 +118,17 @@ app.config(function($stateProvider, $urlRouterProvider) {
             }
         }
 
+    })
+
+    // 物料清单
+    $stateProvider.state("dashboard.material", {
+        url: '/material?id',
+
+        views: {
+            "mainBody@": {
+                templateUrl: 'templates/material.html'
+            }
+        }
     })
 
 })

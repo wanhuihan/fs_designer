@@ -191,17 +191,16 @@ app.controller("dashboard", function($scope, $http) {
 
 app.controller("orderDetails", function($http, $scope, $location) {
 
-	// console.log($location.$$absUrl);
-
-	$scope.orderId = $location.$$url.split("=")[1];
-
-	// id = $location.$$absUrl.substring(id);
+	// console.log($location.search());
+	$scope.orderId = $location.search().id;
+	$scope.orderCode = $location.search().code;
 
 	$http({
 		url: 'http://192.168.0.224:8080/decoration_designer/decorationTask/order/view?token=designer_13600136000',
 		method: 'post',
 		data: {
-			decorationTaskId: $scope.orderId
+			decorationTaskId: $scope.orderId,
+			decorationTaskCode: $scope.orderCode
 		},
 
         headers: { 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8' },
@@ -221,7 +220,6 @@ app.controller("orderDetails", function($http, $scope, $location) {
         },		
 	}).success(function(data) {
 		$scope.data = data.datas;
-
 		// console.log($scope.data)
 	})
 
@@ -234,8 +232,122 @@ app.controller("orderDetails", function($http, $scope, $location) {
 
 app.controller("workLoad", function($scope, $http, $location) {
 
-	console.log(123);
+	$scope.orderId = $location.search().id;
+	$scope.orderCode = $location.search().code;
+
+	// console.log(123);
 	$scope.data ="";
+	$http.post('http://192.168.0.224:8080/decoration_designer/decorationTask/quantity/selectList?decorationTaskCode=116092400000060&token=designer_13600136000')
+	.success(function(data) {
+		// console.log(data)
+		if (data.success) {
+			$scope.data = data.datas;
+		}
+	})	
+
+	$scope.formData = "";
+
+	function pushData() {
+
+		var workLoadArr =  document.getElementsByName("workLoad");
+		var level1Arr = document.getElementsByName("level1");
+		var collectId = document.getElementsByName("collectId");
+
+		var jsonData = new Array();
+
+		for (var i = 0; i < workLoadArr.length; i++) {
+
+			jsonData.push({
+				'businessId': collectId[i].value,
+				'engineeringQuantity': workLoadArr[i].value,
+				'hasLevel1': level1Arr[i].value
+			});
+
+		}
+
+		return jsonData;
+
+	}
+
+	$scope.saveWorkAmount = function() {
+	
+
+		$scope.formData = pushData();
+
+		$http({
+			url: 'http://192.168.0.224:8080/decoration_designer/decorationTask/quantity/update?token=designer_13600136000',
+
+			method: 'post',
+
+			data: {
+				jsonData: $scope.formData
+			},
+
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8' },
+            
+            transformRequest: function(obj) {    
+                var str = [];    
+                for (var p in obj) {    
+                    
+                    if (typeof obj[p] == 'object' ) {
+                        // console.log(p, JSON.stringify(obj[p]));
+                        str.push(encodeURIComponent(p) + "=" + encodeURIComponent(JSON.stringify(obj[p])))
+                    } else {
+                        str.push(encodeURIComponent(p) + "=" + encodeURIComponent(obj[p]));  
+                    }                     
+                }    
+                return str.join("&");    
+            }
+
+		
+		}).success(function(data) {
+
+			console.log(data);
+
+		})
+	}
+
+	// 提交工作量
+	$scope.subWorkAmount = function() {
+
+		// console.log($scope.orderCode);
+
+		$http({
+			url: 'http://192.168.0.224:8089/decoration_designer/decorationTask/quantity/submit?token=designer_13600136000',
+
+			method: 'post',
+
+			data: {
+				decorationTaskCode: $scope.orderCode
+			},
+
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8' },
+            
+            transformRequest: function(obj) {    
+                var str = [];    
+                for (var p in obj) {    
+                    
+                    if (typeof obj[p] == 'object' ) {
+                        // console.log(p, JSON.stringify(obj[p]));
+                        str.push(encodeURIComponent(p) + "=" + encodeURIComponent(JSON.stringify(obj[p])))
+                    } else {
+                        str.push(encodeURIComponent(p) + "=" + encodeURIComponent(obj[p]));  
+                    }                     
+                }    
+                return str.join("&");    
+            }
+
+		
+		}).success(function(data) {
+
+
+			if (g.checkData(data)) {
+				alert("提交成功");
+				$scope.inputDisabled = true;				
+			}
+
+		})		
+	}
 
 })
 
@@ -244,12 +356,15 @@ app.controller("workLoad", function($scope, $http, $location) {
 	# report 量房报告页
 -----------------------------*/
 app.controller("report", function($scope, $http, $location){
-	console.log($location);
 
-	$scope.test = $location.$$url;
+	$scope.orderId = $location.search().id;
+	$scope.orderCode = $location.search().code;
 
-	$scope.a = 1212312312;
+	// $scope.test = $location.search().id;
+
+	// $scope.a = 1212312312;
 })
+
 
 /*
 ================================================================
@@ -265,6 +380,13 @@ app.controller("report", function($scope, $http, $location){
 
 	<b ng-model="data.id">{{item.id}}</b>
 
+-------------------------------------------------------------
+
 	模板中也可以使用ng-if 判断值来控制标签的显示于隐藏
+
+-------------------------------------------------------------
+
+	ui.router 可以使用多级，例如dashboard.order.detail........
+
 
 */

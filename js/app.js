@@ -36,7 +36,9 @@ var g = {
 
 		} else {
 
-			alert(data.msg);
+			if (data.msg) {
+				alert(data.msg);
+			}
 			return true;
 		}
 	}
