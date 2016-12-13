@@ -119,5 +119,33 @@ app.config(function($stateProvider, $urlRouterProvider) {
         }
 
     })
+    // 物料清单
+
+    $stateProvider.state("dashboard.bom", {
+
+        url: '/bom?id',
+
+        views: {
+            "mainBody@": {
+                templateUrl: 'templates/bom.html',
+                controller: 'bom'
+            }
+        }
+
+    })
+    // 设计图
+    $stateProvider.state("dashboard.design", {
+
+        url: '/design?id',
+
+        views: {
+            "mainBody@": {
+                templateUrl: 'templates/design.html',
+                controller: 'design'
+            }
+        }
+
+    })
+
 
 })

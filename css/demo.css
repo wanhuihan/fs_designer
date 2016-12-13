@@ -1,3 +1,4 @@
+@charset "UTF-8";
 *, dl, dt, dd, ul, li {
   text-decoration: none;
   font-size: 13px;
@@ -105,40 +106,150 @@
 /*--------------------------------
 	#order details page
  --------------------------------*/
-.order_details {
+.order_details, .report_details, .design_details, .workLoad, .bom_details {
   padding: 10px; }
-  .order_details .left_side_bar {
+  .order_details .left_side_bar, .report_details .left_side_bar, .design_details .left_side_bar, .workLoad .left_side_bar, .bom_details .left_side_bar {
     float: left;
     width: 200px;
     border: 1px solid; }
-    .order_details .left_side_bar ul {
+    .order_details .left_side_bar ul, .report_details .left_side_bar ul, .design_details .left_side_bar ul, .workLoad .left_side_bar ul, .bom_details .left_side_bar ul {
       padding: 10px;
       list-style: none; }
-      .order_details .left_side_bar ul li {
+      .order_details .left_side_bar ul li, .report_details .left_side_bar ul li, .design_details .left_side_bar ul li, .workLoad .left_side_bar ul li, .bom_details .left_side_bar ul li {
         line-height: 30px; }
-        .order_details .left_side_bar ul li a {
+        .order_details .left_side_bar ul li a, .report_details .left_side_bar ul li a, .design_details .left_side_bar ul li a, .workLoad .left_side_bar ul li a, .bom_details .left_side_bar ul li a {
           display: block;
           padding: 0 10px; }
-        .order_details .left_side_bar ul li a:hover {
+        .order_details .left_side_bar ul li a:hover, .report_details .left_side_bar ul li a:hover, .design_details .left_side_bar ul li a:hover, .workLoad .left_side_bar ul li a:hover, .bom_details .left_side_bar ul li a:hover {
           background: #eee; }
-  .order_details .order_detail_info {
+  .order_details .order_detail_info, .order_details .report_details_form, .report_details .order_detail_info, .report_details .report_details_form, .design_details .order_detail_info, .design_details .report_details_form, .workLoad .order_detail_info, .workLoad .report_details_form, .bom_details .order_detail_info, .bom_details .report_details_form {
     width: 1000px;
     float: left; }
-    .order_details .order_detail_info .row > .col-md-6 {
+    .order_details .order_detail_info .row > .col-md-6, .order_details .report_details_form .row > .col-md-6, .report_details .order_detail_info .row > .col-md-6, .report_details .report_details_form .row > .col-md-6, .design_details .order_detail_info .row > .col-md-6, .design_details .report_details_form .row > .col-md-6, .workLoad .order_detail_info .row > .col-md-6, .workLoad .report_details_form .row > .col-md-6, .bom_details .order_detail_info .row > .col-md-6, .bom_details .report_details_form .row > .col-md-6 {
       width: 50%;
       float: left; }
-    .order_details .order_detail_info .row:after {
+    .order_details .order_detail_info .row:after, .order_details .report_details_form .row:after, .report_details .order_detail_info .row:after, .report_details .report_details_form .row:after, .design_details .order_detail_info .row:after, .design_details .report_details_form .row:after, .workLoad .order_detail_info .row:after, .workLoad .report_details_form .row:after, .bom_details .order_detail_info .row:after, .bom_details .report_details_form .row:after {
       clear: both;
       content: "";
       display: block; }
-    .order_details .order_detail_info .row .panel {
+    .order_details .order_detail_info .row .panel, .order_details .report_details_form .row .panel, .report_details .order_detail_info .row .panel, .report_details .report_details_form .row .panel, .design_details .order_detail_info .row .panel, .design_details .report_details_form .row .panel, .workLoad .order_detail_info .row .panel, .workLoad .report_details_form .row .panel, .bom_details .order_detail_info .row .panel, .bom_details .report_details_form .row .panel {
       border: 1px solid;
       padding: 10px;
       margin: 0 10px 10px; }
-    .order_details .order_detail_info .row .panel-heading {
+    .order_details .order_detail_info .row .panel-heading, .order_details .report_details_form .row .panel-heading, .report_details .order_detail_info .row .panel-heading, .report_details .report_details_form .row .panel-heading, .design_details .order_detail_info .row .panel-heading, .design_details .report_details_form .row .panel-heading, .workLoad .order_detail_info .row .panel-heading, .workLoad .report_details_form .row .panel-heading, .bom_details .order_detail_info .row .panel-heading, .bom_details .report_details_form .row .panel-heading {
       font-weight: bold;
       line-height: 30px; }
-  .order_details:after {
+  .order_details:after, .report_details:after, .design_details:after, .workLoad:after, .bom_details:after {
     content: "";
     display: block;
     clear: both; }
+
+/*-------------------
+	量房报告 
+ --------------------*/
+.report_tab_stepone {
+  position: relative;
+  text-align: center; }
+  .report_tab_stepone h3 {
+    font-size: 14px;
+    color: #169BD5; }
+  .report_tab_stepone span {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    color: #fff;
+    background: #169BD5;
+    border-radius: 50%; }
+  .report_tab_stepone div {
+    position: absolute;
+    z-index: -1;
+    left: 42%;
+    top: 65px;
+    width: 100%;
+    height: 9px;
+    background-color: #169bd5;
+    border: none;
+    border-radius: 10px;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none; }
+
+.report_tab_steptwo h3 {
+  color: #555; }
+
+.report_tab_steptwo span {
+  background: #999; }
+
+.report_tab_steptwo div {
+  background: #eee; }
+
+.report_tab_listone {
+  margin: 60px 170px 0 160px; }
+  .report_tab_listone > div {
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid #eee; }
+    .report_tab_listone > div > div > p span {
+      color: #f00; }
+    .report_tab_listone > div > div > input {
+      margin-left: 20px; }
+
+.report_tab_listtwo {
+  margin: 60px 170px 0 160px; }
+  .report_tab_listtwo h3 {
+    padding-bottom: 20px;
+    color: #169BD5;
+    font-size: 16px;
+    font-weight: 700;
+    border-bottom: 2px solid #eee; }
+  .report_tab_listtwo > div > div {
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid #eee; }
+    .report_tab_listtwo > div > div > div > p span {
+      color: #f00; }
+    .report_tab_listtwo > div > div > div > input {
+      margin-left: 20px; }
+
+.report_page_four table {
+  width: 80%;
+  margin: 0 auto; }
+  .report_page_four table .tabletitle {
+    font-size: 20px;
+    text-align: center; }
+  .report_page_four table .trtitle {
+    font-size: 16px;
+    text-align: center; }
+  .report_page_four table .leftmenu {
+    width: 2%; }
+
+.design_details_cont {
+  width: 100%;
+  padding-left: 8%; }
+
+.blueprints {
+  padding-top: 50px;
+  width: 88%;
+  margin: 0 auto; }
+  .blueprints > div {
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #eee; }
+    .blueprints > div h3 {
+      font-size: 18px;
+      color: #333; }
+    .blueprints > div > div > div {
+      margin-bottom: 20px; }
+  .blueprints button:nth-child(1) {
+    width: 30%; }
+  .blueprints button:nth-child(2) {
+    width: 50%; }
+  .blueprints .alreadyend {
+    color: #999; }
+
+.bom_detail_info {
+  width: 80%;
+  margin: 10px  auto;
+  padding-left: 4%; }
