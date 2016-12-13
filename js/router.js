@@ -121,7 +121,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
     })
     // 物料清单
 
-    $stateProvider.state("dashboard.bom", {
+    $stateProvider.state("dashboard.orders.bom", {
 
         url: '/bom?id',
 
@@ -134,7 +134,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
 
     })
     // 设计图
-    $stateProvider.state("dashboard.design", {
+    $stateProvider.state("dashboard.orders.design", {
 
         url: '/design?id',
 

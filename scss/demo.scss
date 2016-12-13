@@ -191,7 +191,7 @@
 /*--------------------------------
 	#order details page
  --------------------------------*/
-.order_details {
+.order_details,.report_details,.bom_details,.design_details,.work_load {
 	
 	padding: 10px;
 
@@ -358,14 +358,14 @@
 /*-------------------
 	量房报告 
  --------------------*/
- .report_tab_stepone{
+ .report_tab_stepone {
 	position: relative;
 	text-align:center;
-	h3{
+	h3 {
 		font-size:14px;
 		color:#169BD5;
 	}
-	span{
+	span {
 		display:inline-block;
 		width:50px;
 		height:50px;
@@ -375,7 +375,7 @@
 		background:#169BD5;
 		border-radius:50%;
 	}
-	div{
+	div {
 		position: absolute;
 		z-index:-1;
 	    left: 42%;
@@ -391,64 +391,64 @@
 	}
 	
 }
-.report_tab_steptwo{
-	h3{
+.report_tab_steptwo {
+	h3 {
 		color:#555;
 	}
-	span{
+	span {
 		background:#999;
 	}
-	div{
+	div {
 		background:#eee;
 	}
 }
-.report_tab_listone{
+.report_tab_listone {
 	margin:60px 170px 0 160px;
 	& > div {
 		margin-bottom:20px;
 		padding-bottom:20px;
 		border-bottom:2px solid #eee;
-		& > div >p span{
+		& > div > p span {
 			color:#f00;
 		}
-		& > div >input{
+		& > div >input {
 			margin-left:20px;
 		}
 	}
 }
-.report_tab_listtwo{
+.report_tab_listtwo {
 	margin:60px 170px 0 160px;
-	&  h3{
+	&  h3 {
 		padding-bottom:20px;
 		color:#169BD5;
 		font-size:16px;
 		font-weight:700;
 		border-bottom:2px solid #eee;
 	}
-	& > div > div{
+	& > div > div {
 		margin-bottom:20px;
 		padding-bottom:20px;
 		border-bottom:2px solid #eee;
-		& > div >p span{
+		& > div > p span {
 			color:#f00;
 		}
-		& > div >input{
+		& > div >input {
 			margin-left:20px;
 		}
 	}
 }
-.report_page_four table{
+.report_page_four table {
 		width:80%;
 		margin: 0 auto;
-		.tabletitle{
+		.tabletitle {
 			font-size:20px;
 			text-align:center;
 		}
-		.trtitle{
+		.trtitle {
 			font-size:16px;
 			text-align:center;
 		}
-		.leftmenu{
+		.leftmenu {
 			width:2%;
 		}		
 }
@@ -496,7 +496,7 @@
 
 	}
 	// 物料清单
-	.bom_detail_info{
+	.bom_detail_info {
 		width:80%;
 		margin: 10px  auto;
 		padding-left:4%;
