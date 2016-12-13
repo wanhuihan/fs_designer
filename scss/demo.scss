@@ -78,26 +78,26 @@
 	// margin: 10px;
 	// padding: 5px;
 	// display: none;
-.left_side_bar {
-	float: left;
-	width: 200px;
-	border: 1px solid ;
-	ul {
-		padding: 10px;
-		list-style: none;
-		li {
-			line-height: 30px;
-			a {
-				display: block;
-				padding: 0 10px;
-			}
-			a:hover {
-				background: #eee;
+	.left_side_bar {
+		float: left;
+		width: 200px;
+		border: 1px solid ;
+		ul {
+			padding: 10px;
+			list-style: none;
+			li {
+				line-height: 30px;
+				a {
+					display: block;
+					padding: 0 10px;
+				}
+				a:hover {
+					background: #eee;
+				}
 			}
 		}
 	}
 }
-
 
 
 // home page
@@ -215,9 +215,7 @@
 		}
 	}
 
-	.order_detail_info {
-
-	.order_detail_info ,.report_details_form{
+	.order_detail_info, .report_details_form{
 		width: 1000px;
 		float: left;
 
@@ -457,43 +455,52 @@
 
 // 设计图
 
-.design_details_cont{
+.design_details_cont {
+
 	width:100%;
 	padding-left:8%;
 }
-.blueprints{
-	padding-top:50px;
-	width:88%;
-	margin:0 auto;
-	& > div{
-		padding-bottom:20px;
-		margin-bottom:20px;
-		border-bottom:2px solid #eee;
-		h3{
-			font-size:18px;
-			color:#333;
-		}
-		& > div >div{
-			margin-bottom:20px;
-		}
-	}
-	& button:nth-child(1){
-		width:30%;
-	}
-	& button:nth-child(2){
-		width:50%;
-	}
-	.alreadyend{
-		color:#999;
-	}
+	.blueprints {
 
-}
-// 物料清单
-.bom_detail_info{
-	width:80%;
-	margin: 10px  auto;
-	padding-left:4%;
-}
+		padding-top:50px;
+		width:88%;
+		margin:0 auto;
+
+		& > div {
+
+			padding-bottom:20px;
+			margin-bottom:20px;
+			border-bottom:2px solid #eee;
+
+			h3 {
+
+				font-size:18px;
+				color:#333;
+
+			}
+
+			& > div >div {
+
+				margin-bottom:20px;
+			}
+		}
+		& button:nth-child(1) {
+			width:30%;
+		}
+		& button:nth-child(2) {
+			width:50%;
+		}
+		.alreadyend{
+			color:#999;
+		}
+
+	}
+	// 物料清单
+	.bom_detail_info{
+		width:80%;
+		margin: 10px  auto;
+		padding-left:4%;
+	}
 
 
 
