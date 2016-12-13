@@ -211,7 +211,7 @@ app.controller("login", function($http, $scope, $location) {
 })
 
 /*
-modifyByzhangna
+addByzhangna
 cont:date 插件
 */
 	app.controller("providerPurchaseOrder", function($scope, $http, $location) {
