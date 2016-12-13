@@ -454,16 +454,15 @@
 }
 
 // 设计图
-
 .design_details_cont {
-
-	width:100%;
-	padding-left:8%;
+	float:left;
+	width:1000px;
+	margin-left:16px;
 }
 	.blueprints {
 
 		padding-top:50px;
-		width:88%;
+		width:100%;
 		margin:0 auto;
 
 		& > div {
@@ -497,9 +496,8 @@
 	}
 	// 物料清单
 	.bom_detail_info {
-		width:80%;
-		margin: 10px  auto;
-		padding-left:4%;
+		width:1000px;
+		margin-left: 230px;
 	}
 
 
