@@ -1,6 +1,6 @@
 
 <div class="design_details">
-	{{data}}
+	
 	<div class="left_side_bar">
 
 		<ul>
@@ -29,6 +29,9 @@
 	</div>
 
    <div class="design_details_cont">
+	<div ng-repeat="item in data">
+		{{item.designTypeText}}
+	</div>
 		<div role="tabpanel" class="tab-pane" id="drawing" aria-labelledby="drawing-tab">
 			<div class=" blueprints">
 				<div class="row">

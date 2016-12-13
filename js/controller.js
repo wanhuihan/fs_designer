@@ -379,6 +379,7 @@ app.controller("bom", function($scope, $http, $location){
 
 app.controller("design", function($scope, $http, $location){
 	
+	
 	$http({
 		method: 'post',
 		url: 'http://192.168.0.87/decoration_designer/decorationDesignDraw/selectDecorationDesignDrawList',		
