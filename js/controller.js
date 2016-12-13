@@ -237,6 +237,7 @@ app.controller("workLoad", function($scope, $http, $location) {
 
 	// console.log(123);
 	$scope.data ="";
+
 	$http.post('http://192.168.0.224:8080/decoration_designer/decorationTask/quantity/selectList?decorationTaskCode=116092400000060&token=designer_13600136000')
 	.success(function(data) {
 		// console.log(data)
@@ -264,9 +265,7 @@ app.controller("workLoad", function($scope, $http, $location) {
 			});
 
 		}
-
 		return jsonData;
-
 	}
 
 	$scope.saveWorkAmount = function() {
@@ -302,7 +301,7 @@ app.controller("workLoad", function($scope, $http, $location) {
 		
 		}).success(function(data) {
 
-			console.log(data);
+			// console.log(data);
 
 		})
 	}
@@ -336,10 +335,8 @@ app.controller("workLoad", function($scope, $http, $location) {
                 }    
                 return str.join("&");    
             }
-
-		
+	
 		}).success(function(data) {
-
 
 			if (g.checkData(data)) {
 				alert("提交成功");
@@ -382,6 +379,34 @@ app.controller("bom", function($scope, $http, $location){
 
 app.controller("design", function($scope, $http, $location){
 	
+	$http({
+		method: 'post',
+		url: 'http://192.168.0.87/decoration_designer/decorationDesignDraw/selectDecorationDesignDrawList',		
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8' },
+        
+        transformRequest: function(obj) {    
+            var str = [];    
+            for (var p in obj) {    
+                
+                if (typeof obj[p] == 'object' ) {
+                    // console.log(p, JSON.stringify(obj[p]));
+                    str.push(encodeURIComponent(p) + "=" + encodeURIComponent(JSON.stringify(obj[p])))
+                } else {
+                    str.push(encodeURIComponent(p) + "=" + encodeURIComponent(obj[p]));  
+                }                     
+            }    
+            return str.join("&");    
+        }		
+	}).success(function(data) {
+
+		console.log();
+
+
+	}).error(function(data) {
+
+		console.log(data);
+
+	})
 })
 
 /*
