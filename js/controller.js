@@ -401,7 +401,7 @@ app.controller("design", function($scope, $http, $location){
 
 	}).success(function(data) {
 
-		// console.log(data);
+		console.log(data);
 		if (g.checkData(data)) {
 			$scope.data = data.decorationDesignDrawList;			
 		}
