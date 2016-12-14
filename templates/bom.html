@@ -27,114 +27,55 @@
 
 
 	<div class="bom_detail_info">
-		<table class="table table-striped">
-					<th colspan="7" class="tabletitle">重庆阳光100E3楼大户型精装主材物料清单</th>
-
-
-					<tr>
-						<th class="leftmenu">主材类型</th>
-						<th class="">物料名称</th>
-						<th class="">品牌</th>
-						<th class="">型号</th>
-						<th class="">单位</th>
-						<th class="">数量计算规则</th>
-						<th class="">数量</th>
-					</tr>
-					<tr>
-						<td class="" colspan="1">甲供主材</td>
-						<td class="" colspan="6">入户门</td>
-					</tr>
-					<tr>
-						<td class=""></td>
-						<td class="">主入户门</td>
-						<td class="">霍曼（北京）贸易有限公司</td>
-						<td class="">主门1200*2300</td>
-						<td class="">樘</td>
-						<td class="">按施工图图示数量计算</td>
-						<td class=""><input type="text"></td>
-					</tr>
-					<tr>
-						<td class=""></td>
-						<td class="">主入户门</td>
-						<td class="">霍曼（北京）贸易有限公司</td>
-						<td class="">主门1200*2300</td>
-						<td class="">樘</td>
-						<td class="">按施工图图示数量计算</td>
-						<td class=""><input type="text"></td>
-					</tr>
-					<tr>
-						<td class=""></td>
-						<td class="">主入户门</td>
-						<td class="">霍曼（北京）贸易有限公司</td>
-						<td class="">主门1200*2300</td>
-						<td class="">樘</td>
-						<td class="">按施工图图示数量计算</td>
-						<td class=""><input type="text"></td>
-					</tr>
-					<tr>
-						<td class=""></td>
-						<td class="">主入户门</td>
-						<td class="">霍曼（北京）贸易有限公司</td>
-						<td class="">主门1200*2300</td>
-						<td class="">樘</td>
-						<td class="">按施工图图示数量计算</td>
-						<td class=""><input type="text"></td>
-					</tr>
-					<tr>
-						<td class=""></td>
-						<td class="">主入户门</td>
-						<td class="">霍曼（北京）贸易有限公司</td>
-						<td class="">主门1200*2300</td>
-						<td class="">樘</td>
-						<td class="">按施工图图示数量计算</td>
-						<td class=""><input type="text"></td>
-					</tr>
-					<tr>
-						<td class=""></td>
-						<td class="">主入户门</td>
-						<td class="">霍曼（北京）贸易有限公司</td>
-						<td class="">主门1200*2300</td>
-						<td class="">樘</td>
-						<td class="">按施工图图示数量计算</td>
-						<td class=""><input type="text"></td>
-					</tr>
-					<tr>
-						<td class=""></td>
-						<td class="">主入户门</td>
-						<td class="">霍曼（北京）贸易有限公司</td>
-						<td class="">主门1200*2300</td>
-						<td class="">樘</td>
-						<td class="">按施工图图示数量计算</td>
-						<td class=""><input type="text"></td>
-					</tr>
-					<tr>
-						<td class=""></td>
-						<td class="">主入户门</td>
-						<td class="">霍曼（北京）贸易有限公司</td>
-						<td class="">主门1200*2300</td>
-						<td class="">樘</td>
-						<td class="">按施工图图示数量计算</td>
-						<td class=""><input type="text"></td>
-					</tr>				
-					<tr>
-						<td class="leftmenu">自购主材</td>
-						<td class="">主入户门</td>
-						<td class="">霍曼（北京）贸易有限公司</td>
-						<td class="">主门1200*2300</td>
-						<td class="">樘</td>
-						<td class="">按施工图图示数量计算</td>
-						<td class=""><input type="text"></td>
-					</tr>
-					<tr>
-						<td class=""></td>
-						<td class="">主入户门</td>
-						<td class="">霍曼（北京）贸易有限公司</td>
-						<td class="">主门1200*2300</td>
-						<td class="">樘</td>
-						<td class="">按施工图图示数量计算</td>
-						<td class=""><input type="text"></td>
-					</tr>
-		</table>
+		<ul class="list_title">
+			<li>
+				<span class="">主材类型</span>
+				<span>物料名称</span>
+				<span>品牌</span>
+				<span>型号</span>
+				<span>单位</span>
+				<span>数量计算规则</span>	
+				<span>数量</span>			
+			</li>
+		</ul>
+		<ul>
+			<li ng-repeat="item in data">
+				
+				<span class="">{{item.name}}</span>
+				<span>&nbsp;</span>
+				<span>&nbsp;</span>
+				<span>&nbsp;</span>
+				<span>&nbsp;</span>
+				<span>&nbsp;</span>	
+				<span>&nbsp;</span>				
+				<ul ng-if="item.value">
+					<li ng-repeat="a in item.value">
+						<span class="">&nbsp;</span>
+						<span><img src="../images/level-down.png">{{a.name}}</span>
+						<span>&nbsp;</span>
+						<span>&nbsp;</span>
+						<span>&nbsp;</span>
+						<span>&nbsp;</span>	
+						<span>&nbsp;</span>								
+						<ul ng-if="a.subList">
+							<li ng-repeat="b in a.subList">
+								<span>&nbsp;</span>
+								<span class=""> <img src="../images/level-down.png"> {{b.name}}</span>
+								<span>{{b.brandName}}</span>
+								<span title="{{b.model}}">{{b.model}}</span>
+								<span>{{b.unit}}</span>
+								<span>{{b.rules}}</span>
+									
+								<span class="qty"><input type="text" name="" value="{{b.number}}"></span>														
+								
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+		</ul>
+		<button class="btn btn_primary" > 保存</button>
+		<button class="btn btn_secondary" >提交</button>
 	</div>
 </div>
 
