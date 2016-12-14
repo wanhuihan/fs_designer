@@ -370,6 +370,35 @@ app.controller("bom", function($scope, $http, $location){
 	// $scope.test = $location.$$url;
 
 	// $scope.a = 1212312312;
+
+	$http({
+
+		method:'post',
+		url: 'http://192.168.0.224:8080/decoration_designer/material/selectList?decorationTaskCode=116092400000060&token=designer_13600136000&roleCode=11',
+		headers: { 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8' },
+        transformRequest: function(obj) {    
+            var str = [];    
+            for (var p in obj) {    
+                
+                if (typeof obj[p] == 'object' ) {
+                    // console.log(p, JSON.stringify(obj[p]));
+                    str.push(encodeURIComponent(p) + "=" + encodeURIComponent(JSON.stringify(obj[p])))
+                } else {
+                    str.push(encodeURIComponent(p) + "=" + encodeURIComponent(obj[p]));  
+                }                     
+            }    
+            return str.join("&");    
+        }		
+	}).success(function(data) {
+
+		console.log(data)
+		if (g.checkData(data)) {
+			// alert("提交成功");
+			$scope.data = data.datas;				
+		}
+
+	})
+
 })
 
 

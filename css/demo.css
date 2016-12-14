@@ -332,3 +332,44 @@
 .bom_detail_info {
   width: 1000px;
   margin-left: 230px; }
+
+/* --------------------------- 
+	# bom page 物料清单页
+ -----------------------------*/
+.bom_detail_info ul li {
+  font-size: 0; }
+  .bom_detail_info ul li span {
+    display: inline-block;
+    line-height: 30px;
+    height: 30px;
+    min-height: 30px;
+    border-bottom: 1px solid;
+    position: relative;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap; }
+    .bom_detail_info ul li span:nth-child(1) {
+      width: 10%; }
+    .bom_detail_info ul li span:nth-child(2) {
+      width: 25%; }
+    .bom_detail_info ul li span:nth-child(3) {
+      width: 10%; }
+    .bom_detail_info ul li span:nth-child(4) {
+      width: 20%; }
+    .bom_detail_info ul li span:nth-child(5) {
+      width: 5%; }
+    .bom_detail_info ul li span:nth-child(6) {
+      width: 20%; }
+    .bom_detail_info ul li span:nth-child(7) {
+      width: 10%;
+      text-align: center; }
+    .bom_detail_info ul li span.qty {
+      text-align: center; }
+      .bom_detail_info ul li span.qty input {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        width: 50%;
+        line-height: 20px; }
+  .bom_detail_info ul li ul li ul li span:nth-child(2) {
+    padding-left: 20px; }
