@@ -66,7 +66,10 @@
 								<span>{{b.unit}}</span>
 								<span>{{b.rules}}</span>
 									
-								<span class="qty"><input type="text" name="" value="{{b.quantity}}"></span>														
+								<span class="qty">
+									<input type="text" name="qty" value="{{b.quantity}}">
+									<input type="hidden" name="configId" value="{{b.materialConfigurationlId}}">
+								</span>														
 								
 							</li>
 						</ul>
@@ -74,8 +77,8 @@
 				</ul>
 			</li>
 		</ul>
-		<button class="btn btn_primary" > 保存</button>
-		<button class="btn btn_secondary" >提交</button>
+		<button class="btn btn_primary" ng-click="save()"> 保存</button>
+		<button class="btn btn_secondary" ng-click='subBom()'>提交</button>
 	</div>
 </div>
 

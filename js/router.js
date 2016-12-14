@@ -123,7 +123,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
 
     $stateProvider.state("dashboard.orders.bom", {
 
-        url: '/bom?id',
+        url: '/bom?id&code',
 
         views: {
             "mainBody@": {

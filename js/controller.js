@@ -366,10 +366,31 @@ app.controller("report", function($scope, $http, $location){
 -----------------------------*/
 app.controller("bom", function($scope, $http, $location){
 	// console.log($location);
+	$scope.orderId = $location.search().id;
+	$scope.orderCode = $location.search().code;
 
-	// $scope.test = $location.$$url;
+	$scope.formData = "";
 
-	// $scope.a = 1212312312;
+	$scope.data = "";
+	function pushData() {
+
+		var arr = new Array();
+		var qty = document.getElementsByName("qty");
+		var configId = document.getElementsByName("configId")
+		// console.log(configId);
+
+		for (var i = 0; i < qty.length; i++) {
+
+			arr.push({
+				'quantity': qty[i].value,
+				'decorationTaskCode ': configId[i].value,
+				'materialConfigurationlId': configId[i].value
+			});
+		}
+
+		return arr;
+
+	}
 
 	$http({
 
@@ -391,13 +412,76 @@ app.controller("bom", function($scope, $http, $location){
         }		
 	}).success(function(data) {
 
-		console.log(data)
 		if (g.checkData(data)) {
 			// alert("提交成功");
 			$scope.data = data.datas;				
 		}
 
 	})
+
+
+	$scope.save = function() {
+		var formData = pushData();
+
+		$http({
+			method: 'post',
+			url: 'http://192.168.0.224:8080/decoration_designer/material/update?token=designer_13600136000&decorationTaskCode=116092400000060&',
+			data: {
+				jsonData: formData
+			},
+			headers: { 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8' },
+		    transformRequest: function(obj) {    
+		        var str = [];    
+		        for (var p in obj) {    
+		            
+		            if (typeof obj[p] == 'object' ) {
+		                // console.log(p, JSON.stringify(obj[p]));
+		                str.push(encodeURIComponent(p) + "=" + encodeURIComponent(JSON.stringify(obj[p])))
+		            } else {
+		                str.push(encodeURIComponent(p) + "=" + encodeURIComponent(obj[p]));  
+		            }                     
+		        }    
+		        return str.join("&");    
+		    }			
+		}).success(function(data) {
+
+			console.log(data);
+
+		})
+	}
+
+
+	$scope.subBom = function() {
+
+		$http({
+			method: 'post',
+			url: 'http://192.168.0.224:8080/decoration_designer/material/submit?token=designer_13600136000&decorationTaskCode=116092400000060',
+			data: {
+				decorationTaskCode: $scope.orderCode
+			},
+			headers: { 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8' },
+		    transformRequest: function(obj) {    
+		        var str = [];    
+		        for (var p in obj) {    
+		            
+		            if (typeof obj[p] == 'object' ) {
+		                // console.log(p, JSON.stringify(obj[p]));
+		                str.push(encodeURIComponent(p) + "=" + encodeURIComponent(JSON.stringify(obj[p])))
+		            } else {
+		                str.push(encodeURIComponent(p) + "=" + encodeURIComponent(obj[p]));  
+		            }                     
+		        }    
+		        return str.join("&");    
+		    }
+			
+		}).success(function(data){
+
+			console.log(data)
+
+		})
+	}
+
+	// console.log(pushData());
 
 })
 
