@@ -226,13 +226,13 @@
 /*-------------------
 	量房报告 
  --------------------*/
-.report_tab_stepone {
+.report_details_form .report_tab_stepone {
   position: relative;
   text-align: center; }
-  .report_tab_stepone h3 {
+  .report_details_form .report_tab_stepone h3 {
     font-size: 14px;
     color: #169BD5; }
-  .report_tab_stepone span {
+  .report_details_form .report_tab_stepone span {
     display: inline-block;
     width: 50px;
     height: 50px;
@@ -241,7 +241,7 @@
     color: #fff;
     background: #169BD5;
     border-radius: 50%; }
-  .report_tab_stepone div {
+  .report_details_form .report_tab_stepone div {
     position: absolute;
     z-index: -1;
     left: 42%;
@@ -255,54 +255,57 @@
     -webkit-box-shadow: none;
     box-shadow: none; }
 
-.report_tab_steptwo h3 {
+.report_details_form .report_tab_steptwo h3 {
   color: #555; }
 
-.report_tab_steptwo span {
+.report_details_form .report_tab_steptwo span {
   background: #999; }
 
-.report_tab_steptwo div {
+.report_details_form .report_tab_steptwo div {
   background: #eee; }
 
-.report_tab_listone {
+.report_details_form .report_tab_listone {
   margin: 60px 170px 0 160px; }
-  .report_tab_listone > div {
+  .report_details_form .report_tab_listone > div {
     margin-bottom: 20px;
     padding-bottom: 20px;
     border-bottom: 2px solid #eee; }
-    .report_tab_listone > div > div > p span {
+    .report_details_form .report_tab_listone > div > div > p span {
       color: #f00; }
-    .report_tab_listone > div > div > input {
+    .report_details_form .report_tab_listone > div > div > input {
       margin-left: 20px; }
 
-.report_tab_listtwo {
+.report_details_form .report_tab_listtwo {
   margin: 60px 170px 0 160px; }
-  .report_tab_listtwo h3 {
+  .report_details_form .report_tab_listtwo h3 {
     padding-bottom: 20px;
     color: #169BD5;
     font-size: 16px;
     font-weight: 700;
     border-bottom: 2px solid #eee; }
-  .report_tab_listtwo > div > div {
+  .report_details_form .report_tab_listtwo > div > div {
     margin-bottom: 20px;
     padding-bottom: 20px;
     border-bottom: 2px solid #eee; }
-    .report_tab_listtwo > div > div > div > p span {
+    .report_details_form .report_tab_listtwo > div > div > div > p span {
       color: #f00; }
-    .report_tab_listtwo > div > div > div > input {
+    .report_details_form .report_tab_listtwo > div > div > div > input {
       margin-left: 20px; }
 
-.report_page_four table {
+.report_details_form .report_page_four table {
   width: 80%;
   margin: 0 auto; }
-  .report_page_four table .tabletitle {
+  .report_details_form .report_page_four table .tabletitle {
     font-size: 20px;
     text-align: center; }
-  .report_page_four table .trtitle {
+  .report_details_form .report_page_four table .trtitle {
     font-size: 16px;
     text-align: center; }
-  .report_page_four table .leftmenu {
+  .report_details_form .report_page_four table .leftmenu {
     width: 2%; }
+
+.report_details_form .step_content {
+  display: none; }
 
 .design_details_cont {
   float: left;
