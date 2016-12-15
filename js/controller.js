@@ -521,7 +521,8 @@ app.controller("bom", function($scope, $http, $location){
 ----------------------------*/
 
 app.controller("design", function($scope, $http, $location){
-	
+	$scope.orderId = $location.search().id;
+	$scope.orderCode = $location.search().code;
 	
 	$http({
 		method: 'post',
@@ -559,60 +560,27 @@ app.controller("design", function($scope, $http, $location){
 // addbyzhangna
 // cont:account
 
-app.controller("myAccount", function($http, $scope) {
-
-	$scope.data  = '';
-
-	$http({
-		url: 'http://192.168.0.224:8080/decoration_designer/decorationTask/order/selectList?token=designer_13600136000',
-		method: 'post',
-	}).success(function(data) {
-		$scope.data = data.datas;
-	})
-
-})
-
-
-
-app.controller("accountDetails", function($http, $scope, $location) {
-
-	// console.log($location.search());
+app.controller("costForm", function($scope, $http, $location){
+	
 	$scope.orderId = $location.search().id;
 	$scope.orderCode = $location.search().code;
+	// $http({
+	// 	method: 'post',
+	// 	url: 'http://192.168.0.87/decoration_designer/decorationDesignDraw/selectDecorationDesignDrawList',		
+       
+	// }).success(function(data) {
 
-	$http({
-		url: 'http://192.168.0.224:8080/decoration_designer/decorationTask/order/view?token=designer_13600136000',
-		method: 'post',
-		data: {
-			decorationTaskId: $scope.orderId,
-			decorationTaskCode: $scope.orderCode
-		},
+	// 	console.log(data);
+	// 	if (g.checkData(data)) {
+	// 		$scope.data = data.decorationDesignDrawList;			
+	// 	}
 
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8' },
-        
-        transformRequest: function(obj) {    
-            var str = [];    
-            for (var p in obj) {    
-                
-                if (typeof obj[p] == 'object' ) {
-                    // console.log(p, JSON.stringify(obj[p]));
-                    str.push(encodeURIComponent(p) + "=" + encodeURIComponent(JSON.stringify(obj[p])))
-                } else {
-                    str.push(encodeURIComponent(p) + "=" + encodeURIComponent(obj[p]));  
-                }                     
-            }    
-            return str.join("&");    
-        },		
-	}).success(function(data) {
-		$scope.data = data.datas;
-		// console.log($scope.data)
-	})
-
+	// })
 })
 
 
 
-app.controller("gallery", function($http, $scope) {
+app.controller("myAccount", function($http, $scope,$location) {
 
 	$scope.data  = '';
 
@@ -627,41 +595,33 @@ app.controller("gallery", function($http, $scope) {
 
 
 // gallery
-app.controller("galleryDetails", function($http, $scope, $location) {
-
-	// console.log($location.search());
-	$scope.orderId = $location.search().id;
-	$scope.orderCode = $location.search().code;
+app.controller("gallery", function($http, $scope, ngDialog,$location) {
+	$scope.data  = '';
 
 	$http({
-		url: 'http://192.168.0.224:8080/decoration_designer/decorationTask/order/view?token=designer_13600136000',
+		url: 'http://192.168.0.224:8080/decoration_designer/decorationTask/order/selectList?token=designer_13600136000',
 		method: 'post',
-		data: {
-			decorationTaskId: $scope.orderId,
-			decorationTaskCode: $scope.orderCode
-		},
-
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8' },
-        
-        transformRequest: function(obj) {    
-            var str = [];    
-            for (var p in obj) {    
-                
-                if (typeof obj[p] == 'object' ) {
-                    // console.log(p, JSON.stringify(obj[p]));
-                    str.push(encodeURIComponent(p) + "=" + encodeURIComponent(JSON.stringify(obj[p])))
-                } else {
-                    str.push(encodeURIComponent(p) + "=" + encodeURIComponent(obj[p]));  
-                }                     
-            }    
-            return str.join("&");    
-        },		
 	}).success(function(data) {
 		$scope.data = data.datas;
-		// console.log($scope.data)
 	})
 
+	$scope.detailsPop = function() {
+
+        ngDialog.open({
+        	width:'600px',
+        	height:'800px',
+            template:'templates/detailPop.html',
+            className: 'ngdialog-theme-default processConfigEdit',
+            scope: $scope,
+        })
+
+	}
+
 })
+
+
+
+
 
 /*
 ================================================================

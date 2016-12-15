@@ -191,7 +191,7 @@
 /*--------------------------------
 	#order details page
  --------------------------------*/
-.order_details,.report_details,.bom_details,.design_details,.work_load {
+.order_details,.report_details,.bom_details,.design_details,.work_load,.cost_details {
 	
 	padding: 10px;
 
@@ -583,6 +583,17 @@
 	}
 }
 
+/* -------------------------------
+# costForm page 成本控制单
+---------------------------------- */
+.cost_detail_info {
+	width: 1000px;
+	float: left;
+	margin-left: 20px;
+}
+
+
+
 
 /* -------------------
   # account page
@@ -648,7 +659,7 @@
 }
 
 /* ------------------------------
-	# gallery page
+	# gallery page 图库
 -------------------------------- */
 
 .gallery_details {
@@ -692,6 +703,18 @@
 				margin: 0 auto;
 				padding-bottom: 5px;
 				background:#eee;
+				span{
+					position: absolute;
+					top: 4px;
+					left: 4px;
+					width: 40px;
+					height: 20px;
+					line-height: 20px;
+					color: #fff;
+					text-align: center;
+					border-radius: 2px; 
+					background: #f19a4f;
+				}
 				img{
 					width:100%;
 				}
@@ -700,9 +723,9 @@
 					bottom: 10px;
 					right: 5px;
 					width: 26%;
-					height: 30px;
+					height: 26px;
 					color: #fff;
-					line-height: 30px;
+					line-height: 26px;
 					text-align: center;
 					border-radius:4px;
 					background: #1aaaf6;
@@ -713,7 +736,42 @@
 	
 }
 
+/*--------------------------------------
+	# gallery page details 图库查看详情
+---------------------------*/
+.gallery_order {
+	padding: 10px;
+	h3 {
+		font-size: 18px;
+	}
+	.gallery_order_list {
+		margin-top: 20px;
 
+		.gallery_order_list_item {
+			margin-bottom: 14px;
+			> ul {
+				overflow: hidden;
+				li {
+					float: left;
+				}
+				& >:nth-child(1) {
+					width: 25%;
+					img {
+						width: 100%;
+					}
+				}
+				& >:nth-child(2) {
+					width: 60%;
+					margin-left: 4%;
+					> h4 {
+						font-size: 16px;
+					}
+				}
+			}
+				
+		}
+	}
+}
 
 
 
