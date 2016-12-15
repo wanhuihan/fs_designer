@@ -191,7 +191,7 @@
 /*--------------------------------
 	#order details page
  --------------------------------*/
-.order_details,.report_details,.bom_details,.design_details,.work_load {
+.order_details,.report_details,.bom_details,.design_details,.work_load,.cost_details {
 	
 	padding: 10px;
 
@@ -602,12 +602,195 @@
 	}
 }
 
+/* -------------------------------
+# costForm page 成本控制单
+---------------------------------- */
+.cost_detail_info {
+	width: 1000px;
+	float: left;
+	margin-left: 20px;
+}
 
 
 
 
+/* -------------------
+  # account page
+----------------------
+ */
+.container {
+	width:1000px;
+	float:left;
+}
+.account_details {	
+	padding-bottom:100px;
+	.account_delails_money {
+		padding: 20px 10px;
+		margin-bottom:30px;
+		// background:#fff;
+		border: 2px solid #eee;
+		& .account_delails_money_all h3 {
+			font-size:16px;
 
+			+ span{
+				font-size:16px;
+				color:#f00;
+			}
+		}
+		& .account_delails_money_all > div:nth-child(2),& .account_delails_money_all > div:nth-child(5) {
+			padding-top:20px;
+			font-size:14px;
+		}
+		& .account_delails_money_all > div:nth-child(3) {
+			padding-top:5px;
+			font-size:12px;
 
+			& > button:nth-child(1) {
+				margin-bottom:10px;
+			}
+		}
+		& > div:nth-child(2) >p a {
+			color:#20985e;
+		}
+		& > div:nth-child(3) >p a {
+			color:#dd8628;
+		}
+	}
+	.account_delails_list {
+		padding: 20px 40px;
+		// background:#fff;
+		border:2px solid #eee;
+		& > p > span {
+			padding:0 10px;
+			&:nth-child(1) {
+				padding-left:0;
+				color:#f00;
+				border-right:2px solid #666;
+			}
+		}
+		ul li {
+			margin-top:20px;
+			padding:10px 0 ;
+			border-bottom:2px solid #eee;
+			
+		}
+	}
+}
+
+/* ------------------------------
+	# gallery page 图库
+-------------------------------- */
+
+.gallery_details {
+	width: 1000px;
+	float: left;
+	margin: 10px;
+	overflow: hidden;
+	> nav {
+		padding-bottom: 30px;
+		border-bottom: 2px solid #eee;
+		ul {
+			span {
+				width:5%;
+				float: left;
+			}
+			li {
+			width: 10%;
+			float: left;
+			text-align: center;
+			border-right: 1px solid #aaa;	
+			}
+			& li:nth-child(8) {
+				border: none;
+			}
+			& li:nth-child(9) {
+				width: 25%;
+				border: none;
+			}
+		}
+	}
+	.gallery_details_list {
+		margin-top: 20px;
+
+		ul li{
+			float: left;
+			width: 25%;
+			margin-bottom: 15px;
+			div{
+				position: relative;
+				width: 92%;
+				margin: 0 auto;
+				padding-bottom: 5px;
+				background:#eee;
+				span{
+					position: absolute;
+					top: 4px;
+					left: 4px;
+					width: 40px;
+					height: 20px;
+					line-height: 20px;
+					color: #fff;
+					text-align: center;
+					border-radius: 2px; 
+					background: #f19a4f;
+				}
+				img{
+					width:100%;
+				}
+				a{
+					position: absolute;
+					bottom: 10px;
+					right: 5px;
+					width: 26%;
+					height: 26px;
+					color: #fff;
+					line-height: 26px;
+					text-align: center;
+					border-radius:4px;
+					background: #1aaaf6;
+				}
+			}
+		}
+	}	
+	
+}
+
+/*--------------------------------------
+	# gallery page details 图库查看详情
+---------------------------*/
+.gallery_order {
+	padding: 10px;
+	h3 {
+		font-size: 18px;
+	}
+	.gallery_order_list {
+		margin-top: 20px;
+
+		.gallery_order_list_item {
+			margin-bottom: 14px;
+			> ul {
+				overflow: hidden;
+				li {
+					float: left;
+				}
+				& >:nth-child(1) {
+					width: 25%;
+					img {
+						width: 100%;
+					}
+				}
+				& >:nth-child(2) {
+					width: 60%;
+					margin-left: 4%;
+					> h4 {
+						font-size: 16px;
+					}
+				}
+			}
+				
+		}
+	}
+}
 
 
 

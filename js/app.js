@@ -1,7 +1,7 @@
 
 // var app = angular.module("designer", ['chieffancypants.loadingBar']);
 
-var app = angular.module("designer", ["ui.router", 'angular-loading-bar']);
+var app = angular.module("designer", ["ui.router", 'angular-loading-bar','ngDialog']);
 
 /*
  * 设计端cookie fs_designer_token

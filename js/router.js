@@ -136,7 +136,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
     // 设计图
     $stateProvider.state("dashboard.orders.design", {
 
-        url: '/design?id',
+        url: '/design?id&code',
 
         views: {
             "mainBody@": {
@@ -147,10 +147,24 @@ app.config(function($stateProvider, $urlRouterProvider) {
 
     })
 
+    // 成本控制单
+    $stateProvider.state("dashboard.orders.costForm", {
+
+        url: '/costForm?id&code',
+
+        views: {
+            "mainBody@": {
+                templateUrl: 'templates/costForm.html',
+                controller: 'costForm'
+            }
+        }
+
+    })
+
 
     // 物料清单
     $stateProvider.state("dashboard.material", {
-        url: '/material?id',
+        url: '/material?id&code',
 
         views: {
             "mainBody@": {
@@ -158,5 +172,51 @@ app.config(function($stateProvider, $urlRouterProvider) {
             }
         }
     })
+
+
+
+    // 账户列表
+    $stateProvider.state("dashboard.myAccount", {
+        url: '/myAccount',
+        resolve: {
+
+        },
+
+        views: {
+            "mainBody@": {
+                templateUrl: 'templates/myAccount.html',
+                controller: 'myAccount'
+            },
+            // 'sideBar': {
+            //     // templateUrl: 'templates/sideBar.html',
+            //     template: ''
+            // },            
+        }
+    })
+
+
+    //  图库
+    $stateProvider.state("dashboard.gallery", {
+        url: '/gallery',
+        resolve: {
+
+        },
+
+        views: {
+            "mainBody@": {
+                templateUrl: 'templates/gallery.html',
+                controller: 'gallery'
+            },
+            // 'sideBar': {
+            //     // templateUrl: 'templates/sideBar.html',
+            //     template: ''
+            // },            
+        }
+    })
+
+
+
+
+
 
 })

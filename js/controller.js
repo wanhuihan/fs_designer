@@ -97,6 +97,10 @@ app.controller("orders", function($http, $scope) {
 
 })
 
+
+
+
+
 /*-------------------
 	#login page
 ---------------------*/
@@ -557,7 +561,8 @@ app.controller("bom", function($scope, $http, $location){
 ----------------------------*/
 
 app.controller("design", function($scope, $http, $location){
-	
+	$scope.orderId = $location.search().id;
+	$scope.orderCode = $location.search().code;
 	
 	$http({
 		method: 'post',
@@ -587,6 +592,76 @@ app.controller("design", function($scope, $http, $location){
 
 	})
 })
+
+
+
+
+
+// addbyzhangna
+// cont:account
+
+app.controller("costForm", function($scope, $http, $location){
+	
+	$scope.orderId = $location.search().id;
+	$scope.orderCode = $location.search().code;
+	// $http({
+	// 	method: 'post',
+	// 	url: 'http://192.168.0.87/decoration_designer/decorationDesignDraw/selectDecorationDesignDrawList',		
+       
+	// }).success(function(data) {
+
+	// 	console.log(data);
+	// 	if (g.checkData(data)) {
+	// 		$scope.data = data.decorationDesignDrawList;			
+	// 	}
+
+	// })
+})
+
+
+
+app.controller("myAccount", function($http, $scope,$location) {
+
+	$scope.data  = '';
+
+	$http({
+		url: 'http://192.168.0.224:8080/decoration_designer/decorationTask/order/selectList?token=designer_13600136000',
+		method: 'post',
+	}).success(function(data) {
+		$scope.data = data.datas;
+	})
+
+})
+
+
+// gallery
+app.controller("gallery", function($http, $scope, ngDialog,$location) {
+	$scope.data  = '';
+
+	$http({
+		url: 'http://192.168.0.224:8080/decoration_designer/decorationTask/order/selectList?token=designer_13600136000',
+		method: 'post',
+	}).success(function(data) {
+		$scope.data = data.datas;
+	})
+
+	$scope.detailsPop = function() {
+
+        ngDialog.open({
+        	width:'600px',
+        	height:'800px',
+            template:'templates/detailPop.html',
+            className: 'ngdialog-theme-default processConfigEdit',
+            scope: $scope,
+        })
+
+	}
+
+})
+
+
+
+
 
 /*
 ================================================================
