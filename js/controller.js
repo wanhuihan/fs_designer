@@ -378,14 +378,49 @@ app.controller("report", function($scope, $http, $location){
 
 	$scope.nextStep = function(step) {
 
+		var currentStep = angular.element(document.getElementById(step));
+
+		var currentCont = angular.element(document.querySelector("div[content="+step+"]"));
+
+		angular.element(currentStep).removeClass("current");
+		angular.element(currentStep).next().addClass("viewed current");
+
+		$scope.currentStep = angular.element(currentStep).next().attr("id");
+
+		angular.element(currentCont).removeClass("show");
+		angular.element(currentCont).next().addClass("show");
+
+		// console.log(angular.element(document.querySelector("div[content="+step+"]")));
 	}
 
 	$scope.save = function(step) {
 
+		console.log(step);
+	}
+
+	$scope.lastStep = function(step) {
+
+		var currentStep = angular.element(document.getElementById(step));
+
+		var currentCont = angular.element(document.querySelector("div[content="+step+"]"));
+
+		var lastStep = angular.element(currentStep[0].previousSibling.previousSibling);
+
+		var lastCont = angular.element(currentCont[0].previousSibling.previousSibling)
+
+		// console.log(lastCont);
+
+		$scope.currentStep = angular.element(lastStep).attr("id");
+
+		angular.element(currentStep).removeClass("current").removeClass("viewed");
+		angular.element(lastStep).addClass("viewed current");
+
+		angular.element(currentCont).removeClass("show");
+		angular.element(lastCont).addClass("show");		
+
 	}
 
 })
-
 
 /* ---------------------------
 	# bom 物料清单页
@@ -421,7 +456,7 @@ app.controller("bom", function($scope, $http, $location){
 	$http({
 
 		method:'post',
-		url: 'http://192.168.0.224:8080/decoration_designer/material/selectList?decorationTaskCode=116092400000060&token=designer_13600136000&roleCode=11',
+		url: 'http://192.168.0.224:8089/decoration_designer/material/selectList?decorationTaskCode=116092400000060&token=designer_13600136000&roleCode=11',
 		headers: { 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8' },
         transformRequest: function(obj) {    
             var str = [];    
@@ -445,13 +480,17 @@ app.controller("bom", function($scope, $http, $location){
 
 	})
 
-
+/*---------------------------
+	坑死人了，Button会尼玛自己提交表单，即使把接口代码注释掉还是会默认提交，我也是醉了!	之前后端接口为update & submit, 
+	后来改名之后就没有这个问题了
+----------------------------*/
 	$scope.save = function() {
+
 		var formData = pushData();
 
 		$http({
 			method: 'post',
-			url: 'http://192.168.0.224:8089/decoration_designer/material/update?token=designer_13600136000&decorationTaskCode=116092400000060&',
+			url: 'http://192.168.0.224:8089/decoration_designer/material/updateMaterialDetails?token=designer_13600136000&decorationTaskCode=116092400000060',
 			data: {
 				jsonData: formData
 			},
@@ -474,6 +513,7 @@ app.controller("bom", function($scope, $http, $location){
 			console.log(data);
 
 		})
+		// alert(123)
 	}
 
 
@@ -481,7 +521,7 @@ app.controller("bom", function($scope, $http, $location){
 
 		$http({
 			method: 'post',
-			url: 'http://192.168.0.224:8089/decoration_designer/material/submit?token=designer_13600136000',
+			url: 'http://192.168.0.224:8089/decoration_designer/material/submitMaterial?token=designer_13600136000',
 			data: {
 				decorationTaskCode: $scope.orderCode
 			},

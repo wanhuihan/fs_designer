@@ -58,7 +58,7 @@
 			</div>
 			<div class="reoprt_pageone step_content" content="step_1">
 					
-				<form action="" class="report_tab_listone" ng-controller="providerPurchaseOrder">
+				<form class="report_tab_listone" ng-controller="providerPurchaseOrder">
 					<div class="row">
 						<div class="col-md-12">					    
 						      <p> 1.请填写您实际的量房日期：<span>*</span></p>
@@ -133,13 +133,13 @@
 						      <input type="text" placeholder="详细地址">
 						</div>
 					</div>
-					<button class="btn btn-primary">保存 {{currentStep}}</button>
-					<button class="btn btn-default">下一步</button>
+					<button class="btn btn-primary" ng-click="save(currentStep)">保存 {{currentStep}}</button>
+					<button class="btn btn-default" ng-click="nextStep(currentStep)">下一步</button>
 				</form>
 			</div>
 
 			<div class="report_page_two step_content" content="step_2">
-				<form action="" class="report_tab_listone">
+				<form class="report_tab_listone">
 					<div class="row">
 						<div class="col-md-12">					    
 						      	<p> 1.请选择该房屋原结构：<span>*</span></p>
@@ -229,11 +229,14 @@
 						      <textarea name="" id="" cols="70" rows="10"></textarea>
 						</div>
 					</div>
+					<button class="btn btn-default" ng-click="lastStep(currentStep)">上一步</button>
+					<button class="btn btn-primary" ng-click="save(currentStep)">保存 {{currentStep}}</button>
+					<button class="btn btn-default" ng-click="nextStep(currentStep)">下一步</button>					
 				</form>
 			</div>
 
 			<div class="report_page_three step_content" content="step_3">
-				<form action="" class="report_tab_listtwo">
+				<form class="report_tab_listtwo">
 					<div class="row">
 						<h3>绿色科技部分</h3>
 					</div>
@@ -1067,6 +1070,9 @@
 							</div>
 						</div>
 					</div>
+					<button class="btn btn-default" ng-click="lastStep(currentStep)">上一步</button>
+					<button class="btn btn-primary" ng-click="save(currentStep)">保存 {{currentStep}}</button>
+					<button class="btn btn-default" ng-click="nextStep(currentStep)">下一步</button>					
 				</form>
 			</div>
 
@@ -1116,7 +1122,7 @@
 					</tr>
 				
 
-					<!-- Primary observation content  -->
+					 Primary observation content  -->
 
 					<tr>
 						<td class="leftmenu" rowspan="8">首要观察内容</td>
@@ -1629,6 +1635,9 @@
 						<td class="" colspan="5"></td>
 					</tr>
 				</table>
+				<button class="btn btn-default" ng-click="lastStep(currentStep)">上一步</button>
+				<button class="btn btn-primary" ng-click="save(currentStep)">保存 {{currentStep}}</button>
+				<button class="btn btn-default" ng-click="nextStep(currentStep)">下一步</button>
 			</div>
 
 		</div>

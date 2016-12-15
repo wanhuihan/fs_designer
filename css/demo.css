@@ -226,35 +226,6 @@
 /*-------------------
 	量房报告 
  --------------------*/
-.report_details_form .report_tab_stepone {
-  position: relative;
-  text-align: center; }
-  .report_details_form .report_tab_stepone h3 {
-    font-size: 14px;
-    color: #169BD5; }
-  .report_details_form .report_tab_stepone span {
-    display: inline-block;
-    width: 50px;
-    height: 50px;
-    line-height: 50px;
-    text-align: center;
-    color: #fff;
-    background: #169BD5;
-    border-radius: 50%; }
-  .report_details_form .report_tab_stepone div {
-    position: absolute;
-    z-index: -1;
-    left: 42%;
-    top: 65px;
-    width: 100%;
-    height: 9px;
-    background-color: #169bd5;
-    border: none;
-    border-radius: 10px;
-    -moz-box-shadow: none;
-    -webkit-box-shadow: none;
-    box-shadow: none; }
-
 .report_details_form .report_tab_steptwo h3 {
   color: #555; }
 
@@ -306,6 +277,41 @@
 
 .report_details_form .step_content {
   display: none; }
+
+.report_details_form .step_box .step {
+  position: relative;
+  text-align: center; }
+  .report_details_form .step_box .step h3 {
+    font-size: 14px;
+    color: #169BD5; }
+  .report_details_form .step_box .step span {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    color: #fff;
+    background: #999;
+    border-radius: 50%; }
+  .report_details_form .step_box .step div {
+    position: absolute;
+    z-index: -1;
+    left: 42%;
+    top: 65px;
+    width: 100%;
+    height: 9px;
+    background: #eee;
+    border: none;
+    border-radius: 10px;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none; }
+
+.report_details_form .step_box .viewed span {
+  background: #169BD5; }
+
+.report_details_form .step_box .viewed div {
+  background: #169BD5; }
 
 .design_details_cont {
   float: left;
