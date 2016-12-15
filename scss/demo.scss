@@ -570,9 +570,134 @@
 }
 
 
+/* -------------------
+  # account page
+----------------------
+ */
+.container {
+	width:1000px;
+	float:left;
+}
+.account_details {	
+	padding-bottom:100px;
+	.account_delails_money {
+		padding: 20px 10px;
+		margin-bottom:30px;
+		// background:#fff;
+		border: 2px solid #eee;
+		& .account_delails_money_all h3 {
+			font-size:16px;
 
+			+ span{
+				font-size:16px;
+				color:#f00;
+			}
+		}
+		& .account_delails_money_all > div:nth-child(2),& .account_delails_money_all > div:nth-child(5) {
+			padding-top:20px;
+			font-size:14px;
+		}
+		& .account_delails_money_all > div:nth-child(3) {
+			padding-top:5px;
+			font-size:12px;
 
+			& > button:nth-child(1) {
+				margin-bottom:10px;
+			}
+		}
+		& > div:nth-child(2) >p a {
+			color:#20985e;
+		}
+		& > div:nth-child(3) >p a {
+			color:#dd8628;
+		}
+	}
+	.account_delails_list {
+		padding: 20px 40px;
+		// background:#fff;
+		border:2px solid #eee;
+		& > p > span {
+			padding:0 10px;
+			&:nth-child(1) {
+				padding-left:0;
+				color:#f00;
+				border-right:2px solid #666;
+			}
+		}
+		ul li {
+			margin-top:20px;
+			padding:10px 0 ;
+			border-bottom:2px solid #eee;
+			
+		}
+	}
+}
 
+/* ------------------------------
+	# gallery page
+-------------------------------- */
+
+.gallery_details {
+	width: 1000px;
+	float: left;
+	margin: 10px;
+	overflow: hidden;
+	> nav {
+		padding-bottom: 30px;
+		border-bottom: 2px solid #eee;
+		ul {
+			span {
+				width:5%;
+				float: left;
+			}
+			li {
+			width: 10%;
+			float: left;
+			text-align: center;
+			border-right: 1px solid #aaa;	
+			}
+			& li:nth-child(8) {
+				border: none;
+			}
+			& li:nth-child(9) {
+				width: 25%;
+				border: none;
+			}
+		}
+	}
+	.gallery_details_list {
+		margin-top: 20px;
+
+		ul li{
+			float: left;
+			width: 25%;
+			margin-bottom: 15px;
+			div{
+				position: relative;
+				width: 92%;
+				margin: 0 auto;
+				padding-bottom: 5px;
+				background:#eee;
+				img{
+					width:100%;
+				}
+				a{
+					position: absolute;
+					bottom: 10px;
+					right: 5px;
+					width: 26%;
+					height: 30px;
+					color: #fff;
+					line-height: 30px;
+					text-align: center;
+					border-radius:4px;
+					background: #1aaaf6;
+				}
+			}
+		}
+	}	
+	
+}
 
 
 

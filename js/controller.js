@@ -97,6 +97,10 @@ app.controller("orders", function($http, $scope) {
 
 })
 
+
+
+
+
 /*-------------------
 	#login page
 ---------------------*/
@@ -520,6 +524,117 @@ app.controller("design", function($scope, $http, $location){
 		}
 
 	})
+})
+
+
+
+
+
+// addbyzhangna
+// cont:account
+
+app.controller("myAccount", function($http, $scope) {
+
+	$scope.data  = '';
+
+	$http({
+		url: 'http://192.168.0.224:8080/decoration_designer/decorationTask/order/selectList?token=designer_13600136000',
+		method: 'post',
+	}).success(function(data) {
+		$scope.data = data.datas;
+	})
+
+})
+
+
+
+app.controller("accountDetails", function($http, $scope, $location) {
+
+	// console.log($location.search());
+	$scope.orderId = $location.search().id;
+	$scope.orderCode = $location.search().code;
+
+	$http({
+		url: 'http://192.168.0.224:8080/decoration_designer/decorationTask/order/view?token=designer_13600136000',
+		method: 'post',
+		data: {
+			decorationTaskId: $scope.orderId,
+			decorationTaskCode: $scope.orderCode
+		},
+
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8' },
+        
+        transformRequest: function(obj) {    
+            var str = [];    
+            for (var p in obj) {    
+                
+                if (typeof obj[p] == 'object' ) {
+                    // console.log(p, JSON.stringify(obj[p]));
+                    str.push(encodeURIComponent(p) + "=" + encodeURIComponent(JSON.stringify(obj[p])))
+                } else {
+                    str.push(encodeURIComponent(p) + "=" + encodeURIComponent(obj[p]));  
+                }                     
+            }    
+            return str.join("&");    
+        },		
+	}).success(function(data) {
+		$scope.data = data.datas;
+		// console.log($scope.data)
+	})
+
+})
+
+
+
+app.controller("gallery", function($http, $scope) {
+
+	$scope.data  = '';
+
+	$http({
+		url: 'http://192.168.0.224:8080/decoration_designer/decorationTask/order/selectList?token=designer_13600136000',
+		method: 'post',
+	}).success(function(data) {
+		$scope.data = data.datas;
+	})
+
+})
+
+
+// gallery
+app.controller("galleryDetails", function($http, $scope, $location) {
+
+	// console.log($location.search());
+	$scope.orderId = $location.search().id;
+	$scope.orderCode = $location.search().code;
+
+	$http({
+		url: 'http://192.168.0.224:8080/decoration_designer/decorationTask/order/view?token=designer_13600136000',
+		method: 'post',
+		data: {
+			decorationTaskId: $scope.orderId,
+			decorationTaskCode: $scope.orderCode
+		},
+
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8' },
+        
+        transformRequest: function(obj) {    
+            var str = [];    
+            for (var p in obj) {    
+                
+                if (typeof obj[p] == 'object' ) {
+                    // console.log(p, JSON.stringify(obj[p]));
+                    str.push(encodeURIComponent(p) + "=" + encodeURIComponent(JSON.stringify(obj[p])))
+                } else {
+                    str.push(encodeURIComponent(p) + "=" + encodeURIComponent(obj[p]));  
+                }                     
+            }    
+            return str.join("&");    
+        },		
+	}).success(function(data) {
+		$scope.data = data.datas;
+		// console.log($scope.data)
+	})
+
 })
 
 /*

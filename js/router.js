@@ -159,4 +159,68 @@ app.config(function($stateProvider, $urlRouterProvider) {
         }
     })
 
+
+
+    // 账户列表
+    $stateProvider.state("dashboard.myAccount", {
+        url: '/myAccount',
+        resolve: {
+
+        },
+
+        views: {
+            "mainBody@": {
+                templateUrl: 'templates/myAccount.html',
+                controller: 'myAccount'
+            },
+            // 'sideBar': {
+            //     // templateUrl: 'templates/sideBar.html',
+            //     template: ''
+            // },            
+        }
+    })
+
+     // 账户详情
+    $stateProvider.state("dashboard.myAccount.details", {
+        url: '/details?id&code',
+        resolve: {
+
+        },
+
+        views: {
+            "mainBody@": {
+                templateUrl: 'templates/myAccount.html',
+                controller: 'accuontDetails'
+            },
+            // 'sideBar': {
+            //     // templateUrl: 'templates/sideBar.html',
+            //     template: ''
+            // },            
+        }
+    })
+
+    //  图库
+    $stateProvider.state("dashboard.gallery", {
+        url: '/gallery',
+        resolve: {
+
+        },
+
+        views: {
+            "mainBody@": {
+                templateUrl: 'templates/gallery.html',
+                controller: 'gallery'
+            },
+            // 'sideBar': {
+            //     // templateUrl: 'templates/sideBar.html',
+            //     template: ''
+            // },            
+        }
+    })
+
+
+
+
+
+
 })
