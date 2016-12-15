@@ -30,32 +30,33 @@
 	</div>
 	
 	<div class="report_details_form">
+
 		<div role="tabpanel" class="tab-pane" id="report" aria-labelledby="report-tab">
-			<div class="row">	
-				<div class="col-md-3 report_tab_stepone">
+			<div class="row step_box" >	
+				<div class="col-md-3 report_tab_stepone step_1 step current viewed" id="step_1">
 					<h3>客户基本情况</h3>
 					<span>1</span>
 					<div></div>
 				</div>
 
-				<div class="col-md-3 report_tab_stepone report_tab_steptwo">
+				<div id="step_2" class="col-md-3 report_tab_stepone report_tab_steptwo step_2 step">
 					<h3>首要观察内容</h3>
 					<span>2</span>
 					<div></div>
 				</div>
 
-				<div class="col-md-3 report_tab_stepone report_tab_steptwo">
+				<div id="step_3" class="col-md-3 report_tab_stepone report_tab_steptwo step_3 step">
 					<h3>与业主沟通内容</h3>
 					<span>3</span>
 					<div></div>
 				</div>
 
-				<div class="col-md-3 report_tab_stepone report_tab_steptwo">
+				<div id="step_4" class="col-md-3 report_tab_stepone report_tab_steptwo step_4 step">
 					<h3>完成</h3>
 					<span>4</span>
 				</div>
 			</div>
-			<div class="reoprt_pageone">
+			<div class="reoprt_pageone step_content" content="step_1">
 					
 				<form action="" class="report_tab_listone" ng-controller="providerPurchaseOrder">
 					<div class="row">
@@ -132,10 +133,12 @@
 						      <input type="text" placeholder="详细地址">
 						</div>
 					</div>
+					<button class="btn btn-primary">保存 {{currentStep}}</button>
+					<button class="btn btn-default">下一步</button>
 				</form>
 			</div>
 
-			<div class="report_page_two">
+			<div class="report_page_two step_content" content="step_2">
 				<form action="" class="report_tab_listone">
 					<div class="row">
 						<div class="col-md-12">					    
@@ -229,7 +232,7 @@
 				</form>
 			</div>
 
-			<div class="report_page_three">
+			<div class="report_page_three step_content" content="step_3">
 				<form action="" class="report_tab_listtwo">
 					<div class="row">
 						<h3>绿色科技部分</h3>
@@ -1067,7 +1070,7 @@
 				</form>
 			</div>
 
-			<div class="report_page_four">
+			<div class="report_page_four step_content" content="step_4">
 				<table class="table table-bordered">
 					<th colspan="7" class="tabletitle">量房记录表</th>
 					<!-- Customer basic situation

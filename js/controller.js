@@ -354,9 +354,35 @@ app.controller("workLoad", function($scope, $http, $location) {
 -----------------------------*/
 app.controller("report", function($scope, $http, $location){
 
-
 	$scope.orderId = $location.search().id;
+
 	$scope.orderCode = $location.search().code;
+
+	var step = angular.element(document.getElementsByClassName("step"));
+	var stepCont = angular.element(document.getElementsByClassName("step_content"));
+
+	$scope.currentStep = "";
+	// console.log(step)
+	for (var i = 0; i < step.length; i++) {
+
+		if (angular.element(step[i]).hasClass("current")) {
+			$scope.currentStep = angular.element(step[i]).attr("id");
+
+			if(stepCont[i].getAttribute("content") == $scope.currentStep) {
+				angular.element(stepCont[i]).addClass("show");
+			}			
+
+		}
+	}
+	// console.log(currentStep);
+
+	$scope.nextStep = function(step) {
+
+	}
+
+	$scope.save = function(step) {
+
+	}
 
 })
 
@@ -383,7 +409,7 @@ app.controller("bom", function($scope, $http, $location){
 
 			arr.push({
 				'quantity': qty[i].value,
-				'decorationTaskCode ': configId[i].value,
+				'decorationTaskCode': $scope.orderCode,
 				'materialConfigurationlId': configId[i].value
 			});
 		}
@@ -425,7 +451,7 @@ app.controller("bom", function($scope, $http, $location){
 
 		$http({
 			method: 'post',
-			url: 'http://192.168.0.224:8080/decoration_designer/material/update?token=designer_13600136000&decorationTaskCode=116092400000060&',
+			url: 'http://192.168.0.224:8089/decoration_designer/material/update?token=designer_13600136000&decorationTaskCode=116092400000060&',
 			data: {
 				jsonData: formData
 			},
@@ -455,7 +481,7 @@ app.controller("bom", function($scope, $http, $location){
 
 		$http({
 			method: 'post',
-			url: 'http://192.168.0.224:8080/decoration_designer/material/submit?token=designer_13600136000&decorationTaskCode=116092400000060',
+			url: 'http://192.168.0.224:8089/decoration_designer/material/submit?token=designer_13600136000',
 			data: {
 				decorationTaskCode: $scope.orderCode
 			},
@@ -473,7 +499,7 @@ app.controller("bom", function($scope, $http, $location){
 		        }    
 		        return str.join("&");    
 		    }
-			
+
 		}).success(function(data){
 
 			console.log(data)
