@@ -27,7 +27,7 @@
  ---------------*/
 .btn {
 	border:1px solid #000;
-	padding: 10px 20px;
+	// padding: 10px 20px;
 	box-sizing: border-box;
 	font-size: 14px;
 }
@@ -425,6 +425,9 @@
 
 	.step_content {
 		display: none;
+		.additional_info {
+			display: none;
+		}
 	}
 	
 	.step_box {
@@ -480,6 +483,7 @@
 				background: #169BD5;
 			}
 			
+
 		}		
 	}
  }

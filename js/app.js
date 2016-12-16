@@ -26,6 +26,10 @@ var g = {
 
 	},
 
+	// get the date text
+	a: function(e) {
+		console.log(e)
+	},
 	// check the json data from back end
 	checkData: function(data) {
 

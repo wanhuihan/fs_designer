@@ -23,7 +23,6 @@
  ---------------*/
 .btn {
   border: 1px solid #000;
-  padding: 10px 20px;
   box-sizing: border-box;
   font-size: 14px; }
 
@@ -277,6 +276,8 @@
 
 .report_details_form .step_content {
   display: none; }
+  .report_details_form .step_content .additional_info {
+    display: none; }
 
 .report_details_form .step_box .step {
   position: relative;

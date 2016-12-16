@@ -60,59 +60,60 @@
 			</div>
 			<div class="reoprt_pageone step_content" content="step_1">
 					
-				<form class="report_tab_listone" ng-controller="providerPurchaseOrder">
+				<form class="report_tab_listone" >
 					<div class="row">
 						<div class="col-md-12">					    
-						      <p> 1.请填写您实际的量房日期：<span>*</span></p>
-						      <input type="text" name=""  id="datePick">
+						      <p> 1.请填写您实际的量房日期:<span>*</span></p>
+						      <input type="text" name=""  id="surveyTime">
+
 						</div>
 					</div>
 
 	                <div class="row">
 						<div class="col-md-12">					    
 						      <p> 2.请填写业主真实姓名：<span>*</span></p>
-						      <input type="text">
+						      <input type="text" ng-model="formData.generalInfo.ownerName">
 						</div>
 					</div>
 					<div class="row">
 						<div class="col-md-12">					    
 						    <p> 3.请填写业主性别：<span>*</span></p>
-						    <input type="radio" name="radiosex" value="radiosex" checked>女士
-							<input type="radio" name="radiosex" value="radiosex"> 先生 
+						    <input type="radio" name="radiosex" value="0" ng-model="formData.generalInfo.ownerSex">女士
+							<input type="radio" name="radiosex" value="1" ng-model="formData.generalInfo.ownerSex"> 先生 
 						</div>
 					</div>
 					<div class="row">
 						<div class="col-md-12">					    
 						    <p> 4.请填写业主年龄：<span>*</span></p>
-						    <input type="radio" name="radioage" value="radioage" checked>18~28岁
-							<input type="radio" name="radioage" value="radioage"> 29~38岁
-							<input type="radio" name="radioage" value="radioage" >39岁~48岁
-							<input type="radio" name="radioage" value="radioage" >49岁~58岁
-							<input type="radio" name="radioage" value="radioage"> 59岁以上
+						    <input type="radio" name="radioage" value="1"  ng-model="formData.generalInfo.ownerAge">18~28岁
+							<input type="radio" name="radioage" value="2" ng-model="formData.generalInfo.ownerAge"> 29~38岁
+							<input type="radio" name="radioage" value="3" ng-model="formData.generalInfo.ownerAge">39岁~48岁
+							<input type="radio" name="radioage" value="4" ng-model="formData.generalInfo.ownerAge">49岁~58岁
+							<input type="radio" name="radioage" value="5" ng-model="formData.generalInfo.ownerAge"> 59岁以上
 						</div>
 					</div>
 					<div class="row">
 						<div class="col-md-12">					    
 						      <p>5.请填写所该装修房屋的建筑面积：<span>*</span></p>
-						      <input type="text">&nbsp;&nbsp;m*2
+						      <input type="text" ng-model="formData.generalInfo.ownerBuildArea">&nbsp;&nbsp;m*2
 						</div>
 					</div>
 					<div class="row">
 						<div class="col-md-12">					    
 						      <p> 6.请填写该装修房屋的使用面积：<span>*</span></p>
-						      <input type="text">&nbsp;&nbsp;m*2
+						      <input type="text" ng-model="formData.generalInfo.ownerUseArea">&nbsp;&nbsp;m*2
 						</div>
 					</div>
 					<div class="row">
 						<div class="col-md-12">					    
-						      <p> 7.请填写该房屋装修计划投资：（&nbsp;<input type="radio">&nbsp;含主材）<span>*</span></p>
-						      <input type="text">
+						      <p> 7.请填写该房屋装修计划投资：（&nbsp;<input type="checkbox" ng-model="investMPChangeVal" ng-change="investMPChange()" >&nbsp;含主材）<span>*</span></p>
+						      <input type="text" ng-model="formData.generalInfo.ownerPlannedInvests" ng-change="investMPChange()">
 						</div>
 					</div>
 					<div class="row">
 						<div class="col-md-12">					    
 						      <p> 8.请填写该房屋的计划装修时间：<span>*</span></p>
-						      <input type="text">
+						      <input type="text" ng-model="formData.generalInfo.ownerPlanTime">
 						</div>
 					</div> 
 					<div class="row">
@@ -120,19 +121,22 @@
 						      	<p>9.请填写该房屋具体地址：<span>*</span></p>
 						      	<p>
 									请选择省份：
-									<select name="" id="first_level">
+									<select name="" id="first_level" ng-model="generalInfo.province" ng-change="addressGather()">
 										<option value="0">请选择</option>
+										<option value="北京">北京</option>
 									</select>
 									请选择城市：
-									<select name="" id="second_level">
+									<select name="" id="second_level" ng-model="generalInfo.city" ng-change="addressGather()">
 										<option value="0">请选择</option>
+										<option value="朝阳">朝阳</option>
 									</select>
 									请选择县/区：
-									<select name="" id="third_level">
+									<select name="" id="third_level" ng-model="generalInfo.county" ng-change="addressGather()">
 										<option value="0">请选择</option>
+										<option value="朝阳">朝阳</option>
 									</select>	
 								</p>
-						      <input type="text" placeholder="详细地址">
+						      <input type="text" placeholder="详细地址" ng-model="generalInfo.address" ng-change="addressGather()">
 						</div>
 					</div>
 					<button class="btn btn-primary" ng-click="save(currentStep)">保存 {{currentStep}}</button>
@@ -141,26 +145,40 @@
 			</div>
 
 			<div class="report_page_two step_content" content="step_2">
+				{{formData.houseBasicInfo}}
 				<form class="report_tab_listone">
 					<div class="row">
 						<div class="col-md-12">					    
 						      	<p> 1.请选择该房屋原结构：<span>*</span></p>
-						      	<input type="radio" name="radiostruct" value="radiostruct" >&nbsp;砖砼结构
-								<input type="radio" name="radiostruct" value="radiostruct">&nbsp;框架结构 
+						      	<input type="radio" name="radiostruct" value="0" ng-model="formData.houseBasicInfo.houseHouseStructureType">&nbsp;砖砼结构
+								<input type="radio" name="radiostruct" value="1" ng-model="formData.houseBasicInfo.houseHouseStructureType">&nbsp;框架结构 
 						</div>
 					</div>
 	                <div class="row">
 						<div class="col-md-12">					    
 						      	<p> 2.请填写原房屋结构是否有缺陷之处（如：墙体裂开、平整度、顶面漏水）：<span>*</span></p>
-						      	<input type="radio" name="radiodefect" value="radiodefect" >&nbsp;是
-								<input type="radio" name="radiodefect" value="radiodefect">&nbsp;否 
+						      	<input type="radio" name="radiodefect" value="1" ng-model="formData.houseBasicInfo.houseHouseStructureFault" ng-change="test('radiodefect', formData.houseBasicInfo.houseHouseStructureFault)">&nbsp;是
+								<input type="radio" name="radiodefect" value="0" ng-model="formData.houseBasicInfo.houseHouseStructureFault" ng-change="test('radiodefect', formData.houseBasicInfo.houseHouseStructureFault)">&nbsp;否 
+
+								<div class="info_add additional_info">
+									<p ng-repeat="item in formData.houseBasicInfo.faultArr">
+										{{item}} - 
+										<span class="glyphicon glyphicon-remove" ng-click="removeFaultList($index)"></span>
+									</p>
+									<label>位置/参考意见</label><input type="text" name="">
+									<a class="btn btn-primary btn-xs" ng-click="addItem($event)">添加</a>
+								</div>
+
 						</div>
 					</div>
 					<div class="row">
 						<div class="col-md-12">					    
 						    <p> 3.请选择暖气是否需改动：<span>*</span></p>
-						    <input type="radio" name="radioheating" value="radioheating" >&nbsp;是
-							<input type="radio" name="radioheating" value="radioheating">&nbsp;否 
+						    <input type="radio" name="radioheating" value="1" ng-model="formData.houseBasicInfo.houseHeatingChange" ng-change="test('radioheating', formData.houseBasicInfo.houseHeatingChange)">&nbsp;是
+							<input type="radio" name="radioheating" value="0" ng-model="formData.houseBasicInfo.houseHeatingChange" ng-change="test('radioheating', formData.houseBasicInfo.houseHeatingChange)">&nbsp;否 
+							<div class="additional_info">
+								<input type="text" name="">
+							</div>
 						</div>
 					</div>
 					<div class="row">

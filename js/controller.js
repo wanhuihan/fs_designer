@@ -168,15 +168,15 @@ app.controller("login", function($http, $scope, $location) {
 addByzhangna
 cont:date 插件
 */
-	app.controller("providerPurchaseOrder", function($scope, $http, $location) {
+// 	app.controller("providerPurchaseOrder", function($scope, $http, $location) {
 
-	jQuery('#datePick').daterangepicker({
+// 	jQuery('#datePick').daterangepicker({
 
-		singleDatePicker: true,
+// 		singleDatePicker: true,
 
-	}, null);
+// 	}, null);
 
-})
+// })
 
 
 /* --------------
@@ -354,79 +354,6 @@ app.controller("workLoad", function($scope, $http, $location) {
 
 
 /* ---------------------------
-	# report 量房报告页
------------------------------*/
-app.controller("report", function($scope, $http, $location){
-
-	$scope.orderId = $location.search().id;
-
-	$scope.orderCode = $location.search().code;
-
-	var step = angular.element(document.getElementsByClassName("step"));
-	var stepCont = angular.element(document.getElementsByClassName("step_content"));
-
-	$scope.currentStep = "";
-	// console.log(step)
-	for (var i = 0; i < step.length; i++) {
-
-		if (angular.element(step[i]).hasClass("current")) {
-			$scope.currentStep = angular.element(step[i]).attr("id");
-
-			if(stepCont[i].getAttribute("content") == $scope.currentStep) {
-				angular.element(stepCont[i]).addClass("show");
-			}			
-
-		}
-	}
-	// console.log(currentStep);
-
-	$scope.nextStep = function(step) {
-
-		var currentStep = angular.element(document.getElementById(step));
-
-		var currentCont = angular.element(document.querySelector("div[content="+step+"]"));
-
-		angular.element(currentStep).removeClass("current");
-		angular.element(currentStep).next().addClass("viewed current");
-
-		$scope.currentStep = angular.element(currentStep).next().attr("id");
-
-		angular.element(currentCont).removeClass("show");
-		angular.element(currentCont).next().addClass("show");
-
-		// console.log(angular.element(document.querySelector("div[content="+step+"]")));
-	}
-
-	$scope.save = function(step) {
-
-		console.log(step);
-	}
-
-	$scope.lastStep = function(step) {
-
-		var currentStep = angular.element(document.getElementById(step));
-
-		var currentCont = angular.element(document.querySelector("div[content="+step+"]"));
-
-		var lastStep = angular.element(currentStep[0].previousSibling.previousSibling);
-
-		var lastCont = angular.element(currentCont[0].previousSibling.previousSibling)
-
-		// console.log(lastCont);
-
-		$scope.currentStep = angular.element(lastStep).attr("id");
-
-		angular.element(currentStep).removeClass("current").removeClass("viewed");
-		angular.element(lastStep).addClass("viewed current");
-
-		angular.element(currentCont).removeClass("show");
-		angular.element(lastCont).addClass("show");		
-
-	}
-
-})
-
-/* ---------------------------
 	# bom 物料清单页
 -----------------------------*/
 app.controller("bom", function($scope, $http, $location){
@@ -460,7 +387,7 @@ app.controller("bom", function($scope, $http, $location){
 	$http({
 
 		method:'post',
-		url: 'http://192.168.0.224:8089/decoration_designer/material/selectList?decorationTaskCode=116092400000060&token=designer_13600136000&roleCode=11',
+		url: 'http://192.168.0.224:8080/decoration_designer/material/selectList?decorationTaskCode=116092400000060&token=designer_13600136000&roleCode=11',
 		headers: { 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8' },
         transformRequest: function(obj) {    
             var str = [];    
