@@ -1198,7 +1198,10 @@
 				
 
 					 Primary observation content  -->
-					{{formData}}
+
+					<div ng-repeat="(key,value) in formData" style="border-bottom: 1px solid;">
+						{{key}} = > {{value}}
+					</div>
 					<tr>
 						<td class="leftmenu" rowspan="8">首要观察内容</td>
 						<td class="">房屋原结构：</td>
@@ -1222,7 +1225,7 @@
 						<td class="" rowspan="1">房屋原结构是否有缺陷之处：</td>
 						<td class="" rowspan="1">
 							<span ng-if="formData.houseBasicInfo.houseHouseStructureFault==1">是</span>
-							<span ng-if="formData.houseBasicInfo.houseHouseStructureFault==1">否</span>								
+							<span ng-if="formData.houseBasicInfo.houseHouseStructureFault==0">否</span>								
 						</td>
 						<td class="" colspan="4">							
 							<p ng-repeat="item in formData.houseBasicInfo.faultArr">
