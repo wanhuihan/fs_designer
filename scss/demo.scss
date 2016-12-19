@@ -408,7 +408,7 @@
 		}
 	}
 	.report_page_four table {
-		width:80%;
+		// width:80%;
 		margin: 0 auto;
 		.tabletitle {
 			font-size:20px;
@@ -487,7 +487,20 @@
 		}		
 	}
 	.report_table {
-		
+		width: 800px;
+		tr {
+			td{
+				&:nth-child(1) {
+					width: 120px;
+				}
+				&:nth-child(3) {
+					width: 120px;
+				}
+				&:nth-child(5) {
+					// width: 200px;
+				}
+			}
+		}
 	}
  }
  

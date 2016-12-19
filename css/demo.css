@@ -263,7 +263,6 @@
       margin-left: 20px; }
 
 .report_details_form .report_page_four table {
-  width: 80%;
   margin: 0 auto; }
   .report_details_form .report_page_four table .tabletitle {
     font-size: 20px;
@@ -313,6 +312,13 @@
 
 .report_details_form .step_box .viewed div {
   background: #169BD5; }
+
+.report_details_form .report_table {
+  width: 800px; }
+  .report_details_form .report_table tr td:nth-child(1) {
+    width: 120px; }
+  .report_details_form .report_table tr td:nth-child(3) {
+    width: 120px; }
 
 .design_details_cont {
   float: left;

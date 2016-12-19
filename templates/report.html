@@ -205,7 +205,7 @@
 						      	<input type="radio" name="radioair" value="1" ng-model="formData.houseBasicInfo.houseAcBuild"  ng-change="switch('radioair', formData.houseBasicInfo.houseAcBuild)">&nbsp;未安装
 								<input type="radio" name="radioair" value="0" ng-model="formData.houseBasicInfo.houseAcBuild"  ng-change="switch('radioair', formData.houseBasicInfo.houseAcBuild)">&nbsp;已安装
 								<div class="additional_info">
-									<input type="radio" name="" value="0"ng-model="formData.houseBasicInfo.houseCm"> 已定制
+									<input type="radio" name="" value="1"ng-model="formData.houseBasicInfo.houseCm"> 已定制
 									<input type="radio" name="" value="1" ng-model="formData.houseBasicInfo.houseCm">未定制
 								</div>
 						</div>
@@ -232,10 +232,10 @@
 					<div class="row">
 						<div class="col-md-12">					    
 						      	<p>9. 厨房是否已铺砖及吊顶：<span>*</span></p>
-						      	<input type="radio" name="radiobricko" value="1" ng-model="formData.houseBasicInfo.houseKitTileCeilingBuild" ng-change="switch('radiobricko', formData.houseBasicInfo.houseKitTileCeilingBuild)">&nbsp;已铺装
-								<input type="radio" name="radiobricko" value="2" ng-model="formData.houseBasicInfo.houseKitTileCeilingBuild" ng-change="switch('radiobricko', formData.houseBasicInfo.houseKitTileCeilingBuild)">&nbsp;未铺装
-								<input type="radio" name="radioroof" value="3" ng-model="formData.houseBasicInfo.houseKitTileCeilingBuild" ng-change="switch('radiobricko', formData.houseBasicInfo.houseKitTileCeilingBuild)">&nbsp;已吊顶
-								<input type="radio" name="radioroof" value="4" ng-model="formData.houseBasicInfo.houseKitTileCeilingBuild" ng-change="switch('radiobricko', formData.houseBasicInfo.houseWholeCabinetBuild)">&nbsp;未吊顶
+						      	<input type="radio" name="radiobricko" value="3" ng-model="formData.houseBasicInfo.houseKitTileCeilingBuild" ng-change="switch('radiobricko', formData.houseBasicInfo.houseKitTileCeilingBuild)">&nbsp;已铺装
+								<input type="radio" name="radiobricko" value="4" ng-model="formData.houseBasicInfo.houseKitTileCeilingBuild" ng-change="switch('radiobricko', formData.houseBasicInfo.houseKitTileCeilingBuild)">&nbsp;未铺装
+								<input type="radio" name="radioroof" value="1" ng-model="formData.houseBasicInfo.houseKitTileCeilingBuild" ng-change="switch('radiobricko', formData.houseBasicInfo.houseKitTileCeilingBuild)">&nbsp;已吊顶
+								<input type="radio" name="radioroof" value="2" ng-model="formData.houseBasicInfo.houseKitTileCeilingBuild" ng-change="switch('radiobricko', formData.houseBasicInfo.houseWholeCabinetBuild)">&nbsp;未吊顶
 								<div  class="additional_info">
 								<input type="radio" name="radiomaterial" value="1" ng-model="formData.houseBasicInfo.houseKitCeilingStuff">&nbsp;PVC
 								<input type="radio" name="radiomaterial" value="2" ng-model="formData.houseBasicInfo.houseKitCeilingStuff">&nbsp;铝扣板
@@ -246,13 +246,13 @@
 					<div class="row">
 						<div class="col-md-12">					    
 						      	<p> 10.  卫生间是否铺砖及吊顶：<span>*</span></p>
-						      	<input type="radio" name="radiocookb" value="1" ng-model="formData.houseBasicInfo.houseWcCeilingTileBuild" ng-change="switch('radiocookb', formData.houseBasicInfo.houseWcCeilingTileBuild)">&nbsp;已铺装
+						      	<input type="radio" name="radiocookb" value="3" ng-model="formData.houseBasicInfo.houseWcCeilingTileBuild" ng-change="switch('radiocookb', formData.houseBasicInfo.houseWcCeilingTileBuild)">&nbsp;已铺装
 
-								<input type="radio" name="radiocookb" value="2" ng-model="formData.houseBasicInfo.houseWcCeilingTileBuild" ng-change="switch('radiocookb', formData.houseBasicInfo.houseWcCeilingTileBuild)">&nbsp;未铺装
+								<input type="radio" name="radiocookb" value="4" ng-model="formData.houseBasicInfo.houseWcCeilingTileBuild" ng-change="switch('radiocookb', formData.houseBasicInfo.houseWcCeilingTileBuild)">&nbsp;未铺装
 								
-								<input type="radio" name="radiocookr" value="3" ng-model="formData.houseBasicInfo.houseWcCeilingTileBuild" ng-change="switch('radiocookb', formData.houseBasicInfo.houseWcCeilingTileBuild)">&nbsp;已吊顶
+								<input type="radio" name="radiocookr" value="1" ng-model="formData.houseBasicInfo.houseWcCeilingTileBuild" ng-change="switch('radiocookb', formData.houseBasicInfo.houseWcCeilingTileBuild)">&nbsp;已吊顶
 								
-								<input type="radio" name="radiocookr" value="4" ng-model="formData.houseBasicInfo.houseWcCeilingTileBuild" ng-change="switch('radiocookb', formData.houseBasicInfo.houseWcCeilingTileBuild)">&nbsp;未吊顶
+								<input type="radio" name="radiocookr" value="2" ng-model="formData.houseBasicInfo.houseWcCeilingTileBuild" ng-change="switch('radiocookb', formData.houseBasicInfo.houseWcCeilingTileBuild)">&nbsp;未吊顶
 								
 								<div class="additional_info">
 									<input type="radio" name="radiocookm" value="1" ng-model="formData.houseBasicInfo.houseWcCeilingStuff">&nbsp;PVC
@@ -1202,49 +1202,112 @@
 					<tr>
 						<td class="leftmenu" rowspan="8">首要观察内容</td>
 						<td class="">房屋原结构：</td>
-						<td class=""><span>{{formData.houseBasicInfo.houseHouseStructureType}}</span></td>
-						<td class="">暖气是否需要改动：</td>
-						<td class=""><span>{{formData.houseBasicInfo.houseHeatingChange}}</span></td>
+						<td class="">
+						<span ng-if="formData.houseBasicInfo.houseHouseStructureType==0">
+							砖砼结构
+						</span>
+						<span ng-if="formData.houseBasicInfo.houseHouseStructureType==1">
+							框架结构
+						</span>						
+						</td>
+						<td class="" width="120">暖气是否需要改动：</td>
+						<td class="">
+							<span ng-if="formData.houseBasicInfo.houseHeatingChange==1">是</span>
+							<span ng-if="formData.houseBasicInfo.houseHeatingChange==0">否</span>
+						</td>
 						<td class="">参考意见：</td>
 						<td class=""><span>{{formData.houseBasicInfo.houseHeatingChnageView}}</span></td>
 					</tr>
 					<tr>
-						<td class="" rowspan="2">房屋原结构是否有缺陷之处：</td>
-						<td class="" rowspan="2">
-
-							
+						<td class="" rowspan="1">房屋原结构是否有缺陷之处：</td>
+						<td class="" rowspan="1">
+							<span ng-if="formData.houseBasicInfo.houseHouseStructureFault==1">是</span>
+							<span ng-if="formData.houseBasicInfo.houseHouseStructureFault==1">否</span>								
 						</td>
 						<td class="" colspan="4">							
 							<p ng-repeat="item in formData.houseBasicInfo.faultArr">
-								{{item}}
+								<span>{{item}}</span>
 							</p>
 						</td>
 					</tr>
 					<tr>
 						<td class="">煤气是否需要改动：</td>
-						<td class="">是</td>
+						<td class="">
+						<span ng-if="formData.houseBasicInfo.houseGasChange==1">是</span>
+						<span ng-if="formData.houseBasicInfo.houseGasChange==0">否</span>						
+						</td>
 						<td class="">参考意见：</td>
-						<td class="" colspan="3">原来线路老化</td>
+						<td class="" colspan="3"><span>{{formData.houseBasicInfo.houseGasChangeView}}</span></td>
 					</tr>
 					<tr>
 						<td class="">采暖方式：</td>
-						<td class="">地暖</td>
+						<td class="">
+						<span ng-if="formData.houseBasicInfo.houseHeatingType==1">暖气 </span>
+						<span ng-if="formData.houseBasicInfo.houseHeatingType==2">煤气 </span>
+						<span ng-if="formData.houseBasicInfo.houseHeatingType==3">地暖</span>
+						<span ng-if="formData.houseBasicInfo.houseHeatingType==4">中央空调</span>
+						</td>
 						<td class="">是否已安装中央空调：</td>
-						<td class="">没安装-已定制</td>
+						<td class="">
+						<span ng-if="formData.houseBasicInfo.houseAcBuild==1">未安装</span>
+						<span ng-if="formData.houseBasicInfo.houseAcBuild==0">已安装</span>-
+						<span ng-if="formData.houseBasicInfo.houseCm==1">已定制</span>
+						<span ng-if="formData.houseBasicInfo.houseCm==0">未定制</span>
+						</td>
 						<td class="">厨房整体橱柜是否已安装：</td>
-						<td class="">已安装</td>
+						<td class="">
+							<span ng-if="formData.houseBasicInfo.houseWholeCabinetBuild==0">未安装</span>
+							<span ng-if="formData.houseBasicInfo.houseWholeCabinetBuild==1">已安装</span>
+						</td>
 					</tr>
 					<tr>
 						<td class="">阳台墙地面是否已铺砖：</td>
-						<td class="">已铺装</td>
+						<td class="">
+							<span ng-if="formData.houseBasicInfo.houseBalconyTileBuild==0">已铺装</span>
+							<span ng-if="formData.houseBasicInfo.houseBalconyTileBuild==1">未铺装</span>
+							{{formData.houseBasicInfo.houseBalconyPart}}
+						</td>
 						<td class="">厨房是否已铺砖及吊顶：</td>
-						<td class="">已铺装-已吊顶-PVC</td>
+						<td class="">
+							<span ng-if="formData.houseBasicInfo.houseKitTileCeilingBuild==3">已铺装</span>
+							<span ng-if="formData.houseBasicInfo.houseKitTileCeilingBuild==4">未铺砖</span>
+							<span ng-if="formData.houseBasicInfo.houseKitTileCeilingBuild==1">已吊顶</span>
+							<span ng-if="formData.houseBasicInfo.houseKitTileCeilingBuild==2">未吊顶</span>	
+
+							<span ng-if="formData.houseBasicInfo.houseKitCeilingStuff==1">
+								PVC
+							</span>	
+							<span ng-if="formData.houseBasicInfo.houseKitCeilingStuff==2">
+								铝扣板
+							</span>	
+							<span ng-if="formData.houseBasicInfo.houseKitCeilingStuff==3">
+								石膏板
+							</span>																
+
+						</td>
 						<td class="">卫生间是否已铺砖及吊顶：</td>
-						<td class="">已铺装-已吊顶-PVC</td>
+						<td class="">
+							<span ng-if="formData.houseBasicInfo.houseWcCeilingTileBuild==3">已铺装</span>
+							<span ng-if="formData.houseBasicInfo.houseWcCeilingTileBuild==4">未铺砖</span>
+							<span ng-if="formData.houseBasicInfo.houseWcCeilingTileBuild==1">已吊顶</span>
+							<span ng-if="formData.houseBasicInfo.houseWcCeilingTileBuild==2">未吊顶</span>	
+
+							<span ng-if="formData.houseBasicInfo.houseWcCeilingStuff==1">
+								PVC
+							</span>	
+							<span ng-if="formData.houseBasicInfo.houseWcCeilingStuff==2">
+								铝扣板
+							</span>	
+							<span ng-if="formData.houseBasicInfo.houseWcCeilingStuff==3">
+								石膏板
+							</span>	
+						</td>
 					</tr>
 					<tr>
 						<td class="">其他：</td>
-						<td class="" colspan="5"></td>
+						<td class="" colspan="5">
+							<span>{{formData.houseBasicInfo.houseOther}}</span>
+						</td>
 					</tr>
 
 					<!-- Green technology section -->
@@ -1255,45 +1318,66 @@
 					</tr>
 					<tr>
 						<td class="">智能家居系统：</td>
-						<td class="">是</td>
+						<td class="">
+							<span ng-if="formData.greenTechInfo.greenIHouseSysOption==1">是</span>
+							<span ng-if="formData.greenTechInfo.greenIHouseSysOption==0">否</span>
+						</td>
 						<td class="">其他：</td>
-						<td class="" colspan="3"></td>
+						<td class="" colspan="3">{{formData.greenTechInfo.greenIHouseSysOptionView}}</td>
 					</tr>
 					<tr>
 						<td class="">毛细管系统：</td>
-						<td class="">是</td>
+						<td class="">
+							<span ng-if="formData.greenTechInfo.greenCapillarySysOption==1">是</span>
+							<span ng-if="formData.greenTechInfo.greenCapillarySysOption==0">否</span>
+						</td>
 						<td class="">其他：</td>
-						<td class="" colspan="3"></td>
+						<td class="" colspan="3">{{formData.greenTechInfo.greenCapillarySysOptionView}}</td>
 					</tr>
 					<tr>
 						<td class="">置换式新风系统：</td>
-						<td class="">是</td>
+						<td class="">
+							<span ng-if="formData.greenTechInfo.greenReplaceVentilationSysOpt==1">是</span>
+							<span ng-if="formData.greenTechInfo.greenReplaceVentilationSysOpt==0">否</span>
+						</td>
 						<td class="">其他：</td>
-						<td class="" colspan="3"></td>
+						<td class="" colspan="3">{{formData.greenTechInfo.greenReplaceVentilationSysOptView}}</td>
 					</tr>
 					<tr>
 						<td class="">卫生间净化水系统：</td>
-						<td class=""></td>
+						<td class="">
+							<span ng-if="formData.greenTechInfo.greenWcClanificationSysOpt==1">是</span>
+							<span ng-if="formData.greenTechInfo.greenWcClanificationSysOpt==0">否</span>							
+						</td>
 						<td class="">其他：</td>
-						<td class="" colspan="3"></td>
+						<td class="" colspan="3">{{formData.greenTechInfo.greenWcClanificatoinSysOptView}}</td>
 					</tr>
 					<tr>
 						<td class="">同层排水系统：</td>
-						<td class=""></td>
+						<td class="">
+							<span ng-if="formData.greenTechInfo.greenSameFloorDrainageSysOpt==1">是</span>
+							<span ng-if="formData.greenTechInfo.greenSameFloorDrainageSysOpt==0">否</span>							
+						</td>
 						<td class="">其他：</td>
-						<td class="" colspan="3"></td>
+						<td class="" colspan="3">{{formData.greenTechInfo.greenSameFloorDrainageSysOptView}}</td>
 					</tr>
 					<tr>
 						<td class="">隔声减噪系统：</td>
-						<td class=""></td>
+						<td class="">
+							<span ng-if="formData.greenTechInfo.greenDenoiseSysOpt==1">是</span>
+							<span ng-if="formData.greenTechInfo.greenDenoiseSysOpt==0">否</span>							
+						</td>
 						<td class="">其他：</td>
-						<td class="" colspan="3"></td>
+						<td class="" colspan="3">{{formData.greenTechInfo.greenDenoiseSysOptView}}</td>
 					</tr>
 					<tr>
 						<td class="">垃圾处理系统：</td>
-						<td class=""></td>
+						<td class="">
+							<span ng-if="formData.greenTechInfo.greenLitterSysOpt==1">是</span>
+							<span ng-if="formData.greenTechInfo.greenLitterSysOpt==0">否</span>							
+						</td>
 						<td class="">其他：</td>
-						<td class="" colspan="3"></td>
+						<td class="" colspan="3">{{formData.greenTechInfo.greenLitterSysOptView}}</td>
 					</tr>
 					<!-- The entrance section -->
 					<tr>
@@ -1301,75 +1385,99 @@
 					</tr>
 					<tr>
 						<td class="">是否介意入门直观全室：</td>
-						<td class="">否</td>
+						<td class="">
+							<span ng-if="formData.abstruse.lrVisualWholeRoomOpinion==1">是</span>
+							<span ng-if="formData.abstruse.lrVisualWholeRoomOpinion==0">否</span>
+						</td>
 						<td class="">是否有考虑安排：</td>
-						<td class="" colspan="3">衣柜、橱柜</td>
+						<td class="" colspan="3">{{formData.abstruse.lrConsiderSettingOpt}}</td>
 					</tr>
 					<tr>
 						<td class="">玄关设计是否考虑其他文化属性或气氛：</td>
-						<td class="" colspan="5"></td>
+						<td class="" colspan="5">
+							<span ng-if="formData.abstruse.lrScreenCultureOpt==1">是</span>
+							<span ng-if="formData.abstruse.lrScreenCultureOpt==0">否</span>
+						</td>
 					</tr>
 					<tr>
 						<td class="">对玄关有无其他要求：</td>
-						<td class="" colspan="5"></td>
+						<td class="" colspan="5">{{formData.abstruse.lrScreenSpec}}</td>
 					</tr>
 					<tr>
 						<td class="">入户门更换为霍曼品牌：</td>
-						<td class=""></td>
+						<td class="">
+							<span ng-if="formData.abstruse.lrGateHuomanSelOpt==1">是</span>
+							<span ng-if="formData.abstruse.lrGateHuomanSelOpt==0">否</span>
+						</td>
 						<td class="">其他：</td>
 						<td class="" colspan="3"></td>
 					</tr>
 
-
 					<!-- Living room section -->
 					<tr>
+
 						<th colspan="6" class="trtitle">客厅部分</th>
 					</tr>
 					<tr>
 						<td class="">客厅的主要功能：</td>
-						<td class="">会客、休息</td>
+						<td class="">
+							{{formData.livingRoom.sittingLrMainFun}}
+						</td>
 						<td class="">接待客人：</td>
-						<td class="">3</td>
+						<td class="">{{formData.livingRoom.sittingReceptionNumOpt}}</td>
 						<td class="">接待频率：</td>
-						<td class="">偶尔</td>
+						<td class="">{{formData.livingRoom.sittingDrCombineOpt}}</td>
 					</tr>
 					<tr>
 						<td class="">是否与餐厅融为一体：</td>
-						<td class="">否</td>
+						<td class="">
+							<span ng-if="formData.livingRoom.sittingDrCombineOpt==1">是</span>
+							<span ng-if="formData.livingRoom.sittingDrCombineOpt==0">否</span>
+						</td>
 						<td class="">客厅内的视听设备有哪些：</td>
-						<td class="">家庭影院</td>
+						<td class="">{{formData.livingRoom.sittingCeilingType}}</td>
 						<td class="">规格：</td>
-						<td class="">偶尔</td>
+						<td class="">--</td>
 					</tr>
 					<tr>
 						<td class="">客人来家中聚会的内容：</td>
-						<td class="">Party</td>
+						<td class="">{{formData.livingRoom.sittingPartyContent}}</td>
 						<td class="">其他：</td>
-						<td class="" colspan="3"></td>
+						<td class="" colspan="3">{{formData.livingRoom.sittingPartyContentOpinion}}</td>
 					</tr>
 					<tr>
 						<td class="">音像制品有多少：</td>
-						<td class="">无</td>
+						<td class="">{{formData.livingRoom.sittingAoObjectsNum}}</td>
 						<td class="">是否需要特别设置：</td>
-						<td class="">否</td>
+						<td class="">
+							<span ng-if="formData.livingRoom.sittingAoObjectsQtySpecialSetOpt==1">
+								是
+							</span>
+							<span ng-if="formData.livingRoom.sittingAoObjectsQtySpecialSetOpt==1">
+								否
+							</span>							
+						</td>
 						<td class="">客厅的基本色调：</td>
-						<td class="">暖色系</td>
+						<td class="">
+							<span ng-if="formData.livingRoom.sittingBasicTone==1">暖色调</span>
+							<span ng-if="formData.livingRoom.sittingBasicTone==0">冷色调</span>
+						</td>
 					</tr>
 					<tr>
 						<td class="">对客厅地面材料要求：</td>
-						<td class="">复合地板</td>
+						<td class="">{{formData.livingRoom.sittingGroundStuffRequirements}}</td>
 						<td class="">是否需要有影视墙：</td>
-						<td class="">否</td>
+						<td class="">{{formData.livingRoom.sittingFilmWallBackgroundOpt}}</td>
 						<td class="">是否需要吊顶：</td>
-						<td class="">是 直线</td>
+						<td class="">{{formData.livingRoom.sittingCeilingOpt}}</td>
 					</tr>
 					<tr>
 						<td class="">对客厅有无特别的灯光设计要求：</td>
-						<td class="" colspan="5"></td>
+						<td class="" colspan="5">{{formData.livingRoom.sittingSpecialLightsDesignOpt}}</td>
 					</tr>
 					<tr>
 						<td class="">是否有其他使用功能要求：</td>
-						<td class="" colspan="5"></td>
+						<td class="" colspan="5">{{formData.livingRoom.sittingOtherFuncRequest}}</td>
 					</tr>
 
 
@@ -1379,33 +1487,33 @@
 					</tr>
 					<tr>
 						<td class="">餐厅使用人数：</td>
-						<td class="">5人</td>
+						<td class="">{{formData.dinningRoom.drUseNum}}</td>
 						<td class="">使用频率：</td>
-						<td class="">早餐、晚餐</td>
+						<td class="">{{formData.dinningRoom.drUseNumRate}}</td>
 						<td class="">餐桌餐椅配置：</td>
-						<td class="">1*6</td>
+						<td class="">{{formData.dinningRoom.drUseNum}}</td>
 					</tr>
 					<tr>
 						<td class="">是否需要配置：</td>
-						<td class="">橱柜</td>
+						<td class="">{{formData.dinningRoom.drUseNumRate}}</td>
 						<td class="">有无藏酒：</td>
-						<td class="">有</td>
+						<td class="">{{formData.dinningRoom.drWineCabinetOpt}}</td>
 						<td class="">餐厅是否是家人：</td>
-						<td class="">是</td>
+						<td class="">{{formData.dinningRoom.drPartyMainVenueOpt}}</td>
 					</tr>
 					<tr>
 						<td class="">是否需要在餐厅看电视：</td>
-						<td class="">否</td>
+						<td class="">{{formData.dinningRoom.drTvOpt}}</td>
 						<td class="">娱乐活动：</td>
-						<td class="">棋牌</td>
-						<td class="">其他：</td>
+						<td class="">{{formData.dinningRoom.drAmuseActivites}}</td>
+						<td class=""></td>
 						<td class=""></td>
 					</tr>
 					<tr>
 						<td class="">家庭烹饪的特点：</td>
-						<td class="">中餐</td>
+						<td class="">{{formData.dinningRoom.drCookingType}}</td>
 						<td class="">对餐厅色彩有无特殊要求：</td>
-						<td class="" colspan="3"></td>
+						<td class="" colspan="3">{{formData.dinningRoom.drColorRequest}}</td>
 					</tr>
 	                <!-- Kitchen part -->
 
@@ -1414,25 +1522,25 @@
 					</tr>
 					<tr>
 						<td class="">电气设备：</td>
-						<td class="" colspan="5"></td>
+						<td class="" colspan="5">{{formData.kitchen.drColorRequest}}</td>
 					</tr>
 					<tr>
 						<td class="">对墙、地色彩或材料的特殊要求：</td>
-						<td class="" colspan="5"></td>
+						<td class="" colspan="5">{{formData.kitchen.kitColorRequest}}</td>
 					</tr>
 					<tr>
 						<td class="">对水、电设备的特殊要求：</td>
-						<td class="" colspan="5"></td>
+						<td class="" colspan="5">{{formData.kitchen.kitWaterEquipmentRequest}}</td>
 					</tr>
 					<tr>
 						<td class="">对橱柜的档次、品质、品牌有任何要求：</td>
-						<td class="" colspan="5"></td>
+						<td class="" colspan="5">{{formData.kitchen.kitCabinetRequest}}</td>
 					</tr>
 					<tr>
 						<td class="">吊顶材料：</td>
-						<td class="">防水石膏板</td>
+						<td class="">{{formData.kitchen.kitCeilingStuff}}</td>
 						<td class="">照明有何要求：</td>
-						<td class="" colspan="3"></td>
+						<td class="" colspan="3">{{formData.kitchen.kitLightingRequest}}</td>
 					</tr>
 
 					<!-- Study section -->
@@ -1441,33 +1549,33 @@
 					</tr>
 					<tr>
 						<td class="">书房功能：</td>
-						<td class="">读书、写作</td>
+						<td class="">{{formData.readingRoom.libFunArr}}</td>
 						<td class="">其他：</td>
-						<td class="" colspan="3"></td>
+						<td class="" colspan="3">--</td>
 					</tr>
 					<tr>
 						<td class="">书房使用以何人为主：</td>
-						<td class=""></td>
+						<td class="">{{formData.readingRoom.libPeopleUse}}</td>
 						<td class="">共有几人使用书房：</td>
-						<td class="">3人</td>
+						<td class="">{{formData.readingRoom.libPeopleWholeUse}}</td>
 						<td class="">使用频率：</td>
-						<td class="">经常</td>
+						<td class="">{{formData.readingRoom.libUseRate}}</td>
 					</tr>
 					<tr>
 						<td class="">存数数量：</td>
-						<td class="">100本</td>
+						<td class="">{{formData.readingRoom.libBooksContain}}</td>
 						<td class="">存书种类：</td>
-						<td class="">工具书</td>
+						<td class="">{{formData.readingRoom.libBooksKindNumArr}}</td>
 						<td class="">其他：</td>
-						<td class=""></td>
+						<td class="">{{formData.readingRoom.libBooksRequest}}</td>
 					</tr>
 					<tr>
 						<td class="">书房是否当客厅使用：</td>
-						<td class="">否</td>
+						<td class="">{{formData.readingRoom.libUseAsLrOpt}}</td>
 						<td class="">是否需要：</td>
-						<td class="">网线、电话</td>
+						<td class="">{{formData.readingRoom.libNetworkOptArr}}</td>
 						<td class="">惯以何种方式看书：</td>
-						<td class="">躺着看</td>
+						<td class="">{{formData.readingRoom.libReadingPosture}}</td>
 					</tr>
 		            
 					<!-- Master bedroom section -->
@@ -1476,39 +1584,39 @@
 					</tr>
 					<tr>
 						<td class="">对寝具的选择：</td>
-						<td class="">制作</td>
-						<td class="">品牌：</td>
-						<td class=""></td>
+						<td class="">{{formData.mainRoom.brSleepObjectSelOpt}}</td>
+						<td class="">品牌/颜色：</td>
+						<td class="">formData.mainRoom.brSleepObjectColorModel</td>
 						<td class="">颜色：</td>
 						<td class=""></td>
 					</tr>
 					<tr>
 						<td class="">床的要求：</td>
-						<td class="">加大</td>
+						<td class="">{{formData.mainRoom.brBedRequest}}</td>
 						<td class="">床的类型：</td>
-						<td class="">金属铁艺</td>
+						<td class="">{{formData.mainRoom.brBedTyleRequest}}</td>
 						<td class="">是否需要梳妆台：</td>
-						<td class="">是</td>
+						<td class="">{{formData.mainRoom.brDresserOpt}}</td>
 					</tr>
 					<tr>
 						<td class="">衣柜存衣的要求：</td>
-						<td class="">大量</td>
+						<td class="">{{formData.mainRoom.brWardrobeQtyRequest}}</td>
 						<td class="">储藏内容：</td>
-						<td class="">衣服、鞋</td>
+						<td class="">{{formData.mainRoom.brDepotThingsArr}}</td>
 						<td class="">是否需要：</td>
-						<td class="">视听设备</td>
+						<td class="">{{formData.mainRoom.brNetworkOptArr}}</td>
 					</tr>
 					<tr>
 						<td class="">对灯光设计有无特殊要求：</td>
-						<td class="" colspan="5"></td>
+						<td class="" colspan="5">{{formData.mainRoom.brLightingRequest}}</td>
 					</tr>
 					<tr>
 						<td class="">卧室整体色彩要求：</td>
-						<td class="" colspan="5"></td>
+						<td class="" colspan="5">{{formData.mainRoom.brColorConfig}}</td>
 					</tr>
 					<tr>
 						<td class="">对墙、地色彩或材料的特殊要求：</td>
-						<td class="" colspan="5"></td>
+						<td class="" colspan="5">{{formData.mainRoom.brGroundWallRequest}}</td>
 					</tr>
 
 					<!-- Children's room -->
@@ -1517,41 +1625,41 @@
 					</tr>
 					<tr>
 						<td class="">房间使用功能及具体要求：</td>
-						<td class="">独生子</td>
+						<td class="">{{formData.kidRoom.krUseFunSpecific}}</td>
 						<td class="">家具配置方式：</td>
-						<td class="">购买</td>
+						<td class="">{{formData.kidRoom.krFurnitureSel}}</td>
 						<td class="">需要的家具：</td>
-						<td class="">写字台、书柜</td>
+						<td class="">{{formData.kidRoom.krFurnitureConfig}}</td>
 					</tr>
 					<tr>
 						<td class="">是否考虑年龄变更：</td>
-						<td class="">是</td>
+						<td class="">{{formData.kidRoom.krAgeChangeOpt}}</td>
 						<td class="">色彩要求：</td>
-						<td class="" colspan="3"></td>
+						<td class="" colspan="3">{{formData.kidRoom.krColorRequest}}</td>
 					</tr>
 					<tr>
 						<td class="">对墙、地色彩或材料的特殊要求：</td>
-						<td class="" colspan="3"></td>
+						<td class="" colspan="3">{{formData.kidRoom.krHobby}}</td>
 						<td class="">儿童有何兴趣爱好：</td>
-						<td class="">钢琴、绘画</td>
+						<td class="">{{formData.kidRoom.krHobby}}</td>
 					</tr>
 					<tr>
 						<td class="">是否有旧家具要保留：</td>
-						<td class="">是</td>
+						<td class="">{{formData.kidRoom.krOldFurnitureKeepOpt}}</td>
 						<td class="">色调：</td>
-						<td class=""></td>
+						<td class="">{{formData.kidRoom.krOldFurnitureKeepOptTone}}</td>
 						<td class="">尺寸/材质</td>
-						<td class=""></td>
+						<td class="">{{formData.kidRoom.krOldFurnitureKeepOptSize}} - {{formData.kidRoom.krOldFurnitureKeepOptMaterial}}</td>
 					</tr>
 					<tr>
 						<td class="">老人是否需要特殊的生理方面的考虑：</td>
-						<td class="" colspan="3"></td>
+						<td class="" colspan="3">{{formData.kidRoom.krOldPhysiologyOpt}}</td>
 						<td class="">特殊灯光要求：</td>
-						<td class="">地脚灯</td>
+						<td class="">{{formData.kidRoom.krSpecialLightsReuqestArr}}</td>
 					</tr>
 					<tr>
 						<td class="">请注明儿童的年龄、性别、玩具及书籍的数量：</td>
-						<td class="" colspan="5"></td>
+						<td class="" colspan="5">{{formData.kidRoom.krKidAgeGenderToyBookInfo}}</td>
 					</tr>
 
 
@@ -1564,25 +1672,25 @@
 
 					<tr>
 						<td class="">房间的使用功能及使用频率：</td>
-						<td class="" colspan="5"></td>
+						<td class="" colspan="5">{{formData.guestRoom.roomUseRateMainFun}}</td>
 					</tr>
 					<tr>
 						<td class="">家居配置：</td>
-						<td class="" colspan="5"></td>
+						<td class="" colspan="5">{{formData.guestRoom.roomHomeConfig}}</td>
 					</tr>
 					<tr>
 						<td class="">是否需要：</td>
-						<td class=""></td>
+						<td class="">{{formData.guestRoom.brNetworkOptArr}}</td>
 						<td class="">其他：</td>
-						<td class=""></td>
+						<td class="">{{formData.guestRoom.roomGrRequest}}</td>
 						<td class="">有无特殊灯光要求</td>
-						<td class="">双控开关</td>
+						<td class="">{{formData.guestRoom.roomGrLightingReuqestArr}}</td>
 					</tr>
 					<tr>
 						<td class="">房间有无特殊装饰要求：</td>
-						<td class="" colspan="3"></td>
+						<td class="" colspan="3">{{formData.guestRoom.roomSpecialDecorationOpt}}</td>
 						<td class="">是否需要储藏功能：</td>
-						<td class="">是</td>
+						<td class="">{{formData.guestRoom.roomStoreFun}}</td>
 					</tr>
 
 
@@ -1594,21 +1702,21 @@
 
 					<tr>
 						<td class="">卫生间的色彩倾向：</td>
-						<td class="">暖色</td>
+						<td class="">{{formData.restroom.wcColor}}</td>
 						<td class="">对墙、地色彩或材料的特殊要求：</td>
-						<td class="" colspan="3"></td>
+						<td class="" colspan="3">{{formData.restroom.wcCeilingWallGroundRequest}}</td>
 					</tr>
 					<tr>
 						<td class="">洁具的颜色、档次、品质、品牌：</td>
-						<td class="" colspan="5"></td>
+						<td class="" colspan="5">{{formData.restroom.wcAppInfo}}</td>
 					</tr>
 					<tr>
 						<td class="">冷热水系统的改造要求：</td>
-						<td class="" colspan="5"></td>
+						<td class="" colspan="5">{{formData.restroom.wcHotColdWaterRequest}}</td>
 					</tr>
 					<tr>
 						<td class="">灯光的具体要求：</td>
-						<td class="" colspan="5"></td>
+						<td class="" colspan="5">{{formData.restroom.wcLightingRequest}}</td>
 					</tr>
 
 
@@ -1619,13 +1727,13 @@
 					</tr>
 					<tr>
 						<td class="">是否需要封闭阳台：</td>
-						<td class="">是</td>
+						<td class="">{{formData.balcony.balconyBlockStuffOpt}}</td>
 						<td class="">材料：</td>
-						<td class="" colspan="3">铝合金</td>
+						<td class="" colspan="3">{{formData.balcony.balconyBlockStuff}}</td>
 					</tr>
 					<tr>
 						<td class="">功能要求：</td>
-						<td class="" colspan="3">健身、储物</td>
+						<td class="" colspan="3">{{formData.balcony.balconyFunRequestArr}}</td>
 						<td class="">其他：</td>
 						<td class=""></td>
 					</tr>
@@ -1633,7 +1741,7 @@
 						<td class="">所有外窗更换为旭格品牌：</td>
 						<td class="" colspan="3">是</td>
 						<td class="">其他：</td>
-						<td class=""></td>
+						<td class="">{{formData.balcony.balconyFunctionWant}}</td>
 					</tr>
 
 
@@ -1643,63 +1751,63 @@
 					</tr>
 					<tr>
 						<td class="">电话的数量要求：</td>
-						<td class="" colspan="5"></td>
+						<td class="" colspan="5">{{formData.additional.addTelQtyRequest}}</td>
 					</tr>
 					<tr>
 						<td class="">电脑的数量位置：</td>
-						<td class="" colspan="5"></td>
+						<td class="" colspan="5">{{formData.additional.addComputerQtyPosition}}</td>
 					</tr>
 					<tr>
 						<td class="">视听设备：</td>
-						<td class="" colspan="5"></td>
+						<td class="" colspan="5">{{formData.additional.addAudioVisualEquipment}}</td>
 					</tr>
 					<tr>
 						<td class="">对那些地域文化感兴趣：</td>
-						<td class="">亚洲其他国家</td>
+						<td class="">{{formData.additional.addRegionalCultureArr}}</td>
 						<td class="">对绘画、饰品的爱好：</td>
-						<td class="">水彩画、国画</td>
+						<td class="">{{formData.additional.addPaintingJewelryHobbyArr}}</td>
 						<td class="">其他</td>
 						<td class=""></td>
 					</tr>
 					<tr>
 						<td class="">是否有个人品需要展示：</td>
-						<td class="">否</td>
+						<td class="">{{formData.additional.addObjectsDisplayOpt}}</td>
 						<td class="">对室内绿化有何要求：</td>
-						<td class=""></td>
+						<td class="">{{formData.additional.addIndoorGreeningRequest}}</td>
 						<td class="">是否养宠物：</td>
-						<td class=""></td>
+						<td class="">{{formData.additional.addKeepPets}}</td>
 					</tr>
 					<tr>
 						<td class="">对家居风格的喜好：</td>
-						<td class=""></td>
+						<td class="">{{formData.additional.addFurnitureStyle}}</td>
 						<td class="">对服装色彩有何喜好：</td>
-						<td class="" colspan="3"></td>
+						<td class="" colspan="3">{{formData.additional.addDressColorStyle}}</td>
 					</tr>
 					<tr>
 						<td class="">对家具色彩的喜好：</td>
-						<td class="">复合材料</td>
+						<td class="">{{formData.additional.addHomeStyle}}</td>
 						<td class="">平时从事何种体育项目：</td>
-						<td class=""></td>
+						<td class="">{{formData.additional.addUsualSports}}</td>
 						<td class="">有什么运动器械：</td>
-						<td class=""></td>
+						<td class="">{{formData.additional.addSportsEquipment}}</td>
 					</tr>
 					<tr>
 						<td class="">在设计中有何禁忌、忌讳：</td>
-						<td class="" colspan="3"></td>
+						<td class="" colspan="3">{{formData.additional.addDesignDecorationTaboo}}</td>
 						<td class="">有无宗教信仰：</td>
-						<td class=""></td>
+						<td class="">{{formData.additional.addReligiousBeliefOpt}}</td>
 					</tr>
 					<tr>
 						<td class="">列举你喜欢的装修风格：</td>
-						<td class="" colspan="5"></td>
+						<td class="" colspan="5">{{formData.additional.addPersonalDecorationStyle}}</td>
 					</tr>
 					<tr>
 						<td class="">你对以前的房屋设计有何遗憾：</td>
-						<td class="" colspan="5"></td>
+						<td class="" colspan="5">{{formData.additional.addExDesignDecoRegret}}</td>
 					</tr>
 					<tr>
 						<td class="">有无旧家具或特殊物品的安置：</td>
-						<td class="" colspan="5"></td>
+						<td class="" colspan="5">{{formData.additional.addOldFurnitureSpecialItemsPlaceOpt}}</td>
 					</tr>
 				</table>
 				<button class="btn btn-default" ng-click="lastStep(currentStep)">上一步</button>
