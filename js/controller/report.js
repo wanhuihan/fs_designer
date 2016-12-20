@@ -414,12 +414,6 @@ app.controller("report", function($scope, $http, $location, design, $location){
 			// 佣人房 
 			otherMaidRoom: ''
 
-		},
-		step_4: {
-
-		},
-		step_5: {
-
 		}
 	}
 

@@ -136,6 +136,7 @@
 		.table {
 			td {
 				font-size: 16px;
+				line-height: 35px;
 			}
 		}
 	}
@@ -298,14 +299,17 @@
 			color:#555;
 		}
 		span {
-			background:#999;
+			height: 50px;
+			display: inline-block;
+			width:50px;		
+			border-left: 50px solid;	
 		}
 		div {
 			background:#eee;
 		}
 	}
 	.report_tab_listone {
-		margin:60px 170px 0 160px;
+		margin:60px 170px 0 25px;
 		& > div {
 			margin-bottom:20px;
 			padding-bottom:20px;
@@ -341,29 +345,62 @@
 	}
 
 	.step_content {
+
 		display: none;
 		.additional_info {
 			display: none;
+		}
+
+		.btn_group {
+			position: fixed;
+			bottom: 0;
+			margin: 0;
+			padding: 20px 0;
+			background: rgba(75,86,100,0.8);
+			width: 100%;
+			left: 0;
+			text-align: center;
+			.btn {
+				margin: 0 10px;
+				&.btn-primary {
+					letter-spacing: 12px;
+					text-indent: 12px;
+				}
+			}
 		}
 	}
 	
 	.step_box {
 		.step {
 			position: relative;
-			text-align:center;
+			// text-align:center;
 			h3 {
 				font-size:14px;
-				color:#169BD5;
+				// color:#169BD5;
+				display: inline-block;
+				margin: 0;
+				line-height: 60px;
+				background: #ddd;
+				width: 100%;
+				text-align: center;
+				height: 60px;
+				font-size: 16px;
+				// position: absolute;
 			}
 			span {
 				display:inline-block;
-				width:50px;
-				height:50px;
-				line-height:50px;
+				width:30px;
+				height:30px;
+				// line-height:50px;
+				position: absolute;
+				right: 0;
 				text-align:center;
-				color:#fff;
-				background:#999;
-				border-radius:50%;
+				border-left: 30px solid #ddd;	
+				border-top: 30px solid #fff;
+				border-bottom: 30px solid #fff;
+				// color:#fff;
+				// background:#999;
+				// border-radius:50%;
 			}
 			div {
 				position: absolute;
@@ -394,6 +431,12 @@
 			// }
 			span {
 				background: #169BD5;
+				border-left-color: #4b5664;
+			}
+			
+			h3 {
+				background: #4b5664;
+				color: #fff;
 			}
 
 			div {
@@ -555,9 +598,9 @@
 # costForm page 成本控制单
 ---------------------------------- */
 .cost_detail_info {
-	width: 1000px;
-	float: left;
-	margin-left: 20px;
+	// width: 1000px;
+	// float: left;
+	// margin-left: 20px;
 }
 
 
@@ -568,8 +611,8 @@
 ----------------------
  */
 .container {
-	width:1000px;
-	float:left;
+	// width:1000px;
+	// float:left;
 }
 .account_details {	
 	padding-bottom:100px;
@@ -633,8 +676,8 @@
 .gallery_details {
 	width: 1000px;
 	float: left;
-	margin: 10px;
-	overflow: hidden;
+	// margin: 10px;
+	// overflow: hidden;
 	> nav {
 		padding-bottom: 30px;
 		border-bottom: 2px solid #eee;

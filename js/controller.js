@@ -4,9 +4,6 @@
  * work amount 
 */
 
-
-
-
 // app.controller("designer", function($scope, $http) {
 
 // 	$scope.getWorkAmount = function() {
@@ -83,9 +80,12 @@
 
 // })
 
-app.controller("header", function($scope, $location, $cookies) {
-	console.log(123);
-	
+app.controller("header", function($scope, $location, $cookies, $cookieStore) {
+
+	$scope.logOut=  function() {
+		$cookieStore.remove('fs_designer_token');
+		$location.path("/login");
+	}
 })
 
 app.controller("orders", function($http, $scope, $location, $cookies) {
@@ -127,7 +127,7 @@ app.controller("orders", function($http, $scope, $location, $cookies) {
 /*-------------------
 	#login page
 ---------------------*/
-app.controller("login", function($http, $scope, $location) {
+app.controller("login", function($http, $scope, $location, $cookies) {
 
 	// console.log(123)
 	$scope.data = {
@@ -143,7 +143,7 @@ app.controller("login", function($http, $scope, $location) {
 			alert('请选择您的角色');
 			return false;
 		}
-		console.log(g.host)
+		// console.log(g.host)
 		$http({
 
 			method: 'post',
@@ -657,18 +657,18 @@ app.controller("myAccount", function($http, $scope,$location, $cookies) {
 
 	} else {
 
-		$scope.data  = '';
+		// $scope.data  = '';
 
-		$http({
-			url: g.host+'/decoration_designer/decorationTask/order/selectList',
-			data: {
-				token: $cookies.fs_designer_token,
-				decorationTaskCode: $scope.orderCode,
-			},
-			method: 'post',
-		}).success(function(data) {
-			$scope.data = data.datas;
-		})	
+		// $http({
+		// 	url: g.host+'/decoration_designer/decorationTask/order/selectList',
+		// 	data: {
+		// 		token: $cookies.fs_designer_token,
+		// 		decorationTaskCode: $scope.orderCode,
+		// 	},
+		// 	method: 'post',
+		// }).success(function(data) {
+		// 	$scope.data = data.datas;
+		// })	
 
 	}
 
@@ -676,25 +676,25 @@ app.controller("myAccount", function($http, $scope,$location, $cookies) {
 
 
 // gallery
-app.controller("gallery", function($http, $scope, ngDialog,$location) {
+app.controller("gallery", function($http, $scope, ngDialog, $location, $cookies) {
 
 	if (!g.chkCookie()) {
 
 		$location.path("/login");
 
 	} else {
-		$scope.data  = '';
+		// $scope.data  = '';
 
-		$http({
-			url: g.host+'/decoration_designer/decorationTask/order/selectList',
-			data: {
-				token: $cookies.fs_designer_token,
-				decorationTaskCode: $scope.orderCode,				
-			},
-			method: 'post',
-		}).success(function(data) {
-			$scope.data = data.datas;
-		})	
+		// $http({
+		// 	url: g.host+'/decoration_designer/decorationTask/order/selectList',
+		// 	data: {
+		// 		token: $cookies.fs_designer_token,
+		// 		decorationTaskCode: $scope.orderCode,				
+		// 	},
+		// 	method: 'post',
+		// }).success(function(data) {
+		// 	$scope.data = data.datas;
+		// })	
 	}	
 
 	$scope.detailsPop = function() {

@@ -37,26 +37,19 @@
 		<div role="tabpanel" class="tab-pane" id="report" aria-labelledby="report-tab">
 			<div class="row step_box" >	
 				<div class="col-md-3 report_tab_stepone step_1 step current viewed" id="step_1">
-					<h3>客户基本情况</h3>
-					<span>1</span>
-					<div></div>
+					<h3>客户基本情况</h3><span></span>
 				</div>
 
 				<div id="step_2" class="col-md-3 report_tab_stepone report_tab_steptwo step_2 step">
-					<h3>首要观察内容</h3>
-					<span>2</span>
-					<div></div>
+					<h3>首要观察内容</h3><span></span>
 				</div>
 
 				<div id="step_3" class="col-md-3 report_tab_stepone report_tab_steptwo step_3 step">
-					<h3>与业主沟通内容</h3>
-					<span>3</span>
-					<div></div>
+					<h3>与业主沟通内容</h3><span></span>
 				</div>
 
 				<div id="step_4" class="col-md-3 report_tab_stepone report_tab_steptwo step_4 step">
-					<h3>完成</h3>
-					<span>4</span>
+					<h3>完成</h3><span></span>
 				</div>
 			</div>
 			<div class="reoprt_pageone step_content" content="step_1">
@@ -140,8 +133,13 @@
 						      <input type="text" placeholder="详细地址" ng-model="generalInfo.address" ng-change="addressGather()">
 						</div>
 					</div>
-					<button class="btn btn-primary" ng-click="save(currentStep)">保存 {{currentStep}}</button>
-					<button class="btn btn-default" ng-click="nextStep(currentStep)">下一步</button>
+					<div class="row">
+						<div class="btn_group col-md-12">
+							<button class="btn btn-primary btn-lg" ng-click="save(currentStep)">保存</button>
+							<button class="btn btn-default btn-lg" ng-click="nextStep(currentStep)">下一步</button>
+						</div>						
+					</div>
+
 				</form>
 			</div>
 
