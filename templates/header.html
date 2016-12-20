@@ -1,4 +1,31 @@
 
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+  <div class="container-fluid">
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+		<ul class="nav navbar-nav">
+			<li><a href="#/dashboard">首页</a></li>
+			<li><a ui-sref="dashboard.orders">我的订单</a></li>
+			<li><a ui-sref="dashboard.myAccount">我的账户</a></li>
+			<li><a ui-sref="dashboard.gallery">图库</a></li>
+		</ul>
+
+      <ul class="nav navbar-nav navbar-right">
+        <li><a>欢迎.....</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">个人设置 <span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="#">密码修改</a></li>
+            <li><a href="#">个人账户</a></li>
+            <li><a href="#">退出</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+<!-- 
 <ul>
 
 	<li>
@@ -17,4 +44,4 @@
 		<a ui-sref="dashboard.gallery">图库</a>
 	</li>
 
-</ul>
+</ul> -->

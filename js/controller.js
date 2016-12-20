@@ -84,22 +84,41 @@
 // })
 
 
-app.controller("orders", function($http, $scope) {
+app.controller("orders", function($http, $scope, $location, $cookies) {
 
-	$scope.data  = '';
+	// console.log($cookies.fs_designer_token);
+	if (!g.chkCookie()) {
+		$location.path("/login");
+	} else {
 
-	$http({
-		url: 'http://192.168.0.224:8080/decoration_designer/decorationTask/order/selectList?token=designer_13600136000',
-		method: 'post',
-	}).success(function(data) {
-		$scope.data = data.datas;
-	})
+		$scope.data  = '';
+		$http({
+			url: g.host+'/decoration_designer/decorationTask/order/selectList',
+			method: 'post',
+			data: {
+				token: $cookies.fs_designer_token
+			},
+	        headers: { 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8' },
+	        
+	        transformRequest: function(obj) {    
+	            var str = [];    
+	            for (var p in obj) {    
+	                
+	                if (typeof obj[p] == 'object' ) {
+	                    // console.log(p, JSON.stringify(obj[p]));
+	                    str.push(encodeURIComponent(p) + "=" + encodeURIComponent(JSON.stringify(obj[p])))
+	                } else {
+	                    str.push(encodeURIComponent(p) + "=" + encodeURIComponent(obj[p]));  
+	                }                     
+	            }    
+	            return str.join("&");    
+	        },		
+		}).success(function(data) {
+			$scope.data = data.datas;
+		})
+	}
 
 })
-
-
-
-
 
 /*-------------------
 	#login page
@@ -110,12 +129,16 @@ app.controller("login", function($http, $scope, $location) {
 	$scope.data = {
 		user: '',
 		pwd: '',
-		role: '11',
+		role: '',
 	}
 
 	$scope.sub = function() {
 
-		// console.log($scope.data);
+		if ($scope.data.role == '') {
+			alert('请选择您的角色');
+			return false;
+		}
+		console.log(g.host)
 		$http({
 
 			method: 'post',
@@ -147,45 +170,37 @@ app.controller("login", function($http, $scope, $location) {
 		}).success(function(data) {
 
 			if (g.checkData(data)) {
-
 				g.setCookie(data);
+				// return false;
 				$location.path("/dashboard");
+				$scope.headerShow = true;
 				// $location.path("http://www.baidu.com");
 			}
 
-			// console.log(data);
-
 		}).error(function(data) {
-
 			// console.log('error is occured');
-
 		})
 	}
 
+	$scope.forgetPwd = function() {
+		alert('the module not start to develop, please contact the webmaster');
+		// return false;
+	}
+
 })
-
-/*
-addByzhangna
-cont:date 插件
-*/
-// 	app.controller("providerPurchaseOrder", function($scope, $http, $location) {
-
-// 	jQuery('#datePick').daterangepicker({
-
-// 		singleDatePicker: true,
-
-// 	}, null);
-
-// })
-
 
 /* --------------
 	# dashboard
 -----------------*/
 
-app.controller("dashboard", function($scope, $http) {
+app.controller("dashboard", function($scope, $http, $location, $cookies) {
 
 	$scope.leftSideBar = false;
+
+	// console.log($cookies.fs_designer_token);
+	if (!g.chkCookie()) {
+		$location.path("/login");
+	} 
 
 })
 
@@ -193,64 +208,97 @@ app.controller("dashboard", function($scope, $http) {
 	# order details page
 ------------------*/
 
-app.controller("orderDetails", function($http, $scope, $location) {
+app.controller("orderDetails", function($http, $scope, $location, $cookies) {
 
-	// console.log($location.search());
-	$scope.orderId = $location.search().id;
-	$scope.orderCode = $location.search().code;
+	if (!g.chkCookie()) {
+		$location.path("/login");
 
-	$http({
-		url: 'http://192.168.0.224:8080/decoration_designer/decorationTask/order/view?token=designer_13600136000',
-		method: 'post',
-		data: {
-			decorationTaskId: $scope.orderId,
-			decorationTaskCode: $scope.orderCode
-		},
+	}  else {
 
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8' },
-        
-        transformRequest: function(obj) {    
-            var str = [];    
-            for (var p in obj) {    
-                
-                if (typeof obj[p] == 'object' ) {
-                    // console.log(p, JSON.stringify(obj[p]));
-                    str.push(encodeURIComponent(p) + "=" + encodeURIComponent(JSON.stringify(obj[p])))
-                } else {
-                    str.push(encodeURIComponent(p) + "=" + encodeURIComponent(obj[p]));  
-                }                     
-            }    
-            return str.join("&");    
-        },		
-	}).success(function(data) {
-		$scope.data = data.datas;
-		// console.log($scope.data)
-	})
+		// console.log($location.search());
+		$scope.orderId = $location.search().id;
+		$scope.orderCode = $location.search().code;
 
+		$http({
+			url: g.host+'/decoration_designer/decorationTask/order/view',
+			method: 'post',
+			data: {
+				decorationTaskId: $scope.orderId,
+				decorationTaskCode: $scope.orderCode,
+				token: $cookies.fs_designer_token
+			},
+
+	        headers: { 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8' },
+	        
+	        transformRequest: function(obj) {    
+	            var str = [];    
+	            for (var p in obj) {    
+	                
+	                if (typeof obj[p] == 'object' ) {
+	                    // console.log(p, JSON.stringify(obj[p]));
+	                    str.push(encodeURIComponent(p) + "=" + encodeURIComponent(JSON.stringify(obj[p])))
+	                } else {
+	                    str.push(encodeURIComponent(p) + "=" + encodeURIComponent(obj[p]));  
+	                }                     
+	            }    
+	            return str.join("&");    
+	        },		
+		}).success(function(data) {
+			$scope.data = data.datas;
+			// console.log($scope.data)
+		})
+	}
 })
-
 
 /*----------------------------
 	# project workload  工程量
 -----------------------------*/
 
-app.controller("workLoad", function($scope, $http, $location) {
+app.controller("workLoad", function($scope, $http, $location, $cookies) {
 
-	$scope.orderId = $location.search().id;
-	$scope.orderCode = $location.search().code;
+	if (!g.chkCookie()) {
 
-	// console.log(123);
-	$scope.data ="";
+		$location.path("/login");
 
-	$http.post('http://192.168.0.224:8080/decoration_designer/decorationTask/quantity/selectList?decorationTaskCode=116092400000060&token=designer_13600136000')
-	.success(function(data) {
-		// console.log(data)
-		if (data.success) {
-			$scope.data = data.datas;
-		}
-	})	
+	} else {
 
-	$scope.formData = "";
+		$scope.orderId = $location.search().id;
+		$scope.orderCode = $location.search().code;
+
+		$scope.data ="";
+
+		$http({
+			method: 'post',
+			url: g.host+'/decoration_designer/decorationTask/quantity/selectList',
+			data: {
+				decorationTaskCode: $scope.orderCode,	
+				token: $cookies.fs_designer_token
+			},
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8' },
+            
+            transformRequest: function(obj) {    
+                var str = [];    
+                for (var p in obj) {    
+                    
+                    if (typeof obj[p] == 'object' ) {
+                        // console.log(p, JSON.stringify(obj[p]));
+                        str.push(encodeURIComponent(p) + "=" + encodeURIComponent(JSON.stringify(obj[p])))
+                    } else {
+                        str.push(encodeURIComponent(p) + "=" + encodeURIComponent(obj[p]));  
+                    }                     
+                }    
+                return str.join("&");    
+            }			
+		}).success(function(data) {
+			// console.log(data)
+			if (data.success) {
+				$scope.data = data.datas;
+			}
+		})	
+
+		$scope.formData = "";	
+
+	}
 
 	function pushData() {
 
@@ -274,16 +322,16 @@ app.controller("workLoad", function($scope, $http, $location) {
 
 	$scope.saveWorkAmount = function() {
 	
-
 		$scope.formData = pushData();
 
 		$http({
-			url: 'http://192.168.0.224:8080/decoration_designer/decorationTask/quantity/update?token=designer_13600136000',
+			url: g.host+'/decoration_designer/decorationTask/quantity/update',
 
 			method: 'post',
 
 			data: {
-				jsonData: $scope.formData
+				jsonData: $scope.formData,
+				token: $cookies.fs_designer_token
 			},
 
             headers: { 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8' },
@@ -301,7 +349,6 @@ app.controller("workLoad", function($scope, $http, $location) {
                 }    
                 return str.join("&");    
             }
-
 		
 		}).success(function(data) {
 
@@ -316,12 +363,13 @@ app.controller("workLoad", function($scope, $http, $location) {
 		// console.log($scope.orderCode);
 
 		$http({
-			url: 'http://192.168.0.224:8089/decoration_designer/decorationTask/quantity/submit?token=designer_13600136000',
+			url: g.host+'/decoration_designer/decorationTask/quantity/submit',
 
 			method: 'post',
 
 			data: {
-				decorationTaskCode: $scope.orderCode
+				decorationTaskCode: $scope.orderCode,
+				token: $scope.orderCode
 			},
 
             headers: { 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8' },
@@ -356,14 +404,54 @@ app.controller("workLoad", function($scope, $http, $location) {
 /* ---------------------------
 	# bom 物料清单页
 -----------------------------*/
-app.controller("bom", function($scope, $http, $location){
+app.controller("bom", function($scope, $http, $location, $cookies){
 	// console.log($location);
+
 	$scope.orderId = $location.search().id;
+
 	$scope.orderCode = $location.search().code;
 
 	$scope.formData = "";
 
 	$scope.data = "";
+
+	if (!g.chkCookie()) {
+
+		$location.path("/login");
+
+	} else {
+
+		$http({
+
+			method:'post',
+			url: g.host+'/decoration_designer/material/selectList',
+			data: {
+				decorationTaskCode: $scope.orderCode,
+				token: $cookies.fs_designer_token
+			},
+			headers: { 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8' },
+	        transformRequest: function(obj) {    
+	            var str = [];    
+	            for (var p in obj) {    
+	                
+	                if (typeof obj[p] == 'object' ) {
+	                    // console.log(p, JSON.stringify(obj[p]));
+	                    str.push(encodeURIComponent(p) + "=" + encodeURIComponent(JSON.stringify(obj[p])))
+	                } else {
+	                    str.push(encodeURIComponent(p) + "=" + encodeURIComponent(obj[p]));  
+	                }                     
+	            }    
+	            return str.join("&");    
+	        }		
+		}).success(function(data) {
+
+			if (g.checkData(data)) {
+				// alert("提交成功");
+				$scope.data = data.datas;				
+			}
+		})
+	}
+
 	function pushData() {
 
 		var arr = new Array();
@@ -384,32 +472,6 @@ app.controller("bom", function($scope, $http, $location){
 
 	}
 
-	$http({
-
-		method:'post',
-		url: 'http://192.168.0.224:8080/decoration_designer/material/selectList?decorationTaskCode=116092400000060&token=designer_13600136000&roleCode=11',
-		headers: { 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8' },
-        transformRequest: function(obj) {    
-            var str = [];    
-            for (var p in obj) {    
-                
-                if (typeof obj[p] == 'object' ) {
-                    // console.log(p, JSON.stringify(obj[p]));
-                    str.push(encodeURIComponent(p) + "=" + encodeURIComponent(JSON.stringify(obj[p])))
-                } else {
-                    str.push(encodeURIComponent(p) + "=" + encodeURIComponent(obj[p]));  
-                }                     
-            }    
-            return str.join("&");    
-        }		
-	}).success(function(data) {
-
-		if (g.checkData(data)) {
-			// alert("提交成功");
-			$scope.data = data.datas;				
-		}
-
-	})
 
 /*---------------------------
 	坑死人了，Button会尼玛自己提交表单，即使把接口代码注释掉还是会默认提交，我也是醉了!	之前后端接口为update & submit, 
@@ -453,10 +515,14 @@ app.controller("bom", function($scope, $http, $location){
 		$http({
 			method: 'post',
 			url: 'http://192.168.0.224:8089/decoration_designer/material/submitMaterial?token=designer_13600136000',
+			
 			data: {
-				decorationTaskCode: $scope.orderCode
+				decorationTaskCode: $scope.orderCode,
+				token: $scope.fs_designer_token
 			},
+
 			headers: { 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8' },
+		    
 		    transformRequest: function(obj) {    
 		        var str = [];    
 		        for (var p in obj) {    
@@ -478,59 +544,83 @@ app.controller("bom", function($scope, $http, $location){
 		})
 	}
 
-	// console.log(pushData());
-
 })
 
 
 /*---------------------------
    # design 设计图页
 ----------------------------*/
+ 
+// 设计图接口调用 刘杰的
+app.controller("design", function($scope, $http, $location, $cookies) {
 
-app.controller("design", function($scope, $http, $location){
 	$scope.orderId = $location.search().id;
+
 	$scope.orderCode = $location.search().code;
-	
-	$http({
-		method: 'post',
-		url: 'http://192.168.0.87/decoration_designer/decorationDesignDraw/selectDecorationDesignDrawList',		
-        // headers: { 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8' },
-        
-        // transformRequest: function(obj) {    
-        //     var str = [];    
-        //     for (var p in obj) {    
-                
-        //         if (typeof obj[p] == 'object' ) {
-        //             // console.log(p, JSON.stringify(obj[p]));
-        //             str.push(encodeURIComponent(p) + "=" + encodeURIComponent(JSON.stringify(obj[p])))
-        //         } else {
-        //             str.push(encodeURIComponent(p) + "=" + encodeURIComponent(obj[p]));  
-        //         }                     
-        //     }    
-        //     return str.join("&");    
-        // }
 
-	}).success(function(data) {
+	if (!g.chkCookie()) {
 
-		console.log(data);
-		if (g.checkData(data)) {
-			$scope.data = data.decorationDesignDrawList;			
-		}
+		$location.path("/login");
 
-	})
+	} else {
+
+		
+		$http({
+			method: 'post',
+			url: 'http://192.168.0.87/decoration_designer/decorationDesignDraw/selectDecorationDesignDrawList',		
+	        
+	        data: {
+
+	        	token: $cookies.fs_designer_token,
+	        	decorationTaskCode: $scope.orderCode,
+
+	        },
+	        
+	        headers: { 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8' },
+	        
+	        transformRequest: function(obj) {    
+	            var str = [];    
+	            for (var p in obj) {    
+	                
+	                if (typeof obj[p] == 'object' ) {
+	                    // console.log(p, JSON.stringify(obj[p]));
+	                    str.push(encodeURIComponent(p) + "=" + encodeURIComponent(JSON.stringify(obj[p])))
+	                } else {
+	                    str.push(encodeURIComponent(p) + "=" + encodeURIComponent(obj[p]));  
+	                }                     
+	            }    
+	            return str.join("&");    
+	        }
+
+		}).success(function(data) {
+			console.log(data);
+			if (g.checkData(data)) {
+				$scope.data = data.decorationDesignDrawList;			
+			}
+
+		})		
+	}
+
 })
 
 
 
 
 
-// addbyzhangna
-// cont:account
+// add by zhangna
+// cont: account
 
 app.controller("costForm", function($scope, $http, $location){
-	
+
 	$scope.orderId = $location.search().id;
 	$scope.orderCode = $location.search().code;
+
+	if (!g.chkCookie()) {
+
+		$location.path("/login");
+
+	} else {
+
 	// $http({
 	// 	method: 'post',
 	// 	url: 'http://192.168.0.87/decoration_designer/decorationDesignDraw/selectDecorationDesignDrawList',		
@@ -542,35 +632,63 @@ app.controller("costForm", function($scope, $http, $location){
 	// 		$scope.data = data.decorationDesignDrawList;			
 	// 	}
 
-	// })
+	// })		
+	}	
+
 })
 
 
 
-app.controller("myAccount", function($http, $scope,$location) {
+app.controller("myAccount", function($http, $scope,$location, $cookies) {
+	
+	$scope.orderId = $location.search().id;
+	$scope.orderCode = $location.search().code;
 
-	$scope.data  = '';
+	if (!g.chkCookie()) {
 
-	$http({
-		url: 'http://192.168.0.224:8080/decoration_designer/decorationTask/order/selectList?token=designer_13600136000',
-		method: 'post',
-	}).success(function(data) {
-		$scope.data = data.datas;
-	})
+		$location.path("/login");
+
+	} else {
+
+		$scope.data  = '';
+
+		$http({
+			url: g.host+'/decoration_designer/decorationTask/order/selectList',
+			data: {
+				token: $cookies.fs_designer_token,
+				decorationTaskCode: $scope.orderCode,
+			},
+			method: 'post',
+		}).success(function(data) {
+			$scope.data = data.datas;
+		})	
+
+	}
 
 })
 
 
 // gallery
 app.controller("gallery", function($http, $scope, ngDialog,$location) {
-	$scope.data  = '';
 
-	$http({
-		url: 'http://192.168.0.224:8080/decoration_designer/decorationTask/order/selectList?token=designer_13600136000',
-		method: 'post',
-	}).success(function(data) {
-		$scope.data = data.datas;
-	})
+	if (!g.chkCookie()) {
+
+		$location.path("/login");
+
+	} else {
+		$scope.data  = '';
+
+		$http({
+			url: g.host+'/decoration_designer/decorationTask/order/selectList',
+			data: {
+				token: $cookies.fs_designer_token,
+				decorationTaskCode: $scope.orderCode,				
+			},
+			method: 'post',
+		}).success(function(data) {
+			$scope.data = data.datas;
+		})	
+	}	
 
 	$scope.detailsPop = function() {
 
@@ -582,12 +700,9 @@ app.controller("gallery", function($http, $scope, ngDialog,$location) {
             scope: $scope,
         })
 
-	}
+	}	
 
 })
-
-
-
 
 
 /*

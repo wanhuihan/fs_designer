@@ -1,7 +1,7 @@
 
 // var app = angular.module("designer", ['chieffancypants.loadingBar']);
 
-var app = angular.module("designer", ["ui.router", 'angular-loading-bar','ngDialog']);
+var app = angular.module("designer", ["ui.router", 'angular-loading-bar','ngDialog','ngCookies']);
 
 /*
  * 设计端cookie fs_designer_token
@@ -26,10 +26,26 @@ var g = {
 
 	},
 
+	chkCookie: function() {
+		if (document.cookie.indexOf('fs_designer_token') > 0 ) {
+			// window.location.href = "/#/dashboard";
+			return true;
+		} else {
+			// window.location.href = '';
+			return false;
+		} 
+	},
+
+	getCookie: function() {
+
+		console.log(document.cookie);
+	},
+
 	// get the date text
 	a: function(e) {
 		console.log(e)
 	},
+
 	// check the json data from back end
 	checkData: function(data) {
 
@@ -41,7 +57,7 @@ var g = {
 		} else {
 
 			if (data.msg) {
-				alert(data.msg);
+				// alert(data.msg);
 			}
 			return true;
 		}
