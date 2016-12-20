@@ -1,11 +1,10 @@
 @charset "UTF-8";
 *, dl, dt, dd, ul, li {
   text-decoration: none;
-  font-size: 13px;
-  color: #000;
+  font-size: 16px;
   margin: 0;
   padding: 0;
-  font-family: arial, '黑体';
+  font-family: arial, 'Microsoft Yahei';
   list-style: none; }
 
 .clrfix:after {
@@ -18,19 +17,14 @@
   box-shadow: 0;
   clear: both; }
 
+.quickSearch {
+  padding: 15px; }
+  .quickSearch .control-label {
+    padding: 0 15px; }
+
 /*--------------
 	#button style 
  ---------------*/
-.btn_primary {
-  background: #000;
-  color: #fff; }
-
-.btn_secondary {
-  background: #fff; }
-
-.btn_thirdary {
-  background: #eee; }
-
 /* ------------------------------------------ 
 	# header
 --------------------------------------------- */
@@ -40,7 +34,7 @@
   background-color: #343c48;
   border: 0; }
   .header .navbar a {
-    font-size: 14px; }
+    font-size: 16px; }
 
 /*------------------------------------------ 
 	#sidebar
@@ -56,7 +50,7 @@
     line-height: 30px; }
     .left_side_bar ul li a {
       color: #fff;
-      font-size: 14px;
+      font-size: 16px;
       display: block;
       padding: 10px 20px; }
       .left_side_bar ul li a i {
@@ -69,9 +63,9 @@
 .main_body {
   box-sizing: border-box; }
   .main_body .main_content {
-    width: 1200px;
-    padding: 75px 25px 25px;
-    margin-left: 250px; }
+    width: 100%;
+    padding: 75px 25px 25px 275px;
+    box-sizing: border-box; }
 
 #home ul {
   margin: 0;
@@ -91,39 +85,8 @@
 /* ----------------------------
 	#my orders
 ------------------------------ */
-.my_orders .main_content ul {
-  list-style: none; }
-  .my_orders .main_content ul li {
-    list-style: none;
-    border-bottom: 1px dashed #ddd;
-    padding: 5px 10px; }
-    .my_orders .main_content ul li:after {
-      clear: both;
-      display: block;
-      content: ""; }
-
-.my_orders .main_content dl {
-  float: left;
-  width: 170px; }
-  .my_orders .main_content dl dt {
-    font-weight: bold; }
-
-.my_orders .main_content .order_list li {
-  position: relative; }
-  .my_orders .main_content .order_list li dl {
-    vertical-align: middle; }
-  .my_orders .main_content .order_list li a {
-    vertical-align: middle;
-    display: block;
-    background: #eee;
-    right: 10px;
-    position: absolute;
-    top: 30%; }
-
-.my_orders:after {
-  clear: both;
-  display: block;
-  content: ""; }
+.my_orders .main_content .table td {
+  font-size: 16px; }
 
 /*--------------------------------
 	#order details page
@@ -320,8 +283,7 @@
     color: #999; }
 
 .bom_detail_info {
-  width: 1000px;
-  margin-left: 230px; }
+  width: 1000px; }
 
 /* --------------------------- 
 	# bom page 物料清单页
