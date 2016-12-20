@@ -37,9 +37,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
         views: {
             'header': {
                 templateUrl: 'templates/header.html',
-                // controller: function($scope) {
-                //     console.log($scope.chkCookie);
-                // }
+                controller: 'header'
             },
 
             // 'sideBar': {

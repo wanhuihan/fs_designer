@@ -2,11 +2,11 @@
 
 *,dl, dt,dd, ul, li {
 	text-decoration: none;
-	font-size: 13px;
-	color: #000;
+	font-size: 16px;
+	// color: #000;
 	margin: 0;
 	padding: 0;
-	font-family: arial, '黑体';
+	font-family: arial, 'Microsoft Yahei';
 	list-style: none;
 	// font-size: 10px;
 }
@@ -23,26 +23,16 @@
 	clear: both;
 }
 
+// quick search 
+.quickSearch {
+	padding: 15px;
+	.control-label {
+		padding: 0 15px ;
+	}
+}
 /*--------------
 	#button style 
  ---------------*/
-.btn {
-	// border:1px solid #000;
-	// // padding: 10px 20px;
-	// box-sizing: border-box;
-	// font-size: 14px;
-}
-
-.btn_primary {
-	background: #000;
-	color: #fff;
-}
-.btn_secondary {
-	background: #fff;
-}
-.btn_thirdary {
-	background: #eee;
-}
 
 
 /* ------------------------------------------ 
@@ -55,7 +45,7 @@
 		background-color: #343c48;
 		border: 0 ;
 		a {
-			font-size: 14px;
+			font-size: 16px;
 		}
 	}
 
@@ -81,7 +71,7 @@
 			line-height: 30px;
 			a {
 				color: #fff;
-				font-size: 14px;
+				font-size: 16px;
 				display: block;
 				padding: 10px 20px;
 				i {
@@ -103,10 +93,12 @@
 	// padding-top: 50px;
 	box-sizing: border-box;
 	.main_content {
-		width: 1200px;
-		padding: 75px 25px 25px;		
+		width: 100%;
+		padding: 75px 25px 25px 275px;		
 		// float: left;
-		margin-left: 250px;
+		box-sizing: border-box;
+		// color: #eee;
+		// margin-left: 250px;
 	}
 }
 
@@ -141,61 +133,13 @@
 	// padding: 10px;
 	
 	.main_content {
-		// width: 1200px;
-		// border:1px solid ;
-		// float: left;
-		// padding: 10px;
-		// smargin-left: 10px;
-		ul {
-			list-style: none;
-			li {
-				list-style: none;
-				border-bottom: 1px dashed #ddd;
-				padding: 5px 10px;
-				&:after {
-					clear: both;
-					display: block;
-					content: "";
-				}
+		.table {
+			td {
+				font-size: 16px;
 			}
 		}
+	}
 
-		dl {
-			float: left;
-			width: 170px;
-			// clear: both;
-			dt {
-				// float: left;
-				font-weight: bold;
-			}
-			dd {
-				// float: right;
-			}
-		}	
-		.order_list {
-			
-			li {
-				position: relative;
-				dl {
-					vertical-align: middle;
-				}
-				a {
-					vertical-align: middle;
-					display: block;
-					background: #eee;
-					right: 10px;
-					position: absolute;
-					top: 30%;
-				}
-			}
-		
-		}	
-	}
-	&:after {
-		clear: both;
-		display: block;
-		content: "";
-	}
 }
 
 
@@ -535,7 +479,7 @@
 	// 物料清单
 	.bom_detail_info {
 		width:1000px;
-		margin-left: 230px;
+		// margin-left: 230px;
 	}
 
 /* --------------------------- 

@@ -83,6 +83,10 @@
 
 // })
 
+app.controller("header", function($scope, $location, $cookies) {
+	console.log(123);
+	
+})
 
 app.controller("orders", function($http, $scope, $location, $cookies) {
 
