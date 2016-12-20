@@ -29,6 +29,23 @@
 	</div>
 
 	<div class="work_load_list main_content">
+
+		<ol class="breadcrumb">
+			<li>
+			<a href="#">
+			<i class="fa fa-home" aria-hidden="true">装修管理</i>
+			</a>
+			</li>
+			<li>
+			<a href="#">
+			<i class="fa fa-angle-right" aria-hidden="true">装修配置</i>
+			</a>
+			</li>
+			<li class="active">
+			<i class="fa fa-angle-right" aria-hidden="true">工序配置</i>
+			</li>
+		</ol>	
+
 		<ul class="clrfix work_load_list_title">
 			<li class="order_num">
 				序号
@@ -121,10 +138,10 @@
 
 				</li>
 			</ul>
-
-			<button class="btn btn_primary" ng-click="saveWorkAmount()"> 保存</button>
-			<button class="btn btn_secondary" ng-click="subWorkAmount()">提交</button>
-
+			<div class="btn_group col-md-12">
+				<button class="btn btn-primary btn-lg" ng-click="saveWorkAmount()"> 保存</button>
+				<button class="btn btn-default btn-lg" ng-click="subWorkAmount()">提交</button>
+			</div>
 		</form>
 		
 	</div>

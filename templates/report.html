@@ -265,9 +265,12 @@
 						      <textarea name="" id="" cols="70" rows="10" ng-model="formData.houseBasicInfo.houseOther"></textarea>
 						</div>
 					</div>
-					<button class="btn btn-default" ng-click="lastStep(currentStep)">上一步</button>
-					<button class="btn btn-primary" ng-click="save(currentStep)">保存 {{currentStep}}</button>
-					<button class="btn btn-default" ng-click="nextStep(currentStep)">下一步</button>					
+					<div class="row">
+						<div class="btn_group col-md-12">
+							<button class="btn btn-primary btn-lg" ng-click="save(currentStep)">保存</button>
+							<button class="btn btn-default btn-lg" ng-click="nextStep(currentStep)">下一步</button>
+						</div>						
+					</div>					
 				</form>
 			</div>
 
@@ -1142,9 +1145,12 @@
 							</div>
 						</div>
 					</div>
-					<button class="btn btn-default" ng-click="lastStep(currentStep)">上一步</button>
-					<button class="btn btn-primary" ng-click="save(currentStep)">保存 {{currentStep}}</button>
-					<button class="btn btn-default" ng-click="nextStep(currentStep)">下一步</button>					
+					<div class="row">
+						<div class="btn_group col-md-12">
+							<button class="btn btn-primary btn-lg" ng-click="save(currentStep)">保存</button>
+							<button class="btn btn-default btn-lg" ng-click="nextStep(currentStep)">下一步</button>
+						</div>						
+					</div>					
 				</form>
 			</div>
 
@@ -1197,9 +1203,9 @@
 
 					 Primary observation content  -->
 
-					<div ng-repeat="(key,value) in formData" style="border-bottom: 1px solid;">
+<!-- 					<div ng-repeat="(key,value) in formData" style="border-bottom: 1px solid;">
 						{{key}} = > {{value}}
-					</div>
+					</div> -->
 
 					<tr>
 						<td class="leftmenu" rowspan="6" colspan="1">首要观察内容</td>
@@ -2052,9 +2058,12 @@
 						<td class="" colspan="5">{{formData.additional.addOldFurnitureSpecialItemsPlaceOpt}}</td>
 					</tr>
 				</table>
-				<button class="btn btn-default" ng-click="lastStep(currentStep)">上一步</button>
-				<button class="btn btn-primary" ng-click="save(currentStep)">保存 {{currentStep}}</button>
-				<button class="btn btn-default" ng-click="nextStep(currentStep)">下一步</button>
+				<div class="row">
+					<div class="btn_group col-md-12">
+						<button class="btn btn-primary btn-lg" ng-click="save(currentStep)">保存</button>
+						<button class="btn btn-default btn-lg" ng-click="nextStep(currentStep)">提交</button>
+					</div>						
+				</div>
 			</div>
 
 		</div>
