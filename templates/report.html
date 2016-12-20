@@ -6,28 +6,26 @@
 		<ul>
 			
 			<li>
-				<a  ui-sref="dashboard.orders.details({id:orderId,code:orderCode})"><i class="fa fa-file-text-o"></i>订单详情</a>
+				<a  ui-sref="dashboard.orders.details({id:orderId,code:orderCode})">订单详情</a>
 			</li>
 
 			<li>
-				<a ui-sref="dashboard.orders.report({id:orderId,code:orderCode})">
-				<i class="fa fa-list-alt"></i>量房报告</a>
+				<a ui-sref="dashboard.orders.report({id:orderId,code:orderCode})">量房报告</a>
 			</li>
 
 			<li>
-				<a ui-sref="dashboard.orders.bom({id:orderId,code:orderCode})"><i class="fa fa-list-ol"></i>物料清单</a>
+				<a ui-sref="dashboard.orders.bom({id:orderId,code:orderCode})">物料清单</a>
 			</li>			
 
 			<li>
-				<a ui-sref="dashboard.orders.design({id:orderId,code:orderCode})"><i class="fa fa-file-picture-o"></i>设计图</a>
+				<a ui-sref="dashboard.orders.design({id:orderId,code:orderCode})">设计图</a>
 			</li>
 
 			<li>
-				<a ui-sref="dashboard.orders.workload({id:orderId,code:orderCode})"><i class="fa fa-tasks"></i>工程量</a>
-			</li>
+				<a ui-sref="dashboard.orders.workload({id:orderId,code:orderCode})">工程量</a>
+			</li>			
 			<li>
-				<a ui-sref="dashboard.orders.costForm({id:orderId,code:orderCode})">
-				<i class="fa fa-bar-chart fa-2"></i>成本控制单</a>
+				<a ui-sref="dashboard.orders.costForm({id:orderId,code:orderCode})">成本控制单</a>
 			</li>
 
 		</ul>
@@ -815,9 +813,9 @@
 						<div class="row">
 							<div class="col-md-12">
 								<p>6.有无特殊灯光要求：<span>*</span></p>
-							   		<input type="checkbox" name="checkboxset" value="checkbox" ng-click="checkbox($event, 'krSpecialLightsReuqest', 'kidRoom', formData.kidRoom.krSpecialLightsReuqestArr)">&nbsp;可调光源
-									<input type="checkbox" name="checkboxset" value="checkbox" ng-click="checkbox($event, 'krSpecialLightsReuqest', 'kidRoom', formData.kidRoom.krSpecialLightsReuqestArr)">&nbsp;双控开关
-								    <input type="checkbox" name="checkboxset" value="checkbox" ng-click="checkbox($event, 'krSpecialLightsReuqest', 'kidRoom', formData.kidRoom.krSpecialLightsReuqestArr)">&nbsp;地脚线
+							   		<input type="checkbox" name="checkboxset" value="1" ng-click="checkbox($event, 'krSpecialLightsReuqest', 'kidRoom', formData.kidRoom.krSpecialLightsReuqestArr)">&nbsp;可调光源
+									<input type="checkbox" name="checkboxset" value="2" ng-click="checkbox($event, 'krSpecialLightsReuqest', 'kidRoom', formData.kidRoom.krSpecialLightsReuqestArr)">&nbsp;双控开关
+								    <input type="checkbox" name="checkboxset" value="3" ng-click="checkbox($event, 'krSpecialLightsReuqest', 'kidRoom', formData.kidRoom.krSpecialLightsReuqestArr)">&nbsp;地脚线
 							</div>
 						</div>
 						<div class="row">
@@ -828,8 +826,8 @@
 						</div>
 						<div class="row">
 							<div class="col-md-12">
-								<p>8.对墙、地面材料有无特殊要求：<span>*</span></p>
-							   	<input type="text" placeholder="请输入相关要求" ng-model="">
+								<p style="color:red">8.对墙、地面材料有无特殊要求：<span>*</span></p>
+							   	<input type="text" placeholder="请输入相关要求">
 							</div>
 						</div>
 						<div class="row">
@@ -880,18 +878,18 @@
 						<div class="row">
 							<div class="col-md-12">
 								<p>3.  是否需要：<span>*</span></p>
-							   	<input type="checkbox" name="checkboxset" value="checkbox" ng-click="checkbox($event, 'roomGrOpt', 'guestRoom', formData.guestRoom.brNetworkOptArr)">&nbsp;视听设备
-								<input type="checkbox" name="checkboxset" value="checkbox" ng-click="checkbox($event, 'roomGrOpt', 'guestRoom', formData.guestRoom.brNetworkOptArr)">&nbsp;电话
-								<input type="checkbox" name="checkboxset" value="checkbox" ng-click="checkbox($event, 'roomGrOpt', 'guestRoom', formData.guestRoom.roomGrOptArr)">&nbsp;网线
+							   	<input type="checkbox" name="checkboxset" value="1" ng-click="checkbox($event, 'roomGrOpt', 'guestRoom', formData.guestRoom.roomGrOptArr)">&nbsp;视听设备
+								<input type="checkbox" name="checkboxset" value="2" ng-click="checkbox($event, 'roomGrOpt', 'guestRoom', formData.guestRoom.roomGrOptArr)">&nbsp;电话
+								<input type="checkbox" name="checkboxset" value="3" ng-click="checkbox($event, 'roomGrOpt', 'guestRoom', formData.guestRoom.roomGrOptArr)">&nbsp;网线
 								<input type="text" placeholder="请输入相关要求" ng-model="formData.guestRoom.roomGrRequest">
 							</div>
 						</div>
 						<div class="row">
 							<div class="col-md-12">
 								<p>4.  有无特殊灯光要求：<span>*</span></p>
-							   	<input type="checkbox" name="checkboxset" value="checkbox" ng-click="checkbox($event, 'roomGrLightingReuqest', 'guestRoom', formData.guestRoom.roomGrLightingReuqestArr)">&nbsp;可调光源
-								<input type="checkbox" name="checkboxset" value="checkbox" ng-click="checkbox($event, 'roomGrLightingReuqest', 'guestRoom', formData.guestRoom.roomGrLightingReuqestArr)">&nbsp;双控开关
-								<input type="checkbox" name="checkboxset" value="checkbox" ng-click="checkbox($event, 'roomGrLightingReuqest', 'guestRoom', formData.guestRoom.roomGrLightingReuqestArr)">&nbsp;地脚线
+							   	<input type="checkbox" name="checkboxset" value="1" ng-click="checkbox($event, 'roomGrLightingReuqest', 'guestRoom', formData.guestRoom.roomGrLightingReuqestArr)">&nbsp;可调光源
+								<input type="checkbox" name="checkboxset" value="2" ng-click="checkbox($event, 'roomGrLightingReuqest', 'guestRoom', formData.guestRoom.roomGrLightingReuqestArr)">&nbsp;双控开关
+								<input type="checkbox" name="checkboxset" value="3" ng-click="checkbox($event, 'roomGrLightingReuqest', 'guestRoom', formData.guestRoom.roomGrLightingReuqestArr)">&nbsp;地脚线
 							</div>
 						</div>
 						<div class="row">
@@ -1006,24 +1004,24 @@
 							</div>
 							<div class="col-md-6">
 								<p>4.  对那些地域文化感兴趣（列举国家或城市）：<span>*</span></p>
-								<input type="checkbox" name="checkboxset" value="checkbox" ng-click="checkbox($event, 'addRegionalCulture', 'additional', formData.additional.addRegionalCultureArr)">&nbsp;中国传统文化
-								<input type="checkbox" name="checkboxset" value="checkbox" ng-click="checkbox($event, 'addRegionalCulture', 'additional', formData.additional.addRegionalCultureArr)">&nbsp;亚洲其他国家文化
-							    <input type="checkbox" name="checkboxset" value="checkbox" ng-click="checkbox($event, 'addRegionalCulture', 'additional', formData.additional.addRegionalCultureArr)">&nbsp;非洲文化
-							    <input type="checkbox" name="checkboxset" value="checkbox" ng-click="checkbox($event, 'addRegionalCulture', 'additional', formData.additional.addRegionalCultureArr)">&nbsp;欧洲文化
-							    <input type="checkbox" name="checkboxset" value="checkbox" ng-click="checkbox($event, 'addRegionalCulture', 'additional', formData.additional.addRegionalCultureArr)">&nbsp;美洲文化
-							    <input type="checkbox" name="checkboxset" value="checkbox" ng-click="checkbox($event, 'addRegionalCulture', 'additional', formData.additional.addRegionalCultureArr)">&nbsp;其他国家
+								<input type="checkbox" name="checkboxset" value="1" ng-click="checkbox($event, 'addRegionalCulture', 'additional', formData.additional.addRegionalCultureArr)">&nbsp;中国传统文化
+								<input type="checkbox" name="checkboxset" value="2" ng-click="checkbox($event, 'addRegionalCulture', 'additional', formData.additional.addRegionalCultureArr)">&nbsp;亚洲其他国家文化
+							    <input type="checkbox" name="checkboxset" value="3" ng-click="checkbox($event, 'addRegionalCulture', 'additional', formData.additional.addRegionalCultureArr)">&nbsp;非洲文化
+							    <input type="checkbox" name="checkboxset" value="4" ng-click="checkbox($event, 'addRegionalCulture', 'additional', formData.additional.addRegionalCultureArr)">&nbsp;欧洲文化
+							    <input type="checkbox" name="checkboxset" value="5" ng-click="checkbox($event, 'addRegionalCulture', 'additional', formData.additional.addRegionalCultureArr)">&nbsp;美洲文化
+							    <input type="checkbox" name="checkboxset" value="6" ng-click="checkbox($event, 'addRegionalCulture', 'additional', formData.additional.addRegionalCultureArr)">&nbsp;其他国家
 							</div>
 						</div>
 						
 						<div class="row">
 							<div class="col-md-6">
 								<p>5.  对绘画、饰品的爱好：<span>*</span></p>
-							  	<input type="checkbox" name="checkboxset" value="checkbox" ng-click="checkbox($event, 'addPaintingJewelryHobby', 'additional', formData.additional.addPaintingJewelryHobbyArr)">&nbsp;油画
-								<input type="checkbox" name="checkboxset" value="checkbox" ng-click="checkbox($event, 'addPaintingJewelryHobby', 'additional', formData.additional.addPaintingJewelryHobbyArr)">&nbsp;水彩画
-							    <input type="checkbox" name="checkboxset" value="checkbox" ng-click="checkbox($event, 'addPaintingJewelryHobby', 'additional', formData.additional.addPaintingJewelryHobbyArr)">&nbsp;国画
-							    <input type="checkbox" name="checkboxset" value="checkbox" ng-click="checkbox($event, 'addPaintingJewelryHobby', 'additional', formData.additional.addPaintingJewelryHobbyArr)">&nbsp;现代装饰画
-							    <input type="checkbox" name="checkboxset" value="checkbox" ng-click="checkbox($event, 'addPaintingJewelryHobby', 'additional', formData.additional.addPaintingJewelryHobbyArr)">&nbsp;摄影作品
-							    <input type="checkbox" name="checkboxset" value="checkbox" ng-click="checkbox($event, 'addPaintingJewelryHobby', 'additional', formData.additional.addPaintingJewelryHobbyArr)">&nbsp;其他
+							  	<input type="checkbox" name="checkboxset" value="1" ng-click="checkbox($event, 'addPaintingJewelryHobby', 'additional', formData.additional.addPaintingJewelryHobbyArr)">&nbsp;油画
+								<input type="checkbox" name="checkboxset" value="2" ng-click="checkbox($event, 'addPaintingJewelryHobby', 'additional', formData.additional.addPaintingJewelryHobbyArr)">&nbsp;水彩画
+							    <input type="checkbox" name="checkboxset" value="3" ng-click="checkbox($event, 'addPaintingJewelryHobby', 'additional', formData.additional.addPaintingJewelryHobbyArr)">&nbsp;国画
+							    <input type="checkbox" name="checkboxset" value="4" ng-click="checkbox($event, 'addPaintingJewelryHobby', 'additional', formData.additional.addPaintingJewelryHobbyArr)">&nbsp;现代装饰画
+							    <input type="checkbox" name="checkboxset" value="5" ng-click="checkbox($event, 'addPaintingJewelryHobby', 'additional', formData.additional.addPaintingJewelryHobbyArr)">&nbsp;摄影作品
+							    <input type="checkbox" name="checkboxset" value="6" ng-click="checkbox($event, 'addPaintingJewelryHobby', 'additional', formData.additional.addPaintingJewelryHobbyArr)">&nbsp;其他
 							</div>
 							<div class="col-md-6">
 								<p>6.  是否有个人藏品需要展示：<span>*</span></p>
@@ -1427,12 +1425,22 @@
 					<tr>
 						<td class="">客厅的主要功能：</td>
 						<td class="">
-							{{formData.livingRoom.sittingLrMainFun}}
+							<!-- {{formData.livingRoom.sittingLrMainFun}} -->
+							<span ng-repeat="item in formData.livingRoom.sittingLrMainFunArr">
+								<b ng-if="item==1">会客</b>
+								<b ng-if="item==2">休息</b>
+								<b ng-if="item==3">娱乐</b>
+								<b ng-if="item==4">阅读</b>
+							</span>
 						</td>
 						<td class="">接待客人：</td>
 						<td class="">{{formData.livingRoom.sittingReceptionNumOpt}}</td>
 						<td class="">接待频率：</td>
-						<td class="">{{formData.livingRoom.sittingReceptiveSel}}</td>
+						<td class="">
+							<!-- {{formData.livingRoom.sittingReceptiveSel}} -->
+							<span ng-if="formData.livingRoom.sittingReceptiveSel==1">经常</span>
+							<span ng-if="formData.livingRoom.sittingReceptiveSel==0">偶尔</span>
+						</td>
 					</tr>
 					<tr>
 						<td class="">是否与餐厅融为一体：</td>
@@ -1447,7 +1455,14 @@
 					</tr>
 					<tr>
 						<td class="">客人来家中聚会的内容：</td>
-						<td class="">{{formData.livingRoom.sittingPartyContent}}</td>
+						<td class="">
+							<!-- {{formData.livingRoom.sittingPartyContent}} -->
+							<span ng-repeat="item in formData.livingRoom.sittingPartyContentArr">
+								<b ng-if="item==1">聊天</b>
+								<b ng-if="item==2">PARTY</b>
+								<b ng-if="item==3">卡拉OK </b>
+							</span>
+						</td>
 						<td class="">其他：</td>
 						<td class="" colspan="3">{{formData.livingRoom.sittingPartyContentOpinion}}</td>
 					</tr>
@@ -1471,11 +1486,22 @@
 					</tr>
 					<tr>
 						<td class="">对客厅地面材料要求：</td>
-						<td class="">{{formData.livingRoom.sittingGroundStuffRequirements}}</td>
+						<td class="">
+							<!-- {{formData.livingRoom.sittingGroundStuffRequirements}} -->
+							<span ng-if="formData.livingRoom.sittingGroundStuffRequirements==1">实木地板</span>
+							<span ng-if="formData.livingRoom.sittingGroundStuffRequirements==2">复合地板</span>
+							<span ng-if="formData.livingRoom.sittingGroundStuffRequirements==3">地砖</span>
+							<span ng-if="formData.livingRoom.sittingGroundStuffRequirements==4">石材</span>
+							<span ng-if="formData.livingRoom.sittingGroundStuffRequirements==5">拼花</span>
+						</td>
 						<td class="">是否需要有影视墙：</td>
 						<td class="">{{formData.livingRoom.sittingFilmWallBackgroundOpt}}</td>
 						<td class="">是否需要吊顶：</td>
-						<td class="">{{formData.livingRoom.sittingCeilingOpt}}</td>
+						<td class="">
+							<!-- {{formData.livingRoom.sittingCeilingOpt}} -->
+							<span ng-if="formData.livingRoom.sittingCeilingOpt==1">是</span>
+							<span ng-if="formData.livingRoom.sittingCeilingOpt==0">否</span>
+						</td>
 					</tr>
 					<tr>
 						<td class="">对客厅有无特别的灯光设计要求：</td>
@@ -1783,8 +1809,8 @@
 						<td class="" colspan="3">{{formData.kidRoom.krColorRequest}}</td>
 					</tr>
 					<tr>
-						<td class="">对墙、地色彩或材料的特殊要求：</td>
-						<td class="" colspan="3">{{formData.kidRoom.krColorRequest}}</td>
+						<td class="" style="color: red">对墙、地色彩或材料的特殊要求：</td>
+						<td class="" colspan="3">formData.kidRoom.krColorRequest</td>
 						<td class="">儿童有何兴趣爱好：</td>
 						<td class="">
 							<!-- {{formData.kidRoom.krHobby}} -->
@@ -1837,11 +1863,25 @@
 					</tr>
 					<tr>
 						<td class="">是否需要：</td>
-						<td class="">{{formData.guestRoom.brNetworkOptArr}}</td>
+						<td class="">
+							<!-- {{formData.guestRoom.brNetworkOptArr}} -->
+							<span ng-repeat="item in formData.guestRoom.roomGrOptArr">
+								<b ng-if="item==1">视听设备</b>
+								<b ng-if="item==2">电话</b>
+								<b ng-if="item==3">网线</b>
+							</span>
+						</td>
 						<td class="">其他：</td>
 						<td class="">{{formData.guestRoom.roomGrRequest}}</td>
 						<td class="">有无特殊灯光要求</td>
-						<td class="">{{formData.guestRoom.roomGrLightingReuqestArr}}</td>
+						<td class="">
+							<!-- {{formData.guestRoom.roomGrLightingReuqestArr}} -->
+							<span ng-repeat="item in formData.guestRoom.roomGrLightingReuqestArr">
+								<b ng-if="item==1">可调光源</b>
+								<b ng-if="item==2">双控开关</b>
+								<b ng-if="item==3">地脚线</b>
+							</span>
+						</td>
 					</tr>
 					<tr>
 						<td class="">房间有无特殊装饰要求：</td>
@@ -1859,7 +1899,11 @@
 
 					<tr>
 						<td class="">卫生间的色彩倾向：</td>
-						<td class="">{{formData.restroom.wcColor}}</td>
+						<td class="">
+							<!-- {{formData.restroom.wcColor}} -->
+							<span ng-if="formData.restroom.wcColor==0">冷色</span>
+							<span ng-if="formData.restroom.wcColor==1">暖色</span>
+						</td>
 						<td class="">对墙、地色彩或材料的特殊要求：</td>
 						<td class="" colspan="3">{{formData.restroom.wcCeilingWallGroundRequest}}</td>
 					</tr>
@@ -1884,19 +1928,40 @@
 					</tr>
 					<tr>
 						<td class="">是否需要封闭阳台：</td>
-						<td class="">{{formData.balcony.balconyBlockStuffOpt}}</td>
+						<td class="">
+							<!-- {{formData.balcony.balconyBlockStuffOpt}} -->
+							<span ng-if="formData.balcony.balconyBlockStuffOpt==0">否</span>
+							<span ng-if="formData.balcony.balconyBlockStuffOpt==1">是</span>
+						</td>
 						<td class="">材料：</td>
-						<td class="" colspan="3">{{formData.balcony.balconyBlockStuff}}</td>
+						<td class="" colspan="3">
+							<!-- {{formData.balcony.balconyBlockStuff}} -->
+							<span ng-if="formData.balcony.balconyBlockStuff==1">铝合金</span>
+							<span ng-if="formData.balcony.balconyBlockStuff==2">塑钢</span>
+							<span ng-if="formData.balcony.balconyBlockStuff==3">木制</span>
+						</td>
 					</tr>
 					<tr>
 						<td class="">功能要求：</td>
-						<td class="" colspan="3">{{formData.balcony.balconyFunRequestArr}}</td>
+						<td class="" colspan="3">
+							{{formData.balcony.balconyFunRequestArr}}
+							<span ng-repeat="item in formData.balcony.balconyFunRequestArr">
+								<b ng-if="item==1">晾衣服 </b>
+								<b ng-if="item==2">健身</b>
+								<b ng-if="item==3">休息</b>
+								<b ng-if="item==4">储物</b>
+								<b ng-if="item==5">养殖花木</b>
+							</span>
+						</td>
 						<td class="">其他：</td>
-						<td class=""></td>
+						<td class="">{{formData.balcony.balconyWindwToXugeRequest}}</td>
 					</tr>
 					<tr>
 						<td class="">所有外窗更换为旭格品牌：</td>
-						<td class="" colspan="3">是</td>
+						<td class="" colspan="3">
+							<span ng-if="formData.balcony.balconyWinToXugeOpt==0">否</span>
+							<span ng-if="formData.balcony.balconyWinToXugeOpt==1">是</span>
+						</td>
 						<td class="">其他：</td>
 						<td class="">{{formData.balcony.balconyFunctionWant}}</td>
 					</tr>
@@ -1920,9 +1985,27 @@
 					</tr>
 					<tr>
 						<td class="">对那些地域文化感兴趣：</td>
-						<td class="">{{formData.additional.addRegionalCultureArr}}</td>
+						<td class="">
+							<span ng-repeat="item in formData.additional.addRegionalCultureArr">
+								<b ng-if="item==1">中国传统文化</b>
+								<b ng-if="item==2">亚洲其他国家文化</b>
+								<b ng-if="item==3">非洲文化</b>
+								<b ng-if="item==4">欧洲文化</b>
+								<b ng-if="item==5">美洲文化</b>
+								<b ng-if="item==6">其他国家</b>
+							</span>
+						</td>
 						<td class="">对绘画、饰品的爱好：</td>
-						<td class="">{{formData.additional.addPaintingJewelryHobbyArr}}</td>
+						<td class="">
+							<span ng-repeat="item in formData.additional.addPaintingJewelryHobbyArr">
+								<b ng-if="item==1">油画</b>
+								<b ng-if="item==2">水彩画</b>
+								<b ng-if="item==3">国画</b>
+								<b ng-if="item==4"> 现代装饰画</b>
+								<b ng-if="item==5">摄影作品</b>
+								<b ng-if="item==6">其他</b>
+							</span>
+						</td>
 						<td class="">其他</td>
 						<td class=""></td>
 					</tr>
@@ -1936,7 +2019,11 @@
 					</tr>
 					<tr>
 						<td class="">对家居风格的喜好：</td>
-						<td class="">{{formData.additional.addFurnitureStyle}}</td>
+						<td class="">
+							<span ng-if="formData.additional.addFurnitureStyle==1">清油</span>
+							<span ng-if="formData.additional.addFurnitureStyle==2">复合材料</span>
+							<span ng-if="formData.additional.addFurnitureStyle==3">混油</span>
+						</td>
 						<td class="">对服装色彩有何喜好：</td>
 						<td class="" colspan="3">{{formData.additional.addDressColorStyle}}</td>
 					</tr>
