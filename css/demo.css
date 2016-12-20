@@ -5,7 +5,7 @@
   color: #000;
   margin: 0;
   padding: 0;
-  font-family: arial;
+  font-family: arial, '黑体';
   list-style: none; }
 
 .clrfix:after {
@@ -21,11 +21,6 @@
 /*--------------
 	#button style 
  ---------------*/
-.btn {
-  border: 1px solid #000;
-  box-sizing: border-box;
-  font-size: 14px; }
-
 .btn_primary {
   background: #000;
   color: #fff; }
@@ -39,37 +34,44 @@
 /* ------------------------------------------ 
 	# header
 --------------------------------------------- */
-.header ul {
-  list-style: none; }
-  .header ul li {
-    float: left;
-    padding: 5px 10px; }
-    .header ul li a {
-      border: 1px solid;
-      padding: 10px 20px;
-      display: block; }
-  .header ul:after {
-    clear: both;
-    content: "";
-    display: block; }
+.header .navbar {
+  margin-bottom: 0;
+  border-radius: 0;
+  background-color: #343c48;
+  border: 0; }
+  .header .navbar a {
+    font-size: 14px; }
 
 /*------------------------------------------ 
 	#sidebar
  ------------------------------------------*/
-.side_bar .left_side_bar {
-  float: left;
-  width: 200px;
-  border: 1px solid; }
-  .side_bar .left_side_bar ul {
-    padding: 10px;
-    list-style: none; }
-    .side_bar .left_side_bar ul li {
-      line-height: 30px; }
-      .side_bar .left_side_bar ul li a {
-        display: block;
-        padding: 0 10px; }
-      .side_bar .left_side_bar ul li a:hover {
-        background: #eee; }
+.left_side_bar {
+  position: absolute;
+  height: 100%;
+  background: #4b5664;
+  width: 250px;
+  padding-top: 50px;
+  box-sizing: border-box; }
+  .left_side_bar ul li {
+    line-height: 30px; }
+    .left_side_bar ul li a {
+      color: #fff;
+      font-size: 14px;
+      display: block;
+      padding: 10px 20px; }
+      .left_side_bar ul li a i {
+        color: #fff;
+        margin-right: 15px; }
+      .left_side_bar ul li a:hover {
+        background-color: #343c48 !important;
+        text-decoration: none; }
+
+.main_body {
+  box-sizing: border-box; }
+  .main_body .main_content {
+    width: 1200px;
+    padding: 75px 25px 25px;
+    margin-left: 250px; }
 
 #home ul {
   margin: 0;
@@ -89,138 +91,111 @@
 /* ----------------------------
 	#my orders
 ------------------------------ */
-.my_orders {
-  padding: 10px; }
-  .my_orders .main_body {
-    width: 1200px;
-    border: 1px solid;
-    float: left;
-    padding: 10px; }
-    .my_orders .main_body ul {
-      list-style: none; }
-      .my_orders .main_body ul li {
-        list-style: none;
-        border-bottom: 1px dashed #ddd;
-        padding: 5px 10px; }
-        .my_orders .main_body ul li:after {
-          clear: both;
-          display: block;
-          content: ""; }
-    .my_orders .main_body dl {
-      float: left;
-      width: 170px; }
-      .my_orders .main_body dl dt {
-        font-weight: bold; }
-    .my_orders .main_body .order_list li {
-      position: relative; }
-      .my_orders .main_body .order_list li dl {
-        vertical-align: middle; }
-      .my_orders .main_body .order_list li a {
-        vertical-align: middle;
-        display: block;
-        background: #eee;
-        right: 10px;
-        position: absolute;
-        top: 30%; }
-  .my_orders:after {
-    clear: both;
+.my_orders .main_content ul {
+  list-style: none; }
+  .my_orders .main_content ul li {
+    list-style: none;
+    border-bottom: 1px dashed #ddd;
+    padding: 5px 10px; }
+    .my_orders .main_content ul li:after {
+      clear: both;
+      display: block;
+      content: ""; }
+
+.my_orders .main_content dl {
+  float: left;
+  width: 170px; }
+  .my_orders .main_content dl dt {
+    font-weight: bold; }
+
+.my_orders .main_content .order_list li {
+  position: relative; }
+  .my_orders .main_content .order_list li dl {
+    vertical-align: middle; }
+  .my_orders .main_content .order_list li a {
+    vertical-align: middle;
     display: block;
-    content: ""; }
+    background: #eee;
+    right: 10px;
+    position: absolute;
+    top: 30%; }
+
+.my_orders:after {
+  clear: both;
+  display: block;
+  content: ""; }
 
 /*--------------------------------
 	#order details page
  --------------------------------*/
-.order_details, .report_details, .bom_details, .design_details, .work_load, .cost_details {
-  padding: 10px; }
-  .order_details .left_side_bar, .report_details .left_side_bar, .bom_details .left_side_bar, .design_details .left_side_bar, .work_load .left_side_bar, .cost_details .left_side_bar {
-    float: left;
-    width: 200px;
-    border: 1px solid; }
-    .order_details .left_side_bar ul, .report_details .left_side_bar ul, .bom_details .left_side_bar ul, .design_details .left_side_bar ul, .work_load .left_side_bar ul, .cost_details .left_side_bar ul {
-      padding: 10px;
-      list-style: none; }
-      .order_details .left_side_bar ul li, .report_details .left_side_bar ul li, .bom_details .left_side_bar ul li, .design_details .left_side_bar ul li, .work_load .left_side_bar ul li, .cost_details .left_side_bar ul li {
-        line-height: 30px; }
-        .order_details .left_side_bar ul li a, .report_details .left_side_bar ul li a, .bom_details .left_side_bar ul li a, .design_details .left_side_bar ul li a, .work_load .left_side_bar ul li a, .cost_details .left_side_bar ul li a {
-          display: block;
-          padding: 0 10px; }
-        .order_details .left_side_bar ul li a:hover, .report_details .left_side_bar ul li a:hover, .bom_details .left_side_bar ul li a:hover, .design_details .left_side_bar ul li a:hover, .work_load .left_side_bar ul li a:hover, .cost_details .left_side_bar ul li a:hover {
-          background: #eee; }
-  .order_details .order_detail_info, .order_details .report_details_form, .report_details .order_detail_info, .report_details .report_details_form, .bom_details .order_detail_info, .bom_details .report_details_form, .design_details .order_detail_info, .design_details .report_details_form, .work_load .order_detail_info, .work_load .report_details_form, .cost_details .order_detail_info, .cost_details .report_details_form {
-    width: 1000px;
-    float: left; }
-    .order_details .order_detail_info .row > .col-md-6, .order_details .report_details_form .row > .col-md-6, .report_details .order_detail_info .row > .col-md-6, .report_details .report_details_form .row > .col-md-6, .bom_details .order_detail_info .row > .col-md-6, .bom_details .report_details_form .row > .col-md-6, .design_details .order_detail_info .row > .col-md-6, .design_details .report_details_form .row > .col-md-6, .work_load .order_detail_info .row > .col-md-6, .work_load .report_details_form .row > .col-md-6, .cost_details .order_detail_info .row > .col-md-6, .cost_details .report_details_form .row > .col-md-6 {
-      width: 50%;
-      float: left; }
-    .order_details .order_detail_info .row:after, .order_details .report_details_form .row:after, .report_details .order_detail_info .row:after, .report_details .report_details_form .row:after, .bom_details .order_detail_info .row:after, .bom_details .report_details_form .row:after, .design_details .order_detail_info .row:after, .design_details .report_details_form .row:after, .work_load .order_detail_info .row:after, .work_load .report_details_form .row:after, .cost_details .order_detail_info .row:after, .cost_details .report_details_form .row:after {
-      clear: both;
-      content: "";
-      display: block; }
-    .order_details .order_detail_info .row .panel, .order_details .report_details_form .row .panel, .report_details .order_detail_info .row .panel, .report_details .report_details_form .row .panel, .bom_details .order_detail_info .row .panel, .bom_details .report_details_form .row .panel, .design_details .order_detail_info .row .panel, .design_details .report_details_form .row .panel, .work_load .order_detail_info .row .panel, .work_load .report_details_form .row .panel, .cost_details .order_detail_info .row .panel, .cost_details .report_details_form .row .panel {
-      border: 1px solid;
-      padding: 10px;
-      margin: 0 10px 10px; }
-    .order_details .order_detail_info .row .panel-heading, .order_details .report_details_form .row .panel-heading, .report_details .order_detail_info .row .panel-heading, .report_details .report_details_form .row .panel-heading, .bom_details .order_detail_info .row .panel-heading, .bom_details .report_details_form .row .panel-heading, .design_details .order_detail_info .row .panel-heading, .design_details .report_details_form .row .panel-heading, .work_load .order_detail_info .row .panel-heading, .work_load .report_details_form .row .panel-heading, .cost_details .order_detail_info .row .panel-heading, .cost_details .report_details_form .row .panel-heading {
-      font-weight: bold;
-      line-height: 30px; }
-  .order_details:after, .report_details:after, .bom_details:after, .design_details:after, .work_load:after, .cost_details:after {
-    content: "";
-    display: block;
-    clear: both; }
+.order_details .order_detail_info .row > .col-md-6, .order_details .report_details_form .row > .col-md-6, .report_details .order_detail_info .row > .col-md-6, .report_details .report_details_form .row > .col-md-6, .bom_details .order_detail_info .row > .col-md-6, .bom_details .report_details_form .row > .col-md-6, .design_details .order_detail_info .row > .col-md-6, .design_details .report_details_form .row > .col-md-6, .work_load .order_detail_info .row > .col-md-6, .work_load .report_details_form .row > .col-md-6, .cost_details .order_detail_info .row > .col-md-6, .cost_details .report_details_form .row > .col-md-6 {
+  width: 50%;
+  float: left; }
+
+.order_details .order_detail_info .row:after, .order_details .report_details_form .row:after, .report_details .order_detail_info .row:after, .report_details .report_details_form .row:after, .bom_details .order_detail_info .row:after, .bom_details .report_details_form .row:after, .design_details .order_detail_info .row:after, .design_details .report_details_form .row:after, .work_load .order_detail_info .row:after, .work_load .report_details_form .row:after, .cost_details .order_detail_info .row:after, .cost_details .report_details_form .row:after {
+  clear: both;
+  content: "";
+  display: block; }
+
+.order_details .order_detail_info .row .panel-heading, .order_details .report_details_form .row .panel-heading, .report_details .order_detail_info .row .panel-heading, .report_details .report_details_form .row .panel-heading, .bom_details .order_detail_info .row .panel-heading, .bom_details .report_details_form .row .panel-heading, .design_details .order_detail_info .row .panel-heading, .design_details .report_details_form .row .panel-heading, .work_load .order_detail_info .row .panel-heading, .work_load .report_details_form .row .panel-heading, .cost_details .order_detail_info .row .panel-heading, .cost_details .report_details_form .row .panel-heading {
+  font-weight: bold;
+  line-height: 30px; }
+
+.order_details:after, .report_details:after, .bom_details:after, .design_details:after, .work_load:after, .cost_details:after {
+  content: "";
+  display: block;
+  clear: both; }
 
 /* --------------------------- 
 	# work load page 工程量页
  -----------------------------*/
-.work_load {
-  padding: 10px; }
-  .work_load .work_load_list {
-    float: left;
-    width: 1000px;
-    padding: 10px;
-    box-sizing: border-box; }
-    .work_load .work_load_list .work_load_list_title {
-      font-size: 0;
-      position: relative; }
-      .work_load .work_load_list .work_load_list_title li {
-        float: left;
-        display: inline-block;
-        border-bottom: 1px solid;
-        box-sizing: border-box; }
-        .work_load .work_load_list .work_load_list_title li.order_num {
-          width: 5%; }
-        .work_load .work_load_list .work_load_list_title li.name {
-          width: 10%; }
-        .work_load .work_load_list .work_load_list_title li.description {
-          width: 50%; }
-        .work_load .work_load_list .work_load_list_title li.position {
-          width: 10%; }
-        .work_load .work_load_list .work_load_list_title li.unit {
-          width: 5%; }
-        .work_load .work_load_list .work_load_list_title li.work_qty {
-          width: 20%; }
-    .work_load .work_load_list ul li ul {
-      clear: both; }
-      .work_load .work_load_list ul li ul li span:nth-child(3) {
-        padding-left: 30px; }
-      .work_load .work_load_list ul li ul li ul li span:nth-child(3) {
-        padding-left: 60px; }
-    .work_load .work_load_list ul li span {
-      display: inline-block;
+.work_load .work_load_list {
+  float: left;
+  width: 1000px;
+  box-sizing: border-box; }
+  .work_load .work_load_list .work_load_list_title {
+    font-size: 0;
+    position: relative; }
+    .work_load .work_load_list .work_load_list_title li {
       float: left;
-      box-sizing: border-box;
-      padding: 5px 2px; }
-      .work_load .work_load_list ul li span:nth-child(1) {
+      display: inline-block;
+      border-bottom: 1px solid;
+      box-sizing: border-box; }
+      .work_load .work_load_list .work_load_list_title li.order_num {
         width: 5%; }
-      .work_load .work_load_list ul li span:nth-child(2) {
+      .work_load .work_load_list .work_load_list_title li.name {
         width: 10%; }
-      .work_load .work_load_list ul li span:nth-child(3) {
+      .work_load .work_load_list .work_load_list_title li.description {
         width: 50%; }
-      .work_load .work_load_list ul li span:nth-child(4) {
+      .work_load .work_load_list .work_load_list_title li.position {
         width: 10%; }
-      .work_load .work_load_list ul li span:nth-child(5) {
+      .work_load .work_load_list .work_load_list_title li.unit {
         width: 5%; }
-      .work_load .work_load_list ul li span:nth-child(6) {
+      .work_load .work_load_list .work_load_list_title li.work_qty {
         width: 20%; }
+  .work_load .work_load_list ul li ul {
+    clear: both; }
+    .work_load .work_load_list ul li ul li span:nth-child(3) {
+      padding-left: 30px; }
+    .work_load .work_load_list ul li ul li ul li span:nth-child(3) {
+      padding-left: 60px; }
+  .work_load .work_load_list ul li span {
+    display: inline-block;
+    float: left;
+    box-sizing: border-box;
+    padding: 5px 2px; }
+    .work_load .work_load_list ul li span:nth-child(1) {
+      width: 5%; }
+    .work_load .work_load_list ul li span:nth-child(2) {
+      width: 10%; }
+    .work_load .work_load_list ul li span:nth-child(3) {
+      width: 50%; }
+    .work_load .work_load_list ul li span:nth-child(4) {
+      width: 10%; }
+    .work_load .work_load_list ul li span:nth-child(5) {
+      width: 5%; }
+    .work_load .work_load_list ul li span:nth-child(6) {
+      width: 20%; }
 
 /*-------------------
 	量房报告 

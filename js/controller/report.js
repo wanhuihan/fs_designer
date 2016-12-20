@@ -2,37 +2,18 @@
 /* ---------------------------
 	# report 量房报告页
 -----------------------------*/
-app.controller("report", function($scope, $http, $location, design){
+app.controller("report", function($scope, $http, $location, design, $location){
+	
+	if (!g.chkCookie()) {
 
+		$location.path("/login");
+
+	} else {
+		
+	}
 	// 获取url中的项目ID和项目CODE
 	$scope.orderId = $location.search().id;
 	$scope.orderCode = $location.search().code;
-
-	// 获取已经保存的数据
-	// $http({
-	// 	method: 'post',
-	// 	url: 'http://192.168.0.87/decoration_designer/volumeReport/selectVolumeReportByTaskCode',
-	// 	data: {
-	// 		decorationTaskCode: $scope.orderCode
-	// 	},
- //        headers: { 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8' },
-        
- //        transformRequest: function(obj) {    
- //            var str = [];    
- //            for (var p in obj) {    
-                
- //                if (typeof obj[p] == 'object' ) {
- //                    // console.log(p, JSON.stringify(obj[p]));
- //                    str.push(encodeURIComponent(p) + "=" + encodeURIComponent(JSON.stringify(obj[p])))
- //                } else {
- //                    str.push(encodeURIComponent(p) + "=" + encodeURIComponent(obj[p]));  
- //                }                     
- //            }    
- //            return str.join("&");    
- //        },		
-	// }).success(function(data) {
-	// 	// console.log(data);
-	// })
 
 	$scope.formData = {
 

@@ -3,11 +3,11 @@
 app.config(function($stateProvider, $urlRouterProvider) {
 
 
-    $urlRouterProvider.when("/", "login")
+    $urlRouterProvider.when("", "login")
 
     // 登录界面
     $stateProvider.state('/', {
-        url: '',
+        url: '/login',
         resolve: {
 
         },
@@ -16,9 +16,14 @@ app.config(function($stateProvider, $urlRouterProvider) {
             'mainBody': {
                 templateUrl: 'templates/login.html',
                 // controller: 'navigation'
-                },
-
-
+                controller: function($scope, $location) {
+                    if (document.cookie.indexOf('fs_designer_token') > 0 ) {
+                        $location.path("/dashboard");
+                    } else {
+                        // $location.path("");
+                    }                
+                }
+            },
         },
     })
 
@@ -31,14 +36,16 @@ app.config(function($stateProvider, $urlRouterProvider) {
 
         views: {
             'header': {
-                templateUrl: 'templates/header.html'
+                templateUrl: 'templates/header.html',
+                // controller: function($scope) {
+                //     console.log($scope.chkCookie);
+                // }
             },
 
             // 'sideBar': {
             //     // templateUrl: 'templates/sideBar.html',
 
             // },
-
 
             'mainBody': {
                 templateUrl:'templates/dashboard.html', 
