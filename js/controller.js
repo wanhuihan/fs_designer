@@ -133,7 +133,8 @@ app.controller("login", function($http, $scope, $location) {
 	}
 
 	$scope.sub = function() {
-
+		// alert()
+		// return false;
 		if ($scope.data.role == '') {
 			alert('请选择您的角色');
 			return false;
@@ -168,12 +169,13 @@ app.controller("login", function($http, $scope, $location) {
             }, 	
 
 		}).success(function(data) {
-
+			// alert(123)
 			if (g.checkData(data)) {
+
 				g.setCookie(data);
 				// return false;
-				$location.path("/dashboard");
 				$scope.headerShow = true;
+				$location.path("/dashboard");
 				// $location.path("http://www.baidu.com");
 			}
 
@@ -195,6 +197,7 @@ app.controller("login", function($http, $scope, $location) {
 
 app.controller("dashboard", function($scope, $http, $location, $cookies) {
 
+	// alert($cookies.fs_designer_token)
 	$scope.leftSideBar = false;
 
 	// console.log($cookies.fs_designer_token);
