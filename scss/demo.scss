@@ -407,21 +407,6 @@
 			}
 		}
 	}
-	.report_page_four table {
-		// width:80%;
-		margin: 0 auto;
-		.tabletitle {
-			font-size:20px;
-			text-align:center;
-		}
-		.trtitle {
-			font-size:16px;
-			text-align:center;
-		}
-		.leftmenu {
-			width:2%;
-		}		
-	}	
 
 	.step_content {
 		display: none;
@@ -487,10 +472,22 @@
 		}		
 	}
 	.report_table {
-		width: 800px;
+		width: 1000px;
+		.tabletitle {
+			font-size:20px;
+			text-align:center;
+		}
+		.trtitle {
+			font-size:16px;
+			text-align:center;
+		}
+		.leftmenu {
+			width: 36px;
+		}
 		tr {
-			td{
-				&:nth-child(1) {
+			td {
+				vertical-align: middle;
+				&:nth-child(2) {
 					width: 120px;
 				}
 				&:nth-child(3) {

@@ -262,17 +262,6 @@
     .report_details_form .report_tab_listtwo > div > div > div > input {
       margin-left: 20px; }
 
-.report_details_form .report_page_four table {
-  margin: 0 auto; }
-  .report_details_form .report_page_four table .tabletitle {
-    font-size: 20px;
-    text-align: center; }
-  .report_details_form .report_page_four table .trtitle {
-    font-size: 16px;
-    text-align: center; }
-  .report_details_form .report_page_four table .leftmenu {
-    width: 2%; }
-
 .report_details_form .step_content {
   display: none; }
   .report_details_form .step_content .additional_info {
@@ -314,11 +303,21 @@
   background: #169BD5; }
 
 .report_details_form .report_table {
-  width: 800px; }
-  .report_details_form .report_table tr td:nth-child(1) {
-    width: 120px; }
-  .report_details_form .report_table tr td:nth-child(3) {
-    width: 120px; }
+  width: 1000px; }
+  .report_details_form .report_table .tabletitle {
+    font-size: 20px;
+    text-align: center; }
+  .report_details_form .report_table .trtitle {
+    font-size: 16px;
+    text-align: center; }
+  .report_details_form .report_table .leftmenu {
+    width: 36px; }
+  .report_details_form .report_table tr td {
+    vertical-align: middle; }
+    .report_details_form .report_table tr td:nth-child(2) {
+      width: 120px; }
+    .report_details_form .report_table tr td:nth-child(3) {
+      width: 120px; }
 
 .design_details_cont {
   float: left;

@@ -205,16 +205,16 @@
 						      	<input type="radio" name="radioair" value="1" ng-model="formData.houseBasicInfo.houseAcBuild"  ng-change="switch('radioair', formData.houseBasicInfo.houseAcBuild)">&nbsp;未安装
 								<input type="radio" name="radioair" value="0" ng-model="formData.houseBasicInfo.houseAcBuild"  ng-change="switch('radioair', formData.houseBasicInfo.houseAcBuild)">&nbsp;已安装
 								<div class="additional_info">
-									<input type="radio" name="" value="1"ng-model="formData.houseBasicInfo.houseCm"> 已定制
-									<input type="radio" name="" value="1" ng-model="formData.houseBasicInfo.houseCm">未定制
+									<input type="radio" name="" value="1" ng-model="formData.houseBasicInfo.houseCm"> 已定制
+									<input type="radio" name="" value="0" ng-model="formData.houseBasicInfo.houseCm">未定制
 								</div>
 						</div>
 					</div>
 					<div class="row">
 						<div class="col-md-12">					    
 						      	<p> 7. 厨房整体橱柜是否已安装：</p>
-						      	<input type="radio" name="radiocabinet" value="0" ng-model="formData.houseBasicInfo.houseWholeCabinetBuild"  ng-change="switch('radiocabinet', formData.houseBasicInfo.houseWholeCabinetBuild)">&nbsp;未安装
-								<input type="radio" name="radiocabinet" value="1" ng-model="formData.houseBasicInfo.houseWholeCabinetBuild"  ng-change="switch('radiocabinet', formData.houseBasicInfo.houseWholeCabinetBuild)">&nbsp;已安装
+						      	<input type="radio" name="radiocabinet" value="1" ng-model="formData.houseBasicInfo.houseWholeCabinetBuild"  ng-change="switch('radiocabinet', formData.houseBasicInfo.houseWholeCabinetBuild)">&nbsp;未安装
+								<input type="radio" name="radiocabinet" value="0" ng-model="formData.houseBasicInfo.houseWholeCabinetBuild"  ng-change="switch('radiocabinet', formData.houseBasicInfo.houseWholeCabinetBuild)">&nbsp;已安装
 								<div class="additional_info">
 									<input type="radio" name="" value="0" ng-model="formData.houseBasicInfo.houseCabinetCm"> 已定制
 									<input type="radio" name="" value="1" ng-model="formData.houseBasicInfo.houseCabinetCm">未定制
@@ -405,8 +405,8 @@
 							<div class="col-md-12">					    
 							      	<p> 2.接待客人：<span>*</span></p>
 							      	<input type="text" placeholder="人数" ng-model="formData.livingRoom.sittingReceptionNumOpt">
-							      	<input type="radio" name="radiodoor" value="1" ng-model="formData.livingRoom.sittingDrCombineOpt">&nbsp;经常
-									<input type="radio" name="radiodoor" value="0" ng-model="formData.livingRoom.sittingDrCombineOpt">&nbsp;偶尔
+							      	<input type="radio" name="radiodoor" value="1" ng-model="formData.livingRoom.sittingReceptiveSel">&nbsp;经常
+									<input type="radio" name="radiodoor" value="0" ng-model="formData.livingRoom.sittingReceptiveSel">&nbsp;偶尔
 							</div>
 						</div>
 						<div class="row">
@@ -504,18 +504,18 @@
 						<div class="row">
 							<div class="col-md-12">					    
 						      	<p>2.餐桌餐椅配置：<span>*</span></p>
-						      	<input type="radio" name="radiodesk" value="1" ng-model="formData.dinningRoom.drUseNum">&nbsp;1*4
-						      	<input type="radio" name="radiodesk" value="2" ng-model="formData.dinningRoom.drUseNum">&nbsp;1*6
-						      	<input type="radio" name="radiodesk" value="3" ng-model="formData.dinningRoom.drUseNum">&nbsp;其他
+						      	<input type="radio" name="radiodesk" value="1" ng-model="formData.dinningRoom.drChairsConfg">&nbsp;1*4
+						      	<input type="radio" name="radiodesk" value="2" ng-model="formData.dinningRoom.drChairsConfg">&nbsp;1*6
+						      	<input type="radio" name="radiodesk" value="3" ng-model="formData.dinningRoom.drChairsConfg">&nbsp;其他
 						      	<input type="text" placeholder="请填写餐桌配置" ng-model="formData.dinningRoom.drChairsDetails">
 							</div>
 						</div>
 						<div class="row">
 							<div class="col-md-12">					    
 						      	<p>3.是否需要配备：<span>*</span></p>
-						      	<input type="checkbox" name="checkeq" value="1" ng-click="checkbox($event, 'drEquipmentOpt', 'dinningRoom', formData.dinningRoom.drUseNumRateArr)">&nbsp;餐柜
-						      	<input type="checkbox" name="checkeq" value="2" ng-click="checkbox($event, 'drEquipmentOpt', 'dinningRoom', formData.dinningRoom.drUseNumRateArr)">&nbsp;酒柜
-						      	<input type="checkbox" name="checkeq" value="3" ng-click="checkbox($event, 'drEquipmentOpt', 'dinningRoom', formData.dinningRoom.drUseNumRateArr)">&nbsp;陈列柜
+						      	<input type="checkbox" name="checkeq" value="1" ng-click="checkbox($event, 'drEquipmentOpt', 'dinningRoom', formData.dinningRoom.drEquipmentOptArr)">&nbsp;餐柜
+						      	<input type="checkbox" name="checkeq" value="2" ng-click="checkbox($event, 'drEquipmentOpt', 'dinningRoom', formData.dinningRoom.drEquipmentOptArr)">&nbsp;酒柜
+						      	<input type="checkbox" name="checkeq" value="3" ng-click="checkbox($event, 'drEquipmentOpt', 'dinningRoom', formData.dinningRoom.drEquipmentOptArr)">&nbsp;陈列柜
 							</div>
 						</div>
 						<div class="row">
@@ -527,7 +527,7 @@
 						</div>
 						<div class="row">
 							<div class="col-md-12">					    
-						      	<p>5.  是否是聚会的主要场所：<span>*</span></p>
+						      	<p>5. 餐厅是否是家人（朋友）聚会（交流）的主要场所：<span>*</span></p>
 						      	<input type="radio" name="radiosite" value="1" ng-model="formData.dinningRoom.drPartyMainVenueOpt">&nbsp;是
 						      	<input type="radio" name="radiosite" value="0" ng-model="formData.dinningRoom.drPartyMainVenueOpt">&nbsp;否
 						      
@@ -1202,18 +1202,19 @@
 					<div ng-repeat="(key,value) in formData" style="border-bottom: 1px solid;">
 						{{key}} = > {{value}}
 					</div>
+
 					<tr>
-						<td class="leftmenu" rowspan="8">首要观察内容</td>
+						<td class="leftmenu" rowspan="6" colspan="1">首要观察内容</td>
 						<td class="">房屋原结构：</td>
 						<td class="">
-						<span ng-if="formData.houseBasicInfo.houseHouseStructureType==0">
-							砖砼结构
-						</span>
-						<span ng-if="formData.houseBasicInfo.houseHouseStructureType==1">
-							框架结构
-						</span>						
+							<span ng-if="formData.houseBasicInfo.houseHouseStructureType==0">
+								砖砼结构
+							</span>
+							<span ng-if="formData.houseBasicInfo.houseHouseStructureType==1">
+								框架结构
+							</span>						
 						</td>
-						<td class="" width="120">暖气是否需要改动：</td>
+						<td class="" >暖气是否需要改动：</td>
 						<td class="">
 							<span ng-if="formData.houseBasicInfo.houseHeatingChange==1">是</span>
 							<span ng-if="formData.houseBasicInfo.houseHeatingChange==0">否</span>
@@ -1222,12 +1223,12 @@
 						<td class=""><span>{{formData.houseBasicInfo.houseHeatingChnageView}}</span></td>
 					</tr>
 					<tr>
-						<td class="" rowspan="1">房屋原结构是否有缺陷之处：</td>
+						<td class="" rowspan="1" width="200px">房屋原结构是否有缺陷之处：</td>
 						<td class="" rowspan="1">
 							<span ng-if="formData.houseBasicInfo.houseHouseStructureFault==1">是</span>
 							<span ng-if="formData.houseBasicInfo.houseHouseStructureFault==0">否</span>								
 						</td>
-						<td class="" colspan="4">							
+						<td class="" colspan="4" >							
 							<p ng-repeat="item in formData.houseBasicInfo.faultArr">
 								<span>{{item}}</span>
 							</p>
@@ -1429,7 +1430,7 @@
 						<td class="">接待客人：</td>
 						<td class="">{{formData.livingRoom.sittingReceptionNumOpt}}</td>
 						<td class="">接待频率：</td>
-						<td class="">{{formData.livingRoom.sittingDrCombineOpt}}</td>
+						<td class="">{{formData.livingRoom.sittingReceptiveSel}}</td>
 					</tr>
 					<tr>
 						<td class="">是否与餐厅融为一体：</td>
@@ -1439,7 +1440,7 @@
 						</td>
 						<td class="">客厅内的视听设备有哪些：</td>
 						<td class="">{{formData.livingRoom.sittingCeilingType}}</td>
-						<td class="">规格：</td>
+						<td class="" style="color: red">规格：</td>
 						<td class="">--</td>
 					</tr>
 					<tr>
@@ -1456,7 +1457,7 @@
 							<span ng-if="formData.livingRoom.sittingAoObjectsQtySpecialSetOpt==1">
 								是
 							</span>
-							<span ng-if="formData.livingRoom.sittingAoObjectsQtySpecialSetOpt==1">
+							<span ng-if="formData.livingRoom.sittingAoObjectsQtySpecialSetOpt==0">
 								否
 							</span>							
 						</td>
@@ -1492,29 +1493,70 @@
 						<td class="">餐厅使用人数：</td>
 						<td class="">{{formData.dinningRoom.drUseNum}}</td>
 						<td class="">使用频率：</td>
-						<td class="">{{formData.dinningRoom.drUseNumRate}}</td>
+						<td class="">
+							<!-- {{formData.dinningRoom.drUseNumRateArr}} -->
+							<span ng-repeat="item in formData.dinningRoom.drUseNumRateArr">
+								<b ng-if="item==1">晚餐</b>
+								<b ng-if="item==2">午餐</b>
+								<b ng-if="item==3">早餐</b>
+								<b ng-if="item==4">偶尔</b>
+							</span>
+						</td>
 						<td class="">餐桌餐椅配置：</td>
-						<td class="">{{formData.dinningRoom.drUseNum}}</td>
+						<td class="">
+							<!-- {{formData.dinningRoom.drChairsConfg}} -->
+							<span ng-if="formData.dinningRoom.drChairsConfg==1">1*4</span>
+							<span ng-if="formData.dinningRoom.drChairsConfg==2">1*6</span>
+							<span ng-if="formData.dinningRoom.drChairsConfg==3">其他</span>
+						</td>
 					</tr>
 					<tr>
 						<td class="">是否需要配置：</td>
-						<td class="">{{formData.dinningRoom.drUseNumRate}}</td>
+						<td class="">
+							<span ng-repeat="item in formData.dinningRoom.drEquipmentOptArr">
+								<b ng-if="item==1">餐柜</b>
+								<b ng-if="item==2">酒柜</b>
+								<b ng-if="item==3">陈列柜</b>
+							</span>
+							<!-- {{formData.dinningRoom.drEquipmentOptArr}} -->
+						</td>
 						<td class="">有无藏酒：</td>
-						<td class="">{{formData.dinningRoom.drWineCabinetOpt}}</td>
-						<td class="">餐厅是否是家人：</td>
-						<td class="">{{formData.dinningRoom.drPartyMainVenueOpt}}</td>
+						<td class="">
+							<!-- {{formData.dinningRoom.drWineCabinetOpt}} -->
+							<span ng-if="formData.dinningRoom.drWineCabinetOpt==1">是</span>
+							<span ng-if="formData.dinningRoom.drWineCabinetOpt==0">否</span>	
+						</td>
+						<td class="">餐厅是否是家人（朋友）聚会（交流）的主要场所：</td>
+						<td class="">
+							<!-- {{formData.dinningRoom.drPartyMainVenueOpt}} -->
+							<span ng-if="formData.dinningRoom.drPartyMainVenueOpt==1">是</span>
+							<span ng-if="formData.dinningRoom.drPartyMainVenueOpt==0">否</span>
+						</td>
 					</tr>
 					<tr>
 						<td class="">是否需要在餐厅看电视：</td>
-						<td class="">{{formData.dinningRoom.drTvOpt}}</td>
+						<td class="">
+							<span ng-if="formData.dinningRoom.drTvOpt==1">是</span>
+							<span ng-if="formData.dinningRoom.drTvOpt==0">否</span>
+							<!-- {{formData.dinningRoom.drTvOpt}} -->
+						</td>
 						<td class="">娱乐活动：</td>
-						<td class="">{{formData.dinningRoom.drAmuseActivites}}</td>
+						<td class="">
+							<!-- {{formData.dinningRoom.drAmuseActivites}} -->
+							<span ng-if="formData.dinningRoom.drAmuseActivites==1">棋</span>
+							<span ng-if="formData.dinningRoom.drAmuseActivites==2">牌</span>
+							<span ng-if="formData.dinningRoom.drAmuseActivites==3">其他</span>
+						</td>
 						<td class=""></td>
 						<td class=""></td>
 					</tr>
 					<tr>
 						<td class="">家庭烹饪的特点：</td>
-						<td class="">{{formData.dinningRoom.drCookingType}}</td>
+						<td class="">
+							<!-- {{formData.dinningRoom.drCookingType}} -->
+							<span ng-if="formData.dinningRoom.drCookingType==1">西餐</span>
+							<span ng-if="formData.dinningRoom.drCookingType==0">中餐</span>
+						</td>
 						<td class="">对餐厅色彩有无特殊要求：</td>
 						<td class="" colspan="3">{{formData.dinningRoom.drColorRequest}}</td>
 					</tr>
@@ -1541,7 +1583,13 @@
 					</tr>
 					<tr>
 						<td class="">吊顶材料：</td>
-						<td class="">{{formData.kitchen.kitCeilingStuff}}</td>
+						<td class="">
+							<!-- {{formData.kitchen.kitCeilingStuff}} -->
+							<span ng-if="formData.kitchen.kitCeilingStuff==1">PVC</span>
+							<span ng-if="formData.kitchen.kitCeilingStuff==2">铝扣板</span>
+							<span ng-if="formData.kitchen.kitCeilingStuff==3">防水石膏板</span>
+							<span ng-if="formData.kitchen.kitCeilingStuff==4">铝塑板</span>
+						</td>
 						<td class="">照明有何要求：</td>
 						<td class="" colspan="3">{{formData.kitchen.kitLightingRequest}}</td>
 					</tr>
