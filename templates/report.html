@@ -827,7 +827,7 @@
 						<div class="row">
 							<div class="col-md-12">
 								<p>8.对墙、地面材料有无特殊要求：<span>*</span></p>
-							   	<input type="text" placeholder="请输入相关要求" ng-model="formData.kidRoom.krHobby">
+							   	<input type="text" placeholder="请输入相关要求" ng-model="">
 							</div>
 						</div>
 						<div class="row">
@@ -1600,7 +1600,17 @@
 					</tr>
 					<tr>
 						<td class="">书房功能：</td>
-						<td class="">{{formData.readingRoom.libFunArr}}</td>
+						<td class="">
+							<!-- {{formData.readingRoom.libFunArr}} -->
+							<span ng-repeat="item in formData.readingRoom.libFunArr">
+								<b ng-if="item==1">读书</b>
+								<b ng-if="item==2">写作</b>
+								<b ng-if="item==3">会客</b>
+								<b ng-if="item==4">品茶</b>
+								<b ng-if="item==5">电脑操作</b>
+							</span>
+
+						</td>
 						<td class="">其他：</td>
 						<td class="" colspan="3">--</td>
 					</tr>
@@ -1610,21 +1620,46 @@
 						<td class="">共有几人使用书房：</td>
 						<td class="">{{formData.readingRoom.libPeopleWholeUse}}</td>
 						<td class="">使用频率：</td>
-						<td class="">{{formData.readingRoom.libUseRate}}</td>
+						<td class="">
+							<!-- {{formData.readingRoom.libUseRate}} -->
+							<span ng-if="formData.readingRoom.libUseRate==1">每天</span>
+							<span ng-if="formData.readingRoom.libUseRate==2">经常</span>
+							<span ng-if="formData.readingRoom.libUseRate==3">偶尔</span>
+						</td>
 					</tr>
 					<tr>
 						<td class="">存数数量：</td>
 						<td class="">{{formData.readingRoom.libBooksContain}}</td>
 						<td class="">存书种类：</td>
-						<td class="">{{formData.readingRoom.libBooksKindNumArr}}</td>
+						<td class="">
+							<!-- {{formData.readingRoom.libBooksKindNumArr}} -->
+							<span ng-repeat="item in formData.readingRoom.libBooksKindNumArr">
+								<b ng-if="item==1">藏书类</b>
+								<b ng-if="item==2">工具类</b>
+								<b ng-if="item==3">杂志类</b>
+							</span>
+						</td>
 						<td class="">其他：</td>
 						<td class="">{{formData.readingRoom.libBooksRequest}}</td>
 					</tr>
 					<tr>
 						<td class="">书房是否当客厅使用：</td>
-						<td class="">{{formData.readingRoom.libUseAsLrOpt}}</td>
+						<td class="">
+							<!-- {{formData.readingRoom.libUseAsLrOpt}} -->
+							<span ng-if="formData.readingRoom.libUseAsLrOpt==1">是</span>
+							<span ng-if="formData.readingRoom.libUseAsLrOpt==0">否</span>
+
+						</td>
 						<td class="">是否需要：</td>
-						<td class="">{{formData.readingRoom.libNetworkOptArr}}</td>
+						<td class="">
+							<!-- {{formData.readingRoom.libNetworkOptArr}} -->
+							<span ng-repeat="item in formData.readingRoom.libNetworkOptArr">
+								<b ng-if="item==1">电话</b>
+								<b ng-if="item==2">网线</b>
+								<b ng-if="item==3">打印机</b>
+								<b ng-if="item==4">扫描机</b>
+							</span>
+						</td>
 						<td class="">惯以何种方式看书：</td>
 						<td class="">{{formData.readingRoom.libReadingPosture}}</td>
 					</tr>
@@ -1635,27 +1670,65 @@
 					</tr>
 					<tr>
 						<td class="">对寝具的选择：</td>
-						<td class="">{{formData.mainRoom.brSleepObjectSelOpt}}</td>
+						<td class="">
+							<!-- {{formData.mainRoom.brSleepObjectSelOpt}} -->
+							<span ng-if="formData.mainRoom.brSleepObjectSelOpt==0">购买</span>
+							<span ng-if="formData.mainRoom.brSleepObjectSelOpt==1">制作</span>
+						</td>
 						<td class="">品牌/颜色：</td>
-						<td class="">formData.mainRoom.brSleepObjectColorModel</td>
+						<td class="">{{formData.mainRoom.brSleepObjectColorModel}}</td>
 						<td class="">颜色：</td>
 						<td class=""></td>
 					</tr>
 					<tr>
 						<td class="">床的要求：</td>
-						<td class="">{{formData.mainRoom.brBedRequest}}</td>
+						<td class="">
+							<!-- {{formData.mainRoom.brBedRequest}} -->
+							<span ng-if="formData.mainRoom.brBedRequest==0">标准</span>
+							<span ng-if="formData.mainRoom.brBedRequest==1">加大</span>
+
+						</td>
 						<td class="">床的类型：</td>
-						<td class="">{{formData.mainRoom.brBedTyleRequest}}</td>
+						<td class="">
+							<!-- {{formData.mainRoom.brBedTyleRequest}} -->
+							<span ng-if="formData.mainRoom.brBedTyleRequest==1">木质</span>
+							<span ng-if="formData.mainRoom.brBedTyleRequest==2">金属铁艺</span>
+							<span ng-if="formData.mainRoom.brBedTyleRequest==3">复合材料</span>
+						</td>
 						<td class="">是否需要梳妆台：</td>
-						<td class="">{{formData.mainRoom.brDresserOpt}}</td>
+						<td class="">
+							<!-- {{formData.mainRoom.brDresserOpt}} -->
+							<span ng-if="formData.mainRoom.brDresserOpt==0">否</span>
+							<span ng-if="formData.mainRoom.brDresserOpt==1">是</span>
+						</td>
 					</tr>
 					<tr>
 						<td class="">衣柜存衣的要求：</td>
-						<td class="">{{formData.mainRoom.brWardrobeQtyRequest}}</td>
+						<td class="">
+							<!-- {{formData.mainRoom.brWardrobeQtyRequest}} -->
+							<span ng-if="formData.mainRoom.brWardrobeQtyRequest==1">大量</span>
+							<span ng-if="formData.mainRoom.brWardrobeQtyRequest==2">中量</span>
+							<span ng-if="formData.mainRoom.brWardrobeQtyRequest==3">少量</span>
+						</td>
 						<td class="">储藏内容：</td>
-						<td class="">{{formData.mainRoom.brDepotThingsArr}}</td>
+						<td class="">
+							<!-- {{formData.mainRoom.brDepotThingsArr}} -->
+							<span ng-repeat="item in formData.mainRoom.brDepotThingsArr">
+								<b ng-if="item==1">衣服</b>
+								<b ng-if="item==2">鞋</b>
+								<b ng-if="item==3">箱包</b>
+								<b ng-if="item==4">被褥</b>
+							</span>
+						</td>
 						<td class="">是否需要：</td>
-						<td class="">{{formData.mainRoom.brNetworkOptArr}}</td>
+						<td class="">
+							<!-- {{formData.mainRoom.brNetworkOptArr}} -->
+							<span ng-repeat="item in formData.mainRoom.brNetworkOptArr">
+								<b ng-if="item==1">视听设备</b>
+								<b ng-if="item==2">电话</b>
+								<b ng-if="item==3">网线</b>
+							</span>
+						</td>
 					</tr>
 					<tr>
 						<td class="">对灯光设计有无特殊要求：</td>
@@ -1676,23 +1749,47 @@
 					</tr>
 					<tr>
 						<td class="">房间使用功能及具体要求：</td>
-						<td class="">{{formData.kidRoom.krUseFunSpecific}}</td>
+						<td class="">
+							<!-- {{formData.kidRoom.krUseFunSpecific}} -->
+							<span ng-if="formData.kidRoom.krUseFunSpecific==1">独生子</span>
+							<span ng-if="formData.kidRoom.krUseFunSpecific==2">老人</span>
+							<span ng-if="formData.kidRoom.krUseFunSpecific==3">保姆</span>
+						</td>
 						<td class="">家具配置方式：</td>
-						<td class="">{{formData.kidRoom.krFurnitureSel}}</td>
+						<td class="">
+							<!-- {{formData.kidRoom.krFurnitureSel}} -->
+							<span ng-if="formData.kidRoom.krFurnitureSel==0">购买</span>
+							<span ng-if="formData.kidRoom.krFurnitureSel==1">制作</span>
+						</td>
 						<td class="">需要的家具：</td>
-						<td class="">{{formData.kidRoom.krFurnitureConfig}}</td>
+						<td class="">
+							<!-- {{formData.kidRoom.krFurnitureConfig}} -->
+							<span ng-if="formData.kidRoom.krFurnitureConfig==1">电脑桌</span>
+							<span ng-if="formData.kidRoom.krFurnitureConfig==2">写字台</span>
+							<span ng-if="formData.kidRoom.krFurnitureConfig==3">衣柜</span>
+							<span ng-if="formData.kidRoom.krFurnitureConfig==4">书柜</span>
+						</td>
 					</tr>
 					<tr>
 						<td class="">是否考虑年龄变更：</td>
-						<td class="">{{formData.kidRoom.krAgeChangeOpt}}</td>
+						<td class="">
+							<!-- {{formData.kidRoom.krAgeChangeOpt}} -->
+							<span ng-if="formData.kidRoom.krAgeChangeOpt==0">否</span>
+							<span ng-if="formData.kidRoom.krAgeChangeOpt==1">是</span>
+						</td>
 						<td class="">色彩要求：</td>
 						<td class="" colspan="3">{{formData.kidRoom.krColorRequest}}</td>
 					</tr>
 					<tr>
 						<td class="">对墙、地色彩或材料的特殊要求：</td>
-						<td class="" colspan="3">{{formData.kidRoom.krHobby}}</td>
+						<td class="" colspan="3">{{formData.kidRoom.krColorRequest}}</td>
 						<td class="">儿童有何兴趣爱好：</td>
-						<td class="">{{formData.kidRoom.krHobby}}</td>
+						<td class="">
+							<!-- {{formData.kidRoom.krHobby}} -->
+							<span ng-if="formData.kidRoom.krHobby==1">钢琴</span>
+							<span ng-if="formData.kidRoom.krHobby==2">绘画</span>
+							<span ng-if="formData.kidRoom.krHobby==3">其他</span>
+						</td>
 					</tr>
 					<tr>
 						<td class="">是否有旧家具要保留：</td>
@@ -1706,7 +1803,14 @@
 						<td class="">老人是否需要特殊的生理方面的考虑：</td>
 						<td class="" colspan="3">{{formData.kidRoom.krOldPhysiologyOpt}}</td>
 						<td class="">特殊灯光要求：</td>
-						<td class="">{{formData.kidRoom.krSpecialLightsReuqestArr}}</td>
+						<td class="">
+							<!-- {{formData.kidRoom.krSpecialLightsReuqestArr}} -->
+							<span ng-repeat="item in formData.kidRoom.krSpecialLightsReuqestArr">
+								<b ng-if="item==1">可调光源</b>
+								<b ng-if="item==2">双控开关</b>
+								<b ng-if="item==3">地脚线</b>
+							</span>
+						</td>
 					</tr>
 					<tr>
 						<td class="">请注明儿童的年龄、性别、玩具及书籍的数量：</td>
