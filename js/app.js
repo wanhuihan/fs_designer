@@ -27,7 +27,9 @@ var g = {
 	},
 
 	chkCookie: function() {
-		if (document.cookie.indexOf('fs_designer_token') > 0 ) {
+		// alert(document.cookie.indexOf('fs_designer_token'));
+		// return false;
+		if (document.cookie.indexOf('fs_designer_token') >= 0 ) {
 			// window.location.href = "/#/dashboard";
 			return true;
 		} else {
