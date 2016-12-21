@@ -52,11 +52,11 @@
 			</div>
 			<div class="reoprt_pageone step_content" content="step_1">
 					
-				<form class="report_tab_listone" >
+				<form class="report_tab_listone" role="form">
 					<div class="row">
 						<div class="col-md-12">					    
 						      <p> 1.请填写您实际的量房日期:<span>*</span></p>
-						      <input type="text" name=""  id="surveyTime">
+						      <input type="text" name=""  id="surveyTime" ng-model="test">
 
 						</div>
 					</div>
@@ -68,10 +68,10 @@
 						</div>
 					</div>
 					<div class="row">
-						<div class="col-md-12">					    
+						<div class="col-md-12 radio abc-radio">					    
 						    <p> 3.请填写业主性别：<span>*</span></p>
-						    <input type="radio" name="radiosex" value="0" ng-model="formData.generalInfo.ownerSex">女士
-							<input type="radio" name="radiosex" value="1" ng-model="formData.generalInfo.ownerSex"> 先生 
+						    <input id="radio3" class="radio-danger" type="radio" name="radiosex" value="0" ng-model="formData.generalInfo.ownerSex"><label for="radio3">女士</label>
+							<input id="radio4" class="radio-danger" type="radio" name="radiosex" value="1" ng-model="formData.generalInfo.ownerSex"> <label for="radio4">先生</label> 
 						</div>
 					</div>
 					<div class="row">
@@ -132,7 +132,7 @@
 						</div>
 					</div>
 					<div class="row">
-						<div class="btn_group col-md-12">
+						<div class="btm_btn_group col-md-12">
 							<button class="btn btn-primary btn-lg" ng-click="save(currentStep)">保存</button>
 							<button class="btn btn-default btn-lg" ng-click="nextStep(currentStep)">下一步</button>
 						</div>						
@@ -143,7 +143,7 @@
 
 			<div class="report_page_two step_content" content="step_2">
 				
-				<form class="report_tab_listone">
+				<form class="report_tab_listone" role="form">
 					<div class="row">
 						<div class="col-md-12">					    
 						      	<p> 1.请选择该房屋原结构：<span>*</span></p>
@@ -266,7 +266,8 @@
 						</div>
 					</div>
 					<div class="row">
-						<div class="btn_group col-md-12">
+						<div class="btm_btn_group col-md-12">
+							<button class="btn btn-default btn-lg" ng-click="lastStep(currentStep)">上一步</button>
 							<button class="btn btn-primary btn-lg" ng-click="save(currentStep)">保存</button>
 							<button class="btn btn-default btn-lg" ng-click="nextStep(currentStep)">下一步</button>
 						</div>						
@@ -275,7 +276,7 @@
 			</div>
 
 			<div class="report_page_three step_content" content="step_3">
-				<form class="report_tab_listtwo">
+				<form class="report_tab_listtwo" role="form">
 					<div class="row">
 						<h3>绿色科技部分</h3>
 					</div>
@@ -349,12 +350,16 @@
 					</div>
 					<div class="partall abstruse">
 						<div class="row">
-							<div class="col-md-12">					    
+							<div class="col-md-12 ">					    
 							      	<p> 1.是否有考虑设置：<span>*</span></p>
-							      	<input type="checkbox" name="checkboxset" value="1" class="checkbox" ng-click="checkbox($event, 'lrConsiderSettingOpt', 'abstruse', formData.abstruse.lrConsiderSettingOptArr)">&nbsp;鞋柜
-									<input type="checkbox" name="checkboxset" value="2" class="checkbox" ng-click="checkbox($event, 'lrConsiderSettingOpt', 'abstruse', formData.abstruse.lrConsiderSettingOptArr)">&nbsp;衣柜
-							      	<input type="checkbox" name="checkboxset" value="3" class="checkbox" ng-click="checkbox($event, 'lrConsiderSettingOpt', 'abstruse', formData.abstruse.lrConsiderSettingOptArr)">&nbsp;镜子(整装)
-									<input type="checkbox" name="checkboxset" value="4" class="checkbox" ng-click="checkbox($event, 'lrConsiderSettingOpt', 'abstruse', formData.abstruse.lrConsiderSettingOptArr)">&nbsp;纯装饰性
+							      	<div class="checkbox abc-checkbox">
+							      	<input id="checkbox1" class="checkbox-Success" type="checkbox" name="checkboxset" value="1"  ng-click="checkbox($event, 'lrConsiderSettingOpt', 'abstruse', formData.abstruse.lrConsiderSettingOptArr)"><label for="checkbox1">鞋柜</label>
+									</div>
+									<input id="checkbox2" class="checkbox-Success" type="checkbox" name="checkboxset" value="2"  ng-click="checkbox($event, 'lrConsiderSettingOpt', 'abstruse', formData.abstruse.lrConsiderSettingOptArr)"><label for="checkbox2">衣柜</label>
+
+							      	<input id="checkbox3" class="checkbox-Success" type="checkbox" name="checkboxset" value="3"  ng-click="checkbox($event, 'lrConsiderSettingOpt', 'abstruse', formData.abstruse.lrConsiderSettingOptArr)"><label for="checkbox3">镜子(整装)</label>
+
+									<input id="checkbox4" class="checkbox-Success" type="checkbox" name="checkboxset" value="4"  ng-click="checkbox($event, 'lrConsiderSettingOpt', 'abstruse', formData.abstruse.lrConsiderSettingOptArr)"><label for="checkbox4">纯装饰性</label>
 							</div>
 						</div>
 						<div class="row">
@@ -1146,7 +1151,8 @@
 						</div>
 					</div>
 					<div class="row">
-						<div class="btn_group col-md-12">
+						<div class="btm_btn_group col-md-12">
+							<button class="btn btn-default btn-lg" ng-click="lastStep(currentStep)">上一步</button>
 							<button class="btn btn-primary btn-lg" ng-click="save(currentStep)">保存</button>
 							<button class="btn btn-default btn-lg" ng-click="nextStep(currentStep)">下一步</button>
 						</div>						
@@ -1155,53 +1161,66 @@
 			</div>
 
 			<div class="report_page_four step_content" content="step_4">
-				
+				{{formData}}
 				<table class="table table-bordered report_table">
 					<th colspan="7" class="tabletitle">量房记录表</th>
-					<!-- Customer basic situation
+					<!-- Customer basic situation -->
 					<tr>
 						<th class=""></th>
 						<td class="">量房时间：</td>
-						<td class="">2016-08-10</td>
-						<td class="">提交人：</td>
-						<td class="">李娜</td>
-						<td class="">提交时间：</td>
-						<td class="">2016-08-10 15:14:18</td>
+						<td class="">{{formData.generalInfo.ownerSurveyTime}}</td>
+						<td class="" style="color:red">提交人：</td>
+						<td class="">--</td>
+						<td class="" style="color:red">提交时间：</td>
+						<td class="">--</td>
 					</tr>
 					<tr>
 						<td class="leftmenu" rowspan="4">客户基本情况</td>
-						<td class="">客户姓名：</td>
-						<td class="">张楠</td>
+						<td class="" >客户姓名：</td>
+						<td class="" >{{formData.generalInfo.ownerName}}</td>
 						<td class="">性别：</td>
-						<td class="">女</td>
-						<td class="">联系电话：</td>
-						<td class="">13845923528</td>
+						<td class="">
+							<!-- {{formData.generalInfo.ownerSex}} -->
+							<span ng-if="formData.generalInfo.ownerSex==0">女士</span>
+							<span ng-if="formData.generalInfo.ownerSex==1">先生</span>		
+						</td>
+						<td class="" style="color:red">联系电话：</td>
+						<td class="" >--</td>
 					</tr>
 					<tr>	
 						<td class="">客户年龄：</td>
-						<td class="">29~38岁</td>
+						<td class="">
+							<!-- {{formData.generalInfo.ownerAge}} -->
+							<p ng-repeat="item in formData.generalInfo.ownerAge">
+								<span ng-if="item==1">18~28岁</span>
+								<span ng-if="item==2">29~38岁</span>
+								<span ng-if="item==3">39岁~48岁</span>
+								<span ng-if="item==4">49岁~58岁</span>
+								<span ng-if="item==5">59岁以上</span>
+							</p>
+						</td>
 						<td class="">地址(楼盘)：</td>
-						<td class="" colspan="3">南三环与芙蓉西路十字东南角中海凯旋门5号楼</td>
+						<td class="" colspan="3"><span>{{formData.generalInfo.ownerAddress}}</span></td>
 					</tr>
 					<tr>	
 						<td class="">户型：</td>
-						<td class="">建房</td>
+						<td class=""><span>{{formData.generalInfo.type}}</span></td>
 						<td class="">建筑面积：</td>
-						<td class="">125 m*2</td>
+						<td class=""><span>{{formData.generalInfo.ownerBuildArea}}</span></td>
 						<td class="">使用面积：</td>
-						<td class="">115 m*2</td>
+						<td class=""><span>{{formData.generalInfo.ownerUseArea}}</span></td>
 					</tr>
 					<tr>
 						<td class="">计划投资：</td>
-						<td class="">20万元 含主材</td>
+						<td class="">{{formData.generalInfo.ownerPlannedInvests}}</td>
 						<td class="">计划装修时间：</td>
-						<td class="">2015-05-12</td>
+						<td class="">{{formData.generalInfo.ownerPlanTime}}</td>
 						<td class=""></td>
 						<td class=""></td>
 					</tr>
 				
 
-					 Primary observation content  -->
+					<!--  Primary observation content  -->
 
 <!-- 					<div ng-repeat="(key,value) in formData" style="border-bottom: 1px solid;">
 						{{key}} = > {{value}}
@@ -1241,8 +1260,8 @@
 					<tr>
 						<td class="">煤气是否需要改动：</td>
 						<td class="">
-						<span ng-if="formData.houseBasicInfo.houseGasChange==1">是</span>
-						<span ng-if="formData.houseBasicInfo.houseGasChange==0">否</span>						
+							<span ng-if="formData.houseBasicInfo.houseGasChange==1">是</span>
+							<span ng-if="formData.houseBasicInfo.houseGasChange==0">否</span>						
 						</td>
 						<td class="">参考意见：</td>
 						<td class="" colspan="3"><span>{{formData.houseBasicInfo.houseGasChangeView}}</span></td>
@@ -1250,22 +1269,25 @@
 					<tr>
 						<td class="">采暖方式：</td>
 						<td class="">
-						<span ng-if="formData.houseBasicInfo.houseHeatingType==1">暖气 </span>
-						<span ng-if="formData.houseBasicInfo.houseHeatingType==2">煤气 </span>
-						<span ng-if="formData.houseBasicInfo.houseHeatingType==3">地暖</span>
-						<span ng-if="formData.houseBasicInfo.houseHeatingType==4">中央空调</span>
+							<span ng-if="formData.houseBasicInfo.houseHeatingType==1">暖气 </span>
+							<span ng-if="formData.houseBasicInfo.houseHeatingType==2">煤气 </span>
+							<span ng-if="formData.houseBasicInfo.houseHeatingType==3">地暖</span>
+							<span ng-if="formData.houseBasicInfo.houseHeatingType==4">中央空调</span>
 						</td>
 						<td class="">是否已安装中央空调：</td>
 						<td class="">
-						<span ng-if="formData.houseBasicInfo.houseAcBuild==1">未安装</span>
-						<span ng-if="formData.houseBasicInfo.houseAcBuild==0">已安装</span>-
-						<span ng-if="formData.houseBasicInfo.houseCm==1">已定制</span>
-						<span ng-if="formData.houseBasicInfo.houseCm==0">未定制</span>
+							<span ng-if="formData.houseBasicInfo.houseAcBuild==1">未安装</span>
+							<span ng-if="formData.houseBasicInfo.houseAcBuild==0">已安装</span>-
+							<span ng-if="formData.houseBasicInfo.houseCm==1">已定制</span>
+							<span ng-if="formData.houseBasicInfo.houseCm==0">未定制</span>
 						</td>
 						<td class="">厨房整体橱柜是否已安装：</td>
 						<td class="">
-							<span ng-if="formData.houseBasicInfo.houseWholeCabinetBuild==0">未安装</span>
-							<span ng-if="formData.houseBasicInfo.houseWholeCabinetBuild==1">已安装</span>
+							<span ng-if="formData.houseBasicInfo.houseWholeCabinetBuild==1">未安装</span>
+							<span ng-if="formData.houseBasicInfo.houseWholeCabinetBuild==0">已安装</span>-
+
+							<span ng-if="formData.houseBasicInfo.houseWholeCabinetBuild==1">已定制</span>
+							<span ng-if="formData.houseBasicInfo.houseWholeCabinetBuild==0">未定制</span>
 						</td>
 					</tr>
 					<tr>
@@ -1273,7 +1295,7 @@
 						<td class="">
 							<span ng-if="formData.houseBasicInfo.houseBalconyTileBuild==0">已铺装</span>
 							<span ng-if="formData.houseBasicInfo.houseBalconyTileBuild==1">未铺装</span>
-							{{formData.houseBasicInfo.houseBalconyPart}}
+							<!-- {{formData.houseBasicInfo.houseBalconyPart}} -->
 						</td>
 						<td class="">厨房是否已铺砖及吊顶：</td>
 						<td class="">
@@ -1398,7 +1420,15 @@
 							<span ng-if="formData.abstruse.lrVisualWholeRoomOpinion==0">否</span>
 						</td>
 						<td class="">是否有考虑安排：</td>
-						<td class="" colspan="3">{{formData.abstruse.lrConsiderSettingOpt}}</td>
+						<td class="" colspan="3">
+							<!-- {{formData.abstruse.lrConsiderSettingOpt}} -->
+							<span ng-repeat="item in formData.abstruse.lrConsiderSettingOptArr">
+								<i ng-if="item==1">鞋柜</i>
+								<i ng-if="item==2">衣柜</i>
+								<i ng-if="item==3">镜子（整装）</i>
+								<i ng-if="item==4">纯装饰性</i>
+							</span>
+						</td>
 					</tr>
 					<tr>
 						<td class="">玄关设计是否考虑其他文化属性或气氛：</td>
@@ -2059,7 +2089,8 @@
 					</tr>
 				</table>
 				<div class="row">
-					<div class="btn_group col-md-12">
+					<div class="btm_btn_group col-md-12">
+						<button class="btn btn-default btn-lg" ng-click="lastStep(currentStep)">上一步</button>
 						<button class="btn btn-primary btn-lg" ng-click="save(currentStep)">保存</button>
 						<button class="btn btn-default btn-lg" ng-click="nextStep(currentStep)">提交</button>
 					</div>						

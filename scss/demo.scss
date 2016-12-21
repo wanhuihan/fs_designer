@@ -420,6 +420,11 @@
 			& > div >input {
 				margin-left:20px;
 			}
+			&.btm_btn_group {
+				    margin-bottom: 0;
+				    // padding-bottom: 0;
+				    border-bottom: none;
+			}
 		}
 	}
 
