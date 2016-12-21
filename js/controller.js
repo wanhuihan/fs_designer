@@ -127,7 +127,7 @@ app.controller("orders", function($http, $scope, $location, $cookies) {
 /*-------------------
 	#login page
 ---------------------*/
-app.controller("login", function($http, $scope, $location, $cookies) {
+app.controller("login", function($http, $scope, $location, $cookies, ngDialog) {
 
 	// console.log(123)
 	$scope.data = {
@@ -184,13 +184,32 @@ app.controller("login", function($http, $scope, $location, $cookies) {
 			}
 
 		}).error(function(data) {
-			// console.log('error is occured');
+			alert(g.msg.server_error);
 		})
 	}
 
 	$scope.forgetPwd = function() {
 		alert('the module not start to develop, please contact the webmaster');
 		// return false;
+	}
+
+	$scope.register = {
+
+		formData: {
+
+		},
+
+		popup: function() {
+			ngDialog.open({
+				templateUrl: 'templates/register.html',
+				className: 'registerBox ngdialog ngdialog-theme-default',
+				width: 600
+			})
+		},
+
+		sub: function() {
+
+		}
 	}
 
 })

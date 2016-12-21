@@ -63,6 +63,10 @@ var g = {
 			}
 			return true;
 		}
+	},
+
+	msg:  {
+		server_error: '服务器连接错误，请稍后再试',
 	}
 
 

@@ -52,6 +52,31 @@
 	#button style 
  ---------------*/
 
+/* ------------------------------------------
+	# login & register 
+------------------------------------------- */
+.login {
+	.create_account {
+		float: right;
+		display: inline-block;
+		padding: 6px;
+		line-height: 20px;
+		&:hover {
+			cursor: pointer;
+		}
+	}
+}
+
+.registerBox  {
+
+	.form-horizontal {
+		padding: 10px;		
+	}
+	
+	.col-sm-12 {
+		text-align: right;
+	}
+}
 
 /* ------------------------------------------ 
 	# header
