@@ -252,6 +252,9 @@
       color: #f00; }
     .report_details_form .report_tab_listtwo > div > div > div > input {
       margin-left: 20px; }
+    .report_details_form .report_tab_listtwo > div > div.btm_btn_group {
+      margin-bottom: 0;
+      border-bottom: none; }
 
 .report_details_form .step_content {
   display: none; }

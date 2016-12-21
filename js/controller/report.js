@@ -419,6 +419,10 @@ app.controller("report", function($scope, $http, $location, design, $location, g
 		}
 	}
 
+	$scope.test = '';
+
+	console.log($scope.test);
+	
 	// 量房时间赋值
 	jQuery('#surveyTime').daterangepicker({
 		singleDatePicker: true,
