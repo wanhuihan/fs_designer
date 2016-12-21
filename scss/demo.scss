@@ -57,8 +57,9 @@
 ------------------------------------------- */
 .login {
 	.create_account {
+		display: none;
 		float: right;
-		display: inline-block;
+		// display: inline-block;
 		padding: 6px;
 		line-height: 20px;
 		&:hover {
