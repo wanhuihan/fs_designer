@@ -1,0 +1,79 @@
+<div class="design_draw_add_form">
+	
+	<form class="form-horizontal">
+
+		<div class="form-group">
+			<label class="form-label col-sm-2">设计图类型</label>
+			<div class="col-sm-10">
+
+				<select  ng-model="roleCode" disabled="">
+					<option value="16" >效果图</option>
+					<option value="15">户型图</option>
+					<option value="12" >排水施工图</option>
+					<option value="13" >电气施工图</option>
+					<option value="14" >暖通施工图</option>
+					<option value="11" >建筑施工图</option>
+				</select>
+			</div>
+		</div>		
+		<!-- 效果图 -->
+		<div ng-if="roleCode==16">
+			<div class="form-group">
+				<label class="col-sm-2">样图</label>
+				<div class="col-sm-10">
+					<input type="file" name="">
+					<p>建议上传280*180PX缩略图，类型.JPG</p>
+				</div>
+				
+			</div>
+			<div class="form-group">
+				<label class="col-sm-2">效果图链接</label>
+				<div class="col-sm-10">
+					<input type="text" name="">
+				</div>
+				
+			</div>	
+			<div class="form-group">
+				<input type="button" value="确定上传" name="">
+			</div>		
+		</div>
+		<!-- 其他 -->
+		<div ng-if="roleCode==11||roleCode==12||roleCode==13||roleCode==14||roleCode==15">
+			<div class="form-group">
+				<label class="col-sm-2">样图</label>
+				<div class="col-sm-10">
+					<input type="file" name="">
+					<p>建议上传280*180PX缩略图，类型.JPG</p>
+				</div>
+				
+			</div>
+
+			<div class="form-group">
+				<label class="col-sm-2">设计源文件</label>
+				<div class="col-sm-10">
+					<input type="file" name="">
+					<p>上传该设计图CAD源文件，类型DWG</p>
+				</div>
+				
+			</div>
+
+			<div class="form-group">
+				<label class="col-sm-2">PDF文件</label>
+				<div class="col-sm-10">
+					<input type="file" name="">
+					<p>上传该设计图CAD源文件，类型DWG</p>
+				</div>
+				
+			</div>
+			
+			<div class="form-group">
+				<div class="col-sm-12">
+					<input type="button" value="确定上传" name="" class="btn btn-primary">
+				</div>
+				
+			</div>
+												
+		</div>
+	</form>
+
+</div>

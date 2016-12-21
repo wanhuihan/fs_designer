@@ -252,10 +252,13 @@ app.controller("dashboard", function($scope, $http, $location, $cookies) {
 	// alert($cookies.fs_designer_token)
 	$scope.leftSideBar = false;
 
+
 	// console.log($cookies.fs_designer_token);
 	if (!g.chkCookie()) {
 		$location.path("/login");
-	} 
+	} else {
+		// window.location.href = '#/dashboard/orders'
+	}
 
 })
 
@@ -348,6 +351,7 @@ app.controller("workLoad", function($scope, $http, $location, $cookies) {
 			// console.log(data)
 			if (data.success) {
 				$scope.data = data.datas;
+				$scope.subChk = data.hasSubmit;
 			}
 		})	
 
@@ -424,7 +428,7 @@ app.controller("workLoad", function($scope, $http, $location, $cookies) {
 
 			data: {
 				decorationTaskCode: $scope.orderCode,
-				token: $scope.orderCode
+				token: $cookies.fs_designer_token
 			},
 
             headers: { 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8' },
@@ -446,8 +450,10 @@ app.controller("workLoad", function($scope, $http, $location, $cookies) {
 		}).success(function(data) {
 
 			if (g.checkData(data)) {
+
 				alert("提交成功");
-				$scope.inputDisabled = true;				
+				$scope.subChk = true;
+				// $scope.inputDisabled = true;				
 			}
 
 		})		
@@ -617,7 +623,7 @@ app.controller("bom", function($scope, $http, $location, $cookies){
 ----------------------------*/
  
 // 设计图接口调用 刘杰的
-app.controller("design", function($scope, $http, $location, $cookies) {
+app.controller("design", function($scope, $http, $location, $cookies, ngDialog) {
 
 	$scope.orderId = $location.search().id;
 
@@ -632,13 +638,11 @@ app.controller("design", function($scope, $http, $location, $cookies) {
 		
 		$http({
 			method: 'post',
-			url: 'http://192.168.0.87/decoration_designer/decorationDesignDraw/selectDecorationDesignDrawList',		
+			url: g.host+'/decoration_designer/decorationDesignDraw/selectDecorationDesignDrawList',		
 	        
 	        data: {
-
 	        	token: $cookies.fs_designer_token,
 	        	decorationTaskCode: $scope.orderCode,
-
 	        },
 	        
 	        headers: { 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8' },
@@ -658,14 +662,71 @@ app.controller("design", function($scope, $http, $location, $cookies) {
 	        }
 
 		}).success(function(data) {
+
 			console.log(data);
+
 			if (g.checkData(data)) {
-				$scope.data = data.decorationDesignDrawList;			
+
+				$scope.data = data.decorationDesignDrawList;
+				$scope.roleCode = data.roleCode;	
+				console.log($scope.roleCode)		
 			}
 
 		})		
 	}
 
+	$scope.designDrawAdd = function() {
+
+		ngDialog.open({
+			templateUrl: 'templates/designDrawsAdd.html',	
+			scope : $scope,
+			width: 800	
+		})
+
+	}
+
+	$scope.designDrawsEdit = function(id) {
+
+		ngDialog.open({
+			templateUrl: 'templates/designDrawsEdit.html',	
+			scope : $scope,
+			width: 800	
+		})
+
+	}
+
+	$scope.setDesignAsFinal = function(id) {
+
+		$http({
+			method: 'post',
+			url: g.host+'/decoration_designer/decorationDesignDraw/updateHasEndVersion',
+			data: {
+				decorationDesignDrawId: id,
+				decorationTaskCode: $location.search().code,
+				token: $cookies.fs_designer_token
+			},
+
+	        headers: { 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8' },
+	        
+	        transformRequest: function(obj) {    
+	            var str = [];    
+	            for (var p in obj) {    
+	                
+	                if (typeof obj[p] == 'object' ) {
+	                    // console.log(p, JSON.stringify(obj[p]));
+	                    str.push(encodeURIComponent(p) + "=" + encodeURIComponent(JSON.stringify(obj[p])))
+	                } else {
+	                    str.push(encodeURIComponent(p) + "=" + encodeURIComponent(obj[p]));  
+	                }                     
+	            }    
+	            return str.join("&");    
+	        }			
+		}).success(function(data) {
+
+			console.log(data);
+
+		})
+	}
 })
 
 

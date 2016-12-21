@@ -77,11 +77,11 @@
 					<span>{{item.unit}}</span>
 
 					<span class="clrfix">
-						<input type="text" name="workLoad" value="{{item.engineeringQuantity}}" ng-disabled="inputDisabled">
+						<input type="text" name="workLoad" value="{{item.engineeringQuantity}}" ng-disabled="subChk">
 
 						<input type="hidden" name="level1" value="{{item.hasLevel1}}">
 						 
-						 <input type="hidden" name="collectId" value="{{item.businessId}}" >
+						 <input type="hidden" name="collectId" value="{{item.collectId}}" >
 					</span>
 					<hr class="btn_line">
 					<ul ng-if="item.hasDetail" class="clrfix" >
@@ -100,10 +100,10 @@
 							<span>{{i.unit}}</span>
 
 							<span class="clrfix">
-								<input type="text" name="workLoad" value="{{i.engineeringQuantity}}" ng-disabled="inputDisabled">
+								<input type="text" name="workLoad" value="{{i.engineeringQuantity}}" ng-disabled="subChk">
 								<input type="hidden" name="level1" value="{{i.hasLevel1}}">
 								 
-								 <input type="hidden" name="collectId" value="{{i.businessId}}">								
+								 <input type="hidden" name="collectId" value="{{i.collectDetailsId}}">								
 							</span>	
 							
 							<hr class="btn_line">
@@ -125,10 +125,10 @@
 									<span>{{a.unit}}</span>
 
 									<span class="clrfix">
-										<input type="text" name="workLoad" value="{{a.engineeringQuantity}}" ng-disabled="inputDisabled">
+										<input type="text" name="workLoad" value="{{a.engineeringQuantity}}" ng-disabled="subChk">
 										<input type="hidden" name="level1" value="{{a.hasLevel1}}">
 										 
-										 <input type="hidden" name="collectId" value="{{a.businessId}}">								
+										 <input type="hidden" name="collectId" value="{{a.collectDetailsId}}">								
 									</span>	
 									<hr class="btn_line">							
 								</li>
@@ -138,7 +138,7 @@
 
 				</li>
 			</ul>
-			<div class="btn_group col-md-12">
+			<div class="btm_btn_group col-md-12" ng-show="!subChk">
 				<button class="btn btn-primary btn-lg" ng-click="saveWorkAmount()"> 保存</button>
 				<button class="btn btn-default btn-lg" ng-click="subWorkAmount()">提交</button>
 			</div>

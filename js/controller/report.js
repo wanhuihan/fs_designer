@@ -2,8 +2,10 @@
 /* ---------------------------
 	# report 量房报告页
 -----------------------------*/
-app.controller("report", function($scope, $http, $location, design, $location){
-	
+app.controller("report", function($scope, $http, $location, design, $location, getOrderDetail){
+
+	console.log(getOrderDetail);
+		
 	if (!g.chkCookie()) {
 
 		$location.path("/login");
@@ -432,7 +434,8 @@ app.controller("report", function($scope, $http, $location, design, $location){
 	}, function(d) {
 		$scope.formData.generalInfo.ownerPlanTime = Date.parse(d._d);
 	});
-	
+
+		
 	/* -------------------------
 		该房屋装修计划投资	start
 	---------------------------*/

@@ -45,6 +45,7 @@
 // quick search 
 .quickSearch {
 	padding: 15px;
+	display: none;
 	.control-label {
 		padding: 0 15px ;
 	}
@@ -56,6 +57,7 @@
 	display: none;
 }
 .breadcrumb {
+	display: none;
 	padding: 15px;
 	border-radius: 0;
 
@@ -108,6 +110,17 @@
 		border: 0 ;
 		a {
 			font-size: 16px;
+			cursor: pointer;
+		}
+		.nav:first-child {
+			li {
+				&:nth-child(4) {
+					visibility: hidden;
+				}
+				&:nth-child(3) {
+					visibility: hidden;
+				}
+			}
 		}
 	}
 
@@ -144,6 +157,9 @@
 					background-color: #343c48 !important;
 					text-decoration: none;
 				}
+			}
+			&:last-child {
+				display: none;
 			}
 		}
 	}
@@ -271,7 +287,7 @@
 				display: inline-block;
 				border-bottom:1px solid;
 				box-sizing: border-box;
-				padding: 15px 0;
+				padding: 10px 0;
 				&.order_num {
 					width: 5%;
 				}
@@ -323,7 +339,7 @@
 					box-sizing: border-box;
 					// border-bottom:1px solid;
 					// min-height: 35px;
-					padding: 15px 0;
+					padding: 10px 0;
 
 					&:nth-child(1) {
 						width: 5%;
@@ -563,12 +579,29 @@
 // 设计图
 .design_details_cont {
 	float:left;
-	width:1000px;
-	margin-left:16px;
+	// width:1000px;
+	// margin-left:16px;
+	.col-md-2 {
+		img {
+			width: 100%;
+		}
+	}
+	.btn {
+		font-size: 16px;	
+		i {
+			font-size: 20px;
+			vertical-align: middle;
+			margin: 0 10px;
+		}	
+		&.design_draw_add {
+			width: 150px;
+			margin-right: 0;
+		}		
+	}
 }
 	.blueprints {
 
-		padding-top:50px;
+		// padding-top:50px;
 		width:100%;
 		margin:0 auto;
 
@@ -576,7 +609,7 @@
 
 			padding-bottom:20px;
 			margin-bottom:20px;
-			border-bottom:2px solid #eee;
+			border-bottom:1px solid #ddd;
 
 			h3 {
 
@@ -590,22 +623,58 @@
 				margin-bottom:20px;
 			}
 		}
-		& button:nth-child(1) {
-			width:30%;
+		
+		.btn {
+
+			width: 50%;
+
 		}
-		& button:nth-child(2) {
-			width:50%;
+		.row {
+			position: relative;
+			.col-md-3 {
+				
+				&:last-child {
+					position: absolute;
+					bottom: 0;
+					margin: 0;
+					top: 50%;
+					transform: translateY(-50%);
+					right: 0;
+					.btn {
+						margin: 0 auto;
+					}					
+				}
+
+			}			
 		}
+
 		.alreadyend{
 			color:#999;
 		}
-
+		.version_set_success {
+			font-size: 16px;
+			text-align: center;
+			display: block;
+			i {
+				color: green;
+				font-size: 20px;
+				vertical-align: middle;
+			}
+		}
 	}
 	// 物料清单
 	.bom_detail_info {
 		width:1000px;
 		// margin-left: 230px;
 	}
+
+.design_draw_add_form, .design_draw_edit_form {
+	.form-group {
+		p {
+			color: #bbb;
+		}
+	}
+}	
 
 /* --------------------------- 
 	# bom page 物料清单页
@@ -618,13 +687,14 @@
 			span {
 				display: inline-block;
 				line-height: 30px;
-				height: 30px;
-				min-height: 30px;
+				// height: 30px;
+				// min-height: 30px;
 				border-bottom:1px solid;
 				position: relative;
 				overflow: hidden;
 				text-overflow:ellipsis;
-				white-space: nowrap;				
+				white-space: nowrap;	
+				padding: 10px 0;			
 				&:nth-child(1) {
 					width:10%;
 				}

@@ -116,6 +116,19 @@ app.config(function($stateProvider, $urlRouterProvider) {
 
         url: '/report?id&code',
 
+        resolve: {
+            getOrderDetail: function($http, $location, $cookies) {
+                // return $http({
+                //     method: 'post',
+                //     url: g.host+'/decoration_designer/decorationTask/order/view',
+                //     data: {
+                //         decorationTaskCode: $location.search().code,
+                //         token: $cookies.fs_designer_token
+                //     }
+                // })
+            }
+        },
+
         views: {
             "mainBody@": {
                 templateUrl: 'templates/report.html',

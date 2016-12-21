@@ -30,25 +30,31 @@
 	</div>
 
    <div class="design_details_cont main_content">
-   <!--  {{data}}
-	<div ng-repeat="item in data">
-		{{item.dataMap.designTypeText}}
-	</div> -->
+   		<div class="row">
+   			<div class="col-md-2 col-md-offset-10">
+				<button class="btn btn-primary  design_draw_add" ng-click="designDrawAdd()">
+				<i class="fa fa-plus-circle"></i>
+				设计图
+				</button>  				 				
+   			</div>
+   		</div>	
+		
+
 		<div role="tabpanel" class="tab-pane" id="drawing" aria-labelledby="drawing-tab">
 			<div class=" blueprints">
 			<!-- repest here -->
-				<div class="row" ng-repeat="item in data">
+				<div class="row" ng-repeat="item in data" ng-if="!data == ''">
 					<div class="col-md-2">
-						<img src="{{item.urlPath}}" alt="">
+						<img src="../images/design_{{item.designType}}.jpg" alt="" />
 					</div>
 					<div class="col-md-7">
 						<div class="row">
 							<div class="col-md-12">
-								<h3>{{item.documentName}}</h3>
+								<h3>{{item.documentName}} </h3>
 							</div>
 						</div>
 						<div class="row">
-							<div class="col-md-3"><span>类型：{{item.designType}}</span></div>
+							<div class="col-md-3"><span>类型：{{item.designTypeText}}</span></div>
 							<div class="col-md-3"><span>上传人：{{item.uploadUser}}</span></div>
 							<div class="col-md-6"><span>最新更新：2016-07-25 13：01：25</span></div>
 						</div>
@@ -58,8 +64,14 @@
 						</div>
 					</div>
 					<div class="col-md-3">
-						<button type="button" class="btn btn-default"><i class="fa fa-pencil-square-o"></i>修改</button>
-						<button type="button" class="btn btn-default"><i class="fa fa-external-link"></i>设为最终版</button>
+						<button type="button" class="btn btn-default btn-block" ng-disabled="!item.hasLoginDesigner" ng-show="!item.hasSubmit"><i class="fa fa-pencil-square-o" ng-click="designDrawsEdit()"></i>修改</button>
+						<br />
+						<button type="button" class="btn btn-primary btn-block" ng-disabled="!item.hasLoginDesigner && !item.hasSubmit" ng-show="!item.hasSubmit" ng-click="setDesignAsFinal(item.decorationDesignDrawId)"><i class="fa fa-check-circle"></i>设为最终版</button>
+
+						<span ng-show="item.hasSubmit && item.hasLoginDesigner" class="version_set_success">
+							<i class="fa fa-check-circle"></i>
+							已设为终板
+						</span>
 					</div>
 				</div>
 			</div>
