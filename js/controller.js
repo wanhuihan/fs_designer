@@ -80,11 +80,40 @@
 
 // })
 
-app.controller("header", function($scope, $location, $cookies, $cookieStore) {
+app.controller("header", function($scope, $http, $location, $cookies, $cookieStore) {
 
 	$scope.logOut=  function() {
-		$cookieStore.remove('fs_designer_token');
-		$location.path("/login");
+
+		$http({
+
+			method: 'post',
+			url: g.host+'/decoration_designer/login/logout',
+			data: {
+				token: $cookies.fs_designer_token
+			},
+
+	        headers: { 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8' },
+	        
+	        transformRequest: function(obj) {    
+	            var str = [];    
+	            for (var p in obj) {    
+	                
+	                if (typeof obj[p] == 'object' ) {
+	                    // console.log(p, JSON.stringify(obj[p]));
+	                    str.push(encodeURIComponent(p) + "=" + encodeURIComponent(JSON.stringify(obj[p])))
+	                } else {
+	                    str.push(encodeURIComponent(p) + "=" + encodeURIComponent(obj[p]));  
+	                }                     
+	            }    
+	            return str.join("&");    
+	        },			
+		}).success(function(data) {
+			
+			console.log(data);
+			$cookieStore.remove('fs_designer_token');
+			$location.path("/login");
+		})
+
 	}
 })
 
@@ -441,6 +470,7 @@ app.controller("bom", function($scope, $http, $location, $cookies){
 
 	$scope.data = "";
 
+
 	if (!g.chkCookie()) {
 
 		$location.path("/login");
@@ -455,7 +485,9 @@ app.controller("bom", function($scope, $http, $location, $cookies){
 				decorationTaskCode: $scope.orderCode,
 				token: $cookies.fs_designer_token
 			},
+
 			headers: { 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8' },
+	        
 	        transformRequest: function(obj) {    
 	            var str = [];    
 	            for (var p in obj) {    
@@ -468,11 +500,14 @@ app.controller("bom", function($scope, $http, $location, $cookies){
 	                }                     
 	            }    
 	            return str.join("&");    
-	        }		
+	        }
+
 		}).success(function(data) {
+			console.log(data);
 
 			if (g.checkData(data)) {
 				// alert("提交成功");
+				$scope.subChk = data.hasSubmit;
 				$scope.data = data.datas;				
 			}
 		})
@@ -509,10 +544,15 @@ app.controller("bom", function($scope, $http, $location, $cookies){
 
 		$http({
 			method: 'post',
-			url: 'http://192.168.0.224:8089/decoration_designer/material/updateMaterialDetails?token=designer_13600136000&decorationTaskCode=116092400000060',
+			url: 'http://192.168.0.224:8089/decoration_designer/material/updateMaterialDetails',
 			data: {
-				jsonData: formData
+
+				jsonData: formData,
+				decorationTaskCode: $scope.orderCode,
+				token: $cookies.fs_designer_token
+
 			},
+
 			headers: { 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8' },
 		    transformRequest: function(obj) {    
 		        var str = [];    
@@ -529,7 +569,7 @@ app.controller("bom", function($scope, $http, $location, $cookies){
 		    }			
 		}).success(function(data) {
 
-			console.log(data);
+			// console.log(data);
 
 		})
 		// alert(123)
@@ -540,11 +580,11 @@ app.controller("bom", function($scope, $http, $location, $cookies){
 
 		$http({
 			method: 'post',
-			url: 'http://192.168.0.224:8089/decoration_designer/material/submitMaterial?token=designer_13600136000',
+			url: 'http://192.168.0.224:8089/decoration_designer/material/submitMaterial',
 			
 			data: {
 				decorationTaskCode: $scope.orderCode,
-				token: $scope.fs_designer_token
+				token: $cookies.fs_designer_token
 			},
 
 			headers: { 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8' },
@@ -564,9 +604,8 @@ app.controller("bom", function($scope, $http, $location, $cookies){
 		    }
 
 		}).success(function(data){
-
-			console.log(data)
-
+			$scope.subChk = true;
+			// console.log(data)
 		})
 	}
 

@@ -17,6 +17,18 @@
   clear: both;
   margin: 1px 0; }
 
+.btm_btn_group {
+  position: fixed;
+  bottom: 0;
+  margin: 0;
+  padding: 20px 0;
+  background: rgba(75, 86, 100, 0.8);
+  width: 100%;
+  left: 0;
+  text-align: center; }
+  .btm_btn_group .btn {
+    margin: 0 10px; }
+
 .quickSearch {
   padding: 15px; }
   .quickSearch .control-label {
@@ -188,17 +200,6 @@
       width: 5%; }
     .work_load .work_load_list ul li span:nth-child(6) {
       width: 20%; }
-  .work_load .work_load_list .btn_group {
-    position: fixed;
-    bottom: 0;
-    margin: 0;
-    padding: 20px 0;
-    background: rgba(75, 86, 100, 0.8);
-    width: 100%;
-    left: 0;
-    text-align: center; }
-    .work_load .work_load_list .btn_group .btn {
-      margin: 0 10px; }
 
 /*-------------------
 	量房报告 
@@ -247,20 +248,6 @@
   display: none; }
   .report_details_form .step_content .additional_info {
     display: none; }
-  .report_details_form .step_content .btn_group {
-    position: fixed;
-    bottom: 0;
-    margin: 0;
-    padding: 20px 0;
-    background: rgba(75, 86, 100, 0.8);
-    width: 100%;
-    left: 0;
-    text-align: center; }
-    .report_details_form .step_content .btn_group .btn {
-      margin: 0 10px; }
-      .report_details_form .step_content .btn_group .btn.btn-primary {
-        letter-spacing: 12px;
-        text-indent: 12px; }
   .report_details_form .step_content .table {
     margin: 20px auto; }
 

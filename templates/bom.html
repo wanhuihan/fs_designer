@@ -70,7 +70,7 @@
 								<span>{{b.rules}}</span>
 									
 								<span class="qty">
-									<input type="text" name="qty" value="{{b.quantity}}">
+									<input type="text" name="qty" value="{{b.quantity}}" ng-disabled="subChk">
 									<input type="hidden" name="configId" value="{{b.materialConfigurationlId}}">
 								</span>														
 								
@@ -80,8 +80,13 @@
 				</ul>
 			</li>
 		</ul>
-		<button class="btn btn_primary" ng-click="save()"> 保存</button>
-		<button class="btn btn_secondary" ng-click='subBom()'>提交</button>
+
+		<div class="row" ng-show="!subChk">
+			<div class="btm_btn_group col-md-12">
+				<button class="btn btn-primary btn-lg" ng-click="save()">保存</button>
+				<button class="btn btn-default btn-lg" ng-click='subBom()'>提交</button>
+			</div>						
+		</div>		
 	</div>
 </div>
 
