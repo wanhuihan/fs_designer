@@ -56,7 +56,7 @@
 					<div class="row">
 						<div class="col-md-12">					    
 						      <p> 1.请填写您实际的量房日期:<span>*</span></p>
-						      <input type="text" name=""  id="surveyTime" ng-model="test">
+						      <input type="text" name=""  id="surveyTime" >
 
 						</div>
 					</div>
@@ -1161,14 +1161,14 @@
 			</div>
 
 			<div class="report_page_four step_content" content="step_4">
-				{{formData}}
 				<table class="table table-bordered report_table">
 					<th colspan="7" class="tabletitle">量房记录表</th>
 					<!-- Customer basic situation -->
 					<tr>
 						<th class=""></th>
 						<td class="">量房时间：</td>
-						<td class="">{{formData.generalInfo.ownerSurveyTime}}</td>
+						<td class="">
+						{{formData.generalInfo.ownerSurveyTime | date:'yyyy年MM月dd日'}}</td>
 						<td class="" style="color:red">提交人：</td>
 						<td class="">--</td>
 						<td class="" style="color:red">提交时间：</td>
@@ -1214,7 +1214,7 @@
 						<td class="">计划投资：</td>
 						<td class="">{{formData.generalInfo.ownerPlannedInvests}}</td>
 						<td class="">计划装修时间：</td>
-						<td class="">{{formData.generalInfo.ownerPlanTime}}</td>
+						<td class="">{{formData.generalInfo.ownerPlanTime | date:'yyyy年MM月dd日'}}</td>
 						<td class=""></td>
 						<td class=""></td>
 					</tr>

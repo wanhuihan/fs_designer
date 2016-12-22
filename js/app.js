@@ -10,8 +10,8 @@ var app = angular.module("designer", ["ui.router", 'angular-loading-bar','ngDial
 var g = {
 	
 	// host server
-	host: 'http://192.168.0.224:8089',
-
+	host: 'http://192.168.0.87',
+	// host: 'http://192.168.0.224:8089',
 	// cookie set
 	setCookie: function(data) {
 
@@ -22,6 +22,8 @@ var g = {
 
 		now.setTime(now.getTime()+time);
 		// console.log(exp);
+		console.log(now.toGMTString());
+
 		document.cookie = 'fs_designer_token =' + token + "; expires="+now.toGMTString();
 
 	},

@@ -127,6 +127,7 @@ app.controller("report", function($scope, $http, $location, design, $location, g
 		},
 
 		abstruse: {
+			type: 4,
 			// 是否有考虑设置（1鞋柜2衣柜3镜子（整装）4纯装饰性）
 			lrConsiderSettingOpt: '',
 			lrConsiderSettingOptArr: [],
@@ -143,7 +144,7 @@ app.controller("report", function($scope, $http, $location, design, $location, g
 		},
 
 		livingRoom:{
-
+			type: 5,
 			// 客厅的主要功能（1会客2休息3娱乐4阅读）
 			sittingLrMainFun: '',
 			sittingLrMainFunArr: [],
@@ -180,6 +181,7 @@ app.controller("report", function($scope, $http, $location, design, $location, g
 			sittingSpecialLightsDesignOpt: '',
 		},
 		dinningRoom:{
+			type: 6,
 			// 餐厅使用人数
 			drUseNum: '',
 			// 餐厅使用人数_频率(1晚餐2午餐3早餐4偶尔)
@@ -207,7 +209,7 @@ app.controller("report", function($scope, $http, $location, design, $location, g
 
 		},
 		kitchen:{
-
+			type: 7,
 			// 电气设备(电源问题)
 			kitElecEquipment: '',
 			// 对墙、地材料或色彩要求
@@ -224,6 +226,7 @@ app.controller("report", function($scope, $http, $location, design, $location, g
 		
 		readingRoom: {	
 
+			type: 8,
 			// 书房功能（1读书2写作3会客4品茶5电脑操作）
 			libFun: '',
 			libFunArr: [],
@@ -251,7 +254,7 @@ app.controller("report", function($scope, $http, $location, design, $location, g
 		},
 
 		mainRoom: {
-
+			type: 9,
 			// 业主对寝具的选择（0购买1制作）
 			brSleepObjectSelOpt: '',
 			// 业主对寝具品牌和颜色的选择（品牌及颜色）
@@ -281,6 +284,7 @@ app.controller("report", function($scope, $http, $location, design, $location, g
 
 		kidRoom: {
 
+			type: 10,
 			// 房间使用功能及具体使用要求（1独生子2老人3保姆）
 			krUseFunSpecific: '',
 			// 家具的选择（0购买1制作）
@@ -310,6 +314,7 @@ app.controller("report", function($scope, $http, $location, design, $location, g
 			krKidAgeGenderToyBookInfo: '',
 		},
 		guestRoom: {
+			type: 11,
 			// 房间的使用频率及主要功能
 			roomUseRateMainFun: '',
 			// 家居配置
@@ -328,6 +333,7 @@ app.controller("report", function($scope, $http, $location, design, $location, g
 			roomSpecialDecorationOpt: '',
 		},
 		restroom: {
+			type: 12,
 			// 对天花、墙、地面材料的要求
 			wcCeilingWallGroundRequest: '',
 			// 洁具的颜色、档次、品质、品牌
@@ -341,6 +347,7 @@ app.controller("report", function($scope, $http, $location, design, $location, g
 		},
 
 		balcony: {
+			type: 13,
 			// 是否需要封闭阳台以及材料（0否1是）
 			balconyBlockStuffOpt: '',
 			// 是否需要封闭阳台以及材料_是（1铝合金2塑钢3木制）
@@ -357,6 +364,7 @@ app.controller("report", function($scope, $http, $location, design, $location, g
 		},
 
 		additional: {
+			type: 14,
 			// 电话的数量、要求
 			addTelQtyRequest: '',
 			// 电脑（多媒体）的数量、位置
@@ -397,6 +405,7 @@ app.controller("report", function($scope, $http, $location, design, $location, g
 			addReligiousBeliefOpt: '',
 		},
 		others: {
+			type: 15,
 			// 储藏室
 			otherStoreroom: '',
 			// 健身房
@@ -418,16 +427,13 @@ app.controller("report", function($scope, $http, $location, design, $location, g
 
 		}
 	}
-
-	$scope.test = '';
-
-	console.log($scope.test);
 	
 	// 量房时间赋值
 	jQuery('#surveyTime').daterangepicker({
 		singleDatePicker: true,
 
 	}, function(d) {
+
 		$scope.formData.generalInfo.ownerSurveyTime = Date.parse(d._d);
 	});
 
@@ -515,13 +521,37 @@ app.controller("report", function($scope, $http, $location, design, $location, g
 
 	}
 
-
 	$scope.switch = function(name, val) {
 
 		design.showSwitch(name, val);
 
 	}
 
+	$http({
+		method: 'post',
+		url: g.host+'/decoration_designer/volumeReport/selectVolumeReportByTaskCode',
+		data: {
+			decorationTaskCode: $scope.orderCode,
+		},
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8' },
+        
+        transformRequest: function(obj) {    
+            var str = [];    
+            for (var p in obj) {    
+                
+                if (typeof obj[p] == 'object' ) {
+                    // console.log(p, JSON.stringify(obj[p]));
+                    str.push(encodeURIComponent(p) + "=" + encodeURIComponent(JSON.stringify(obj[p])))
+                } else {
+                    str.push(encodeURIComponent(p) + "=" + encodeURIComponent(obj[p]));  
+                }                     
+            }    
+            return str.join("&");    
+        }		
+	}).success(function(data) {
+		console.log(data);
+		$scope.formData = data.data.volumeReportList;
+	})
 	// 第三部分
 	/*
 	 *@params e is the event target
@@ -577,6 +607,10 @@ app.controller("report", function($scope, $http, $location, design, $location, g
 	// 下一步操作的时候进行判断显示下一步的样式和内容
 	$scope.nextStep = function(step) {
 
+		if (step == 'step_1') {
+			// console.log($scope.formData.generalInfo);
+		}
+
 		var currentStep = angular.element(document.getElementById(step));
 		var currentCont = angular.element(document.querySelector("div[content="+step+"]"));
 
@@ -598,11 +632,14 @@ app.controller("report", function($scope, $http, $location, design, $location, g
 		}
 
 		$http({
-			url: 'http://192.168.0.87/decoration_designer/volumeReport/addVolumeReport',
+			url: g.host+'/decoration_designer/volumeReport/addVolumeReport',
 			method: 'post',
 			data: {
-				volumeReportJson: $scope.formData
+				volumeReportJson: $scope.formData,
+				decorationTaskCode: $scope.orderCode,
+				status: 0,
 			},
+
 	        headers: { 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8' },
 	        
 	        transformRequest: function(obj) {    
@@ -610,16 +647,25 @@ app.controller("report", function($scope, $http, $location, design, $location, g
 	            for (var p in obj) {    
 	                
 	                if (typeof obj[p] == 'object' ) {
-	                    // console.log(p, JSON.stringify(obj[p]));
-	                    str.push(encodeURIComponent(p) + "=" + encodeURIComponent(JSON.stringify(obj[p])))
+
+	                    var jsonStr = [];
+
+	                    for (i in obj[p]) {
+	                    	jsonStr.push(JSON.stringify(obj[p][i]));
+	                    }
+
+	                    str.push(encodeURIComponent(p) + "= {data:[" + jsonStr.join(",") + ']}');
 	                } else {
 	                    str.push(encodeURIComponent(p) + "=" + encodeURIComponent(obj[p]));  
 	                }                     
 	            }    
-	            return str.join("&");    
+
+	            // console.log(str.join("&"))  
+	            return str.join("&");  
+
 	        }			
 		}).success(function(data) {
-			console.log(data)
+			// console.log(data)
 		})
 		// console.log(step);
 	}
@@ -642,6 +688,46 @@ app.controller("report", function($scope, $http, $location, design, $location, g
 
 		angular.element(currentCont).removeClass("show");
 		angular.element(lastCont).addClass("show");		
+	}
+
+	$scope.subReport = function() {
+
+		// $http({
+		// 	url: g.host+'/decoration_designer/volumeReport/addVolumeReport',
+		// 	method: 'post',
+		// 	data: {
+		// 		volumeReportJson: $scope.formData,
+		// 		decorationTaskCode: $scope.orderCode,
+		// 		status: 0,
+		// 	},
+
+	 //        headers: { 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8' },
+	        
+	 //        transformRequest: function(obj) {    
+	 //            var str = [];    
+	 //            for (var p in obj) {    
+	                
+	 //                if (typeof obj[p] == 'object' ) {
+
+	 //                    var jsonStr = [];
+
+	 //                    for (i in obj[p]) {
+	 //                    	jsonStr.push(JSON.stringify(obj[p][i]));
+	 //                    }
+
+	 //                    str.push(encodeURIComponent(p) + "= {data:[" + jsonStr.join(",") + ']}');
+	 //                } else {
+	 //                    str.push(encodeURIComponent(p) + "=" + encodeURIComponent(obj[p]));  
+	 //                }                     
+	 //            }    
+
+	 //            // console.log(str.join("&"))  
+	 //            return str.join("&");  
+
+	 //        }			
+		// }).success(function(data) {
+		// 	// console.log(data)
+		// })		
 	}
 
 })
