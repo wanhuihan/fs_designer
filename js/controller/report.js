@@ -549,7 +549,7 @@ app.controller("report", function($scope, $http, $location, design, $location, g
             return str.join("&");    
         }		
 	}).success(function(data) {
-		console.log(data);
+		// console.log(data);
 		$scope.formData = data.data.volumeReportList;
 	})
 	// 第三部分
@@ -588,8 +588,7 @@ app.controller("report", function($scope, $http, $location, design, $location, g
 
 	// 当前第几步骤
 	$scope.currentStep = "";
-	// console.log(step)
-
+	
 	// 显示当前步骤的表单内容
 	for (var i = 0; i < step.length; i++) {
 
@@ -602,7 +601,6 @@ app.controller("report", function($scope, $http, $location, design, $location, g
 
 		}
 	}
-	// console.log(currentStep);
 
 	// 下一步操作的时候进行判断显示下一步的样式和内容
 	$scope.nextStep = function(step) {
