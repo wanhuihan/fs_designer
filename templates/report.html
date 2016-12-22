@@ -56,7 +56,7 @@
 					<div class="row">
 						<div class="col-md-12">					    
 						      <p> 1.请填写您实际的量房日期:<span>*</span></p>
-						      <input type="text" name=""  id="surveyTime" ng-model="test">
+						      <input class="inputtext" type="text" name=""  id="surveyTime" ng-model="test">
 
 						</div>
 					</div>
@@ -64,48 +64,56 @@
 	                <div class="row">
 						<div class="col-md-12">					    
 						      <p> 2.请填写业主真实姓名：<span>*</span></p>
-						      <input type="text" ng-model="formData.generalInfo.ownerName">
+						      <input class="inputtext" type="text" ng-model="formData.generalInfo.ownerName">
 						</div>
 					</div>
-					<div class="row">
-						<div class="col-md-12 radio abc-radio">					    
-						    <p> 3.请填写业主性别：<span>*</span></p>
-						    <input id="radio3" class="radio-danger" type="radio" name="radiosex" value="0" ng-model="formData.generalInfo.ownerSex"><label for="radio3">女士</label>
-							<input id="radio4" class="radio-danger" type="radio" name="radiosex" value="1" ng-model="formData.generalInfo.ownerSex"> <label for="radio4">先生</label> 
-						</div>
-					</div>
-					<div class="row">
+					<div class="row  radio radio-success radio-inline">
 						<div class="col-md-12">					    
+						    <p> 3.请填写业主性别：<span>*</span></p>
+						    <input id="owner_sex_g"  type="radio" name="radiosex" value="0" ng-model="formData.generalInfo.ownerSex">
+						    <label for="owner_sex_g">女士</label>
+
+							<input id="owner_sex_b"  type="radio" name="radiosex" value="1" ng-model="formData.generalInfo.ownerSex"> 
+							<label for="owner_sex_b">先生</label> 
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-12 radio radio-success radio-inline">					    
 						    <p> 4.请填写业主年龄：<span>*</span></p>
-						    <input type="radio" name="radioage" value="1"  ng-model="formData.generalInfo.ownerAge">18~28岁
-							<input type="radio" name="radioage" value="2" ng-model="formData.generalInfo.ownerAge"> 29~38岁
-							<input type="radio" name="radioage" value="3" ng-model="formData.generalInfo.ownerAge">39岁~48岁
-							<input type="radio" name="radioage" value="4" ng-model="formData.generalInfo.ownerAge">49岁~58岁
-							<input type="radio" name="radioage" value="5" ng-model="formData.generalInfo.ownerAge"> 59岁以上
+						    <input id="owner_age_one" type="radio" name="radioage" value="1"  ng-model="formData.generalInfo.ownerAge">
+						    <label for="owner_age_one">18~28岁</label>
+							<input id="owner_age_two" type="radio" name="radioage" value="2" ng-model="formData.generalInfo.ownerAge">
+							<label for="owner_age_two">29~38岁</label> 
+							<input id="owner_age_three" type="radio" name="radioage" value="3" ng-model="formData.generalInfo.ownerAge">
+							<label for="owner_age_three">39岁~48岁</label>
+							<input id="owner_age_four" type="radio" name="radioage" value="4" ng-model="formData.generalInfo.ownerAge">
+							<label for="owner_age_four">49岁~58岁</label>
+							<input id="owner_age_five" type="radio" name="radioage" value="5" ng-model="formData.generalInfo.ownerAge">
+							<label for="owner_age_five">59岁以上</label> 
 						</div>
 					</div>
 					<div class="row">
 						<div class="col-md-12">					    
 						      <p>5.请填写所该装修房屋的建筑面积：<span>*</span></p>
-						      <input type="text" ng-model="formData.generalInfo.ownerBuildArea">&nbsp;&nbsp;m*2
+						      <input class="inputtext" type="text" ng-model="formData.generalInfo.ownerBuildArea">&nbsp;&nbsp;m*2
 						</div>
 					</div>
 					<div class="row">
 						<div class="col-md-12">					    
 						      <p> 6.请填写该装修房屋的使用面积：<span>*</span></p>
-						      <input type="text" ng-model="formData.generalInfo.ownerUseArea">&nbsp;&nbsp;m*2
+						      <input class="inputtext" type="text" ng-model="formData.generalInfo.ownerUseArea">&nbsp;&nbsp;m*2
 						</div>
 					</div>
 					<div class="row">
 						<div class="col-md-12">					    
-						      <p> 7.请填写该房屋装修计划投资：（&nbsp;<input type="checkbox" ng-model="investMPChangeVal" ng-change="investMPChange()" >&nbsp;含主材）<span>*</span></p>
-						      <input type="text" ng-model="formData.generalInfo.ownerPlannedInvests" ng-change="investMPChange()">
+						      <p> 7.请填写该房屋装修计划投资：（&nbsp;<input type="checkbox" ng-model="formData.generalInfo.investMPChangeVal" ng-change="investMPChange()" >&nbsp;含主材）<span>*</span></p>
+						      <input class="inputtext" type="text" ng-model="formData.generalInfo.ownerPlannedInvests" ng-change="investMPChange()">
 						</div>
 					</div>
 					<div class="row">
 						<div class="col-md-12">					    
 						      <p> 8.请填写该房屋的计划装修时间：<span>*</span></p>					      
-						      <input type="text" name=""  id="decorationTime">
+						      <input class="inputtext" type="text" name=""  id="decorationTime">
 						</div>
 					</div> 
 					<div class="row">
@@ -128,7 +136,7 @@
 										<option value="朝阳">朝阳</option>
 									</select>	
 								</p>
-						      <input type="text" placeholder="详细地址" ng-model="generalInfo.address" ng-change="addressGather()">
+						      <input class="inputtext" type="text" placeholder="详细地址" ng-model="generalInfo.address" ng-change="addressGather()">
 						</div>
 					</div>
 					<div class="row">
@@ -144,118 +152,174 @@
 			<div class="report_page_two step_content" content="step_2">
 				
 				<form class="report_tab_listone" role="form">
-					<div class="row">
-						<div class="col-md-12">					    
+					<div class="row ">
+						<div class="col-md-12 radio radio-success radio-inline">					    
 						      	<p> 1.请选择该房屋原结构：<span>*</span></p>
-						      	<input type="radio" name="radiostruct" value="0" ng-model="formData.houseBasicInfo.houseHouseStructureType">&nbsp;砖砼结构
-								<input type="radio" name="radiostruct" value="1" ng-model="formData.houseBasicInfo.houseHouseStructureType">&nbsp;框架结构 
+						      	<input id="house_struct_brick" type="radio" name="radiostruct" value="0" ng-model="formData.houseBasicInfo.houseHouseStructureType">
+						      	<label for="house_struct_brick">砖砼结构</label>
+								<input id="house_struct_frame" type="radio" name="radiostruct" value="1" ng-model="formData.houseBasicInfo.houseHouseStructureType">
+								<label for="house_struct_frame">框架结构</label> 
 						</div>
 					</div>
 	                <div class="row">
-						<div class="col-md-12">					    
+						<div class="col-md-12 radio radio-success radio-inline">					    
 						      	<p> 2.请填写原房屋结构是否有缺陷之处（如：墙体裂开、平整度、顶面漏水）：<span>*</span></p>
-						      	<input type="radio" name="radiodefect" value="1" ng-model="formData.houseBasicInfo.houseHouseStructureFault" ng-change="switch('radiodefect', formData.houseBasicInfo.houseHouseStructureFault)">&nbsp;是
-								<input type="radio" name="radiodefect" value="0" ng-model="formData.houseBasicInfo.houseHouseStructureFault" ng-change="switch('radiodefect', formData.houseBasicInfo.houseHouseStructureFault)">&nbsp;否 
+						      	<input id="house_fault_y" type="radio" name="radiodefect" value="1" ng-model="formData.houseBasicInfo.houseHouseStructureFault" ng-change="switch('radiodefect', formData.houseBasicInfo.houseHouseStructureFault)">
+						      	<label for="house_fault_y">是</label>
+								<input id="house_fault_n" type="radio" name="radiodefect" value="0" ng-model="formData.houseBasicInfo.houseHouseStructureFault" ng-change="switch('radiodefect', formData.houseBasicInfo.houseHouseStructureFault)">
+								<label for="house_fault_n">否</label> 
 
 								<div class="info_add additional_info">
 									<p ng-repeat="item in formData.houseBasicInfo.faultArr">
 										{{item}} - 
 										<span class="glyphicon glyphicon-remove" ng-click="removeFaultList($index)"></span>
 									</p>
-									<label>位置/参考意见</label><input type="text" name="">
+									<input type="radio" name="" id="house_fault_opinion">
+									<label for="house_fault_opinion">位置/参考意见</label><input type="text" name="">
 									<a class="btn btn-primary btn-xs" ng-click="addItem($event)">添加</a>
 								</div>
 
 						</div>
 					</div>
 					<div class="row">
-						<div class="col-md-12">					    
+						<div class="col-md-12 radio radio-success radio-inline">					    
 						    <p> 3.请选择暖气是否需改动：<span>*</span></p>
-						    <input type="radio" name="radioheating" value="1" ng-model="formData.houseBasicInfo.houseHeatingChange" ng-change="switch('radioheating', formData.houseBasicInfo.houseHeatingChange)">&nbsp;是
-							<input type="radio" name="radioheating" value="0" ng-model="formData.houseBasicInfo.houseHeatingChange" ng-change="switch('radioheating', formData.houseBasicInfo.houseHeatingChange)">&nbsp;否 
+						    <input id="heat_change_y" type="radio" name="radioheating" value="1" ng-model="formData.houseBasicInfo.houseHeatingChange" ng-change="switch('radioheating', formData.houseBasicInfo.houseHeatingChange)">
+						    <label for="heat_change_y">是</label>
+							<input id="heat_change_n" type="radio" name="radioheating" value="0" ng-model="formData.houseBasicInfo.houseHeatingChange" ng-change="switch('radioheating', formData.houseBasicInfo.houseHeatingChange)">
+							<label for="heat_change_n">否</label> 
 							<div class="additional_info">
-								<input type="text" name="" ng-model="formData.houseBasicInfo.houseHeatingChnageView">
+								<input class="inputtext" type="text" name="" ng-model="formData.houseBasicInfo.houseHeatingChnageView">
 							</div>
 						</div>
 					</div>
 					<div class="row">
-						<div class="col-md-12">					    
+						<div class="col-md-12 radio radio-success radio-inline">					    
 						    <p> 4.请选择媒气是否需改动：<span>*</span></p>
-						    <input type="radio" name="radiocoal" value="1" ng-change="switch('radiocoal', formData.houseBasicInfo.houseGasChange)" ng-model="formData.houseBasicInfo.houseGasChange">&nbsp;是
-							<input type="radio" name="radiocoal" value="0" ng-change="switch('radiocoal', formData.houseBasicInfo.houseGasChange)" ng-model="formData.houseBasicInfo.houseGasChange">&nbsp;否 
+						    <input id="coalgas_change_y" type="radio" name="radiocoal" value="1" ng-change="switch('radiocoal', formData.houseBasicInfo.houseGasChange)" ng-model="formData.houseBasicInfo.houseGasChange">
+						    <label for="coalgas_change_y">是</label>
+							<input id="coalgas_change_n" type="radio" name="radiocoal" value="0" ng-change="switch('radiocoal', formData.houseBasicInfo.houseGasChange)" ng-model="formData.houseBasicInfo.houseGasChange">
+							<label for="coalgas_change_n">否</label> 
 							<div class="additional_info">
-								<input type="text" name="" ng-model="formData.houseBasicInfo.houseGasChangeView">
+								<input class="inputtext" type="text" name="" ng-model="formData.houseBasicInfo.houseGasChangeView">
 							</div>							
 						</div>
 					</div>
 					<div class="row">
-						<div class="col-md-12">					    
+						<div class="col-md-12 radio radio-success radio-inline">					    
 						        <p>5.请选择倾向的采暖方式：<span>*</span></p>
-						        <input type="radio" name="radiomethod" value="1" ng-model="formData.houseBasicInfo.houseHeatingType" >&nbsp;暖气
-							    <input type="radio" name="radiomethod" value="2" ng-model="formData.houseBasicInfo.houseHeatingType">&nbsp;煤气 
-							    <input type="radio" name="radiomethod" value="3" ng-model="formData.houseBasicInfo.houseHeatingType">&nbsp;地暖
-							    <input type="radio" name="radiomethod" value="4" ng-model="formData.houseBasicInfo.houseHeatingType">&nbsp;中央空调
+						        <input id="heatStyle_heat" type="radio" name="radiomethod" value="1" ng-model="formData.houseBasicInfo.houseHeatingType" >
+						        <label for="heatStyle_heat">暖气</label>
+
+							    <input id="heatStyle_coal" type="radio" name="radiomethod" value="2" ng-model="formData.houseBasicInfo.houseHeatingType">
+							    <label for="heatStyle_coal">煤气</label> 
+
+							    <input id="heatStyle_floor" type="radio" name="radiomethod" value="3" ng-model="formData.houseBasicInfo.houseHeatingType">
+							    <label for="heatStyle_floor">地暖</label>
+
+							    <input id="heatStyle_air" type="radio" name="radiomethod" value="4" ng-model="formData.houseBasicInfo.houseHeatingType">
+							    <label for="heatStyle_air">中央空调</label>
 						</div>
 					</div>
 					<div class="row">
-						<div class="col-md-12">					    
+						<div class="col-md-12 radio radio-success radio-inline">					    
 						      	<p> 6.是否已经安装中央空调：<span>*</span></p>
-						      	<input type="radio" name="radioair" value="1" ng-model="formData.houseBasicInfo.houseAcBuild"  ng-change="switch('radioair', formData.houseBasicInfo.houseAcBuild)">&nbsp;未安装
-								<input type="radio" name="radioair" value="0" ng-model="formData.houseBasicInfo.houseAcBuild"  ng-change="switch('radioair', formData.houseBasicInfo.houseAcBuild)">&nbsp;已安装
+						      	<input id="installAir_n" type="radio" name="radioair" value="1" ng-model="formData.houseBasicInfo.houseAcBuild"  ng-change="switch('radioair', formData.houseBasicInfo.houseAcBuild)">
+						      	<label for="installAir_n">未安装</label>
+
+								<input id="installAir_y" type="radio" name="radioair" value="0" ng-model="formData.houseBasicInfo.houseAcBuild"  ng-change="switch('radioair', formData.houseBasicInfo.houseAcBuild)">
+								<label for="installAir_y">已安装</label>
+
 								<div class="additional_info">
-									<input type="radio" name="" value="1" ng-model="formData.houseBasicInfo.houseCm"> 已定制
-									<input type="radio" name="" value="0" ng-model="formData.houseBasicInfo.houseCm">未定制
+									<input id="installAir_made_y" type="radio" name="" value="1" ng-model="formData.houseBasicInfo.houseCm">
+									<label for="installAir_made_y">已定制</label>
+
+									<input id="installAir_made_n" type="radio" name="" value="0" ng-model="formData.houseBasicInfo.houseCm">
+									<label for="installAir_made_n">未定制</label>
 								</div>
 						</div>
 					</div>
 					<div class="row">
-						<div class="col-md-12">					    
+						<div class="col-md-12 radio radio-success radio-inline">					    
 						      	<p> 7. 厨房整体橱柜是否已安装：</p>
-						      	<input type="radio" name="radiocabinet" value="1" ng-model="formData.houseBasicInfo.houseWholeCabinetBuild"  ng-change="switch('radiocabinet', formData.houseBasicInfo.houseWholeCabinetBuild)">&nbsp;未安装
-								<input type="radio" name="radiocabinet" value="0" ng-model="formData.houseBasicInfo.houseWholeCabinetBuild"  ng-change="switch('radiocabinet', formData.houseBasicInfo.houseWholeCabinetBuild)">&nbsp;已安装
+						      	<input id="cupboardInstall_y" type="radio" name="radiocabinet" value="1" ng-model="formData.houseBasicInfo.houseWholeCabinetBuild"  ng-change="switch('radiocabinet', formData.houseBasicInfo.houseWholeCabinetBuild)">
+						      	<label for="cupboardInstall_y">未安装</label>
+
+								<input id="cupboardInstall_n" type="radio" name="radiocabinet" value="0" ng-model="formData.houseBasicInfo.houseWholeCabinetBuild"  ng-change="switch('radiocabinet', formData.houseBasicInfo.houseWholeCabinetBuild)">
+								<label for="cupboardInstall_n">已安装</label>
+
 								<div class="additional_info">
-									<input type="radio" name="" value="0" ng-model="formData.houseBasicInfo.houseCabinetCm"> 已定制
-									<input type="radio" name="" value="1" ng-model="formData.houseBasicInfo.houseCabinetCm">未定制
+									<input id="cupboardInstall_made_y" type="radio" name="" value="0" ng-model="formData.houseBasicInfo.houseCabinetCm">
+									<label for="cupboardInstall_made_y">已定制</label>
+
+									<input id="cupboardInstall_made_n" type="radio" name="" value="1" ng-model="formData.houseBasicInfo.houseCabinetCm">
+									<label for="cupboardInstall_made_n">未定制</label>
 								</div>								
 						</div>
 					</div>
 					<div class="row">
-						<div class="col-md-12">					    
+						<div class="col-md-12 radio radio-success radio-inline">					    
 						      	<p> 8.阳台墙地面是否已铺砖：<span>*</span></p>
-						      	<input type="radio" name="radiobrick" value="0" ng-model="formData.houseBasicInfo.houseBalconyTileBuild">&nbsp;已铺装
-								<input type="radio" name="radiobrick" value="1" ng-model="formData.houseBasicInfo.houseBalconyTileBuild">&nbsp;未铺装
-						      	&nbsp;&nbsp;&nbsp;&nbsp;局部<input type="text" ng-model="formData.houseBasicInfo.houseBalconyPart">
+						      	<input id="balconyBrick_y" type="radio" name="radiobrick" value="0" ng-model="formData.houseBasicInfo.houseBalconyTileBuild">
+						      	<label for="balconyBrick_y">已铺装</label>
+
+								<input id="balconyBrick_n" type="radio" name="radiobrick" value="1" ng-model="formData.houseBasicInfo.houseBalconyTileBuild">
+								<label for="balconyBrick_n">未铺装</label>
+						      	&nbsp;&nbsp;&nbsp;&nbsp;局部<input class="inputtext" type="text" ng-model="formData.houseBasicInfo.houseBalconyPart">
 						</div>
 					</div>
 					<div class="row">
-						<div class="col-md-12">					    
+						<div class="col-md-12 radio radio-success radio-inline">					    
 						      	<p>9. 厨房是否已铺砖及吊顶：<span>*</span></p>
-						      	<input type="radio" name="radiobricko" value="3" ng-model="formData.houseBasicInfo.houseKitTileCeilingBuild" ng-change="switch('radiobricko', formData.houseBasicInfo.houseKitTileCeilingBuild)">&nbsp;已铺装
-								<input type="radio" name="radiobricko" value="4" ng-model="formData.houseBasicInfo.houseKitTileCeilingBuild" ng-change="switch('radiobricko', formData.houseBasicInfo.houseKitTileCeilingBuild)">&nbsp;未铺装
-								<input type="radio" name="radioroof" value="1" ng-model="formData.houseBasicInfo.houseKitTileCeilingBuild" ng-change="switch('radiobricko', formData.houseBasicInfo.houseKitTileCeilingBuild)">&nbsp;已吊顶
-								<input type="radio" name="radioroof" value="2" ng-model="formData.houseBasicInfo.houseKitTileCeilingBuild" ng-change="switch('radiobricko', formData.houseBasicInfo.houseWholeCabinetBuild)">&nbsp;未吊顶
+						      	<input id="cookBrick_y" type="radio" name="radiobricko" value="3" ng-model="formData.houseBasicInfo.houseKitTileCeilingBuild" ng-change="switch('radiobricko', formData.houseBasicInfo.houseKitTileCeilingBuild)">
+						      	<label for="cookBrick_y">已铺装</label>
+
+								<input id="cookBrick_n" type="radio" name="radiobricko" value="4" ng-model="formData.houseBasicInfo.houseKitTileCeilingBuild" ng-change="switch('radiobricko', formData.houseBasicInfo.houseKitTileCeilingBuild)">
+								<label for="cookBrick_n">未铺装</label>
+
+								<input id="cookCeiling_y" type="radio" name="radioroof" value="1" ng-model="formData.houseBasicInfo.houseKitTileCeilingBuild" ng-change="switch('radiobricko', formData.houseBasicInfo.houseKitTileCeilingBuild)">
+								<label for="cookCeiling_y">已吊顶</label>
+
+								<input id="cookCeiling_n" type="radio" name="radioroof" value="2" ng-model="formData.houseBasicInfo.houseKitTileCeilingBuild" ng-change="switch('radiobricko', formData.houseBasicInfo.houseWholeCabinetBuild)">
+								<label for="cookCeiling_n">未吊顶</label>
+
 								<div  class="additional_info">
-								<input type="radio" name="radiomaterial" value="1" ng-model="formData.houseBasicInfo.houseKitCeilingStuff">&nbsp;PVC
-								<input type="radio" name="radiomaterial" value="2" ng-model="formData.houseBasicInfo.houseKitCeilingStuff">&nbsp;铝扣板
-								<input type="radio" name="radiomaterial" value="3" ng-model="formData.houseBasicInfo.houseKitCeilingStuff">&nbsp;石膏板
+								<input id="cookCeiling_pvc" type="radio" name="radiomaterial" value="1" ng-model="formData.houseBasicInfo.houseKitCeilingStuff">
+								<label for="cookCeiling_pvc">PVC</label>
+
+								<input id="cookCeiling_alumin" type="radio" name="radiomaterial" value="2" ng-model="formData.houseBasicInfo.houseKitCeilingStuff">
+								<label for="cookCeiling_alumin">铝扣板</label>
+
+								<input id="cookCeiling_gypsum" type="radio" name="radiomaterial" value="3" ng-model="formData.houseBasicInfo.houseKitCeilingStuff">
+								<label for="cookCeiling_gypsum">石膏板</label>
+
 								</div>
 						</div>
 					</div>
 					<div class="row">
-						<div class="col-md-12">					    
+						<div class="col-md-12 radio radio-success radio-inline">					    
 						      	<p> 10.  卫生间是否铺砖及吊顶：<span>*</span></p>
-						      	<input type="radio" name="radiocookb" value="3" ng-model="formData.houseBasicInfo.houseWcCeilingTileBuild" ng-change="switch('radiocookb', formData.houseBasicInfo.houseWcCeilingTileBuild)">&nbsp;已铺装
+						      	<input id="wcBrick_y" type="radio" name="radiocookb" value="3" ng-model="formData.houseBasicInfo.houseWcCeilingTileBuild" ng-change="switch('radiocookb', formData.houseBasicInfo.houseWcCeilingTileBuild)">
+						      	<label for="wcBrick_y">已铺装</label>
 
-								<input type="radio" name="radiocookb" value="4" ng-model="formData.houseBasicInfo.houseWcCeilingTileBuild" ng-change="switch('radiocookb', formData.houseBasicInfo.houseWcCeilingTileBuild)">&nbsp;未铺装
+								<input id="wcBrick_n" type="radio" name="radiocookb" value="4" ng-model="formData.houseBasicInfo.houseWcCeilingTileBuild" ng-change="switch('radiocookb', formData.houseBasicInfo.houseWcCeilingTileBuild)">
+								<label for="wcBrick_n">未铺装</label>
 								
-								<input type="radio" name="radiocookr" value="1" ng-model="formData.houseBasicInfo.houseWcCeilingTileBuild" ng-change="switch('radiocookb', formData.houseBasicInfo.houseWcCeilingTileBuild)">&nbsp;已吊顶
+								<input id="wcCeiling_y" type="radio" name="radiocookr" value="1" ng-model="formData.houseBasicInfo.houseWcCeilingTileBuild" ng-change="switch('radiocookb', formData.houseBasicInfo.houseWcCeilingTileBuild)">
+								<label for="wcCeiling_y">已吊顶</label>
 								
-								<input type="radio" name="radiocookr" value="2" ng-model="formData.houseBasicInfo.houseWcCeilingTileBuild" ng-change="switch('radiocookb', formData.houseBasicInfo.houseWcCeilingTileBuild)">&nbsp;未吊顶
+								<input id="wcCeiling_n" type="radio" name="radiocookr" value="2" ng-model="formData.houseBasicInfo.houseWcCeilingTileBuild" ng-change="switch('radiocookb', formData.houseBasicInfo.houseWcCeilingTileBuild)">
+								<label for="wcCeiling_n">未吊顶</label>
 								
 								<div class="additional_info">
-									<input type="radio" name="radiocookm" value="1" ng-model="formData.houseBasicInfo.houseWcCeilingStuff">&nbsp;PVC
-									<input type="radio" name="radiocookm" value="2" ng-model="formData.houseBasicInfo.houseWcCeilingStuff">&nbsp;铝扣板
-									<input type="radio" name="radiocookm" value="3" ng-model="formData.houseBasicInfo.houseWcCeilingStuff">&nbsp;石膏板
+									<input id="wcCeiling_pvc" type="radio" name="radiocookm" value="1" ng-model="formData.houseBasicInfo.houseWcCeilingStuff">
+									<label for="wcCeiling_pvc">PVC</label>
+
+									<input id="wcCeiling_alumin" type="radio" name="radiocookm" value="2" ng-model="formData.houseBasicInfo.houseWcCeilingStuff">
+									<label for="wcCeiling_alumin">铝扣板</label>
+
+									<input id="wcCeiling_gypsum" type="radio" name="radiocookm" value="3" ng-model="formData.houseBasicInfo.houseWcCeilingStuff">
+									<label for="wcCeiling_gypsum">石膏板</label>
 								</div>
 						</div>
 					</div>
@@ -283,62 +347,86 @@
 					<!-- green tech start -->
 					<div class="partall">
 						<div class="row">
-							<div class="col-md-12">					    
+							<div class="col-md-12  radio radio-success radio-inline">					    
 							      	<p> 1. 是否需要智能家居系统：<span>*</span></p>
-							      	<input type="radio" name="radiohome" value="1" ng-model="formData.greenTechInfo.greenIHouseSysOption" /> 
-							      	&nbsp;是
-									<input type="radio" name="radiohome" value="0" ng-model="formData.greenTechInfo.greenIHouseSysOption">&nbsp;否
-									<input type="text" placeholder="请输入其他参考意见" ng-model="formData.greenTechInfo.greenIHouseSysOptionView">
+							      	<input id="green_smartHome_y" type="radio" name="radiohome" value="1" ng-model="formData.greenTechInfo.greenIHouseSysOption" /> 
+							      	<label for="green_smartHome_y">是</label>
+
+									<input id="green_smartHome_n" type="radio" name="radiohome" value="0" ng-model="formData.greenTechInfo.greenIHouseSysOption">
+									<label for="green_smartHome_n">否</label>
+
+									<input class="inputtext" type="text" placeholder="请输入其他参考意见" ng-model="formData.greenTechInfo.greenIHouseSysOptionView">
 							</div>
 						</div>
 	                    <div class="row">
-							<div class="col-md-12">					    
+							<div class="col-md-12  radio radio-success radio-inline">					    
 							      	<p> 2.是否需要毛细管系统：<span>*</span></p>
-							      	<input type="radio" name="radiopipe" value="1" ng-model="formData.greenTechInfo.greenCapillarySysOption">&nbsp;是
-									<input type="radio" name="radiopipe" value="0" ng-model="formData.greenTechInfo.greenCapillarySysOption">&nbsp;否
-									<input type="text" placeholder="请输入其他参考意见" ng-model="formData.greenTechInfo.greenCapillarySysOptionView">
+							      	<input id="green_capillary_y" type="radio" name="radiopipe" value="1" ng-model="formData.greenTechInfo.greenCapillarySysOption">
+							      	<label for="green_capillary_y">是</label>
+
+									<input id="green_capillary_n" type="radio" name="radiopipe" value="0" ng-model="formData.greenTechInfo.greenCapillarySysOption">
+									<label for="green_capillary_n">否</label>
+									<input class="inputtext" type="text" placeholder="请输入其他参考意见" ng-model="formData.greenTechInfo.greenCapillarySysOptionView">
 							</div>
 						</div>
 						<div class="row">
-							<div class="col-md-12">					    
+							<div class="col-md-12  radio radio-success radio-inline">					    
 							    <p> 3.是否需要置换式新风系统：<span>*</span></p>
-							    <input type="radio" name="radiowind" value="1" ng-model="formData.greenTechInfo.greenReplaceVentilationSysOpt">&nbsp;是
-								<input type="radio" name="radiowind" value="0" ng-model="formData.greenTechInfo.greenReplaceVentilationSysOpt">&nbsp;否
-								<input type="text" placeholder="请输入其他参考意见" ng-model="formData.greenTechInfo.greenReplaceVentilationSysOptView">
+							    <input id="green_freshAir_y" type="radio" name="radiowind" value="1" ng-model="formData.greenTechInfo.greenReplaceVentilationSysOpt">
+							    <label for="green_freshAir_y">是</label>
+
+								<input id="green_freshAir_n" type="radio" name="radiowind" value="0" ng-model="formData.greenTechInfo.greenReplaceVentilationSysOpt">
+								<label for="green_freshAir_n">否</label>
+
+								<input id="" class="inputtext" type="text" placeholder="请输入其他参考意见" ng-model="formData.greenTechInfo.greenReplaceVentilationSysOptView">
 							</div>
 						</div>
 						<div class="row">
-							<div class="col-md-12">					    
+							<div class="col-md-12  radio radio-success radio-inline">					    
 							    <p> 4.是否需要卫生间净化水系统：<span>*</span></p>
-							    <input type="radio" name="radioclean" value="1" ng-model="formData.greenTechInfo.greenWcClanificationSysOpt">&nbsp;是
-								<input type="radio" name="radioclean" value="0" ng-model="formData.greenTechInfo.greenWcClanificationSysOpt">&nbsp;否 
-								<input type="text" placeholder="请输入其他参考意见" ng-model="formData.greenTechInfo.greenWcClanificatoinSysOptView">
+							    <input id="green_wcPurify_y" type="radio" name="radioclean" value="1" ng-model="formData.greenTechInfo.greenWcClanificationSysOpt">
+							    <label for="green_wcPurify_y">是</label>
+
+								<input id="green_wcPurify_n" type="radio" name="radioclean" value="0" ng-model="formData.greenTechInfo.greenWcClanificationSysOpt">
+								<label for="green_wcPurify_n">否</label> 
+
+								<input id="" class="inputtext" type="text" placeholder="请输入其他参考意见" ng-model="formData.greenTechInfo.greenWcClanificatoinSysOptView">
 							</div>
 						</div>
 						<div class="row">
-							<div class="col-md-12">					    
+							<div class="col-md-12  radio radio-success radio-inline">					    
 							        <p>5.是否需要同层排水系统：<span>*</span></p>
-							        <input type="radio" name="radiodrain" value="1" ng-model="formData.greenTechInfo.greenSameFloorDrainageSysOpt">&nbsp;是
-								    <input type="radio" name="radiodrain" value="0" ng-model="formData.greenTechInfo.greenSameFloorDrainageSysOpt">&nbsp;否
-									<input type="text" placeholder="请输入其他参考意见" ng-model="formData.greenTechInfo.greenSameFloorDrainageSysOptView">
+							        <input id="green_drainage_y" type="radio" name="radiodrain" value="1" ng-model="formData.greenTechInfo.greenSameFloorDrainageSysOpt">
+							        <label for="green_drainage_y">是</label>
+
+								    <input id="green_drainage_y" type="radio" name="radiodrain" value="0" ng-model="formData.greenTechInfo.greenSameFloorDrainageSysOpt">
+								    <label for="green_drainage_y">否</label>
+
+									<input id="" class="inputtext" type="text" placeholder="请输入其他参考意见" ng-model="formData.greenTechInfo.greenSameFloorDrainageSysOptView">
 							</div>
 						</div>
 						<div class="row">
-							<div class="col-md-12">					    
+							<div class="col-md-12  radio radio-success radio-inline">					    
 							      	<p> 6.是否需要隔声降噪系统：<span>*</span></p>
-							      	<input type="radio" name="radionoise" value="1" ng-model="formData.greenTechInfo.greenDenoiseSysOpt">&nbsp;是
-									<input type="radio" name="radionoise" value="0" ng-model="formData.greenTechInfo.greenDenoiseSysOpt">&nbsp;否
-									<input type="text" placeholder="请输入其他参考意见" ng-model="formData.greenTechInfo.greenDenoiseSysOptView">
+							      	<input id="green_noiseReduction_y" type="radio" name="radionoise" value="1" ng-model="formData.greenTechInfo.greenDenoiseSysOpt">
+							      	<label for="green_noiseReduction_y">是</label>
+
+									<input id="green_noiseReduction_n" type="radio" name="radionoise" value="0" ng-model="formData.greenTechInfo.greenDenoiseSysOpt">
+									<label for="green_noiseReduction_n">否</label>
+
+									<input  class="inputtext" type="text" placeholder="请输入其他参考意见" ng-model="formData.greenTechInfo.greenDenoiseSysOptView">
 							</div>
 						</div>
 						<div class="row">
-							<div class="col-md-12">					    
+							<div class="col-md-12  radio radio-success radio-inline">					    
 							      	<p> 7. 是否需要垃圾处理系统：<span>*</span></p>
-							      	<input type="radio" name="radiorubbish" value="1" 
-							      	ng-model="formData.greenTechInfo.greenLitterSysOpt">&nbsp;是
-									<input type="radio" name="radiorubbish" value="0"
-									ng-model="formData.greenTechInfo.greenLitterSysOpt">&nbsp;否
-									<input type="text" placeholder="请输入其他参考意见" ng-model="formData.greenTechInfo.greenLitterSysOptView">
+							      	<input id="green_garbageDisposal_y" type="radio" name="radiorubbish" value="1" 
+							      	ng-model="formData.greenTechInfo.greenLitterSysOpt">
+							      	<label for="green_garbageDisposal_y">是</label>
+									<input id="green_garbageDisposal_n" type="radio" name="radiorubbish" value="0"
+									ng-model="formData.greenTechInfo.greenLitterSysOpt">
+									<label for="green_garbageDisposal_n">否</label>
+									<input class="inputtext" type="text" placeholder="请输入其他参考意见" ng-model="formData.greenTechInfo.greenLitterSysOptView">
 							</div>
 						</div>
 					</div>
@@ -350,46 +438,56 @@
 					</div>
 					<div class="partall abstruse">
 						<div class="row">
-							<div class="col-md-12 ">					    
+							<div class="col-md-12 checkbox checkbox-success checkbox-inline">					    
 							      	<p> 1.是否有考虑设置：<span>*</span></p>
-							      	<div class="checkbox abc-checkbox">
-							      	<input id="checkbox1" class="checkbox-Success" type="checkbox" name="checkboxset" value="1"  ng-click="checkbox($event, 'lrConsiderSettingOpt', 'abstruse', formData.abstruse.lrConsiderSettingOptArr)"><label for="checkbox1">鞋柜</label>
-									</div>
-									<input id="checkbox2" class="checkbox-Success" type="checkbox" name="checkboxset" value="2"  ng-click="checkbox($event, 'lrConsiderSettingOpt', 'abstruse', formData.abstruse.lrConsiderSettingOptArr)"><label for="checkbox2">衣柜</label>
+							      	<input id="abs_set_shoes" type="checkbox" name="checkboxset" value="1"  ng-click="checkbox($event, 'lrConsiderSettingOpt', 'abstruse', formData.abstruse.lrConsiderSettingOptArr)">
+							      	<label for="abs_set_shoes">鞋柜</label>
 
-							      	<input id="checkbox3" class="checkbox-Success" type="checkbox" name="checkboxset" value="3"  ng-click="checkbox($event, 'lrConsiderSettingOpt', 'abstruse', formData.abstruse.lrConsiderSettingOptArr)"><label for="checkbox3">镜子(整装)</label>
+									<input id="abs_set_wardrobe" type="checkbox" name="checkboxset" value="2"  ng-click="checkbox($event, 'lrConsiderSettingOpt', 'abstruse', formData.abstruse.lrConsiderSettingOptArr)">
+									<label for="abs_set_wardrobe">衣柜</label>
 
-									<input id="checkbox4" class="checkbox-Success" type="checkbox" name="checkboxset" value="4"  ng-click="checkbox($event, 'lrConsiderSettingOpt', 'abstruse', formData.abstruse.lrConsiderSettingOptArr)"><label for="checkbox4">纯装饰性</label>
+							      	<input id="abs_set_mirror" type="checkbox" name="checkboxset" value="3"  ng-click="checkbox($event, 'lrConsiderSettingOpt', 'abstruse', formData.abstruse.lrConsiderSettingOptArr)">
+							      	<label for="abs_set_mirror">镜子(整装)</label>
+
+									<input id="abs_set_decorat" type="checkbox" name="checkboxset" value="4"  ng-click="checkbox($event, 'lrConsiderSettingOpt', 'abstruse', formData.abstruse.lrConsiderSettingOptArr)">
+									<label for="abs_set_decorat">纯装饰性</label>
 							</div>
 						</div>
 						<div class="row">
-							<div class="col-md-12">					    
+							<div class="col-md-12 radio radio-success radio-inline">					    
 							      	<p> 2. 是否介意入门能够直观全室：<span>*</span></p>
-							      	<input type="radio" name="radiodoor" value="1" ng-model="formData.abstruse.lrVisualWholeRoomOpinion">&nbsp;是
-									<input type="radio" name="radiodoor" value="0" ng-model="formData.abstruse.lrVisualWholeRoomOpinion">&nbsp;否
+							      	<input id="abs_mindWholeRoom_y" type="radio" name="radiodoor" value="1" ng-model="formData.abstruse.lrVisualWholeRoomOpinion">
+							      	<label for="mindWholeRoom_y">是</label>
+
+									<input id="abs_mindWholeRoom_n" type="radio" name="radiodoor" value="0" ng-model="formData.abstruse.lrVisualWholeRoomOpinion">
+									<label for="abs_mindWholeRoom_n">否</label>
 							</div>
 						</div>
 						<div class="row">
-							<div class="col-md-12">					    
+							<div class="col-md-12 radio radio-success radio-inline">					    
 							      	<p> 3.玄关是否考虑其他文化属性或气氛（例如：字画、古董、雕塑等）</p>
-							      	<input type="radio" name="radioculture" value="1" ng-model="formData.abstruse.lrScreenCultureOpt" ng-change="switch('radioculture', formData.abstruse.lrScreenCultureOpt)">&nbsp;是
-									<input type="radio" name="radioculture" value="0" ng-model="formData.abstruse.lrScreenCultureOpt" ng-change="switch('radioculture', formData.abstruse.lrScreenCultureOpt)">&nbsp;否
+							      	<input id="abs_culture_y" type="radio" name="radioculture" value="1" ng-model="formData.abstruse.lrScreenCultureOpt" ng-change="switch('radioculture', formData.abstruse.lrScreenCultureOpt)">
+							      	<label for="abs_culture_y">是</label>
+									<input id="abs_culture_n" type="radio" name="radioculture" value="0" ng-model="formData.abstruse.lrScreenCultureOpt" ng-change="switch('radioculture', formData.abstruse.lrScreenCultureOpt)">
+									<label for="abs_culture_n">否</label>
 									<div class="additional_info">
-										<input type="text" name="" ng-model="formData.abstruse.lrScreenCultureOptView">
+										<input class="inputtext" type="text" name="" ng-model="formData.abstruse.lrScreenCultureOptView">
 									</div>
 							</div>
 						</div>
 						<div class="row">
-							<div class="col-md-12">					    
+							<div class="col-md-12 radio radio-success radio-inline">					    
 							      	<p> 4.入户门更换为霍曼品牌</p>
-							     	<input type="radio" name="radiobrand" value="1" ng-model="formData.abstruse.lrGateHuomanSelOpt">&nbsp;是
-									<input type="radio" name="radiobrand" value="0" ng-model="formData.abstruse.lrGateHuomanSelOpt">&nbsp;否
+							     	<input id="abs_chgHuoman_y" type="radio" name="radiobrand" value="1" ng-model="formData.abstruse.lrGateHuomanSelOpt">
+							     	<label for="abs_chgHuoman_y">是</label>
+									<input id="abs_chgHuoman_n" type="radio" name="radiobrand" value="0" ng-model="formData.abstruse.lrGateHuomanSelOpt">
+									<label for="abs_chgHuoman_n">否</label>
 							</div>
 						</div>
 						<div class="row">
 							<div class="col-md-12">					    
 							      	<p> 5.对玄关是有特殊要求（例如：灯光、色彩、特殊造型等）</p>
-							      	<input type="text" placeholder="请填写参考意见" ng-model="formData.abstruse.lrScreenSpec">
+							      	<input class="inputtext" type="text" placeholder="请填写参考意见" ng-model="formData.abstruse.lrScreenSpec">
 							</div>
 						</div>
 					</div>
@@ -399,94 +497,132 @@
 					<div class="row"><h3>客厅部分</h3></div>
 					<div class="partall">
 						<div class="row">
-							<div class="col-md-12">					    
+							<div class="col-md-12 checkbox checkbox-success checkbox-inline">					    
 							      	<p> 1. 客厅的主要功能：<span>*</span></p>
-							      	<input type="checkbox" name="checkboxset" value="1" ng-click="checkbox($event, 'sittingLrMainFun', 'livingRoom', formData.livingRoom.sittingLrMainFunArr)">&nbsp;会客
-									<input type="checkbox" name="checkboxset" value="2" ng-click="checkbox($event, 'sittingLrMainFun', 'livingRoom', formData.livingRoom.sittingLrMainFunArr)">&nbsp;休息
-							      	<input type="checkbox" name="checkboxset" value="3" ng-click="checkbox($event, 'sittingLrMainFun', 'livingRoom', formData.livingRoom.sittingLrMainFunArr)">&nbsp;娱乐
-									<input type="checkbox" name="checkboxset" value="4" ng-click="checkbox($event, 'sittingLrMainFun', 'livingRoom', formData.livingRoom.sittingLrMainFunArr)">&nbsp;阅读
+							      	<input id="livingRoom_fun_guest" type="checkbox" name="checkboxset" value="1" ng-click="checkbox($event, 'sittingLrMainFun', 'livingRoom', formData.livingRoom.sittingLrMainFunArr)">
+							      	<label for="livingRoom_fun_guest">会客</label>
+
+									<input id="livingRoom_fun_rest" type="checkbox" name="checkboxset" value="2" ng-click="checkbox($event, 'sittingLrMainFun', 'livingRoom', formData.livingRoom.sittingLrMainFunArr)">
+									<label for="livingRoom_fun_rest">休息</label>
+
+							      	<input id="livingRoom_fun_ amuse" type="checkbox" name="checkboxset" value="3" ng-click="checkbox($event, 'sittingLrMainFun', 'livingRoom', formData.livingRoom.sittingLrMainFunArr)">
+							      	<label for="livingRoom_fun_ amuse">娱乐</label>
+
+									<input id="livingRoom_fun_read" type="checkbox" name="checkboxset" value="4" ng-click="checkbox($event, 'sittingLrMainFun', 'livingRoom', formData.livingRoom.sittingLrMainFunArr)">
+									<label for="livingRoom_fun_read">阅读</label>
 							</div>
 						</div>
 						<div class="row">
-							<div class="col-md-12">					    
+							<div class="col-md-12 radio radio-success radio-inline">					    
 							      	<p> 2.接待客人：<span>*</span></p>
-							      	<input type="text" placeholder="人数" ng-model="formData.livingRoom.sittingReceptionNumOpt">
-							      	<input type="radio" name="radiodoor" value="1" ng-model="formData.livingRoom.sittingReceptiveSel">&nbsp;经常
-									<input type="radio" name="radiodoor" value="0" ng-model="formData.livingRoom.sittingReceptiveSel">&nbsp;偶尔
+							      	<input class="inputtext" type="text" placeholder="人数" ng-model="formData.livingRoom.sittingReceptionNumOpt">
+
+							      	<input id="livingRoom_treatGuest_often" type="radio" name="radiodoor" value="1" ng-model="formData.livingRoom.sittingReceptiveSel">
+							      	<label for="livingRoom_treatGuest_often">经常</label>
+
+									<input id="livingRoom_treatGuest_occasion" type="radio" name="radiodoor" value="0" ng-model="formData.livingRoom.sittingReceptiveSel">
+									<label for="livingRoom_treatGuest_occasion">偶尔</label>
 							</div>
 						</div>
 						<div class="row">
-							<div class="col-md-12">					    
+							<div class="col-md-12 radio radio-success radio-inline">					    
 							      	<p> 3. 是否与餐厅为一体：<span>*</span></p>
-							      	<input type="radio" name="radiowhole" value="1" ng-model="formData.livingRoom.sittingDrCombineOpt">&nbsp;是
-									<input type="radio" name="radiowhole" value="0" ng-model="formData.livingRoom.sittingDrCombineOpt">&nbsp;否
+							      	<input id="livingRoom_cook_y" type="radio" name="radiowhole" value="1" ng-model="formData.livingRoom.sittingDrCombineOpt">
+							      	<label for="livingRoom_cook_y">是</label>
+
+									<input id="livingRoom_cook_n" type="radio" name="radiowhole" value="0" ng-model="formData.livingRoom.sittingDrCombineOpt">
+									<label for="livingRoom_cook_n">否</label>
 							</div>
 						</div>
 						<div class="row">
-							<div class="col-md-12">					    
+							<div class="col-md-12 radio radio-success radio-inline">					    
 							      	<p> 4.客厅的基本色调：<span>*</span></p>
-							     	<input type="radio" name="radiotone" value="1" ng-model="formData.livingRoom.sittingBasicTone">&nbsp;暖色系
-									<input type="radio" name="radiotone" value="0" ng-model="formData.livingRoom.sittingBasicTone">&nbsp;冷色系
+							     	<input id="livingRoom_color_warm" type="radio" name="radiotone" value="1" ng-model="formData.livingRoom.sittingBasicTone">
+							     	<label for="livingRoom_color_warm">暖色系</label>
+
+									<input id="livingRoom_color_cold" type="radio" name="radiotone" value="0" ng-model="formData.livingRoom.sittingBasicTone">
+									<label for="livingRoom_color_cold">冷色系</label>
 							</div>
 						</div>
 						<div class="row">
-							<div class="col-md-12">					    
+							<div class="col-md-12 checkbox checkbox-success checkbox-inline">					    
 							      	<p> 5. 客人来家中聚会内容：<span>*</span></p>
-							      	<input type="checkbox" name="checkboxset" value="1" ng-click="checkbox($event, 'sittingPartyContent', 'livingRoom', formData.livingRoom.sittingPartyContentArr)">&nbsp;聊天
-									<input type="checkbox" name="checkboxset" value="2" ng-click="checkbox($event, 'sittingPartyContent', 'livingRoom', formData.livingRoom.sittingPartyContentArr)">&nbsp;PARTY
-							      	<input type="checkbox" name="checkboxset" value="3" ng-click="checkbox($event, 'sittingPartyContent', 'livingRoom', formData.livingRoom.sittingPartyContentArr)">&nbsp;卡拉OK
-							      	<input type="text" placeholder="请填写其他参考意见" ng-model="formData.livingRoom.sittingPartyContentOpinion">
+							      	<input id="livingRoom_partyCont_talk" type="checkbox" name="checkboxset" value="1" ng-click="checkbox($event, 'sittingPartyContent', 'livingRoom', formData.livingRoom.sittingPartyContentArr)">
+							      	<label for="livingRoom_partyCont_talk">聊天</label>
+
+									<input id="livingRoom_partyCont_party" type="checkbox" name="checkboxset" value="2" ng-click="checkbox($event, 'sittingPartyContent', 'livingRoom', formData.livingRoom.sittingPartyContentArr)">
+									<label for="livingRoom_partyCont_party">PARTY</label>
+
+							      	<input id="livingRoom_partyCont_sing" type="checkbox" name="checkboxset" value="3" ng-click="checkbox($event, 'sittingPartyContent', 'livingRoom', formData.livingRoom.sittingPartyContentArr)">
+							      	<label for="livingRoom_partyCont_sing">卡拉OK</label>
+							      	<input class="inputtext" type="text" placeholder="请填写其他参考意见" ng-model="formData.livingRoom.sittingPartyContentOpinion">
 							</div>
 						</div>
 						<div class="row">
-							<div class="col-md-12">					    
+							<div class="col-md-12 radio radio-success radio-inline">					    
 							      	<p> 6. 是否需要影视墙背景造型：<span>*</span></p>
-							      	<input type="radio" name="radiobg" value="1" ng-model="formData.livingRoom.sittingFilmWallBackgroundOpt">&nbsp;是
-									<input type="radio" name="radiobg" value="0" ng-model="formData.livingRoom.sittingFilmWallBackgroundOpt">&nbsp;否
+							      	<input id="livingRoom_needbg_y" type="radio" name="radiobg" value="1" ng-model="formData.livingRoom.sittingFilmWallBackgroundOpt">
+							      	<label for="livingRoom_needbg_y">是</label>
+
+									<input id="livingRoom_needbg_n" type="radio" name="radiobg" value="0" ng-model="formData.livingRoom.sittingFilmWallBackgroundOpt">
+									<label for="livingRoom_needbg_n">否</label>
 							</div>
 						</div>
 						<div class="row">
-							<div class="col-md-12">					    
+							<div class="col-md-12 radio radio-success radio-inline">					    
 							      	<p> 7. 客厅地面材料要求：<span>*</span></p>
-							      	<input type="radio" name="radiorequire" value="1" ng-model="formData.livingRoom.sittingGroundStuffRequirements">&nbsp;实木地板
-									<input type="radio" name="radiorequire" value="2" ng-model="formData.livingRoom.sittingGroundStuffRequirements">&nbsp;复合地板
-									<input type="radio" name="radiorequire" value="3" ng-model="formData.livingRoom.sittingGroundStuffRequirements">&nbsp;地砖
-									<input type="radio" name="radiorequire" value="4" ng-model="formData.livingRoom.sittingGroundStuffRequirements">&nbsp;石材
-									<input type="radio" name="radiorequire" value="5" ng-model="formData.livingRoom.sittingGroundStuffRequirements">&nbsp;拼花
+							      	<input id="livingRoom_floMaterial_wood" type="radio" name="radiorequire" value="1" ng-model="formData.livingRoom.sittingGroundStuffRequirements">
+							      	<label for="livingRoom_floMaterial_wood">实木地板</label>
+
+									<input id="livingRoom_floMaterial_composite" type="radio" name="radiorequire" value="2" ng-model="formData.livingRoom.sittingGroundStuffRequirements">
+									<label for="livingRoom_floMaterial_composite">复合地板</label>
+
+									<input id="livingRoom_floMaterial_brick" type="radio" name="radiorequire" value="3" ng-model="formData.livingRoom.sittingGroundStuffRequirements">
+									<label for="livingRoom_floMaterial_brick">地砖</label>
+
+									<input id="livingRoom_floMaterial_stone" type="radio" name="radiorequire" value="4" ng-model="formData.livingRoom.sittingGroundStuffRequirements">
+									<label for="livingRoom_floMaterial_stone">石材</label>
+
+									<input id="livingRoom_floMaterial_parquet" type="radio" name="radiorequire" value="5" ng-model="formData.livingRoom.sittingGroundStuffRequirements">
+									<label for="livingRoom_floMaterial_parquet">拼花</label>
 							</div>
 						</div>
 						<div class="row">
-							<div class="col-md-12">					    
-							      	<p> 8.  音像制品数量：<span>*</span></p>
-							      	<input type="text" placeholder="数量" ng-model="formData.livingRoom.sittingAoObjectsNum">
+							<div class="col-md-12 radio radio-success radio-inline">					    
+							      	<p> 8. 音像制品数量：<span>*</span></p>
+							      	<input class="inputtext" type="text" placeholder="数量" ng-model="formData.livingRoom.sittingAoObjectsNum">
 							      	<sapn>是否需要特别设置：</sapn>
-							      	<input type="radio" name="radioset" value="1" ng-model="formData.livingRoom.sittingAoObjectsQtySpecialSetOpt">&nbsp;是
-									<input type="radio" name="radioset" value="0" ng-model="formData.livingRoom.sittingAoObjectsQtySpecialSetOpt">&nbsp;否
+							      	<input id="livingRoom_soundSet_y" type="radio" name="radioset" value="1" ng-model="formData.livingRoom.sittingAoObjectsQtySpecialSetOpt">
+							      	<label for="livingRoom_soundSet_y">是</label>
+									<input id="livingRoom_soundSet_n" type="radio" name="radioset" value="0" ng-model="formData.livingRoom.sittingAoObjectsQtySpecialSetOpt">
+									<label for="livingRoom_soundSet_n">否</label>
 							</div>
 						</div>
 						<div class="row">
-							<div class="col-md-12">					    
+							<div class="col-md-12 radio radio-success radio-inline">					    
 							      	<p> 9.  是否需要吊顶：<span>*</span></p>
-							      	<input type="radio" name="radiorooff" value="1" ng-model="formData.livingRoom.sittingCeilingOpt">&nbsp;是
-									<input type="radio" name="radiorooff" value="0" ng-model="formData.livingRoom.sittingCeilingOpt">&nbsp;否
+							      	<input id="livingRoom_needProof_y" type="radio" name="radiorooff" value="1" ng-model="formData.livingRoom.sittingCeilingOpt">
+							      	<label for="livingRoom_needProof_y">是</label>
+									<input id="livingRoom_needProof_n" type="radio" name="radiorooff" value="0" ng-model="formData.livingRoom.sittingCeilingOpt">
+									<label for="livingRoom_needProof_n">否</label>
 							</div>
 						</div>
 						<div class="row">
 							<div class="col-md-12">					    
 							      	<p>10.  客厅内的视听设备有哪些：<span>*</span></p>
-							      	<input type="text" placeholder="请填写试听设备" ng-model="formData.livingRoom.sittingCeilingType">
+							      	<input class="inputtext" type="text" placeholder="请填写试听设备" ng-model="formData.livingRoom.sittingCeilingType">
 							</div>
 						</div>
 	                    <div class="row">
 							<div class="col-md-12">					    
 							      	<p>11.是否有其他使用功能要求：<span>*</span></p>
-							      	<input type="text" placeholder="请填写要求" ng-model="formData.livingRoom.sittingOtherFuncRequest">
+							      	<input class="inputtext" type="text" placeholder="请填写要求" ng-model="formData.livingRoom.sittingOtherFuncRequest">
 							</div>
 						</div>
 						<div class="row">
 							<div class="col-md-12">					    
 							      	<p>12.对客厅有无特别的灯光设计要求：<span>*</span></p>
-							      	<input type="text" placeholder=""  ng-model="formData.livingRoom.sittingSpecialLightsDesignOpt">
+							      	<input class="inputtext" type="text" placeholder=""  ng-model="formData.livingRoom.sittingSpecialLightsDesignOpt">
 							</div>
 						</div>
 					</div>
@@ -497,77 +633,103 @@
 					<div class="row"><h3>餐厅部分</h3></div>
 					<div class="partall">
 						<div class="row">
-							<div class="col-md-12">
+							<div class="col-md-12 checkbox checkbox-success checkbox-inline">
 						      	<p>1.餐厅使用人数：<span>*</span></p>
-						      	<input type="text" placeholder="人数" ng-model="formData.dinningRoom.drUseNum">
+						      	<input class="inputtext" type="text" placeholder="人数" ng-model="formData.dinningRoom.drUseNum">
 						      	<span>频率：</span>
-						      	<input type="checkbox" name="checkperson" value="1" ng-click="checkbox($event, 'drUseNumRate', 'dinningRoom', formData.dinningRoom.drUseNumRateArr)">&nbsp;晚餐
-								<input type="checkbox" name="checkperson" value="2" ng-click="checkbox($event, 'drUseNumRate', 'dinningRoom', formData.dinningRoom.drUseNumRateArr)">&nbsp;午餐
-						      	<input type="checkbox" name="checkperson" value="3" ng-click="checkbox($event, 'drUseNumRate', 'dinningRoom', formData.dinningRoom.drUseNumRateArr)" >&nbsp;早餐
-						      	<input type="checkbox" name="checkperson" value="4" ng-click="checkbox($event, 'drUseNumRate', 'dinningRoom', formData.dinningRoom.drUseNumRateArr)" >&nbsp;偶尔
+						      	<input id="restaurant_dinner" type="checkbox" name="checkperson" value="1" ng-click="checkbox($event, 'drUseNumRate', 'dinningRoom', formData.dinningRoom.drUseNumRateArr)">
+						      	<label for="restaurant_dinner">晚餐</label>
+
+								<input id="restaurant_lunch" type="checkbox" name="checkperson" value="2" ng-click="checkbox($event, 'drUseNumRate', 'dinningRoom', formData.dinningRoom.drUseNumRateArr)">
+								<label for="restaurant_lunch">午餐</label>
+
+						      	<input id="restaurant_breakfast" type="checkbox" name="checkperson" value="3" ng-click="checkbox($event, 'drUseNumRate', 'dinningRoom', formData.dinningRoom.drUseNumRateArr)" >
+						      	<label for="restaurant_breakfast">早餐</label>
+
+						      	<input id="restaurant_occasion" type="checkbox" name="checkperson" value="4" ng-click="checkbox($event, 'drUseNumRate', 'dinningRoom', formData.dinningRoom.drUseNumRateArr)" >
+						      	<label for="restaurant_occasion">偶尔</label>
 					      	</div>
 						</div>
 						<div class="row">
-							<div class="col-md-12">					    
+							<div class="col-md-12 radio radio-success radio-inline">					    
 						      	<p>2.餐桌餐椅配置：<span>*</span></p>
-						      	<input type="radio" name="radiodesk" value="1" ng-model="formData.dinningRoom.drChairsConfg">&nbsp;1*4
-						      	<input type="radio" name="radiodesk" value="2" ng-model="formData.dinningRoom.drChairsConfg">&nbsp;1*6
-						      	<input type="radio" name="radiodesk" value="3" ng-model="formData.dinningRoom.drChairsConfg">&nbsp;其他
-						      	<input type="text" placeholder="请填写餐桌配置" ng-model="formData.dinningRoom.drChairsDetails">
+						      	<input id="restaurant_deskSet_four" type="radio" name="radiodesk" value="1" ng-model="formData.dinningRoom.drChairsConfg">
+						      	<label for="restaurant_deskSet_four">1*4</label>
+						      	<input id="restaurant_deskSet_six" type="radio" name="radiodesk" value="2" ng-model="formData.dinningRoom.drChairsConfg">
+						      	<label for="restaurant_deskSet_six">1*6</label>
+						      	<input id="restaurant_deskSet_other" type="radio" name="radiodesk" value="3" ng-model="formData.dinningRoom.drChairsConfg">
+						      	<label for="restaurant_deskSet_other">其他</label>
+						      	<input class="inputtext" type="text" placeholder="请填写餐桌配置" ng-model="formData.dinningRoom.drChairsDetails">
 							</div>
 						</div>
 						<div class="row">
-							<div class="col-md-12">					    
+							<div class="col-md-12 checkbox checkbox-success checkbox-inline">					    
 						      	<p>3.是否需要配备：<span>*</span></p>
-						      	<input type="checkbox" name="checkeq" value="1" ng-click="checkbox($event, 'drEquipmentOpt', 'dinningRoom', formData.dinningRoom.drEquipmentOptArr)">&nbsp;餐柜
-						      	<input type="checkbox" name="checkeq" value="2" ng-click="checkbox($event, 'drEquipmentOpt', 'dinningRoom', formData.dinningRoom.drEquipmentOptArr)">&nbsp;酒柜
-						      	<input type="checkbox" name="checkeq" value="3" ng-click="checkbox($event, 'drEquipmentOpt', 'dinningRoom', formData.dinningRoom.drEquipmentOptArr)">&nbsp;陈列柜
+						      	<input id="restaurant_set_buffet" type="checkbox" name="checkeq" value="1" ng-click="checkbox($event, 'drEquipmentOpt', 'dinningRoom', formData.dinningRoom.drEquipmentOptArr)">
+						      	<label for="restaurant_set_buffet">餐柜</label>
+
+						      	<input id="restaurant_set_wine" type="checkbox" name="checkeq" value="2" ng-click="checkbox($event, 'drEquipmentOpt', 'dinningRoom', formData.dinningRoom.drEquipmentOptArr)">
+						      	<label for="restaurant_set_wine">酒柜</label>
+
+						      	<input id="restaurant_set_display" type="checkbox" name="checkeq" value="3" ng-click="checkbox($event, 'drEquipmentOpt', 'dinningRoom', formData.dinningRoom.drEquipmentOptArr)">
+						      	<label for="restaurant_set_display">陈列柜</label>
 							</div>
 						</div>
 						<div class="row">
-							<div class="col-md-12">					    
+							<div class="col-md-12 radio radio-success radio-inline">					    
 						      	<p>4.有无藏酒：<span>*</span></p>
-						      	<input type="radio" name="radiowine" value="1" ng-model="formData.dinningRoom.drWineCabinetOpt">&nbsp;是
-						      	<input type="radio" name="radiowine" value="0" ng-model="formData.dinningRoom.drWineCabinetOpt">&nbsp;否  
+						      	<input id="restaurant_hasWine_y" type="radio" name="radiowine" value="1" ng-model="formData.dinningRoom.drWineCabinetOpt">
+						      	<label for="restaurant_hasWine_y">是</label>
+						      	<input id="restaurant_hasWine_n" type="radio" name="radiowine" value="0" ng-model="formData.dinningRoom.drWineCabinetOpt">
+						      	<label for="restaurant_hasWine_n">否</label>  
 							</div>
 						</div>
 						<div class="row">
-							<div class="col-md-12">					    
+							<div class="col-md-12 radio radio-success radio-inline">					    
 						      	<p>5. 餐厅是否是家人（朋友）聚会（交流）的主要场所：<span>*</span></p>
-						      	<input type="radio" name="radiosite" value="1" ng-model="formData.dinningRoom.drPartyMainVenueOpt">&nbsp;是
-						      	<input type="radio" name="radiosite" value="0" ng-model="formData.dinningRoom.drPartyMainVenueOpt">&nbsp;否
+						      	<input id="restaurant_mainPlace_y" type="radio" name="radiosite" value="1" ng-model="formData.dinningRoom.drPartyMainVenueOpt">
+						      	<label for="restaurant_mainPlace_y">是</label>
+						      	<input id="restaurant_mainPlace_n" type="radio" name="radiosite" value="0" ng-model="formData.dinningRoom.drPartyMainVenueOpt">
+						      	<label for="restaurant_mainPlace_n">否</label>
 						      
 							</div>
 						</div>
 						<div class="row">
-							<div class="col-md-12">					    
+							<div class="col-md-12 radio radio-success radio-inline">					    
 						      	<p>6.  是否需要在餐厅看电视：<span>*</span></p>
-						      	<input type="radio" name="radiolw" value="1" ng-model="formData.dinningRoom.drTvOpt">&nbsp;是
-						      	<input type="radio" name="radiolw" value="0" ng-model="formData.dinningRoom.drTvOpt">&nbsp;否
+						      	<input id="restaurant_watchTv_y" type="radio" name="radiolw" value="1" ng-model="formData.dinningRoom.drTvOpt">
+						      	<label for="restaurant_watchTv_y">是</label>
+						      	<input id="restaurant_watchTv_n" type="radio" name="radiolw" value="0" ng-model="formData.dinningRoom.drTvOpt">
+						      	<label for="restaurant_watchTv_n">否</label>
 						      
 							</div>
 						</div>
 						<div class="row">
-							<div class="col-md-12">					    
+							<div class="col-md-12 radio radio-success radio-inline">					    
 						      	<p>7.  家庭烹饪的特点：<span>*</span></p>
-						      	<input type="radio" name="radiocook" value="1" ng-model="formData.dinningRoom.drCookingType">&nbsp;中餐
-						      	<input type="radio" name="radiocook" value="0" ng-model="formData.dinningRoom.drCookingType">&nbsp;西餐
+						      	<input id="restaurant_cookFeature_cn" type="radio" name="radiocook" value="1" ng-model="formData.dinningRoom.drCookingType">
+						      	<label for="restaurant_cookFeature_cn">中餐</label>
+						      	<input id="restaurant_cookFeature_wt" type="radio" name="radiocook" value="0" ng-model="formData.dinningRoom.drCookingType">
+						      	<label for="restaurant_cookFeature_wt">西餐</label>
 						      
 							</div>
 						</div>
 						<div class="row">
-							<div class="col-md-12">					    
+							<div class="col-md-12 radio radio-success radio-inline">					    
 						      	<p>8.  娱乐活动：<span>*</span></p>
-						      	<input type="radio" name="radioet" value="1" ng-model="formData.dinningRoom.drAmuseActivites">&nbsp;棋
-						      	<input type="radio" name="radioet" value="2" ng-model="formData.dinningRoom.drAmuseActivites">&nbsp;牌
-						      	<input type="radio" name="radioet" value="3" ng-model="formData.dinningRoom.drAmuseActivites">&nbsp;其他
+						      	<input id="restaurant_amuse_qi" type="radio" name="radioet" value="1" ng-model="formData.dinningRoom.drAmuseActivites">
+						      	<label for="restaurant_amuse_qi">棋</label>
+						      	<input id="restaurant_amuse_pai" type="radio" name="radioet" value="2" ng-model="formData.dinningRoom.drAmuseActivites">
+						      	<label for="restaurant_amuse_pai">牌</label>
+						      	<input id="restaurant_amuse_other" type="radio" name="radioet" value="3" ng-model="formData.dinningRoom.drAmuseActivites">
+						      	<label for="restaurant_amuse_other">其他</label>
 						      
 							</div>
 						</div>
 						<div class="row">
 							<div class="col-md-12">					    
 						      	<p>9.  对餐厅色彩要求：<span>*</span></p>
-						      	<input type="text" placeholder="请填写要求" ng-model="formData.dinningRoom.drColorRequest">
+						      	<input class="inputtext" type="text" placeholder="请填写要求" ng-model="formData.dinningRoom.drColorRequest">
 							</div>
 						</div>
 					</div>
@@ -580,40 +742,47 @@
 						<div class="row">
 							<div class="col-md-12">
 								<p> 1.电气设备(电源问题)：<span>*</span></p>
-							   	<input type="text" placeholder="请输入相关要求" ng-model="formData.kitchen.drColorRequest">
+							   	<input class="inputtext" type="text" placeholder="请输入相关要求" ng-model="formData.kitchen.drColorRequest">
 						   	</div>
 						</div>
 						<div class="row">
 							<div class="col-md-12">
 								<p> 2.  对墙、地材料或色彩要求：<span>*</span></p>
-							   <input type="text" placeholder="请输入相关要求" ng-model="formData.kitchen.kitColorRequest">
+							   <input class="inputtext" type="text" placeholder="请输入相关要求" ng-model="formData.kitchen.kitColorRequest">
 							</div>
 						</div>
 						<div class="row">
 							<div class="col-md-12">
 								<p> 3.  对水、电设备要求(冷\热水设施)：<span>*</span></p>
-							   <input type="text" placeholder="请输入相关要求" ng-model="formData.kitchen.kitWaterEquipmentRequest">
+							   <input class="inputtext" type="text" placeholder="请输入相关要求" ng-model="formData.kitchen.kitWaterEquipmentRequest">
 							</div>
 						</div>
 						<div class="row">
 							<div class="col-md-12">
 								<p>4.  对橱柜档次\品质\品牌要求：<span>*</span></p>
-							   <input type="text" placeholder="请输入相关要求" ng-model="formData.kitchen.kitCabinetRequest">
+							   <input class="inputtext" type="text" placeholder="请输入相关要求" ng-model="formData.kitchen.kitCabinetRequest">
 							</div>
 						</div>
 						<div class="row">
-							<div class="col-md-12">
+							<div class="col-md-12 radio radio-success radio-inline">
 								<p>5.  吊顶材料：<span>*</span></p>
-								<input type="radio" name="radioroofc" value="1" ng-model="formData.kitchen.kitCeilingStuff">&nbsp;PVC
-								<input type="radio" name="radioroofc" value="2" ng-model="formData.kitchen.kitCeilingStuff">&nbsp;铝扣板
-								<input type="radio" name="radioroofc" value="3" ng-model="formData.kitchen.kitCeilingStuff">&nbsp;防水石膏板
-								<input type="radio" name="radioroofc" value="4" ng-model="formData.kitchen.kitCeilingStuff">&nbsp;铝塑板
+								<input id="kitchen_proofMaterial_pvc" type="radio" name="radioroofc" value="1" ng-model="formData.kitchen.kitCeilingStuff">
+								<label for="kitchen_proofMaterial_pvc">PVC</label>
+
+								<input id="kitchen_proofMaterial_aluminum" type="radio" name="radioroofc" value="2" ng-model="formData.kitchen.kitCeilingStuff">
+								<label for="kitchen_proofMaterial_aluminum">铝扣板</label>
+
+								<input id="kitchen_proofMaterial_gypsum" type="radio" name="radioroofc" value="3" ng-model="formData.kitchen.kitCeilingStuff">
+								<label for="kitchen_proofMaterial_gypsum">防水石膏板</label>
+
+								<input id="kitchen_proofMaterial_lastic" type="radio" name="radioroofc" value="4" ng-model="formData.kitchen.kitCeilingStuff">
+								<label for="kitchen_proofMaterial_lastic">铝塑板</label>
 							</div>
 						</div>
 						<div class="row">
 							<div class="col-md-12">
 								<p> 6.  照明要求：<span>*</span></p>
-							   	<input type="text" placeholder="请输入相关要求" ng-model="formData.kitchen.kitLightingRequest">
+							   	<input class="inputtext" type="text" placeholder="请输入相关要求" ng-model="formData.kitchen.kitLightingRequest">
 							</div>
 						</div>
 					</div>
@@ -625,66 +794,90 @@
 					<div class="row"><h3>书房部分</h3></div>
 					<div class="partall">
 						<div class="row">
-							<div class="col-md-12">
+							<div class="col-md-12 checkbox checkbox-success checkbox-inline">
 								<p> 1.书房功能：<span>*</span></p>
-							  	<input type="checkbox" name="checkboxset" value="1" ng-click="checkbox($event, 'libFun', 'readingRoom', formData.readingRoom.libFunArr)">&nbsp;读书
-								<input type="checkbox" name="checkboxset" value="2" ng-click="checkbox($event, 'libFun', 'readingRoom', formData.readingRoom.libFunArr)">&nbsp;写作
-							    <input type="checkbox" name="checkboxset" value="3" ng-click="checkbox($event, 'libFun', 'readingRoom', formData.readingRoom.libFunArr)">&nbsp;会客
-							    <input type="checkbox" name="checkboxset" value="4" ng-click="checkbox($event, 'libFun', 'readingRoom', formData.readingRoom.libFunArr)">&nbsp;品茶
-							    <input type="checkbox" name="checkboxset" value="5" ng-click="checkbox($event, 'libFun', 'readingRoom', formData.readingRoom.libFunArr)">&nbsp;电脑操作
-							    <input type="text" placeholder="请输入相关要求">
+							  	<input id="readRoom_fun_read" type="checkbox" name="checkboxset" value="1" ng-click="checkbox($event, 'libFun', 'readingRoom', formData.readingRoom.libFunArr)">
+							  	<label for="readRoom_fun_read">读书</label>
+
+								<input id="readRoom_fun_write" type="checkbox" name="checkboxset" value="2" ng-click="checkbox($event, 'libFun', 'readingRoom', formData.readingRoom.libFunArr)">
+								<label for="readRoom_fun_write">写作</label>
+
+							    <input id="readRoom_fun_guest" type="checkbox" name="checkboxset" value="3" ng-click="checkbox($event, 'libFun', 'readingRoom', formData.readingRoom.libFunArr)">
+							    <label for="readRoom_fun_guest">会客</label>
+
+							    <input id="readRoom_fun_tea" type="checkbox" name="checkboxset" value="4" ng-click="checkbox($event, 'libFun', 'readingRoom', formData.readingRoom.libFunArr)">
+							    <label for="readRoom_fun_tea">品茶</label>
+
+							    <input id="readRoom_fun_pc" type="checkbox" name="checkboxset" value="5" ng-click="checkbox($event, 'libFun', 'readingRoom', formData.readingRoom.libFunArr)">
+							    <label for="readRoom_fun_pc">电脑操作</label>
+
+							    <input class="inputtext" type="text" placeholder="请输入相关要求">
 							</div>
 						</div>
 						<div class="row">
 							<div class="col-md-12">
 								<p> 2.  书房使用以何人为主：<span>*</span></p>
-							   <input type="text" placeholder="书房使用人" ng-model="formData.readingRoom.libPeopleUse">
+							   <input class="inputtext" type="text" placeholder="书房使用人" ng-model="formData.readingRoom.libPeopleUse">
 							</div>
 						</div>
 						<div class="row">
 							<div class="col-md-12">
 								<p> 3.  共有几人同时使用书房：<span>*</span></p>
-							   <input type="text" placeholder="书房使用人" ng-model="formData.readingRoom.libPeopleWholeUse">
+							   <input class="inputtext" type="text" placeholder="书房使用人" ng-model="formData.readingRoom.libPeopleWholeUse">
 							</div>
 						</div>
 						<div class="row">
-							<div class="col-md-12">
+							<div class="col-md-12 checkbox checkbox-success checkbox-inline">
 								<p>4.  存书种类以及数量：<span>*</span></p>
-							   	<input type="checkbox" name="checkboxset" value="1" ng-click="checkbox($event, 'libBooksKindNum', 'readingRoom', formData.readingRoom.libBooksKindNumArr)">&nbsp;藏书类
-								<input type="checkbox" name="checkboxset" value="2" ng-click="checkbox($event, 'libBooksKindNum', 'readingRoom', formData.readingRoom.libBooksKindNumArr)">&nbsp;工具类
-							    <input type="checkbox" name="checkboxset" value="3" ng-click="checkbox($event, 'libBooksKindNum', 'readingRoom', formData.readingRoom.libBooksKindNumArr)">&nbsp;杂志类
-							    <input type="text" placeholder="存书数量" ng-model="formData.readingRoom.libBooksContain">本
-							    <input type="text" placeholder="请输入相关要求" ng-model="formData.readingRoom.libBooksRequest">
+							   	<input id="readRoom_book_library" type="checkbox" name="checkboxset" value="1" ng-click="checkbox($event, 'libBooksKindNum', 'readingRoom', formData.readingRoom.libBooksKindNumArr)">
+							   	<label for="readRoom_book_library">藏书类</label>
+
+								<input id="readRoom_book_tool" type="checkbox" name="checkboxset" value="2" ng-click="checkbox($event, 'libBooksKindNum', 'readingRoom', formData.readingRoom.libBooksKindNumArr)">
+								<label for="readRoom_book_tool">工具类</label>
+
+							    <input id="readRoom_book_magazine" type="checkbox" name="checkboxset" value="3" ng-click="checkbox($event, 'libBooksKindNum', 'readingRoom', formData.readingRoom.libBooksKindNumArr)">
+							    <label for="readRoom_book_magazine">杂志类</label>
+							    <input class="inputtext" type="text" placeholder="存书数量" ng-model="formData.readingRoom.libBooksContain">本
+							    <input class="inputtext" type="text" placeholder="请输入相关要求" ng-model="formData.readingRoom.libBooksRequest">
 							</div>
 						</div>
 						<div class="row">
 							<div class="col-md-12">
 								<p>5.  惯以何种方式看书（如：坐着看、躺着看）：<span>*</span></p>
-								<input type="text" placeholder="请输入相关要求"  ng-model="formData.readingRoom.libReadingPosture">
+								<input class="inputtext" type="text" placeholder="请输入相关要求"  ng-model="formData.readingRoom.libReadingPosture">
 							</div>
 						</div>
 						<div class="row">
-							<div class="col-md-12">
+							<div class="col-md-12 radio radio-success radio-inline">
 								<p>6.  书房使用频率：<span>*</span></p>
-							   		<input type="radio" name="radiobf" value="1" ng-model="formData.readingRoom.libUseRate">&nbsp;每天
-									<input type="radio" name="radiobf" value="2" ng-model="formData.readingRoom.libUseRate">&nbsp;经常
-									<input type="radio" name="radiobf" value="3" ng-model="formData.readingRoom.libUseRate">&nbsp;偶尔
+							   		<input id="readRoom_everyday" type="radio" name="radiobf" value="1" ng-model="formData.readingRoom.libUseRate">
+							   		<label for="readRoom_everyday">每天</label>
+									<input id="readRoom_often" type="radio" name="radiobf" value="2" ng-model="formData.readingRoom.libUseRate">
+									<label for="readRoom_often">经常</label>
+									<input id="readRoom_occasion" type="radio" name="radiobf" value="3" ng-model="formData.readingRoom.libUseRate">
+									<label for="readRoom_occasion">偶尔</label>
 							</div>
 						</div>
 						<div class="row">
-							<div class="col-md-12">
+							<div class="col-md-12 radio radio-success radio-inline">
 								<p> 7.  书房是否当客厅使用：<span>*</span></p>
-							    <input type="radio" name="radioparlour" value="1"  ng-model="formData.readingRoom.libUseAsLrOpt">&nbsp;是
-								<input type="radio" name="radioparlour" value="0" ng-model="formData.readingRoom.libUseAsLrOpt">&nbsp;否
+							    <input id="readRoom_useAsLiveRoom_y" type="radio" name="radioparlour" value="1"  ng-model="formData.readingRoom.libUseAsLrOpt">
+							    <label for="readRoom_useAsLiveRoom_y">是</label>
+								<input id="readRoom_useAsLiveRoom_n" type="radio" name="radioparlour" value="0" ng-model="formData.readingRoom.libUseAsLrOpt">
+								<label for="readRoom_useAsLiveRoom_n">否</label>
 							</div>
 						</div>
 						<div class="row">
-							<div class="col-md-12">
+							<div class="col-md-12 checkbox checkbox-success checkbox-inline">
 								<p>8.  是否需要：<span>*</span></p>
-							   	<input type="checkbox" name="checkboxset" value="1" ng-click="checkbox($event, 'libNetworkOpt', 'readingRoom', formData.readingRoom.libNetworkOptArr)">&nbsp;电话
-								<input type="checkbox" name="checkboxset" value="2" ng-click="checkbox($event, 'libNetworkOpt', 'readingRoom', formData.readingRoom.libNetworkOptArr)">&nbsp;网线
-							    <input type="checkbox" name="checkboxset" value="3" ng-click="checkbox($event, 'libNetworkOpt', 'readingRoom', formData.readingRoom.libNetworkOptArr)">&nbsp;打印机
-							    <input type="checkbox" name="checkboxset" value="4" ng-click="checkbox($event, 'libNetworkOpt', 'readingRoom', formData.readingRoom.libNetworkOptArr)">&nbsp;扫描机
+							   	<input id="readRoom_need_tel" type="checkbox" name="checkboxset" value="1" ng-click="checkbox($event, 'libNetworkOpt', 'readingRoom', formData.readingRoom.libNetworkOptArr)">
+							   	<label for="readRoom_need_tel">电话</label>
+								<input id="readRoom_need_netline" type="checkbox" name="checkboxset" value="2" ng-click="checkbox($event, 'libNetworkOpt', 'readingRoom', formData.readingRoom.libNetworkOptArr)">
+								<label for="readRoom_need_netline">网线</label>
+							    <input id="readRoom_need_printer" type="checkbox" name="checkboxset" value="3" ng-click="checkbox($event, 'libNetworkOpt', 'readingRoom', formData.readingRoom.libNetworkOptArr)">
+							    <label for="readRoom_need_printer">打印机</label>
+							    <input id="readRoom_need_scanner" type="checkbox" name="checkboxset" value="4" ng-click="checkbox($event, 'libNetworkOpt', 'readingRoom', formData.readingRoom.libNetworkOptArr)">
+							    <label for="readRoom_need_scanner">扫描机</label>
 							</div>
 						</div>
 					</div>
@@ -694,81 +887,109 @@
 					<div class="row"><h3>主卧室部分</h3></div>
 					<div class="partall">
 						<div class="row">
-							<div class="col-md-12">
+							<div class="col-md-12 radio radio-success radio-inline">
 								<p> 1.业主对寝具的选择：<span>*</span></p>
-							  	<input type="radio" name="radiobed" value="0" ng-model="formData.mainRoom.brSleepObjectSelOpt">&nbsp;购买
-								<input type="radio" name="radiobed" value="1" ng-model="formData.mainRoom.brSleepObjectSelOpt">&nbsp;制作
+							  	<input id="masterRoom_bedding_purchase" type="radio" name="radiobed" value="0" ng-model="formData.mainRoom.brSleepObjectSelOpt">
+							  	<label for="masterRoom_bedding_purchase">购买</label>
+
+								<input id="masterRoom_bedding_made" type="radio" name="radiobed" value="1" ng-model="formData.mainRoom.brSleepObjectSelOpt">
+								<label for="masterRoom_bedding_made">制作</label>
 							</div>
 						</div>
 						<div class="row">
 							<div class="col-md-12">
 								<p> 2.业主对寝具品牌和颜色的选择：<span>*</span></p>
-							   <input type="text" placeholder="品牌/颜色" ng-model="formData.mainRoom.brSleepObjectColorModel">
+							   <input class="inputtext" type="text" placeholder="品牌/颜色" ng-model="formData.mainRoom.brSleepObjectColorModel">
 							</div>
 						</div>
 						<div class="row">
-							<div class="col-md-12">
+							<div class="col-md-12 radio radio-success radio-inline">
 								<p>3.业主对床的要求：<span>*</span></p>
-							   	<input type="radio" name="radiobedr" value="0" ng-model="formData.mainRoom.brBedRequest" >&nbsp;标准
-								<input type="radio" name="radiobedr" value="1" ng-model="formData.mainRoom.brBedRequest">&nbsp;加大
+							   	<input id="masterRoom_bed_normal" type="radio" name="radiobedr" value="0" ng-model="formData.mainRoom.brBedRequest" >
+							   	<label for="masterRoom_bed_normal">标准</label>
+
+								<input id="masterRoom_bed_bigger" type="radio" name="radiobedr" value="1" ng-model="formData.mainRoom.brBedRequest">
+								<label for="masterRoom_bed_bigger">加大</label>
 							</div>
 						</div>
 						<div class="row">
-							<div class="col-md-12">
+							<div class="col-md-12 radio radio-success radio-inline">
 								<p>4.业主对床类型的要求：<span>*</span></p>
-							   	<input type="radio" name="radiobedt" value="1" ng-model="formData.mainRoom.brBedTyleRequest">&nbsp;木质
-								<input type="radio" name="radiobedt" value="2" ng-model="formData.mainRoom.brBedTyleRequest">&nbsp;金属铁艺
-								<input type="radio" name="radiobedt" value="3" ng-model="formData.mainRoom.brBedTyleRequest">&nbsp;复合材料
+							   	<input id="masterRoom_bedType_wood" type="radio" name="radiobedt" value="1" ng-model="formData.mainRoom.brBedTyleRequest">
+							   	<label for="masterRoom_bedType_wood">木质</label>
+
+								<input id="masterRoom_bedType_gold" type="radio" name="radiobedt" value="2" ng-model="formData.mainRoom.brBedTyleRequest">
+								<label for="masterRoom_bedType_gold">金属铁艺</label>
+
+								<input id="masterRoom_bedType_compound" type="radio" name="radiobedt" value="3" ng-model="formData.mainRoom.brBedTyleRequest">
+								<label for="masterRoom_bedType_compound">复合材料</label>
 							</div>
 						</div>
 						<div class="row">
-							<div class="col-md-12">
+							<div class="col-md-12 radio radio-success radio-inline">
 								<p>5.衣柜存衣量的要求：<span>*</span></p>
-								<input type="radio" name="radiobedt" value="1" ng-model="formData.mainRoom.brWardrobeQtyRequest">&nbsp;大量
-								<input type="radio" name="radiobedt" value="2" ng-model="formData.mainRoom.brWardrobeQtyRequest">&nbsp;中量
-								<input type="radio" name="radiobedt" value="3" ng-model="formData.mainRoom.brWardrobeQtyRequest">&nbsp;少量
+								<input id="masterRoom_wardrobe_big" type="radio" name="radiobedt" value="1" ng-model="formData.mainRoom.brWardrobeQtyRequest">
+								<label for="masterRoom_wardrobe_big">大量</label>
+
+								<input id="masterRoom_wardrobe_middle" type="radio" name="radiobedt" value="2" ng-model="formData.mainRoom.brWardrobeQtyRequest">
+								<label for="masterRoom_wardrobe_middle">中量</label>
+
+								<input id="masterRoom_wardrobe_small" type="radio" name="radiobedt" value="3" ng-model="formData.mainRoom.brWardrobeQtyRequest">
+								<label for="masterRoom_wardrobe_small">少量</label>
 							</div>
 						</div>
 						<div class="row">
-							<div class="col-md-12">
+							<div class="col-md-12 checkbox checkbox-success checkbox-inline">
 								<p>6.贮藏内容：<span>*</span></p>
-							   		<input type="checkbox" name="checkboxset" value="1" ng-click="checkbox($event, 'brDepotThings', 'mainRoom', formData.mainRoom.brDepotThingsArr)">&nbsp;衣服
-									<input type="checkbox" name="checkboxset" value="2" ng-click="checkbox($event, 'brDepotThings', 'mainRoom', formData.mainRoom.brDepotThingsArr)">&nbsp;鞋
-								    <input type="checkbox" name="checkboxset" value="3" ng-click="checkbox($event, 'brDepotThings', 'mainRoom', formData.mainRoom.brDepotThingsArr)">&nbsp;箱包
-								    <input type="checkbox" name="checkboxset" value="4" ng-click="checkbox($event, 'brDepotThings', 'mainRoom', formData.mainRoom.brDepotThingsArr)">&nbsp;被褥
+							   		<input id="masterRoom_storeCont_clothes" type="checkbox" name="checkboxset" value="1" ng-click="checkbox($event, 'brDepotThings', 'mainRoom', formData.mainRoom.brDepotThingsArr)">
+							   		<label for="masterRoom_storeCont_clothes">衣服</label>
+
+									<input id="masterRoom_storeCont_shoes" type="checkbox" name="checkboxset" value="2" ng-click="checkbox($event, 'brDepotThings', 'mainRoom', formData.mainRoom.brDepotThingsArr)">
+									<label for="masterRoom_storeCont_shoes">鞋</label>
+
+								    <input id="masterRoom_storeCont_bag" type="checkbox" name="checkboxset" value="3" ng-click="checkbox($event, 'brDepotThings', 'mainRoom', formData.mainRoom.brDepotThingsArr)">
+								    <label for="masterRoom_storeCont_bag">箱包</label>
+
+								    <input id="masterRoom_storeCont_quilt" type="checkbox" name="checkboxset" value="4" ng-click="checkbox($event, 'brDepotThings', 'mainRoom', formData.mainRoom.brDepotThingsArr)">
+								    <label for="masterRoom_storeCont_quilt">被褥</label>
 							</div>
 						</div>
 						<div class="row">
-							<div class="col-md-12">
+							<div class="col-md-12 radio radio-success radio-inline">
 								<p> 7.女主人是否需要梳妆台：<span>*</span></p>
-							    <input type="radio" name="radiodress" value="1" ng-model="formData.mainRoom.brDresserOpt">&nbsp;是
-								<input type="radio" name="radiodress" value="0" ng-model="formData.mainRoom.brDresserOpt">&nbsp;否
+							    <input id="masterRoom_needDresser_y" type="radio" name="radiodress" value="1" ng-model="formData.mainRoom.brDresserOpt">
+							    <label for="masterRoom_needDresser_y">是</label>
+								<input id="masterRoom_needDresser_n" type="radio" name="radiodress" value="0" ng-model="formData.mainRoom.brDresserOpt">
+								<label for="masterRoom_needDresser_n">否</label>
 							</div>
 						</div>
 						<div class="row">
-							<div class="col-md-12">
+							<div class="col-md-12 checkbox checkbox-success checkbox-inline">
 								<p>8.是否需要：<span>*</span></p>
-							   	<input type="checkbox" name="checkboxset" value="1" ng-click="checkbox($event, 'brNetworkOpt', 'mainRoom', formData.mainRoom.brNetworkOptArr)">&nbsp;视听设备
-								<input type="checkbox" name="checkboxset" value="2" ng-click="checkbox($event, 'brNetworkOpt', 'mainRoom', formData.mainRoom.brNetworkOptArr)">&nbsp;电话
-							    <input type="checkbox" name="checkboxset" value="3" ng-click="checkbox($event, 'brNetworkOpt', 'mainRoom', formData.mainRoom.brNetworkOptArr)">&nbsp;网线
+							   	<input id="masterRoom_need_listen" type="checkbox" name="checkboxset" value="1" ng-click="checkbox($event, 'brNetworkOpt', 'mainRoom', formData.mainRoom.brNetworkOptArr)">
+							   	<label for="masterRoom_need_listen">视听设备</label>
+								<input id="masterRoom_need_tel" type="checkbox" name="checkboxset" value="2" ng-click="checkbox($event, 'brNetworkOpt', 'mainRoom', formData.mainRoom.brNetworkOptArr)">
+								<label for="masterRoom_need_tel">电话</label>
+							    <input id="masterRoom_need_netline" type="checkbox" name="checkboxset" value="3" ng-click="checkbox($event, 'brNetworkOpt', 'mainRoom', formData.mainRoom.brNetworkOptArr)">
+							    <label for="masterRoom_need_netline">网线</label>
 							</div>
 						</div>
 						<div class="row">
 							<div class="col-md-12">
 								<p>9.  卧室整体色彩搭配（如：冷色系、暖色系）：<span>*</span></p>
-							   	<input type="text" placeholder="请输入相关要求"  ng-model="formData.mainRoom.brColorConfig">
+							   	<input class="inputtext" type="text" placeholder="请输入相关要求"  ng-model="formData.mainRoom.brColorConfig">
 							</div>
 						</div>
 						<div class="row">
 							<div class="col-md-12">
 								<p>10.对灯光设计有无特殊要求（如：灯光色彩、可调光源）：<span>*</span></p>
-							   	<input type="text" placeholder="请输入相关要求"  ng-model="formData.mainRoom.brLightingRequest">
+							   	<input class="inputtext" type="text" placeholder="请输入相关要求"  ng-model="formData.mainRoom.brLightingRequest">
 							</div>
 						</div>
 						<div class="row">
 							<div class="col-md-12">
 								<p>11. 对地面、墙面材料有无特殊要求：<span>*</span></p>
-							   	<input type="text" placeholder="请输入相关要求" ng-model="formData.mainRoom.brGroundWallRequest">
+							   	<input class="inputtext" type="text" placeholder="请输入相关要求" ng-model="formData.mainRoom.brGroundWallRequest">
 							</div>
 						</div>
 					</div>
@@ -778,80 +999,108 @@
 					<div class="row"><h3>儿童房（老人房）部分</h3></div>
 					<div class="partall">
 						<div class="row">
-							<div class="col-md-12">
+							<div class="col-md-12 radio radio-success radio-inline">
 								<p> 1.房间使用功能及具体使用要求：<span>*</span></p>
-							  	<input type="radio" name="radiobedd" value="1" ng-model="formData.kidRoom.krUseFunSpecific">&nbsp;独生子
-								<input type="radio" name="radiobedd" value="2" ng-model="formData.kidRoom.krUseFunSpecific">&nbsp;老人
-								<input type="radio" name="radiobedd" value="3" ng-model="formData.kidRoom.krUseFunSpecific">&nbsp;保姆
+							  	<input id="kidRoom_fun_kid" type="radio" name="radiobedd" value="1" ng-model="formData.kidRoom.krUseFunSpecific">
+							  	<label for="kidRoom_fun_kid">独生子</label>
+
+								<input id="kidRoom_fun_oldman" type="radio" name="radiobedd" value="2" ng-model="formData.kidRoom.krUseFunSpecific">
+								<label for="kidRoom_fun_oldman">老人</label>
+
+								<input id="kidRoom_fun_nanny" type="radio" name="radiobedd" value="3" ng-model="formData.kidRoom.krUseFunSpecific">
+								<label for="kidRoom_fun_nanny">保姆</label>
 							</div>
 						</div>
 						<div class="row">
-							<div class="col-md-12">
+							<div class="col-md-12 radio radio-success radio-inline">
 								<p> 2.家具的选择：<span>*</span></p>
-							   	<input type="radio" name="radiofurniture" value="1" ng-model="formData.kidRoom.krFurnitureSel">&nbsp;购买
-								<input type="radio" name="radiofurniture" value="0" ng-model="formData.kidRoom.krFurnitureSel">&nbsp;制作
+							   	<input id="kidRoom_furniture_buy" type="radio" name="radiofurniture" value="1" ng-model="formData.kidRoom.krFurnitureSel">
+							   	<label for="kidRoom_furniture_buy">购买</label>
+
+								<input id="kidRoom_furniture_made" type="radio" name="radiofurniture" value="0" ng-model="formData.kidRoom.krFurnitureSel">
+								<label for="kidRoom_furniture_made">制作</label>
 							</div>
 						</div>
 						<div class="row">
-							<div class="col-md-12">
+							<div class="col-md-12 radio radio-success radio-inline">
 								<p>3.家具配置：<span>*</span></p>
-							   	<input type="radio" name="radiofa" value="1" ng-model="formData.kidRoom.krFurnitureConfig">&nbsp;电脑桌
-								<input type="radio" name="radiofa" value="2" ng-model="formData.kidRoom.krFurnitureConfig">&nbsp;写字台	
-								<input type="radio" name="radiofa" value="3" ng-model="formData.kidRoom.krFurnitureConfig">&nbsp;衣柜
-								<input type="radio" name="radiofa" value="4" ng-model="formData.kidRoom.krFurnitureConfig">&nbsp;书柜
+							   	<input id="kidRoom_furnitureSet_pc" type="radio" name="radiofa" value="1" ng-model="formData.kidRoom.krFurnitureConfig">
+							   	<label for="kidRoom_furnitureSet_pc">电脑桌</label>
+
+								<input id="kidRoom_furnitureSet_desk" type="radio" name="radiofa" value="2" ng-model="formData.kidRoom.krFurnitureConfig">
+								<label for="kidRoom_furnitureSet_desk">写字台</label>	
+
+								<input id="kidRoom_furnitureSet_wardrobe" type="radio" name="radiofa" value="3" ng-model="formData.kidRoom.krFurnitureConfig">
+								<label for="kidRoom_furnitureSet_wardrobe">衣柜</label>
+
+								<input id="kidRoom_furnitureSet_bookcase" type="radio" name="radiofa" value="4" ng-model="formData.kidRoom.krFurnitureConfig">
+								<label for="kidRoom_furnitureSet_bookcase">书柜</label>
 							</div>
 						</div>
 						<div class="row">
-							<div class="col-md-12">
+							<div class="col-md-12 radio radio-success radio-inline">
 								<p>4.是否考虑年龄变更：<span>*</span></p>
-							   	<input type="radio" name="radioagec" value="1" ng-model="formData.kidRoom.krAgeChangeOpt">&nbsp;是
-								<input type="radio" name="radioagec" value="0" ng-model="formData.kidRoom.krAgeChangeOpt">&nbsp;否
+							   	<input id="kidRoom_agechg_y" type="radio" name="radioagec" value="1" ng-model="formData.kidRoom.krAgeChangeOpt">
+							   	<label for="kidRoom_agechg_y">是</label>
+
+								<input id="kidRoom_agechg_n" type="radio" name="radioagec" value="0" ng-model="formData.kidRoom.krAgeChangeOpt">
+								<label for="kidRoom_agechg_n">否</label>
 							</div>
 						</div>
 						<div class="row">
-							<div class="col-md-12">
+							<div class="col-md-12 radio radio-success radio-inline">
 								<p>5.儿童有何兴趣爱好：<span>*</span></p>
-								<input type="radio" name="radioci" value="1" ng-model="formData.kidRoom.krHobby">&nbsp;钢琴
-								<input type="radio" name="radioci" value="2" ng-model="formData.kidRoom.krHobby">&nbsp;绘画
-								<input type="radio" name="radioci" value="3" ng-model="formData.kidRoom.krHobby">&nbsp;其他
+								<input id="kidRoom_kidInterest_piano" type="radio" name="radioci" value="1" ng-model="formData.kidRoom.krHobby">
+								<label for="kidRoom_kidInterest_piano">钢琴</label>
+
+								<input id="kidRoom_kidInterest_pic" type="radio" name="radioci" value="2" ng-model="formData.kidRoom.krHobby">
+								<label for="kidRoom_kidInterest_pic">绘画</label>
+
+								<input id="kidRoom_kidInterest_other" type="radio" name="radioci" value="3" ng-model="formData.kidRoom.krHobby">
+								<label for="kidRoom_kidInterest_other">其他</label>
 							</div>
 						</div>
 						<div class="row">
-							<div class="col-md-12">
+							<div class="col-md-12 checkbox checkbox-success checkbox-inline">
 								<p>6.有无特殊灯光要求：<span>*</span></p>
-							   		<input type="checkbox" name="checkboxset" value="1" ng-click="checkbox($event, 'krSpecialLightsReuqest', 'kidRoom', formData.kidRoom.krSpecialLightsReuqestArr)">&nbsp;可调光源
-									<input type="checkbox" name="checkboxset" value="2" ng-click="checkbox($event, 'krSpecialLightsReuqest', 'kidRoom', formData.kidRoom.krSpecialLightsReuqestArr)">&nbsp;双控开关
-								    <input type="checkbox" name="checkboxset" value="3" ng-click="checkbox($event, 'krSpecialLightsReuqest', 'kidRoom', formData.kidRoom.krSpecialLightsReuqestArr)">&nbsp;地脚线
+							   		<input id="kidRoom_adjustableLight " type="checkbox" name="checkboxset" value="1" ng-click="checkbox($event, 'krSpecialLightsReuqest', 'kidRoom', formData.kidRoom.krSpecialLightsReuqestArr)">
+							   		<label for="kidRoom_adjustableLight ">可调光源</label>
+
+									<input id="kidRoom_doubleControlSwitch" type="checkbox" name="checkboxset" value="2" ng-click="checkbox($event, 'krSpecialLightsReuqest', 'kidRoom', formData.kidRoom.krSpecialLightsReuqestArr)">
+									<label for="kidRoom_doubleControlSwitch">双控开关</label>
+
+								    <input id="kidRoom_anchorLine" type="checkbox" name="checkboxset" value="3" ng-click="checkbox($event, 'krSpecialLightsReuqest', 'kidRoom', formData.kidRoom.krSpecialLightsReuqestArr)">
+								    <label for="kidRoom_anchorLine">地脚线</label>
 							</div>
 						</div>
 						<div class="row">
 							<div class="col-md-12">
 								<p> 7.对该房间的色彩要求：<span>*</span></p>
-							   	<input type="text" placeholder="请输入相关要求" ng-model="formData.kidRoom.krColorRequest">
+							   	<input class="inputtext" type="text" placeholder="请输入相关要求" ng-model="formData.kidRoom.krColorRequest">
 							</div>
 						</div>
 						<div class="row">
 							<div class="col-md-12">
 								<p style="color:red">8.对墙、地面材料有无特殊要求：<span>*</span></p>
-							   	<input type="text" placeholder="请输入相关要求">
+							   	<input class="inputtext" type="text" placeholder="请输入相关要求">
 							</div>
 						</div>
 						<div class="row">
 							<div class="col-md-12">
 								<p>9.老人是否有特殊的生理方面的考虑：<span>*</span></p>
-							   	<input type="text" placeholder="请输入相关要求" ng-model="formData.kidRoom.krOldPhysiologyOpt">
+							   	<input class="inputtext" type="text" placeholder="请输入相关要求" ng-model="formData.kidRoom.krOldPhysiologyOpt">
 							</div>
 						</div>
 						<div class="row">
 							<div class="col-md-12">
 								<p>10.是否有旧家具需要保留：<span>*</span></p>
 
-								<input type="text" placeholder="请输入相关要求" ng-model="formData.kidRoom.krOldFurnitureKeepOpt">
-							   	<input type="text" placeholder="请输入相关要求" ng-model="formData.kidRoom.krOldFurnitureKeepOptTone">
+								<input class="inputtext" type="text" placeholder="请输入相关要求" ng-model="formData.kidRoom.krOldFurnitureKeepOpt">
+							   	<input class="inputtext" type="text" placeholder="请输入相关要求" ng-model="formData.kidRoom.krOldFurnitureKeepOptTone">
 							   	<span>色调</span>
-							   	<input type="text" placeholder="请输入相关要求" ng-model="formData.kidRoom.krOldFurnitureKeepOptSize">
+							   	<input class="inputtext" type="text" placeholder="请输入相关要求" ng-model="formData.kidRoom.krOldFurnitureKeepOptSize">
 							   	<span>尺寸</span>
-							   	<input type="text" placeholder="请输入相关要求" ng-model="formData.kidRoom.krOldFurnitureKeepOptMaterial">
+							   	<input class="inputtext" type="text" placeholder="请输入相关要求" ng-model="formData.kidRoom.krOldFurnitureKeepOptMaterial">
 							   	<span>材质</span>
 							   	
 							</div>
@@ -859,7 +1108,7 @@
 						<div class="row">
 							<div class="col-md-12">
 								<p>11.  请注明儿童年龄、性别玩具及书籍的数量：<span>*</span></p>
-							   	<input type="text" placeholder="请输入相关要求" ng-model="formData.kidRoom.krKidAgeGenderToyBookInfo">
+							   	<input class="inputtext" type="text" placeholder="请输入相关要求" ng-model="formData.kidRoom.krKidAgeGenderToyBookInfo">
 							</div>
 						</div>
 					</div>
@@ -872,42 +1121,48 @@
 						<div class="row">
 							<div class="col-md-12">
 								<p> 1.  房间的使用频率及主要功能：<span>*</span></p>
-							  	<input type="text" placeholder="请输入相关要求" ng-model="formData.guestRoom.roomUseRateMainFun">
+							  	<input class="inputtext" type="text" placeholder="请输入相关要求" ng-model="formData.guestRoom.roomUseRateMainFun">
 							</div>
 						</div>
 						<div class="row">
 							<div class="col-md-12">
 								<p>2.  家居配置：<span>*</span></p>
-							  	<input type="text" placeholder="请输入相关要求" ng-model="formData.guestRoom.roomHomeConfig">
+							  	<input class="inputtext" type="text" placeholder="请输入相关要求" ng-model="formData.guestRoom.roomHomeConfig">
 							</div>
 						</div>
 						<div class="row">
-							<div class="col-md-12">
+							<div class="col-md-12 checkbox checkbox-success checkbox-inline">
 								<p>3.  是否需要：<span>*</span></p>
-							   	<input type="checkbox" name="checkboxset" value="1" ng-click="checkbox($event, 'roomGrOpt', 'guestRoom', formData.guestRoom.roomGrOptArr)">&nbsp;视听设备
-								<input type="checkbox" name="checkboxset" value="2" ng-click="checkbox($event, 'roomGrOpt', 'guestRoom', formData.guestRoom.roomGrOptArr)">&nbsp;电话
-								<input type="checkbox" name="checkboxset" value="3" ng-click="checkbox($event, 'roomGrOpt', 'guestRoom', formData.guestRoom.roomGrOptArr)">&nbsp;网线
-								<input type="text" placeholder="请输入相关要求" ng-model="formData.guestRoom.roomGrRequest">
+							   	<input id="guestRoom_listen" type="checkbox" name="checkboxset" value="1" ng-click="checkbox($event, 'roomGrOpt', 'guestRoom', formData.guestRoom.roomGrOptArr)">
+							   	<label for="guestRoom_listen">视听设备</label>
+								<input id="guestRoom_tel" type="checkbox" name="checkboxset" value="2" ng-click="checkbox($event, 'roomGrOpt', 'guestRoom', formData.guestRoom.roomGrOptArr)">
+								<label for="guestRoom_tel">电话</label>
+								<input id="guestRoom_netline" type="checkbox" name="checkboxset" value="3" ng-click="checkbox($event, 'roomGrOpt', 'guestRoom', formData.guestRoom.roomGrOptArr)">
+								<label for="guestRoom_netline">网线</label>
+								<input class="inputtext" type="text" placeholder="请输入相关要求" ng-model="formData.guestRoom.roomGrRequest">
 							</div>
 						</div>
 						<div class="row">
-							<div class="col-md-12">
+							<div class="col-md-12 checkbox checkbox-success checkbox-inline">
 								<p>4.  有无特殊灯光要求：<span>*</span></p>
-							   	<input type="checkbox" name="checkboxset" value="1" ng-click="checkbox($event, 'roomGrLightingReuqest', 'guestRoom', formData.guestRoom.roomGrLightingReuqestArr)">&nbsp;可调光源
-								<input type="checkbox" name="checkboxset" value="2" ng-click="checkbox($event, 'roomGrLightingReuqest', 'guestRoom', formData.guestRoom.roomGrLightingReuqestArr)">&nbsp;双控开关
-								<input type="checkbox" name="checkboxset" value="3" ng-click="checkbox($event, 'roomGrLightingReuqest', 'guestRoom', formData.guestRoom.roomGrLightingReuqestArr)">&nbsp;地脚线
+							   	<input id="guestRoom_adjustableLight" type="checkbox" name="checkboxset" value="1" ng-click="checkbox($event, 'roomGrLightingReuqest', 'guestRoom', formData.guestRoom.roomGrLightingReuqestArr)">
+							   	<label for="guestRoom_adjustableLight">可调光源</label>
+								<input id="guestRoom_doubleControlSwitch" type="checkbox" name="checkboxset" value="2" ng-click="checkbox($event, 'roomGrLightingReuqest', 'guestRoom', formData.guestRoom.roomGrLightingReuqestArr)">
+								<label for="guestRoom_doubleControlSwitch">双控开关</label>
+								<input id="guestRoom_anchorLine" type="checkbox" name="checkboxset" value="3" ng-click="checkbox($event, 'roomGrLightingReuqest', 'guestRoom', formData.guestRoom.roomGrLightingReuqestArr)">
+								<label for="guestRoom_anchorLine">地脚线</label>
 							</div>
 						</div>
 						<div class="row">
 							<div class="col-md-12">
 								<p>5.  是否需要储藏功能：<span>*</span></p>
-							  	<input type="text" placeholder="请输入相关要求" ng-model="formData.guestRoom.roomStoreFun">
+							  	<input class="inputtext" type="text" placeholder="请输入相关要求" ng-model="formData.guestRoom.roomStoreFun">
 							</div>
 						</div>
 						<div class="row">
 							<div class="col-md-12">
 								<p>6.  房间有无特殊装饰要求：<span>*</span></p>
-							  	<input type="text" placeholder="请输入相关要求" ng-model="formData.guestRoom.roomSpecialDecorationOpt">
+							  	<input class="inputtext" type="text" placeholder="请输入相关要求" ng-model="formData.guestRoom.roomSpecialDecorationOpt">
 							</div>
 						</div>
 					</div>
@@ -919,32 +1174,34 @@
 						<div class="row">
 							<div class="col-md-12">
 								<p>1.  对天花、墙、地面材料的要求：<span>*</span></p>
-							  	<input type="text" placeholder="请输入相关要求" ng-model="formData.restroom.wcCeilingWallGroundRequest">
+							  	<input class="inputtext" type="text" placeholder="请输入相关要求" ng-model="formData.restroom.wcCeilingWallGroundRequest">
 							</div>
 						</div>
 						<div class="row">
 							<div class="col-md-12">
 								<p>2.  洁具的颜色、档次、品质、品牌：<span>*</span></p>
-							  	<input type="text" placeholder="请输入相关要求" ng-model="formData.restroom.wcAppInfo">
+							  	<input class="inputtext" type="text" placeholder="请输入相关要求" ng-model="formData.restroom.wcAppInfo">
 							</div>
 						</div>
 						<div class="row">
 							<div class="col-md-12">
 								<p>3.  冷热水系统的改造要求：<span>*</span></p>
-								<input type="text" placeholder="请输入相关要求" ng-model="formData.restroom.wcHotColdWaterRequest">
+								<input class="inputtext" type="text" placeholder="请输入相关要求" ng-model="formData.restroom.wcHotColdWaterRequest">
 							</div>
 						</div>
 						<div class="row">
 							<div class="col-md-12">
 								<p>4.  灯光的具体要求<span>*</span></p>
-								<input type="text" placeholder="请输入相关要求" ng-model="formData.restroom.wcLightingRequest">
+								<input class="inputtext" type="text" placeholder="请输入相关要求" ng-model="formData.restroom.wcLightingRequest">
 							</div>
 						</div>
 						<div class="row">
-							<div class="col-md-12">
+							<div class="col-md-12 radio radio-success radio-inline">
 								<p>5.  卫生间的色彩倾向：<span>*</span></p>
-							  	<input type="radio" name="radiotc" value="0" ng-model="formData.restroom.wcColor">&nbsp;冷色
-								<input type="radio" name="radiotc" value="1" ng-model="formData.restroom.wcColor">&nbsp;暖色
+							  	<input id="wcColor_cold" type="radio" name="radiotc" value="0" ng-model="formData.restroom.wcColor">
+							  	<label for="wcColor_cold">冷色</label>
+								<input id="wcColor_warm" type="radio" name="radiotc" value="1" ng-model="formData.restroom.wcColor">
+								<label for="wcColor_warm">暖色</label>
 							</div>
 						</div>
 					</div>
@@ -955,36 +1212,55 @@
 					<div class="row"><h3>阳台部分</h3></div>
 					<div class="partall">
 						<div class="row">
-							<div class="col-md-12">
+							<div class="col-md-12 radio radio-success radio-inline">
 								<p> 1.  是否需要封闭阳台以及材料：<span>*</span></p>
-							  	<input type="radio" name="radioclose" value="1" ng-model="formData.balcony.balconyBlockStuffOpt" ng-change="switch('radioclose', formData.balcony.balconyBlockStuffOpt)">&nbsp;是
-								<input type="radio" name="radioclose" value="0"
-								ng-model="formData.balcony.balconyBlockStuffOpt" ng-change="switch('radioclose', formData.balcony.balconyBlockStuffOpt)">&nbsp;否
+							  	<input id="balcony_closed_y" type="radio" name="radioclose" value="1" ng-model="formData.balcony.balconyBlockStuffOpt" ng-change="switch('radioclose', formData.balcony.balconyBlockStuffOpt)">
+							  	<label for="balcony_closed_y">是</label>
+
+								<input id="balcony_closed_n" type="radio" name="radioclose" value="0"
+								ng-model="formData.balcony.balconyBlockStuffOpt" ng-change="switch('radioclose', formData.balcony.balconyBlockStuffOpt)">
+								<label for="balcony_closed_n">否</label>
 								<span>材料</span>
 								<div class="additional_info">
-									<input type="radio" name="radioclosec" value="1" ng-model="formData.balcony.balconyBlockStuff">&nbsp;铝合金
-									<input type="radio" name="radioclosec" value="2" ng-model="formData.balcony.balconyBlockStuff">&nbsp;塑钢
-									<input type="radio" name="radioclosec" value="3" ng-model="formData.balcony.balconyBlockStuff">&nbsp;木制
+									<input id="balcony_material_aluminium" type="radio" name="radioclosec" value="1" ng-model="formData.balcony.balconyBlockStuff">
+									<label for="balcony_material_aluminium">铝合金</label>
+
+									<input id="balcony_material_plastic" type="radio" name="radioclosec" value="2" ng-model="formData.balcony.balconyBlockStuff">
+									<label for="balcony_material_plastic">塑钢</label>
+
+									<input id="balcony_material_wood" type="radio" name="radioclosec" value="3" ng-model="formData.balcony.balconyBlockStuff">
+									<label for="balcony_material_wood">木制</label>
 								</div>
 							</div>
 						</div>
 						<div class="row">
-							<div class="col-md-12">
+							<div class="col-md-12 radio radio-success radio-inline">
 								<p>2.  所有外窗更换为旭格品牌：<span>*</span></p>
-								<input type="radio" name="radiowindow" value="1" ng-model="formData.balcony.balconyWinToXugeOpt">&nbsp;是
-								<input type="radio" name="radiowindow" value="0" ng-model="formData.balcony.balconyWinToXugeOpt">&nbsp;否
-							  	<input type="text" placeholder="请输入相关要求" ng-model="formData.balcony.balconyWindwToXugeRequest">
+								<input id="balcony_chgbrand_y" type="radio" name="radiowindow" value="1" ng-model="formData.balcony.balconyWinToXugeOpt">
+								<label for="balcony_chgbrand_y">是</label>
+								<input id="balcony_chgbrand_n" type="radio" name="radiowindow" value="0" ng-model="formData.balcony.balconyWinToXugeOpt">
+								<label for="balcony_chgbrand_n">否</label>
+							  	<input class="inputtext" type="text" placeholder="请输入相关要求" ng-model="formData.balcony.balconyWindwToXugeRequest">
 							</div>
 						</div>
 						<div class="row">
-							<div class="col-md-12">
+							<div class="col-md-12 checkbox checkbox-success checkbox-inline">
 								<p>3.  阳台功能要求：<span>*</span></p>
-							   	<input type="checkbox" name="checkboxset" value="1" ng-click="checkbox($event, 'balconyFunRequest', 'balcony', formData.balcony.balconyFunRequestArr)">&nbsp;晾衣服
-								<input type="checkbox" name="checkboxset" value="2" ng-click="checkbox($event, 'balconyFunRequest', 'balcony', formData.balcony.balconyFunRequestArr)">&nbsp;健身
-								<input type="checkbox" name="checkboxset" value="3" ng-click="checkbox($event, 'balconyFunRequest', 'balcony', formData.balcony.balconyFunRequestArr)">&nbsp;休息
-								<input type="checkbox" name="checkboxset" value="4" ng-click="checkbox($event, 'balconyFunRequest', 'balcony', formData.balcony.balconyFunRequestArr)">&nbsp;储物
-								<input type="checkbox" name="checkboxset" value="5" ng-click="checkbox($event, 'balconyFunRequest', 'balcony', formData.balcony.balconyFunRequestArr)">&nbsp;养殖花木
-								<input type="text" placeholder="请输入相关要求" ng-model="formData.balcony.balconyFunctionWant">
+							   	<input id="balcony_fun_clothes" type="checkbox" name="checkboxset" value="1" ng-click="checkbox($event, 'balconyFunRequest', 'balcony', formData.balcony.balconyFunRequestArr)">
+							   	<label for="balcony_fun_clothes">晾衣服</label>
+
+								<input id="balcony_fun_sports" type="checkbox" name="checkboxset" value="2" ng-click="checkbox($event, 'balconyFunRequest', 'balcony', formData.balcony.balconyFunRequestArr)">
+								<label for="balcony_fun_sports">健身</label>
+
+								<input id="balcony_fun_rest" type="checkbox" name="checkboxset" value="3" ng-click="checkbox($event, 'balconyFunRequest', 'balcony', formData.balcony.balconyFunRequestArr)">
+								<label for="balcony_fun_rest">休息</label>
+
+								<input id="balcony_fun_storage" type="checkbox" name="checkboxset" value="4" ng-click="checkbox($event, 'balconyFunRequest', 'balcony', formData.balcony.balconyFunRequestArr)">
+								<label for="balcony_fun_storage">储物</label>
+
+								<input id="balcony_fun_flower" type="checkbox" name="checkboxset" value="5" ng-click="checkbox($event, 'balconyFunRequest', 'balcony', formData.balcony.balconyFunRequestArr)">
+								<label for="balcony_fun_flower">养殖花木</label>
+								<input class="inputtext" type="text" placeholder="请输入相关要求" ng-model="formData.balcony.balconyFunctionWant">
 							</div>
 						</div>
 					</div>
@@ -996,104 +1272,121 @@
 						<div class="row">
 							<div class="col-md-6">
 								<p>1.  电话的数量、要求：<span>*</span></p>
-							  	<input type="text" placeholder="请输入相关要求" ng-model="formData.additional.addTelQtyRequest">
+							  	<input class="inputtext" type="text" placeholder="请输入相关要求" ng-model="formData.additional.addTelQtyRequest">
 							</div>
 							<div class="col-md-6">
 								<p>2.  电脑（多媒体）的数量、位置：<span>*</span></p>
-							  	<input type="text" placeholder="请输入相关要求" ng-model="formData.additional.addComputerQtyPosition">
+							  	<input class="inputtext" type="text" placeholder="请输入相关要求" ng-model="formData.additional.addComputerQtyPosition">
 							</div>
 						</div>
 						<div class="row">
 							<div class="col-md-6">
 								<p>3.  视听设备：<span>*</span></p>
-								<input type="text" placeholder="请输入相关要求" ng-model="formData.additional.addAudioVisualEquipment">
+								<input class="inputtext" type="text" placeholder="请输入相关要求" ng-model="formData.additional.addAudioVisualEquipment">
 							</div>
-							<div class="col-md-6">
+							<div class="col-md-6 checkbox checkbox-success checkbox-inline">
 								<p>4.  对那些地域文化感兴趣（列举国家或城市）：<span>*</span></p>
-								<input type="checkbox" name="checkboxset" value="1" ng-click="checkbox($event, 'addRegionalCulture', 'additional', formData.additional.addRegionalCultureArr)">&nbsp;中国传统文化
-								<input type="checkbox" name="checkboxset" value="2" ng-click="checkbox($event, 'addRegionalCulture', 'additional', formData.additional.addRegionalCultureArr)">&nbsp;亚洲其他国家文化
-							    <input type="checkbox" name="checkboxset" value="3" ng-click="checkbox($event, 'addRegionalCulture', 'additional', formData.additional.addRegionalCultureArr)">&nbsp;非洲文化
-							    <input type="checkbox" name="checkboxset" value="4" ng-click="checkbox($event, 'addRegionalCulture', 'additional', formData.additional.addRegionalCultureArr)">&nbsp;欧洲文化
-							    <input type="checkbox" name="checkboxset" value="5" ng-click="checkbox($event, 'addRegionalCulture', 'additional', formData.additional.addRegionalCultureArr)">&nbsp;美洲文化
-							    <input type="checkbox" name="checkboxset" value="6" ng-click="checkbox($event, 'addRegionalCulture', 'additional', formData.additional.addRegionalCultureArr)">&nbsp;其他国家
+								<input id="addtion_culture_Chinese" type="checkbox" name="checkboxset" value="1" ng-click="checkbox($event, 'addRegionalCulture', 'additional', formData.additional.addRegionalCultureArr)">
+								<label for="addtion_culture_Chinese">中国传统文化</label>
+								<input id="addtion_culture_Asia" type="checkbox" name="checkboxset" value="2" ng-click="checkbox($event, 'addRegionalCulture', 'additional', formData.additional.addRegionalCultureArr)">
+								<label for="addtion_culture_Asia">亚洲其他国家文化</label>
+							    <input id="addtion_culture_Africa" type="checkbox" name="checkboxset" value="3" ng-click="checkbox($event, 'addRegionalCulture', 'additional', formData.additional.addRegionalCultureArr)">
+							    <label for="addtion_culture_Africa">非洲文化</label>
+							    <input id="addtion_culture_europe" type="checkbox" name="checkboxset" value="4" ng-click="checkbox($event, 'addRegionalCulture', 'additional', formData.additional.addRegionalCultureArr)">
+							    <label for="addtion_culture_europe">欧洲文化</label>
+							    <input id="addtion_culture_America" type="checkbox" name="checkboxset" value="5" ng-click="checkbox($event, 'addRegionalCulture', 'additional', formData.additional.addRegionalCultureArr)">
+							    <label for="addtion_culture_America">美洲文化</label>
+							    <input id="addtion_culture_other" type="checkbox" name="checkboxset" value="6" ng-click="checkbox($event, 'addRegionalCulture', 'additional', formData.additional.addRegionalCultureArr)">
+							    <label for="addtion_culture_other">其他国家</label>
 							</div>
 						</div>
 						
 						<div class="row">
-							<div class="col-md-6">
+							<div class="col-md-6 checkbox checkbox-success checkbox-inline">
 								<p>5.  对绘画、饰品的爱好：<span>*</span></p>
-							  	<input type="checkbox" name="checkboxset" value="1" ng-click="checkbox($event, 'addPaintingJewelryHobby', 'additional', formData.additional.addPaintingJewelryHobbyArr)">&nbsp;油画
-								<input type="checkbox" name="checkboxset" value="2" ng-click="checkbox($event, 'addPaintingJewelryHobby', 'additional', formData.additional.addPaintingJewelryHobbyArr)">&nbsp;水彩画
-							    <input type="checkbox" name="checkboxset" value="3" ng-click="checkbox($event, 'addPaintingJewelryHobby', 'additional', formData.additional.addPaintingJewelryHobbyArr)">&nbsp;国画
-							    <input type="checkbox" name="checkboxset" value="4" ng-click="checkbox($event, 'addPaintingJewelryHobby', 'additional', formData.additional.addPaintingJewelryHobbyArr)">&nbsp;现代装饰画
-							    <input type="checkbox" name="checkboxset" value="5" ng-click="checkbox($event, 'addPaintingJewelryHobby', 'additional', formData.additional.addPaintingJewelryHobbyArr)">&nbsp;摄影作品
-							    <input type="checkbox" name="checkboxset" value="6" ng-click="checkbox($event, 'addPaintingJewelryHobby', 'additional', formData.additional.addPaintingJewelryHobbyArr)">&nbsp;其他
+							  	<input id="addtion_hobby_oilPainting" type="checkbox" name="checkboxset" value="1" ng-click="checkbox($event, 'addPaintingJewelryHobby', 'additional', formData.additional.addPaintingJewelryHobbyArr)">
+							  	<label for="addtion_hobby_oilPainting">油画</label>
+								<input id="addtion_hobby_waterColours" type="checkbox" name="checkboxset" value="2" ng-click="checkbox($event, 'addPaintingJewelryHobby', 'additional', formData.additional.addPaintingJewelryHobbyArr)">
+								<label for="addtion_hobby_waterColours">水彩画</label>
+							    <input id="addtion_hobby_chinesePainting" type="checkbox" name="checkboxset" value="3" ng-click="checkbox($event, 'addPaintingJewelryHobby', 'additional', formData.additional.addPaintingJewelryHobbyArr)">
+							    <label for="addtion_hobby_chinesePainting">国画</label>
+							    <input id="addtion_hobby_modernPainting" type="checkbox" name="checkboxset" value="4" ng-click="checkbox($event, 'addPaintingJewelryHobby', 'additional', formData.additional.addPaintingJewelryHobbyArr)">
+							    <label for="addtion_hobby_modernPainting">现代装饰画</label>
+							    <input id="addtion_hobby_photography" type="checkbox" name="checkboxset" value="5" ng-click="checkbox($event, 'addPaintingJewelryHobby', 'additional', formData.additional.addPaintingJewelryHobbyArr)">
+							    <label for="addtion_hobby_photography">摄影作品</label>
+							    <input id="addtion_hobby_other" type="checkbox" name="checkboxset" value="6" ng-click="checkbox($event, 'addPaintingJewelryHobby', 'additional', formData.additional.addPaintingJewelryHobbyArr)">
+							    <label for="addtion_hobby_other">其他</label>
 							</div>
 							<div class="col-md-6">
 								<p>6.  是否有个人藏品需要展示：<span>*</span></p>
-							  	<input type="text" placeholder="请输入相关要求" ng-model="formData.additional.addObjectsDisplayOpt">
+							  	<input class="inputtext" type="text" placeholder="请输入相关要求" ng-model="formData.additional.addObjectsDisplayOpt">
 							</div>
 						</div>
 						<div class="row">
 							<div class="col-md-6">
 								<p>7.  对室内绿化有何要求（品种、数量、位置）：<span>*</span></p>
-							  	<input type="text" placeholder="请输入相关要求" ng-model="formData.additional.addIndoorGreeningRequest">
+							  	<input class="inputtext" type="text" placeholder="请输入相关要求" ng-model="formData.additional.addIndoorGreeningRequest">
 							</div>
 							<div class="col-md-6">
 								<p>8.  是否养宠物：<span>*</span></p>
-								<input type="text" placeholder="请输入相关要求" ng-model="formData.additional.addKeepPets">
+								<input class="inputtext" type="text" placeholder="请输入相关要求" ng-model="formData.additional.addKeepPets">
 							</div>
 						</div>
 						<div class="row">
-							<div class="col-md-6">
+							<div class="col-md-6 radio radio-success radio-inline">
 								<p>9.  对家具的风格喜好：<span>*</span></p>
-								<input type="radio" name="radiofs" value="1" ng-model="formData.additional.addFurnitureStyle">&nbsp;清油
-								<input type="radio" name="radiofs" value="2" ng-model="formData.additional.addFurnitureStyle">&nbsp;复合材料
-								<input type="radio" name="radiofs" value="3" ng-model="formData.additional.addFurnitureStyle">&nbsp;混油
+								<input id="addition_vegetableOil" type="radio" name="radiofs" value="1" ng-model="formData.additional.addFurnitureStyle">
+								<label for="addition_vegetableOil">清油</label>
+
+								<input id="addition_compound" type="radio" name="radiofs" value="2" ng-model="formData.additional.addFurnitureStyle">
+								<label for="addition_compound">复合材料</label>
+
+								<input id="addition_mixedOil" type="radio" name="radiofs" value="3" ng-model="formData.additional.addFurnitureStyle">
+								<label for="addition_mixedOil">混油</label>
 							</div>
 							<div class="col-md-6">
 								<p>10.  个人对服装着装、色彩有何喜好、习惯：<span>*</span></p>
-								<input type="text" placeholder="请输入相关要求" ng-model="formData.additional.addDressColorStyle">
+								<input class="inputtext" type="text" placeholder="请输入相关要求" ng-model="formData.additional.addDressColorStyle">
 							</div>
 						</div>
 						<div class="row">
 							<div class="col-md-6">
 								<p>11.  对家居风格、色彩的喜好（品种、数量、位置）：<span>*</span></p>
-							  	<input type="text" placeholder="请输入相关要求" ng-model="formData.additional.addHomeStyle">
+							  	<input class="inputtext" type="text" placeholder="请输入相关要求" ng-model="formData.additional.addHomeStyle">
 							</div>
 							<div class="col-md-6">
 								<p>12.  平日从事何种体育项目：<span>*</span></p>
-							  	<input type="text" placeholder="请输入相关要求" ng-model="formData.additional.addUsualSports">
+							  	<input class="inputtext" type="text" placeholder="请输入相关要求" ng-model="formData.additional.addUsualSports">
 							</div>
 						</div>
 						<div class="row">
 							<div class="col-md-6">
 								<p>13.  有什么运动器械：<span>*</span></p>
-								<input type="text" placeholder="请输入相关要求" ng-model="formData.additional.addSportsEquipment">
+								<input class="inputtext" type="text" placeholder="请输入相关要求" ng-model="formData.additional.addSportsEquipment">
 							</div>
 							<div class="col-md-6">
 								<p>14.  在设计、装修中有何禁忌、忌讳：<span>*</span></p>
-								<input type="text" placeholder="请输入相关要求" ng-model="formData.additional.addDesignDecorationTaboo">
+								<input class="inputtext" type="text" placeholder="请输入相关要求" ng-model="formData.additional.addDesignDecorationTaboo">
 							</div>
 						</div>
 						<div class="row">
 							<div class="col-md-6">
 								<p>15.  列举你喜欢的装修风格：<span>*</span></p>
-								<input type="text" placeholder="请输入相关要求" ng-model="formData.additional.addPersonalDecorationStyle">
+								<input class="inputtext" type="text" placeholder="请输入相关要求" ng-model="formData.additional.addPersonalDecorationStyle">
 							</div>
 							<div class="col-md-6">
 								<p>16.  你对以前房屋的设计及装修有何遗憾：<span>*</span></p>
-							  	<input type="text" placeholder="请输入相关要求" ng-model="formData.additional.addExDesignDecoRegret">
+							  	<input class="inputtext" type="text" placeholder="请输入相关要求" ng-model="formData.additional.addExDesignDecoRegret">
 							</div>
 						</div>
 						<div class="row">
 							<div class="col-md-6">
 								<p>17.  有无旧家具或特殊物品的安置：<span>*</span></p>
-								<input type="text" placeholder="请输入相关要求" ng-model="formData.additional.addOldFurnitureSpecialItemsPlaceOpt">
+								<input class="inputtext" type="text" placeholder="请输入相关要求" ng-model="formData.additional.addOldFurnitureSpecialItemsPlaceOpt">
 							</div>
 							<div class="col-md-6">
 								<p>18.  有无宗教信仰：<span>*</span></p>
-								<input type="text" placeholder="请输入相关要求" ng-model="formData.additional.addReligiousBeliefOpt">
+								<input class="inputtext" type="text" placeholder="请输入相关要求" ng-model="formData.additional.addReligiousBeliefOpt">
 							</div>
 						</div>
 					</div>
@@ -1106,47 +1399,47 @@
 						<div class="row">
 							<div class="col-md-6">
 								<p>1.  储藏室：<span>*</span></p>
-							  	<input type="text" placeholder="请输入相关要求" ng-model="formData.others.otherStoreroom">
+							  	<input class="inputtext" type="text" placeholder="请输入相关要求" ng-model="formData.others.otherStoreroom">
 							</div>
 							<div class="col-md-6">
 								<p>2.  健身房：<span>*</span></p>
-							  	<input type="text" placeholder="请输入相关要求" ng-model="formData.others.otherGym">
+							  	<input class="inputtext" type="text" placeholder="请输入相关要求" ng-model="formData.others.otherGym">
 							</div>
 						</div>
 						<div class="row">
 							<div class="col-md-6">
 								<p>3.  音乐室：<span>*</span></p>
-							  	<input type="text" placeholder="请输入相关要求" ng-model="formData.others.otherMusicRoom">
+							  	<input class="inputtext" type="text" placeholder="请输入相关要求" ng-model="formData.others.otherMusicRoom">
 							</div>
 							<div class="col-md-6">
 								<p>4.  茶室：<span>*</span></p>
-							  	<input type="text" placeholder="请输入相关要求" ng-model="formData.others.otherTeahouse">
+							  	<input class="inputtext" type="text" placeholder="请输入相关要求" ng-model="formData.others.otherTeahouse">
 							</div>
 						</div>
 						<div class="row">
 							<div class="col-md-6">
 								<p>5.  画室：<span>*</span></p>
-							  	<input type="text" placeholder="请输入相关要求" ng-model="formData.others.otherStudio">
+							  	<input class="inputtext" type="text" placeholder="请输入相关要求" ng-model="formData.others.otherStudio">
 							</div>
 							<div class="col-md-6">
 								<p>6.  车房：<span>*</span></p>
-							  	<input type="text" placeholder="请输入相关要求" ng-model="formData.others.otherGarage">
+							  	<input class="inputtext" type="text" placeholder="请输入相关要求" ng-model="formData.others.otherGarage">
 							</div>
 						</div>
 						<div class="row">
 							<div class="col-md-6">
 								<p>7.  游泳池：<span>*</span></p>
-							  	<input type="text" placeholder="请输入相关要求" ng-model="formData.others.otherPoll">
+							  	<input class="inputtext" type="text" placeholder="请输入相关要求" ng-model="formData.others.otherPoll">
 							</div>
 							<div class="col-md-6">
 								<p>8.  花房：<span>*</span></p>
-							  	<input type="text" placeholder="请输入相关要求" ng-model="formData.others.otherGreenhouse">
+							  	<input class="inputtext" type="text" placeholder="请输入相关要求" ng-model="formData.others.otherGreenhouse">
 							</div>
 						</div>
 						<div class="row">
 							<div class="col-md-6">
 								<p>9.  佣人房：<span>*</span></p>
-							  	<input type="text" placeholder="请输入相关要求" ng-model="formData.others.otherMaidRoom">
+							  	<input class="inputtext" type="text" placeholder="请输入相关要求" ng-model="formData.others.otherMaidRoom">
 							</div>
 						</div>
 					</div>
