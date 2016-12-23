@@ -65,7 +65,7 @@
 	                <div class="row">
 						<div class="col-md-12">					    
 						      <p> 2.请填写业主真实姓名：<span>*</span></p>
-						      <input class="inputtext" type="text" >
+						      <input class="inputtext" type="text" ng-model="formData.generalInfo.ownerName">
 						</div>
 					</div>
 					<div class="row">
@@ -408,8 +408,8 @@
 							        <input id="green_drainage_y" type="radio" name="radiodrain" value="1" ng-model="formData.greenTechInfo.greenSameFloorDrainageSysOpt">
 							        <label for="green_drainage_y">是</label>
 
-								    <input id="green_drainage_y" type="radio" name="radiodrain" value="0" ng-model="formData.greenTechInfo.greenSameFloorDrainageSysOpt">
-								    <label for="green_drainage_y">否</label>
+								    <input id="green_drainage_n" type="radio" name="radiodrain" value="0" ng-model="formData.greenTechInfo.greenSameFloorDrainageSysOpt">
+								    <label for="green_drainage_n">否</label>
 
 									<input id="" class="inputtext" type="text" placeholder="请输入其他参考意见" ng-model="formData.greenTechInfo.greenSameFloorDrainageSysOptView">
 							</div>
@@ -937,13 +937,13 @@
 						<div class="row">
 							<div class="col-md-12 radio radio-success radio-inline">
 								<p>5.衣柜存衣量的要求：<span>*</span></p>
-								<input id="masterRoom_wardrobe_big" type="radio" name="radiobedt" value="1" ng-model="formData.mainRoom.brWardrobeQtyRequest">
+								<input id="masterRoom_wardrobe_big" type="radio" name="radioChest" value="1" ng-model="formData.mainRoom.brWardrobeQtyRequest">
 								<label for="masterRoom_wardrobe_big">大量</label>
 
-								<input id="masterRoom_wardrobe_middle" type="radio" name="radiobedt" value="2" ng-model="formData.mainRoom.brWardrobeQtyRequest">
+								<input id="masterRoom_wardrobe_middle" type="radio" name="radioChest" value="2" ng-model="formData.mainRoom.brWardrobeQtyRequest">
 								<label for="masterRoom_wardrobe_middle">中量</label>
 
-								<input id="masterRoom_wardrobe_small" type="radio" name="radiobedt" value="3" ng-model="formData.mainRoom.brWardrobeQtyRequest">
+								<input id="masterRoom_wardrobe_small" type="radio" name="radioChest" value="3" ng-model="formData.mainRoom.brWardrobeQtyRequest">
 								<label for="masterRoom_wardrobe_small">少量</label>
 							</div>
 						</div>
@@ -1785,9 +1785,7 @@
 							<span ng-if="formData.livingRoom.sittingDrCombineOpt==0">否</span>
 						</td>
 						<td class="">客厅内的视听设备有哪些：</td>
-						<td class="">{{formData.livingRoom.sittingCeilingType}}</td>
-						<td class="" style="color: red">规格：</td>
-						<td class="">--</td>
+						<td class="" colspan="3">{{formData.livingRoom.sittingCeilingType}}</td>
 					</tr>
 					<tr>
 						<td class="">客人来家中聚会的内容：</td>
@@ -1915,7 +1913,7 @@
 							<span ng-if="formData.dinningRoom.drAmuseActivites==2">牌</span>
 							<span ng-if="formData.dinningRoom.drAmuseActivites==3">其他</span>
 						</td>
-						<td class="">其他</td>
+						<td class=""></td>
 						<td class=""></td>
 					</tr>
 					<tr>
