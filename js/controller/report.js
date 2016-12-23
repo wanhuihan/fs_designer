@@ -2,7 +2,7 @@
 /* ---------------------------
 	# report 量房报告页
 -----------------------------*/
-app.controller("report", function($scope, $http, $location, design, $location, getOrderDetail){
+app.controller("report", function($scope, $http, $location, design, $location, getOrderDetail, $cookies){
 
 	// console.log(getOrderDetail);	
 	if (!g.chkCookie()) {
@@ -551,111 +551,122 @@ app.controller("report", function($scope, $http, $location, design, $location, g
 		}		
 	}
 
-	$http({
-		method: 'post',
-		url: g.host+'/decoration_designer/volumeReport/selectVolumeReportByTaskCode',
-		data: {
-			decorationTaskCode: $scope.orderCode,
-		},
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8' },
-        
-        transformRequest: function(obj) {    
-            var str = [];    
-            for (var p in obj) {    
-                
-                if (typeof obj[p] == 'object' ) {
-                    // console.log(p, JSON.stringify(obj[p]));
-                    str.push(encodeURIComponent(p) + "=" + encodeURIComponent(JSON.stringify(obj[p])))
-                } else {
-                    str.push(encodeURIComponent(p) + "=" + encodeURIComponent(obj[p]));  
-                }                     
-            }    
-            return str.join("&");    
-        }		
-	}).success(function(data) {
+	$scope.hasSubmit = '';
+	$scope.getData = function() {
 
-		var obj = data.data.volumeList[0];
+		$http({
+			method: 'post',
+			url: g.host+'/decoration_designer/volumeReport/selectVolumeReportByTaskCode',
+			data: {
+				decorationTaskCode: $scope.orderCode,
+				token: $cookies.fs_designer_token
+			},
+	        headers: { 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8' },
+	        
+	        transformRequest: function(obj) {    
+	            var str = [];    
+	            for (var p in obj) {    
+	                
+	                if (typeof obj[p] == 'object' ) {
+	                    // console.log(p, JSON.stringify(obj[p]));
+	                    str.push(encodeURIComponent(p) + "=" + encodeURIComponent(JSON.stringify(obj[p])))
+	                } else {
+	                    str.push(encodeURIComponent(p) + "=" + encodeURIComponent(obj[p]));  
+	                }                     
+	            }    
+	            return str.join("&");    
+	        }		
+		}).success(function(data) {
 
-		for (var i in obj) {
+			$scope.hasSubmit = data.data.hasSubmit;
 
-			for (var a in $scope.formData[i]) {
+			var obj = data.data.volumeList[0];
 
-				if (obj[i].hasOwnProperty(a)) {
+			for (var i in obj) {
+				for (var a in $scope.formData[i]) {
+					if (obj[i].hasOwnProperty(a)) {
+						$scope.formData[i][a] = obj[i][a];
+					} 				
+				}
 
-					$scope.formData[i][a] = obj[i][a];
-
-				} 
-				
 			}
 
-		}
+			var surveyTime = new Date();
 
-		var surveyTime = new Date();
+			var planTime = new Date();
+			
+			surveyTime.setTime($scope.formData.generalInfo.ownerSurveyTime);
 
-		var planTime = new Date();
-		
-		surveyTime.setTime($scope.formData.generalInfo.ownerSurveyTime);
+			planTime.setTime($scope.formData.generalInfo.ownerPlanTime); 
 
-		planTime.setTime($scope.formData.generalInfo.ownerPlanTime); 
+			jQuery("#surveyTime").val(surveyTime.toLocaleDateString());
 
-		jQuery("#surveyTime").val(surveyTime.toLocaleDateString());
-
-		jQuery("#decorationTime").val(planTime.toLocaleDateString());
+			jQuery("#decorationTime").val(planTime.toLocaleDateString());
 
 
-		$scope.formData.houseBasicInfo.houseFaultView = eval($scope.formData.houseBasicInfo.houseFaultView);
+			$scope.formData.houseBasicInfo.houseFaultView = eval($scope.formData.houseBasicInfo.houseFaultView);
 
-		// console.log($scope.formData.houseBasicInfo.houseFaultView)
-		if ($scope.formData.houseBasicInfo.houseFaultView) {
-			jQuery(".houseFaultView").show();
-		}
+			// console.log($scope.formData.houseBasicInfo.houseFaultView)
+			if ($scope.formData.houseBasicInfo.houseFaultView) {
+				jQuery(".houseFaultView").show();
+			}
 
-		if ($scope.formData.houseBasicInfo.houseHeatingChnageView != '') {
-			jQuery(".houseHeatingChnageView").show();
-		} 
+			if ($scope.formData.houseBasicInfo.houseHeatingChnageView != '') {
+				jQuery(".houseHeatingChnageView").show();
+			} 
 
-		if ($scope.formData.houseBasicInfo.houseAcBuild == 1) {
-			jQuery(".houseAcBuild").show();
-		}
+			if ($scope.formData.houseBasicInfo.houseAcBuild == 1) {
+				jQuery(".houseAcBuild").show();
+			}
 
-		if ($scope.formData.houseBasicInfo.houseWholeCabinetBuild == 1) {
-			jQuery(".houseWholeCabinetBuild").show();
-		}
+			if ($scope.formData.houseBasicInfo.houseWholeCabinetBuild == 1) {
+				jQuery(".houseWholeCabinetBuild").show();
+			}
 
-		if ($scope.formData.houseBasicInfo.houseWcCeilingTileBuild == 1) {
-			jQuery(".houseWcCeilingTileBuild").show();
-		}
+			if ($scope.formData.houseBasicInfo.houseWcCeilingTileBuild == 1) {
+				jQuery(".houseWcCeilingTileBuild").show();
+			}
 
-		if ($scope.formData.houseBasicInfo.houseWcCeilingTileBuild == 1) {
-			jQuery(".houseKitTileCeilingBuild").show();
-		}
+			if ($scope.formData.houseBasicInfo.houseWcCeilingTileBuild == 1) {
+				jQuery(".houseKitTileCeilingBuild").show();
+			}
 
-		// console.log($scope.formData.abstruse.lrConsiderSettingOptArr);
-		$scope.showCheckboxData('abstruse', 'lrConsiderSettingOpt');
-		$scope.showCheckboxData('livingRoom', 'sittingLrMainFun');
-		$scope.showCheckboxData('livingRoom', 'sittingPartyContent');
-		$scope.showCheckboxData('dinningRoom', 'drUseNumRate');
-		$scope.showCheckboxData('dinningRoom', 'drEquipmentOpt');
-		$scope.showCheckboxData('readingRoom', 'libFun');
-		$scope.showCheckboxData('readingRoom', 'libBooksKindNum');
-		$scope.showCheckboxData('readingRoom', 'libNetworkOpt');
-		$scope.showCheckboxData('mainRoom', 'brDepotThings');
-		$scope.showCheckboxData('mainRoom', 'brNetworkOpt');
+			// console.log($scope.formData.abstruse.lrConsiderSettingOptArr);
+			$scope.showCheckboxData('abstruse', 'lrConsiderSettingOpt');
+			$scope.showCheckboxData('livingRoom', 'sittingLrMainFun');
+			$scope.showCheckboxData('livingRoom', 'sittingPartyContent');
+			$scope.showCheckboxData('dinningRoom', 'drUseNumRate');
+			$scope.showCheckboxData('dinningRoom', 'drEquipmentOpt');
+			$scope.showCheckboxData('readingRoom', 'libFun');
+			$scope.showCheckboxData('readingRoom', 'libBooksKindNum');
+			$scope.showCheckboxData('readingRoom', 'libNetworkOpt');
+			$scope.showCheckboxData('mainRoom', 'brDepotThings');
+			$scope.showCheckboxData('mainRoom', 'brNetworkOpt');
 
-		$scope.showCheckboxData('kidRoom', 'krSpecialLightsReuqest');
+			$scope.showCheckboxData('kidRoom', 'krSpecialLightsReuqest');
 
-		$scope.showCheckboxData('guestRoom', 'roomGrOpt');
+			$scope.showCheckboxData('guestRoom', 'roomGrOpt');
 
-		$scope.showCheckboxData('guestRoom', 'roomGrLightingReuqest');
+			$scope.showCheckboxData('guestRoom', 'roomGrLightingReuqest');
 
-		$scope.showCheckboxData('balcony', 'balconyFunRequest');
+			$scope.showCheckboxData('balcony', 'balconyFunRequest');
 
-		$scope.showCheckboxData('additional', 'addRegionalCulture');
-		$scope.showCheckboxData('additional', 'addPaintingJewelryHobby');
+			$scope.showCheckboxData('additional', 'addRegionalCulture');
+			$scope.showCheckboxData('additional', 'addPaintingJewelryHobby');
 
+			if ($scope.formData.abstruse.lrScreenCultureOpt == 1) {
+				jQuery(".lrScreenCultureOpt").show();
+			}
 
-		if ($scope.formData.abstruse.lrScreenCultureOpt == 1) {
-			jQuery(".lrScreenCultureOpt").show();
+		})		
+	}
+
+	$scope.getData();
+
+	$scope.$watch('hasSubmit', function(val) {
+		// console.log(val);
+		if (val) {
+			jQuery(".report_page_four").show();
 		}
 
 	})
@@ -753,6 +764,7 @@ app.controller("report", function($scope, $http, $location, design, $location, g
 				volumeReportJson: $scope.formData,
 				decorationTaskCode: $scope.orderCode,
 				status: 0,
+				token: $cookies.fs_designer_token
 			},
 
 	        headers: { 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8' },
@@ -780,7 +792,7 @@ app.controller("report", function($scope, $http, $location, design, $location, g
 
 	        }			
 		}).success(function(data) {
-			console.log(data)
+			$scope.getData();
 		})
 		// console.log(step);
 	}
@@ -807,42 +819,43 @@ app.controller("report", function($scope, $http, $location, design, $location, g
 
 	$scope.subReport = function() {
 
-		// $http({
-		// 	url: g.host+'/decoration_designer/volumeReport/addVolumeReport',
-		// 	method: 'post',
-		// 	data: {
-		// 		volumeReportJson: $scope.formData,
-		// 		decorationTaskCode: $scope.orderCode,
-		// 		status: 0,
-		// 	},
+		$http({
+			url: g.host+'/decoration_designer/volumeReport/addVolumeReport',
+			method: 'post',
+			data: {
+				volumeReportJson: $scope.formData,
+				decorationTaskCode: $scope.orderCode,
+				status: 1,
+				token: $cookies.fs_designer_token
+			},
 
-	 //        headers: { 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8' },
+	        headers: { 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8' },
 	        
-	 //        transformRequest: function(obj) {    
-	 //            var str = [];    
-	 //            for (var p in obj) {    
+	        transformRequest: function(obj) {    
+	            var str = [];    
+	            for (var p in obj) {    
 	                
-	 //                if (typeof obj[p] == 'object' ) {
+	                if (typeof obj[p] == 'object' ) {
 
-	 //                    var jsonStr = [];
+	                    var jsonStr = [];
 
-	 //                    for (i in obj[p]) {
-	 //                    	jsonStr.push(JSON.stringify(obj[p][i]));
-	 //                    }
+	                    for (i in obj[p]) {
+	                    	jsonStr.push(JSON.stringify(obj[p][i]));
+	                    }
 
-	 //                    str.push(encodeURIComponent(p) + "= {data:[" + jsonStr.join(",") + ']}');
-	 //                } else {
-	 //                    str.push(encodeURIComponent(p) + "=" + encodeURIComponent(obj[p]));  
-	 //                }                     
-	 //            }    
+	                    str.push(encodeURIComponent(p) + "= {data:[" + jsonStr.join(",") + ']}');
+	                } else {
+	                    str.push(encodeURIComponent(p) + "=" + encodeURIComponent(obj[p]));  
+	                }                     
+	            }    
+	            // console.log(str.join("&"))  
+	            return str.join("&");  
 
-	 //            // console.log(str.join("&"))  
-	 //            return str.join("&");  
-
-	 //        }			
-		// }).success(function(data) {
-		// 	// console.log(data)
-		// })		
+	        }			
+		}).success(function(data) {
+			// console.log(data);
+			$scope.hasSubmit = true;
+		})		
 	}
 
 })
