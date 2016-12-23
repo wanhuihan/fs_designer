@@ -807,42 +807,42 @@ app.controller("report", function($scope, $http, $location, design, $location, g
 
 	$scope.subReport = function() {
 
-		// $http({
-		// 	url: g.host+'/decoration_designer/volumeReport/addVolumeReport',
-		// 	method: 'post',
-		// 	data: {
-		// 		volumeReportJson: $scope.formData,
-		// 		decorationTaskCode: $scope.orderCode,
-		// 		status: 0,
-		// 	},
+		$http({
+			url: g.host+'/decoration_designer/volumeReport/addVolumeReport',
+			method: 'post',
+			data: {
+				volumeReportJson: $scope.formData,
+				decorationTaskCode: $scope.orderCode,
+				status: 1,
+			},
 
-	 //        headers: { 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8' },
+	        headers: { 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8' },
 	        
-	 //        transformRequest: function(obj) {    
-	 //            var str = [];    
-	 //            for (var p in obj) {    
+	        transformRequest: function(obj) {    
+	            var str = [];    
+	            for (var p in obj) {    
 	                
-	 //                if (typeof obj[p] == 'object' ) {
+	                if (typeof obj[p] == 'object' ) {
 
-	 //                    var jsonStr = [];
+	                    var jsonStr = [];
 
-	 //                    for (i in obj[p]) {
-	 //                    	jsonStr.push(JSON.stringify(obj[p][i]));
-	 //                    }
+	                    for (i in obj[p]) {
+	                    	jsonStr.push(JSON.stringify(obj[p][i]));
+	                    }
 
-	 //                    str.push(encodeURIComponent(p) + "= {data:[" + jsonStr.join(",") + ']}');
-	 //                } else {
-	 //                    str.push(encodeURIComponent(p) + "=" + encodeURIComponent(obj[p]));  
-	 //                }                     
-	 //            }    
+	                    str.push(encodeURIComponent(p) + "= {data:[" + jsonStr.join(",") + ']}');
+	                } else {
+	                    str.push(encodeURIComponent(p) + "=" + encodeURIComponent(obj[p]));  
+	                }                     
+	            }    
 
-	 //            // console.log(str.join("&"))  
-	 //            return str.join("&");  
+	            // console.log(str.join("&"))  
+	            return str.join("&");  
 
-	 //        }			
-		// }).success(function(data) {
-		// 	// console.log(data)
-		// })		
+	        }			
+		}).success(function(data) {
+			// console.log(data)
+		})		
 	}
 
 })
