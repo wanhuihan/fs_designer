@@ -464,6 +464,14 @@
 		display: none;
 		.additional_info {
 			display: none;
+			label {
+				&[for='house_fault_opinion'] {
+					margin-left: 0;
+					&:before {
+						display: none;
+					}
+				}
+			}
 		}
 		.report_tab_listone .radio-success {
 			label{

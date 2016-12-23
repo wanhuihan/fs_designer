@@ -65,7 +65,7 @@
 	                <div class="row">
 						<div class="col-md-12">					    
 						      <p> 2.请填写业主真实姓名：<span>*</span></p>
-						      <input class="inputtext" type="text" ng-model="formData.generalInfo.ownerName">
+						      <input class="inputtext" type="text" >
 						</div>
 					</div>
 					<div class="row">
@@ -172,13 +172,15 @@
 								<input id="house_fault_n" type="radio" name="radiodefect" value="0" ng-model="formData.houseBasicInfo.houseHouseStructureFault" ng-change="switch('radiodefect', formData.houseBasicInfo.houseHouseStructureFault)">
 								<label for="house_fault_n">否</label> 
 
-								<div class="info_add additional_info">
-									<p ng-repeat="item in formData.houseBasicInfo.faultArr">
+								<div class="info_add additional_info houseFaultView">
+									<p ng-repeat="item in formData.houseBasicInfo.houseFaultView">
 										{{item}} - 
 										<span class="glyphicon glyphicon-remove" ng-click="removeFaultList($index)"></span>
 									</p>
+
 									<!-- <input type="radio" name="" id="house_fault_opinion"> -->
-									<span>位置/参考意见&nbsp;&nbsp;&nbsp;&nbsp;</span><input type="text" name="">
+
+									<label for="house_fault_opinion">位置/参考意见</label><input type="text" name="">
 									<a class="btn btn-primary btn-xs" ng-click="addItem($event)">添加</a>
 								</div>
 
@@ -191,7 +193,7 @@
 						    <label for="heat_change_y">是</label>
 							<input id="heat_change_n" type="radio" name="radioheating" value="0" ng-model="formData.houseBasicInfo.houseHeatingChange" ng-change="switch('radioheating', formData.houseBasicInfo.houseHeatingChange)">
 							<label for="heat_change_n">否</label> 
-							<div class="additional_info">
+							<div class="additional_info houseHeatingChnageView">
 								<input class="inputtext" type="text" name="" ng-model="formData.houseBasicInfo.houseHeatingChnageView">
 							</div>
 						</div>
@@ -203,7 +205,7 @@
 						    <label for="coalgas_change_y">是</label>
 							<input id="coalgas_change_n" type="radio" name="radiocoal" value="0" ng-change="switch('radiocoal', formData.houseBasicInfo.houseGasChange)" ng-model="formData.houseBasicInfo.houseGasChange">
 							<label for="coalgas_change_n">否</label> 
-							<div class="additional_info">
+							<div class="additional_info houseGasChangeView">
 								<input class="inputtext" type="text" name="" ng-model="formData.houseBasicInfo.houseGasChangeView">
 							</div>							
 						</div>
@@ -233,7 +235,9 @@
 								<input id="installAir_y" type="radio" name="radioair" value="0" ng-model="formData.houseBasicInfo.houseAcBuild"  ng-change="switch('radioair', formData.houseBasicInfo.houseAcBuild)">
 								<label for="installAir_y">已安装</label>
 
-								<div class="additional_info additional_info_radio">
+
+								<div class="additional_info houseAcBuild additional_info_radio">
+
 									<input id="installAir_made_y" type="radio" name="" value="1" ng-model="formData.houseBasicInfo.houseCm">
 									<label for="installAir_made_y">已定制</label>
 
@@ -251,7 +255,8 @@
 								<input id="cupboardInstall_n" type="radio" name="radiocabinet" value="0" ng-model="formData.houseBasicInfo.houseWholeCabinetBuild"  ng-change="switch('radiocabinet', formData.houseBasicInfo.houseWholeCabinetBuild)">
 								<label for="cupboardInstall_n">已安装</label>
 
-								<div class="additional_info additional_info_radio">
+
+								<div class="additional_info houseWholeCabinetBuild additional_info_radio">
 									<input id="cupboardInstall_made_y" type="radio" name="" value="0" ng-model="formData.houseBasicInfo.houseCabinetCm">
 									<label for="cupboardInstall_made_y">已定制</label>
 
@@ -287,15 +292,21 @@
 								<input id="cookCeiling_n" type="radio" name="radioroof" value="2" ng-model="formData.houseBasicInfo.houseKitTileCeilingBuild" ng-change="switch('radiobricko', formData.houseBasicInfo.houseWholeCabinetBuild)">
 								<label for="cookCeiling_n">未吊顶</label>
 
+<<<<<<< HEAD
 								<div  class="additional_info additional_info_text">
 								<input id="cookCeiling_pvc" type="radio" name="radiomaterial" value="1" ng-model="formData.houseBasicInfo.houseKitCeilingStuff">
 								<label for="cookCeiling_pvc">PVC</label>
+=======
+								<div  class="additional_info houseKitTileCeilingBuild">
+									<input id="cookCeiling_pvc" type="radio" name="radiomaterial" value="1" ng-model="formData.houseBasicInfo.houseKitCeilingStuff">
+									<label for="cookCeiling_pvc">PVC</label>
+>>>>>>> 4cc0d466785ce756de2e9ef62e5b1735b98d79c7
 
-								<input id="cookCeiling_alumin" type="radio" name="radiomaterial" value="2" ng-model="formData.houseBasicInfo.houseKitCeilingStuff">
-								<label for="cookCeiling_alumin">铝扣板</label>
+									<input id="cookCeiling_alumin" type="radio" name="radiomaterial" value="2" ng-model="formData.houseBasicInfo.houseKitCeilingStuff">
+									<label for="cookCeiling_alumin">铝扣板</label>
 
-								<input id="cookCeiling_gypsum" type="radio" name="radiomaterial" value="3" ng-model="formData.houseBasicInfo.houseKitCeilingStuff">
-								<label for="cookCeiling_gypsum">石膏板</label>
+									<input id="cookCeiling_gypsum" type="radio" name="radiomaterial" value="3" ng-model="formData.houseBasicInfo.houseKitCeilingStuff">
+									<label for="cookCeiling_gypsum">石膏板</label>
 
 								</div>
 						</div>
@@ -315,7 +326,11 @@
 								<input id="wcCeiling_n" type="radio" name="radiocookr" value="2" ng-model="formData.houseBasicInfo.houseWcCeilingTileBuild" ng-change="switch('radiocookb', formData.houseBasicInfo.houseWcCeilingTileBuild)">
 								<label for="wcCeiling_n">未吊顶</label>
 								
+<<<<<<< HEAD
 								<div class="additional_info additional_info_text">
+=======
+								<div class="additional_info houseWcCeilingTileBuild">
+>>>>>>> 4cc0d466785ce756de2e9ef62e5b1735b98d79c7
 									<input id="wcCeiling_pvc" type="radio" name="radiocookm" value="1" ng-model="formData.houseBasicInfo.houseWcCeilingStuff">
 									<label for="wcCeiling_pvc">PVC</label>
 
@@ -442,7 +457,7 @@
 					</div>
 					<div class="partall abstruse">
 						<div class="row">
-							<div class="col-md-12 checkbox checkbox-success checkbox-inline">					    
+							<div class="col-md-12 checkbox checkbox-success checkbox-inline lrConsiderSettingOpt">					    
 							      	<p> 1.是否有考虑设置：<span>*</span></p>
 							      	<input id="abs_set_shoes" type="checkbox" name="checkboxset" value="1"  ng-click="checkbox($event, 'lrConsiderSettingOpt', 'abstruse', formData.abstruse.lrConsiderSettingOptArr)">
 							      	<label for="abs_set_shoes">鞋柜</label>
@@ -474,7 +489,7 @@
 							      	<label for="abs_culture_y">是</label>
 									<input id="abs_culture_n" type="radio" name="radioculture" value="0" ng-model="formData.abstruse.lrScreenCultureOpt" ng-change="switch('radioculture', formData.abstruse.lrScreenCultureOpt)">
 									<label for="abs_culture_n">否</label>
-									<div class="additional_info">
+									<div class="additional_info lrScreenCultureOpt">
 										<input class="inputtext" type="text" name="" ng-model="formData.abstruse.lrScreenCultureOptView">
 									</div>
 							</div>
@@ -501,7 +516,7 @@
 					<div class="row"><h3>客厅部分</h3></div>
 					<div class="partall">
 						<div class="row">
-							<div class="col-md-12 checkbox checkbox-success checkbox-inline">					    
+							<div class="col-md-12 checkbox checkbox-success checkbox-inline sittingLrMainFun">					    
 							      	<p> 1. 客厅的主要功能：<span>*</span></p>
 							      	<input id="livingRoom_fun_guest" type="checkbox" name="checkboxset" value="1" ng-click="checkbox($event, 'sittingLrMainFun', 'livingRoom', formData.livingRoom.sittingLrMainFunArr)">
 							      	<label for="livingRoom_fun_guest">会客</label>
@@ -549,7 +564,7 @@
 							</div>
 						</div>
 						<div class="row">
-							<div class="col-md-12 checkbox checkbox-success checkbox-inline">					    
+							<div class="col-md-12 checkbox checkbox-success checkbox-inline sittingPartyContent">					    
 							      	<p> 5. 客人来家中聚会内容：<span>*</span></p>
 							      	<input id="livingRoom_partyCont_talk" type="checkbox" name="checkboxset" value="1" ng-click="checkbox($event, 'sittingPartyContent', 'livingRoom', formData.livingRoom.sittingPartyContentArr)">
 							      	<label for="livingRoom_partyCont_talk">聊天</label>
@@ -637,7 +652,7 @@
 					<div class="row"><h3>餐厅部分</h3></div>
 					<div class="partall">
 						<div class="row">
-							<div class="col-md-12 checkbox checkbox-success checkbox-inline">
+							<div class="col-md-12 checkbox checkbox-success checkbox-inline drUseNumRate">
 						      	<p>1.餐厅使用人数：<span>*</span></p>
 						      	<input class="inputtext" type="text" placeholder="人数" ng-model="formData.dinningRoom.drUseNum">
 						      	<span>频率：</span>

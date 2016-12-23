@@ -4,8 +4,7 @@
 -----------------------------*/
 app.controller("report", function($scope, $http, $location, design, $location, getOrderDetail){
 
-	console.log(getOrderDetail);
-		
+	// console.log(getOrderDetail);	
 	if (!g.chkCookie()) {
 
 		$location.path("/login");
@@ -55,7 +54,7 @@ app.controller("report", function($scope, $http, $location, design, $location, g
 			houseHouseStructureFault: '',
 			houseFaultView: '',
 			faultViewShow: '',
-			faultArr: new Array(),
+			faultArr: [],
 
 			// 请选择暖气是否需改动
 			houseHeatingChange: '',
@@ -433,8 +432,7 @@ app.controller("report", function($scope, $http, $location, design, $location, g
 		singleDatePicker: true,
 
 	}, function(d) {
-
-		$scope.formData.generalInfo.ownerSurveyTime = Date.parse(d._d);
+		// $scope.formData.generalInfo.ownerSurveyTime = Date.parse(d._d);
 	});
 
 	// 量房时间赋值
@@ -442,7 +440,7 @@ app.controller("report", function($scope, $http, $location, design, $location, g
 		singleDatePicker: true,
 
 	}, function(d) {
-		$scope.formData.generalInfo.ownerPlanTime = Date.parse(d._d);
+		// $scope.formData.generalInfo.ownerPlanTime = Date.parse(d._d);
 	});
 
 		
@@ -466,7 +464,6 @@ app.controller("report", function($scope, $http, $location, design, $location, g
 	/* -------------------------
 		该房屋装修计划投资	end
 	---------------------------*/
-
 
 	// 城市地区的$scope,为合并地址用
 	$scope.generalInfo = {
@@ -493,15 +490,16 @@ app.controller("report", function($scope, $http, $location, design, $location, g
 		$scope.formData.houseBasicInfo.faultArr.push(t.parent(".info_add").find("input").val());
 		t.parent(".info_add").find("input").val('');
 
-		$scope.formData.houseBasicInfo.houseFaultView = $scope.formData.houseBasicInfo.faultArr.join(",");
+		// $scope.formData.houseBasicInfo.houseFaultView = $scope.formData.houseBasicInfo.faultArr.join("/*");
+		$scope.formData.houseBasicInfo.houseFaultView  = $scope.formData.houseBasicInfo.faultArr
 	}
 
 	// 删除添加的缺陷之处
 	$scope.removeFaultList = function(i) {
 
 		// $scope.formData.houseBasicInfo.faultArr.splice(i,1);
-		design.removeItem($scope.formData.houseBasicInfo.faultArr, i);
-		$scope.formData.houseBasicInfo.houseFaultView = $scope.formData.houseBasicInfo.faultArr.join(",");
+		design.removeItem($scope.formData.houseBasicInfo.houseFaultView, i);
+		// $scope.formData.houseBasicInfo.houseFaultView = $scope.formData.houseBasicInfo.faultArr.join(",");
 
 	}
 
@@ -527,6 +525,32 @@ app.controller("report", function($scope, $http, $location, design, $location, g
 
 	}
 
+	// 量房报告初始请求已填数据，获取checkbox部分，重新组合 显示已选
+	$scope.showCheckboxData = function(type, name) {
+
+		var lrConsiderSettingOptArr = jQuery("."+name+" input[type='checkbox']");
+
+
+		if (!$scope.formData[type][name]) {
+			var lrConsiderSettingOptVal = [];
+		} else {
+			var lrConsiderSettingOptVal = eval($scope.formData[type][name]);
+		}
+		
+		for(var i = 0; i < lrConsiderSettingOptArr.length; i++) {
+
+			for ( var a = 0; a < lrConsiderSettingOptVal.length; a++) {
+				
+				if (jQuery(lrConsiderSettingOptArr[i]).val() == lrConsiderSettingOptVal[a]) {
+					
+					jQuery(lrConsiderSettingOptArr[i]).attr("checked",true);
+				
+				}
+			}
+
+		}		
+	}
+
 	$http({
 		method: 'post',
 		url: g.host+'/decoration_designer/volumeReport/selectVolumeReportByTaskCode',
@@ -549,22 +573,112 @@ app.controller("report", function($scope, $http, $location, design, $location, g
             return str.join("&");    
         }		
 	}).success(function(data) {
-		// console.log(data);
-		$scope.formData = data.data.volumeReportList;
+
+		var obj = data.data.volumeList[0];
+
+		for (var i in obj) {
+
+			for (var a in $scope.formData[i]) {
+
+				if (obj[i].hasOwnProperty(a)) {
+
+					$scope.formData[i][a] = obj[i][a];
+
+				} 
+				
+			}
+
+		}
+
+		var surveyTime = new Date();
+
+		var planTime = new Date();
+		
+		surveyTime.setTime($scope.formData.generalInfo.ownerSurveyTime);
+
+		planTime.setTime($scope.formData.generalInfo.ownerPlanTime); 
+
+		jQuery("#surveyTime").val(surveyTime.toLocaleDateString());
+
+		jQuery("#decorationTime").val(planTime.toLocaleDateString());
+
+
+		$scope.formData.houseBasicInfo.houseFaultView = eval($scope.formData.houseBasicInfo.houseFaultView);
+
+		// console.log($scope.formData.houseBasicInfo.houseFaultView)
+		if ($scope.formData.houseBasicInfo.houseFaultView) {
+			jQuery(".houseFaultView").show();
+		}
+
+		if ($scope.formData.houseBasicInfo.houseHeatingChnageView != '') {
+			jQuery(".houseHeatingChnageView").show();
+		} 
+
+		if ($scope.formData.houseBasicInfo.houseAcBuild == 1) {
+			jQuery(".houseAcBuild").show();
+		}
+
+		if ($scope.formData.houseBasicInfo.houseWholeCabinetBuild == 1) {
+			jQuery(".houseWholeCabinetBuild").show();
+		}
+
+		if ($scope.formData.houseBasicInfo.houseWcCeilingTileBuild == 1) {
+			jQuery(".houseWcCeilingTileBuild").show();
+		}
+
+		if ($scope.formData.houseBasicInfo.houseWcCeilingTileBuild == 1) {
+			jQuery(".houseKitTileCeilingBuild").show();
+		}
+
+		// console.log($scope.formData.abstruse.lrConsiderSettingOptArr);
+		$scope.showCheckboxData('abstruse', 'lrConsiderSettingOpt');
+		$scope.showCheckboxData('livingRoom', 'sittingLrMainFun');
+		$scope.showCheckboxData('livingRoom', 'sittingPartyContent');
+		$scope.showCheckboxData('dinningRoom', 'drUseNumRate');
+		$scope.showCheckboxData('dinningRoom', 'drEquipmentOpt');
+		$scope.showCheckboxData('readingRoom', 'libFun');
+		$scope.showCheckboxData('readingRoom', 'libBooksKindNum');
+		$scope.showCheckboxData('readingRoom', 'libNetworkOpt');
+		$scope.showCheckboxData('mainRoom', 'brDepotThings');
+		$scope.showCheckboxData('mainRoom', 'brNetworkOpt');
+
+		$scope.showCheckboxData('kidRoom', 'krSpecialLightsReuqest');
+
+		$scope.showCheckboxData('guestRoom', 'roomGrOpt');
+
+		$scope.showCheckboxData('guestRoom', 'roomGrLightingReuqest');
+
+		$scope.showCheckboxData('balcony', 'balconyFunRequest');
+
+		$scope.showCheckboxData('additional', 'balconyFunRequest');
+		$scope.showCheckboxData('additional', 'addPaintingJewelryHobby');
+
+
+		if ($scope.formData.abstruse.lrScreenCultureOpt == 1) {
+			jQuery(".lrScreenCultureOpt").show();
+		}
+
 	})
+
 	// 第三部分
 	/*
-	 *@params e is the event target
-	 *@params name is the string name for form data,
-	 *@type	 is the type what the name is included
-	 *@arr is the default array for the array to string
+	 * @params e is the event target
+	 * @params name is the string name for form data,
+	 * @type	 is the type what the name is included
+	 * @arr is the default array for the array to string
 	*/
 	$scope.checkbox = function(e, name, type, arr) {
 		// var arr = arr;
 		var checked = e.target.checked;
 
+		if (!$scope.formData[type][name]) {
+			arr = [];
+		} else {
+			arr = eval($scope.formData[type][name]);
+		}	
+
 		if (checked) {
-			// console.log(jQuery(this).val())
+	
 			arr.push(e.target.value)
 
 		} else {
@@ -574,12 +688,13 @@ app.controller("report", function($scope, $http, $location, design, $location, g
 			// console.log(pos);
 
 			if (pos >= 0) {
-				arr.splice(pos,1);					
+
+				arr.splice(pos,1);	
+
 			}
 		}
-
 		// console.log(arr);
-	 $scope.formData[type][name] = arr.join(",");
+	 $scope.formData[type][name] = arr;
 
 	}
 
@@ -588,7 +703,7 @@ app.controller("report", function($scope, $http, $location, design, $location, g
 
 	// 当前第几步骤
 	$scope.currentStep = "";
-	
+
 	// 显示当前步骤的表单内容
 	for (var i = 0; i < step.length; i++) {
 
@@ -606,7 +721,7 @@ app.controller("report", function($scope, $http, $location, design, $location, g
 	$scope.nextStep = function(step) {
 
 		if (step == 'step_1') {
-			// console.log($scope.formData.generalInfo);
+
 		}
 
 		var currentStep = angular.element(document.getElementById(step));
@@ -627,6 +742,8 @@ app.controller("report", function($scope, $http, $location, design, $location, g
 
 		if (step == 'step_1') {
 			// console.log($scope.formData.generalInfo);
+			$scope.formData.generalInfo.ownerSurveyTime = Date.parse(jQuery("#surveyTime").val());
+			$scope.formData.generalInfo.ownerPlanTime = Date.parse(jQuery("#decorationTime").val());
 		}
 
 		$http({
@@ -663,7 +780,7 @@ app.controller("report", function($scope, $http, $location, design, $location, g
 
 	        }			
 		}).success(function(data) {
-			// console.log(data)
+			console.log(data)
 		})
 		// console.log(step);
 	}

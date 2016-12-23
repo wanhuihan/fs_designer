@@ -266,6 +266,10 @@
   display: none; }
   .report_details_form .step_content .additional_info {
     display: none; }
+    .report_details_form .step_content .additional_info label[for='house_fault_opinion'] {
+      margin-left: 0; }
+      .report_details_form .step_content .additional_info label[for='house_fault_opinion']:before {
+        display: none; }
   .report_details_form .step_content .report_tab_listone .radio-success label {
     margin: 0 20px; }
   .report_details_form .step_content .radio-inline {

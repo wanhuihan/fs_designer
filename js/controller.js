@@ -109,7 +109,7 @@ app.controller("header", function($scope, $http, $location, $cookies, $cookieSto
 	        },			
 		}).success(function(data) {
 			
-			console.log(data);
+			// console.log(data);
 			$cookieStore.remove('fs_designer_token');
 			$location.path("/login");
 		})
