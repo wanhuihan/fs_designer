@@ -1831,7 +1831,11 @@
 							<span ng-if="formData.livingRoom.sittingGroundStuffRequirements==5">拼花</span>
 						</td>
 						<td class="">是否需要有影视墙：</td>
-						<td class="">{{formData.livingRoom.sittingFilmWallBackgroundOpt}}</td>
+						<td class="">
+							<!-- {{formData.livingRoom.sittingFilmWallBackgroundOpt}} -->
+							<span ng-if="formData.livingRoom.sittingFilmWallBackgroundOpt==1">是</span>
+							<span ng-if="formData.livingRoom.sittingFilmWallBackgroundOpt==0">否</span>
+						</td>
 						<td class="">是否需要吊顶：</td>
 						<td class="">
 							<!-- {{formData.livingRoom.sittingCeilingOpt}} -->
@@ -1911,7 +1915,7 @@
 							<span ng-if="formData.dinningRoom.drAmuseActivites==2">牌</span>
 							<span ng-if="formData.dinningRoom.drAmuseActivites==3">其他</span>
 						</td>
-						<td class=""></td>
+						<td class="">其他</td>
 						<td class=""></td>
 					</tr>
 					<tr>
