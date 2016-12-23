@@ -470,6 +470,9 @@
 				margin: 0 20px;
 			}
 		} 
+		.radio-inline {
+			cursor: default;
+		}
 		// .btn_group {
 		// 	position: fixed;
 		// 	bottom: 0;
@@ -493,6 +496,51 @@
 		.inputtext {
 			line-height: 30px;
 		}
+		.additional_info {
+			margin-top: 10px;
+		}
+		.additional_info_radio {
+			position: relative;
+			width: 230px;
+			padding: 6px 0 3px 15px;
+			text-align: center;
+			border: 1px solid #eee;
+		}
+		.additional_info_radio:before {
+			z-index: 10;
+			position: absolute;
+		    top: -20px;
+			left: 8px;
+			content: "";
+			display: block;
+			width: 0;
+		    height: 0;
+		    border: 10px solid transparent;
+		    border-bottom-color: #eee;	   
+		}
+		.additional_info_text {
+			position: relative;
+			width: 290px;
+			padding: 6px 0 3px 15px;
+			text-align: center;
+			border: 1px solid #eee;
+		}
+		.additional_info_text:before {
+			z-index: 10;
+			position: absolute;
+		    top: -20px;
+			right: 64px;
+			content: "";
+			display: block;
+			width: 0;
+		    height: 0;
+		    border: 10px solid transparent;
+		    border-bottom-color: #eee;	   
+		}
+
+		// .house_fault_opinion .radio label:before{
+		// 	content: "";
+		// }
 	}
 	
 	.step_box {

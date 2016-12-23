@@ -268,10 +268,48 @@
     display: none; }
   .report_details_form .step_content .report_tab_listone .radio-success label {
     margin: 0 20px; }
+  .report_details_form .step_content .radio-inline {
+    cursor: default; }
   .report_details_form .step_content .table {
     margin: 20px auto; }
   .report_details_form .step_content .inputtext {
     line-height: 30px; }
+  .report_details_form .step_content .additional_info {
+    margin-top: 10px; }
+  .report_details_form .step_content .additional_info_radio {
+    position: relative;
+    width: 230px;
+    padding: 6px 0 3px 15px;
+    text-align: center;
+    border: 1px solid #eee; }
+  .report_details_form .step_content .additional_info_radio:before {
+    z-index: 10;
+    position: absolute;
+    top: -20px;
+    left: 8px;
+    content: "";
+    display: block;
+    width: 0;
+    height: 0;
+    border: 10px solid transparent;
+    border-bottom-color: #eee; }
+  .report_details_form .step_content .additional_info_text {
+    position: relative;
+    width: 290px;
+    padding: 6px 0 3px 15px;
+    text-align: center;
+    border: 1px solid #eee; }
+  .report_details_form .step_content .additional_info_text:before {
+    z-index: 10;
+    position: absolute;
+    top: -20px;
+    right: 64px;
+    content: "";
+    display: block;
+    width: 0;
+    height: 0;
+    border: 10px solid transparent;
+    border-bottom-color: #eee; }
 
 .report_details_form .step_box .step {
   position: relative; }

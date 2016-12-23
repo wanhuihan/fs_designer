@@ -68,8 +68,8 @@
 						      <input class="inputtext" type="text" ng-model="formData.generalInfo.ownerName">
 						</div>
 					</div>
-					<div class="row  radio radio-success radio-inline">
-						<div class="col-md-12">					    
+					<div class="row">
+						<div class="col-md-12 radio radio-success radio-inline">					    
 						    <p> 3.请填写业主性别：<span>*</span></p>
 						    <input id="owner_sex_g"  type="radio" name="radiosex" value="0" ng-model="formData.generalInfo.ownerSex">
 						    <label for="owner_sex_g">女士</label>
@@ -106,8 +106,10 @@
 						</div>
 					</div>
 					<div class="row">
-						<div class="col-md-12">					    
-						      <p> 7.请填写该房屋装修计划投资：（&nbsp;<input type="checkbox" ng-model="formData.generalInfo.investMPChangeVal" ng-change="investMPChange()" >&nbsp;含主材）<span>*</span></p>
+						<div class="col-md-12 checkbox checkbox-success checkbox-inline">					    
+						      <p> 7.请填写该房屋装修计划投资：
+						      （&nbsp;&nbsp;&nbsp;&nbsp;<input id="owner_investMPChangeVal" type="checkbox" ng-model="formData.generalInfo.investMPChangeVal" ng-change="investMPChange()" >
+						      <label for="owner_investMPChangeVal">含主材</label>）<span>*</span></p>
 						      <input class="inputtext" type="text" ng-model="formData.generalInfo.ownerPlannedInvests" ng-change="investMPChange()">
 						</div>
 					</div>
@@ -175,8 +177,8 @@
 										{{item}} - 
 										<span class="glyphicon glyphicon-remove" ng-click="removeFaultList($index)"></span>
 									</p>
-									<input type="radio" name="" id="house_fault_opinion">
-									<label for="house_fault_opinion">位置/参考意见</label><input type="text" name="">
+									<!-- <input type="radio" name="" id="house_fault_opinion"> -->
+									<span>位置/参考意见&nbsp;&nbsp;&nbsp;&nbsp;</span><input type="text" name="">
 									<a class="btn btn-primary btn-xs" ng-click="addItem($event)">添加</a>
 								</div>
 
@@ -231,7 +233,7 @@
 								<input id="installAir_y" type="radio" name="radioair" value="0" ng-model="formData.houseBasicInfo.houseAcBuild"  ng-change="switch('radioair', formData.houseBasicInfo.houseAcBuild)">
 								<label for="installAir_y">已安装</label>
 
-								<div class="additional_info">
+								<div class="additional_info additional_info_radio">
 									<input id="installAir_made_y" type="radio" name="" value="1" ng-model="formData.houseBasicInfo.houseCm">
 									<label for="installAir_made_y">已定制</label>
 
@@ -249,7 +251,7 @@
 								<input id="cupboardInstall_n" type="radio" name="radiocabinet" value="0" ng-model="formData.houseBasicInfo.houseWholeCabinetBuild"  ng-change="switch('radiocabinet', formData.houseBasicInfo.houseWholeCabinetBuild)">
 								<label for="cupboardInstall_n">已安装</label>
 
-								<div class="additional_info">
+								<div class="additional_info additional_info_radio">
 									<input id="cupboardInstall_made_y" type="radio" name="" value="0" ng-model="formData.houseBasicInfo.houseCabinetCm">
 									<label for="cupboardInstall_made_y">已定制</label>
 
@@ -266,7 +268,8 @@
 
 								<input id="balconyBrick_n" type="radio" name="radiobrick" value="1" ng-model="formData.houseBasicInfo.houseBalconyTileBuild">
 								<label for="balconyBrick_n">未铺装</label>
-						      	&nbsp;&nbsp;&nbsp;&nbsp;局部<input class="inputtext" type="text" ng-model="formData.houseBasicInfo.houseBalconyPart">
+						      	<span>&nbsp;&nbsp;&nbsp;&nbsp;局部&nbsp;&nbsp;&nbsp;&nbsp;</span>
+						      	<input class="inputtext" type="text" ng-model="formData.houseBasicInfo.houseBalconyPart">
 						</div>
 					</div>
 					<div class="row">
@@ -284,7 +287,7 @@
 								<input id="cookCeiling_n" type="radio" name="radioroof" value="2" ng-model="formData.houseBasicInfo.houseKitTileCeilingBuild" ng-change="switch('radiobricko', formData.houseBasicInfo.houseWholeCabinetBuild)">
 								<label for="cookCeiling_n">未吊顶</label>
 
-								<div  class="additional_info">
+								<div  class="additional_info additional_info_text">
 								<input id="cookCeiling_pvc" type="radio" name="radiomaterial" value="1" ng-model="formData.houseBasicInfo.houseKitCeilingStuff">
 								<label for="cookCeiling_pvc">PVC</label>
 
@@ -312,7 +315,7 @@
 								<input id="wcCeiling_n" type="radio" name="radiocookr" value="2" ng-model="formData.houseBasicInfo.houseWcCeilingTileBuild" ng-change="switch('radiocookb', formData.houseBasicInfo.houseWcCeilingTileBuild)">
 								<label for="wcCeiling_n">未吊顶</label>
 								
-								<div class="additional_info">
+								<div class="additional_info additional_info_text">
 									<input id="wcCeiling_pvc" type="radio" name="radiocookm" value="1" ng-model="formData.houseBasicInfo.houseWcCeilingStuff">
 									<label for="wcCeiling_pvc">PVC</label>
 
@@ -458,7 +461,7 @@
 							<div class="col-md-12 radio radio-success radio-inline">					    
 							      	<p> 2. 是否介意入门能够直观全室：<span>*</span></p>
 							      	<input id="abs_mindWholeRoom_y" type="radio" name="radiodoor" value="1" ng-model="formData.abstruse.lrVisualWholeRoomOpinion">
-							      	<label for="mindWholeRoom_y">是</label>
+							      	<label for="abs_mindWholeRoom_y">是</label>
 
 									<input id="abs_mindWholeRoom_n" type="radio" name="radiodoor" value="0" ng-model="formData.abstruse.lrVisualWholeRoomOpinion">
 									<label for="abs_mindWholeRoom_n">否</label>
