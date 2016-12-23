@@ -292,15 +292,9 @@
 								<input id="cookCeiling_n" type="radio" name="radioroof" value="2" ng-model="formData.houseBasicInfo.houseKitTileCeilingBuild" ng-change="switch('radiobricko', formData.houseBasicInfo.houseWholeCabinetBuild)">
 								<label for="cookCeiling_n">未吊顶</label>
 
-<<<<<<< HEAD
-								<div  class="additional_info additional_info_text">
-								<input id="cookCeiling_pvc" type="radio" name="radiomaterial" value="1" ng-model="formData.houseBasicInfo.houseKitCeilingStuff">
-								<label for="cookCeiling_pvc">PVC</label>
-=======
-								<div  class="additional_info houseKitTileCeilingBuild">
+								<div  class="additional_info houseKitTileCeilingBuild additional_info_text">
 									<input id="cookCeiling_pvc" type="radio" name="radiomaterial" value="1" ng-model="formData.houseBasicInfo.houseKitCeilingStuff">
 									<label for="cookCeiling_pvc">PVC</label>
->>>>>>> 4cc0d466785ce756de2e9ef62e5b1735b98d79c7
 
 									<input id="cookCeiling_alumin" type="radio" name="radiomaterial" value="2" ng-model="formData.houseBasicInfo.houseKitCeilingStuff">
 									<label for="cookCeiling_alumin">铝扣板</label>
@@ -326,11 +320,7 @@
 								<input id="wcCeiling_n" type="radio" name="radiocookr" value="2" ng-model="formData.houseBasicInfo.houseWcCeilingTileBuild" ng-change="switch('radiocookb', formData.houseBasicInfo.houseWcCeilingTileBuild)">
 								<label for="wcCeiling_n">未吊顶</label>
 								
-<<<<<<< HEAD
-								<div class="additional_info additional_info_text">
-=======
-								<div class="additional_info houseWcCeilingTileBuild">
->>>>>>> 4cc0d466785ce756de2e9ef62e5b1735b98d79c7
+								<div class="additional_info houseWcCeilingTileBuild additional_info_text">
 									<input id="wcCeiling_pvc" type="radio" name="radiocookm" value="1" ng-model="formData.houseBasicInfo.houseWcCeilingStuff">
 									<label for="wcCeiling_pvc">PVC</label>
 
@@ -682,7 +672,7 @@
 							</div>
 						</div>
 						<div class="row">
-							<div class="col-md-12 checkbox checkbox-success checkbox-inline">					    
+							<div class="col-md-12 checkbox checkbox-success checkbox-inline drEquipmentOpt">					    
 						      	<p>3.是否需要配备：<span>*</span></p>
 						      	<input id="restaurant_set_buffet" type="checkbox" name="checkeq" value="1" ng-click="checkbox($event, 'drEquipmentOpt', 'dinningRoom', formData.dinningRoom.drEquipmentOptArr)">
 						      	<label for="restaurant_set_buffet">餐柜</label>
@@ -813,7 +803,7 @@
 					<div class="row"><h3>书房部分</h3></div>
 					<div class="partall">
 						<div class="row">
-							<div class="col-md-12 checkbox checkbox-success checkbox-inline">
+							<div class="col-md-12 checkbox checkbox-success checkbox-inline libFun">
 								<p> 1.书房功能：<span>*</span></p>
 							  	<input id="readRoom_fun_read" type="checkbox" name="checkboxset" value="1" ng-click="checkbox($event, 'libFun', 'readingRoom', formData.readingRoom.libFunArr)">
 							  	<label for="readRoom_fun_read">读书</label>
@@ -846,7 +836,7 @@
 							</div>
 						</div>
 						<div class="row">
-							<div class="col-md-12 checkbox checkbox-success checkbox-inline">
+							<div class="col-md-12 checkbox checkbox-success checkbox-inline libBooksKindNum">
 								<p>4.  存书种类以及数量：<span>*</span></p>
 							   	<input id="readRoom_book_library" type="checkbox" name="checkboxset" value="1" ng-click="checkbox($event, 'libBooksKindNum', 'readingRoom', formData.readingRoom.libBooksKindNumArr)">
 							   	<label for="readRoom_book_library">藏书类</label>
@@ -887,7 +877,7 @@
 							</div>
 						</div>
 						<div class="row">
-							<div class="col-md-12 checkbox checkbox-success checkbox-inline">
+							<div class="col-md-12 checkbox checkbox-success checkbox-inline libNetworkOpt">
 								<p>8.  是否需要：<span>*</span></p>
 							   	<input id="readRoom_need_tel" type="checkbox" name="checkboxset" value="1" ng-click="checkbox($event, 'libNetworkOpt', 'readingRoom', formData.readingRoom.libNetworkOptArr)">
 							   	<label for="readRoom_need_tel">电话</label>
@@ -958,7 +948,7 @@
 							</div>
 						</div>
 						<div class="row">
-							<div class="col-md-12 checkbox checkbox-success checkbox-inline">
+							<div class="col-md-12 checkbox checkbox-success checkbox-inline brDepotThings">
 								<p>6.贮藏内容：<span>*</span></p>
 							   		<input id="masterRoom_storeCont_clothes" type="checkbox" name="checkboxset" value="1" ng-click="checkbox($event, 'brDepotThings', 'mainRoom', formData.mainRoom.brDepotThingsArr)">
 							   		<label for="masterRoom_storeCont_clothes">衣服</label>
@@ -983,7 +973,7 @@
 							</div>
 						</div>
 						<div class="row">
-							<div class="col-md-12 checkbox checkbox-success checkbox-inline">
+							<div class="col-md-12 checkbox checkbox-success checkbox-inline brNetworkOpt">
 								<p>8.是否需要：<span>*</span></p>
 							   	<input id="masterRoom_need_listen" type="checkbox" name="checkboxset" value="1" ng-click="checkbox($event, 'brNetworkOpt', 'mainRoom', formData.mainRoom.brNetworkOptArr)">
 							   	<label for="masterRoom_need_listen">视听设备</label>
@@ -1080,7 +1070,7 @@
 							</div>
 						</div>
 						<div class="row">
-							<div class="col-md-12 checkbox checkbox-success checkbox-inline">
+							<div class="col-md-12 checkbox checkbox-success checkbox-inline krSpecialLightsReuqest">
 								<p>6.有无特殊灯光要求：<span>*</span></p>
 							   		<input id="kidRoom_adjustableLight " type="checkbox" name="checkboxset" value="1" ng-click="checkbox($event, 'krSpecialLightsReuqest', 'kidRoom', formData.kidRoom.krSpecialLightsReuqestArr)">
 							   		<label for="kidRoom_adjustableLight ">可调光源</label>
@@ -1150,7 +1140,7 @@
 							</div>
 						</div>
 						<div class="row">
-							<div class="col-md-12 checkbox checkbox-success checkbox-inline">
+							<div class="col-md-12 checkbox checkbox-success checkbox-inline roomGrOpt">
 								<p>3.  是否需要：<span>*</span></p>
 							   	<input id="guestRoom_listen" type="checkbox" name="checkboxset" value="1" ng-click="checkbox($event, 'roomGrOpt', 'guestRoom', formData.guestRoom.roomGrOptArr)">
 							   	<label for="guestRoom_listen">视听设备</label>
@@ -1162,7 +1152,7 @@
 							</div>
 						</div>
 						<div class="row">
-							<div class="col-md-12 checkbox checkbox-success checkbox-inline">
+							<div class="col-md-12 checkbox checkbox-success checkbox-inline roomGrLightingReuqest">
 								<p>4.  有无特殊灯光要求：<span>*</span></p>
 							   	<input id="guestRoom_adjustableLight" type="checkbox" name="checkboxset" value="1" ng-click="checkbox($event, 'roomGrLightingReuqest', 'guestRoom', formData.guestRoom.roomGrLightingReuqestArr)">
 							   	<label for="guestRoom_adjustableLight">可调光源</label>
@@ -1263,7 +1253,7 @@
 							</div>
 						</div>
 						<div class="row">
-							<div class="col-md-12 checkbox checkbox-success checkbox-inline">
+							<div class="col-md-12 checkbox checkbox-success checkbox-inline balconyFunRequest">
 								<p>3.  阳台功能要求：<span>*</span></p>
 							   	<input id="balcony_fun_clothes" type="checkbox" name="checkboxset" value="1" ng-click="checkbox($event, 'balconyFunRequest', 'balcony', formData.balcony.balconyFunRequestArr)">
 							   	<label for="balcony_fun_clothes">晾衣服</label>
@@ -1303,7 +1293,7 @@
 								<p>3.  视听设备：<span>*</span></p>
 								<input class="inputtext" type="text" placeholder="请输入相关要求" ng-model="formData.additional.addAudioVisualEquipment">
 							</div>
-							<div class="col-md-6 checkbox checkbox-success checkbox-inline">
+							<div class="col-md-6 checkbox checkbox-success checkbox-inline addRegionalCulture">
 								<p>4.  对那些地域文化感兴趣（列举国家或城市）：<span>*</span></p>
 								<input id="addtion_culture_Chinese" type="checkbox" name="checkboxset" value="1" ng-click="checkbox($event, 'addRegionalCulture', 'additional', formData.additional.addRegionalCultureArr)">
 								<label for="addtion_culture_Chinese">中国传统文化</label>
@@ -1321,7 +1311,7 @@
 						</div>
 						
 						<div class="row">
-							<div class="col-md-6 checkbox checkbox-success checkbox-inline">
+							<div class="col-md-6 checkbox checkbox-success checkbox-inline addPaintingJewelryHobby">
 								<p>5.  对绘画、饰品的爱好：<span>*</span></p>
 							  	<input id="addtion_hobby_oilPainting" type="checkbox" name="checkboxset" value="1" ng-click="checkbox($event, 'addPaintingJewelryHobby', 'additional', formData.additional.addPaintingJewelryHobbyArr)">
 							  	<label for="addtion_hobby_oilPainting">油画</label>

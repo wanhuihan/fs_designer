@@ -650,7 +650,7 @@ app.controller("report", function($scope, $http, $location, design, $location, g
 
 		$scope.showCheckboxData('balcony', 'balconyFunRequest');
 
-		$scope.showCheckboxData('additional', 'balconyFunRequest');
+		$scope.showCheckboxData('additional', 'addRegionalCulture');
 		$scope.showCheckboxData('additional', 'addPaintingJewelryHobby');
 
 
