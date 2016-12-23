@@ -31,9 +31,9 @@
 		</ul>
 	</div>
 	<div class="report_details_form main_content">
-
+		
 		<div role="tabpanel" class="tab-pane" id="report" aria-labelledby="report-tab">
-			<div class="row step_box" >	
+			<div class="row step_box" ng-show="!hasSubmit">	
 				<div class="col-md-3 report_tab_stepone step_1 step current viewed" id="step_1">
 					<h3>客户基本情况</h3><span></span>
 				</div>
@@ -50,7 +50,7 @@
 					<h3>完成</h3><span></span>
 				</div>
 			</div>
-			<div class="reoprt_pageone step_content" content="step_1">
+			<div class="reoprt_pageone step_content" content="step_1" ng-show="!hasSubmit">
 					
 				<form class="report_tab_listone" role="form">
 					<div class="row">
@@ -152,7 +152,7 @@
 				</form>
 			</div>
 
-			<div class="report_page_two step_content" content="step_2">
+			<div class="report_page_two step_content" content="step_2" ng-show="!hasSubmit">
 				
 				<form class="report_tab_listone" role="form">
 					<div class="row ">
@@ -348,7 +348,7 @@
 				</form>
 			</div>
 
-			<div class="report_page_three step_content" content="step_3">
+			<div class="report_page_three step_content" content="step_3" ng-show="!hasSubmit">
 				<form class="report_tab_listtwo" role="form">
 					<div class="row">
 						<h3>绿色科技部分</h3>
@@ -2390,11 +2390,11 @@
 						<td class="" colspan="5">{{formData.additional.addOldFurnitureSpecialItemsPlaceOpt}}</td>
 					</tr>
 				</table>
-				<div class="row">
+				<div class="row" ng-show="!hasSubmit">
 					<div class="btm_btn_group col-md-12">
 						<button class="btn btn-default btn-lg" ng-click="lastStep(currentStep)">上一步</button>
 						<button class="btn btn-primary btn-lg" ng-click="save(currentStep)">保存</button>
-						<button class="btn btn-default btn-lg" ng-click="nextStep(currentStep)">提交</button>
+						<button class="btn btn-default btn-lg" ng-click="subReport(currentStep)">提交</button>
 					</div>						
 				</div>
 			</div>

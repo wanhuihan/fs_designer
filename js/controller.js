@@ -162,7 +162,7 @@ app.controller("login", function($http, $scope, $location, $cookies, ngDialog) {
 	$scope.data = {
 		user: '',
 		pwd: '',
-		role: '',
+		role: '11',
 	}
 
 	$scope.sub = function() {
