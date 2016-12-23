@@ -451,14 +451,19 @@ app.controller("report", function($scope, $http, $location, design, $location, g
 	$scope.investMPChangeVal = ""; // 该值是为判断是否选中含主材才赋值
 
 	// 判断输入值之后选中含主材则 给 ownerMPlannedInvests 赋值
-	$scope.investMPChange = function(e) {
+	$scope.investMPChange = function() {
 
-		if($scope.investMPChangeVal) {
-			$scope.formData.generalInfo.ownerMPlannedInvests = $scope.formData.generalInfo.ownerPlannedInvests;
-
+		if ($scope.investMPChangeVal) {
+			$scope.formData.generalInfo.ownerMPlannedInvests = 1;
 		} else {
-			$scope.formData.generalInfo.ownerMPlannedInvests = "";
-		}	
+			$scope.formData.generalInfo.ownerMPlannedInvests = 0;
+		}
+		// if($scope.investMPChangeVal) {
+		// 	$scope.formData.generalInfo.ownerMPlannedInvests = $scope.formData.generalInfo.ownerPlannedInvests;
+
+		// } else {
+		// 	$scope.formData.generalInfo.ownerMPlannedInvests = "";
+		// }	
 	}
 
 	/* -------------------------
@@ -487,11 +492,13 @@ app.controller("report", function($scope, $http, $location, design, $location, g
 	$scope.addItem = function(e) {
 
 		var t = jQuery(angular.element(e.target))
-		$scope.formData.houseBasicInfo.faultArr.push(t.parent(".info_add").find("input").val());
-		t.parent(".info_add").find("input").val('');
 
+		// $scope.formData.houseBasicInfo.faultArr.push(t.parent(".info_add").find("input").val());
+		
+		
 		// $scope.formData.houseBasicInfo.houseFaultView = $scope.formData.houseBasicInfo.faultArr.join("/*");
-		$scope.formData.houseBasicInfo.houseFaultView  = $scope.formData.houseBasicInfo.faultArr
+		$scope.formData.houseBasicInfo.houseFaultView.push(t.parent(".info_add").find("input").val());
+		t.parent(".info_add").find("input").val('');
 	}
 
 	// 删除添加的缺陷之处
@@ -605,7 +612,13 @@ app.controller("report", function($scope, $http, $location, design, $location, g
 
 
 			$scope.formData.houseBasicInfo.houseFaultView = eval($scope.formData.houseBasicInfo.houseFaultView);
-
+			// $scope.formData.houseBasicInfo.faultArr = eval($scope.formData.houseBasicInfo.houseFaultView);
+			// $scope.formData.generalInfo.ownerMPlannedInvests;
+			if ($scope.formData.generalInfo.ownerMPlannedInvests == 1) {
+				$scope.investMPChangeVal = true;
+			} else {
+				$scope.investMPChangeVal = false;
+			}
 			// console.log($scope.formData.houseBasicInfo.houseFaultView)
 			if ($scope.formData.houseBasicInfo.houseFaultView) {
 				jQuery(".houseFaultView").show();
@@ -755,6 +768,7 @@ app.controller("report", function($scope, $http, $location, design, $location, g
 			// console.log($scope.formData.generalInfo);
 			$scope.formData.generalInfo.ownerSurveyTime = Date.parse(jQuery("#surveyTime").val());
 			$scope.formData.generalInfo.ownerPlanTime = Date.parse(jQuery("#decorationTime").val());
+			
 		}
 
 		$http({
@@ -792,7 +806,8 @@ app.controller("report", function($scope, $http, $location, design, $location, g
 
 	        }			
 		}).success(function(data) {
-			$scope.getData();
+			// $scope.getData();
+			console.log('success');
 		})
 		// console.log(step);
 	}
@@ -855,6 +870,33 @@ app.controller("report", function($scope, $http, $location, design, $location, g
 		}).success(function(data) {
 			// console.log(data);
 			$scope.hasSubmit = true;
+			if (data.code == 0) {
+
+				$http({
+					method: 'post',
+					url: g.host+'/decoration_designer/designerSubmitStatus/updateCanOrdersStatus',
+					data: {
+						decorationTaskCode: $scope.orderCode,
+						token: $cookies.fs_designer_token
+					},
+		            headers: { 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8' },
+		            
+		            transformRequest: function(obj) {    
+		                var str = [];    
+		                for (var p in obj) {    
+		                    
+		                    if (typeof obj[p] == 'object' ) {
+		                        // console.log(p, JSON.stringify(obj[p]));
+		                        str.push(encodeURIComponent(p) + "=" + encodeURIComponent(JSON.stringify(obj[p])))
+		                    } else {
+		                        str.push(encodeURIComponent(p) + "=" + encodeURIComponent(obj[p]));  
+		                    }                     
+		                }    
+		                return str.join("&");    
+		            }					
+				}).success(function(data) {})	
+			}
+
 		})		
 	}
 

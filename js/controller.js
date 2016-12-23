@@ -420,7 +420,6 @@ app.controller("workLoad", function($scope, $http, $location, $cookies) {
 	$scope.subWorkAmount = function() {
 
 		// console.log($scope.orderCode);
-
 		$http({
 			url: g.host+'/decoration_designer/decorationTask/quantity/submit',
 
@@ -450,10 +449,34 @@ app.controller("workLoad", function($scope, $http, $location, $cookies) {
 		}).success(function(data) {
 
 			if (g.checkData(data)) {
-
-				alert("提交成功");
 				$scope.subChk = true;
-				// $scope.inputDisabled = true;				
+				$http({
+					method: 'post',
+					url: g.host+'/decoration_designer/designerSubmitStatus/updateCanOrdersStatus',
+					data: {
+						decorationTaskCode: $scope.orderCode,
+						token: $cookies.fs_designer_token
+					},
+		            headers: { 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8' },
+		            
+		            transformRequest: function(obj) {    
+		                var str = [];    
+		                for (var p in obj) {    
+		                    
+		                    if (typeof obj[p] == 'object' ) {
+		                        // console.log(p, JSON.stringify(obj[p]));
+		                        str.push(encodeURIComponent(p) + "=" + encodeURIComponent(JSON.stringify(obj[p])))
+		                    } else {
+		                        str.push(encodeURIComponent(p) + "=" + encodeURIComponent(obj[p]));  
+		                    }                     
+		                }    
+		                return str.join("&");    
+		            }					
+				}).success(function(data) {
+					
+					// alert(data.msg);
+				})
+
 			}
 
 		})		
@@ -610,8 +633,36 @@ app.controller("bom", function($scope, $http, $location, $cookies){
 		    }
 
 		}).success(function(data){
-			$scope.subChk = true;
-			// console.log(data)
+
+			if (data.success) {
+
+				$scope.subChk = true;
+
+				$http({
+					method: 'post',
+					url: g.host+'/decoration_designer/designerSubmitStatus/updateCanOrdersStatus',
+					data: {
+						decorationTaskCode: $scope.orderCode,
+						token: $cookies.fs_designer_token
+					},
+		            headers: { 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8' },
+		            
+		            transformRequest: function(obj) {    
+		                var str = [];    
+		                for (var p in obj) {    
+		                    
+		                    if (typeof obj[p] == 'object' ) {
+		                        // console.log(p, JSON.stringify(obj[p]));
+		                        str.push(encodeURIComponent(p) + "=" + encodeURIComponent(JSON.stringify(obj[p])))
+		                    } else {
+		                        str.push(encodeURIComponent(p) + "=" + encodeURIComponent(obj[p]));  
+		                    }                     
+		                }    
+		                return str.join("&");    
+		            }					
+				}).success(function(data) {})	
+
+			}
 		})
 	}
 
@@ -663,13 +714,13 @@ app.controller("design", function($scope, $http, $location, $cookies, ngDialog) 
 
 		}).success(function(data) {
 
-			console.log(data);
+			// console.log(data);
 
 			if (g.checkData(data)) {
 
 				$scope.data = data.decorationDesignDrawList;
 				$scope.roleCode = data.roleCode;	
-				console.log($scope.roleCode)		
+				// console.log($scope.roleCode)		
 			}
 
 		})		
@@ -723,7 +774,37 @@ app.controller("design", function($scope, $http, $location, $cookies, ngDialog) 
 	        }			
 		}).success(function(data) {
 
-			console.log(data);
+			// console.log(data);
+			if (data.code == 0) {
+				$http({
+					method: 'post',
+					url: g.host+'/decoration_designer/designerSubmitStatus/updateCanOrdersStatus',
+					data: {
+						decorationTaskCode: $scope.orderCode,
+						token: $cookies.fs_designer_token
+					},
+		            headers: { 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8' },
+		            
+		            transformRequest: function(obj) {    
+		                var str = [];    
+		                for (var p in obj) {    
+		                    
+		                    if (typeof obj[p] == 'object' ) {
+		                        // console.log(p, JSON.stringify(obj[p]));
+		                        str.push(encodeURIComponent(p) + "=" + encodeURIComponent(JSON.stringify(obj[p])))
+		                    } else {
+		                        str.push(encodeURIComponent(p) + "=" + encodeURIComponent(obj[p]));  
+		                    }                     
+		                }    
+		                return str.join("&");    
+		            }					
+				}).success(function(data) {
+					console.log('success');
+					location.reload()	
+					
+
+				})					
+			}
 
 		})
 	}
