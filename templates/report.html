@@ -1723,8 +1723,7 @@
 						</td>
 						<td class="">是否有考虑安排：</td>
 						<td class="" colspan="3">
-							<!-- {{formData.abstruse.lrConsiderSettingOpt}} -->
-							<span ng-repeat="item in formData.abstruse.lrConsiderSettingOptArr">
+							<span ng-repeat="item in formData.abstruse.lrConsiderSettingOpt">
 								<i ng-if="item==1">鞋柜</i>
 								<i ng-if="item==2">衣柜</i>
 								<i ng-if="item==3">镜子（整装）</i>
@@ -1761,8 +1760,7 @@
 					<tr>
 						<td class="">客厅的主要功能：</td>
 						<td class="">
-							<!-- {{formData.livingRoom.sittingLrMainFun}} -->
-							<span ng-repeat="item in formData.livingRoom.sittingLrMainFunArr">
+							<span ng-repeat="item in formData.livingRoom.sittingLrMainFun">
 								<b ng-if="item==1">会客</b>
 								<b ng-if="item==2">休息</b>
 								<b ng-if="item==3">娱乐</b>
@@ -1790,8 +1788,7 @@
 					<tr>
 						<td class="">客人来家中聚会的内容：</td>
 						<td class="">
-							<!-- {{formData.livingRoom.sittingPartyContent}} -->
-							<span ng-repeat="item in formData.livingRoom.sittingPartyContentArr">
+							<span ng-repeat="item in formData.livingRoom.sittingPartyContent">
 								<b ng-if="item==1">聊天</b>
 								<b ng-if="item==2">PARTY</b>
 								<b ng-if="item==3">卡拉OK </b>
@@ -1860,8 +1857,7 @@
 						<td class="">{{formData.dinningRoom.drUseNum}}</td>
 						<td class="">使用频率：</td>
 						<td class="">
-							<!-- {{formData.dinningRoom.drUseNumRateArr}} -->
-							<span ng-repeat="item in formData.dinningRoom.drUseNumRateArr">
+							<span ng-repeat="item in formData.dinningRoom.drUseNumRate">
 								<b ng-if="item==1">晚餐</b>
 								<b ng-if="item==2">午餐</b>
 								<b ng-if="item==3">早餐</b>
@@ -1879,7 +1875,7 @@
 					<tr>
 						<td class="">是否需要配置：</td>
 						<td class="">
-							<span ng-repeat="item in formData.dinningRoom.drEquipmentOptArr">
+							<span ng-repeat="item in formData.dinningRoom.drEquipmentOpt">
 								<b ng-if="item==1">餐柜</b>
 								<b ng-if="item==2">酒柜</b>
 								<b ng-if="item==3">陈列柜</b>
@@ -1967,8 +1963,7 @@
 					<tr>
 						<td class="">书房功能：</td>
 						<td class="">
-							<!-- {{formData.readingRoom.libFunArr}} -->
-							<span ng-repeat="item in formData.readingRoom.libFunArr">
+							<span ng-repeat="item in formData.readingRoom.libFun">
 								<b ng-if="item==1">读书</b>
 								<b ng-if="item==2">写作</b>
 								<b ng-if="item==3">会客</b>
@@ -1998,8 +1993,8 @@
 						<td class="">{{formData.readingRoom.libBooksContain}}</td>
 						<td class="">存书种类：</td>
 						<td class="">
-							<!-- {{formData.readingRoom.libBooksKindNumArr}} -->
-							<span ng-repeat="item in formData.readingRoom.libBooksKindNumArr">
+							<!-- {{formData.readingRoom.libBooksKindNum}} -->
+							<span ng-repeat="item in formData.readingRoom.libBooksKindNum">
 								<b ng-if="item==1">藏书类</b>
 								<b ng-if="item==2">工具类</b>
 								<b ng-if="item==3">杂志类</b>
@@ -2018,8 +2013,8 @@
 						</td>
 						<td class="">是否需要：</td>
 						<td class="">
-							<!-- {{formData.readingRoom.libNetworkOptArr}} -->
-							<span ng-repeat="item in formData.readingRoom.libNetworkOptArr">
+							{{formData.readingRoom.libNetworkOpt}}
+							<span ng-repeat="item in formData.readingRoom.libNetworkOpt">
 								<b ng-if="item==1">电话</b>
 								<b ng-if="item==2">网线</b>
 								<b ng-if="item==3">打印机</b>
@@ -2078,7 +2073,7 @@
 						</td>
 						<td class="">储藏内容：</td>
 						<td class="">
-							<!-- {{formData.mainRoom.brDepotThingsArr}} -->
+							<!-- {{formData.mainRoom.brDepotThings}} -->
 							<span ng-repeat="item in formData.mainRoom.brDepotThingsArr">
 								<b ng-if="item==1">衣服</b>
 								<b ng-if="item==2">鞋</b>
@@ -2089,7 +2084,7 @@
 						<td class="">是否需要：</td>
 						<td class="">
 							<!-- {{formData.mainRoom.brNetworkOptArr}} -->
-							<span ng-repeat="item in formData.mainRoom.brNetworkOptArr">
+							<span ng-repeat="item in formData.mainRoom.brNetworkOpt">
 								<b ng-if="item==1">视听设备</b>
 								<b ng-if="item==2">电话</b>
 								<b ng-if="item==3">网线</b>
@@ -2171,7 +2166,7 @@
 						<td class="">特殊灯光要求：</td>
 						<td class="">
 							<!-- {{formData.kidRoom.krSpecialLightsReuqestArr}} -->
-							<span ng-repeat="item in formData.kidRoom.krSpecialLightsReuqestArr">
+							<span ng-repeat="item in formData.kidRoom.krSpecialLightsReuqest">
 								<b ng-if="item==1">可调光源</b>
 								<b ng-if="item==2">双控开关</b>
 								<b ng-if="item==3">地脚线</b>
@@ -2203,7 +2198,7 @@
 						<td class="">是否需要：</td>
 						<td class="">
 							<!-- {{formData.guestRoom.brNetworkOptArr}} -->
-							<span ng-repeat="item in formData.guestRoom.roomGrOptArr">
+							<span ng-repeat="item in formData.guestRoom.roomGrOpt">
 								<b ng-if="item==1">视听设备</b>
 								<b ng-if="item==2">电话</b>
 								<b ng-if="item==3">网线</b>
@@ -2214,7 +2209,7 @@
 						<td class="">有无特殊灯光要求</td>
 						<td class="">
 							<!-- {{formData.guestRoom.roomGrLightingReuqestArr}} -->
-							<span ng-repeat="item in formData.guestRoom.roomGrLightingReuqestArr">
+							<span ng-repeat="item in formData.guestRoom.roomGrLightingReuqest">
 								<b ng-if="item==1">可调光源</b>
 								<b ng-if="item==2">双控开关</b>
 								<b ng-if="item==3">地脚线</b>
@@ -2282,8 +2277,8 @@
 					<tr>
 						<td class="">功能要求：</td>
 						<td class="" colspan="3">
-							{{formData.balcony.balconyFunRequestArr}}
-							<span ng-repeat="item in formData.balcony.balconyFunRequestArr">
+							<!-- {{formData.balcony.balconyFunRequestArr}} -->
+							<span ng-repeat="item in formData.balcony.balconyFunRequest">
 								<b ng-if="item==1">晾衣服 </b>
 								<b ng-if="item==2">健身</b>
 								<b ng-if="item==3">休息</b>
@@ -2324,7 +2319,7 @@
 					<tr>
 						<td class="">对那些地域文化感兴趣：</td>
 						<td class="">
-							<span ng-repeat="item in formData.additional.addRegionalCultureArr">
+							<span ng-repeat="item in formData.additional.addRegionalCulture">
 								<b ng-if="item==1">中国传统文化</b>
 								<b ng-if="item==2">亚洲其他国家文化</b>
 								<b ng-if="item==3">非洲文化</b>
@@ -2335,7 +2330,7 @@
 						</td>
 						<td class="">对绘画、饰品的爱好：</td>
 						<td class="">
-							<span ng-repeat="item in formData.additional.addPaintingJewelryHobbyArr">
+							<span ng-repeat="item in formData.additional.addPaintingJewelryHobby">
 								<b ng-if="item==1">油画</b>
 								<b ng-if="item==2">水彩画</b>
 								<b ng-if="item==3">国画</b>

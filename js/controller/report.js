@@ -644,7 +644,70 @@ app.controller("report", function($scope, $http, $location, design, $location, g
 				jQuery(".houseKitTileCeilingBuild").show();
 			}
 
-			// console.log($scope.formData.abstruse.lrConsiderSettingOptArr);
+			if ($scope.formData.abstruse.lrConsiderSettingOpt) {
+				$scope.formData.abstruse.lrConsiderSettingOpt = eval($scope.formData.abstruse.lrConsiderSettingOpt);
+			}
+
+			if ($scope.formData.livingRoom.sittingLrMainFun) {
+				$scope.formData.livingRoom.sittingLrMainFun = eval($scope.formData.livingRoom.sittingLrMainFun);
+			}
+
+			if ($scope.formData.livingRoom.sittingPartyContent) {
+				$scope.formData.livingRoom.sittingPartyContent = eval($scope.formData.livingRoom.sittingPartyContent);
+			}
+
+			if ($scope.formData.dinningRoom.drUseNumRate) {
+				$scope.formData.dinningRoom.drUseNumRate = eval($scope.formData.dinningRoom.drUseNumRate);
+			}	
+
+			if ($scope.formData.dinningRoom.drEquipmentOpt) {
+				$scope.formData.dinningRoom.drEquipmentOpt = eval($scope.formData.dinningRoom.drEquipmentOpt);
+			}			
+
+			if ($scope.formData.readingRoom.libFun) {
+				$scope.formData.readingRoom.libFun = eval($scope.formData.readingRoom.libFun);
+			}
+
+			if ($scope.formData.readingRoom.libBooksKindNum) {
+				$scope.formData.readingRoom.libBooksKindNum = eval($scope.formData.readingRoom.libBooksKindNum);
+			}
+
+			if ($scope.formData.readingRoom.libNetworkOpt) {
+				$scope.formData.readingRoom.libNetworkOpt = eval($scope.formData.readingRoom.libNetworkOpt);
+			}
+
+			if ($scope.formData.mainRoom.brDepotThings) {
+				$scope.formData.mainRoom.brDepotThings = eval($scope.formData.mainRoom.brDepotThings);
+			}
+
+			if ($scope.formData.mainRoom.brNetworkOpt) {
+				$scope.formData.mainRoom.brNetworkOpt = eval($scope.formData.mainRoom.brNetworkOpt);
+			}
+
+			if ($scope.formData.kidRoom.krSpecialLightsReuqest) {
+				$scope.formData.kidRoom.krSpecialLightsReuqest = eval($scope.formData.kidRoom.krSpecialLightsReuqest);
+			}
+
+			if ($scope.formData.guestRoom.roomGrOpt) {
+				$scope.formData.guestRoom.roomGrOpt = eval($scope.formData.guestRoom.roomGrOpt);
+			}
+
+			if ($scope.formData.guestRoom.roomGrLightingReuqest) {
+				$scope.formData.guestRoom.roomGrLightingReuqest = eval($scope.formData.guestRoom.roomGrLightingReuqest);
+			}
+
+			if ($scope.formData.balcony.balconyFunRequest) {
+				$scope.formData.balcony.balconyFunRequest = eval($scope.formData.balcony.balconyFunRequest);
+			}
+
+			if ($scope.formData.additional.addRegionalCulture) {
+				$scope.formData.additional.addRegionalCulture = eval($scope.formData.additional.addRegionalCulture);
+			}
+
+			if ($scope.formData.additional.addPaintingJewelryHobby) {
+				$scope.formData.additional.addPaintingJewelryHobby = eval($scope.formData.additional.addPaintingJewelryHobby);
+			}			
+
 			$scope.showCheckboxData('abstruse', 'lrConsiderSettingOpt');
 			$scope.showCheckboxData('livingRoom', 'sittingLrMainFun');
 			$scope.showCheckboxData('livingRoom', 'sittingPartyContent');

@@ -13,6 +13,11 @@ var g = {
 	// host: 'http://192.168.0.87',
 	// host: 'http://192.168.5.94:8080',
 	host: 'http://192.168.0.224:8089',
+
+	user: {
+		name: '',
+		role: '',
+	},
 	// cookie set
 	setCookie: function(data) {
 

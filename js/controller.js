@@ -82,6 +82,11 @@
 
 app.controller("header", function($scope, $http, $location, $cookies, $cookieStore) {
 
+	$scope.user = {
+		name: g.user.name,
+		role: g.user.role
+	}
+
 	$scope.logOut=  function() {
 
 		$http({
@@ -203,10 +208,13 @@ app.controller("login", function($http, $scope, $location, $cookies, ngDialog) {
 
 		}).success(function(data) {
 			// alert(123)
+			// console.log(data)
 			if (g.checkData(data)) {
 
 				g.setCookie(data);
 				// return false;
+				g.user.name = data.realName;
+				g.user.role = data.roleName;
 				$scope.headerShow = true;
 				$location.path("/dashboard");
 				// $location.path("http://www.baidu.com");
