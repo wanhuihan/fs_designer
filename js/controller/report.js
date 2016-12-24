@@ -54,7 +54,7 @@ app.controller("report", function($scope, $http, $location, design, $location, g
 
 			// 请填写原房屋结构是否有缺陷之处（如：墙体裂开、平整度、顶面漏水）
 			houseHouseStructureFault: '',
-			houseFaultView: '',
+			houseFaultView: [],
 			faultViewShow: '',
 			faultArr: [],
 
@@ -594,7 +594,20 @@ app.controller("report", function($scope, $http, $location, design, $location, g
 	        }		
 		}).success(function(data) {
 
-			console.log(data);
+			// console.log(data);
+
+			if (data.data.volumeList.length == 0) {
+
+				$scope.formData.generalInfo.createName = window.localStorage.fs_design_realName;
+				var a = new  Date(); 
+				// a.getFullYear(); 
+				// a.getMonth(); 
+				// a.getDate()
+				// 2016年12月24日
+				$scope.formData.generalInfo.creatTime = a.getFullYear() + '年' + (a.getMonth()+1) + '月'+a.getDate()+'日'
+				return false;
+
+			}
 
 			if (data.code == 10) {
 
@@ -670,6 +683,11 @@ app.controller("report", function($scope, $http, $location, design, $location, g
 				jQuery(".houseKitTileCeilingBuild").show();
 			}
 
+			if ($scope.formData.houseBasicInfo.houseKitTileCeilingBuild == 1) {
+				jQuery(".houseKitCeilingStuff").show();
+			}
+
+			
 			if ($scope.formData.abstruse.lrConsiderSettingOpt) {
 				$scope.formData.abstruse.lrConsiderSettingOpt = eval($scope.formData.abstruse.lrConsiderSettingOpt);
 			}
@@ -760,6 +778,8 @@ app.controller("report", function($scope, $http, $location, design, $location, g
 				jQuery(".lrScreenCultureOpt").show();
 			}
 
+		}).error(function(data) {
+			console.log(data);
 		})		
 	}
 

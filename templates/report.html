@@ -298,7 +298,7 @@
 								<input id="cookCeiling_n" type="radio" name="radioroof" value="2" ng-model="formData.houseBasicInfo.houseKitTileCeilingBuild" ng-change="switch('radiobricko', formData.houseBasicInfo.houseWholeCabinetBuild)">
 								<label for="cookCeiling_n">未吊顶</label>
 
-								<div  class="additional_info houseKitTileCeilingBuild additional_info_text">
+								<div  class="additional_info houseKitCeilingStuff additional_info_text">
 									<input id="cookCeiling_pvc" type="radio" name="radiomaterial" value="1" ng-model="formData.houseBasicInfo.houseKitCeilingStuff">
 									<label for="cookCeiling_pvc">PVC</label>
 
@@ -758,7 +758,7 @@
 						<div class="row">
 							<div class="col-md-12">
 								<p> 1.电气设备(电源问题)：<span>*</span></p>
-							   	<input class="inputtext" type="text" placeholder="请输入相关要求" ng-model="formData.kitchen.drColorRequest">
+							   	<input class="inputtext" type="text" placeholder="请输入相关要求" ng-model="formData.kitchen.kitElecEquipment">
 						   	</div>
 						</div>
 						<div class="row">
@@ -1936,7 +1936,7 @@
 					</tr>
 					<tr>
 						<td class="">电气设备：</td>
-						<td class="" colspan="5">{{formData.kitchen.drColorRequest}}</td>
+						<td class="" colspan="5">{{formData.kitchen.kitElecEquipment}}</td>
 					</tr>
 					<tr>
 						<td class="">对墙、地色彩或材料的特殊要求：</td>

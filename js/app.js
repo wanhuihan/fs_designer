@@ -12,7 +12,6 @@ var g = {
 	// host server
 	// host: 'http://192.168.0.6:8080',
 	host: 'http://192.168.0.224:8089',
-	// host: 'http://192.168.0.87',
 
 	// user: {
 	// 	name: '',
@@ -21,7 +20,7 @@ var g = {
 	// cookie set
 	setCookie: function(data) {
 
-		var time = data.exp;
+		var time = data.exp;	
 		var token = data.token;
 
 		var now = new Date();
