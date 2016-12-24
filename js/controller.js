@@ -694,7 +694,7 @@ app.controller("bom", function($scope, $http, $location, $cookies){
 ----------------------------*/
  
 // 设计图接口调用 刘杰的
-app.controller("design", function($scope, $http, $location, $cookies, ngDialog) {
+app.controller("design", function($scope, $http, $location, $cookies, ngDialog, $window) {
 
 	$scope.orderId = $location.search().id;
 
@@ -780,9 +780,9 @@ app.controller("design", function($scope, $http, $location, $cookies, ngDialog) 
 			className: 'ngdialog ngdialog-theme-default designAddForm',
 
 			controller: function() {
-				// console.log($cookies.fs_designer_token, $scope.orderCode)
-				jQuery("body").on("click", "#uploadForm .btn", function() {
 
+				jQuery("body").on("click", "#uploadForm .btn", function() {
+					
 					var formData = new FormData();
 
 					var fileArr = jQuery('#uploadForm input[type="file"]');
@@ -794,6 +794,7 @@ app.controller("design", function($scope, $http, $location, $cookies, ngDialog) 
 					}
 
 					// formData.append('files', arr);
+					jQuery(".loading_box").show();
 
 					jQuery.ajax({
 					    url: g.host+'/decoration_designer/decorationDesignDraw/upLoadDecorationDesignDraw?token='+$cookies.fs_designer_token+'&decorationTaskCode='+$scope.orderCode+'&designType='+$scope.designTypeFile,
@@ -807,7 +808,10 @@ app.controller("design", function($scope, $http, $location, $cookies, ngDialog) 
 						// console.log(res)
 
 						if (res.success) {
+							
+							jQuery(".loading_box").hide();
 							ngDialog.close('designAddForm')
+							$window.location.reload();
 						}
 
 					}).fail(function(res) {
@@ -832,11 +836,12 @@ app.controller("design", function($scope, $http, $location, $cookies, ngDialog) 
 			className: 'ngdialog ngdialog-theme-default designEditForm',
 
 			controller: function() {
-				// console.log($scope.designDrawingId)
+
 				var changeBtnArr = jQuery("#EditForm .btn");
 
 				jQuery("body").on("click", "#EditForm .btn", function() {
 
+					
 					// console.log(jQuery(this).parents("#designEditForm"));
 					var thisFormDiv = jQuery(this).parents("#EditForm").find("input[type='file']");
 					// return false;
@@ -848,6 +853,9 @@ app.controller("design", function($scope, $http, $location, $cookies, ngDialog) 
 						formData.append('files', thisFormDiv[i].files[0]);
 					}
 					// console.log(formData)
+					
+					jQuery(".loading_box").show();
+					// return false;
 					jQuery.ajax({
 					    url: g.host+'/decoration_designer/decorationDesignDraw/updateDecorationDesignDraw?token='+$cookies.fs_designer_token+'&decorationTaskCode='+$scope.orderCode+'&designType='+$scope.designTypeFile+'&decorationDesignDrawId='+$scope.designDrawingId,
 					    type: 'POST',
@@ -859,8 +867,10 @@ app.controller("design", function($scope, $http, $location, $cookies, ngDialog) 
 
 						// console.log(res)
 						if (res.success) {
-							// alert('yes')
-							ngDialog.close('designEditForm')
+							
+							jQuery(".loading_box").hide();
+							ngDialog.close('designEditForm');
+							$window.location.reload();
 						}
 
 					}).fail(function(res) {

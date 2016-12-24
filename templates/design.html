@@ -60,7 +60,7 @@
 						<div class="row">
 							<div class="col-md-3"><span>类型：{{item.designTypeText}}</span></div>
 							<div class="col-md-3"><span>上传人：{{item.uploadUser}}</span></div>
-							<div class="col-md-6"><span>最新更新：2016-07-25 13：01：25</span></div>
+							<div class="col-md-6"><span>最新更新：{{item.uploadTime | date: 'yyyy年MM月dd日' }}</span></div>
 						</div>
 						<div class="row">
 							<div class="col-md-6" ng-if="item.maxName !=''">
@@ -89,7 +89,7 @@
 							</div>													
 						</div>
 					</div>
-					<div class="col-md-3">
+					<div class="col-md-3"> 
 						<button type="button" class="btn btn-default btn-block" ng-disabled="!item.hasLoginDesigner" ng-show="!item.hasSubmit" ng-click="designDrawsEdit(item.decorationDesignDrawId)"><i class="fa fa-pencil-square-o" ></i>修改</button>
 						<br />
 						<button type="button" class="btn btn-primary btn-block" ng-disabled="!item.hasLoginDesigner && !item.hasSubmit" ng-show="!item.hasSubmit" ng-click="setDesignAsFinal(item.decorationDesignDrawId)"><i class="fa fa-check-circle"></i>设为最终版</button>
