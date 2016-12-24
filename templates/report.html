@@ -1596,7 +1596,7 @@
 						<td class="">
 							<span ng-if="formData.houseBasicInfo.houseBalconyTileBuild==0">已铺装</span>
 							<span ng-if="formData.houseBasicInfo.houseBalconyTileBuild==1">未铺装</span>
-							<!-- {{formData.houseBasicInfo.houseBalconyPart}} -->
+							- {{formData.houseBasicInfo.houseBalconyPart}}
 						</td>
 						<td class="">厨房是否已铺砖及吊顶：</td>
 						<td class="">
@@ -1735,6 +1735,7 @@
 						<td class="" colspan="5">
 							<span ng-if="formData.abstruse.lrScreenCultureOpt==1">是</span>
 							<span ng-if="formData.abstruse.lrScreenCultureOpt==0">否</span>
+							-{{formData.abstruse.lrScreenCultureOptView}}
 						</td>
 					</tr>
 					<tr>
@@ -1746,6 +1747,7 @@
 						<td class="">
 							<span ng-if="formData.abstruse.lrGateHuomanSelOpt==1">是</span>
 							<span ng-if="formData.abstruse.lrGateHuomanSelOpt==0">否</span>
+
 						</td>
 						<td class="">其他：</td>
 						<td class="" colspan="3"></td>
@@ -1913,8 +1915,8 @@
 						<td class="">家庭烹饪的特点：</td>
 						<td class="">
 							<!-- {{formData.dinningRoom.drCookingType}} -->
-							<span ng-if="formData.dinningRoom.drCookingType==1">西餐</span>
-							<span ng-if="formData.dinningRoom.drCookingType==0">中餐</span>
+							<span ng-if="formData.dinningRoom.drCookingType==0">西餐</span>
+							<span ng-if="formData.dinningRoom.drCookingType==1">中餐</span>
 						</td>
 						<td class="">对餐厅色彩有无特殊要求：</td>
 						<td class="" colspan="3">{{formData.dinningRoom.drColorRequest}}</td>
@@ -2138,7 +2140,7 @@
 					</tr>
 					<tr>
 						<td class="" style="color: red">对墙、地色彩或材料的特殊要求：</td>
-						<td class="" colspan="3">formData.kidRoom.krColorRequest</td>
+						<td class="" colspan="3"></td>
 						<td class="">儿童有何兴趣爱好：</td>
 						<td class="">
 							<!-- {{formData.kidRoom.krHobby}} -->

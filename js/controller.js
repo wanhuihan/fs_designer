@@ -739,7 +739,8 @@ app.controller("design", function($scope, $http, $location, $cookies, ngDialog) 
 		ngDialog.open({
 			templateUrl: 'templates/designDrawsAdd.html',	
 			scope : $scope,
-			width: 800	
+			width: 800,
+			className: 'ngdialog ngdialog-theme-default designAddForm'		
 		})
 
 	}
@@ -749,7 +750,8 @@ app.controller("design", function($scope, $http, $location, $cookies, ngDialog) 
 		ngDialog.open({
 			templateUrl: 'templates/designDrawsEdit.html',	
 			scope : $scope,
-			width: 800	
+			width: 800,
+
 		})
 
 	}
