@@ -12,7 +12,6 @@ var g = {
 	// host server
 	host: 'http://192.168.0.6:8080',
 	// host: 'http://192.168.0.87',
-	// host: 'http://192.168.0.224:8089',
 
 	// user: {
 	// 	name: '',
