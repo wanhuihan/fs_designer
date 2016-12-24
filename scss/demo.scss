@@ -411,6 +411,7 @@
 	}
 	.report_tab_listone {
 		margin:60px 170px 0 25px;
+
 		& > div {
 			margin-bottom:20px;
 			padding-bottom:20px;
@@ -421,6 +422,9 @@
 			& > div >input {
 				// margin-left:20px;
 			}
+		}
+		& > div:last-child {
+			border: none;
 		}
 	}
 	.report_tab_listtwo {
@@ -458,6 +462,9 @@
 				    border-bottom: none;
 			}
 		}
+		& > div:last-child {
+			border: none;
+		}
 	}
 
 	.step_content {
@@ -467,7 +474,7 @@
 			display: none;
 			label {
 				&[for='house_fault_opinion'] {
-					margin-left: 0;
+					margin-left: 0 !important;
 					&:before {
 						display: none;
 					}
@@ -516,7 +523,7 @@
 			border: 1px solid #eee;
 		}
 		.additional_info_radio:before {
-			z-index: 10;
+			// z-index: 1;
 			position: absolute;
 		    top: -20px;
 			left: 8px;
@@ -535,7 +542,7 @@
 			border: 1px solid #eee;
 		}
 		.additional_info_text:before {
-			z-index: 10;
+			// z-index: 1;
 			position: absolute;
 		    top: -20px;
 			right: 64px;

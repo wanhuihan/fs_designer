@@ -69,8 +69,14 @@
 						</div>
 					</div>
 					<div class="row">
+						<div class="col-md-12">					    
+						      <p> 3.请填写业联系电话：<span>*</span></p>
+						      <input class="inputtext" type="text" ng-model="formData.generalInfo.ownerTelPhone">
+						</div>
+					</div>
+					<div class="row">
 						<div class="col-md-12 radio radio-success radio-inline">					    
-						    <p> 3.请填写业主性别：<span>*</span></p>
+						    <p> 4.请填写业主性别：<span>*</span></p>
 						    <input id="owner_sex_g"  type="radio" name="radiosex" value="0" ng-model="formData.generalInfo.ownerSex">
 						    <label for="owner_sex_g">女士</label>
 
@@ -80,7 +86,7 @@
 					</div>
 					<div class="row">
 						<div class="col-md-12 radio radio-success radio-inline">					    
-						    <p> 4.请填写业主年龄：<span>*</span></p>
+						    <p> 5.请填写业主年龄：<span>*</span></p>
 						    <input id="owner_age_one" type="radio" name="radioage" value="1"  ng-model="formData.generalInfo.ownerAge">
 						    <label for="owner_age_one">18~28岁</label>
 							<input id="owner_age_two" type="radio" name="radioage" value="2" ng-model="formData.generalInfo.ownerAge">
@@ -95,19 +101,19 @@
 					</div>
 					<div class="row">
 						<div class="col-md-12">					    
-						      <p>5.请填写所该装修房屋的建筑面积：<span>*</span></p>
+						      <p>6.请填写所该装修房屋的建筑面积：<span>*</span></p>
 						      <input class="inputtext" type="text" ng-model="formData.generalInfo.ownerBuildArea">&nbsp;&nbsp;m*2
 						</div>
 					</div>
 					<div class="row">
 						<div class="col-md-12">					    
-						      <p> 6.请填写该装修房屋的使用面积：<span>*</span></p>
+						      <p> 7.请填写该装修房屋的使用面积：<span>*</span></p>
 						      <input class="inputtext" type="text" ng-model="formData.generalInfo.ownerUseArea">&nbsp;&nbsp;m*2
 						</div>
 					</div>
 					<div class="row">
 						<div class="col-md-12 checkbox checkbox-success checkbox-inline">					    
-						      <p> 7.请填写该房屋装修计划投资：
+						      <p> 8.请填写该房屋装修计划投资：
 						      （&nbsp;&nbsp;&nbsp;&nbsp;<input id="owner_investMPChangeVal" type="checkbox" ng-model="investMPChangeVal" ng-change="investMPChange()" >
 						      <label for="owner_investMPChangeVal">含主材</label>）<span>*</span></p>
 						      <input class="inputtext" type="text" ng-model="formData.generalInfo.ownerPlannedInvests" ng-change="investMPChange()">
@@ -115,13 +121,13 @@
 					</div>
 					<div class="row">
 						<div class="col-md-12">					    
-						      <p> 8.请填写该房屋的计划装修时间：<span>*</span></p>					      
+						      <p> 9.请填写该房屋的计划装修时间：<span>*</span></p>					      
 						      <input class="inputtext" type="text" name=""  id="decorationTime">
 						</div>
 					</div> 
 					<div class="row">
 						<div class="col-md-12">					    
-						      	<p>9.请填写该房屋具体地址：<span>*</span></p>
+						      	<p>10.请填写该房屋具体地址：<span>*</span></p>
 <!-- 						      	<p>
 									请选择省份：
 									<select name="" id="first_level" ng-model="generalInfo.province" ng-change="addressGather()">
@@ -491,6 +497,7 @@
 							     	<label for="abs_chgHuoman_y">是</label>
 									<input id="abs_chgHuoman_n" type="radio" name="radiobrand" value="0" ng-model="formData.abstruse.lrGateHuomanSelOpt">
 									<label for="abs_chgHuoman_n">否</label>
+									<input type="text" placeholder="请输入相关要求" ng-model="formData.abstruse.lrGateHuomanSelOpinion">
 							</div>
 						</div>
 						<div class="row">
@@ -820,7 +827,7 @@
 							    <input id="readRoom_fun_pc" type="checkbox" name="checkboxset" value="5" ng-click="checkbox($event, 'libFun', 'readingRoom', formData.readingRoom.libFunArr)">
 							    <label for="readRoom_fun_pc">电脑操作</label>
 
-							    <input class="inputtext" type="text" placeholder="请输入相关要求">
+							    <input class="inputtext" type="text" placeholder="请输入相关要求" ng-model="formData.readingRoom.libFunSpec">
 							</div>
 						</div>
 						<div class="row">
@@ -1090,8 +1097,8 @@
 						</div>
 						<div class="row">
 							<div class="col-md-12">
-								<p style="color:red">8.对墙、地面材料有无特殊要求：<span>*</span></p>
-							   	<input class="inputtext" type="text" placeholder="请输入相关要求">
+								<p>8.对墙、地面材料有无特殊要求：<span>*</span></p>
+							   	<input class="inputtext" type="text" placeholder="请输入相关要求" ng-model="formData.kidRoom.krColorRequestRequest">
 							</div>
 						</div>
 						<div class="row">
@@ -1468,12 +1475,11 @@
 					<tr>
 						<th class=""></th>
 						<td class="">量房时间：</td>
-						<td class="">
-						{{formData.generalInfo.ownerSurveyTime | date:'yyyy年MM月dd日'}}</td>
-						<td class="" style="color:red">提交人：</td>
-						<td class="">--</td>
-						<td class="" style="color:red">提交时间：</td>
-						<td class="">--</td>
+						<td class="">{{formData.generalInfo.ownerSurveyTime | date:'yyyy年MM月dd日'}}</td>
+						<td class="">提交人：</td>
+						<td class="">{{formData.generalInfo.createName}}</td>
+						<td class="">提交时间：</td>
+						<td class="">{{formData.generalInfo.createTime | date:'yyyy年MM月dd日'}}</td>
 					</tr>
 					<tr>
 						<td class="leftmenu" rowspan="4">客户基本情况</td>
@@ -1485,8 +1491,8 @@
 							<span ng-if="formData.generalInfo.ownerSex==0">女士</span>
 							<span ng-if="formData.generalInfo.ownerSex==1">先生</span>		
 						</td>
-						<td class="" style="color:red">联系电话：</td>
-						<td class="" >--</td>
+						<td class="">联系电话：</td>
+						<td class="" >{{formData.generalInfo.ownerTelPhone}}</td>
 					</tr>
 					<tr>	
 						<td class="">客户年龄：</td>
@@ -1513,7 +1519,9 @@
 					</tr>
 					<tr>
 						<td class="">计划投资：</td>
-						<td class="">{{formData.generalInfo.ownerPlannedInvests}}</td>
+						<td class="">{{formData.generalInfo.ownerPlannedInvests}}
+						<span ng-if="investMPChangeVal==1">-含主材</span>
+						</td>
 						<td class="">计划装修时间：</td>
 						<td class="">{{formData.generalInfo.ownerPlanTime | date:'yyyy年MM月dd日'}}</td>
 						<td class=""></td>
@@ -1553,7 +1561,7 @@
 							<span ng-if="formData.houseBasicInfo.houseHouseStructureFault==0">否</span>								
 						</td>
 						<td class="" colspan="4" >							
-							<p ng-repeat="item in formData.houseBasicInfo.faultArr">
+							<p ng-repeat="item in formData.houseBasicInfo.houseFaultView">
 								<span>{{item}}</span>
 							</p>
 						</td>
@@ -1750,7 +1758,7 @@
 
 						</td>
 						<td class="">其他：</td>
-						<td class="" colspan="3"></td>
+						<td class="" colspan="3">{{formData.abstruse.lrGateHuomanSelOpinion}}</td>
 					</tr>
 
 					<!-- Living room section -->
@@ -1972,7 +1980,7 @@
 
 						</td>
 						<td class="">相关要求：</td>
-						<td class="" colspan="3">--</td>
+						<td class="" colspan="3">{{formData.readingRoom.libFunSpec}}</td>
 					</tr>
 					<tr>
 						<td class="">书房使用以何人为主：</td>
@@ -2139,8 +2147,8 @@
 						<td class="" colspan="3">{{formData.kidRoom.krColorRequest}}</td>
 					</tr>
 					<tr>
-						<td class="" style="color: red">对墙、地色彩或材料的特殊要求：</td>
-						<td class="" colspan="3"></td>
+						<td class="">对墙、地色彩或材料的特殊要求：</td>
+						<td class="" colspan="3">{{formData.kidRoom.krColorRequestRequest}}</td>
 						<td class="">儿童有何兴趣爱好：</td>
 						<td class="">
 							<!-- {{formData.kidRoom.krHobby}} -->

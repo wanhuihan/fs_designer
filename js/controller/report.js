@@ -28,6 +28,8 @@ app.controller("report", function($scope, $http, $location, design, $location, g
 
 			ownerSex: '',
 
+			ownerTelPhone: '',
+
 			ownerAge: '',
 
 			ownerBuildArea: '',
@@ -138,6 +140,8 @@ app.controller("report", function($scope, $http, $location, design, $location, g
 			lrScreenCultureOptView: '',
 			// 入户门更换为霍曼品牌（0否1是）
 			lrGateHuomanSelOpt: '',
+			// 入户门更换为霍曼品牌参考意见
+			lrGateHuomanSelOpinion: '',
 			// 对玄关是有特殊要求（例如：灯光、色彩、特殊造型等）	
 			lrScreenSpec: '',		
 		},
@@ -241,6 +245,9 @@ app.controller("report", function($scope, $http, $location, design, $location, g
 			libBooksContain: '',
 			// 存书种类以及数量相关要求
 			libBooksRequest: '',
+
+			// 存书相关要求具体内容
+			libFunSpec: '',
 			// 惯以何种方式看书（如：坐着看、躺着看）
 			libReadingPosture: '',
 			// 书房使用频率（1每天2经常3偶尔）
@@ -301,6 +308,8 @@ app.controller("report", function($scope, $http, $location, design, $location, g
 			krColorRequest: '',
 			// 老人是否有特殊的生理方面的考虑
 			krOldPhysiologyOpt: '',
+			// 对墙、地面材料有无特殊要求
+			krColorRequestRequest: '',
 			// 是否有旧家具需要保留
 			krOldFurnitureKeepOpt: '',
 			// 是否有旧家具需要保留_色调
@@ -585,15 +594,30 @@ app.controller("report", function($scope, $http, $location, design, $location, g
 	        }		
 		}).success(function(data) {
 
+			console.log(data);
+
+			if (data.code == 10) {
+
+				alert(data.msg);
+
+				return false;
+
+			}
+
 			$scope.hasSubmit = data.data.hasSubmit;
 
 			var obj = data.data.volumeList[0];
 
 			for (var i in obj) {
 				for (var a in $scope.formData[i]) {
+
 					if (obj[i].hasOwnProperty(a)) {
 						$scope.formData[i][a] = obj[i][a];
-					} 				
+					} 
+					if (i == 'generalInfo')	{
+						$scope.formData[i]['createName'] = obj[i]['createName'];
+						$scope.formData[i]['createTime'] = obj[i]['createTime'];
+					}			
 				}
 
 			}
@@ -811,6 +835,8 @@ app.controller("report", function($scope, $http, $location, design, $location, g
 	// 下一步操作的时候进行判断显示下一步的样式和内容
 	$scope.nextStep = function(step) {
 
+		console.log($scope.formData.generalInfo.createTime, $scope.formData.generalInfo.createName);
+		
 		if (step == 'step_1') {
 
 		}
