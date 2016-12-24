@@ -43,9 +43,10 @@
 		<div role="tabpanel" class="tab-pane" id="drawing" aria-labelledby="drawing-tab">
 			<div class=" blueprints">
 			<!-- repest here -->
+			{{data}}
 				<div class="row" ng-repeat="item in data" ng-if="!data == ''">
 					<div class="col-md-2">
-						<img src="../images/design_{{item.designType}}.jpg" alt="" />
+						<img src="{{item.urlPath}}" alt="" /> {{item.designTypeText}}
 					</div>
 					<div class="col-md-7">
 						<div class="row">
@@ -59,8 +60,8 @@
 							<div class="col-md-6"><span>最新更新：2016-07-25 13：01：25</span></div>
 						</div>
 						<div class="row">
-							<div class="col-md-6"><a ng-href="{{item.maxUrl}}">重庆阳光100E3楼大户型装修给排水施工图.max</a></div>
-							<div class="col-md-6"><a ng-href="{{item.pdfUrl}}">重庆阳光100E3楼大户型装修给排水施工图.pdf</a></div>
+							<div class="col-md-6"><a href="{{item.maxUrl}}">{{item.documentName}}.max</a></div>
+							<div class="col-md-6"><a ng-href="{{item.pdfUrl}}">{{item.documentName}}.pdf</a></div>
 						</div>
 					</div>
 					<div class="col-md-3">
