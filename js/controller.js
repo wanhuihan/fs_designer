@@ -745,34 +745,7 @@ app.controller("design", function($scope, $http, $location, $cookies, ngDialog) 
 			className: 'ngdialog ngdialog-theme-default designAddForm',
 
 			controller: function() {
-				console.log($cookies.fs_designer_token, $scope.orderCode)
-				// $http({
-				// 	method: 'post',
-				// 	url: g.host+'/decoration_designer/decorationDesignDraw/selectDecorationDesignDrawList',
-				// 	data: {
-				// 		token: 'EC2AB2FA6A2121EB2C332541C45815DB',
-				// 		decorationTaskCode: '516122300000033'
-				// 	},
-
-		  //           headers: { 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8' },
-		            
-		  //           transformRequest: function(obj) {    
-		  //               var str = [];    
-		  //               for (var p in obj) {    
-		                    
-		  //                   if (typeof obj[p] == 'object' ) {
-		  //                       // console.log(p, JSON.stringify(obj[p]));
-		  //                       str.push(encodeURIComponent(p) + "=" + encodeURIComponent(JSON.stringify(obj[p])))
-		  //                   } else {
-		  //                       str.push(encodeURIComponent(p) + "=" + encodeURIComponent(obj[p]));  
-		  //                   }                     
-		  //               }    
-		  //               return str.join("&");    
-		  //           }					
-				// }).success(function(data) {
-				// 	console.log(data);
-				// })
-
+				// console.log($cookies.fs_designer_token, $scope.orderCode)
 				jQuery("body").on("click", "#uploadForm .btn", function() {
 
 					var formData = new FormData();
@@ -781,10 +754,11 @@ app.controller("design", function($scope, $http, $location, $cookies, ngDialog) 
 					var arr = '';
 					for (var i = 0; i < fileArr.length; i++) {
 						// arr.push(fileArr[i].files[0]);
-						arr += fileArr[i].files[0];
+						// arr += fileArr[i].files[0];
+						formData.append('files', fileArr[i].files[0]);
 					}
 
-					formData.append('files', arr);
+					// formData.append('files', arr);
 
 					jQuery.ajax({
 					    url: g.host+'/decoration_designer/decorationDesignDraw/upLoadDecorationDesignDraw?token='+$cookies.fs_designer_token+'&decorationTaskCode='+$scope.orderCode+'&designType=2',
@@ -795,14 +769,16 @@ app.controller("design", function($scope, $http, $location, $cookies, ngDialog) 
 					    contentType: false
 					}).done(function(res) {
 
-						console.log(res)
+						// console.log(res)
 
 						if (res.success) {
 							ngDialog.close('designAddForm')
 						}
 
 					}).fail(function(res) {
-						console.log(res)
+						// console.log(res);
+						alert('上传失败,请稍后再试')
+						ngDialog.close('designAddForm')
 					});
 				})
 			}		
