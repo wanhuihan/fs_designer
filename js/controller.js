@@ -83,8 +83,8 @@
 app.controller("header", function($scope, $http, $location, $cookies, $cookieStore) {
 
 	$scope.user = {
-		name: g.user.name,
-		role: g.user.role
+		name: window.localStorage.fs_design_realName,
+		role: window.localStorage.fs_design_roleName
 	}
 
 	$scope.logOut=  function() {
@@ -213,8 +213,9 @@ app.controller("login", function($http, $scope, $location, $cookies, ngDialog) {
 
 				g.setCookie(data);
 				// return false;
-				g.user.name = data.realName;
-				g.user.role = data.roleName;
+				// g.user.name = data.realName;
+				window.localStorage.fs_design_realName = data.realName;
+				window.localStorage.fs_design_roleName = data.roleName;
 				$scope.headerShow = true;
 				$location.path("/dashboard");
 				// $location.path("http://www.baidu.com");
@@ -727,8 +728,8 @@ app.controller("design", function($scope, $http, $location, $cookies, ngDialog) 
 			if (g.checkData(data)) {
 
 				$scope.data = data.decorationDesignDrawList;
-				$scope.roleCode = data.roleCode;	
-				// console.log($scope.roleCode)		
+				$scope.designType = data.roleCode;	
+				console.log($scope.designType)		
 			}
 
 		})		
@@ -737,27 +738,69 @@ app.controller("design", function($scope, $http, $location, $cookies, ngDialog) 
 	$scope.designDrawAdd = function() {
 
 		ngDialog.open({
+			id: 'designAddForm',
 			templateUrl: 'templates/designDrawsAdd.html',	
 			scope : $scope,
 			width: 800,
 			className: 'ngdialog ngdialog-theme-default designAddForm',
-			controller: function() {
 
-				jQuery("body").on("click", "#uploadForm .btn", function(){
+			controller: function() {
+				console.log($cookies.fs_designer_token, $scope.orderCode)
+				// $http({
+				// 	method: 'post',
+				// 	url: g.host+'/decoration_designer/decorationDesignDraw/selectDecorationDesignDrawList',
+				// 	data: {
+				// 		token: 'EC2AB2FA6A2121EB2C332541C45815DB',
+				// 		decorationTaskCode: '516122300000033'
+				// 	},
+
+		  //           headers: { 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8' },
+		            
+		  //           transformRequest: function(obj) {    
+		  //               var str = [];    
+		  //               for (var p in obj) {    
+		                    
+		  //                   if (typeof obj[p] == 'object' ) {
+		  //                       // console.log(p, JSON.stringify(obj[p]));
+		  //                       str.push(encodeURIComponent(p) + "=" + encodeURIComponent(JSON.stringify(obj[p])))
+		  //                   } else {
+		  //                       str.push(encodeURIComponent(p) + "=" + encodeURIComponent(obj[p]));  
+		  //                   }                     
+		  //               }    
+		  //               return str.join("&");    
+		  //           }					
+				// }).success(function(data) {
+				// 	console.log(data);
+				// })
+
+				jQuery("body").on("click", "#uploadForm .btn", function() {
+
 					var formData = new FormData();
 
-					formData.append('file', jQuery('#uploadForm input')[0].files[0]);
+					var fileArr = jQuery('#uploadForm input[type="file"]');
+					var arr = '';
+					for (var i = 0; i < fileArr.length; i++) {
+						// arr.push(fileArr[i].files[0]);
+						arr += fileArr[i].files[0];
+					}
 
+					formData.append('files', arr);
 
 					jQuery.ajax({
-					    url: 'http://192.168.0.224:8089/decorationDesignDraw/upLoadDecorationDesignDraw?token=7B37D6D609646EC400D838F2F4D8BDED&decorationTaskCode=516122300000033&designType=2',
+					    url: g.host+'/decoration_designer/decorationDesignDraw/upLoadDecorationDesignDraw?token='+$cookies.fs_designer_token+'&decorationTaskCode='+$scope.orderCode+'&designType=2',
 					    type: 'POST',
 					    cache: false,
 					    data: formData,
 					    processData: false,
 					    contentType: false
 					}).done(function(res) {
+
 						console.log(res)
+
+						if (res.success) {
+							ngDialog.close('designAddForm')
+						}
+
 					}).fail(function(res) {
 						console.log(res)
 					});

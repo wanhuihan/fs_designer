@@ -1,27 +1,33 @@
 <div class="design_draw_add_form">
 	
-	<form class="form-horizontal">
+	<form class="form-horizontal" id="uploadForm" enctype="multipart/form-data">
 
 		<div class="form-group">
 			<label class="form-label col-sm-2">设计图类型</label>
 			<div class="col-sm-10">
-
-				<select  ng-model="roleCode" disabled="">
+				
+				<h2 ng-if="designType==16">效果图</h2>
+				<h2 ng-if="designType==15">户型图</h2>
+				<h2 ng-if="designType==14">暖通施工图</h2>
+				<h2 ng-if="designType==13">效果图</h2>
+				<h2 ng-if="designType==12">排水施工图</h2>
+				<h2 ng-if="designType==11">建筑施工图</h2>
+<!-- 				<select  ng-model="designType" disabled="">
 					<option value="16" >效果图</option>
 					<option value="15">户型图</option>
 					<option value="12" >排水施工图</option>
 					<option value="13" >电气施工图</option>
 					<option value="14" >暖通施工图</option>
 					<option value="11" >建筑施工图</option>
-				</select>
+				</select> -->
 			</div>
 		</div>		
 		<!-- 效果图 -->
-		<div ng-if="roleCode==16">
+		<div ng-if="designType==16">
 			<div class="form-group">
 				<label class="col-sm-2">样图</label>
 				<div class="col-sm-10">
-					<input type="file" name="">
+					<input type="file" name="masterDrawing">
 					<p>建议上传280*180PX缩略图，类型.JPG</p>
 				</div>
 				
@@ -34,15 +40,16 @@
 				
 			</div>	
 			<div class="form-group">
-				<input type="button" value="确定上传" name="">
+				<input type="button" value="确定上传" name="" class="btn">
 			</div>		
 		</div>
 		<!-- 其他 -->
-		<div ng-if="roleCode==11||roleCode==12||roleCode==13||roleCode==14||roleCode==15">
+
+		<div ng-if="designType==11||designType==12||designType==13||designType==14||designType==15">
 			<div class="form-group">
 				<label class="col-sm-2">样图</label>
 				<div class="col-sm-10">
-					<input type="file" name="">
+					<input type="file" name="masterDrawing">
 					<p>建议上传280*180PX缩略图，类型.JPG</p>
 				</div>
 				
@@ -51,7 +58,7 @@
 			<div class="form-group">
 				<label class="col-sm-2">设计源文件</label>
 				<div class="col-sm-10">
-					<input type="file" name="">
+					<input type="file" name="sourceFile">
 					<p>上传该设计图CAD源文件，类型DWG</p>
 				</div>
 				
@@ -60,7 +67,7 @@
 			<div class="form-group">
 				<label class="col-sm-2">PDF文件</label>
 				<div class="col-sm-10">
-					<input type="file" name="">
+					<input type="file" name="pdfFile">
 					<p>上传该设计图CAD源文件，类型DWG</p>
 				</div>
 				
@@ -76,49 +83,4 @@
 		</div>
 	</form>
 
-	
-	<form  id="uploadForm" 
-	enctype="multipart/form-data">  
-	<p>  
-	选择文件:<input type="file" name="files">  
-	<p>  
-	选择文件:<input type="file" name="files">  
-	<p>  
-	选择文件:<input type="file" name="files">  
-	<p>  
-	选择文件:<input type="file" name="files">  
-	<p>  
-	选择文件:<input type="file" name="files">  
-	<p>  
-	选择文件:<input type="file" name="files">  
-	<p>
-	<input type="button" value="提交" class="btn">  
-	<!--        
-	<input type="text" id=principalCode name = "principalCode" value="0001" />
-	<input type="text" id="position" name = "position" value="1" />
-	-->            
-	</form>  
-	
-	<script type="text/javascript">
-
-
-		// jQuery("#uploadForm .btn").click(function() {
-		// 	alert(123)
-		// 	var formData = new FormData();
-
-		// 	formData.append('file', jQuery('#uploadForm input')[0].files[0]);
-
-
-		// 	jQuery.ajax({
-		// 	    url: 'http://192.168.0.224:8089/decorationDesignDraw/upLoadDecorationDesignDraw?token=7B37D6D609646EC400D838F2F4D8BDED&decorationTaskCode=516122300000033&designType=2',
-		// 	    type: 'POST',
-		// 	    cache: false,
-		// 	    data: formData,
-		// 	    processData: false,
-		// 	    contentType: false
-		// 	}).done(function(res) {
-		// 	}).fail(function(res) {});
-				
-		// })		
-	</script>
 </div>

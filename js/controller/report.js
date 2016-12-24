@@ -615,9 +615,7 @@ app.controller("report", function($scope, $http, $location, design, $location, g
 			} else {
 				$scope.formData.houseBasicInfo.houseFaultView = [];
 			}
-			
-			// $scope.formData.houseBasicInfo.faultArr = eval($scope.formData.houseBasicInfo.houseFaultView);
-			// $scope.formData.generalInfo.ownerMPlannedInvests;
+
 			if ($scope.formData.generalInfo.ownerMPlannedInvests == 1) {
 				$scope.investMPChangeVal = true;
 			} else {

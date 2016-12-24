@@ -10,14 +10,14 @@ var app = angular.module("designer", ["ui.router", 'angular-loading-bar','ngDial
 var g = {
 	
 	// host server
+	host: 'http://192.168.0.6:8080',
 	// host: 'http://192.168.0.87',
-	// host: 'http://192.168.5.94:8080',
-	host: 'http://192.168.0.224:8089',
+	// host: 'http://192.168.0.224:8089',
 
-	user: {
-		name: '',
-		role: '',
-	},
+	// user: {
+	// 	name: '',
+	// 	role: '',
+	// },
 	// cookie set
 	setCookie: function(data) {
 
@@ -60,15 +60,19 @@ var g = {
 	checkData: function(data) {
 
 		if (!data.success) {
-
 			alert(data.msg);
 			return false;
+		}
 
-		} else {
+		if (data.success)  {
+			return true;
+		}
 
-			if (data.msg) {
-				// alert(data.msg);
-			}
+		if (data.code != 0) {
+			alert(g.msg.server_error)
+			return false;
+		}
+		if (data.code == 0) {
 			return true;
 		}
 	},
