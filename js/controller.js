@@ -153,6 +153,7 @@ app.controller("orders", function($http, $scope, $location, $cookies) {
 	        },		
 		}).success(function(data) {
 			$scope.data = data.datas;
+			$scope.roleCode = window.localStorage.fs_design_role_code;
 		})
 	}
 
@@ -163,92 +164,98 @@ app.controller("orders", function($http, $scope, $location, $cookies) {
 ---------------------*/
 app.controller("login", function($http, $scope, $location, $cookies, ngDialog) {
 
-	// console.log(123)
-	$scope.data = {
-		user: '',
-		pwd: '',
-		role: '11',
-	}
-
-	$scope.sub = function() {
-		// alert()
-		// return false;
-		if ($scope.data.role == '') {
-			alert('请选择您的角色');
-			return false;
+	if (!g.chkCookie()) {
+		// console.log(123)
+		$scope.data = {
+			user: '',
+			pwd: '',
+			role: '11',
 		}
-		// console.log(g.host)
-		$http({
 
-			method: 'post',
-			url: g.host+'/decoration_designer/login/login',
-
-			data: {
-				userName: $scope.data.user,
-				pwd: $scope.data.pwd,
-				roleCode: $scope.data.role
-			},
-            headers: { 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8' },
-            // 处理接口的问题，传给后端的参数有问题，需要重新解析成json字符串
-            transformRequest: function(obj) {    
-                var str = [];    
-                for (var p in obj) {    
-                    
-                    if (typeof obj[p] == 'object' ) {
-                        // console.log(p, JSON.stringify(obj[p]));
-                        str.push(encodeURIComponent(p) + "=" + encodeURIComponent(JSON.stringify(obj[p])))
-                    } else {
-                        str.push(encodeURIComponent(p) + "=" + encodeURIComponent(obj[p]));  
-                    }
-                      
-                }    
-                // console.log(str)
-                return str.join("&");    
-            }, 	
-
-		}).success(function(data) {
-			// alert(123)
-			// console.log(data)
-			if (g.checkData(data)) {
-
-				g.setCookie(data);
-				// return false;
-				// g.user.name = data.realName;
-				window.localStorage.fs_design_realName = data.realName;
-				window.localStorage.fs_design_roleName = data.roleName;
-				$scope.headerShow = true;
-				$location.path("/dashboard");
-				// $location.path("http://www.baidu.com");
+		$scope.sub = function() {
+			// alert()
+			// return false;
+			if ($scope.data.role == '') {
+				alert('请选择您的角色');
+				return false;
 			}
+			// console.log(g.host)
+			$http({
 
-		}).error(function(data) {
-			alert(g.msg.server_error);
-		})
-	}
+				method: 'post',
+				url: g.host+'/decoration_designer/login/login',
 
-	$scope.forgetPwd = function() {
-		alert('the module not start to develop, please contact the webmaster');
-		// return false;
-	}
+				data: {
+					userName: $scope.data.user,
+					pwd: $scope.data.pwd,
+					roleCode: $scope.data.role
+				},
+	            headers: { 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8' },
+	            // 处理接口的问题，传给后端的参数有问题，需要重新解析成json字符串
+	            transformRequest: function(obj) {    
+	                var str = [];    
+	                for (var p in obj) {    
+	                    
+	                    if (typeof obj[p] == 'object' ) {
+	                        // console.log(p, JSON.stringify(obj[p]));
+	                        str.push(encodeURIComponent(p) + "=" + encodeURIComponent(JSON.stringify(obj[p])))
+	                    } else {
+	                        str.push(encodeURIComponent(p) + "=" + encodeURIComponent(obj[p]));  
+	                    }
+	                      
+	                }    
+	                // console.log(str)
+	                return str.join("&");    
+	            }, 	
 
-	$scope.register = {
+			}).success(function(data) {
+				// alert(123)
+				// console.log(data)
+				if (g.checkData(data)) {
 
-		formData: {
+					g.setCookie(data);
+					// return false;
+					// g.user.name = data.realName;
+					window.localStorage.fs_design_realName = data.realName;
+					window.localStorage.fs_design_roleName = data.roleName;
+					window.localStorage.fs_design_role_code = data.realCode;
+					$scope.headerShow = true;
+					$location.path("/dashboard");
+					// $location.path("http://www.baidu.com");
+				}
 
-		},
-
-		popup: function() {
-			ngDialog.open({
-				templateUrl: 'templates/register.html',
-				className: 'registerBox ngdialog ngdialog-theme-default',
-				width: 600
+			}).error(function(data) {
+				alert(g.msg.server_error);
 			})
-		},
-
-		sub: function() {
-
 		}
-	}
+
+		$scope.forgetPwd = function() {
+			alert('the module not start to develop, please contact the webmaster');
+			// return false;
+		}
+
+		$scope.register = {
+
+			formData: {
+
+			},
+
+			popup: function() {
+				ngDialog.open({
+					templateUrl: 'templates/register.html',
+					className: 'registerBox ngdialog ngdialog-theme-default',
+					width: 600
+				})
+			},
+
+			sub: function() {
+
+			}
+		}
+	} else {
+		$location.path("/dashboard");
+	}	
+
 
 })
 
@@ -285,7 +292,7 @@ app.controller("orderDetails", function($http, $scope, $location, $cookies) {
 		// console.log($location.search());
 		$scope.orderId = $location.search().id;
 		$scope.orderCode = $location.search().code;
-
+		$scope.roleCode = window.localStorage.fs_design_role_code
 		$http({
 			url: g.host+'/decoration_designer/decorationTask/order/view',
 			method: 'post',
@@ -312,7 +319,9 @@ app.controller("orderDetails", function($http, $scope, $location, $cookies) {
 	        },		
 		}).success(function(data) {
 			$scope.data = data.datas;
-			// console.log($scope.data)
+			console.log(window.localStorage.fs_design_role_code)
+			$scope.roleCode = window.localStorage.fs_design_role_code;
+
 		})
 	}
 })
@@ -361,6 +370,7 @@ app.controller("workLoad", function($scope, $http, $location, $cookies) {
 			if (data.success) {
 				$scope.data = data.datas;
 				$scope.subChk = data.hasSubmit;
+				$scope.roleCode = window.localStorage.fs_design_role_code;
 			}
 		})	
 
@@ -546,7 +556,8 @@ app.controller("bom", function($scope, $http, $location, $cookies){
 			if (g.checkData(data)) {
 				// alert("提交成功");
 				$scope.subChk = data.hasSubmit;
-				$scope.data = data.datas;				
+				$scope.data = data.datas;	
+				$scope.roleCode = window.localStorage.fs_design_role_code;			
 			}
 		})
 	}
@@ -727,9 +738,33 @@ app.controller("design", function($scope, $http, $location, $cookies, ngDialog) 
 
 			if (g.checkData(data)) {
 
+				// console.log(data)
 				$scope.data = data.decorationDesignDrawList;
+
 				$scope.designType = data.roleCode;	
-				console.log($scope.designType)		
+				if (data.roleCode ==11) {
+					$scope.designTypeFile = 6;
+				}
+				if (data.roleCode ==12) {
+					$scope.designTypeFile = 3;
+				}
+				if (data.roleCode ==13) {
+					$scope.designTypeFile = 4;
+				}
+				if (data.roleCode ==14) {
+					$scope.designTypeFile = 5;
+				}
+				if (data.roleCode ==15) {
+					$scope.designTypeFile = 2;
+				}
+				if (data.roleCode ==16) {
+					$scope.designTypeFile = 1;
+				}	
+
+				$scope.hasAdded = data.hasAdded;
+
+
+				$scope.roleCode = window.localStorage.fs_design_role_code;
 			}
 
 		})		
@@ -761,7 +796,7 @@ app.controller("design", function($scope, $http, $location, $cookies, ngDialog) 
 					// formData.append('files', arr);
 
 					jQuery.ajax({
-					    url: g.host+'/decoration_designer/decorationDesignDraw/upLoadDecorationDesignDraw?token='+$cookies.fs_designer_token+'&decorationTaskCode='+$scope.orderCode+'&designType=2',
+					    url: g.host+'/decoration_designer/decorationDesignDraw/upLoadDecorationDesignDraw?token='+$cookies.fs_designer_token+'&decorationTaskCode='+$scope.orderCode+'&designType='+$scope.designTypeFile,
 					    type: 'POST',
 					    cache: false,
 					    data: formData,
@@ -787,11 +822,54 @@ app.controller("design", function($scope, $http, $location, $cookies, ngDialog) 
 	}
 
 	$scope.designDrawsEdit = function(id) {
-
+		// console.log(id)
+		$scope.designDrawingId = id;
 		ngDialog.open({
+			id: 'designEditForm',
 			templateUrl: 'templates/designDrawsEdit.html',	
 			scope : $scope,
 			width: 800,
+			className: 'ngdialog ngdialog-theme-default designEditForm',
+
+			controller: function() {
+				// console.log($scope.designDrawingId)
+				var changeBtnArr = jQuery("#EditForm .btn");
+
+				jQuery("body").on("click", "#EditForm .btn", function() {
+
+					// console.log(jQuery(this).parents("#designEditForm"));
+					var thisFormDiv = jQuery(this).parents("#EditForm").find("input[type='file']");
+					// return false;
+					var formData = new FormData();
+
+					var arr = '';
+					for (var i = 0; i < thisFormDiv.length; i++) {
+
+						formData.append('files', thisFormDiv[i].files[0]);
+					}
+					// console.log(formData)
+					jQuery.ajax({
+					    url: g.host+'/decoration_designer/decorationDesignDraw/updateDecorationDesignDraw?token='+$cookies.fs_designer_token+'&decorationTaskCode='+$scope.orderCode+'&designType='+$scope.designTypeFile+'&decorationDesignDrawId='+$scope.designDrawingId,
+					    type: 'POST',
+					    cache: false,
+					    data: formData,
+					    processData: false,
+					    contentType: false
+					}).done(function(res) {
+
+						// console.log(res)
+						if (res.success) {
+							// alert('yes')
+							ngDialog.close('designEditForm')
+						}
+
+					}).fail(function(res) {
+						console.log(res);
+						alert('上传失败,请稍后再试')
+						ngDialog.close('designEditForm')
+					});
+				})
+			}
 
 		})
 
@@ -859,6 +937,7 @@ app.controller("design", function($scope, $http, $location, $cookies, ngDialog) 
 
 		})
 	}
+
 })
 
 

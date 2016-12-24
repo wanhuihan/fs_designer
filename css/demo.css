@@ -432,6 +432,16 @@
       color: green;
       font-size: 20px;
       vertical-align: middle; }
+  .blueprints .img_box {
+    position: relative; }
+    .blueprints .img_box span {
+      position: absolute;
+      top: 0;
+      left: 15px;
+      display: block;
+      background: #343c48;
+      color: #fff;
+      padding: 5px 10px; }
 
 .bom_detail_info {
   width: 1000px; }

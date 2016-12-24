@@ -6,14 +6,15 @@
 		<ul>
 			
 			<li>
-				<a  ui-sref="dashboard.orders.details({id:orderId,code:orderCode})"><i class="fa fa-file-text-o"></i>订单详情</a>
+				<a  ui-sref="dashboard.orders.details({id:orderId,code:orderCode})"><i class="fa fa-file-text-o"></i>订单详情 </a>
 			</li>
 
 			<li>
-				<a ui-sref="dashboard.orders.report({id:orderId,code:orderCode})"><i class="fa fa-list-alt"></i>量房报告</a>
+				<a ui-sref="dashboard.orders.report({id:orderId,code:orderCode})">
+				<i class="fa fa-list-alt"></i>量房报告</a>
 			</li>
 
-			<li>
+			<li ng-if="roleCode!=15 && roleCode!=16">
 				<a ui-sref="dashboard.orders.bom({id:orderId,code:orderCode})"><i class="fa fa-list-ol"></i>物料清单</a>
 			</li>			
 
@@ -21,12 +22,13 @@
 				<a ui-sref="dashboard.orders.design({id:orderId,code:orderCode})"><i class="fa fa-file-picture-o"></i>设计图</a>
 			</li>
 
-			<li>
+			<li ng-if="roleCode!=15 && roleCode!=16">
 				<a ui-sref="dashboard.orders.workload({id:orderId,code:orderCode})"><i class="fa fa-tasks"></i>工程量</a>
-			</li>			
-			<li>
-				<a ui-sref="dashboard.orders.costForm({id:orderId,code:orderCode})"><i class="fa fa-bar-chart fa-2"></i>成本控制单</a>
 			</li>
+			<li>
+				<a ui-sref="dashboard.orders.costForm({id:orderId,code:orderCode})">
+				<i class="fa fa-bar-chart fa-2"></i>成本控制单</a>
+			</li>			
 
 		</ul>
 	</div>
@@ -74,6 +76,14 @@
 						      <input class="inputtext" type="text" ng-model="formData.generalInfo.ownerTelPhone">
 						</div>
 					</div>
+
+					<div class="row">
+						<div class="col-md-12">					    
+						      <p> 3.请填写房屋户型<span>*</span></p>
+						      <input class="inputtext" type="text" ng-model="formData.generalInfo.ownerTelUnit">
+						</div>
+					</div>
+
 					<div class="row">
 						<div class="col-md-12 radio radio-success radio-inline">					    
 						    <p> 4.请填写业主性别：<span>*</span></p>
@@ -839,7 +849,7 @@
 						<div class="row">
 							<div class="col-md-12">
 								<p> 3.  共有几人同时使用书房：<span>*</span></p>
-							   <input class="inputtext" type="text" placeholder="书房使用人" ng-model="formData.readingRoom.libPeopleWholeUse">
+							   <input class="inputtext" type="number" placeholder="书房使用人" ng-model="formData.readingRoom.libPeopleWholeUse">
 							</div>
 						</div>
 						<div class="row">
@@ -1511,7 +1521,8 @@
 					</tr>
 					<tr>	
 						<td class="">户型：</td>
-						<td class=""><span>{{formData.generalInfo.type}}</span></td>
+						<td class=""><span>
+						{{formData.generalInfo.ownerTelUnit}}</span></td>
 						<td class="">建筑面积：</td>
 						<td class=""><span>{{formData.generalInfo.ownerBuildArea}}</span></td>
 						<td class="">使用面积：</td>
@@ -2434,7 +2445,6 @@
 				<div class="row" ng-show="!hasSubmit">
 					<div class="btm_btn_group col-md-12">
 						<button class="btn btn-default btn-lg" ng-click="lastStep(currentStep)">上一步</button>
-						<button class="btn btn-primary btn-lg" ng-click="save(currentStep)">保存</button>
 						<button class="btn btn-default btn-lg" ng-click="subReport(currentStep)">提交</button>
 					</div>						
 				</div>

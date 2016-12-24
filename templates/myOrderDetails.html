@@ -14,7 +14,7 @@
 				<i class="fa fa-list-alt"></i>量房报告</a>
 			</li>
 
-			<li>
+			<li ng-if="roleCode!=15 && roleCode!=16">
 				<a ui-sref="dashboard.orders.bom({id:orderId,code:orderCode})"><i class="fa fa-list-ol"></i>物料清单</a>
 			</li>			
 
@@ -22,7 +22,7 @@
 				<a ui-sref="dashboard.orders.design({id:orderId,code:orderCode})"><i class="fa fa-file-picture-o"></i>设计图</a>
 			</li>
 
-			<li>
+			<li ng-if="roleCode!=15 && roleCode!=16">
 				<a ui-sref="dashboard.orders.workload({id:orderId,code:orderCode})"><i class="fa fa-tasks"></i>工程量</a>
 			</li>
 			<li>

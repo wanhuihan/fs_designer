@@ -30,6 +30,8 @@ app.controller("report", function($scope, $http, $location, design, $location, g
 
 			ownerTelPhone: '',
 
+			ownerTelUnit: '',
+
 			ownerAge: '',
 
 			ownerBuildArea: '',
@@ -784,7 +786,8 @@ app.controller("report", function($scope, $http, $location, design, $location, g
 	}
 
 	$scope.getData();
-
+	$scope.roleCode = window.localStorage.fs_design_role_code;
+	
 	$scope.$watch('hasSubmit', function(val) {
 		// console.log(val);
 		if (val) {

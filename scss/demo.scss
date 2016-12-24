@@ -752,6 +752,18 @@
 				vertical-align: middle;
 			}
 		}
+		.img_box {
+			position: relative;
+			span {
+				position: absolute;
+				top: 0;
+				left: 15px;
+				display: block;
+				background: #343c48;
+				color: #fff;
+				padding: 5px 10px;
+			}
+		}
 	}
 	// 物料清单
 	.bom_detail_info {
