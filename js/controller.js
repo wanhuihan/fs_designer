@@ -593,7 +593,7 @@ app.controller("bom", function($scope, $http, $location, $cookies){
 
 		$http({
 			method: 'post',
-			url: 'http://192.168.0.224:8089/decoration_designer/material/updateMaterialDetails',
+			url: g.host+'/decoration_designer/material/updateMaterialDetails',
 			data: {
 
 				jsonData: formData,
@@ -629,7 +629,7 @@ app.controller("bom", function($scope, $http, $location, $cookies){
 
 		$http({
 			method: 'post',
-			url: 'http://192.168.0.224:8089/decoration_designer/material/submitMaterial',
+			url: g.host+'/decoration_designer/material/submitMaterial',
 			
 			data: {
 				decorationTaskCode: $scope.orderCode,
