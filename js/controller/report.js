@@ -610,8 +610,12 @@ app.controller("report", function($scope, $http, $location, design, $location, g
 
 			jQuery("#decorationTime").val(planTime.toLocaleDateString());
 
-
-			$scope.formData.houseBasicInfo.houseFaultView = eval($scope.formData.houseBasicInfo.houseFaultView);
+			if ($scope.formData.houseBasicInfo.houseFaultView) {
+				$scope.formData.houseBasicInfo.houseFaultView = eval($scope.formData.houseBasicInfo.houseFaultView);
+			} else {
+				$scope.formData.houseBasicInfo.houseFaultView = [];
+			}
+			
 			// $scope.formData.houseBasicInfo.faultArr = eval($scope.formData.houseBasicInfo.houseFaultView);
 			// $scope.formData.generalInfo.ownerMPlannedInvests;
 			if ($scope.formData.generalInfo.ownerMPlannedInvests == 1) {

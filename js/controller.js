@@ -740,7 +740,29 @@ app.controller("design", function($scope, $http, $location, $cookies, ngDialog) 
 			templateUrl: 'templates/designDrawsAdd.html',	
 			scope : $scope,
 			width: 800,
-			className: 'ngdialog ngdialog-theme-default designAddForm'		
+			className: 'ngdialog ngdialog-theme-default designAddForm',
+			controller: function() {
+
+				jQuery("body").on("click", "#uploadForm .btn", function(){
+					var formData = new FormData();
+
+					formData.append('file', jQuery('#uploadForm input')[0].files[0]);
+
+
+					jQuery.ajax({
+					    url: 'http://192.168.0.224:8089/decorationDesignDraw/upLoadDecorationDesignDraw?token=7B37D6D609646EC400D838F2F4D8BDED&decorationTaskCode=516122300000033&designType=2',
+					    type: 'POST',
+					    cache: false,
+					    data: formData,
+					    processData: false,
+					    contentType: false
+					}).done(function(res) {
+						console.log(res)
+					}).fail(function(res) {
+						console.log(res)
+					});
+				})
+			}		
 		})
 
 	}
