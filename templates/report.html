@@ -666,9 +666,9 @@
 						      	<label for="restaurant_deskSet_four">1*4</label>
 						      	<input id="restaurant_deskSet_six" type="radio" name="radiodesk" value="2" ng-model="formData.dinningRoom.drChairsConfg">
 						      	<label for="restaurant_deskSet_six">1*6</label>
-						      	<input id="restaurant_deskSet_other" type="radio" name="radiodesk" value="3" ng-model="formData.dinningRoom.drChairsConfg">
+						      	<!-- <input id="restaurant_deskSet_other" type="radio" name="radiodesk" value="3" ng-model="formData.dinningRoom.drChairsConfg">
 						      	<label for="restaurant_deskSet_other">其他</label>
-						      	<input class="inputtext" type="text" placeholder="请填写餐桌配置" ng-model="formData.dinningRoom.drChairsDetails">
+						      	<input class="inputtext" type="text" placeholder="请填写餐桌配置" ng-model="formData.dinningRoom.drChairsDetails"> -->
 							</div>
 						</div>
 						<div class="row">
@@ -1105,13 +1105,13 @@
 								<p>10.是否有旧家具需要保留：<span>*</span></p>
 
 								<input class="inputtext" type="text" placeholder="请输入相关要求" ng-model="formData.kidRoom.krOldFurnitureKeepOpt">
+								<span>色调</span>
 							   	<input class="inputtext" type="text" placeholder="请输入相关要求" ng-model="formData.kidRoom.krOldFurnitureKeepOptTone">
-							   	<span>色调</span>
-							   	<input class="inputtext" type="text" placeholder="请输入相关要求" ng-model="formData.kidRoom.krOldFurnitureKeepOptSize">
 							   	<span>尺寸</span>
-							   	<input class="inputtext" type="text" placeholder="请输入相关要求" ng-model="formData.kidRoom.krOldFurnitureKeepOptMaterial">
+							   	<input class="inputtext" type="text" placeholder="请输入相关要求" ng-model="formData.kidRoom.krOldFurnitureKeepOptSize">
 							   	<span>材质</span>
-							   	
+							   	<input class="inputtext" type="text" placeholder="请输入相关要求" ng-model="formData.kidRoom.krOldFurnitureKeepOptMaterial">
+							   		
 							</div>
 						</div>
 						<div class="row">
@@ -1229,7 +1229,6 @@
 								<input id="balcony_closed_n" type="radio" name="radioclose" value="0"
 								ng-model="formData.balcony.balconyBlockStuffOpt" ng-change="switch('radioclose', formData.balcony.balconyBlockStuffOpt)">
 								<label for="balcony_closed_n">否</label>
-								<span>材料</span>
 								<div class="additional_info">
 									<input id="balcony_material_aluminium" type="radio" name="radioclosec" value="1" ng-model="formData.balcony.balconyBlockStuff">
 									<label for="balcony_material_aluminium">铝合金</label>
@@ -1724,10 +1723,10 @@
 						<td class="">是否有考虑安排：</td>
 						<td class="" colspan="3">
 							<span ng-repeat="item in formData.abstruse.lrConsiderSettingOpt">
-								<i ng-if="item==1">鞋柜</i>
-								<i ng-if="item==2">衣柜</i>
-								<i ng-if="item==3">镜子（整装）</i>
-								<i ng-if="item==4">纯装饰性</i>
+								<b ng-if="item==1">鞋柜</b>
+								<b ng-if="item==2">衣柜</b>
+								<b ng-if="item==3">镜子（整装）</b>
+								<b ng-if="item==4">纯装饰性</b>
 							</span>
 						</td>
 					</tr>
@@ -1783,7 +1782,7 @@
 							<span ng-if="formData.livingRoom.sittingDrCombineOpt==0">否</span>
 						</td>
 						<td class="">客厅内的视听设备有哪些：</td>
-						<td class="" colspan="3">{{formData.livingRoom.sittingCeilingType}}</td>
+						<td class="" colspan="3">{{formData.livingRoom.sittingAudioApparatus}}</td>
 					</tr>
 					<tr>
 						<td class="">客人来家中聚会的内容：</td>
@@ -1869,7 +1868,7 @@
 							<!-- {{formData.dinningRoom.drChairsConfg}} -->
 							<span ng-if="formData.dinningRoom.drChairsConfg==1">1*4</span>
 							<span ng-if="formData.dinningRoom.drChairsConfg==2">1*6</span>
-							<span ng-if="formData.dinningRoom.drChairsConfg==3">其他</span>
+							<!-- <span ng-if="formData.dinningRoom.drChairsConfg==3">其他</span> -->
 						</td>
 					</tr>
 					<tr>
@@ -1903,14 +1902,12 @@
 							<!-- {{formData.dinningRoom.drTvOpt}} -->
 						</td>
 						<td class="">娱乐活动：</td>
-						<td class="">
+						<td class="" colspan="3">
 							<!-- {{formData.dinningRoom.drAmuseActivites}} -->
 							<span ng-if="formData.dinningRoom.drAmuseActivites==1">棋</span>
 							<span ng-if="formData.dinningRoom.drAmuseActivites==2">牌</span>
 							<span ng-if="formData.dinningRoom.drAmuseActivites==3">其他</span>
 						</td>
-						<td class=""></td>
-						<td class=""></td>
 					</tr>
 					<tr>
 						<td class="">家庭烹饪的特点：</td>
@@ -1972,7 +1969,7 @@
 							</span>
 
 						</td>
-						<td class="">其他：</td>
+						<td class="">相关要求：</td>
 						<td class="" colspan="3">--</td>
 					</tr>
 					<tr>
@@ -2013,7 +2010,7 @@
 						</td>
 						<td class="">是否需要：</td>
 						<td class="">
-							{{formData.readingRoom.libNetworkOpt}}
+							<!-- {{formData.readingRoom.libNetworkOpt}} -->
 							<span ng-repeat="item in formData.readingRoom.libNetworkOpt">
 								<b ng-if="item==1">电话</b>
 								<b ng-if="item==2">网线</b>
@@ -2037,9 +2034,7 @@
 							<span ng-if="formData.mainRoom.brSleepObjectSelOpt==1">制作</span>
 						</td>
 						<td class="">品牌/颜色：</td>
-						<td class="">{{formData.mainRoom.brSleepObjectColorModel}}</td>
-						<td class="">颜色：</td>
-						<td class=""></td>
+						<td class="" colspan="3">{{formData.mainRoom.brSleepObjectColorModel}}</td>
 					</tr>
 					<tr>
 						<td class="">床的要求：</td>
@@ -2074,7 +2069,7 @@
 						<td class="">储藏内容：</td>
 						<td class="">
 							<!-- {{formData.mainRoom.brDepotThings}} -->
-							<span ng-repeat="item in formData.mainRoom.brDepotThingsArr">
+							<span ng-repeat="item in formData.mainRoom.brDepotThings">
 								<b ng-if="item==1">衣服</b>
 								<b ng-if="item==2">鞋</b>
 								<b ng-if="item==3">箱包</b>
@@ -2287,7 +2282,7 @@
 							</span>
 						</td>
 						<td class="">其他：</td>
-						<td class="">{{formData.balcony.balconyWindwToXugeRequest}}</td>
+						<td class="">{{formData.balcony.balconyFunctionWant}}</td>
 					</tr>
 					<tr>
 						<td class="">所有外窗更换为旭格品牌：</td>
@@ -2296,7 +2291,7 @@
 							<span ng-if="formData.balcony.balconyWinToXugeOpt==1">是</span>
 						</td>
 						<td class="">其他：</td>
-						<td class="">{{formData.balcony.balconyFunctionWant}}</td>
+						<td class="">{{formData.balcony.balconyWindwToXugeRequest}}</td>
 					</tr>
 
 
@@ -2329,7 +2324,7 @@
 							</span>
 						</td>
 						<td class="">对绘画、饰品的爱好：</td>
-						<td class="">
+						<td class="" colspan="3">
 							<span ng-repeat="item in formData.additional.addPaintingJewelryHobby">
 								<b ng-if="item==1">油画</b>
 								<b ng-if="item==2">水彩画</b>
@@ -2339,8 +2334,6 @@
 								<b ng-if="item==6">其他</b>
 							</span>
 						</td>
-						<td class="">其他</td>
-						<td class=""></td>
 					</tr>
 					<tr>
 						<td class="">是否有个人品需要展示：</td>
@@ -2385,6 +2378,47 @@
 					<tr>
 						<td class="">有无旧家具或特殊物品的安置：</td>
 						<td class="" colspan="5">{{formData.additional.addOldFurnitureSpecialItemsPlaceOpt}}</td>
+					</tr>
+
+
+					<tr>
+						<th colspan="6" class="trtitle">其他部分</th>
+					</tr>
+					<tr>
+						<td>储藏室：</td>
+						<td colspan="5">{{formData.others.otherStoreroom}}</td>
+					</tr>
+					<tr>
+						<td>健身房：</td>
+						<td colspan="5">{{formData.others.otherGym}}</td>
+					</tr>
+					<tr>
+						<td>音乐室：</td>
+						<td colspan="5">{{formData.others.otherMusicRoom}}</td>
+					</tr>
+					<tr>
+						<td>茶室：</td>
+						<td colspan="5">{{formData.others.otherTeahouse}}</td>
+					</tr>
+					<tr>
+						<td>画室：</td>
+						<td colspan="5">{{formData.others.otherStudio}}</td>
+					</tr>
+					<tr>
+						<td>车房：</td>
+						<td colspan="5">{{formData.others.otherGarage}}</td>
+					</tr>
+					<tr>
+						<td>游泳池：</td>
+						<td colspan="5">{{formData.others.otherPoll}}</td>
+					</tr>
+					<tr>
+						<td>花房：</td>
+						<td colspan="5">{{formData.others.otherGreenhouse}}</td>
+					</tr>
+					<tr>
+						<td>佣人房：</td>
+						<td colspan="5">{{formData.others.otherMaidRoom}}</td>
 					</tr>
 				</table>
 				<div class="row" ng-show="!hasSubmit">
