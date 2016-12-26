@@ -303,8 +303,7 @@
 	// padding: 10px;
 	.work_load_list {
 		float: left;
-		// width: 1000px;
-		// padding: 10px;
+		margin-bottom: 100px;
 		box-sizing: border-box;
 
 		.work_load_list_title {
@@ -799,6 +798,11 @@
 			color: #bbb;
 		}
 	}
+	h2 {
+		margin: 0;
+		font-size: 16px;
+		line-height: 26.4px;
+	}
 }	
 
 /* --------------------------- 
@@ -806,6 +810,7 @@
  -----------------------------*/
 
 .bom_detail_info {
+	margin-bottom: 100px;
 	ul {
 		li {
 			font-size: 0;
