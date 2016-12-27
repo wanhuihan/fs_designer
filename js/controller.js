@@ -122,7 +122,7 @@ app.controller("header", function($scope, $http, $location, $cookies, $cookieSto
 	}
 })
 
-app.controller("orders", function($http, $scope, $location, $cookies) {
+app.controller("orders", function($http, $scope, $location, $cookies, $window) {
 
 	// console.log($cookies.fs_designer_token);
 	if (!g.chkCookie()) {
@@ -130,6 +130,7 @@ app.controller("orders", function($http, $scope, $location, $cookies) {
 	} else {
 
 		$scope.data  = '';
+
 		$http({
 			url: g.host+'/decoration_designer/decorationTask/order/selectList',
 			method: 'post',
@@ -162,7 +163,7 @@ app.controller("orders", function($http, $scope, $location, $cookies) {
 /*-------------------
 	#login page
 ---------------------*/
-app.controller("login", function($http, $scope, $location, $cookies, ngDialog) {
+app.controller("login", function($http, $scope, $location, $cookies, ngDialog, $window) {
 
 	if (!g.chkCookie()) {
 		// console.log(123)
@@ -220,6 +221,7 @@ app.controller("login", function($http, $scope, $location, $cookies, ngDialog) {
 					window.localStorage.fs_design_roleName = data.roleName;
 					window.localStorage.fs_design_role_code = data.realCode;
 					$scope.headerShow = true;
+					// window.location.href = '#/dashboard/orders';
 					$location.path("/dashboard");
 					// $location.path("http://www.baidu.com");
 				}
@@ -263,7 +265,7 @@ app.controller("login", function($http, $scope, $location, $cookies, ngDialog) {
 	# dashboard
 -----------------*/
 
-app.controller("dashboard", function($scope, $http, $location, $cookies) {
+app.controller("dashboard", function($scope, $http, $location, $cookies, $window) {
 
 	// alert($cookies.fs_designer_token)
 	$scope.leftSideBar = false;
@@ -273,7 +275,8 @@ app.controller("dashboard", function($scope, $http, $location, $cookies) {
 	if (!g.chkCookie()) {
 		$location.path("/login");
 	} else {
-		// window.location.href = '#/dashboard/orders'
+		$window.location.href = '#/dashboard/orders';
+		$window.location.reload();
 	}
 
 })
@@ -350,6 +353,7 @@ app.controller("workLoad", function($scope, $http, $location, $cookies) {
 				decorationTaskCode: $scope.orderCode,	
 				token: $cookies.fs_designer_token
 			},
+
             headers: { 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8' },
             
             transformRequest: function(obj) {    
@@ -781,23 +785,27 @@ app.controller("design", function($scope, $http, $location, $cookies, ngDialog, 
 
 			controller: function() {
 
-				jQuery("body").on("click", "#uploadForm .btn", function() {
+				jQuery("body").on("click", ".designAddForm  #uploadForm .btn", function() {
 					
 					var formData = new FormData();
 
 					var fileArr = jQuery('#uploadForm input[type="file"]');
 					var arr = '';
 					for (var i = 0; i < fileArr.length; i++) {
-						// arr.push(fileArr[i].files[0]);
-						// arr += fileArr[i].files[0];
+
 						formData.append('files', fileArr[i].files[0]);
+					}
+
+					// 如果是效果图设计师需要获取效果图连接
+					if (jQuery("#uploadForm #designUrl")) {
+						var url = jQuery("#uploadForm #designUrl").val();
 					}
 
 					// formData.append('files', arr);
 					jQuery(".loading_box").show();
 
 					jQuery.ajax({
-					    url: g.host+'/decoration_designer/decorationDesignDraw/upLoadDecorationDesignDraw?token='+$cookies.fs_designer_token+'&decorationTaskCode='+$scope.orderCode+'&designType='+$scope.designTypeFile,
+					    url: g.host+'/decoration_designer/decorationDesignDraw/upLoadDecorationDesignDraw?token='+$cookies.fs_designer_token+'&decorationTaskCode='+$scope.orderCode+'&designType='+$scope.designTypeFile+'&panoramaUrl='+url,
 					    type: 'POST',
 					    cache: false,
 					    data: formData,
@@ -806,18 +814,23 @@ app.controller("design", function($scope, $http, $location, $cookies, ngDialog, 
 					}).done(function(res) {
 
 						// console.log(res)
-
 						if (res.success) {
 							
 							jQuery(".loading_box").hide();
 							ngDialog.close('designAddForm')
 							$window.location.reload();
+						} else {
+							alert('error is occured, please try it later');
+							jQuery(".loading_box").hide();
+							ngDialog.close('designAddForm');
+							return false;
 						}
 
 					}).fail(function(res) {
 						// console.log(res);
-						alert('上传失败,请稍后再试')
-						ngDialog.close('designAddForm')
+						alert('error is occured, please try it later');
+						ngDialog.close('designAddForm');
+						return false;
 					});
 				})
 			}		
@@ -839,9 +852,10 @@ app.controller("design", function($scope, $http, $location, $cookies, ngDialog, 
 
 				var changeBtnArr = jQuery("#EditForm .btn");
 
-				jQuery("body").on("click", "#EditForm .btn", function() {
-
+				jQuery("body").on("click", ".design_draw_edit_form #EditForm .btn", function() {
 					
+					// console.log(jQuery("#EditForm .btn"));
+					// return false;
 					// console.log(jQuery(this).parents("#designEditForm"));
 					var thisFormDiv = jQuery(this).parents("#EditForm").find("input[type='file']");
 					// return false;
@@ -852,12 +866,15 @@ app.controller("design", function($scope, $http, $location, $cookies, ngDialog, 
 
 						formData.append('files', thisFormDiv[i].files[0]);
 					}
-					// console.log(formData)
-					
+
+					if (jQuery("#EditForm #designUrl")) {
+						var url = jQuery("#EditForm #designUrl").val();
+					}
+				
 					jQuery(".loading_box").show();
 					// return false;
 					jQuery.ajax({
-					    url: g.host+'/decoration_designer/decorationDesignDraw/updateDecorationDesignDraw?token='+$cookies.fs_designer_token+'&decorationTaskCode='+$scope.orderCode+'&designType='+$scope.designTypeFile+'&decorationDesignDrawId='+$scope.designDrawingId,
+					    url: g.host+'/decoration_designer/decorationDesignDraw/updateDecorationDesignDraw?token='+$cookies.fs_designer_token+'&decorationTaskCode='+$scope.orderCode+'&designType='+$scope.designTypeFile+'&decorationDesignDrawId='+$scope.designDrawingId+'&panoramaUrl='+url,
 					    type: 'POST',
 					    cache: false,
 					    data: formData,
@@ -865,18 +882,24 @@ app.controller("design", function($scope, $http, $location, $cookies, ngDialog, 
 					    contentType: false
 					}).done(function(res) {
 
-						// console.log(res)
+						console.log(res)
 						if (res.success) {
 							
 							jQuery(".loading_box").hide();
 							ngDialog.close('designEditForm');
 							$window.location.reload();
+						} else {
+							jQuery(".loading_box").hide();
+							alert('error is occured, please try it later');
+							ngDialog.close('designEditForm');							
 						}
 
 					}).fail(function(res) {
-						console.log(res);
-						alert('上传失败,请稍后再试')
-						ngDialog.close('designEditForm')
+						// console.log(res);
+						alert('error is occured, please try it later');
+						jQuery(".loading_box").hide();
+						ngDialog.close('designEditForm');
+						return false;
 					});
 				})
 			}

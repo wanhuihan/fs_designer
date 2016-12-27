@@ -41,7 +41,6 @@
 				</button>  				 				
    			</div>
    		</div>	
-		
 
 		<div role="tabpanel" class="tab-pane" id="drawing" aria-labelledby="drawing-tab">
 			<div class=" blueprints">
@@ -54,7 +53,11 @@
 					<div class="col-md-7">
 						<div class="row">
 							<div class="col-md-12">
-								<h3>{{item.documentName}} </h3>
+								<h3 ng-if="item.panoramaUrl">
+									<a href="{{item.panoramaUrl}}">{{item.panoramaUrl}}</a>
+								</h3>
+								<h3 ng-if="!item.panoramaUrl">{{item.documentName}} </h3>
+
 							</div>
 						</div>
 						<div class="row">
@@ -64,40 +67,77 @@
 						</div>
 						<div class="row">
 							<div class="col-md-6" ng-if="item.maxName !=''">
-								<a href="{{item.maxUrl}}">{{item.maxName}}</a>
+								<a href="{{item.maxUrl}}" download="">{{item.maxName}}</a>
 							</div>
 							<div class="col-md-6" ng-if="item.xmlName !=''">
-								<a href="{{item.maxUrl}}">{{item.xmlName}}</a>
+								<a href="{{item.maxUrl}}" download="">{{item.xmlName}}</a>
 							</div>
 							<div class="col-md-6" ng-if="item.dwgName !=''">
-								<a href="{{item.dwgUrl}}">{{item.dwgName}}</a>
+								<a href="{{item.dwgUrl}}" download="">{{item.dwgName}}</a>
 							</div>
 							<div class="col-md-6" ng-if="item.pdfName !=''">
-								<a href="{{item.pdfUrl}}">{{item.pdfName}}</a>
+								<a href="{{item.pdfUrl}}" download="">{{item.pdfName}}</a>
 							</div>									
 							<div class="col-md-6" ng-if="item.fbxName !=''">
-								<a href="{{item.fbxUrl}}">{{item.fbxName}}</a>
+								<a href="{{item.fbxUrl}}" download="">{{item.fbxName}}</a>
 							</div>
 							<div class="col-md-6" ng-if="item.pakName !=''">
-								<a href="{{item.pakUrl}}">{{item.pakName}}</a>
+								<a href="{{item.pakUrl}}" download="">{{item.pakName}}</a>
 							</div>
 							<div class="col-md-6" ng-if="item.skpName !=''">
-								<a href="{{item.skpUrl}}">{{item.skpName}}</a>
+								<a href="{{item.skpUrl}}" download="">{{item.skpName}}</a>
 							</div>
 							<div class="col-md-6" ng-if="item.mwhomeName !=''">
-								<a href="{{item.mwhomeUrl}}">{{item.mwhomeName}}</a>
+								<a href="{{item.mwhomeUrl}}" download="">{{item.mwhomeName}}</a>
 							</div>													
 						</div>
 					</div>
 					<div class="col-md-3"> 
-						<button type="button" class="btn btn-default btn-block" ng-disabled="!item.hasLoginDesigner" ng-show="!item.hasSubmit" ng-click="designDrawsEdit(item.decorationDesignDrawId)"><i class="fa fa-pencil-square-o" ></i>修改</button>
-						<br />
-						<button type="button" class="btn btn-primary btn-block" ng-disabled="!item.hasLoginDesigner && !item.hasSubmit" ng-show="!item.hasSubmit" ng-click="setDesignAsFinal(item.decorationDesignDrawId)"><i class="fa fa-check-circle"></i>设为最终版</button>
+<!-- 						<div ng-if="item.hasEndVersion!=1 && item.hasLoginDesigner">
+							hello
+						</div> -->
+						<div ng-if="item.hasLoginDesigner">
+								
+								<div ng-if="item.hasEndVersion==1">
 
-						<span ng-show="item.hasSubmit && item.hasLoginDesigner" class="version_set_success">
-							<i class="fa fa-check-circle"></i>
-							已设为终板
-						</span>
+									<span  class="version_set_success">
+										<i class="fa fa-check-circle"></i>
+										已设为终板
+									</span>
+
+								</div>
+
+								<div ng-if="!item.hasEndVersion==1">
+									<div >
+										<button type="button" class="btn btn-default btn-block" ng-disabled="!item.hasLoginDesigner"  ng-click="designDrawsEdit(item.decorationDesignDrawId)"><i class="fa fa-pencil-square-o" ></i>修改</button>
+										<br />
+										<button type="button" class="btn btn-primary btn-block" ng-disabled="!item.hasLoginDesigner && !item.hasSubmit"  ng-click="setDesignAsFinal(item.decorationDesignDrawId)"><i class="fa fa-check-circle"></i>设为最终版</button>
+									</div>
+								</div>								
+
+						</div>
+
+						<div ng-if="!item.hasLoginDesigner">
+							
+							<div ng-if="item.hasEndVersion==1">
+
+								<span  class="version_set_success">
+									<i class="fa fa-check-circle"></i>
+									已设为终板
+								</span>
+
+							</div>
+
+							<div ng-if="item.hasEndVersion!=1">
+								<div  >
+									<button type="button" class="btn btn-default btn-block" ng-disabled="!item.hasLoginDesigner" ng-show="!item.hasSubmit" ng-click="designDrawsEdit(item.decorationDesignDrawId)"><i class="fa fa-pencil-square-o" ></i>修改</button>
+									<br />
+									<button type="button" class="btn btn-primary btn-block" ng-disabled="!item.hasLoginDesigner && !item.hasSubmit" ng-show="!item.hasSubmit" ng-click="setDesignAsFinal(item.decorationDesignDrawId)"><i class="fa fa-check-circle"></i>设为最终版</button>
+								</div>
+							</div>	
+
+						</div>
+
 					</div>
 				</div>
 			</div>

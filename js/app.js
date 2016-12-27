@@ -10,8 +10,13 @@ var app = angular.module("designer", ["ui.router", 'angular-loading-bar','ngDial
 var g = {
 	
 	// host server
+<<<<<<< HEAD
 	// host: 'http://192.168.0.6:8080',
 	host: 'http://192.168.0.224:8080',
+=======
+	host: 'http://192.168.0.224:8089',
+	// host: 'http://192.168.0.87',
+>>>>>>> 2d42967c5ae57b62cb71bf6ec03c5416f6b5b93d
 
 	// user: {
 	// 	name: '',
