@@ -7,11 +7,18 @@ var app = angular.module("designer", ["ui.router", 'angular-loading-bar','ngDial
  * 设计端cookie fs_designer_token
  *
 */
+
+// angular.module('designer', ['angular-loading-bar'])
+//   .config(['cfpLoadingBarProvider', function(cfpLoadingBarProvider) {
+//     cfpLoadingBarProvider.includeBar = false;
+//   }])
+
+  
 var g = {
 	
 	// host server
 	// host: 'http://192.168.0.6:8080',
-	host: 'http://192.168.0.224:8080',
+	host: 'http://192.168.0.224:8089',
 
 	// user: {
 	// 	name: '',
