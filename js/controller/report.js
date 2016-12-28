@@ -2,7 +2,7 @@
 /* ---------------------------
 	# report 量房报告页
 -----------------------------*/
-app.controller("report", function($scope, $http, $location, design, $location, getOrderDetail, $cookies){
+app.controller("report", function($scope, $http, $location, design, $location, getOrderDetail, $cookies, ngDialog){
 
 	// console.log(getOrderDetail);	
 	if (!g.chkCookie()) {
@@ -878,6 +878,8 @@ app.controller("report", function($scope, $http, $location, design, $location, g
 
 	$scope.save = function(step) {
 
+		// console.log(ngDialog)
+		// return false;
 		if (step == 'step_1') {
 			// console.log($scope.formData.generalInfo);
 			$scope.formData.generalInfo.ownerSurveyTime = Date.parse(jQuery("#surveyTime").val());
@@ -920,8 +922,10 @@ app.controller("report", function($scope, $http, $location, design, $location, g
 
 	        }			
 		}).success(function(data) {
-			// $scope.getData();
-			console.log('success');
+
+			alert('保存成功');
+			// }
+
 		})
 		// console.log(step);
 	}
@@ -1008,7 +1012,9 @@ app.controller("report", function($scope, $http, $location, design, $location, g
 		                }    
 		                return str.join("&");    
 		            }					
-				}).success(function(data) {})	
+				}).success(function(data) {
+					alert('保存成功');
+				})	
 			}
 
 		})		
