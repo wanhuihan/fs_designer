@@ -4,18 +4,18 @@
     padding: 20px 10px;
     margin-bottom: 30px;
     border: 2px solid #eee; }
-    .account_details .account_delails_money > div > div > div > h3 {
-      font-size: 18px; }
-      .account_details .account_delails_money > div > div > div > h3 + span {
+    .account_details .account_delails_money .account_delails_money_all h3 {
+      font-size: 16px; }
+      .account_details .account_delails_money .account_delails_money_all h3 + span {
         font-size: 16px;
         color: #f00; }
-    .account_details .account_delails_money > div > div > div:nth-child(2), .account_details .account_delails_money > div > div > div:nth-child(5) {
+    .account_details .account_delails_money .account_delails_money_all > div:nth-child(2), .account_details .account_delails_money .account_delails_money_all > div:nth-child(5) {
       padding-top: 20px;
       font-size: 14px; }
-    .account_details .account_delails_money > div > div > div:nth-child(3) {
+    .account_details .account_delails_money .account_delails_money_all > div:nth-child(3) {
       padding-top: 5px;
       font-size: 12px; }
-      .account_details .account_delails_money > div > div > div:nth-child(3) > button:nth-child(1) {
+      .account_details .account_delails_money .account_delails_money_all > div:nth-child(3) > button:nth-child(1) {
         margin-bottom: 10px; }
     .account_details .account_delails_money > div:nth-child(2) > p a {
       color: #20985e; }

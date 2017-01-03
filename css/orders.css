@@ -1,165 +1,31 @@
-@charset "UTF-8";
-/* -------------
-    # 工程量
---------------- */
-/* public style */
-.btn_group button {
-  background: #fff;
-  border: 1px solid;
-  padding: 5px 15px; }
-
-/* order details - 订单详情 */
-/* measuring report 量房报告 */
-.report_tab_stepone {
-  position: relative;
-  text-align: center; }
-  .report_tab_stepone h3 {
-    font-size: 14px;
-    color: #169BD5; }
-  .report_tab_stepone span {
-    display: inline-block;
-    width: 50px;
-    height: 50px;
-    line-height: 50px;
-    text-align: center;
-    color: #fff;
-    background: #169BD5;
-    border-radius: 50%; }
-  .report_tab_stepone div {
-    position: absolute;
-    z-index: -1;
-    left: 200px;
-    top: 65px;
-    width: 400px;
-    height: 9px;
-    background-color: #169bd5;
-    border: none;
-    border-radius: 10px;
-    -moz-box-shadow: none;
-    -webkit-box-shadow: none;
-    box-shadow: none; }
-
-.report_tab_steptwo h3 {
-  color: #555; }
-
-.report_tab_steptwo span {
-  background: #999; }
-
-.report_tab_steptwo div {
-  background: #eee; }
-
-.report_tab_listone {
-  margin: 60px 170px 0 160px; }
-  .report_tab_listone > div {
-    margin-bottom: 20px;
-    padding-bottom: 20px;
-    border-bottom: 2px solid #eee; }
-    .report_tab_listone > div > div > p span {
-      color: #f00; }
-    .report_tab_listone > div > div > input {
-      margin-left: 20px; }
-
-.report_tab_listtwo {
-  margin: 60px 170px 0 160px; }
-  .report_tab_listtwo h3 {
-    padding-bottom: 20px;
-    color: #169BD5;
-    font-size: 16px;
-    font-weight: 700;
-    border-bottom: 2px solid #eee; }
-  .report_tab_listtwo > div > div {
-    margin-bottom: 20px;
-    padding-bottom: 20px;
-    border-bottom: 2px solid #eee; }
-    .report_tab_listtwo > div > div > div > p span {
-      color: #f00; }
-    .report_tab_listtwo > div > div > div > input {
-      margin-left: 20px; }
-
-.report_page_four table {
-  width: 80%;
-  margin: 0 auto; }
-  .report_page_four table .tabletitle {
+/*--------------------------------
+	#order details page
+ --------------------------------*/
+.order_details .order_detail_info .row > .col-md-6, .order_details .report_details_form .row > .col-md-6, .report_details .order_detail_info .row > .col-md-6, .report_details .report_details_form .row > .col-md-6, .bom_details .order_detail_info .row > .col-md-6, .bom_details .report_details_form .row > .col-md-6, .design_details .order_detail_info .row > .col-md-6, .design_details .report_details_form .row > .col-md-6, .work_load .order_detail_info .row > .col-md-6, .work_load .report_details_form .row > .col-md-6, .cost_details .order_detail_info .row > .col-md-6, .cost_details .report_details_form .row > .col-md-6 {
+  width: 50%;
+  float: left; }
+  .order_details .order_detail_info .row > .col-md-6 .fa, .order_details .report_details_form .row > .col-md-6 .fa, .report_details .order_detail_info .row > .col-md-6 .fa, .report_details .report_details_form .row > .col-md-6 .fa, .bom_details .order_detail_info .row > .col-md-6 .fa, .bom_details .report_details_form .row > .col-md-6 .fa, .design_details .order_detail_info .row > .col-md-6 .fa, .design_details .report_details_form .row > .col-md-6 .fa, .work_load .order_detail_info .row > .col-md-6 .fa, .work_load .report_details_form .row > .col-md-6 .fa, .cost_details .order_detail_info .row > .col-md-6 .fa, .cost_details .report_details_form .row > .col-md-6 .fa {
     font-size: 20px;
-    text-align: center; }
-  .report_page_four table .trtitle {
-    font-size: 16px;
-    text-align: center; }
-  .report_page_four table .leftmenu {
-    width: 2%; }
+    vertical-align: middle;
+    color: #4b5664; }
 
-/* material bill  物料清单 */
-/* design drawing 设计图 */
-.blueprints {
-  padding-top: 50px;
-  width: 88%;
-  margin: 0 auto; }
-  .blueprints > div {
-    padding-bottom: 20px;
-    margin-bottom: 20px;
-    border-bottom: 2px solid #eee; }
-    .blueprints > div h3 {
-      font-size: 18px;
-      color: #333; }
-    .blueprints > div > div > div {
-      margin-bottom: 20px; }
-  .blueprints button:nth-child(1) {
-    width: 30%; }
-  .blueprints button:nth-child(2) {
-    width: 50%; }
-  .blueprints .alreadyend {
-    color: #999; }
+.order_details .order_detail_info .row:after, .order_details .report_details_form .row:after, .report_details .order_detail_info .row:after, .report_details .report_details_form .row:after, .bom_details .order_detail_info .row:after, .bom_details .report_details_form .row:after, .design_details .order_detail_info .row:after, .design_details .report_details_form .row:after, .work_load .order_detail_info .row:after, .work_load .report_details_form .row:after, .cost_details .order_detail_info .row:after, .cost_details .report_details_form .row:after {
+  clear: both;
+  content: "";
+  display: block; }
 
-/* project amount 工程量 */
-#amount {
-  position: relative; }
-  #amount .designer_list_head, #amount .designer_list_content {
-    margin: 0; }
-    #amount .designer_list_head li, #amount .designer_list_content li {
-      padding: 5px 15px; }
-    #amount .designer_list_head span, #amount .designer_list_content span {
-      display: inline-block;
-      padding: 5px 15px; }
-    #amount .designer_list_head .designer_list_num, #amount .designer_list_content .designer_list_num {
-      width: 5%; }
-    #amount .designer_list_head .designer_list_name, #amount .designer_list_content .designer_list_name {
-      width: 20%; }
-    #amount .designer_list_head .designer_list_description, #amount .designer_list_content .designer_list_description {
-      width: 30%;
-      vertical-align: middle; }
-    #amount .designer_list_head .designer_list_position, #amount .designer_list_content .designer_list_position {
-      width: 10%; }
-    #amount .designer_list_head .designer_list_unit, #amount .designer_list_content .designer_list_unit {
-      width: 10%;
-      text-align: center; }
-    #amount .designer_list_head .designer_list_amount, #amount .designer_list_content .designer_list_amount {
-      width: 20%; }
-    #amount .designer_list_head:after, #amount .designer_list_content:after {
-      clear: both;
-      content: "";
-      display: block; }
-  #amount .designer_list_head {
-    background: #eee;
-    margin-top: 15px; }
-  #amount .designer_list_content li {
-    padding: 0; }
-    #amount .designer_list_content li span:last-child:after {
-      content: "";
-      display: block;
-      clear: both; }
-  #amount .designer_list_content ul li {
-    float: none; }
-    #amount .designer_list_content ul li span.designer_list_name {
-      text-align: right; }
-      #amount .designer_list_content ul li span.designer_list_name img {
-        display: inline-block; }
-    #amount .designer_list_content ul li ul li .designer_list_description {
-      padding-left: 50px; }
-  #amount .btn_group {
-    position: fixed;
-    width: 100%;
-    left: 0px;
-    bottom: 0;
-    padding: 15px 0;
-    text-align: center;
-    background: #eee; }
+.order_details .order_detail_info .row .panel-heading, .order_details .report_details_form .row .panel-heading, .report_details .order_detail_info .row .panel-heading, .report_details .report_details_form .row .panel-heading, .bom_details .order_detail_info .row .panel-heading, .bom_details .report_details_form .row .panel-heading, .design_details .order_detail_info .row .panel-heading, .design_details .report_details_form .row .panel-heading, .work_load .order_detail_info .row .panel-heading, .work_load .report_details_form .row .panel-heading, .cost_details .order_detail_info .row .panel-heading, .cost_details .report_details_form .row .panel-heading {
+  font-weight: bold;
+  line-height: 30px; }
+
+.order_details:after, .report_details:after, .bom_details:after, .design_details:after, .work_load:after, .cost_details:after {
+  content: "";
+  display: block;
+  clear: both; }
+
+/* ----------------------------
+	#my orders
+------------------------------ */
+.my_orders .main_content .table td {
+  font-size: 16px;
+  line-height: 35px; }

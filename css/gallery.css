@@ -1,0 +1,176 @@
+@charset "UTF-8";
+/* ------------------------------
+	# gallery page 图库
+-------------------------------- */
+.gallery_details {
+  width: 1000px;
+  float: left; }
+  .gallery_details > nav {
+    padding-bottom: 30px;
+    border-bottom: 2px solid #eee; }
+    .gallery_details > nav ul span {
+      width: 5%;
+      float: left; }
+    .gallery_details > nav ul li {
+      width: 10%;
+      float: left;
+      text-align: center;
+      border-right: 1px solid #aaa; }
+    .gallery_details > nav ul li:nth-child(8) {
+      border: none; }
+    .gallery_details > nav ul li:nth-child(9) {
+      width: 25%;
+      border: none; }
+  .gallery_details .gallery_details_list {
+    margin-top: 20px; }
+    .gallery_details .gallery_details_list ul li {
+      float: left;
+      width: 25%;
+      margin-bottom: 15px; }
+      .gallery_details .gallery_details_list ul li div {
+        position: relative;
+        width: 92%;
+        margin: 0 auto;
+        padding-bottom: 5px;
+        background: #eee; }
+        .gallery_details .gallery_details_list ul li div span {
+          position: absolute;
+          top: 4px;
+          left: 4px;
+          width: 40px;
+          height: 20px;
+          line-height: 20px;
+          color: #fff;
+          text-align: center;
+          border-radius: 2px;
+          background: #f19a4f; }
+        .gallery_details .gallery_details_list ul li div img {
+          width: 100%; }
+        .gallery_details .gallery_details_list ul li div a {
+          position: absolute;
+          bottom: 10px;
+          right: 5px;
+          width: 26%;
+          height: 26px;
+          color: #fff;
+          line-height: 26px;
+          text-align: center;
+          border-radius: 4px;
+          background: #1aaaf6; }
+
+/*--------------------------------------
+	# gallery page details 图库查看详情
+---------------------------*/
+.gallery_order {
+  padding: 10px; }
+  .gallery_order h3 {
+    font-size: 18px; }
+  .gallery_order .gallery_order_list {
+    margin-top: 20px; }
+    .gallery_order .gallery_order_list .gallery_order_list_item {
+      margin-bottom: 14px; }
+      .gallery_order .gallery_order_list .gallery_order_list_item > ul {
+        overflow: hidden; }
+        .gallery_order .gallery_order_list .gallery_order_list_item > ul li {
+          float: left; }
+        .gallery_order .gallery_order_list .gallery_order_list_item > ul > :nth-child(1) {
+          width: 25%; }
+          .gallery_order .gallery_order_list .gallery_order_list_item > ul > :nth-child(1) img {
+            width: 100%; }
+        .gallery_order .gallery_order_list .gallery_order_list_item > ul > :nth-child(2) {
+          width: 60%;
+          margin-left: 4%; }
+          .gallery_order .gallery_order_list .gallery_order_list_item > ul > :nth-child(2) > h4 {
+            font-size: 16px; }
+
+.design_details_cont {
+  float: left; }
+  .design_details_cont .col-md-2 img {
+    width: 100%;
+    height: 150px; }
+  .design_details_cont .btn {
+    font-size: 16px; }
+    .design_details_cont .btn i {
+      font-size: 20px;
+      vertical-align: middle;
+      margin: 0 10px; }
+    .design_details_cont .btn.design_draw_add {
+      width: 150px;
+      margin-right: 0; }
+
+.blueprints {
+  width: 100%;
+  margin: 0 auto; }
+  .blueprints > div {
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #ddd; }
+    .blueprints > div h3 {
+      margin: 0;
+      font-size: 18px;
+      color: #333; }
+    .blueprints > div > div > div {
+      margin-bottom: 20px; }
+  .blueprints .btn {
+    width: 50%; }
+  .blueprints .row {
+    position: relative; }
+    .blueprints .row .col-md-3:last-child {
+      position: absolute;
+      bottom: 0;
+      margin: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      right: 0; }
+      .blueprints .row .col-md-3:last-child .btn {
+        margin: 0 auto; }
+  .blueprints .alreadyend {
+    color: #999; }
+  .blueprints .version_set_success {
+    font-size: 16px;
+    text-align: center;
+    display: block; }
+    .blueprints .version_set_success i {
+      color: green;
+      font-size: 20px;
+      vertical-align: middle; }
+  .blueprints .img_box {
+    position: relative; }
+    .blueprints .img_box span {
+      position: absolute;
+      top: 0;
+      left: 15px;
+      display: block;
+      background: #343c48;
+      color: #fff;
+      padding: 5px 10px; }
+
+.bom_detail_info {
+  width: 1000px; }
+
+.design_draw_add_form .form-group p, .design_draw_edit_form .form-group p {
+  color: #bbb; }
+
+.design_draw_add_form h2, .design_draw_edit_form h2 {
+  margin: 0;
+  font-size: 16px;
+  line-height: 26.4px; }
+
+.blueprints {
+  padding-top: 50px;
+  margin: 0 auto; }
+  .blueprints > div {
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #eee; }
+    .blueprints > div h3 {
+      font-size: 18px;
+      color: #333; }
+    .blueprints > div > div > div {
+      margin-bottom: 20px; }
+  .blueprints button:nth-child(1) {
+    width: 30%; }
+  .blueprints button:nth-child(2) {
+    width: 50%; }
+  .blueprints .alreadyend {
+    color: #999; }

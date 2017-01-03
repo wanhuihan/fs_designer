@@ -1,0 +1,260 @@
+/* ------------------------------
+	# gallery page 图库
+-------------------------------- */
+
+.gallery_details {
+	width: 1000px;
+	float: left;
+	// margin: 10px;
+	// overflow: hidden;
+	> nav {
+		padding-bottom: 30px;
+		border-bottom: 2px solid #eee;
+		ul {
+			span {
+				width:5%;
+				float: left;
+			}
+			li {
+			width: 10%;
+			float: left;
+			text-align: center;
+			border-right: 1px solid #aaa;	
+			}
+			& li:nth-child(8) {
+				border: none;
+			}
+			& li:nth-child(9) {
+				width: 25%;
+				border: none;
+			}
+		}
+	}
+	.gallery_details_list {
+		margin-top: 20px;
+
+		ul li{
+			float: left;
+			width: 25%;
+			margin-bottom: 15px;
+			div{
+				position: relative;
+				width: 92%;
+				margin: 0 auto;
+				padding-bottom: 5px;
+				background:#eee;
+				span{
+					position: absolute;
+					top: 4px;
+					left: 4px;
+					width: 40px;
+					height: 20px;
+					line-height: 20px;
+					color: #fff;
+					text-align: center;
+					border-radius: 2px; 
+					background: #f19a4f;
+				}
+				img{
+					width:100%;
+				}
+				a{
+					position: absolute;
+					bottom: 10px;
+					right: 5px;
+					width: 26%;
+					height: 26px;
+					color: #fff;
+					line-height: 26px;
+					text-align: center;
+					border-radius:4px;
+					background: #1aaaf6;
+				}
+			}
+		}
+	}	
+	
+}
+
+/*--------------------------------------
+	# gallery page details 图库查看详情
+---------------------------*/
+.gallery_order {
+	padding: 10px;
+	h3 {
+		font-size: 18px;
+	}
+	.gallery_order_list {
+		margin-top: 20px;
+
+		.gallery_order_list_item {
+			margin-bottom: 14px;
+			> ul {
+				overflow: hidden;
+				li {
+					float: left;
+				}
+				& >:nth-child(1) {
+					width: 25%;
+					img {
+						width: 100%;
+					}
+				}
+				& >:nth-child(2) {
+					width: 60%;
+					margin-left: 4%;
+					> h4 {
+						font-size: 16px;
+					}
+				}
+			}
+				
+		}
+	}
+}
+
+// 设计图
+.design_details_cont {
+	float:left;
+	// width:1000px;
+	// margin-left:16px;
+	.col-md-2 {
+		img {
+			width: 100%;
+			height: 150px;
+		}
+	}
+	.btn {
+		font-size: 16px;	
+		i {
+			font-size: 20px;
+			vertical-align: middle;
+			margin: 0 10px;
+		}	
+		&.design_draw_add {
+			width: 150px;
+			margin-right: 0;
+		}		
+	}
+}
+	.blueprints {
+
+		// padding-top:50px;
+		width:100%;
+		margin:0 auto;
+
+		& > div {
+
+			padding-bottom:20px;
+			margin-bottom:20px;
+			border-bottom:1px solid #ddd;
+
+			h3 {
+				margin: 0;
+				font-size:18px;
+				color:#333;
+
+			}
+
+			& > div >div {
+
+				margin-bottom:20px;
+			}
+		}
+		
+		.btn {
+
+			width: 50%;
+
+		}
+		.row {
+			position: relative;
+			.col-md-3 {
+				
+				&:last-child {
+					position: absolute;
+					bottom: 0;
+					margin: 0;
+					top: 50%;
+					transform: translateY(-50%);
+					right: 0;
+					.btn {
+						margin: 0 auto;
+					}					
+				}
+
+			}			
+		}
+
+		.alreadyend{
+			color:#999;
+		}
+		.version_set_success {
+			font-size: 16px;
+			text-align: center;
+			display: block;
+			i {
+				color: green;
+				font-size: 20px;
+				vertical-align: middle;
+			}
+		}
+		.img_box {
+			position: relative;
+			span {
+				position: absolute;
+				top: 0;
+				left: 15px;
+				display: block;
+				background: #343c48;
+				color: #fff;
+				padding: 5px 10px;
+			}
+		} 
+	}
+	// 物料清单
+	.bom_detail_info {
+		width:1000px;
+		// margin-left: 230px;
+	}
+
+.design_draw_add_form, .design_draw_edit_form {
+	.form-group {
+		p {
+			color: #bbb;
+		}
+	}
+	h2 {
+		margin: 0;
+		font-size: 16px;
+		line-height: 26.4px;
+	}
+}	
+
+.blueprints{
+	padding-top:50px;
+	// width:88%;
+	margin:0 auto;
+	& > div{
+		padding-bottom:20px;
+		margin-bottom:20px;
+		border-bottom:2px solid #eee;
+		h3{
+			font-size:18px;
+			color:#333;
+		}
+		& > div >div{
+			margin-bottom:20px;
+		}
+	}
+	& button:nth-child(1){
+		width:30%;
+	}
+	& button:nth-child(2){ 
+		width:50%;
+	}
+	.alreadyend{
+		color:#999;
+	}
+
+}

@@ -2,56 +2,64 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>
-		
-	</title>
-
+	<title>锋尚 - 设计端平台</title>
 	<script type="text/javascript" src="js/lib/angular.js"></script>
-    <script type="text/javascript" src="js/lib/angular-route.min.js"></script>
     <script src="js/lib/angular-ui-router.min.js"></script>
 	<script src="js/lib/angular-cookies.js"></script>
-	<script type="text/javascript" src="js/jquery.3.1.1.min.js"></script>
-    <script type="text/javascript" src="js/app.js"></script>
-    <script type="text/javascript" src="js/router.js"></script>
-	<script type="text/javascript" src="js/controller.js"></script>
-	<script type="text/javascript" src="js/controller/report.js"></script>
-	<script type="text/javascript" src="js/directive.js"></script>
-	<script type="text/javascript" src="js/service.js"></script>
+	
+	<!-- bootstrap -->
+	<script type="text/javascript" src="js/lib/jquery.3.1.1.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="assets/bootstrap/css/bootstrap.min.css">
+	<script type="text/javascript" src="assets/bootstrap/js/bootstrap.min.js"></script>
 
-	<!-- data插件 -->
-	<link rel="stylesheet" type="text/css" href="js/lib/datetimepicker/daterangepicker.css">
-    <script type="text/javascript" src="js/lib/jquery-1.12.4.js"></script>
-    <script type="text/javascript" src="js/lib/datetimepicker/moment.js"></script>
-    <script type="text/javascript" src="js/lib/datetimepicker/daterangepicker.js"></script>
+	<!-- loading bar -->
+	<script type="text/javascript" src="assets/angular-loading-bar/loading-bar.js"></script>
+	<link rel="stylesheet" type="text/css" href="assets/angular-loading-bar/loading-bar.css">
 
-   	<link rel="stylesheet" type="text/css" href="assets/bootstrap/css/bootstrap.min.css">
+	<!-- date time picker -->
+	<link rel="stylesheet" type="text/css" href="assets/datetimepicker/daterangepicker.css">
+	<script type="text/javascript" src="assets/datetimepicker/moment.js"></script>	
+	<script type="text/javascript" src="assets/datetimepicker/daterangepicker.js"></script>
 
+	<!-- font awesome -->
+	<link rel="stylesheet" type="text/css" href="assets/font-awesome.min.css">
+
+	<!-- checkbox radio button style -->
    	<link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/awesome-bootstrap-checkbox/1.0.0-alpha.4/awesome-bootstrap-checkbox.min.css">
    	<link rel="stylesheet" type="text/css" href="http://flatlogic.github.io/awesome-bootstrap-checkbox/demo/build.css">
-   	
-	<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
-	<script type="text/javascript" src="js/bootstrap.min.js"></script>
 
-	<script type="text/javascript" src="js/lib/loading-bar.js"></script>
-	<link rel="stylesheet" type="text/css" href="css/loading-bar.css" >
-
-
-	<link rel="stylesheet" type="text/css" href="css/demo.css">
-	<link rel="stylesheet" type="text/css" href="css/login.css">
-
-
+	<!-- angularjs -->
     <script src="//cdn.bootcss.com/ng-dialog/0.6.4/js/ngDialog.min.js"></script>
     <link href="//cdn.bootcss.com/ng-dialog/0.6.4/css/ngDialog-theme-default.css" rel="stylesheet">
-	<link rel="stylesheet" type="text/css" href="css/ngDialog/ngDialog.css">
+	<link rel="stylesheet" type="text/css" href="assets/ngDialog/ngDialog.css">
 
+    <script type="text/javascript" src="js/app.js" charset="utf-8"></script>
+    <script type="text/javascript" src="js/router.js" charset="utf-8"></script>
+	<script type="text/javascript" src="js/controller.js" charset="utf-8"></script>
+	<script type="text/javascript" src="js/controller/report.js" charset="utf-8"></script>
 
+	<script type="text/javascript" src="js/directive.js" charset="utf-8"></script>
+	<script type="text/javascript" src="js/service.js" charset="utf-8"></script>
+	<script type="text/javascript" src="js/controller/sideBar.js" charset="utf-8"></script>
+
+	<link rel="stylesheet" type="text/css" href="css/dist/style.min.css">
+
+<!-- 	<link rel="stylesheet" type="text/css" href="css/login.css">
+	<link rel="stylesheet" type="text/css" href="css/account.css">
+	<link rel="stylesheet" type="text/css" href="css/bom.css">
+	<link rel="stylesheet" type="text/css" href="css/form.css">
+	<link rel="stylesheet" type="text/css" href="css/gallery.css">
+	<link rel="stylesheet" type="text/css" href="css/header.css">
+	<link rel="stylesheet" type="text/css" href="css/index.css">
+	<link rel="stylesheet" type="text/css" href="css/orders.css">
+	<link rel="stylesheet" type="text/css" href="css/report.css">
+	<link rel="stylesheet" type="text/css" href="css/sideBar.css">
+	<link rel="stylesheet" type="text/css" href="css/workLoad.css"> -->
 
 </head>
 
-	<body ng-app="designer">
-	
-		<div class="header" ui-view="header" >
-			
+	<body ng-app="designer">	
+		<div class="header" ui-view="header" >			
 		</div>
 
 <!-- 		<div class="side_bar" ui-view="sideBar" >
@@ -59,11 +67,7 @@
 		</div> -->
 
 		<div class="main_body" ui-view="mainBody">
-			
-
 		</div>
-	
-
 	</body>
 
 </html>
