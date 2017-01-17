@@ -216,7 +216,7 @@ app.controller("orderDetails", function($http, $scope, $location, $cookies) {
 		// console.log($location.search());
 		$scope.orderId = $location.search().id;
 		$scope.orderCode = $location.search().code;
-		$scope.roleCode = window.localStorage.fs_design_role_code
+		$scope.roleCode = window.localStorage.fs_design_role_code;
 		$http({
 			url: g.host+'/decoration_designer/decorationTask/order/view',
 			method: 'post',
@@ -905,9 +905,10 @@ app.controller("design", function($scope, $http, $location, $cookies, ngDialog, 
 // add by zhangna
 // cont: account
 
-app.controller("costForm", function($scope, $http, $location){
+app.controller("costForm", function($scope, $http, $location, $cookies){
 
 	$scope.orderId = $location.search().id;
+
 	$scope.orderCode = $location.search().code;
 
 	if (!g.chkCookie()) {
@@ -916,18 +917,258 @@ app.controller("costForm", function($scope, $http, $location){
 
 	} else {
 
-	// $http({
-	// 	method: 'post',
-	// 	url: 'http://192.168.0.87/decoration_designer/decorationDesignDraw/selectDecorationDesignDrawList',		
-       
-	// }).success(function(data) {
+		$scope.roleCode = window.localStorage.fs_design_role_code;
 
-	// 	console.log(data);
-	// 	if (g.checkData(data)) {
-	// 		$scope.data = data.decorationDesignDrawList;			
-	// 	}
+		function objCom(obj) {
 
-	// })		
+			var newObj = new Array();
+
+			for (var i in obj) {
+
+				// console.log(obj[i]);
+				if (obj[i].hasOwnProperty("subList")) {
+
+					var subArr = obj[i]["subList"];
+
+					if (subArr.length > 0) {
+
+						for (var a = 0; a < subArr.length; a++) {
+
+							newObj.push({
+
+								materialConfigurationId:subArr[a]['material_configurationl_id'],
+								decorationTaskCode: $scope.orderCode
+
+							});
+
+						}
+
+					}
+
+				}
+
+				if (obj[i].hasOwnProperty("dataList")) {
+
+					var subArr = obj[i]["dataList"];
+
+					// console.log(obj[i])
+
+					if (subArr.length > 0) {
+
+						var dataList = [];
+
+						for ( var a = 0; a < subArr.length; a++) {
+
+							// console.log(subArr[a])
+
+							dataList.push({
+
+								groupMaterialProductMiddleId: subArr[a]['groupMaterialProductMiddleId'],
+
+								groupMaterialProductId: subArr[a]['groupMaterialProductId'],
+
+								materialConfigurationId: subArr[a]['materialConfigurationlId'],
+
+								decorationTaskCode: $scope.orderCode
+
+							})
+
+						}
+
+						newObj.push({
+
+							groupMaterialProductId: obj[i]['groupMaterialProductId'],
+							
+							decorationTaskCode: $scope.orderCode,
+							
+							child: obj[i]['child'],
+							
+							subList: dataList,
+
+						})
+						// console.log(dataList)
+					} else {
+
+						newObj.push({
+
+							groupMaterialProductId: obj[i]['groupMaterialProductId'],
+							
+							decorationTaskCode: $scope.orderCode,
+							
+							child: obj[i]['child'],
+							
+							subList: [],
+
+						})						
+					}		
+				}				
+			}
+
+			return newObj;
+		}
+
+		$http({
+			method: 'post',
+			url: g.host+'/decoration_designer/costcontrolsheet/selectList',		
+			
+			data: {
+				token: $cookies.fs_designer_token,
+				decorationTaskCode: $scope.orderCode,
+			},	    
+
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8' },
+            
+            transformRequest: function(obj) {    
+                var str = [];    
+                for (var p in obj) {    
+                    
+                    if (typeof obj[p] == 'object' ) {
+                        // console.log(p, JSON.stringify(obj[p]));
+                        str.push(encodeURIComponent(p) + "=" + encodeURIComponent(JSON.stringify(obj[p])))
+                    } else {
+                        str.push(encodeURIComponent(p) + "=" + encodeURIComponent(obj[p]));  
+                    }                     
+                }    
+                return str.join("&");    
+            }	
+
+		}).success(function(data) {
+
+			if (data.success) {
+
+				$scope.data = data.datas;
+				$scope.hasSubmit = data.hasSubmit;
+
+			} else {
+
+				alert(data.msg);
+
+			}
+		})	
+
+		$scope.edit = function() {
+
+			var sectionOne = objCom($scope.data.mainMaterial);
+
+			var sectionTwo = objCom($scope.data.greenTechnology);
+
+			for (var i = 0 ; i < sectionOne.length; i++) {
+
+				sectionOne[i]['quantity'] = jQuery(".section-1 input")[i].value;
+			
+			}
+
+			var sectionTwoList = jQuery(".section-2 > ul > li");
+
+			for (var i = 0; i < sectionTwoList.length; i++) {
+
+				if (sectionTwo[i]['child']==0) {
+
+					sectionTwo[i]['quantity'] = jQuery(sectionTwoList[i]).find("input").val();
+				
+				}
+				// console.log(sectionTwoList.find("ul input"))
+
+				if (sectionTwo[i]['child']==1) {
+
+					if (sectionTwoList.find("ul")) {
+
+						if (sectionTwoList.find("ul input").length > 0) {
+
+							for (var a = 0; a < sectionTwoList.find("ul input").length; a++) {
+
+								sectionTwo[i]['subList'][a]['quantity'] = jQuery(sectionTwoList.find("ul input")[a]).val();								// console.log(jQuery(sectionTwoList.find("ul input")[a]).val())
+
+							}
+						}
+					}
+
+					var subArr = [];
+
+					// if (sectionTwoList)
+				}
+
+			}
+
+			// console.log(sectionTwo);
+
+			$http({
+				url: g.host+'/decoration_designer/costcontrolsheet/saveCostControlSheet',
+				method: 'post',
+				data: {
+
+					token: $cookies.fs_designer_token,
+
+					decorationTaskCode: $scope.orderCode,
+
+					greenMainMaterialJson: sectionOne,
+
+					greenGroupProductJson: sectionTwo
+
+				},
+
+	            headers: { 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8' },
+	            
+	            transformRequest: function(obj) {  
+
+	                var str = [];  
+
+	                for (var p in obj) {    
+	                    
+	                    if (typeof obj[p] == 'object' ) {
+	                        // console.log(p, JSON.stringify(obj[p]));
+	                        str.push(encodeURIComponent(p) + "=" + encodeURIComponent(JSON.stringify(obj[p])))
+	                    } else {
+	                        str.push(encodeURIComponent(p) + "=" + encodeURIComponent(obj[p]));  
+	                    }                     
+	                }    
+	                return str.join("&");    
+	            }	
+
+			}).success(function(data) {
+
+				console.log(data);
+
+			})
+
+		}
+
+		// sub
+		$scope.sub = function() {
+
+			$http({
+				url: g.host+'/decoration_designer/costcontrolsheet/submitCostControlSheet',
+				method: 'post',
+				data: {
+
+					token: $cookies.fs_designer_token,
+
+					decorationTaskCode: $scope.orderCode,
+				},
+
+	            headers: { 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8' },
+	            
+	            transformRequest: function(obj) {  
+
+	                var str = [];  
+
+	                for (var p in obj) {    
+	                    
+	                    if (typeof obj[p] == 'object' ) {
+	                        // console.log(p, JSON.stringify(obj[p]));
+	                        str.push(encodeURIComponent(p) + "=" + encodeURIComponent(JSON.stringify(obj[p])))
+	                    } else {
+	                        str.push(encodeURIComponent(p) + "=" + encodeURIComponent(obj[p]));  
+	                    }                     
+	                }    
+	                return str.join("&");    
+	            }
+			}).success(function(data) {
+
+				console.log(data);
+
+			})
+		}
 	}	
 
 })

@@ -21,5 +21,3 @@
       .left_side_bar ul li a:hover {
         background-color: #343c48 !important;
         text-decoration: none; }
-    .left_side_bar ul li:last-child {
-      display: none; }
