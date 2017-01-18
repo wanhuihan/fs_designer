@@ -437,10 +437,16 @@ app.controller("report", function($scope, $http, $location, design, $location, g
 
 		}
 	}
-	
+	// $('#surveyTime').data('DateTimePicker').locale('zn')
 	// 量房时间赋值
 	jQuery('#surveyTime').daterangepicker({
 		singleDatePicker: true,
+		language:  'zh-CN',
+		locale: {
+			daysOfWeek : [ '日', '一', '二', '三', '四', '五', '六' ],
+			monthNames : [ '一月', '二月', '三月', '四月', '五月', '六月', '七月', '八月', '九月', '十月', '十一月', '十二月' ],  
+		}
+		
 
 	}, function(d) {
 		// $scope.formData.generalInfo.ownerSurveyTime = Date.parse(d._d);
@@ -449,6 +455,11 @@ app.controller("report", function($scope, $http, $location, design, $location, g
 	// 量房时间赋值
 	jQuery('#decorationTime').daterangepicker({
 		singleDatePicker: true,
+		language:  'zh-CN',
+		locale: {
+			daysOfWeek : [ '日', '一', '二', '三', '四', '五', '六' ],
+			monthNames : [ '一月', '二月', '三月', '四月', '五月', '六月', '七月', '八月', '九月', '十月', '十一月', '十二月' ],  
+		}
 
 	}, function(d) {
 		// $scope.formData.generalInfo.ownerPlanTime = Date.parse(d._d);
