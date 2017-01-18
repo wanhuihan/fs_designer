@@ -6,7 +6,10 @@
   box-sizing: border-box;
   border-right: 0;
   height: 38.52px;
-  position: relative; }
+  position: relative;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap; }
   .cost_details table tbody ul li span input {
     width: 100%; }
 
