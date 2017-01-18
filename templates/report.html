@@ -100,7 +100,7 @@
 					<div class="row">
 						<div class="col-md-12 radio radio-success radio-inline">					    
 						    <p> 5.请填写业主年龄：<span>*</span></p>
-						    <input id="owner_age_one" type="radio" name="radioage" value="1"  ng-model="formData.generalInfo.ownerAge">
+						    <input id="owner_age_one" type="radio" name="radioage" value="1"  ng-model="formData.generalInfo.ownerAge" checked="">
 						    <label for="owner_age_one">18~28岁</label>
 							<input id="owner_age_two" type="radio" name="radioage" value="2" ng-model="formData.generalInfo.ownerAge">
 							<label for="owner_age_two">29~38岁</label> 
@@ -1501,8 +1501,8 @@
 						<td class="">性别：</td>
 						<td class="">
 							<!-- {{formData.generalInfo.ownerSex}} -->
-							<span ng-if="formData.generalInfo.ownerSex==0">女士</span>
-							<span ng-if="formData.generalInfo.ownerSex==1">先生</span>		
+							<span ng-if="formData.generalInfo.ownerSex==0">女</span>
+							<span ng-if="formData.generalInfo.ownerSex==1">男</span>		
 						</td>
 						<td class="">联系电话：</td>
 						<td class="" >{{formData.generalInfo.ownerTelPhone}}</td>
@@ -1511,13 +1511,11 @@
 						<td class="">客户年龄：</td>
 						<td class="">
 							<!-- {{formData.generalInfo.ownerAge}} -->
-							<p ng-repeat="item in formData.generalInfo.ownerAge">
-								<span ng-if="item==1">18~28岁</span>
-								<span ng-if="item==2">29~38岁</span>
-								<span ng-if="item==3">39岁~48岁</span>
-								<span ng-if="item==4">49岁~58岁</span>
-								<span ng-if="item==5">59岁以上</span>
-							</p>
+							<span ng-if="formData.generalInfo.ownerAge==1">18~28岁</span>
+							<span ng-if="formData.generalInfo.ownerAge==2">29~38岁</span>
+							<span ng-if="formData.generalInfo.ownerAge==3">39岁~48岁</span>
+							<span ng-if="formData.generalInfo.ownerAge==4">49岁~58岁</span>
+							<span ng-if="formData.generalInfo.ownerAge==5">59岁以上</span>
 						</td>
 						<td class="">地址(楼盘)：</td>
 						<td class="" colspan="3"><span>{{formData.generalInfo.ownerAddress}}</span></td>
@@ -1527,14 +1525,14 @@
 						<td class=""><span>
 						{{formData.generalInfo.ownerTelUnit}}</span></td>
 						<td class="">建筑面积：</td>
-						<td class=""><span>{{formData.generalInfo.ownerBuildArea}}</span></td>
+						<td class=""><span>{{formData.generalInfo.ownerBuildArea}} ㎡</span></td>
 						<td class="">使用面积：</td>
-						<td class=""><span>{{formData.generalInfo.ownerUseArea}}</span></td>
+						<td class=""><span>{{formData.generalInfo.ownerUseArea}}㎡</span></td>
 					</tr>
 					<tr>
 						<td class="">计划投资：</td>
-						<td class="">{{formData.generalInfo.ownerPlannedInvests}}
-						<span ng-if="investMPChangeVal==1">元-含主材</span>
+						<td class="">{{formData.generalInfo.ownerPlannedInvests}} 元
+						<span ng-if="investMPChangeVal==1">含主材</span>
 						</td>
 						<td class="">计划装修时间：</td>
 						<td class="">{{formData.generalInfo.ownerPlanTime | date:'yyyy年MM月dd日'}}</td>

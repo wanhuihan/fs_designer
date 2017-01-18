@@ -47,7 +47,7 @@
 			<tr>
 				<td class="" width="25%">供应商</td>
 				<td class="">规格</td>
-				<td class="">单位</td>
+				<td class="">单位(元)</td>
 				<td class="">数量</td>
 				<td class="">单价</td>
 				<td class="" width="10%">合计</td>
@@ -95,7 +95,7 @@
 									<span>{{a.specifications}}</span>
 									<span>{{a.unit}}</span>
 									<span>
-										<input type="text" ng-model="a.quantity" name="">
+										<input type="text" ng-model="a.quantity" name="" ng-disabled="hasSubmit" ng-focus="clearZero($event)">
 									</span>
 									<span>{{a.price}}</span>
 									<span>{{a.total_price}}</span>
@@ -120,9 +120,9 @@
 							<span>{{item.groupProductName}}</span>
 							<span></span>
 							<span></span>
-							<span></span>
+							<span>{{item.unit}}</span>
 							<span>
-								<input type="text" name="" ng-if="item.child==0" ng-model="item.quantity">
+								<input type="text" name="" ng-if="item.child==0" ng-model="item.quantity" ng-disabled="hasSubmit" ng-focus="clearZero($event)">
 							</span>
 							<span>
 								<b ng-if="item.child==0">{{item.price}}</b>
@@ -138,7 +138,7 @@
 									<span>{{a.specifications}}</span>
 									<span>{{a.unit}}</span>
 									<span>
-										<input type="text" ng-model="a.quantity" name="">
+										<input type="text" ng-model="a.quantity" name="" ng-disabled="hasSubmit" ng-focus="clearZero($event)">
 									</span>
 									<span>{{a.price}}</span>
 									<span>{{a.totalPrice}}</span>
@@ -313,7 +313,7 @@
 									<span title="{{a.model}}">{{a.model}}</span>
 									<span>{{a.unit}}</span>
 									<span>
-										<input type="text" ng-model="a.quantity" name="" >
+										<input type="text" ng-model="a.quantity" name="" ng-disabled="hasSubmit" ng-focus="clearZero($event)">
 									</span>
 									<span>{{a.price}}</span>
 									<span>{{a.totalPrice}}</span>
@@ -352,7 +352,7 @@
 							<span></span>
 							<span></span>
 							<span>
-								<input type="text" name="" ng-if="item.child==0" ng-model="item.quantity">
+								<input type="text" name="" ng-if="item.child==0" ng-model="item.quantity" ng-disabled="hasSubmit" ng-focus="clearZero($event)">
 							</span>
 							<span>
 								<b ng-if="item.child==0">{{item.price}}</b>
@@ -368,7 +368,7 @@
 									<span>{{a.specifications}}</span>
 									<span>{{a.unit}}</span>
 									<span>
-										<input type="text" ng-model="a.quantity" name="">
+										<input type="text" ng-model="a.quantity" name="" ng-disabled="hasSubmit" ng-focus="clearZero($event)">
 									</span>
 									<span>{{a.price}}</span>
 									<span>{{a.totalPrice}}</span>

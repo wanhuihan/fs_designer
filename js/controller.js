@@ -706,6 +706,9 @@ app.controller("design", function($scope, $http, $location, $cookies, ngDialog, 
 			templateUrl: 'templates/designDrawsAdd.html',	
 			scope : $scope,
 			width: 800,
+			closeByEscape: false,
+			closeByDocument: false,
+
 			className: 'ngdialog ngdialog-theme-default designAddForm',
 
 			controller: function() {
@@ -1007,6 +1010,15 @@ app.controller("costForm", function($scope, $http, $location, $cookies){
 			return newObj;
 		}
 
+		// Input值为空鼠标focus的时候Input设置为空
+		$scope.clearZero = function(e) {
+
+			console.log(e.target.value);
+			if (e.target.value==0) {
+				e.target.value = '';
+			}
+		}
+
 		$http({
 			method: 'post',
 			url: g.host+'/decoration_designer/costcontrolsheet/selectList',		
@@ -1038,6 +1050,8 @@ app.controller("costForm", function($scope, $http, $location, $cookies){
 
 				$scope.data = data.datas;
 				$scope.hasSubmit = data.hasSubmit;
+				// $scope.data.P1 = $scope.data.P1;
+				console.log($scope.data);
 
 			} else {
 
@@ -1165,7 +1179,9 @@ app.controller("costForm", function($scope, $http, $location, $cookies){
 	            }
 			}).success(function(data) {
 
-				console.log(data);
+				alert(data.msg);
+
+				$scope.hasSubmit = data.success;
 
 			})
 		}
