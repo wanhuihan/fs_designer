@@ -1,0 +1,23 @@
+// home page
+
+@import 'global';
+
+#home {
+	ul {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+		li {
+			padding: 0 5px;
+			float: left;
+			list-style: none;
+			a {
+				background: #eee;
+				padding: 5px 10px;
+			}
+		}
+	}
+	dl {
+		list-style: none;
+	}
+}

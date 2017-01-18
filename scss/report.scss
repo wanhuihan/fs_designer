@@ -1,0 +1,371 @@
+/*-------------------
+	量房报告 
+ --------------------*/
+
+ .report_details_form {
+
+	.report_tab_steptwo {
+		h3 {
+			color:#555;
+		}
+		span {
+			height: 50px;
+			display: inline-block;
+			width:50px;		
+			border-left: 50px solid;	
+		}
+		div {
+			background:#eee;
+		}
+	}
+	.report_tab_listone {
+		margin:60px 170px 0 25px;
+
+		& > div {
+			margin-bottom:20px;
+			padding-bottom:20px;
+			border-bottom:2px solid #eee;
+			& > div > p span {
+				color:#f00;
+			}
+			& > div >input {
+				// margin-left:20px;
+			}
+		}
+		& > div:last-child {
+			border: none;
+		}
+	}
+	.report_tab_listtwo {
+		margin:60px 170px 0 160px;
+		.radio-success {
+			label{
+				margin: 0 20px;
+			}
+		}
+		.checkbox-success {
+			label{
+				margin: 0 20px;
+			}
+		}
+		&  h3 {
+			padding-bottom:20px;
+			color:#169BD5;
+			font-size:16px;
+			font-weight:700;
+			border-bottom:2px solid #eee;
+		}
+		& > div > div {
+			margin-bottom:20px;
+			padding-bottom:20px;
+			border-bottom:2px solid #eee;
+			& > div > p span {
+				color:#f00;
+			}
+			& > div >input {
+				margin-right: 20px;
+			}
+			&.btm_btn_group {
+				    margin-bottom: 0;
+				    // padding-bottom: 0;
+				    border-bottom: none;
+			}
+		}
+		& > div:last-child {
+			border: none;
+		}
+	}
+
+	.step_content {
+		padding-bottom: 100px;
+		display: none;
+		.additional_info {
+			display: none;
+			label {
+				&[for='house_fault_opinion'] {
+					margin-left: 0 !important;
+					&:before {
+						display: none;
+					}
+				}
+			}
+		}
+		.report_tab_listone .radio-success {
+			label{
+				margin: 0 20px;
+			}
+		} 
+		.radio-inline {
+			cursor: default;
+		}
+		// .btn_group {
+		// 	position: fixed;
+		// 	bottom: 0;
+		// 	margin: 0;
+		// 	padding: 20px 0;
+		// 	background: rgba(75,86,100,0.8);
+		// 	width: 100%;
+		// 	left: 0;
+		// 	text-align: center;
+		// 	.btn {
+		// 		margin: 0 10px;
+		// 		&.btn-primary {
+		// 			letter-spacing: 12px;
+		// 			text-indent: 12px;
+		// 		}
+		// 	}
+		// }
+		.table {
+			margin: 20px auto;
+		}
+		.inputtext {
+			line-height: 30px;
+		}
+		.additional_info {
+			margin-top: 10px;
+		}
+		.additional_info_radio {
+			position: relative;
+			width: 230px;
+			padding: 6px 0 3px 15px;
+			text-align: center;
+			border: 1px solid #eee;
+		}
+		.additional_info_radio:before {
+			// z-index: 1;
+			position: absolute;
+		    top: -20px;
+			left: 8px;
+			content: "";
+			display: block;
+			width: 0;
+		    height: 0;
+		    border: 10px solid transparent;
+		    border-bottom-color: #eee;	   
+		}
+		.additional_info_text {
+			position: relative;
+			width: 290px;
+			padding: 6px 0 3px 15px;
+			text-align: center;
+			border: 1px solid #eee;
+		}
+		.additional_info_text:before {
+			// z-index: 1;
+			position: absolute;
+		    top: -20px;
+			right: 64px;
+			content: "";
+			display: block;
+			width: 0;
+		    height: 0;
+		    border: 10px solid transparent;
+		    border-bottom-color: #eee;	   
+		}
+
+		// .house_fault_opinion .radio label:before{
+		// 	content: "";
+		// }
+	}
+	
+	.step_box {
+		.step {
+			position: relative;
+			// text-align:center;
+			h3 {
+				font-size:14px;
+				// color:#169BD5;
+				display: inline-block;
+				margin: 0;
+				line-height: 60px;
+				background: #ddd;
+				width: 100%;
+				text-align: center;
+				height: 60px;
+				font-size: 16px;
+				// position: absolute;
+			}
+			span {
+				display:inline-block;
+				width:30px;
+				height:30px;
+				// line-height:50px;
+				position: absolute;
+				right: 0;
+				text-align:center;
+				border-left: 30px solid #ddd;	
+				border-top: 30px solid #fff;
+				border-bottom: 30px solid #fff;
+				// color:#fff;
+				// background:#999;
+				// border-radius:50%;
+			}
+			div {
+				position: absolute;
+				z-index:-1;
+			    left: 42%;
+			    top: 65px;
+			    width: 100%;
+			    height: 9px;
+			    background: #eee;
+			    // background-color: rgba(22, 155, 213, 1);
+			    border: none;
+			    border-radius: 10px;
+			    -moz-box-shadow: none;
+			    -webkit-box-shadow: none;
+			    box-shadow: none;
+			}			
+		}
+	 	.viewed {
+			// span {
+			// 	display:inline-block;
+			// 	width:50px;
+			// 	height:50px;
+			// 	line-height:50px;
+			// 	text-align:center;
+			// 	color:#fff;
+			// 	background:#169BD5;
+			// 	border-radius:50%;
+			// }
+			span {
+				background: #169BD5;
+				border-left-color: #4b5664;
+			}
+			
+			h3 {
+				background: #4b5664;
+				color: #fff;
+			}
+
+			div {
+				background: #169BD5;
+			}
+			
+
+		}		
+	}
+	.report_table {
+		width: 1000px;
+		.tabletitle {
+			font-size:20px;
+			text-align:center;
+		}
+		.trtitle {
+			font-size:16px;
+			text-align:center;
+		}
+		.leftmenu {
+			width: 36px;
+		}
+		tr {
+			td {
+				vertical-align: middle;
+				&:nth-child(2) {
+					width: 120px;
+				}
+				&:nth-child(3) {
+					width: 120px;
+				}
+				&:nth-child(5) {
+					// width: 200px;
+				}
+			}
+		}
+	}
+ }
+ 
+ /* measuring report 量房报告 */
+.report_tab_stepone{
+	position: relative;
+	text-align:center;
+	h3{
+		font-size:14px;
+		color:#169BD5;
+	}
+	span{
+		display:inline-block;
+		width:50px;
+		height:50px;
+		line-height:50px;
+		text-align:center;
+		color:#fff;
+		background:#169BD5;
+		// border-radius:50%;
+	}
+	div{
+		position: absolute;
+		z-index:-1;
+	    left: 200px;
+	    top: 65px;
+	    width: 400px;
+	    height: 9px;
+	    background-color: rgba(22, 155, 213, 1);
+	    border: none;
+	    border-radius: 10px;
+	    -moz-box-shadow: none;
+	    -webkit-box-shadow: none;
+	    box-shadow: none;
+	}
+	
+}
+.report_tab_steptwo{
+	h3{
+		color:#555;
+	}
+	span{
+		background:#999;
+	}
+	div{
+		background:#eee;
+	}
+}
+.report_tab_listone{
+	margin:60px 170px 0 160px;
+	& > div {
+		margin-bottom:20px;
+		padding-bottom:20px;
+		border-bottom:2px solid #eee;
+		& > div >p span{
+			color:#f00;
+		}
+		& > div >input{
+			margin-left:20px;
+		}
+	}
+}
+.report_tab_listtwo{
+	margin:60px 170px 0 160px;
+	&  h3{
+		padding-bottom:20px;
+		color:#169BD5;
+		font-size:16px;
+		font-weight:700;
+		border-bottom:2px solid #eee;
+	}
+	& > div > div{
+		margin-bottom:20px;
+		padding-bottom:20px;
+		border-bottom:2px solid #eee;
+		& > div >p span{
+			color:#f00;
+		}
+		& > div >input{
+			margin-left:20px;
+		}
+	}
+}
+.report_page_four table{
+		width:80%;
+		margin: 0 auto;
+		.tabletitle{
+			font-size:20px;
+			text-align:center;
+		}
+		.trtitle{
+			font-size:16px;
+			text-align:center;
+		}
+		.leftmenu{
+			width:2%;
+		}		
+}

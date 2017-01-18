@@ -1,0 +1,121 @@
+*, dl, dt, dd, ul, li {
+  text-decoration: none;
+  font-size: 16px;
+  margin: 0;
+  padding: 0;
+  font-family: arial, 'Microsoft Yahei';
+  list-style: none; }
+
+body, html {
+  height: 100%;
+  width: 100%; }
+
+.clrfix:after {
+  clear: both;
+  content: "";
+  display: block; }
+
+.btn_line {
+  box-shadow: 0;
+  clear: both;
+  margin: 1px 0; }
+
+.btm_btn_group {
+  position: fixed;
+  bottom: 0;
+  margin: 0;
+  padding: 20px 0;
+  background: rgba(75, 86, 100, 0.8);
+  width: 100%;
+  left: 0;
+  text-align: center;
+  border: none; }
+  .btm_btn_group .btn {
+    margin: 0 10px; }
+
+.loading_box {
+  display: none;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background: rgba(255, 255, 255, 0.5);
+  z-index: 10; }
+  .loading_box .loading_box_animation img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0.2;
+    background-size: cover; }
+
+.quickSearch {
+  padding: 15px;
+  display: none; }
+  .quickSearch .control-label {
+    padding: 0 15px; }
+
+.breadcrumb > li + li:before {
+  content: "";
+  padding: 0;
+  display: none; }
+
+.breadcrumb {
+  display: none;
+  padding: 15px;
+  border-radius: 0; }
+  .breadcrumb i:before {
+    margin: 0 5px; }
+
+.main_body {
+  box-sizing: border-box; }
+  .main_body .main_content {
+    width: 100%;
+    padding: 75px 25px 25px 275px;
+    box-sizing: border-box; }
+
+.save_success {
+  opacity: 0;
+  height: 50px;
+  width: 200px;
+  position: absolute;
+  display: inline-block;
+  background: #ccc;
+  top: 300px;
+  left: 50%;
+  right: 50%;
+  bottom: 50%;
+  text-align: center;
+  transform: translateX(-50%);
+  line-height: 50px;
+  box-sizing: border-box; }
+
+.animation {
+  -webkit-animation: mymove 1s;
+  -webkit-animation-duration: 3s;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-fill-mode: forwards; }
+
+@-webkit-keyframes mymove /* Safari and Chrome */ {
+  from {
+    opacity: 1;
+    top: 300px; }
+  to {
+    opacity: 0;
+    top: 250px; } }
+
+#home ul {
+  margin: 0;
+  padding: 0;
+  list-style: none; }
+  #home ul li {
+    padding: 0 5px;
+    float: left;
+    list-style: none; }
+    #home ul li a {
+      background: #eee;
+      padding: 5px 10px; }
+
+#home dl {
+  list-style: none; }

@@ -1,0 +1,38 @@
+/*------------------------------------------ 
+	#sidebar
+ ------------------------------------------*/
+.side_bar {
+
+}
+
+.left_side_bar {
+	position: fixed;
+	height: 100%;
+	background: #4b5664;
+	width: 250px;
+	padding-top:50px;
+	box-sizing: border-box;
+	// top: 50px;
+	ul {
+		li {
+			line-height: 30px;
+			a {
+				color: #fff;
+				font-size: 16px;
+				display: block;
+				padding: 10px 20px;
+				i {
+					color: #fff;
+					margin-right: 15px;
+				}
+				&:hover {
+					background-color: #343c48 !important;
+					text-decoration: none;
+				}
+			}
+			&:last-child {
+				// display: none;
+			}
+		}
+	}
+}

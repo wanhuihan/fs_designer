@@ -1,48 +1,50 @@
-.account_details{	
+.account_details {	
 	padding-bottom:100px;
-	.account_delails_money{
+	.account_delails_money {
 		padding: 20px 10px;
 		margin-bottom:30px;
 		// background:#fff;
 		border: 2px solid #eee;
-		& > div > div > div > h3{
-			font-size:18px;
+		& .account_delails_money_all h3 {
+			font-size:16px;
+
 			+ span{
 				font-size:16px;
 				color:#f00;
 			}
 		}
-		& >div > div >div:nth-child(2),& >div > div >div:nth-child(5){
+		& .account_delails_money_all > div:nth-child(2),& .account_delails_money_all > div:nth-child(5) {
 			padding-top:20px;
 			font-size:14px;
 		}
-		& >div > div >div:nth-child(3){
+		& .account_delails_money_all > div:nth-child(3) {
 			padding-top:5px;
 			font-size:12px;
-			& > button:nth-child(1){
+
+			& > button:nth-child(1) {
 				margin-bottom:10px;
 			}
 		}
-		& > div:nth-child(2) >p a{
+		& > div:nth-child(2) >p a {
 			color:#20985e;
 		}
-		& > div:nth-child(3) >p a{
+		& > div:nth-child(3) >p a {
 			color:#dd8628;
 		}
 	}
-	.account_delails_list{
+	.account_delails_list {
 		padding: 20px 40px;
 		// background:#fff;
 		border:2px solid #eee;
-		& > p > span{
+		& > p > span {
 			padding:0 10px;
-			&:nth-child(1){
+			&:nth-child(1) {
 				padding-left:0;
 				color:#f00;
 				border-right:2px solid #666;
 			}
 		}
-		ul li{
+		ul li {
 			margin-top:20px;
 			padding:10px 0 ;
 			border-bottom:2px solid #eee;

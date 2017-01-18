@@ -62,14 +62,16 @@ app.config(function($stateProvider, $urlRouterProvider) {
         },
 
         views: {
+            "sideBar@": {
+                templateUrl: 'templates/sideBar.html',
+                controller: function($scope, $cookies) {
+                    console.log(window.localStorage);
+                }
+            },
             "mainBody@": {
                 templateUrl: 'templates/myOrders.html',
                 controller: 'orders'
-            },
-            // 'sideBar': {
-            //     // templateUrl: 'templates/sideBar.html',
-            //     template: ''
-            // },            
+            },            
         }
     })
 

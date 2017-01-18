@@ -1,18 +1,18 @@
 <div class="cost_details clrfix">
 	<div class="left_side_bar">
-
+		
 		<ul>
 			
-			<li>
-				<a  ui-sref="dashboard.orders.details({id:orderId,code:orderCode})"><i class="fa fa-file-text-o"></i>订单详情</a>
-			</li>
-
-			<li>
-				<a ui-sref="dashboard.orders.report({id:orderId,code:orderCode})">
-				<i class="fa fa-list-alt"></i>量房报告</a>
+			<li ng-if="roleCode==15">
+				<a  ui-sref="dashboard.orders.details({id:orderId,code:orderCode})"><i class="fa fa-file-text-o"></i>订单详情 </a>
 			</li>
 
 			<li >
+				<a ui-sref="dashboard.orders.report({id:orderId,code:orderCode})">
+				<i class="fa fa-list-alt"></i>量房报告 </a>
+			</li>
+
+			<li ng-if="roleCode==11 || roleCode==12 || roleCode==13 || roleCode==14">
 				<a ui-sref="dashboard.orders.bom({id:orderId,code:orderCode})"><i class="fa fa-list-ol"></i>物料清单</a>
 			</li>			
 
@@ -20,37 +20,37 @@
 				<a ui-sref="dashboard.orders.design({id:orderId,code:orderCode})"><i class="fa fa-file-picture-o"></i>设计图</a>
 			</li>
 
-			<li >
+			<li ng-if="roleCode==11 || roleCode==12 || roleCode==13 || roleCode==14">
 				<a ui-sref="dashboard.orders.workload({id:orderId,code:orderCode})"><i class="fa fa-tasks"></i>工程量</a>
 			</li>
-			<li>
+			<li ng-if="roleCode==16">
 				<a ui-sref="dashboard.orders.costForm({id:orderId,code:orderCode})">
 				<i class="fa fa-bar-chart fa-2"></i>成本控制单</a>
 			</li>			
 
 		</ul>
 	</div>
-	<div class="cost_detail_info main_content">
-		<h3>生命屋装修成本控制单</h3>
+	<div class="cost_detail_info main_content" ng-if="!hasSubmit">
+		<h3>生命屋装修成本控制单 </h3>
 		<p>
-			<span>项目编号：0803</span>&nbsp;
-			<span>项目名称：中海凯旋门1号楼2-1101翻新工程</span>
+			<span>项目编号：{{data.decorationTask.decorationTaskCode}}</span>&nbsp;
+			<span>项目名称：{{data.decorationTask.projectName}}</span>
 		</p>
 		<table class="table table-bordered">
 			<!-- <th colspan="8" class="tabletitle">量房记录表</th> -->
 			<tr>
-				<th class="" rowspan="2">编号</th>
-				<td class="" rowspan="2">分部分项名称</td>
+				<th class="" rowspan="2" width="5%">编号</th>
+				<td class="" rowspan="2" width="15%">分部分项名称</td>
 				<td class="" colspan="4">材料信息</td>
 				<td class="" colspan="2">价格</td>
 			</tr>
 			<tr>
-				<td class="">供应商</td>
+				<td class="" width="25%">供应商</td>
 				<td class="">规格</td>
 				<td class="">单位</td>
 				<td class="">数量</td>
 				<td class="">单价</td>
-				<td class="">合计</td>
+				<td class="" width="10%">合计</td>
 			</tr>
 			<tr>	
 				<td class="" colspan="8">第一部分：户内精装修</td>
@@ -59,10 +59,10 @@
 				<td class="" colspan="2"> 一、基础装修</td>
 				<td class=""></td>
 				<td class=""></td>
-				<td class="">m*2</td>
-				<td class="">S</td>
-				<td class="">P1</td>
-				<td class="">X</td>
+				<td class="">㎡</td>
+				<td class="">{{data.decorationTask.actualArea}}</td>
+				<td class="">{{data.P1}}</td>
+				<td class="">{{data.X}}</td>
 			</tr>
 			<tr>
 				<td class="" colspan="2">二、主材</td>
@@ -73,331 +73,117 @@
 				<td class=""></td>
 				<td class="">Y</td>
 			</tr>
-			<tr>
-				<td class="">1</td>
-				<td class="">地板</td>
-				<td class="">国产</td>
-				<td class="">实木复合地板，人字拼，国产</td>
-				<td class="">㎡</td>
-				<td class=""><input type="text"></td>
-				<td class="">2,500.00</td>
-				<td class="">H</td>
+			<tr >
+				<td colspan="8" class="section-1">
+
+					<ul>
+						<li ng-repeat="item in data.mainMaterial">
+							<span>{{$index+1}}</span>
+							<span>{{item.name}}</span>
+							<span></span>
+							<span></span>
+							<span></span>
+							<span></span>
+							<span></span>
+							<span></span>	
+							<br style="clear:both" />							
+							<ul>
+								<li ng-repeat="a in item.subList">
+									<span></span>
+									<span> - {{a.name}}</span>
+									<span>{{a.supplier_name}}</span>
+									<span>{{a.specifications}}</span>
+									<span>{{a.unit}}</span>
+									<span>
+										<input type="text" ng-model="a.quantity" name="">
+									</span>
+									<span>{{a.price}}</span>
+									<span>{{a.total_price}}</span>
+								</li>
+							</ul>
+						</li>
+					</ul>					
+				</td>
 			</tr>
-			<tr>
-				<td class="">2</td>
-				<td class="">地板</td>
-				<td class="">国产</td>
-				<td class="">实木复合地板，人字拼，国产</td>
-				<td class="">㎡</td>
-				<td class=""><input type="text"></td>
-				<td class="">2,500.00</td>
-				<td class="">H</td>
-			</tr>
-			<tr>
-				<td class="">3</td>
-				<td class="">地板</td>
-				<td class="">国产</td>
-				<td class="">实木复合地板，人字拼，国产</td>
-				<td class="">㎡</td>
-				<td class=""><input type="text"></td>
-				<td class="">2,500.00</td>
-				<td class="">H</td>
-			</tr>
-			<tr>
-				<td class="">4</td>
-				<td class="">地板</td>
-				<td class="">国产</td>
-				<td class="">实木复合地板，人字拼，国产</td>
-				<td class="">㎡</td>
-				<td class=""><input type="text"></td>
-				<td class="">2,500.00</td>
-				<td class="">H</td>
-			</tr>
-			<tr>
-				<td class="">5</td>
-				<td class="">地板</td>
-				<td class="">国产</td>
-				<td class="">实木复合地板，人字拼，国产</td>
-				<td class="">㎡</td>
-				<td class=""><input type="text"></td>
-				<td class="">2,500.00</td>
-				<td class="">H</td>
-			</tr>
-			<tr>
-				<td class="">6</td>
-				<td class="">户门</td>
-				<td class="">国产</td>
-				<td class="">实木复合地板，人字拼，国产</td>
-				<td class="">㎡</td>
-				<td class=""><input type="text"></td>
-				<td class="">2,500.00</td>
-				<td class="">H</td>
-			</tr>
-			<tr>
-				<td class=""></td>
-				<td class="">_入户电子门</td>
-				<td class="">诺沃芬或霍曼</td>
-				<td class="">子母门 1200*2300</td>
-				<td class="">樘</td>
-				<td class=""><input type="text"></td>
-				<td class="">2,500.00</td>
-				<td class="">H1</td>
-			</tr>
-			<tr>
-				<td class=""></td>
-				<td class="">_入户电子门</td>
-				<td class="">诺沃芬或霍曼</td>
-				<td class="">子母门 1200*2300</td>
-				<td class="">樘</td>
-				<td class=""><input type="text"></td>
-				<td class="">2,500.00</td>
-				<td class="">H1</td>
-			</tr>			
-			<tr>
-				<td class="">7</td>
-				<td class="">室内门</td>
-				<td class=""></td>
-				<td class=""></td>
-				<td class=""></td>
-				<td class=""></td>
-				<td class="">2,500.00</td>
-				<td class="">H0</td>
-			</tr>
-			<tr>
-				<td class=""></td>
-				<td class="">_书房、主卧室门</td>
-				<td class="">定制</td>
-				<td class="">2700*1370*100 对开</td>
-				<td class="">樘</td>
-				<td class=""><input type="text"></td>
-				<td class="">2,500.00</td>
-				<td class="">H1</td>
-			</tr>
-			<tr>
-				<td class=""></td>
-				<td class="">_起居室、更衣室、卧室2、3、4门</td>
-				<td class="">定制</td>
-				<td class="">2700*1370*100 对开</td>
-				<td class="">樘</td>
-				<td class=""><input type="text"></td>
-				<td class="">2,500.00</td>
-				<td class="">H1</td>
-			</tr>
-			<tr>
-				<td class=""></td>
-				<td class="">_盥洗间、公共卫生间、卫生间</td>
-				<td class="">定制</td>
-				<td class="">2700*1370*100 对开</td>
-				<td class="">樘</td>
-				<td class=""><input type="text"></td>
-				<td class="">2,500.00</td>
-				<td class="">H1</td>
-			</tr>
-			<tr>
-				<td class=""></td>
-				<td class="">_更衣室双扇门</td>
-				<td class="">定制</td>
-				<td class="">2700*1370*100 对开</td>
-				<td class="">樘</td>
-				<td class=""><input type="text"></td>
-				<td class="">2,500.00</td>
-				<td class="">H1</td>
-			</tr>
-			<tr>
-				<td class=""></td>
-				<td class="">_设备间门</td>
-				<td class="">定制</td>
-				<td class="">2700*1370*100 对开</td>
-				<td class="">樘</td>
-				<td class=""><input type="text"></td>
-				<td class="">2,500.00</td>
-				<td class="">H1</td>
-			</tr>
-			<tr>
-				<td class=""></td>
-				<td class="">_主卫门</td>
-				<td class="">定制</td>
-				<td class="">2700*1370*100 对开</td>
-				<td class="">樘</td>
-				<td class=""><input type="text"></td>
-				<td class="">2,500.00</td>
-				<td class="">H1</td>
-			</tr>
-			<tr>
-				<td class="">8</td>
-				<td class="">主材省略</td>
-				<td class=""></td>
-				<td class=""></td>
-				<td class=""></td>
-				<td class=""></td>
-				<td class=""></td>
-				<td class=""></td>
-			</tr>
+
 			<!-- The second section -->
 			<tr>
 				<th colspan="8" class="trtitle">第二部分：绿色科技系统</th>
 			</tr>
+
 			<tr>
-				<td class="">1</td>
-				<td class="">智能化家居</td>
-				<td class=""></td>
-				<td class=""></td>
-				<td class="">项</td>
-				<td class=""><input type="text"></td>
-				<td class="">2,500.00</td>
-				<td class="">H</td>
-			</tr>
-			<tr>
-				<td class="">2</td>
-				<td class=""> 毛细管采暖制冷系统</td>
-				<td class="">定制</td>
-				<td class=""></td>
-				<td class="">项</td>
-				<td class=""><input type="text"></td>
-				<td class="">2,500.00</td>
-				<td class="">H</td>
-			</tr>
-			<tr>
-				<td class="">3</td>
-				<td class="">热水锅炉及软水机</td>
-				<td class="">定制</td>
-				<td class=""></td>
-				<td class="">项</td>
-				<td class=""><input type="text"></td>
-				<td class="">2,500.00</td>
-				<td class="">H</td>
-			</tr>
-			<tr>
-				<td class="">4</td>
-				<td class="">制冷及置换式新风设备</td>
-				<td class="">定制</td>
-				<td class=""></td>
-				<td class="">项</td>
-				<td class=""><input type="text"></td>
-				<td class="">2,500.00</td>
-				<td class="">H</td>
-			</tr>
-			<tr>
-				<td class="">5</td>
-				<td class="">地面送风口</td>
-				<td class="">定制</td>
-				<td class=""></td>
-				<td class="">项</td>
-				<td class=""><input type="text"></td>
-				<td class="">2,500.00</td>
-				<td class="">H</td>
-			</tr>
-			<tr>
-				<td class="">6</td>
-				<td class="">排风扇</td>
-				<td class="">定制</td>
-				<td class=""></td>
-				<td class="">项</td>
-				<td class=""><input type="text"></td>
-				<td class="">2,500.00</td>
-				<td class="">H</td>
-			</tr>
-			<tr>
-				<td class="">1</td>
-				<td class="">同层排水系统</td>
-				<td class=""></td>
-				<td class=""></td>
-				<td class=""></td>
-				<td class=""></td>
-				<td class=""></td>
-				<td class="">H</td>
-			</tr>
-			<tr>
-				<td class=""></td>
-				<td class="">水箱面板1</td>
-				<td class=""></td>
-				<td class=""></td>
-				<td class=""></td>
-				<td class=""></td>
-				<td class=""></td>
-				<td class="">H</td>
-			</tr>
-			<tr>
-				<td class=""></td>
-				<td class="">水箱</td>
-				<td class=""></td>
-				<td class=""></td>
-				<td class=""></td>
-				<td class=""></td>
-				<td class=""></td>
-				<td class="">H</td>
-			</tr>
-			<tr>
-				<td class=""></td>
-				<td class="">面盆支架</td>
-				<td class=""></td>
-				<td class=""></td>
-				<td class=""></td>
-				<td class=""></td>
-				<td class=""></td>
-				<td class="">H</td>
-			</tr>
-			<tr>
-				<td class=""></td>
-				<td class="">固定组件</td>
-				<td class=""></td>
-				<td class=""></td>
-				<td class=""></td>
-				<td class=""></td>
-				<td class=""></td>
-				<td class="">H</td>
-			</tr>
-			<tr>
-				<td class=""></td>
-				<td class="">支架延长脚</td>
-				<td class=""></td>
-				<td class=""></td>
-				<td class=""></td>
-				<td class=""></td>
-				<td class=""></td>
-				<td class="">H</td>
-			</tr>
-			<tr>
-				<td class="">8</td>
-				<td class="">绿色科技省略</td>
-				<td class=""></td>
-				<td class=""></td>
-				<td class=""></td>
-				<td class=""></td>
-				<td class=""></td>
-				<td class=""></td>
-			</tr>
-			<tr>
-				<td class=""></td>
-				<td class="">绿色科技系统小计</td>
-				<td class=""></td>
-				<td class=""></td>
-				<td class=""></td>
-				<td class=""></td>
-				<td class=""></td>
-				<td class="">H</td>
-			</tr>
-			<tr>
-				<td class=""></td>
-				<td class="">材料设备采购</td>
-				<td class=""></td>
-				<td class=""></td>
-				<td class=""></td>
-				<td class=""></td>
-				<td class=""></td>
-				<td class="">H</td>
-			</tr>
-			<tr>
-				<td class=""></td>
-				<td class="">设备系统施工</td>
-				<td class=""></td>
-				<td class=""></td>
-				<td class=""></td>
-				<td class=""></td>
-				<td class=""></td>
-				<td class="">H</td>
+				<td class="section-2" colspan="8" >
+					<ul>
+						<li ng-repeat="item in data.greenTechnology">
+							
+							<span>{{$index+1}}</span>
+							<span>{{item.groupProductName}}</span>
+							<span></span>
+							<span></span>
+							<span></span>
+							<span>
+								<input type="text" name="" ng-if="item.child==0" ng-model="item.quantity">
+							</span>
+							<span>
+								<b ng-if="item.child==0">{{item.price}}</b>
+							</span>	
+							<span>
+								<b ng-if="item.child==0">{{item.totalPrice}}</b>
+							</span>						
+							<ul ng-if="item.child ==1">
+								<li ng-repeat="a in item.dataList">
+									<span></span>
+									<span>{{a.groupProductName}}</span>
+									<span>{{a.supplier_name}}</span>
+									<span>{{a.specifications}}</span>
+									<span>{{a.unit}}</span>
+									<span>
+										<input type="text" ng-model="a.quantity" name="">
+									</span>
+									<span>{{a.price}}</span>
+									<span>{{a.totalPrice}}</span>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</td>
+				
 			</tr>
 
+			<tr>
+				<td></td>
+				<td>绿色科技系统小计</td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td>N</td>
+
+			</tr>
+			<tr>
+				<td></td>
+				
+				<td>材料设备采购</td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td>N</td>
+
+			</tr>
+			<tr>
+				<td></td>			
+				<td>设备系统施工</td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td>{{data.decorationTask.actualArea}}</td>
+				<td>{{data.P2}}</td>
+				<td>{{data.O}}</td>
+
+			</tr>						
             <!-- The third section -->
 
             <tr>
@@ -409,9 +195,9 @@
 				<td class=""></td>
 				<td class=""></td>
 				<td class="">㎡</td>
-				<td class="">S</td>
-				<td class="">P3</td>
-				<td class="">Z</td>
+				<td class="">{{data.decorationTask.actualArea}}</td>
+				<td class="">{{data.P3}}</td>
+				<td class="">{{data.Z}}</td>
 			</tr>
 
 			 <!-- The fourth section -->
@@ -420,17 +206,17 @@
 			</tr>
 			<tr>
 				<td class="">1</td>
-				<td class=""> 管理费（4.5%）</td>
+				<td class=""> 管理费（{{data.management_percent}}）</td>
 				<td class=""></td>
 				<td class=""></td>
 				<td class="">㎡</td>
 				<td class=""></td>
 				<td class=""></td>
-				<td class="">A</td>
+				<td class=""></td>
 			</tr>
 			<tr>
 				<td class="">2</td>
-				<td class=""> 利润  （5%）</td>
+				<td class=""> 利润  （{{data.profit_percent}}）</td>
 				<td class=""></td>
 				<td class=""></td>
 				<td class="">㎡</td>
@@ -440,7 +226,7 @@
 			</tr>
 			<tr>
 				<td class="">3</td>
-				<td class=""> 税金 （17%）</td>
+				<td class=""> 税金 （{{data.tax_percent}}）</td>
 				<td class=""></td>
 				<td class=""></td>
 				<td class="">㎡</td>
@@ -448,6 +234,248 @@
 				<td class=""></td>
 				<td class="">C</td>
 			</tr>
+
+			<tr>
+				<td colspan="8" align="right">
+					<p>合计: </p>
+				</td>
+			</tr>
 		</table>
+		<div class="row" ng-if="!hasSubmit">
+			<div class="btm_btn_group col-md-12">
+				<button class="btn btn-default btn-lg" ng-click="edit()">保存</button>
+				<button class="btn btn-primary btn-lg" ng-click="sub()">提交</button>
+			</div>						
+		</div>		
+	</div>
+	<div class="cost_detail_info main_content" ng-if="hasSubmit">
+		<h3>生命屋装修成本控制单 </h3>
+		<p>
+			<span>项目编号：{{data.decorationTask.decorationTaskCode}}</span>&nbsp;
+			<span>项目名称：{{data.decorationTask.projectName}}</span>
+		</p>
+		<table class="table table-bordered">
+			<!-- <th colspan="8" class="tabletitle">量房记录表</th> -->
+			<tr>
+				<th class="" rowspan="2" width="5%">编号</th>
+				<td class="" rowspan="2" width="15%">分部分项名称</td>
+				<td class="" colspan="4">材料信息</td>
+				<td class="" colspan="2">价格</td>
+			</tr>
+			<tr>
+				<td class="" width="25%">供应商</td>
+				<td class="">规格</td>
+				<td class="">单位</td>
+				<td class="">数量</td>
+				<td class="">单价</td>
+				<td class="" width="10%">合计</td>
+			</tr>
+			<tr>	
+				<td class="" colspan="8">第一部分：户内精装修</td>
+			</tr>
+			<tr>	
+				<td class="" colspan="2"> 一、基础装修</td>
+				<td class=""></td>
+				<td class=""></td>
+				<td class="">㎡</td>
+				<td class="">{{data.decorationTask.actualArea}}</td>
+				<td class="">{{data.P1}}</td>
+				<td class="">{{data.X}}</td>
+			</tr>
+			<tr>
+				<td class="" colspan="2">二、主材</td>
+				<td class=""></td>
+				<td class=""></td>
+				<td class=""></td>
+				<td class=""></td>
+				<td class=""></td>
+				<td class="">{{data.totalPriceBean.principalTotal}}</td>
+			</tr>
+			<tr >
+				<td colspan="8" class="section-1">
+
+					<ul>
+						<li ng-repeat="item in data.mainMaterial">
+							<span>{{$index+1}}</span>
+							<span>{{item.name}}</span>
+							<span></span>
+							<span></span>
+							<span></span>
+							<span></span>
+							<span></span>
+							<span></span>	
+							<br style="clear:both" />							
+							<ul>
+								<li ng-repeat="a in item.subList">
+									<span></span>
+									<span> - {{a.name}}</span>
+									<span>{{a.supplier_name}}</span>
+									<span title="{{a.model}}">{{a.model}}</span>
+									<span>{{a.unit}}</span>
+									<span>
+										<input type="text" ng-model="a.quantity" name="" >
+									</span>
+									<span>{{a.price}}</span>
+									<span>{{a.totalPrice}}</span>
+								</li>
+							</ul>
+						</li>
+					</ul>					
+				</td>
+
+			</tr>
+
+			<tr>
+				<td></td>
+				<td>装修小计</td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td>{{data.totalPriceBean.decorationSubtotal}}</td>
+			</tr>
+
+			<!-- The second section -->
+			<tr>
+				<th colspan="8" class="trtitle">第二部分：绿色科技系统</th>
+			</tr>
+
+			<tr>
+				<td class="section-2" colspan="8" >
+					<ul>
+						<li ng-repeat="item in data.greenTechnology">
+							
+							<span>{{$index+1}}</span>
+							<span>{{item.groupProductName}}</span>
+							<span></span>
+							<span></span>
+							<span></span>
+							<span>
+								<input type="text" name="" ng-if="item.child==0" ng-model="item.quantity">
+							</span>
+							<span>
+								<b ng-if="item.child==0">{{item.price}}</b>
+							</span>	
+							<span>
+								<b ng-if="item.child==0">{{item.totalPrice}}</b>
+							</span>						
+							<ul ng-if="item.child ==1">
+								<li ng-repeat="a in item.dataList">
+									<span></span>
+									<span>{{a.groupProductName}}</span>
+									<span>{{a.supplier_name}}</span>
+									<span>{{a.specifications}}</span>
+									<span>{{a.unit}}</span>
+									<span>
+										<input type="text" ng-model="a.quantity" name="">
+									</span>
+									<span>{{a.price}}</span>
+									<span>{{a.totalPrice}}</span>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</td>
+				
+			</tr>
+
+			<tr style="background: #eee">
+				<td></td>
+				<td>绿色科技系统小计</td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td>{{data.totalPriceBean.greenTechnologySubtotal}}</td>
+
+			</tr>
+			<tr>
+				<td></td>
+				
+				<td>材料设备采购</td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td>{{data.totalPriceBean.purchasingTotal}}</td>
+
+			</tr>
+			<tr>
+				<td></td>			
+				<td>设备系统施工</td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td>{{data.decorationTask.actualArea}}</td>
+				<td>{{data.P2}}</td>
+				<td>{{data.O}}</td>
+
+			</tr>						
+            <!-- The third section -->
+
+            <tr>
+				<th class="" colspan="8"> 第三部分：其他费用</th>
+			</tr>
+			<tr>
+				<td class="">1</td>
+				<td class="">完工检测费用</td>
+				<td class=""></td>
+				<td class=""></td>
+				<td class="">㎡</td>
+				<td class="">{{data.decorationTask.actualArea}}</td>
+				<td class="">{{data.P3}}</td>
+				<td class="">{{data.Z}}</td>
+			</tr>
+
+			 <!-- The fourth section -->
+			<tr>
+				<th class="" colspan="8">第四部分：户内税费及利润</th>
+			</tr>
+			<tr>
+				<td class="">1</td>
+				<td class=""> 管理费（{{data.management_percent}}）</td>
+				<td class=""></td>
+				<td class=""></td>
+				<td class="">㎡</td>
+				<td class=""></td>
+				<td class=""></td>
+				<td class="">{{data.totalPriceBean.managementTotal}}</td>
+			</tr>
+			<tr>
+				<td class="">2</td>
+				<td class=""> 利润  （{{data.profit_percent}}）</td>
+				<td class=""></td>
+				<td class=""></td>
+				<td class="">㎡</td>
+				<td class=""></td>
+				<td class=""></td>
+				<td class="">{{data.totalPriceBean.profitTotal}}</td>
+			</tr>
+			<tr>
+				<td class="">3</td>
+				<td class=""> 税金 （{{data.tax_percent}}）</td>
+				<td class=""></td>
+				<td class=""></td>
+				<td class="">㎡</td>
+				<td class=""></td>
+				<td class=""></td>
+				<td class="">{{data.totalPriceBean.taxTotal}}</td>
+			</tr>
+
+			<tr>
+				<td colspan="8" align="right">
+					<p>合计: {{data.totalPriceBean.valence}}</p>
+				</td>
+			</tr>
+		</table>
+		<div class="row" ng-if="!hasSubmit">
+			<div class="btm_btn_group col-md-12">
+				<button class="btn btn-default btn-lg" ng-click="edit()">保存</button>
+				<button class="btn btn-primary btn-lg" ng-click="sub()">提交</button>
+			</div>						
+		</div>		
 	</div>
 </div>

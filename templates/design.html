@@ -4,16 +4,16 @@
 		
 		<ul>
 			
-			<li>
+			<li ng-if="roleCode==15">
 				<a  ui-sref="dashboard.orders.details({id:orderId,code:orderCode})"><i class="fa fa-file-text-o"></i>订单详情 </a>
 			</li>
 
-			<li>
+			<li >
 				<a ui-sref="dashboard.orders.report({id:orderId,code:orderCode})">
 				<i class="fa fa-list-alt"></i>量房报告 </a>
 			</li>
 
-			<li ng-if="roleCode!=15 && roleCode!=16">
+			<li ng-if="roleCode==11 || roleCode==12 || roleCode==13 || roleCode==14">
 				<a ui-sref="dashboard.orders.bom({id:orderId,code:orderCode})"><i class="fa fa-list-ol"></i>物料清单</a>
 			</li>			
 
@@ -21,15 +21,16 @@
 				<a ui-sref="dashboard.orders.design({id:orderId,code:orderCode})"><i class="fa fa-file-picture-o"></i>设计图</a>
 			</li>
 
-			<li ng-if="roleCode!=15 && roleCode!=16">
+			<li ng-if="roleCode==11 || roleCode==12 || roleCode==13 || roleCode==14">
 				<a ui-sref="dashboard.orders.workload({id:orderId,code:orderCode})"><i class="fa fa-tasks"></i>工程量</a>
 			</li>
-			<li>
+			<li ng-if="roleCode==16">
 				<a ui-sref="dashboard.orders.costForm({id:orderId,code:orderCode})">
 				<i class="fa fa-bar-chart fa-2"></i>成本控制单</a>
 			</li>			
 
 		</ul>
+		
 	</div>
 
    <div class="design_details_cont main_content">
@@ -53,11 +54,10 @@
 					<div class="col-md-7">
 						<div class="row">
 							<div class="col-md-12">
-								<h3 ng-if="item.panoramaUrl">
-									<a href="{{item.panoramaUrl}}">{{item.panoramaUrl}}</a>
+								<h3 ng-if="item.panoramaUrl && item.panoramaUrl != 'undefined'">
+									<a href="{{item.panoramaUrl}}" target="blank">{{item.panoramaUrl}}</a>
 								</h3>
-								<h3 ng-if="!item.panoramaUrl">{{item.documentName}} </h3>
-
+								<h3 ng-if="!item.panoramaUrl || item.panoramaUrl=='undefined'">{{item.documentName}} </h3>
 							</div>
 						</div>
 						<div class="row">
@@ -67,28 +67,28 @@
 						</div>
 						<div class="row">
 							<div class="col-md-6" ng-if="item.maxName !=''">
-								<a href="{{item.maxUrl}}" download="">{{item.maxName}}</a>
+								<a href="{{item.maxUrl}}" download="" target="_blank">{{item.maxName}}</a>
 							</div>
 							<div class="col-md-6" ng-if="item.xmlName !=''">
-								<a href="{{item.maxUrl}}" download="">{{item.xmlName}}</a>
+								<a href="{{item.maxUrl}}" download="" target="_blank">{{item.xmlName}}</a>
 							</div>
 							<div class="col-md-6" ng-if="item.dwgName !=''">
-								<a href="{{item.dwgUrl}}" download="">{{item.dwgName}}</a>
+								<a href="{{item.dwgUrl}}" download="" target="_blank">{{item.dwgName}}</a>
 							</div>
 							<div class="col-md-6" ng-if="item.pdfName !=''">
-								<a href="{{item.pdfUrl}}" download="">{{item.pdfName}}</a>
+								<a href="{{item.pdfUrl}}" download="" target="_blank">{{item.pdfName}}</a>
 							</div>									
 							<div class="col-md-6" ng-if="item.fbxName !=''">
-								<a href="{{item.fbxUrl}}" download="">{{item.fbxName}}</a>
+								<a href="{{item.fbxUrl}}" download="" target="_blank">{{item.fbxName}}</a>
 							</div>
 							<div class="col-md-6" ng-if="item.pakName !=''">
-								<a href="{{item.pakUrl}}" download="">{{item.pakName}}</a>
+								<a href="{{item.pakUrl}}" download="" target="_blank">{{item.pakName}}</a>
 							</div>
 							<div class="col-md-6" ng-if="item.skpName !=''">
-								<a href="{{item.skpUrl}}" download="">{{item.skpName}}</a>
+								<a href="{{item.skpUrl}}" download="" target="_blank">{{item.skpName}}</a>
 							</div>
 							<div class="col-md-6" ng-if="item.mwhomeName !=''">
-								<a href="{{item.mwhomeUrl}}" download="">{{item.mwhomeName}}</a>
+								<a href="{{item.mwhomeUrl}}" download="" target="_blank">{{item.mwhomeName}}</a>
 							</div>													
 						</div>
 					</div>

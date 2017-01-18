@@ -5,16 +5,16 @@
 
 		<ul>
 			
-			<li>
-				<a  ui-sref="dashboard.orders.details({id:orderId,code:orderCode})"><i class="fa fa-file-text-o"></i>订单详情</a>
+			<li ng-if="roleCode==15">
+				<a  ui-sref="dashboard.orders.details({id:orderId,code:orderCode})"><i class="fa fa-file-text-o"></i>订单详情 </a>
 			</li>
 
-			<li>
+			<li >
 				<a ui-sref="dashboard.orders.report({id:orderId,code:orderCode})">
-				<i class="fa fa-list-alt"></i>量房报告</a>
+				<i class="fa fa-list-alt"></i>量房报告 </a>
 			</li>
 
-			<li ng-if="roleCode!=15 && roleCode!=16">
+			<li ng-if="roleCode==11 || roleCode==12 || roleCode==13 || roleCode==14">
 				<a ui-sref="dashboard.orders.bom({id:orderId,code:orderCode})"><i class="fa fa-list-ol"></i>物料清单</a>
 			</li>			
 
@@ -22,10 +22,10 @@
 				<a ui-sref="dashboard.orders.design({id:orderId,code:orderCode})"><i class="fa fa-file-picture-o"></i>设计图</a>
 			</li>
 
-			<li ng-if="roleCode!=15 && roleCode!=16">
+			<li ng-if="roleCode==11 || roleCode==12 || roleCode==13 || roleCode==14">
 				<a ui-sref="dashboard.orders.workload({id:orderId,code:orderCode})"><i class="fa fa-tasks"></i>工程量</a>
 			</li>
-			<li>
+			<li ng-if="roleCode==16">
 				<a ui-sref="dashboard.orders.costForm({id:orderId,code:orderCode})">
 				<i class="fa fa-bar-chart fa-2"></i>成本控制单</a>
 			</li>			
@@ -57,11 +57,11 @@
 						</li>
 						<li class="col-md-6">
 							<span>年龄：</span>
-							<span>null</span>											
+							<span><!-- null --></span>											
 						</li>	
 						<li class="col-md-6">
 							<span>性别：</span>
-							<span>null</span>											
+							<span><!-- null --></span>											
 						</li>																			
 						<li class="col-md-6">
 							<span>所在区域：</span>
@@ -69,15 +69,15 @@
 						</li>
 						<li class="col-md-6">
 							<span>年收入：</span>
-							<span>null</span>											
+							<span><!-- null --></span>											
 						</li>															
 						<li class="col-md-6">
 							<span>剩余时间：</span>
-							<span>null</span>											
+							<span><!-- null --></span>											
 						</li>								
 						<li class="col-md-6">
 							<span>派单时间：</span>
-							<span>{{data.createTime }}</span>											
+							<span>{{data.createTime | date:'yyyy年MM月dd日'}}</span>											
 						</li>																							
 					</ul>								
 					
@@ -118,7 +118,7 @@
 						</li>								
 						<li class="col-md-6">
 							<span>预约时间</span>
-							<span>{{data.reservationRoomTime }}</span>		
+							<span>{{data.reservationRoomTime | date:'yyyy年MM月dd日'}}</span>		
 						</li>												
 					</ul>								
 					
