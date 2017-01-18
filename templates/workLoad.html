@@ -90,7 +90,7 @@
 					<ul ng-if="item.hasDetail" class="clrfix" >
 						<li ng-repeat="i in item.detailsList" class="clrfix">
 							<span>
-								{{i.seq}}
+								{{item.seq}}.{{i.seq}}
 							</span>
 
 							<span>{{i.projectName}}</span>
@@ -114,7 +114,7 @@
 								<li ng-repeat="a in i.subList" class="clrfix">
 
 									<span>
-										{{a.seq}}
+										{{item.seq}}.{{i.seq}}.{{a.seq}}
 									</span>
 
 									<span>{{a.projectName}}</span>
