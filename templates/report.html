@@ -115,13 +115,13 @@
 					<div class="row">
 						<div class="col-md-12">					    
 						      <p>6.请填写所该装修房屋的建筑面积：<span>*</span></p>
-						      <input class="inputtext" type="text" ng-model="formData.generalInfo.ownerBuildArea">&nbsp;&nbsp;m*2
+						      <input class="inputtext" type="text" ng-model="formData.generalInfo.ownerBuildArea">&nbsp;&nbsp;m²
 						</div>
 					</div>
 					<div class="row">
 						<div class="col-md-12">					    
 						      <p> 7.请填写该装修房屋的使用面积：<span>*</span></p>
-						      <input class="inputtext" type="text" ng-model="formData.generalInfo.ownerUseArea">&nbsp;&nbsp;m*2
+						      <input class="inputtext" type="text" ng-model="formData.generalInfo.ownerUseArea">&nbsp;&nbsp;m²
 						</div>
 					</div>
 					<div class="row">
@@ -129,7 +129,7 @@
 						      <p> 8.请填写该房屋装修计划投资：
 						      （&nbsp;&nbsp;&nbsp;&nbsp;<input id="owner_investMPChangeVal" type="checkbox" ng-model="investMPChangeVal" ng-change="investMPChange()" >
 						      <label for="owner_investMPChangeVal">含主材</label>）<span>*</span></p>
-						      <input class="inputtext" type="text" ng-model="formData.generalInfo.ownerPlannedInvests" ng-change="investMPChange()">
+						      <input class="inputtext" type="text" ng-model="formData.generalInfo.ownerPlannedInvests" ng-change="investMPChange()"> 元
 						</div>
 					</div>
 					<div class="row">
@@ -1534,7 +1534,7 @@
 					<tr>
 						<td class="">计划投资：</td>
 						<td class="">{{formData.generalInfo.ownerPlannedInvests}}
-						<span ng-if="investMPChangeVal==1">-含主材</span>
+						<span ng-if="investMPChangeVal==1">元-含主材</span>
 						</td>
 						<td class="">计划装修时间：</td>
 						<td class="">{{formData.generalInfo.ownerPlanTime | date:'yyyy年MM月dd日'}}</td>
