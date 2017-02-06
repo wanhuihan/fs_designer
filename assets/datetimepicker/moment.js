@@ -3426,7 +3426,8 @@
         L    : 'MM/DD/YYYY',
         LL   : 'MMMM D, YYYY',
         LLL  : 'MMMM D, YYYY h:mm A',
-        LLLL : 'dddd, MMMM D, YYYY h:mm A'
+        LLLL : 'dddd, MMMM D, YYYY h:mm A',
+        LLLLL : 'YYYY年MM月DD日' // custom made
     };
 
     function longDateFormat (key) {
