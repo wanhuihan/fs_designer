@@ -26,6 +26,8 @@
 /* ----------------------------
 	#my orders
 ------------------------------ */
-.my_orders .main_content .table td {
-  font-size: 16px;
-  line-height: 35px; }
+.main_body .my_orders .main_content {
+  padding: 75px 25px; }
+  .main_body .my_orders .main_content .table td {
+    font-size: 16px;
+    line-height: 35px; }

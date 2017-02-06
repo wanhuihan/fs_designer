@@ -52,17 +52,22 @@
 /* ----------------------------
 	#my orders
 ------------------------------ */
-.my_orders {
+.main_body{
 
-	// padding: 10px;
-	
-	.main_content {
-		.table {
-			td {
-				font-size: 16px;
-				line-height: 35px;
+	.my_orders {
+		
+		.main_content {
+
+			padding: 75px 25px ;
+
+			.table {
+				
+				td {
+					font-size: 16px;
+					line-height: 35px;
+				}
 			}
 		}
-	}
 
+	}
 }
