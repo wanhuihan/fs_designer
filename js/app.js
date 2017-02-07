@@ -92,31 +92,38 @@ var g = {
 
 		var input = jQuery(target).find("input[type='file']");
 
-		$("body").on("change", input, function(e) {
+		$("body").on("change", jQuery(target).find("input[type='file']"), function(e) {
 
 			// console.log(e.target.files[0].size);
 			var byteLimit = 1024*1024*20;
 
-			if (e.target.files[0].size == 0) {
+			console.log(e.target.files[0]);
 
-				alert("您上传的文件大小不能为空文件！");
+			// return false;
+			// if (e.target.files[0]["size"]) {
 
-				e.target.value = "";
+				if (e.target.files[0].size == 0) {
 
-				return false;
+					alert("您上传的文件大小不能为空文件！");
 
-			} else if(e.target.files[0].size > byteLimit){
-				
-				alert("您上传的文件大小不能大于20M！");
+					e.target.value = "";
 
-				e.target.value = "";
+					return false;
 
-				return false;
-				
-			} else {
-				
-				return true;
-			}
+				} else if(e.target.files[0].size > byteLimit){
+					
+					alert("您上传的文件大小不能大于20M！");
+
+					e.target.value = "";
+
+					return false;
+					
+				} else {
+
+					return true;
+				}
+			// }
+
 
 		})
 
