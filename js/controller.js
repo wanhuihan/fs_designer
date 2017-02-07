@@ -713,6 +713,8 @@ app.controller("design", function($scope, $http, $location, $cookies, ngDialog, 
 
 			controller: function() {
 
+				g.fileUploadByteChk("#EditForm");
+
 				jQuery("body").on("click", ".designAddForm  #uploadForm .btn", function() {
 					
 					var formData = new FormData();
@@ -780,11 +782,10 @@ app.controller("design", function($scope, $http, $location, $cookies, ngDialog, 
 
 				var changeBtnArr = jQuery("#EditForm .btn");
 
+				g.fileUploadByteChk("#EditForm");
+
 				jQuery("body").on("click", ".design_draw_edit_form #EditForm .btn", function() {
-					
-					// console.log(jQuery("#EditForm .btn"));
-					// return false;
-					// console.log(jQuery(this).parents("#designEditForm"));
+
 					var thisFormDiv = jQuery(this).parents("#EditForm").find("input[type='file']");
 					// return false;
 					var formData = new FormData();

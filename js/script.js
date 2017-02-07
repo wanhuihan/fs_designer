@@ -183,41 +183,12 @@ var g = {
 				$("fieldset."+e.currentTarget.id).show().addClass("active")
 			})
 			
-			// $(".confirmBtn").on("touchstart", function(e) {
-
-
-   //              // console.log(JSON.stringify(data));
-
-   //              $.ajax({
-   //              	type:'post',
-   //              	url: g.host + '/decoration_app_api/inspectionLotImg/addInspectionLot?type=10&token=327b45e1-cb97-44c3-bf6c-bc366be93bde&decorationTaskCode=116092400000045',
-   //              	data: {
-   //              		doMainJson: JSON.stringify(data)
-   //              	},
-   //              	success: function(d) {
-   //              		console.log(d)
-   //              	}
-   //              })
-			// })
-
 		},	
 
 		createTable: function(e) {
 
 			var data = g.step.collectData(e);
 			// console.log(data);
-
-			// handlebar function to compile html template
-
-			// var source   = $("#tableTemplate").html();
-			
-			// var template = Handlebars.compile(source);	
-
-			// var context = data;
-
-			// var html = template(context);
-
-			// $("#tableSample").html(html);
 		},
 
 		collectData: function(e) {
@@ -261,4 +232,5 @@ var g = {
 			return data;
 		}	
 	},
+
 }
