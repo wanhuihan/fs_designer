@@ -85,8 +85,42 @@ var g = {
 
 	msg:  {
 		server_error: '服务器连接错误，请稍后再试',
-	}
+	},
 
+	// limit upload files size
+	fileUploadByteChk: function(target) {
+
+		var input = jQuery(target).find("input[type='file']");
+
+		$("body").on("change", input, function(e) {
+
+			// console.log(e.target.files[0].size);
+			var byteLimit = 1024*1024*20;
+
+			if (e.target.files[0].size == 0) {
+
+				alert("您上传的文件大小不能为空文件！");
+
+				e.target.value = "";
+
+				return false;
+
+			} else if(e.target.files[0].size > byteLimit){
+				
+				alert("您上传的文件大小不能大于20M！");
+
+				e.target.value = "";
+
+				return false;
+				
+			} else {
+				
+				return true;
+			}
+
+		})
+
+	}
 
 }
 
