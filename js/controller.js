@@ -694,6 +694,10 @@ app.controller("design", function($scope, $http, $location, $cookies, ngDialog, 
 
 
 				$scope.roleCode = window.localStorage.fs_design_role_code;
+
+				// 判断修改上传图片和文件的弹窗Input值
+				g.fileUploadByteChk("#EditForm");
+
 			}
 
 		})		
@@ -781,8 +785,6 @@ app.controller("design", function($scope, $http, $location, $cookies, ngDialog, 
 			controller: function() {
 
 				var changeBtnArr = jQuery("#EditForm .btn");
-
-				g.fileUploadByteChk("#EditForm");
 
 				jQuery("body").on("click", ".design_draw_edit_form #EditForm .btn", function() {
 

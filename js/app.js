@@ -93,15 +93,13 @@ var g = {
 
 		var input = jQuery(target).find("input[type='file']");
 
-		$("body").on("change", jQuery(target).find("input[type='file']"), function(e) {
+		jQuery("body").on("change", input, function(e) {
 
-			// console.log(e.target.files[0].size);
 			var byteLimit = 1024*1024*20;
 
-			console.log(e.target.files[0]);
+			// console.log(e.target.files[0]);
 
-			// return false;
-			// if (e.target.files[0]["size"]) {
+			if (e.target.files.length) {
 
 				if (e.target.files[0].size == 0) {
 
@@ -123,14 +121,11 @@ var g = {
 
 					return true;
 				}
-			// }
-
+			}
 
 		})
 
 	}
 
 }
-
-
 
