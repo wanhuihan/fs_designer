@@ -697,6 +697,7 @@ app.controller("design", function($scope, $http, $location, $cookies, ngDialog, 
 
 				// 判断修改上传图片和文件的弹窗Input值
 				g.fileUploadByteChk("#EditForm");
+				g.fileUploadByteChk("#uploadForm");
 
 			}
 
@@ -717,7 +718,7 @@ app.controller("design", function($scope, $http, $location, $cookies, ngDialog, 
 
 			controller: function() {
 
-				g.fileUploadByteChk("#EditForm");
+				// g.fileUploadByteChk("#uploadForm");
 
 				jQuery("body").on("click", ".designAddForm  #uploadForm .btn", function() {
 					
@@ -782,9 +783,11 @@ app.controller("design", function($scope, $http, $location, $cookies, ngDialog, 
 			width: 800,
 			className: 'ngdialog ngdialog-theme-default designEditForm',
 
-			controller: function() {
+			controller: function($scope, $window) {
 
 				var changeBtnArr = jQuery("#EditForm .btn");
+
+				// g.fileUploadByteChk("#EditForm");
 
 				jQuery("body").on("click", ".design_draw_edit_form #EditForm .btn", function() {
 

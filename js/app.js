@@ -17,8 +17,8 @@ var app = angular.module("designer", ["ui.router", 'angular-loading-bar','ngDial
 var g = {
 	
 	// host server
-	host: 'http://192.168.0.87',
-	// host: 'http://192.168.0.6:8080',
+	// host: 'http://192.168.0.87',
+	host: 'http://192.168.0.6:8080',
 	// host: 'http://192.168.0.224:8089',
 
 	// user: {
@@ -99,7 +99,7 @@ var g = {
 
 			// console.log(e.target.files[0]);
 
-			if (e.target.files.length) {
+			if (e.target.files.length > 0) {
 
 				if (e.target.files[0].size == 0) {
 
@@ -109,7 +109,8 @@ var g = {
 
 					return false;
 
-				} else if(e.target.files[0].size > byteLimit){
+				} 
+				else if(e.target.files[0].size > byteLimit){
 					
 					alert("您上传的文件大小不能大于20M！");
 
