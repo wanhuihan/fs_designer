@@ -677,9 +677,13 @@ app.controller("design", function($scope, $http, $location, $cookies, ngDialog, 
 				if (data.roleCode ==12) {
 					$scope.designTypeFile = 3;
 				}
-				if (data.roleCode ==13) {
-					$scope.designTypeFile = 4;
-				}
+
+				// if (data.roleCode ==13) {
+
+				// 	// $scope.designTypeFile = 4;
+
+				// }
+
 				if (data.roleCode ==14) {
 					$scope.designTypeFile = 5;
 				}
@@ -692,6 +696,9 @@ app.controller("design", function($scope, $http, $location, $cookies, ngDialog, 
 
 				$scope.hasAdded = data.hasAdded;
 
+				$scope.strongElecAdded = data.strongElecAdded;
+
+				$scope.weakElecAdded = data.weakElecAdded;
 
 				$scope.roleCode = window.localStorage.fs_design_role_code;
 
@@ -701,10 +708,132 @@ app.controller("design", function($scope, $http, $location, $cookies, ngDialog, 
 
 			}
 
-		})		
+		})	
+
+		// bind upload file function - add new files
+		jQuery("body").on("click", ".designAddForm  #uploadForm .btn", function() {
+			
+			var formData = new FormData();
+
+			var fileArr = jQuery('#uploadForm input[type="file"]');
+			var arr = '';
+			for (var i = 0; i < fileArr.length; i++) {
+
+				formData.append('files', fileArr[i].files[0]);
+			}
+
+			// 如果是效果图设计师需要获取效果图连接
+			if (jQuery("#uploadForm #designUrl")) {
+				var url = jQuery("#uploadForm #designUrl").val();
+			}
+
+			// formData.append('files', arr);
+			jQuery(".loading_box").show();
+
+			jQuery.ajax({
+			    url: g.host+'/decoration_designer/decorationDesignDraw/upLoadDecorationDesignDraw?token='+$cookies.fs_designer_token+'&decorationTaskCode='+$scope.orderCode+'&designType='+$scope.designTypeFile+'&panoramaUrl='+url,
+			    type: 'POST',
+			    cache: false,
+			    data: formData,
+			    processData: false,
+			    contentType: false
+			}).done(function(res) {
+
+				// console.log(res)
+				if (res.success) {
+					
+					jQuery(".loading_box").hide();
+					ngDialog.close('designAddForm')
+					$window.location.reload();
+				} else {
+					alert('error is occured, please try it later');
+					jQuery(".loading_box").hide();
+					ngDialog.close('designAddForm');
+					return false;
+				}
+
+			}).fail(function(res) {
+				// console.log(res);
+				alert('error is occured, please try it later');
+				ngDialog.close('designAddForm');
+				return false;
+			});
+
+		})
+
+		// bind edit upload file function - edit files upload
+		jQuery("body").on("click", ".design_draw_edit_form #EditForm .btn", function() {
+
+			var thisFormDiv = jQuery(this).parents("#EditForm").find("input[type='file']");
+			// return false;
+			var formData = new FormData();
+
+			var arr = '';
+			for (var i = 0; i < thisFormDiv.length; i++) {
+
+				formData.append('files', thisFormDiv[i].files[0]);
+			}
+
+			if (jQuery("#EditForm #designUrl")) {
+				var url = jQuery("#EditForm #designUrl").val();
+			}
+		
+			jQuery(".loading_box").show();
+			// return false;
+			jQuery.ajax({
+			    url: g.host+'/decoration_designer/decorationDesignDraw/updateDecorationDesignDraw?token='+$cookies.fs_designer_token+'&decorationTaskCode='+$scope.orderCode+'&designType='+$scope.designTypeFile+'&decorationDesignDrawId='+$scope.designDrawingId+'&panoramaUrl='+url,
+			    type: 'POST',
+			    cache: false,
+			    data: formData,
+			    processData: false,
+			    contentType: false
+			}).done(function(res) {
+
+				console.log(res)
+				if (res.success) {
+					
+					jQuery(".loading_box").hide();
+					ngDialog.close('designEditForm');
+					$window.location.reload();
+				} else {
+					jQuery(".loading_box").hide();
+					alert('error is occured, please try it later');
+					ngDialog.close('designEditForm');							
+				}
+
+			}).fail(function(res) {
+				// console.log(res);
+				alert('error is occured, please try it later');
+				jQuery(".loading_box").hide();
+				ngDialog.close('designEditForm');
+				return false;
+			});
+		})			
+
 	}
 
-	$scope.designDrawAdd = function() {
+	$scope.designDrawAdd = function(e) {
+
+		// console.log(arguments.length);
+		if (arguments.length > 0) {
+			if ($scope.designType == 13) {
+
+				if (e == '4') {
+
+					$scope.designTypeFile = 4;
+
+				} else if (e == '7') {
+
+					$scope.designTypeFile = 7;
+				}	
+
+			}
+
+		}
+
+		console.log($scope.designTypeFile);
+		
+		return false;
 
 		ngDialog.open({
 			id: 'designAddForm',
@@ -713,62 +842,10 @@ app.controller("design", function($scope, $http, $location, $cookies, ngDialog, 
 			width: 800,
 			closeByEscape: false,
 			closeByDocument: false,
-
+			cache: false,
 			className: 'ngdialog ngdialog-theme-default designAddForm',
-
-			controller: function() {
-
-				// g.fileUploadByteChk("#uploadForm");
-
-				jQuery("body").on("click", ".designAddForm  #uploadForm .btn", function() {
-					
-					var formData = new FormData();
-
-					var fileArr = jQuery('#uploadForm input[type="file"]');
-					var arr = '';
-					for (var i = 0; i < fileArr.length; i++) {
-
-						formData.append('files', fileArr[i].files[0]);
-					}
-
-					// 如果是效果图设计师需要获取效果图连接
-					if (jQuery("#uploadForm #designUrl")) {
-						var url = jQuery("#uploadForm #designUrl").val();
-					}
-
-					// formData.append('files', arr);
-					jQuery(".loading_box").show();
-
-					jQuery.ajax({
-					    url: g.host+'/decoration_designer/decorationDesignDraw/upLoadDecorationDesignDraw?token='+$cookies.fs_designer_token+'&decorationTaskCode='+$scope.orderCode+'&designType='+$scope.designTypeFile+'&panoramaUrl='+url,
-					    type: 'POST',
-					    cache: false,
-					    data: formData,
-					    processData: false,
-					    contentType: false
-					}).done(function(res) {
-
-						// console.log(res)
-						if (res.success) {
-							
-							jQuery(".loading_box").hide();
-							ngDialog.close('designAddForm')
-							$window.location.reload();
-						} else {
-							alert('error is occured, please try it later');
-							jQuery(".loading_box").hide();
-							ngDialog.close('designAddForm');
-							return false;
-						}
-
-					}).fail(function(res) {
-						// console.log(res);
-						alert('error is occured, please try it later');
-						ngDialog.close('designAddForm');
-						return false;
-					});
-				})
-			}		
+			// controller: function() {
+			// }		
 		})
 
 	}
@@ -782,61 +859,6 @@ app.controller("design", function($scope, $http, $location, $cookies, ngDialog, 
 			scope : $scope,
 			width: 800,
 			className: 'ngdialog ngdialog-theme-default designEditForm',
-
-			controller: function($scope, $window) {
-
-				var changeBtnArr = jQuery("#EditForm .btn");
-
-				// g.fileUploadByteChk("#EditForm");
-
-				jQuery("body").on("click", ".design_draw_edit_form #EditForm .btn", function() {
-
-					var thisFormDiv = jQuery(this).parents("#EditForm").find("input[type='file']");
-					// return false;
-					var formData = new FormData();
-
-					var arr = '';
-					for (var i = 0; i < thisFormDiv.length; i++) {
-
-						formData.append('files', thisFormDiv[i].files[0]);
-					}
-
-					if (jQuery("#EditForm #designUrl")) {
-						var url = jQuery("#EditForm #designUrl").val();
-					}
-				
-					jQuery(".loading_box").show();
-					// return false;
-					jQuery.ajax({
-					    url: g.host+'/decoration_designer/decorationDesignDraw/updateDecorationDesignDraw?token='+$cookies.fs_designer_token+'&decorationTaskCode='+$scope.orderCode+'&designType='+$scope.designTypeFile+'&decorationDesignDrawId='+$scope.designDrawingId+'&panoramaUrl='+url,
-					    type: 'POST',
-					    cache: false,
-					    data: formData,
-					    processData: false,
-					    contentType: false
-					}).done(function(res) {
-
-						console.log(res)
-						if (res.success) {
-							
-							jQuery(".loading_box").hide();
-							ngDialog.close('designEditForm');
-							$window.location.reload();
-						} else {
-							jQuery(".loading_box").hide();
-							alert('error is occured, please try it later');
-							ngDialog.close('designEditForm');							
-						}
-
-					}).fail(function(res) {
-						// console.log(res);
-						alert('error is occured, please try it later');
-						jQuery(".loading_box").hide();
-						ngDialog.close('designEditForm');
-						return false;
-					});
-				})
-			}
 
 		})
 
