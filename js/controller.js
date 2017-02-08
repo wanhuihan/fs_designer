@@ -695,7 +695,7 @@ app.controller("design", function($scope, $http, $location, $cookies, ngDialog, 
 
 				$scope.roleCode = window.localStorage.fs_design_role_code;
 
-				// 判断修改上传图片和文件的弹窗Input值
+				// 判断修改上传图片和文件的弹窗Input值,g.fileUploadByteChk("#EditForm");放在designDrawAdd的内嵌controller里边，在第二次点击时会执行两次
 				g.fileUploadByteChk("#EditForm");
 				g.fileUploadByteChk("#uploadForm");
 
