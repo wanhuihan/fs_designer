@@ -64,19 +64,21 @@
 						<img src="{{item.urlPath}}" alt="" /> 
 						<span>{{item.designTypeText}}</span>
 					</div>
-					<div class="col-md-7">
+					<div class="col-md-7 info-box">
 						<div class="row">
 							<div class="col-md-12">
 								<h3 ng-if="item.panoramaUrl && item.panoramaUrl != 'undefined'">
-									<a href="{{item.panoramaUrl}}" target="blank">{{item.panoramaUrl}}</a>
+									<a class="info-box-title" href="{{item.panoramaUrl}}" target="blank">{{item.panoramaUrl}}</a>
 								</h3>
 								<h3 ng-if="!item.panoramaUrl || item.panoramaUrl=='undefined'">{{item.documentName}} </h3>
 							</div>
 						</div>
 						<div class="row">
-							<div class="col-md-3"><span>类型：{{item.designTypeText}}</span></div>
-							<div class="col-md-3"><span>上传人：{{item.uploadUser}}</span></div>
-							<div class="col-md-6"><span>最新更新：{{item.uploadTime | date: 'yyyy年MM月dd日' }}</span></div>
+							<div class="col-md-12 info-box-txt">
+								<div class=""><span>类型：{{item.designTypeText}}</span></div>
+								<div class=""><span>上传人：{{item.uploadUser}}</span></div>
+								<div class=""><span>最新更新：{{item.uploadTime | date: 'yyyy年MM月dd日' }}</span></div>
+							</div>
 						</div>
 						<div class="row">
 							<div class="col-md-6" ng-if="item.maxName !=''">
@@ -105,7 +107,7 @@
 							</div>													
 						</div>
 					</div>
-					<div class="col-md-3"> 
+					<div class="col-md-3 btn-box"> 
 					
 <!-- 						<div ng-if="item.hasEndVersion!=1 && item.hasLoginDesigner">
 							hello
@@ -116,7 +118,7 @@
 
 									<span  class="version_set_success">
 										<i class="fa fa-check-circle"></i>
-										已设为终板
+										已设为终版
 									</span>
 
 								</div>
@@ -137,7 +139,7 @@
 
 								<span  class="version_set_success">
 									<i class="fa fa-check-circle"></i>
-									已设为终板
+									已设为终版
 								</span>
 
 							</div>

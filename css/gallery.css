@@ -9,11 +9,11 @@
     padding-bottom: 30px;
     border-bottom: 2px solid #eee; }
     .gallery_details > nav ul span {
-      width: 5%;
-      float: left; }
-    .gallery_details > nav ul li {
-      width: 10%;
       float: left;
+      width: 5%; }
+    .gallery_details > nav ul li {
+      float: left;
+      width: 10%;
       text-align: center;
       border-right: 1px solid #aaa; }
     .gallery_details > nav ul li:nth-child(8) {
@@ -85,65 +85,76 @@
 
 .design_details_cont {
   float: left; }
-  .design_details_cont .col-md-2 img {
-    width: 100%;
-    height: 150px; }
-  .design_details_cont .btn {
-    font-size: 16px; }
-    .design_details_cont .btn i {
-      font-size: 20px;
-      vertical-align: middle;
-      margin: 0 10px; }
-    .design_details_cont .btn.design_draw_add {
-      width: 150px;
-      margin-right: 0; }
-
-.blueprints {
-  width: 100%;
-  margin: 0 auto; }
-  .blueprints > div {
-    padding-bottom: 20px;
-    margin-bottom: 20px;
-    border-bottom: 1px solid #ddd; }
-    .blueprints > div h3 {
-      margin: 0;
-      font-size: 18px;
-      color: #333; }
-    .blueprints > div > div > div {
-      margin-bottom: 20px; }
-  .blueprints .btn {
-    width: 50%; }
-  .blueprints .row {
+  .design_details_cont .img_box {
+    height: 132px;
     position: relative; }
-    .blueprints .row .col-md-3:last-child {
-      position: absolute;
-      bottom: 0;
-      margin: 0;
-      top: 50%;
-      transform: translateY(-50%);
-      right: 0; }
-      .blueprints .row .col-md-3:last-child .btn {
-        margin: 0 auto; }
-  .blueprints .alreadyend {
-    color: #999; }
-  .blueprints .version_set_success {
-    font-size: 16px;
-    text-align: center;
-    display: block; }
-    .blueprints .version_set_success i {
-      color: green;
-      font-size: 20px;
-      vertical-align: middle; }
-  .blueprints .img_box {
-    position: relative; }
-    .blueprints .img_box span {
+    .design_details_cont .img_box img {
+      width: 100%;
+      height: 132px;
+      border: 1px solid #eeeeee; }
+    .design_details_cont .img_box span {
+      display: block;
       position: absolute;
       top: 0;
       left: 15px;
+      padding: 5px 10px;
+      font-size: 12px;
+      color: #333;
+      background: rgba(255, 255, 255, 0.6); }
+  .design_details_cont .btn {
+    font-size: 16px; }
+    .design_details_cont .btn i {
+      margin: 0 10px;
+      font-size: 20px;
+      vertical-align: middle; }
+    .design_details_cont .btn.design_draw_add {
+      width: 150px;
+      margin-right: 0; }
+  .design_details_cont .blueprints {
+    width: 100%;
+    margin: 0 auto; }
+    .design_details_cont .blueprints > div.row {
+      padding: 10px 0;
+      border-bottom: 1px solid #ddd; }
+      .design_details_cont .blueprints > div.row .info-box {
+        padding-top: 5px; }
+        .design_details_cont .blueprints > div.row .info-box h3 {
+          margin: 0;
+          font-size: 16px;
+          color: #333; }
+        .design_details_cont .blueprints > div.row .info-box span {
+          font-size: 14px;
+          color: #bbbbbb; }
+        .design_details_cont .blueprints > div.row .info-box a {
+          font-size: 14px; }
+        .design_details_cont .blueprints > div.row .info-box a.info-box-title {
+          font-size: 16px; }
+        .design_details_cont .blueprints > div.row .info-box div.info-box-txt {
+          margin: 3px 0; }
+    .design_details_cont .blueprints .btn {
+      width: 50%; }
+    .design_details_cont .blueprints .row {
+      padding-bottom: 5px;
+      position: relative; }
+      .design_details_cont .blueprints .row .col-md-3:last-child {
+        position: absolute;
+        bottom: 0;
+        margin: 0;
+        top: 50%;
+        right: 0;
+        transform: translateY(-50%); }
+        .design_details_cont .blueprints .row .col-md-3:last-child .btn {
+          margin: 0 auto; }
+    .design_details_cont .blueprints .alreadyend {
+      color: #999; }
+    .design_details_cont .blueprints .version_set_success {
       display: block;
-      background: #343c48;
-      color: #fff;
-      padding: 5px 10px; }
+      font-size: 16px;
+      text-align: center; }
+      .design_details_cont .blueprints .version_set_success i {
+        color: green;
+        font-size: 20px;
+        vertical-align: middle; }
 
 .bom_detail_info {
   width: 1000px; }
@@ -155,22 +166,3 @@
   margin: 0;
   font-size: 16px;
   line-height: 26.4px; }
-
-.blueprints {
-  padding-top: 50px;
-  margin: 0 auto; }
-  .blueprints > div {
-    padding-bottom: 20px;
-    margin-bottom: 20px;
-    border-bottom: 2px solid #eee; }
-    .blueprints > div h3 {
-      font-size: 18px;
-      color: #333; }
-    .blueprints > div > div > div {
-      margin-bottom: 20px; }
-  .blueprints button:nth-child(1) {
-    width: 30%; }
-  .blueprints button:nth-child(2) {
-    width: 50%; }
-  .blueprints .alreadyend {
-    color: #999; }

@@ -50,9 +50,9 @@
 		</ol>	
 
 		<ul class="clrfix work_load_list_title">
-			<li class="order_num">
+			<!-- <li class="order_num">
 				序号
-			</li>
+			</li> -->
 			<li class="name">
 				发单工程名称
 			</li>
@@ -67,9 +67,9 @@
 			<ul class="clrfix">
 				
 				<li ng-repeat="item in data" class="clrfix">
-					<span>
+					<!-- <span>
 						{{item.seq}}
-					</span>
+					</span> -->
 
 					<span>{{item.projectName}}</span>
 
@@ -89,9 +89,9 @@
 					<hr class="btn_line">
 					<ul ng-if="item.hasDetail" class="clrfix" >
 						<li ng-repeat="i in item.detailsList" class="clrfix">
-							<span>
+							<!-- <span>
 								{{item.seq}}.{{i.seq}}
-							</span>
+							</span> -->
 
 							<span>{{i.projectName}}</span>
 
@@ -113,9 +113,9 @@
 							<ul ng-if="i.hasDetail" class="clrfix" >
 								<li ng-repeat="a in i.subList" class="clrfix">
 
-									<span>
+									<!-- <span>
 										{{item.seq}}.{{i.seq}}.{{a.seq}}
-									</span>
+									</span> -->
 
 									<span>{{a.projectName}}</span>
 
