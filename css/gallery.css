@@ -110,6 +110,8 @@
     .design_details_cont .btn.design_draw_add {
       width: 150px;
       margin-right: 0; }
+      .design_details_cont .btn.design_draw_add.pull-right {
+        margin-left: 15px; }
   .design_details_cont .blueprints {
     width: 100%;
     margin: 0 auto; }
