@@ -831,10 +831,6 @@ app.controller("design", function($scope, $http, $location, $cookies, ngDialog, 
 
 		}
 
-		console.log($scope.designTypeFile);
-		
-		return false;
-
 		ngDialog.open({
 			id: 'designAddForm',
 			templateUrl: 'templates/designDrawsAdd.html',	

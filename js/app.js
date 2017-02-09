@@ -12,7 +12,6 @@ var app = angular.module("designer", ["ui.router", 'angular-loading-bar','ngDial
 //   .config(['cfpLoadingBarProvider', function(cfpLoadingBarProvider) {
 //     cfpLoadingBarProvider.includeBar = false;
 //   }])
-
   
 var g = {
 	
