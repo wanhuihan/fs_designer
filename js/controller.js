@@ -935,7 +935,7 @@ app.controller("design", function($scope, $http, $location, $cookies, ngDialog, 
 app.controller("costForm", function($scope, $http, $location, $cookies){
 
 	$scope.orderId = $location.search().id;
-
+	
 	$scope.orderCode = $location.search().code;
 
 	if (!g.chkCookie()) {

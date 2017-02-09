@@ -97,8 +97,8 @@
 									<span>
 										<input type="text" ng-model="a.quantity" name="" ng-disabled="hasSubmit" ng-focus="clearZero($event)">
 									</span>
-									<span>{{a.price}}</span>
-									<span>{{a.total_price}}</span>
+									<span class="textright">{{a.price | currency:''}}</span>
+									<span class="textright">{{a.total_price | currency:''}}</span>
 								</li>
 							</ul>
 						</li>
@@ -124,11 +124,11 @@
 							<span>
 								<input type="text" name="" ng-if="item.child==0" ng-model="item.quantity" ng-disabled="hasSubmit" ng-focus="clearZero($event)">
 							</span>
-							<span>
-								<b ng-if="item.child==0">{{item.price}}</b>
+							<span class="textright">
+								<b ng-if="item.child==0">{{item.price | currency:''}}</b>
 							</span>	
-							<span>
-								<b ng-if="item.child==0">{{item.totalPrice}}</b>
+							<span class="textright">
+								<b ng-if="item.child==0">{{item.totalPrice | currency:''}}</b>
 							</span>						
 							<ul ng-if="item.child ==1">
 								<li ng-repeat="a in item.dataList">
@@ -140,8 +140,8 @@
 									<span>
 										<input type="text" ng-model="a.quantity" name="" ng-disabled="hasSubmit" ng-focus="clearZero($event)">
 									</span>
-									<span>{{a.price}}</span>
-									<span>{{a.totalPrice}}</span>
+									<span class="textright">{{a.price | currency: ''}}</span>
+									<span class="textright">{{a.totalPrice | currency:''}}</span>
 								</li>
 							</ul>
 						</li>
@@ -260,15 +260,15 @@
 				<th class="" rowspan="2" width="5%">编号</th>
 				<td class="" rowspan="2" width="15%">分部分项名称</td>
 				<td class="" colspan="4">材料信息</td>
-				<td class="" colspan="2">价格</td>
+				<td class="" colspan="2" style="text-align: center">价格</td>
 			</tr>
 			<tr>
 				<td class="" width="25%">供应商</td>
 				<td class="">规格</td>
 				<td class="">单位</td>
 				<td class="">数量</td>
-				<td class="">单价</td>
-				<td class="" width="10%">合计</td>
+				<td class="textright">单价</td>
+				<td class="textright" width="10%">合计</td>
 			</tr>
 			<tr>	
 				<td class="" colspan="8">第一部分：户内精装修</td>
@@ -279,8 +279,8 @@
 				<td class=""></td>
 				<td class="">㎡</td>
 				<td class="">{{data.decorationTask.actualArea}}</td>
-				<td class="">{{data.P1}}</td>
-				<td class="">{{data.X}}</td>
+				<td class="textright">{{data.P1 | currency:''}}</td>
+				<td class="textright">{{data.X | currency:''}}</td>
 			</tr>
 			<tr>
 				<td class="" colspan="2">二、主材</td>
@@ -289,7 +289,7 @@
 				<td class=""></td>
 				<td class=""></td>
 				<td class=""></td>
-				<td class="">{{data.totalPriceBean.principalTotal}}</td>
+				<td class="textright">{{data.totalPriceBean.principalTotal | currency:''}}</td>
 			</tr>
 			<tr >
 				<td colspan="8" class="section-1">
@@ -315,8 +315,8 @@
 									<span>
 										<input type="text" ng-model="a.quantity" name="" ng-disabled="hasSubmit" ng-focus="clearZero($event)">
 									</span>
-									<span>{{a.price}}</span>
-									<span>{{a.totalPrice}}</span>
+									<span class="textright">{{a.price | currency:''}}</span>
+									<span class="textright">{{a.totalPrice | currency:''}}</span>
 								</li>
 							</ul>
 						</li>
@@ -333,7 +333,7 @@
 				<td></td>
 				<td></td>
 				<td></td>
-				<td>{{data.totalPriceBean.decorationSubtotal}}</td>
+				<td class="textright">{{data.totalPriceBean.decorationSubtotal | currency:''}}</td>
 			</tr>
 
 			<!-- The second section -->
@@ -354,11 +354,11 @@
 							<span>
 								<input type="text" name="" ng-if="item.child==0" ng-model="item.quantity" ng-disabled="hasSubmit" ng-focus="clearZero($event)">
 							</span>
-							<span>
-								<b ng-if="item.child==0">{{item.price}}</b>
+							<span class="textright">
+								<b  ng-if="item.child==0">{{item.price | currency:''}}</b>
 							</span>	
-							<span>
-								<b ng-if="item.child==0">{{item.totalPrice}}</b>
+							<span class="textright">
+								<b  ng-if="item.child==0">{{item.totalPrice | currency:''}}</b>
 							</span>						
 							<ul ng-if="item.child ==1">
 								<li ng-repeat="a in item.dataList">
@@ -370,8 +370,8 @@
 									<span>
 										<input type="text" ng-model="a.quantity" name="" ng-disabled="hasSubmit" ng-focus="clearZero($event)">
 									</span>
-									<span>{{a.price}}</span>
-									<span>{{a.totalPrice}}</span>
+									<span class="textright">{{a.price | currency:''}}</span>
+									<span class="textright">{{a.totalPrice | currency:''}}</span>
 								</li>
 							</ul>
 						</li>
@@ -388,7 +388,7 @@
 				<td></td>
 				<td></td>
 				<td></td>
-				<td>{{data.totalPriceBean.greenTechnologySubtotal}}</td>
+				<td class="textright">{{data.totalPriceBean.greenTechnologySubtotal | currency:''}}</td>
 
 			</tr>
 			<tr>
@@ -400,7 +400,7 @@
 				<td></td>
 				<td></td>
 				<td></td>
-				<td>{{data.totalPriceBean.purchasingTotal}}</td>
+				<td class="textright">{{data.totalPriceBean.purchasingTotal | currency:''}}</td>
 
 			</tr>
 			<tr>
@@ -410,8 +410,8 @@
 				<td></td>
 				<td></td>
 				<td>{{data.decorationTask.actualArea}}</td>
-				<td>{{data.P2}}</td>
-				<td>{{data.O}}</td>
+				<td class="textright">{{data.P2 | currency:''}}</td>
+				<td class="textright">{{data.O | currency:''}}</td>
 
 			</tr>						
             <!-- The third section -->
@@ -426,8 +426,8 @@
 				<td class=""></td>
 				<td class="">㎡</td>
 				<td class="">{{data.decorationTask.actualArea}}</td>
-				<td class="">{{data.P3}}</td>
-				<td class="">{{data.Z}}</td>
+				<td class="textright">{{data.P3 | currency:''}}</td>
+				<td class="textright">{{data.Z | currency:''}}</td>
 			</tr>
 
 			 <!-- The fourth section -->
@@ -442,7 +442,7 @@
 				<td class="">㎡</td>
 				<td class=""></td>
 				<td class=""></td>
-				<td class="">{{data.totalPriceBean.managementTotal}}</td>
+				<td class="textright">{{data.totalPriceBean.managementTotal | currency:''}}</td>
 			</tr>
 			<tr>
 				<td class="">2</td>
@@ -452,7 +452,7 @@
 				<td class="">㎡</td>
 				<td class=""></td>
 				<td class=""></td>
-				<td class="">{{data.totalPriceBean.profitTotal}}</td>
+				<td class="textright">{{data.totalPriceBean.profitTotal | currency:''}}</td>
 			</tr>
 			<tr>
 				<td class="">3</td>
@@ -462,12 +462,12 @@
 				<td class="">㎡</td>
 				<td class=""></td>
 				<td class=""></td>
-				<td class="">{{data.totalPriceBean.taxTotal}}</td>
+				<td class="textright">{{data.totalPriceBean.taxTotal | currency:''}}</td>
 			</tr>
 
 			<tr>
 				<td colspan="8" align="right">
-					<p>合计: {{data.totalPriceBean.valence}}</p>
+					<p class="">合计: {{data.totalPriceBean.valence | currency:''}}</p>
 				</td>
 			</tr>
 		</table>
