@@ -278,3 +278,6 @@ body, html {
     #dashboard .mainSection #tableCont .designDrawingList .well > div input::-webkit-input-placeholder {
       color: #ddd;
       font-size: 12px; }
+
+.textright {
+  text-align: right; }
