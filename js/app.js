@@ -96,9 +96,13 @@ var g = {
 
 			var byteLimit = 1024*1024*20;
 
-			// console.log(e.target.files[0]);
+			// 不添加如下代码，在点击完设计图之后，再点击量房报告会报错，点击量房报告时if (e.target.files.length > 0 ) {...}会再走一遍
+			if (e.target.files == null) {
 
-			if (e.target.files.length > 0) {
+				return;
+			}
+
+			if (e.target.files.length > 0 ) {
 
 				if (e.target.files[0].size == 0) {
 
