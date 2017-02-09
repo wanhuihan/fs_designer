@@ -140,7 +140,7 @@
 									<span>
 										<input type="text" ng-model="a.quantity" name="" ng-disabled="hasSubmit" ng-focus="clearZero($event)">
 									</span>
-									<span>{{a.price}}</span>
+									<span>{{a.price|currency: ''}}</span>
 									<span>{{a.totalPrice}}</span>
 								</li>
 							</ul>
