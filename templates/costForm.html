@@ -98,7 +98,7 @@
 										<input type="text" ng-model="a.quantity" name="" ng-disabled="hasSubmit" ng-focus="clearZero($event)">
 									</span>
 									<span class="textright">{{a.price | currency:''}}</span>
-									<span class="textright">{{a.total_price | currency:''}}</span>
+									<span class="textright">{{(a.price*a.quantity) | currency:''}}</span>
 								</li>
 							</ul>
 						</li>
@@ -128,7 +128,7 @@
 								<b ng-if="item.child==0">{{item.price | currency:''}}</b>
 							</span>	
 							<span class="textright">
-								<b ng-if="item.child==0">{{item.totalPrice | currency:''}}</b>
+								<b ng-if="item.child==0">{{(item.price*item.quantity) | currency:''}}</b>
 							</span>						
 							<ul ng-if="item.child ==1">
 								<li ng-repeat="a in item.dataList">
@@ -141,7 +141,7 @@
 										<input type="text" ng-model="a.quantity" name="" ng-disabled="hasSubmit" ng-focus="clearZero($event)">
 									</span>
 									<span class="textright">{{a.price | currency: ''}}</span>
-									<span class="textright">{{a.totalPrice | currency:''}}</span>
+									<span class="textright">{{(a.price*a.quantity) | currency:''}}</span>
 								</li>
 							</ul>
 						</li>
