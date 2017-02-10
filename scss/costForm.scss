@@ -1,10 +1,11 @@
 
 .cost_details {
 
-    table tbody ul li span{
+    table tbody ul li >span{
     display: block;
     float: left;
     padding: 7px;
+    font-size: 14px;
     border: 1px solid #eee;
     box-sizing: border-box;
     border-right: 0;
@@ -18,29 +19,29 @@
         }
     }
 
-    table tbody ul li span:nth-child(1){
+    table tbody ul li> span:nth-child(1){
         width:4.6%; 
         text-align: center;
     }
-    table tbody ul li span:nth-child(2){
+    table tbody ul li> span:nth-child(2){
     width:15.4%;
     }
-    table tbody ul li span:nth-child(3){
+    table tbody ul li> span:nth-child(3){
     width:25%;
     }
-    table tbody ul li span:nth-child(4){
+    table tbody ul li> span:nth-child(4){
     width:11.0%;
     }
-    table tbody ul li span:nth-child(5){
+    table tbody ul li> span:nth-child(5){
     width:11.0%;
     }
-    table tbody ul li span:nth-child(6){
+    table tbody ul li> span:nth-child(6){
     width:11.0%;
     }
-    table tbody ul li span:nth-child(7){
+    table tbody ul li> span:nth-child(7){
     width:11.0%;
     }
-    table tbody ul li span:nth-child(8){
+    table tbody ul li> span:nth-child(8){
     width:11.0%;
     }  
 
@@ -68,5 +69,11 @@
         .table {
             margin-bottom: 60px;
         }
+    }
+    .table>tbody>tr>td,.table>tbody>tr>th {
+        vertical-align: middle;
+    }
+    .table>tbody>tr>td {
+        font-size: 14px;
     }
 }

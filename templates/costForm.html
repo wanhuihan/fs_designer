@@ -39,30 +39,30 @@
 		<table class="table table-bordered">
 			<!-- <th colspan="8" class="tabletitle">量房记录表</th> -->
 			<tr>
-				<th class="" rowspan="2" width="5%">编号</th>
-				<td class="" rowspan="2" width="15%">分部分项名称</td>
-				<td class="" colspan="4">材料信息</td>
-				<td class="" colspan="2">价格</td>
+				<th class="" rowspan="2" width="4.6%">编号</th>
+				<td class="" rowspan="2" width="15.4%">分部分项名称</td>
+				<td class="textcenter" colspan="4">材料信息</td>
+				<td class="textcenter" colspan="2">价格</td>
 			</tr>
 			<tr>
 				<td class="" width="25%">供应商</td>
-				<td class="">规格</td>
-				<td class="">单位(元)</td>
-				<td class="">数量</td>
-				<td class="">单价</td>
-				<td class="" width="10%">合计</td>
+				<td class="" width="11%">规格</td>
+				<td class="textcenter" width="11%">单位(元)</td>
+				<td class="textcenter" width="11%">数量</td>
+				<td class="textcenter" width="11%" >单价</td>
+				<td class="textcenter" width="11%">合计</td>
 			</tr>
 			<tr>	
-				<td class="" colspan="8">第一部分：户内精装修</td>
+				<th class="trtitle" colspan="8">第一部分：户内精装修</td>
 			</tr>
 			<tr>	
 				<td class="" colspan="2"> 一、基础装修</td>
 				<td class=""></td>
 				<td class=""></td>
-				<td class="">㎡</td>
+				<td class="textcenter">㎡</td>
 				<td class="">{{data.decorationTask.actualArea}}</td>
-				<td class="">{{data.P1}}</td>
-				<td class="">{{data.X}}</td>
+				<td class="textright">{{data.P1}}</td>
+				<td class="textright">{{data.X}}</td>
 			</tr>
 			<tr>
 				<td class="" colspan="2">二、主材</td>
@@ -71,7 +71,7 @@
 				<td class=""></td>
 				<td class=""></td>
 				<td class=""></td>
-				<td class="">Y</td>
+				<td class="textright">Y</td>
 			</tr>
 			<tr >
 				<td colspan="8" class="section-1">
@@ -93,7 +93,7 @@
 									<span> - {{a.name}}</span>
 									<span>{{a.supplier_name}}</span>
 									<span>{{a.specifications}}</span>
-									<span>{{a.unit}}</span>
+									<span class="textcenter">{{a.unit}}</span>
 									<span>
 										<input type="text" ng-model="a.quantity" name="" ng-disabled="hasSubmit" ng-focus="clearZero($event)">
 									</span>
@@ -105,7 +105,12 @@
 					</ul>					
 				</td>
 			</tr>
-
+			<tr>
+				<td></td>
+				<td>装修小计</td>
+				<td colspan="5"></td>
+				<td class="textright">M</td>
+			</tr>
 			<!-- The second section -->
 			<tr>
 				<th colspan="8" class="trtitle">第二部分：绿色科技系统</th>
@@ -120,15 +125,15 @@
 							<span>{{item.groupProductName}}</span>
 							<span></span>
 							<span></span>
-							<span>{{item.unit}}</span>
+							<span class="textcenter">{{item.unit}}</span>
 							<span>
 								<input type="text" name="" ng-if="item.child==0" ng-model="item.quantity" ng-disabled="hasSubmit" ng-focus="clearZero($event)">
 							</span>
 							<span class="textright">
-								<b ng-if="item.child==0">{{item.price | currency:''}}</b>
+								<span ng-if="item.child==0">{{item.price | currency:''}}</span>
 							</span>	
 							<span class="textright">
-								<b ng-if="item.child==0">{{(item.price*item.quantity) | currency:''}}</b>
+								<span ng-if="item.child==0">{{(item.price*item.quantity) | currency:''}}</span>
 							</span>						
 							<ul ng-if="item.child ==1">
 								<li ng-repeat="a in item.dataList">
@@ -136,7 +141,7 @@
 									<span>{{a.groupProductName}}</span>
 									<span>{{a.supplier_name}}</span>
 									<span>{{a.specifications}}</span>
-									<span>{{a.unit}}</span>
+									<span class="textcenter">{{a.unit}}</span>
 									<span>
 										<input type="text" ng-model="a.quantity" name="" ng-disabled="hasSubmit" ng-focus="clearZero($event)">
 									</span>
@@ -151,14 +156,14 @@
 			</tr>
 
 			<tr>
-				<td></td>
-				<td>绿色科技系统小计</td>
-				<td></td>
-				<td></td>
+				<td ></td>
+				<td >绿色科技系统小计</td>
 				<td></td>
 				<td></td>
 				<td></td>
-				<td>N</td>
+				<td></td>
+				<td></td>
+				<td class="textright">N</td>
 
 			</tr>
 			<tr>
@@ -170,7 +175,7 @@
 				<td></td>
 				<td></td>
 				<td></td>
-				<td>N</td>
+				<td class="textright">N</td>
 
 			</tr>
 			<tr>
@@ -180,8 +185,8 @@
 				<td></td>
 				<td></td>
 				<td>{{data.decorationTask.actualArea}}</td>
-				<td>{{data.P2}}</td>
-				<td>{{data.O}}</td>
+				<td class="textright">{{data.P2}}</td>
+				<td class="textright">{{data.O}}</td>
 
 			</tr>						
             <!-- The third section -->
@@ -194,10 +199,10 @@
 				<td class="">完工检测费用</td>
 				<td class=""></td>
 				<td class=""></td>
-				<td class="">㎡</td>
+				<td class="textcenter">㎡</td>
 				<td class="">{{data.decorationTask.actualArea}}</td>
-				<td class="">{{data.P3}}</td>
-				<td class="">{{data.Z}}</td>
+				<td class="textright">{{data.P3}}</td>
+				<td class="textright">{{data.Z}}</td>
 			</tr>
 
 			 <!-- The fourth section -->
@@ -209,30 +214,30 @@
 				<td class=""> 管理费（{{data.management_percent}}）</td>
 				<td class=""></td>
 				<td class=""></td>
-				<td class="">㎡</td>
+				<td class="textcenter">㎡</td>
 				<td class=""></td>
 				<td class=""></td>
-				<td class=""></td>
+				<td class="textright"></td>
 			</tr>
 			<tr>
 				<td class="">2</td>
 				<td class=""> 利润  （{{data.profit_percent}}）</td>
 				<td class=""></td>
 				<td class=""></td>
-				<td class="">㎡</td>
+				<td class="textcenter">㎡</td>
 				<td class=""></td>
 				<td class=""></td>
-				<td class="">B</td>
+				<td class="textright">B</td>
 			</tr>
 			<tr>
 				<td class="">3</td>
 				<td class=""> 税金 （{{data.tax_percent}}）</td>
 				<td class=""></td>
 				<td class=""></td>
-				<td class="">㎡</td>
+				<td class="textcenter">㎡</td>
 				<td class=""></td>
 				<td class=""></td>
-				<td class="">C</td>
+				<td class="textright">C</td>
 			</tr>
 
 			<tr>
@@ -257,27 +262,27 @@
 		<table class="table table-bordered">
 			<!-- <th colspan="8" class="tabletitle">量房记录表</th> -->
 			<tr>
-				<th class="" rowspan="2" width="5%">编号</th>
-				<td class="" rowspan="2" width="15%">分部分项名称</td>
-				<td class="" colspan="4">材料信息</td>
-				<td class="" colspan="2" style="text-align: center">价格</td>
+				<th class="" rowspan="2" width="4.6%">编号</th>
+				<td class="" rowspan="2" width="15.4%">分部分项名称</td>
+				<td class="textcenter" colspan="4">材料信息</td>
+				<td class="textcenter" colspan="2" >价格</td>
 			</tr>
 			<tr>
 				<td class="" width="25%">供应商</td>
-				<td class="">规格</td>
-				<td class="">单位</td>
-				<td class="">数量</td>
-				<td class="textright">单价</td>
-				<td class="textright" width="10%">合计</td>
+				<td class="" width="11%">规格</td>
+				<td class="textcenter" width="11%">单位</td>
+				<td class="textcenter" width="11%">数量</td>
+				<td class="textcenter" width="11%">单价</td>
+				<td class="textcenter" width="11%">合计</td>
 			</tr>
 			<tr>	
-				<td class="" colspan="8">第一部分：户内精装修</td>
+				<th class="trtitle" colspan="8">第一部分：户内精装修</td>
 			</tr>
 			<tr>	
 				<td class="" colspan="2"> 一、基础装修</td>
 				<td class=""></td>
 				<td class=""></td>
-				<td class="">㎡</td>
+				<td class="textcenter">㎡</td>
 				<td class="">{{data.decorationTask.actualArea}}</td>
 				<td class="textright">{{data.P1 | currency:''}}</td>
 				<td class="textright">{{data.X | currency:''}}</td>
@@ -311,7 +316,7 @@
 									<span> - {{a.name}}</span>
 									<span>{{a.supplier_name}}</span>
 									<span title="{{a.model}}">{{a.model}}</span>
-									<span>{{a.unit}}</span>
+									<span class="textcenter">{{a.unit}}</span>
 									<span>
 										<input type="text" ng-model="a.quantity" name="" ng-disabled="hasSubmit" ng-focus="clearZero($event)">
 									</span>
@@ -350,15 +355,15 @@
 							<span>{{item.groupProductName}}</span>
 							<span></span>
 							<span></span>
-							<span></span>
+							<span class="textcenter">{{item.unit}}</span>
 							<span>
 								<input type="text" name="" ng-if="item.child==0" ng-model="item.quantity" ng-disabled="hasSubmit" ng-focus="clearZero($event)">
 							</span>
 							<span class="textright">
-								<b  ng-if="item.child==0">{{item.price | currency:''}}</b>
+								<span  ng-if="item.child==0">{{item.price | currency:''}}</span>
 							</span>	
 							<span class="textright">
-								<b  ng-if="item.child==0">{{item.totalPrice | currency:''}}</b>
+								<span  ng-if="item.child==0">{{item.totalPrice | currency:''}}</span>
 							</span>						
 							<ul ng-if="item.child ==1">
 								<li ng-repeat="a in item.dataList">
@@ -366,7 +371,7 @@
 									<span>{{a.groupProductName}}</span>
 									<span>{{a.supplier_name}}</span>
 									<span>{{a.specifications}}</span>
-									<span>{{a.unit}}</span>
+									<span class="textcenter">{{a.unit}}</span>
 									<span>
 										<input type="text" ng-model="a.quantity" name="" ng-disabled="hasSubmit" ng-focus="clearZero($event)">
 									</span>
@@ -424,7 +429,7 @@
 				<td class="">完工检测费用</td>
 				<td class=""></td>
 				<td class=""></td>
-				<td class="">㎡</td>
+				<td class="textcenter">㎡</td>
 				<td class="">{{data.decorationTask.actualArea}}</td>
 				<td class="textright">{{data.P3 | currency:''}}</td>
 				<td class="textright">{{data.Z | currency:''}}</td>
@@ -439,7 +444,7 @@
 				<td class=""> 管理费（{{data.management_percent}}）</td>
 				<td class=""></td>
 				<td class=""></td>
-				<td class="">㎡</td>
+				<td class="textcenter">㎡</td>
 				<td class=""></td>
 				<td class=""></td>
 				<td class="textright">{{data.totalPriceBean.managementTotal | currency:''}}</td>
@@ -449,7 +454,7 @@
 				<td class=""> 利润  （{{data.profit_percent}}）</td>
 				<td class=""></td>
 				<td class=""></td>
-				<td class="">㎡</td>
+				<td class="textcenter">㎡</td>
 				<td class=""></td>
 				<td class=""></td>
 				<td class="textright">{{data.totalPriceBean.profitTotal | currency:''}}</td>
@@ -459,7 +464,7 @@
 				<td class=""> 税金 （{{data.tax_percent}}）</td>
 				<td class=""></td>
 				<td class=""></td>
-				<td class="">㎡</td>
+				<td class="textcenter">㎡</td>
 				<td class=""></td>
 				<td class=""></td>
 				<td class="textright">{{data.totalPriceBean.taxTotal | currency:''}}</td>

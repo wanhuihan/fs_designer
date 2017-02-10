@@ -1,7 +1,8 @@
-.cost_details table tbody ul li span {
+.cost_details table tbody ul li > span {
   display: block;
   float: left;
   padding: 7px;
+  font-size: 14px;
   border: 1px solid #eee;
   box-sizing: border-box;
   border-right: 0;
@@ -10,32 +11,32 @@
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap; }
-  .cost_details table tbody ul li span input {
+  .cost_details table tbody ul li > span input {
     width: 100%; }
 
-.cost_details table tbody ul li span:nth-child(1) {
+.cost_details table tbody ul li > span:nth-child(1) {
   width: 4.6%;
   text-align: center; }
 
-.cost_details table tbody ul li span:nth-child(2) {
+.cost_details table tbody ul li > span:nth-child(2) {
   width: 15.4%; }
 
-.cost_details table tbody ul li span:nth-child(3) {
+.cost_details table tbody ul li > span:nth-child(3) {
   width: 25%; }
 
-.cost_details table tbody ul li span:nth-child(4) {
+.cost_details table tbody ul li > span:nth-child(4) {
   width: 11.0%; }
 
-.cost_details table tbody ul li span:nth-child(5) {
+.cost_details table tbody ul li > span:nth-child(5) {
   width: 11.0%; }
 
-.cost_details table tbody ul li span:nth-child(6) {
+.cost_details table tbody ul li > span:nth-child(6) {
   width: 11.0%; }
 
-.cost_details table tbody ul li span:nth-child(7) {
+.cost_details table tbody ul li > span:nth-child(7) {
   width: 11.0%; }
 
-.cost_details table tbody ul li span:nth-child(8) {
+.cost_details table tbody ul li > span:nth-child(8) {
   width: 11.0%; }
 
 .cost_details .section-1 {
@@ -50,3 +51,9 @@
 
 .cost_details .cost_detail_info .table {
   margin-bottom: 60px; }
+
+.cost_details .table > tbody > tr > td, .cost_details .table > tbody > tr > th {
+  vertical-align: middle; }
+
+.cost_details .table > tbody > tr > td {
+  font-size: 14px; }
