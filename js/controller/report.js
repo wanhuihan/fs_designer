@@ -100,31 +100,31 @@ app.controller("report", function($scope, $http, $location, design, $location, g
 		greenTechInfo: {
 			type: 3,
 			// 是否需要智能家居系统（0否1是）
-			greenIHouseSysOption: '',
+			greenIHouseSysOption: '0',
 			// 是否需要智能家居系统意见
 			greenIHouseSysOptionView: '',
 			// 是否需要毛细管系统（0否1是）
-			greenCapillarySysOption: '',
+			greenCapillarySysOption: '0',
 			// 是否需要毛细管系统意见
 			greenCapillarySysOptionView: '',
 			// 是否需要置换式新风系统（0否1是）
-			greenReplaceVentilationSysOpt: '',
+			greenReplaceVentilationSysOpt: '0',
 			// 是否需要置换式新风系统意见
 			greenReplaceVentilationSysOptView: '',
 			// 是否需要卫生间净化水系统（0否1是）
-			greenWcClanificationSysOpt: '',
+			greenWcClanificationSysOpt: '0',
 			// 是否需要卫生间净化水系统意见
 			greenWcClanificatoinSysOptView: '',
 			// 是否需要同层排水系统（0否1是）
-			greenSameFloorDrainageSysOpt: '',
+			greenSameFloorDrainageSysOpt: '0',
 			// 是否需要同层排水系统意见
 			greenSameFloorDrainageSysOptView: '',
 			// 是否需要隔声降噪系统（0否1是）
-			greenDenoiseSysOpt: '',
+			greenDenoiseSysOpt: '0',
 			// 是否需要隔声降噪系统意见
 			greenDenoiseSysOptView:'',
 			// 是否需要垃圾处理系统（0否1是）
-			greenLitterSysOpt: '',
+			greenLitterSysOpt: '0',
 			// 是否需要垃圾处理系统意见
 			greenLitterSysOptView: '',
 		},
@@ -890,55 +890,56 @@ app.controller("report", function($scope, $http, $location, design, $location, g
 	$scope.save = function(step) {
 
 		form.validate(step, function() {
-			console.log(5);
-		});
-		return;
-		if (step == 'step_1') {
-			// console.log($scope.formData.generalInfo);
-			$scope.formData.generalInfo.ownerSurveyTime = Date.parse(jQuery("#surveyTime").val());
-			$scope.formData.generalInfo.ownerPlanTime = Date.parse(jQuery("#decorationTime").val());
 			
-		}
+			if (step == 'step_1') {
+				// console.log($scope.formData.generalInfo);
+				$scope.formData.generalInfo.ownerSurveyTime = Date.parse(jQuery("#surveyTime").val());
+				$scope.formData.generalInfo.ownerPlanTime = Date.parse(jQuery("#decorationTime").val());
+				
+			}
 
-		$http({
-			url: g.host+'/decoration_designer/volumeReport/addVolumeReport',
-			method: 'post',
-			data: {
-				volumeReportJson: $scope.formData,
-				decorationTaskCode: $scope.orderCode,
-				status: 0,
-				token: $cookies.fs_designer_token
-			},
+			$http({
+				url: g.host+'/decoration_designer/volumeReport/addVolumeReport',
+				method: 'post',
+				data: {
+					volumeReportJson: $scope.formData,
+					decorationTaskCode: $scope.orderCode,
+					status: 0,
+					token: $cookies.fs_designer_token
+				},
 
-	        headers: { 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8' },
-	        
-	        transformRequest: function(obj) {    
-	            var str = [];    
-	            for (var p in obj) {    
-	                
-	                if (typeof obj[p] == 'object' ) {
+		        headers: { 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8' },
+		        
+		        transformRequest: function(obj) {    
+		            var str = [];    
+		            for (var p in obj) {    
+		                
+		                if (typeof obj[p] == 'object' ) {
 
-	                    var jsonStr = [];
+		                    var jsonStr = [];
 
-	                    for (i in obj[p]) {
-	                    	jsonStr.push(JSON.stringify(obj[p][i]));
-	                    }
+		                    for (i in obj[p]) {
+		                    	jsonStr.push(JSON.stringify(obj[p][i]));
+		                    }
 
-	                    str.push(encodeURIComponent(p) + "= {data:[" + jsonStr.join(",") + ']}');
-	                } else {
-	                    str.push(encodeURIComponent(p) + "=" + encodeURIComponent(obj[p]));  
-	                }                     
-	            }    
+		                    str.push(encodeURIComponent(p) + "= {data:[" + jsonStr.join(",") + ']}');
+		                } else {
+		                    str.push(encodeURIComponent(p) + "=" + encodeURIComponent(obj[p]));  
+		                }                     
+		            }    
 
-	            // console.log(str.join("&"))  
-	            return str.join("&");  
+		            // console.log(str.join("&"))  
+		            return str.join("&");  
 
-	        }			
-		}).success(function(data) {
+		        }			
+			}).success(function(data) {
 
-			alert('保存成功');
+				alert('保存成功');
 
-		})
+			})
+		});
+		// return;
+
 
 	}
 
