@@ -57,7 +57,7 @@
 			</div>
 			<div class="reoprt_pageone step_content" content="step_1" ng-show="!hasSubmit">
 					
-				<form class="report_tab_listone" role="form">
+				<form class="report_tab_listone" role="form" novalidate>
 					<div class="row">
 						<div class="col-md-12">					    
 						      <p> 1.请填写您实际的量房日期:<span>*</span></p>
@@ -70,27 +70,27 @@
 	                <div class="row">
 						<div class="col-md-12">					    
 						      <p> 2.请填写业主真实姓名：<span>*</span></p>
-						      <input class="inputtext" type="text" ng-model="formData.generalInfo.ownerName">
+						      <input class="inputtext" type="text" ng-model="formData.generalInfo.ownerName" required="">
 						</div>
 					</div>
 					<div class="row">
 						<div class="col-md-12">					    
 						      <p> 3.请填写业联系电话：<span>*</span></p>
-						      <input class="inputtext" type="text" ng-model="formData.generalInfo.ownerTelPhone">
+						      <input class="inputtext" type="text" ng-model="formData.generalInfo.ownerTelPhone" required="phone">
 						</div>
 					</div>
 
 					<div class="row">
 						<div class="col-md-12">					    
 						      <p> 3.请填写房屋户型<span>*</span></p>
-						      <input class="inputtext" type="text" ng-model="formData.generalInfo.ownerTelUnit">
+						      <input class="inputtext" type="text" ng-model="formData.generalInfo.ownerTelUnit" required="">
 						</div>
 					</div>
 
 					<div class="row">
 						<div class="col-md-12 radio radio-success radio-inline">					    
 						    <p> 4.请填写业主性别：<span>*</span></p>
-						    <input id="owner_sex_g"  type="radio" name="radiosex" value="0" ng-model="formData.generalInfo.ownerSex">
+						    <input id="owner_sex_g"  type="radio" name="radiosex" value="0" ng-model="formData.generalInfo.ownerSex" >
 						    <label for="owner_sex_g">女士</label>
 
 							<input id="owner_sex_b"  type="radio" name="radiosex" value="1" ng-model="formData.generalInfo.ownerSex"> 
@@ -115,13 +115,13 @@
 					<div class="row">
 						<div class="col-md-12">					    
 						      <p>6.请填写所该装修房屋的建筑面积：<span>*</span></p>
-						      <input class="inputtext" type="text" ng-model="formData.generalInfo.ownerBuildArea">&nbsp;&nbsp;m²
+						      <input class="inputtext" type="text" ng-model="formData.generalInfo.ownerBuildArea" required="num">&nbsp;&nbsp;m²
 						</div>
 					</div>
 					<div class="row">
 						<div class="col-md-12">					    
 						      <p> 7.请填写该装修房屋的使用面积：<span>*</span></p>
-						      <input class="inputtext" type="text" ng-model="formData.generalInfo.ownerUseArea">&nbsp;&nbsp;m²
+						      <input class="inputtext" type="text" ng-model="formData.generalInfo.ownerUseArea" required="num">&nbsp;&nbsp;m²
 						</div>
 					</div>
 					<div class="row">

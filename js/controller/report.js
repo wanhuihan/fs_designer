@@ -26,13 +26,13 @@ app.controller("report", function($scope, $http, $location, design, $location, g
 
 			ownerName: '',
 
-			ownerSex: '',
+			ownerSex: '1',
 
 			ownerTelPhone: '',
 
 			ownerTelUnit: '',
 
-			ownerAge: '',
+			ownerAge: '1',
 
 			ownerBuildArea: '',
 
@@ -40,7 +40,7 @@ app.controller("report", function($scope, $http, $location, design, $location, g
 
 			ownerPlannedInvests: '',
 
-			ownerMPlannedInvests: '',
+			ownerMPlannedInvests: '1',
 
 			ownerPlanTime: '',
 
@@ -52,7 +52,7 @@ app.controller("report", function($scope, $http, $location, design, $location, g
 			type: 2,
 
 			// 请选择该房屋原结构
-			houseHouseStructureType: '',
+			houseHouseStructureType: '0',
 
 			// 请填写原房屋结构是否有缺陷之处（如：墙体裂开、平整度、顶面漏水）
 			houseHouseStructureFault: '',
@@ -701,7 +701,6 @@ app.controller("report", function($scope, $http, $location, design, $location, g
 				jQuery(".houseKitCeilingStuff").show();
 			}
 
-			
 			if ($scope.formData.abstruse.lrConsiderSettingOpt) {
 				$scope.formData.abstruse.lrConsiderSettingOpt = eval($scope.formData.abstruse.lrConsiderSettingOpt);
 			}
@@ -890,8 +889,10 @@ app.controller("report", function($scope, $http, $location, design, $location, g
 
 	$scope.save = function(step) {
 
-		// console.log(ngDialog)
-		// return false;
+		form.validate(step, function() {
+			console.log(5);
+		});
+		return;
 		if (step == 'step_1') {
 			// console.log($scope.formData.generalInfo);
 			$scope.formData.generalInfo.ownerSurveyTime = Date.parse(jQuery("#surveyTime").val());
@@ -936,10 +937,9 @@ app.controller("report", function($scope, $http, $location, design, $location, g
 		}).success(function(data) {
 
 			alert('保存成功');
-			// }
 
 		})
-		// console.log(step);
+
 	}
 
 	// 上一步操作的时候判断显示上一步内容并隐藏当前步骤；
