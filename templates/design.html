@@ -36,7 +36,7 @@
    <div class="design_details_cont main_content">
 
    		<div class="row">
-
+   		
    			<div class="col-md-3 col-md-offset-9">
 				<button class="btn btn-primary  design_draw_add pull-right" ng-click="designDrawAdd()" 
 				ng-if="roleCode!=13 && !hasAdded">
@@ -44,11 +44,11 @@
 				设计图 
 				</button> 
 
-				<button class="btn btn-primary  design_draw_add pull-right" ng-click="designDrawAdd(4)" ng-if="strongElecAdded!=true && strongElecAdded">
+				<button class="btn btn-primary  design_draw_add pull-right" ng-click="designDrawAdd(4)" ng-if="strongElecAdded!=true && strongElecAdded && roleCode == 13">
 				<i class="fa fa-plus-circle" ></i>
 				强电施工图
 				</button> 				 				 			
-				<button class="btn btn-primary  design_draw_add pull-right" ng-click="designDrawAdd(7)" ng-if="weakElecAdded!=true && strongElecAdded">
+				<button class="btn btn-primary  design_draw_add pull-right" ng-click="designDrawAdd(7)" ng-if="weakElecAdded!=true && strongElecAdded && roleCode == 13">
 				<i class="fa fa-plus-circle"></i>
 				弱电施工图
 				</button> 	
