@@ -55,42 +55,42 @@ app.controller("report", function($scope, $http, $location, design, $location, g
 			houseHouseStructureType: '0',
 
 			// 请填写原房屋结构是否有缺陷之处（如：墙体裂开、平整度、顶面漏水）
-			houseHouseStructureFault: '',
+			houseHouseStructureFault: '0',
 			houseFaultView: [],
 			faultViewShow: '',
 			faultArr: [],
 
 			// 请选择暖气是否需改动
-			houseHeatingChange: '',
+			houseHeatingChange: '0',
 			houseHeatingChnageView: '',
 			// hCViewShow: false,
 
 			// 请选择媒气是否需改动
-			houseGasChange: '',
+			houseGasChange: '0',
 			houseGasChangeView: '',
 
 			// 请选择倾向的采暖方式
-			houseHeatingType: '',
+			houseHeatingType: '1',
 
 			// 是否已经安装中央空调(0已安装1没安装)
-			houseAcBuild: '',
-			houseCm: '', // 是否定制（没安装弹出）0，已定制1，没定制 customer made
+			houseAcBuild: '0',
+			houseCm: '1', // 是否定制（没安装弹出）0，已定制1，没定制 customer made
 
 			// 厨房整体橱柜是否已安装(0否1是)
-			houseWholeCabinetBuild: '',
-			houseCabinetCm: '', // 橱柜是否已定制（没安装弹出）0，已定制1，没定制
+			houseWholeCabinetBuild: '0',
+			houseCabinetCm: '1', // 橱柜是否已定制（没安装弹出）0，已定制1，没定制
 			
 			// 阳台墙地面是否已铺砖(0已铺装1没铺装)
-			houseBalconyTileBuild: '',
+			houseBalconyTileBuild: '0',
 			houseBalconyPart: '', // 阳台墙地面局部
 
 			// 厨房是否已铺砖及吊顶（1已铺装2没铺装3已吊顶4没吊顶）
-			houseKitTileCeilingBuild: '',
-			houseKitCeilingStuff: '', //厨房吊顶材质（已吊顶弹出）1PVC2铝扣板3石膏板
+			houseKitTileCeilingBuild: '3',
+			houseKitCeilingStuff: '1', //厨房吊顶材质（已吊顶弹出）1PVC2铝扣板3石膏板
 
 			// 卫生间是否铺砖及吊顶（1已铺装2没铺装3已吊顶4没吊顶）
-			houseWcCeilingTileBuild: '',
-			houseWcCeilingStuff: '', // 卫生间吊顶材质（已吊顶弹出）1PVC2铝扣板3石膏板
+			houseWcCeilingTileBuild: '3',
+			houseWcCeilingStuff: '1', // 卫生间吊顶材质（已吊顶弹出）1PVC2铝扣板3石膏板
 
 			// 其他
 			houseOther: '',
