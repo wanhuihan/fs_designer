@@ -696,9 +696,9 @@ app.controller("design", function($scope, $http, $location, $cookies, ngDialog, 
 
 				$scope.hasAdded = data.hasAdded;
 
-				$scope.strongElecAdded = data.strongElecAdded;
+				$scope.strongElecAdded = data.hasOwnProperty("strongElecAdded");
 
-				$scope.weakElecAdded = data.weakElecAdded;
+				$scope.weakElecAdded = data.hasOwnProperty("weakElecAdded");
 
 				$scope.roleCode = window.localStorage.fs_design_role_code;
 

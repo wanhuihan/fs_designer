@@ -26,17 +26,17 @@ var form = {
 			form.check(this, $(this)[0].getAttribute('required'), $($(this)[0]).attr("type"))
 		})
 
-		var a = 0;
+		var flag = 0;
 
 		for (var i = 0; i < arr.length; i++) {
 
 			if (arr[i]) {
 
-				a = 1;
+				flag = 1;
 
 			}  else {
 
-				a = 0;
+				flag = 0;
 
 				break;
 				
@@ -44,7 +44,7 @@ var form = {
 
 		}
 
-		if (a == 1) {
+		if (flag == 1) {
 
 			if (fun) {
 

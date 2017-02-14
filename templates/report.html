@@ -177,7 +177,6 @@
 					<div class="row ">
 						<div class="col-md-12 radio radio-success radio-inline">					    
 						      	<p> 1.请选择该房屋原结构：<span>*</span></p>
-						      	{{formData.houseBasicInfo}} -8888-
 						      	<input id="house_struct_brick" type="radio" name="radiostruct" value="0" ng-model="formData.houseBasicInfo.houseHouseStructureType">
 						      	<label for="house_struct_brick">砖砼结构</label>
 								<input id="house_struct_frame" type="radio" name="radiostruct" value="1" ng-model="formData.houseBasicInfo.houseHouseStructureType">
@@ -547,10 +546,10 @@
 							      	<p> 2.接待客人：</p>
 							      	<input class="inputtext" type="text" placeholder="人数" ng-model="formData.livingRoom.sittingReceptionNumOpt">
 
-							      	<input id="livingRoom_treatGuest_often" type="radio" name="radiodoor" value="1" ng-model="formData.livingRoom.sittingReceptiveSel">
+							      	<input id="livingRoom_treatGuest_often" type="radio" name="radioguest" value="1" ng-model="formData.livingRoom.sittingReceptiveSel">
 							      	<label for="livingRoom_treatGuest_often">经常</label>
 
-									<input id="livingRoom_treatGuest_occasion" type="radio" name="radiodoor" value="0" ng-model="formData.livingRoom.sittingReceptiveSel">
+									<input id="livingRoom_treatGuest_occasion" type="radio" name="radioguest" value="0" ng-model="formData.livingRoom.sittingReceptiveSel">
 									<label for="livingRoom_treatGuest_occasion">偶尔</label>
 							</div>
 						</div>
@@ -737,9 +736,9 @@
 						<div class="row">
 							<div class="col-md-12 radio radio-success radio-inline">					    
 						      	<p>7.  家庭烹饪的特点：</p>
-						      	<input id="restaurant_cookFeature_cn" type="radio" name="radiocook" value="1" ng-model="formData.dinningRoom.drCookingType">
+						      	<input id="restaurant_cookFeature_cn" type="radio" name="radiocook" value="0" ng-model="formData.dinningRoom.drCookingType">
 						      	<label for="restaurant_cookFeature_cn">中餐</label>
-						      	<input id="restaurant_cookFeature_wt" type="radio" name="radiocook" value="0" ng-model="formData.dinningRoom.drCookingType">
+						      	<input id="restaurant_cookFeature_wt" type="radio" name="radiocook" value="1" ng-model="formData.dinningRoom.drCookingType">
 						      	<label for="restaurant_cookFeature_wt">西餐</label>
 						      
 							</div>
