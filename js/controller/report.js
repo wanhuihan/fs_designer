@@ -889,8 +889,9 @@ app.controller("report", function($scope, $http, $location, design, $location, g
 
 	$scope.save = function(step) {
 
+
 		form.validate(step, function() {
-			
+		
 			if (step == 'step_1') {
 				// console.log($scope.formData.generalInfo);
 				$scope.formData.generalInfo.ownerSurveyTime = Date.parse(jQuery("#surveyTime").val());
