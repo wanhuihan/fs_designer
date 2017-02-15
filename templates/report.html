@@ -34,9 +34,16 @@
 	</div>
 	<div class="report_details_form main_content">
 		
-		<div class="save_success">
-			保存成功
-		</div>
+
+		<ol class="breadcrumb">
+			<li>
+				<a ui-sref="dashboard.orders({id:orderId,code:orderCode})">我的订单</a><i class="fa fa-angle-right"></i>
+			</li><li class="active">
+				{{currentProject}}<i class="fa fa-angle-right"></i>
+			</li><li class="active">
+				量房报告</a>
+			</li>
+		</ol>	
 		<div role="tabpanel" class="tab-pane" id="report" aria-labelledby="report-tab">
 			<div class="row step_box" ng-show="!hasSubmit">	
 				<div class="col-md-3 report_tab_stepone step_1 step current viewed" id="step_1">

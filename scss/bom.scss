@@ -9,10 +9,10 @@
 			font-size: 0;
 			span {
 				display: inline-block;
-				line-height: 30px;
+				line-height: 20px;
 				// height: 30px;
-				// min-height: 30px;
-				border-bottom:1px solid;
+				font-size: 15px;
+				border-bottom:1px solid #eee;
 				position: relative;
 				overflow: hidden;
 				text-overflow:ellipsis;
@@ -20,6 +20,14 @@
 				padding: 10px 0;			
 				&:nth-child(1) {
 					width:10%;
+					.textcenter {
+						text-align: center;
+					}
+					
+					.textright {
+						text-align: right;
+						padding-right: 50px;
+					}
 				}
 				&:nth-child(2) {
 					width: 25%;

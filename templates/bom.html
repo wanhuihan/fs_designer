@@ -4,8 +4,8 @@
 	<div class="left_side_bar">
 		<ul>
 			
-			<li ng-if="roleCode==15">
-				<a  ui-sref="dashboard.orders.details({id:orderId,code:orderCode})"><i class="fa fa-file-text-o"></i>订单详情 </a>
+			<li>
+				<a ui-sref="dashboard.orders.details({id:orderId,code:orderCode})"><i class="fa fa-file-text-o"></i>订单详情 </a>
 			</li>
 
 			<li >
@@ -34,9 +34,19 @@
 
 
 	<div class="bom_detail_info main_content">
+
+		<ol class="breadcrumb">
+			<li>
+				<a ui-sref="dashboard.orders({id:orderId,code:orderCode})">我的订单</a><i class="fa fa-angle-right"></i>
+			</li><li class="active">
+				{{currentProject}}<i class="fa fa-angle-right"></i>
+			</li><li class="active">
+				物料清单</a>
+			</li>
+		</ol>	
 		<ul class="list_title">
 			<li>
-				<span class="">主材类型</span>
+				<span class="textcenter">主材类型</span>
 				<span>物料名称</span>
 				<span>品牌</span>
 				<span>型号</span>
@@ -48,7 +58,7 @@
 		<ul>
 			<li ng-repeat="item in data">
 				
-				<span class="">{{item.name}}</span>
+				<span class="textright">{{item.name}}</span>
 				<span>&nbsp;</span>
 				<span>&nbsp;</span>
 				<span>&nbsp;</span>

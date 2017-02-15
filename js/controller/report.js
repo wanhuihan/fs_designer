@@ -10,7 +10,9 @@ app.controller("report", function($scope, $http, $location, design, $location, g
 		$location.path("/login");
 
 	} else {
-		
+
+		$scope.currentProject = window.localStorage.currentProject;
+
 	}
 	// 获取url中的项目ID和项目CODE
 	$scope.orderId = $location.search().id;

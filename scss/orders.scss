@@ -4,44 +4,30 @@
 	#order details page
  --------------------------------*/
 .order_details {
-	
-
 
 	.order_detail_info{
 
-	// 	.row {
-	// 		&> .col-md-6 {
-	// 			width: 50%;
-	// 			float: left;
-	// 			.fa {
-	// 				font-size: 20px;
-	// 				vertical-align: middle;
-	// 				color: #4b5664;
-	// 			}
-	// 		}
+		>.row {
 
-	// 		&:after {
-	// 			clear: both;
-	// 			content: "";
-	// 			display: block;
-	// 		}
-
-	// 		.panel-heading {
-	// 			font-weight: bold;
-	// 			line-height: 30px;
-	// 		}
-	// 	}
-	// 	.row:last-child {
-	// 		.col-md-6 {
-
-	// 		}
-	// 	}
-	// }
-	
-	// &:after {
-	// 	content: "";
-	// 	display: block;
-	// 	clear: both;
+			ul li {
+				padding: 8px 15px;
+			}
+			.panel-heading {
+				border-bottom: 1px solid #eee;
+			}
+			.col-md-4 {
+				border-right: 1px solid #eee;
+				&:last-child {
+					border-right: 0;
+				}
+				.panel-body > li span {
+					font-size: 15px;
+					&:last-child {
+						color: #888;
+					}
+				}
+			}
+		}
 
 	}
 }
