@@ -1,33 +1,11 @@
 /*--------------------------------
 	#order details page
  --------------------------------*/
-.order_details .order_detail_info .row > .col-md-6, .order_details .report_details_form .row > .col-md-6, .report_details .order_detail_info .row > .col-md-6, .report_details .report_details_form .row > .col-md-6, .bom_details .order_detail_info .row > .col-md-6, .bom_details .report_details_form .row > .col-md-6, .design_details .order_detail_info .row > .col-md-6, .design_details .report_details_form .row > .col-md-6, .work_load .order_detail_info .row > .col-md-6, .work_load .report_details_form .row > .col-md-6, .cost_details .order_detail_info .row > .col-md-6, .cost_details .report_details_form .row > .col-md-6 {
-  width: 50%;
-  float: left; }
-  .order_details .order_detail_info .row > .col-md-6 .fa, .order_details .report_details_form .row > .col-md-6 .fa, .report_details .order_detail_info .row > .col-md-6 .fa, .report_details .report_details_form .row > .col-md-6 .fa, .bom_details .order_detail_info .row > .col-md-6 .fa, .bom_details .report_details_form .row > .col-md-6 .fa, .design_details .order_detail_info .row > .col-md-6 .fa, .design_details .report_details_form .row > .col-md-6 .fa, .work_load .order_detail_info .row > .col-md-6 .fa, .work_load .report_details_form .row > .col-md-6 .fa, .cost_details .order_detail_info .row > .col-md-6 .fa, .cost_details .report_details_form .row > .col-md-6 .fa {
-    font-size: 20px;
-    vertical-align: middle;
-    color: #4b5664; }
-
-.order_details .order_detail_info .row:after, .order_details .report_details_form .row:after, .report_details .order_detail_info .row:after, .report_details .report_details_form .row:after, .bom_details .order_detail_info .row:after, .bom_details .report_details_form .row:after, .design_details .order_detail_info .row:after, .design_details .report_details_form .row:after, .work_load .order_detail_info .row:after, .work_load .report_details_form .row:after, .cost_details .order_detail_info .row:after, .cost_details .report_details_form .row:after {
-  clear: both;
-  content: "";
-  display: block; }
-
-.order_details .order_detail_info .row .panel-heading, .order_details .report_details_form .row .panel-heading, .report_details .order_detail_info .row .panel-heading, .report_details .report_details_form .row .panel-heading, .bom_details .order_detail_info .row .panel-heading, .bom_details .report_details_form .row .panel-heading, .design_details .order_detail_info .row .panel-heading, .design_details .report_details_form .row .panel-heading, .work_load .order_detail_info .row .panel-heading, .work_load .report_details_form .row .panel-heading, .cost_details .order_detail_info .row .panel-heading, .cost_details .report_details_form .row .panel-heading {
-  font-weight: bold;
-  line-height: 30px; }
-
-.order_details:after, .report_details:after, .bom_details:after, .design_details:after, .work_load:after, .cost_details:after {
-  content: "";
-  display: block;
-  clear: both; }
-
 /* ----------------------------
 	#my orders
 ------------------------------ */
 .main_body .my_orders .main_content {
   padding: 75px 25px; }
   .main_body .my_orders .main_content .table td {
-    font-size: 16px;
+    font-size: 14px;
     line-height: 35px; }

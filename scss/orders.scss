@@ -3,48 +3,45 @@
 /*--------------------------------
 	#order details page
  --------------------------------*/
-.order_details,.report_details,.bom_details,.design_details,.work_load,.cost_details {
+.order_details {
 	
 
-	.order_detail_info, .report_details_form{
 
-		.row {
-			&> .col-md-6 {
-				width: 50%;
-				float: left;
-				.fa {
-					font-size: 20px;
-					vertical-align: middle;
-					color: #4b5664;
-				}
-			}
+	.order_detail_info{
 
-			&:after {
-				clear: both;
-				content: "";
-				display: block;
-			}
-			.panel {
-				// border: 1px solid;
-				// padding: 10px;
-				// margin: 0 10px 10px;
-			}
-			.panel-heading {
-				font-weight: bold;
-				line-height: 30px;
-			}
-		}
-		.row:last-child {
-			.col-md-6 {
+	// 	.row {
+	// 		&> .col-md-6 {
+	// 			width: 50%;
+	// 			float: left;
+	// 			.fa {
+	// 				font-size: 20px;
+	// 				vertical-align: middle;
+	// 				color: #4b5664;
+	// 			}
+	// 		}
 
-			}
-		}
-	}
+	// 		&:after {
+	// 			clear: both;
+	// 			content: "";
+	// 			display: block;
+	// 		}
+
+	// 		.panel-heading {
+	// 			font-weight: bold;
+	// 			line-height: 30px;
+	// 		}
+	// 	}
+	// 	.row:last-child {
+	// 		.col-md-6 {
+
+	// 		}
+	// 	}
+	// }
 	
-	&:after {
-		content: "";
-		display: block;
-		clear: both;
+	// &:after {
+	// 	content: "";
+	// 	display: block;
+	// 	clear: both;
 
 	}
 }
@@ -52,7 +49,7 @@
 /* ----------------------------
 	#my orders
 ------------------------------ */
-.main_body{
+.main_body {
 
 	.my_orders {
 		
@@ -63,7 +60,7 @@
 			.table {
 				
 				td {
-					font-size: 16px;
+					font-size: 14px;
 					line-height: 35px;
 				}
 			}
