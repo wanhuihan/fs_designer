@@ -26,22 +26,34 @@ var form = {
 			form.check(this, $(this)[0].getAttribute('required'), $($(this)[0]).attr("type"))
 		})
 
+		var flag = 0;
+
 		for (var i = 0; i < arr.length; i++) {
 
-			if (!arr[i]) {
+			if (arr[i]) {
 
-				return false;
+				flag = 1;
 
 			}  else {
 
-				if (fun) {
+				flag = 0;
 
-					fun();
-				}
 				break;
+				
 			}
 
 		}
+
+		if (flag == 1) {
+
+			if (fun) {
+
+				fun();
+
+			}
+
+		} 
+
 	},
 
 	check: function(ele, required, type) {

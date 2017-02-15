@@ -100,31 +100,31 @@ app.controller("report", function($scope, $http, $location, design, $location, g
 		greenTechInfo: {
 			type: 3,
 			// 是否需要智能家居系统（0否1是）
-			greenIHouseSysOption: '',
+			greenIHouseSysOption: '0',
 			// 是否需要智能家居系统意见
 			greenIHouseSysOptionView: '',
 			// 是否需要毛细管系统（0否1是）
-			greenCapillarySysOption: '',
+			greenCapillarySysOption: '0',
 			// 是否需要毛细管系统意见
 			greenCapillarySysOptionView: '',
 			// 是否需要置换式新风系统（0否1是）
-			greenReplaceVentilationSysOpt: '',
+			greenReplaceVentilationSysOpt: '0',
 			// 是否需要置换式新风系统意见
 			greenReplaceVentilationSysOptView: '',
 			// 是否需要卫生间净化水系统（0否1是）
-			greenWcClanificationSysOpt: '',
+			greenWcClanificationSysOpt: '0',
 			// 是否需要卫生间净化水系统意见
 			greenWcClanificatoinSysOptView: '',
 			// 是否需要同层排水系统（0否1是）
-			greenSameFloorDrainageSysOpt: '',
+			greenSameFloorDrainageSysOpt: '0',
 			// 是否需要同层排水系统意见
 			greenSameFloorDrainageSysOptView: '',
 			// 是否需要隔声降噪系统（0否1是）
-			greenDenoiseSysOpt: '',
+			greenDenoiseSysOpt: '0',
 			// 是否需要隔声降噪系统意见
 			greenDenoiseSysOptView:'',
 			// 是否需要垃圾处理系统（0否1是）
-			greenLitterSysOpt: '',
+			greenLitterSysOpt: '0',
 			// 是否需要垃圾处理系统意见
 			greenLitterSysOptView: '',
 		},
@@ -135,13 +135,13 @@ app.controller("report", function($scope, $http, $location, design, $location, g
 			lrConsiderSettingOpt: '',
 			lrConsiderSettingOptArr: [],
 			// 是否介意入门能够直观全室（0否1是）
-			lrVisualWholeRoomOpinion: '',
+			lrVisualWholeRoomOpinion: '0',
 			// 玄关是否考虑其他文化属性或气氛（例如：字画、古董、雕塑等）（0否1是）
-			lrScreenCultureOpt: '',
+			lrScreenCultureOpt: '0',
 			// 玄关是否考虑其他文化属性或气氛（例如：字画、古董、雕塑等）意见
 			lrScreenCultureOptView: '',
 			// 入户门更换为霍曼品牌（0否1是）
-			lrGateHuomanSelOpt: '',
+			lrGateHuomanSelOpt: '0',
 			// 入户门更换为霍曼品牌参考意见
 			lrGateHuomanSelOpinion: '',
 			// 对玄关是有特殊要求（例如：灯光、色彩、特殊造型等）	
@@ -156,26 +156,26 @@ app.controller("report", function($scope, $http, $location, design, $location, g
 			// 接待客人数
 			sittingReceptionNumOpt: '',
 			// 是否接待客人（0否1是）
-			sittingReceptiveSel: '',
+			sittingReceptiveSel: '1',
 			// 是否与餐厅为一体（否1是）
-			sittingDrCombineOpt: '',
+			sittingDrCombineOpt: '0',
 			// 客厅的基本色调（0暖色系1冷色系）
-			sittingBasicTone: '',
+			sittingBasicTone: '0',
 			// 客人来家中聚会内容（1聊天2PARTY3卡拉OK）
 			sittingPartyContent: '',
 			sittingPartyContentArr: [],
 			// 客人来家中聚会内容意见
 			sittingPartyContentOpinion: '',
 			// 是否需要影视墙背景造型（0否1是）
-			sittingFilmWallBackgroundOpt: '',
+			sittingFilmWallBackgroundOpt: '0',
 			// 客厅地面材料要求（1实木地板2复合地板3地砖4石材5拼花）
-			sittingGroundStuffRequirements: '',
+			sittingGroundStuffRequirements: '1',
 			// 音像制品数量
 			sittingAoObjectsNum: '',
 			// 音像制品数量_是否需要特别设置(0否1是)
-			sittingAoObjectsQtySpecialSetOpt: '',
+			sittingAoObjectsQtySpecialSetOpt: '0',
 			// 是否需要吊顶(0否1是)
-			sittingCeilingOpt: '',
+			sittingCeilingOpt: '0',
 			// 吊顶方式(1直线2曲线3混合)
 			sittingCeilingType: '',
 			// 客厅内的视听设备有哪些(填写设备及规格)
@@ -193,22 +193,22 @@ app.controller("report", function($scope, $http, $location, design, $location, g
 			drUseNumRate: '',
 			drUseNumRateArr: [],
 			// 餐桌餐椅配置（1：1*4；2：1*6；3：其他)
-			drChairsConfg: '',
+			drChairsConfg: '1',
 			// 餐桌配置具体内容
 			drChairsDetails: '',
 			// 是否需要配备（1餐柜2酒柜3陈列柜）
 			drEquipmentOpt: '',
 			drEquipmentOptArr: [],
 			// 有无藏酒（0否1是）
-			drWineCabinetOpt: '',
+			drWineCabinetOpt: '0',
 			// 是否是聚会的主要场所（0否1是）
-			drPartyMainVenueOpt: '',
+			drPartyMainVenueOpt: '1',
 			// 是否需要在餐厅看电视（0否1是）
-			drTvOpt: '',
+			drTvOpt: '1',
 			// 家庭烹饪的特点（0中餐1西餐）
-			drCookingType: '',
+			drCookingType: '0',
 			// 娱乐活动（1棋2牌3其他）
-			drAmuseActivites: '',
+			drAmuseActivites: '1',
 			// 对餐厅色彩要求
 			drColorRequest: '',
 
@@ -224,7 +224,7 @@ app.controller("report", function($scope, $http, $location, design, $location, g
 			// 对橱柜档次品质品牌要求
 			kitCabinetRequest: '',
 			// 吊顶材料（1PVC扣板2铝扣板3防水石膏板4铝塑板）
-			kitCeilingStuff: '',
+			kitCeilingStuff: '1',
 			// 照明要求
 			kitLightingRequest: '',
 		},
@@ -253,9 +253,9 @@ app.controller("report", function($scope, $http, $location, design, $location, g
 			// 惯以何种方式看书（如：坐着看、躺着看）
 			libReadingPosture: '',
 			// 书房使用频率（1每天2经常3偶尔）
-			libUseRate: '',
+			libUseRate: '1',
 			// 书房是否当客厅使用（0否1是）
-			libUseAsLrOpt: '',
+			libUseAsLrOpt: '0',
 			// 是否需要（1电话2网线3打印机4扫描机）
 			libNetworkOpt: '',
 			libNetworkOptArr: [],
@@ -264,21 +264,21 @@ app.controller("report", function($scope, $http, $location, design, $location, g
 		mainRoom: {
 			type: 9,
 			// 业主对寝具的选择（0购买1制作）
-			brSleepObjectSelOpt: '',
+			brSleepObjectSelOpt: '0',
 			// 业主对寝具品牌和颜色的选择（品牌及颜色）
 			brSleepObjectColorModel: '',
 			// 业主对床的要求（0标准1加大）
-			brBedRequest: '',
+			brBedRequest: '0',
 			// 业主对床类型的要求（1木质2金属铁艺3复合材料）
-			brBedTyleRequest: '',
+			brBedTyleRequest: '1',
 			// 衣柜存衣量的要求（1大量2中量3少量）
-			brWardrobeQtyRequest: '',
+			brWardrobeQtyRequest: '1',
 			
 			// 贮藏内容（1衣服2鞋3箱包4被褥）
 			brDepotThings: '',
 			brDepotThingsArr: [],
 			// 女主人是否需要梳妆台（0否1是）
-			brDresserOpt: '',
+			brDresserOpt: '1',
 			// 是否需要（1视听设备2电话3网线）
 			brNetworkOpt: '',
 			brNetworkOptArr: [],
@@ -294,15 +294,15 @@ app.controller("report", function($scope, $http, $location, design, $location, g
 
 			type: 10,
 			// 房间使用功能及具体使用要求（1独生子2老人3保姆）
-			krUseFunSpecific: '',
+			krUseFunSpecific: '1',
 			// 家具的选择（0购买1制作）
-			krFurnitureSel: '',
+			krFurnitureSel: '0',
 			// 家具配置（1电脑桌2写字台3衣柜4书柜）
-			krFurnitureConfig: '',
+			krFurnitureConfig: '1',
 			// 是否考虑年龄变更（0否1是）
-			krAgeChangeOpt: '',
+			krAgeChangeOpt: '1',
 			// 儿童有何兴趣爱好（1钢琴2绘画3其他）
-			krHobby: '',
+			krHobby: '1',
 			// 有无特殊灯光要求（1可调光源2双控开关3地脚线）
 			krSpecialLightsReuqest: '',
 			krSpecialLightsReuqestArr: [],
@@ -353,17 +353,17 @@ app.controller("report", function($scope, $http, $location, design, $location, g
 			// 灯光的具体要求
 			wcLightingRequest: '',
 			// 卫生间的色彩倾向（0冷色1暖色）
-			wcColor: '',
+			wcColor: '0',
 		},
 
 		balcony: {
 			type: 13,
 			// 是否需要封闭阳台以及材料（0否1是）
-			balconyBlockStuffOpt: '',
+			balconyBlockStuffOpt: '1',
 			// 是否需要封闭阳台以及材料_是（1铝合金2塑钢3木制）
-			balconyBlockStuff: '',
+			balconyBlockStuff: '1',
 			// 所有外窗更换为旭格品牌（0否1是）
-			balconyWinToXugeOpt: '',
+			balconyWinToXugeOpt: '0',
 			// 所有外窗更换为旭格品牌_相关要求
 			balconyWindwToXugeRequest: '',
 			// 阳台功能要求（1晾衣服2健身3休息4储物5养殖花木）
@@ -394,7 +394,7 @@ app.controller("report", function($scope, $http, $location, design, $location, g
 			// 是否养宠物
 			addKeepPets: '',
 			// 对家具的风格喜好（1清油2复合材料3混油）
-			addFurnitureStyle: '',
+			addFurnitureStyle: '1',
 			// 个人对服装着装、色彩有何喜好、习惯
 			addDressColorStyle: '',
 			// 对家居风格、色彩的喜好（品种、数量、位置）
@@ -889,56 +889,58 @@ app.controller("report", function($scope, $http, $location, design, $location, g
 
 	$scope.save = function(step) {
 
-		// form.validate(step, function() {
-		// 	console.log(5);
-		// });
+
+		form.validate(step, function() {
+		
+			if (step == 'step_1') {
+				// console.log($scope.formData.generalInfo);
+				$scope.formData.generalInfo.ownerSurveyTime = Date.parse(jQuery("#surveyTime").val());
+				$scope.formData.generalInfo.ownerPlanTime = Date.parse(jQuery("#decorationTime").val());
+				
+			}
+
+			$http({
+				url: g.host+'/decoration_designer/volumeReport/addVolumeReport',
+				method: 'post',
+				data: {
+					volumeReportJson: $scope.formData,
+					decorationTaskCode: $scope.orderCode,
+					status: 0,
+					token: $cookies.fs_designer_token
+				},
+
+		        headers: { 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8' },
+		        
+		        transformRequest: function(obj) {    
+		            var str = [];    
+		            for (var p in obj) {    
+		                
+		                if (typeof obj[p] == 'object' ) {
+
+		                    var jsonStr = [];
+
+		                    for (i in obj[p]) {
+		                    	jsonStr.push(JSON.stringify(obj[p][i]));
+		                    }
+
+		                    str.push(encodeURIComponent(p) + "= {data:[" + jsonStr.join(",") + ']}');
+		                } else {
+		                    str.push(encodeURIComponent(p) + "=" + encodeURIComponent(obj[p]));  
+		                }                     
+		            }    
+
+		            // console.log(str.join("&"))  
+		            return str.join("&");  
+
+		        }			
+			}).success(function(data) {
+
+				alert('保存成功');
+
+			})
+		});
 		// return;
-		if (step == 'step_1') {
-			// console.log($scope.formData.generalInfo);
-			$scope.formData.generalInfo.ownerSurveyTime = Date.parse(jQuery("#surveyTime").val());
-			$scope.formData.generalInfo.ownerPlanTime = Date.parse(jQuery("#decorationTime").val());
-			
-		}
 
-		$http({
-			url: g.host+'/decoration_designer/volumeReport/addVolumeReport',
-			method: 'post',
-			data: {
-				volumeReportJson: $scope.formData,
-				decorationTaskCode: $scope.orderCode,
-				status: 0,
-				token: $cookies.fs_designer_token
-			},
-
-	        headers: { 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8' },
-	        
-	        transformRequest: function(obj) {    
-	            var str = [];    
-	            for (var p in obj) {    
-	                
-	                if (typeof obj[p] == 'object' ) {
-
-	                    var jsonStr = [];
-
-	                    for (i in obj[p]) {
-	                    	jsonStr.push(JSON.stringify(obj[p][i]));
-	                    }
-
-	                    str.push(encodeURIComponent(p) + "= {data:[" + jsonStr.join(",") + ']}');
-	                } else {
-	                    str.push(encodeURIComponent(p) + "=" + encodeURIComponent(obj[p]));  
-	                }                     
-	            }    
-
-	            // console.log(str.join("&"))  
-	            return str.join("&");  
-
-	        }			
-		}).success(function(data) {
-
-			alert('保存成功');
-
-		})
 
 	}
 

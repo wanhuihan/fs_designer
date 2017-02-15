@@ -177,7 +177,6 @@
 					<div class="row ">
 						<div class="col-md-12 radio radio-success radio-inline">					    
 						      	<p> 1.请选择该房屋原结构：<span>*</span></p>
-						      	{{formData.houseBasicInfo}} -8888-
 						      	<input id="house_struct_brick" type="radio" name="radiostruct" value="0" ng-model="formData.houseBasicInfo.houseHouseStructureType">
 						      	<label for="house_struct_brick">砖砼结构</label>
 								<input id="house_struct_frame" type="radio" name="radiostruct" value="1" ng-model="formData.houseBasicInfo.houseHouseStructureType">
@@ -547,10 +546,10 @@
 							      	<p> 2.接待客人：</p>
 							      	<input class="inputtext" type="text" placeholder="人数" ng-model="formData.livingRoom.sittingReceptionNumOpt">
 
-							      	<input id="livingRoom_treatGuest_often" type="radio" name="radiodoor" value="1" ng-model="formData.livingRoom.sittingReceptiveSel">
+							      	<input id="livingRoom_treatGuest_often" type="radio" name="radioguest" value="1" ng-model="formData.livingRoom.sittingReceptiveSel">
 							      	<label for="livingRoom_treatGuest_often">经常</label>
 
-									<input id="livingRoom_treatGuest_occasion" type="radio" name="radiodoor" value="0" ng-model="formData.livingRoom.sittingReceptiveSel">
+									<input id="livingRoom_treatGuest_occasion" type="radio" name="radioguest" value="0" ng-model="formData.livingRoom.sittingReceptiveSel">
 									<label for="livingRoom_treatGuest_occasion">偶尔</label>
 							</div>
 						</div>
@@ -737,9 +736,9 @@
 						<div class="row">
 							<div class="col-md-12 radio radio-success radio-inline">					    
 						      	<p>7.  家庭烹饪的特点：</p>
-						      	<input id="restaurant_cookFeature_cn" type="radio" name="radiocook" value="1" ng-model="formData.dinningRoom.drCookingType">
+						      	<input id="restaurant_cookFeature_cn" type="radio" name="radiocook" value="0" ng-model="formData.dinningRoom.drCookingType">
 						      	<label for="restaurant_cookFeature_cn">中餐</label>
-						      	<input id="restaurant_cookFeature_wt" type="radio" name="radiocook" value="0" ng-model="formData.dinningRoom.drCookingType">
+						      	<input id="restaurant_cookFeature_wt" type="radio" name="radiocook" value="1" ng-model="formData.dinningRoom.drCookingType">
 						      	<label for="restaurant_cookFeature_wt">西餐</label>
 						      
 							</div>
@@ -1332,7 +1331,7 @@
 						
 						<div class="row">
 							<div class="col-md-6 checkbox checkbox-success checkbox-inline addPaintingJewelryHobby">
-								<p>5.  对绘画、饰品的爱好：<span>*</span></p>
+								<p>5.  对绘画、饰品的爱好：</p>
 							  	<input id="addtion_hobby_oilPainting" type="checkbox" name="checkboxset" value="1" ng-click="checkbox($event, 'addPaintingJewelryHobby', 'additional', formData.additional.addPaintingJewelryHobbyArr)">
 							  	<label for="addtion_hobby_oilPainting">油画</label>
 								<input id="addtion_hobby_waterColours" type="checkbox" name="checkboxset" value="2" ng-click="checkbox($event, 'addPaintingJewelryHobby', 'additional', formData.additional.addPaintingJewelryHobbyArr)">
@@ -1347,23 +1346,23 @@
 							    <label for="addtion_hobby_other">其他</label>
 							</div>
 							<div class="col-md-6">
-								<p>6.  是否有个人藏品需要展示：<span>*</span></p>
+								<p>6.  是否有个人藏品需要展示：</p>
 							  	<input class="inputtext" type="text" placeholder="请输入相关要求" ng-model="formData.additional.addObjectsDisplayOpt">
 							</div>
 						</div>
 						<div class="row">
 							<div class="col-md-6">
-								<p>7.  对室内绿化有何要求（品种、数量、位置）：<span>*</span></p>
+								<p>7.  对室内绿化有何要求（品种、数量、位置）：</p>
 							  	<input class="inputtext" type="text" placeholder="请输入相关要求" ng-model="formData.additional.addIndoorGreeningRequest">
 							</div>
 							<div class="col-md-6">
-								<p>8.  是否养宠物：<span>*</span></p>
+								<p>8.  是否养宠物：</p>
 								<input class="inputtext" type="text" placeholder="请输入相关要求" ng-model="formData.additional.addKeepPets">
 							</div>
 						</div>
 						<div class="row">
 							<div class="col-md-6 radio radio-success radio-inline">
-								<p>9.  对家具的风格喜好：<span>*</span></p>
+								<p>9.  对家具的风格喜好：</p>
 								<input id="addition_vegetableOil" type="radio" name="radiofs" value="1" ng-model="formData.additional.addFurnitureStyle">
 								<label for="addition_vegetableOil">清油</label>
 
@@ -1374,47 +1373,47 @@
 								<label for="addition_mixedOil">混油</label>
 							</div>
 							<div class="col-md-6">
-								<p>10.  个人对服装着装、色彩有何喜好、习惯：<span>*</span></p>
+								<p>10.  个人对服装着装、色彩有何喜好、习惯：</p>
 								<input class="inputtext" type="text" placeholder="请输入相关要求" ng-model="formData.additional.addDressColorStyle">
 							</div>
 						</div>
 						<div class="row">
 							<div class="col-md-6">
-								<p>11.  对家居风格、色彩的喜好（品种、数量、位置）：<span>*</span></p>
+								<p>11.  对家居风格、色彩的喜好（品种、数量、位置）：</p>
 							  	<input class="inputtext" type="text" placeholder="请输入相关要求" ng-model="formData.additional.addHomeStyle">
 							</div>
 							<div class="col-md-6">
-								<p>12.  平日从事何种体育项目：<span>*</span></p>
+								<p>12.  平日从事何种体育项目：</p>
 							  	<input class="inputtext" type="text" placeholder="请输入相关要求" ng-model="formData.additional.addUsualSports">
 							</div>
 						</div>
 						<div class="row">
 							<div class="col-md-6">
-								<p>13.  有什么运动器械：<span>*</span></p>
+								<p>13.  有什么运动器械：</p>
 								<input class="inputtext" type="text" placeholder="请输入相关要求" ng-model="formData.additional.addSportsEquipment">
 							</div>
 							<div class="col-md-6">
-								<p>14.  在设计、装修中有何禁忌、忌讳：<span>*</span></p>
+								<p>14.  在设计、装修中有何禁忌、忌讳：</p>
 								<input class="inputtext" type="text" placeholder="请输入相关要求" ng-model="formData.additional.addDesignDecorationTaboo">
 							</div>
 						</div>
 						<div class="row">
 							<div class="col-md-6">
-								<p>15.  列举你喜欢的装修风格：<span>*</span></p>
+								<p>15.  列举你喜欢的装修风格：</p>
 								<input class="inputtext" type="text" placeholder="请输入相关要求" ng-model="formData.additional.addPersonalDecorationStyle">
 							</div>
 							<div class="col-md-6">
-								<p>16.  你对以前房屋的设计及装修有何遗憾：<span>*</span></p>
+								<p>16.  你对以前房屋的设计及装修有何遗憾：</p>
 							  	<input class="inputtext" type="text" placeholder="请输入相关要求" ng-model="formData.additional.addExDesignDecoRegret">
 							</div>
 						</div>
 						<div class="row">
 							<div class="col-md-6">
-								<p>17.  有无旧家具或特殊物品的安置：<span>*</span></p>
+								<p>17.  有无旧家具或特殊物品的安置：</p>
 								<input class="inputtext" type="text" placeholder="请输入相关要求" ng-model="formData.additional.addOldFurnitureSpecialItemsPlaceOpt">
 							</div>
 							<div class="col-md-6">
-								<p>18.  有无宗教信仰：<span>*</span></p>
+								<p>18.  有无宗教信仰：</p>
 								<input class="inputtext" type="text" placeholder="请输入相关要求" ng-model="formData.additional.addReligiousBeliefOpt">
 							</div>
 						</div>
@@ -1427,47 +1426,47 @@
 					<div class="partall">
 						<div class="row">
 							<div class="col-md-6">
-								<p>1.  储藏室：<span>*</span></p>
+								<p>1.  储藏室：</p>
 							  	<input class="inputtext" type="text" placeholder="请输入相关要求" ng-model="formData.others.otherStoreroom">
 							</div>
 							<div class="col-md-6">
-								<p>2.  健身房：<span>*</span></p>
+								<p>2.  健身房：</p>
 							  	<input class="inputtext" type="text" placeholder="请输入相关要求" ng-model="formData.others.otherGym">
 							</div>
 						</div>
 						<div class="row">
 							<div class="col-md-6">
-								<p>3.  音乐室：<span>*</span></p>
+								<p>3.  音乐室：</p>
 							  	<input class="inputtext" type="text" placeholder="请输入相关要求" ng-model="formData.others.otherMusicRoom">
 							</div>
 							<div class="col-md-6">
-								<p>4.  茶室：<span>*</span></p>
+								<p>4.  茶室：</p>
 							  	<input class="inputtext" type="text" placeholder="请输入相关要求" ng-model="formData.others.otherTeahouse">
 							</div>
 						</div>
 						<div class="row">
 							<div class="col-md-6">
-								<p>5.  画室：<span>*</span></p>
+								<p>5.  画室：</p>
 							  	<input class="inputtext" type="text" placeholder="请输入相关要求" ng-model="formData.others.otherStudio">
 							</div>
 							<div class="col-md-6">
-								<p>6.  车房：<span>*</span></p>
+								<p>6.  车房：</p>
 							  	<input class="inputtext" type="text" placeholder="请输入相关要求" ng-model="formData.others.otherGarage">
 							</div>
 						</div>
 						<div class="row">
 							<div class="col-md-6">
-								<p>7.  游泳池：<span>*</span></p>
+								<p>7.  游泳池：</p>
 							  	<input class="inputtext" type="text" placeholder="请输入相关要求" ng-model="formData.others.otherPoll">
 							</div>
 							<div class="col-md-6">
-								<p>8.  花房：<span>*</span></p>
+								<p>8.  花房：</p>
 							  	<input class="inputtext" type="text" placeholder="请输入相关要求" ng-model="formData.others.otherGreenhouse">
 							</div>
 						</div>
 						<div class="row">
 							<div class="col-md-6">
-								<p>9.  佣人房：<span>*</span></p>
+								<p>9.  佣人房：</p>
 							  	<input class="inputtext" type="text" placeholder="请输入相关要求" ng-model="formData.others.otherMaidRoom">
 							</div>
 						</div>
