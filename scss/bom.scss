@@ -69,9 +69,20 @@
 			}
 			ul {
 				li {
+
+					span {
+						img {
+							margin: 0 5px;
+						}
+					}
 					ul {
 						li {
 							span {
+
+								img {
+									margin: 0 5px;
+								}
+
 								&:nth-child(2) {
 									padding-left:20px;
 								}

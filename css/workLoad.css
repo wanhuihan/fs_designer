@@ -9,23 +9,28 @@
     .work_load .work_load_list .work_load_list_title li {
       float: left;
       display: inline-block;
-      border-bottom: 1px solid;
+      border-bottom: 1px solid #ddd;
       box-sizing: border-box;
       padding: 10px 0 10px 20px; }
       .work_load .work_load_list .work_load_list_title li.name {
         width: 10%; }
       .work_load .work_load_list .work_load_list_title li.description {
-        width: 50%; }
+        width: 60%; }
       .work_load .work_load_list .work_load_list_title li.position {
-        width: 10%; }
+        width: 10%;
+        text-align: center; }
       .work_load .work_load_list .work_load_list_title li.unit {
-        width: 10%; }
+        width: 10%;
+        text-align: center; }
       .work_load .work_load_list .work_load_list_title li.work_qty {
-        width: 20%; }
+        width: 10%;
+        text-align: center; }
   .work_load .work_load_list ul li ul {
     clear: both; }
     .work_load .work_load_list ul li ul li span:nth-child(2) {
       padding-left: 30px; }
+    .work_load .work_load_list ul li ul li span img {
+      margin: 0 10px; }
     .work_load .work_load_list ul li ul li ul li span:nth-child(2) {
       padding-left: 60px; }
   .work_load .work_load_list ul li span {
@@ -37,13 +42,19 @@
     .work_load .work_load_list ul li span:nth-child(1) {
       width: 10%; }
     .work_load .work_load_list ul li span:nth-child(2) {
-      width: 50%; }
+      width: 60%; }
     .work_load .work_load_list ul li span:nth-child(3) {
-      width: 10%; }
+      width: 10%;
+      text-align: center; }
     .work_load .work_load_list ul li span:nth-child(4) {
-      width: 10%; }
+      width: 10%;
+      text-align: center; }
     .work_load .work_load_list ul li span:nth-child(5) {
-      width: 20%; }
+      width: 10%;
+      text-align: center; }
+      .work_load .work_load_list ul li span:nth-child(5) input {
+        width: 50px;
+        text-align: center; }
 
 /* project amount 工程量 */
 #amount {

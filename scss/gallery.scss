@@ -153,11 +153,8 @@
 .design_details_cont {
 
 	float:left;
-	// width:1000px;
-	// margin-left:16px;
-
 	.img_box {
-
+			padding: 0;
 			height: 132px;
 			position: relative;
 			
@@ -172,12 +169,13 @@
 
 				display: block;
 				position: absolute;
-				top: 0;
-				left: 15px;
+				bottom: 0;
+				left: 0;
 				padding: 5px 10px;
 				font-size: 12px;
-				color: #333;
-				background: rgba(255,255,255,.6);
+				color: #fff;
+				width: 100%;
+				background: rgba(0,0,0, .6);
 				
 			}
 		} 
@@ -206,9 +204,9 @@
 
 		width:100%;
 		margin:0 auto;
-
+		
 		& > div.row {
-
+			margin: auto 0;
 			padding: 10px 0 ;
 			border-bottom:1px solid #ddd;
 
@@ -233,8 +231,10 @@
 				}
 
 				a.info-box-title {	
-
+						background: #428bca;
+						color: #fff;
 						font-size: 16px;
+						padding: 2px 4px;
 				}
 
 				div.info-box-txt {

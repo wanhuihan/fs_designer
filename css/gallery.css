@@ -86,6 +86,7 @@
 .design_details_cont {
   float: left; }
   .design_details_cont .img_box {
+    padding: 0;
     height: 132px;
     position: relative; }
     .design_details_cont .img_box img {
@@ -95,12 +96,13 @@
     .design_details_cont .img_box span {
       display: block;
       position: absolute;
-      top: 0;
-      left: 15px;
+      bottom: 0;
+      left: 0;
       padding: 5px 10px;
       font-size: 12px;
-      color: #333;
-      background: rgba(255, 255, 255, 0.6); }
+      color: #fff;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.6); }
   .design_details_cont .btn {
     font-size: 16px; }
     .design_details_cont .btn i {
@@ -116,6 +118,7 @@
     width: 100%;
     margin: 0 auto; }
     .design_details_cont .blueprints > div.row {
+      margin: auto 0;
       padding: 10px 0;
       border-bottom: 1px solid #ddd; }
       .design_details_cont .blueprints > div.row .info-box {
@@ -130,7 +133,10 @@
         .design_details_cont .blueprints > div.row .info-box a {
           font-size: 14px; }
         .design_details_cont .blueprints > div.row .info-box a.info-box-title {
-          font-size: 16px; }
+          background: #428bca;
+          color: #fff;
+          font-size: 16px;
+          padding: 2px 4px; }
         .design_details_cont .blueprints > div.row .info-box div.info-box-txt {
           margin: 3px 0; }
     .design_details_cont .blueprints .btn {

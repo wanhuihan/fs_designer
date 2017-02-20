@@ -50,5 +50,9 @@
           .bom_detail_info ul li span.qty input:disabled {
             border: 1px solid #ddd;
             color: #ccc; }
+    .bom_detail_info ul li ul li span img {
+      margin: 0 5px; }
+    .bom_detail_info ul li ul li ul li span img {
+      margin: 0 5px; }
     .bom_detail_info ul li ul li ul li span:nth-child(2) {
       padding-left: 20px; }
