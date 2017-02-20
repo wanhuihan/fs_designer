@@ -3,7 +3,7 @@
 		
 		<ul>
 			
-			<li ng-if="roleCode==15">
+			<li>
 				<a  ui-sref="dashboard.orders.details({id:orderId,code:orderCode})"><i class="fa fa-file-text-o"></i>订单详情 </a>
 			</li>
 
@@ -30,7 +30,18 @@
 
 		</ul>
 	</div>
+
 	<div class="cost_detail_info main_content" ng-if="!hasSubmit">
+
+		<ol class="breadcrumb">
+			<li>
+				<a ui-sref="dashboard.orders({id:orderId,code:orderCode})">我的订单</a><i class="fa fa-angle-right"></i>
+			</li><li class="active">
+				<a ui-sref="dashboard.orders.details({id:orderId,code:orderCode})">{{currentProject}}<i class="fa fa-angle-right"></i></a>
+			</li><li class="active">
+				成本控制单</a>
+			</li>
+		</ol>	
 		<h3>生命屋装修成本控制单 </h3>
 		<p>
 			<span>项目编号：{{data.decorationTask.decorationTaskCode}}</span>&nbsp;
@@ -254,6 +265,15 @@
 		</div>		
 	</div>
 	<div class="cost_detail_info main_content" ng-if="hasSubmit">
+		<ol class="breadcrumb">
+			<li>
+				<a ui-sref="dashboard.orders({id:orderId,code:orderCode})">我的订单</a><i class="fa fa-angle-right"></i>
+			</li><li class="active">
+				<a ui-sref="dashboard.orders.details({id:orderId,code:orderCode})">{{currentProject}}<i class="fa fa-angle-right"></i></a>
+			</li><li class="active">
+				成本控制单</a>
+			</li>
+		</ol>
 		<h3>生命屋装修成本控制单 </h3>
 		<p>
 			<span>项目编号：{{data.decorationTask.decorationTaskCode}}</span>&nbsp;
