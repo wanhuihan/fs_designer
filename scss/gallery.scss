@@ -256,18 +256,15 @@
 			.col-md-3 {
 				
 				&:last-child {
-
-					position: absolute;
-					bottom: 0;
-					margin: 0;
-					top: 50%;
-					right: 0;
-					transform: translateY(-50%);
-
+					height: 132px;
+					
 					.btn {
-
 						margin: 0 auto;
-					}					
+					}	
+					.version_set_success {
+					    padding-left: 150px;
+					    line-height: 132px;
+					}				
 				}
 
 			}			

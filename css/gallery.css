@@ -139,14 +139,12 @@
       padding-bottom: 5px;
       position: relative; }
       .design_details_cont .blueprints .row .col-md-3:last-child {
-        position: absolute;
-        bottom: 0;
-        margin: 0;
-        top: 50%;
-        right: 0;
-        transform: translateY(-50%); }
+        height: 132px; }
         .design_details_cont .blueprints .row .col-md-3:last-child .btn {
           margin: 0 auto; }
+        .design_details_cont .blueprints .row .col-md-3:last-child .version_set_success {
+          padding-left: 150px;
+          line-height: 132px; }
     .design_details_cont .blueprints .alreadyend {
       color: #999; }
     .design_details_cont .blueprints .version_set_success {

@@ -10,13 +10,14 @@
 		>.row {
 
 			ul li {
-				padding: 8px 15px;
+				padding: 5px 15px;
 			}
 			.panel-heading {
 				border-bottom: 1px solid #eee;
 			}
 			.col-md-4 {
 				border-right: 1px solid #eee;
+				min-height: 361px;
 				&:last-child {
 					border-right: 0;
 				}
