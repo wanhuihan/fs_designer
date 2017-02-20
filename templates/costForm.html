@@ -57,9 +57,9 @@
 			</tr>
 			<tr>
 				<td class="" width="25%">供应商</td>
-				<td class="" width="11%">规格</td>
-				<td class="textcenter" width="11%">单位(元)</td>
-				<td class="textcenter" width="11%">数量</td>
+				<td class="" width="21%">规格</td>
+				<td class="textcenter" width="6%">单位(元)</td>
+				<td class="textcenter" width="6%">数量</td>
 				<td class="textcenter" width="11%" >单价</td>
 				<td class="textcenter" width="11%">合计</td>
 			</tr>
@@ -67,13 +67,20 @@
 				<th class="trtitle" colspan="8">第一部分：户内精装修</td>
 			</tr>
 			<tr>	
-				<td class="" colspan="2"> 一、基础装修</td>
+				<td class="" colspan="8"> 一、基础装修</td>
+			</tr>
+			<tr>
+				<td></td>
+				<td class="">基础装修</td>
 				<td class=""></td>
 				<td class=""></td>
 				<td class="textcenter">㎡</td>
-				<td class="">{{data.decorationTask.actualArea}}</td>
-				<td class="textright">{{data.P1}}</td>
-				<td class="textright">{{data.X}}</td>
+				<td class="textcenter">{{data.decorationTask.actualArea}}</td>
+				<td class="textright">{{data.P1 | currency:''}}</td>
+				<td class="textright">{{data.X | currency:''}}</td>
+			</tr>
+			<tr>
+				<td colspan="8" class="textright "><b class="totalbold">(基础装修小计) {{data.X | currency:''}}</b></td>
 			</tr>
 			<tr>
 				<td class="" colspan="2">二、主材</td>
@@ -105,7 +112,7 @@
 									<span>{{a.supplier_name}}</span>
 									<span>{{a.specifications}}</span>
 									<span class="textcenter">{{a.unit}}</span>
-									<span>
+									<span class="textcenter">
 										<input type="text" ng-model="a.quantity" name="" ng-disabled="hasSubmit" ng-focus="clearZero($event)">
 									</span>
 									<span class="textright">{{a.price | currency:''}}</span>
@@ -117,10 +124,11 @@
 				</td>
 			</tr>
 			<tr>
-				<td></td>
-				<td>装修小计</td>
-				<td colspan="5"></td>
-				<td class="textright">M</td>
+				<td colspan="8" class="textright"><b class="totalbold">(主材小计){{data.totalPriceBean.principalTotal | currency:''}}</b></td>
+			</tr>
+			<tr style="background-color: #eee">
+				<td colspan="7"><b class="totalbold">户内精装修小计(基础装修+主材)</b></td>	
+				<td class="textright"><b class="totalbold">{{data.totalPriceBean.decorationSubtotal | currency:''}}</b></td>
 			</tr>
 			<!-- The second section -->
 			<tr>
@@ -166,20 +174,13 @@
 				
 			</tr>
 
-			<tr>
-				<td ></td>
-				<td >绿色科技系统小计</td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td class="textright">N</td>
+			<tr style="background: #eee">
+				<td colspan="7"><b class="totalbold">绿色科技系统小计</b></td>
+				<td class="textright"><b class="totalbold">{{data.totalPriceBean.greenTechnologySubtotal | currency:''}}</b></td>
 
 			</tr>
 			<tr>
 				<td></td>
-				
 				<td>材料设备采购</td>
 				<td></td>
 				<td></td>
@@ -195,7 +196,7 @@
 				<td></td>
 				<td></td>
 				<td></td>
-				<td>{{data.decorationTask.actualArea}}</td>
+				<td class="textcenter">{{data.decorationTask.actualArea}}</td>
 				<td class="textright">{{data.P2}}</td>
 				<td class="textright">{{data.O}}</td>
 
@@ -211,11 +212,14 @@
 				<td class=""></td>
 				<td class=""></td>
 				<td class="textcenter">㎡</td>
-				<td class="">{{data.decorationTask.actualArea}}</td>
+				<td class="textcenter">{{data.decorationTask.actualArea}}</td>
 				<td class="textright">{{data.P3}}</td>
 				<td class="textright">{{data.Z}}</td>
 			</tr>
-
+			<tr style="background: #eee">
+				<td colspan="7"><b class="totalbold">其他费用小计</b></td>
+				<td class="textright"><b class="totalbold">{{data.Z  | currency:''}}</b></td>
+			</tr>
 			 <!-- The fourth section -->
 			<tr>
 				<th class="" colspan="8">第四部分：户内税费及利润</th>
@@ -250,10 +254,16 @@
 				<td class=""></td>
 				<td class="textright">C</td>
 			</tr>
+			<tr style="background: #eee">
+				<td colspan="7"><b class="totalbold">户内税费及利润小计</b></td>
+				<td class="textright"><b class="totalbold">{{(data.A+data.B+data.C)  | currency:''}}</b></td>
+			</tr>
 
-			<tr>
+
+			<!-- all total -->
+			<tr style="background: #eee">
 				<td colspan="8" align="right">
-					<p>合计: </p>
+					<b>总合计: {{data.totalPriceBean.valence | currency:'RMB ￥'}}</b>
 				</td>
 			</tr>
 		</table>
@@ -280,7 +290,7 @@
 			<span>项目名称：{{data.decorationTask.projectName}}</span>
 		</p>
 		<table class="table table-bordered">
-			<!-- <th colspan="8" class="tabletitle">量房记录表</th> -->
+			
 			<tr>
 				<th class="" rowspan="2" width="4.6%">编号</th>
 				<td class="" rowspan="2" width="15.4%">分部分项名称</td>
@@ -289,36 +299,37 @@
 			</tr>
 			<tr>
 				<td class="" width="25%">供应商</td>
-				<td class="" width="11%">规格</td>
-				<td class="textcenter" width="11%">单位</td>
-				<td class="textcenter" width="11%">数量</td>
-				<td class="textcenter" width="11%">单价</td>
-				<td class="textcenter" width="11%">合计</td>
+				<td class="" width="21%">规格</td>
+				<td class="textcenter" width="6%">单位</td>
+				<td class="textcenter" width="6%">数量</td>
+				<td class="textright" width="11%">单价</td>
+				<td class="textright" width="11%">合计</td>
 			</tr>
 			<tr>	
 				<th class="trtitle" colspan="8">第一部分：户内精装修</td>
 			</tr>
 			<tr>	
-				<td class="" colspan="2"> 一、基础装修</td>
+				<td class="" colspan="8"> 一、基础装修</td>
+			</tr>
+			<tr>
+				<td></td>
+				<td class="">基础装修</td>
 				<td class=""></td>
 				<td class=""></td>
 				<td class="textcenter">㎡</td>
-				<td class="">{{data.decorationTask.actualArea}}</td>
+				<td class="textcenter">{{data.decorationTask.actualArea}}</td>
 				<td class="textright">{{data.P1 | currency:''}}</td>
 				<td class="textright">{{data.X | currency:''}}</td>
 			</tr>
 			<tr>
-				<td class="" colspan="2">二、主材</td>
-				<td class=""></td>
-				<td class=""></td>
-				<td class=""></td>
-				<td class=""></td>
-				<td class=""></td>
-				<td class="textright">{{data.totalPriceBean.principalTotal | currency:''}}</td>
+				<td colspan="8" class="textright "><b class="totalbold">(基础装修小计) {{data.X | currency:''}}</b></td>
+			</tr>
+			<tr>
+				<td colspan="8" class="cost_detail_info_title">二、主材</td>
+				
 			</tr>
 			<tr >
 				<td colspan="8" class="section-1">
-
 					<ul>
 						<li ng-repeat="item in data.mainMaterial">
 							<span>{{$index+1}}</span>
@@ -337,8 +348,8 @@
 									<span>{{a.supplier_name}}</span>
 									<span title="{{a.model}}">{{a.model}}</span>
 									<span class="textcenter">{{a.unit}}</span>
-									<span>
-										<input type="text" ng-model="a.quantity" name="" ng-disabled="hasSubmit" ng-focus="clearZero($event)">
+									<span class="textcenter">
+										<input class="inputamount" type="text" ng-model="a.quantity" name="" ng-disabled="hasSubmit" ng-focus="clearZero($event)">
 									</span>
 									<span class="textright">{{a.price | currency:''}}</span>
 									<span class="textright">{{a.totalPrice | currency:''}}</span>
@@ -349,16 +360,12 @@
 				</td>
 
 			</tr>
-
 			<tr>
-				<td></td>
-				<td>装修小计</td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td class="textright">{{data.totalPriceBean.decorationSubtotal | currency:''}}</td>
+				<td colspan="8" class="textright"><b class="totalbold">(主材小计){{data.totalPriceBean.principalTotal | currency:''}}</b></td>
+			</tr>
+			<tr style="background-color: #eee">
+				<td colspan="7"><b class="totalbold">户内精装修小计(基础装修+主材)</b></td>	
+				<td class="textright"><b class="totalbold">{{data.totalPriceBean.decorationSubtotal | currency:''}}</b></td>
 			</tr>
 
 			<!-- The second section -->
@@ -376,8 +383,8 @@
 							<span></span>
 							<span></span>
 							<span class="textcenter">{{item.unit}}</span>
-							<span>
-								<input type="text" name="" ng-if="item.child==0" ng-model="item.quantity" ng-disabled="hasSubmit" ng-focus="clearZero($event)">
+							<span class="textcenter">
+								<input class="inputamount" type="text" name="" ng-if="item.child==0" ng-model="item.quantity" ng-disabled="hasSubmit" ng-focus="clearZero($event)">
 							</span>
 							<span class="textright">
 								<span  ng-if="item.child==0">{{item.price | currency:''}}</span>
@@ -392,8 +399,8 @@
 									<span>{{a.supplier_name}}</span>
 									<span>{{a.specifications}}</span>
 									<span class="textcenter">{{a.unit}}</span>
-									<span>
-										<input type="text" ng-model="a.quantity" name="" ng-disabled="hasSubmit" ng-focus="clearZero($event)">
+									<span class="textcenter">
+										<input class="inputamount" type="text" ng-model="a.quantity" name="" ng-disabled="hasSubmit" ng-focus="clearZero($event)">
 									</span>
 									<span class="textright">{{a.price | currency:''}}</span>
 									<span class="textright">{{a.totalPrice | currency:''}}</span>
@@ -406,19 +413,12 @@
 			</tr>
 
 			<tr style="background: #eee">
-				<td></td>
-				<td>绿色科技系统小计</td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td class="textright">{{data.totalPriceBean.greenTechnologySubtotal | currency:''}}</td>
+				<td colspan="7"><b class="totalbold">绿色科技系统小计</b></td>
+				<td class="textright"><b class="totalbold">{{data.totalPriceBean.greenTechnologySubtotal | currency:''}}</b></td>
 
 			</tr>
 			<tr>
-				<td></td>
-				
+				<td></td>		
 				<td>材料设备采购</td>
 				<td></td>
 				<td></td>
@@ -426,7 +426,6 @@
 				<td></td>
 				<td></td>
 				<td class="textright">{{data.totalPriceBean.purchasingTotal | currency:''}}</td>
-
 			</tr>
 			<tr>
 				<td></td>			
@@ -434,7 +433,7 @@
 				<td></td>
 				<td></td>
 				<td></td>
-				<td>{{data.decorationTask.actualArea}}</td>
+				<td class="textcenter">{{data.decorationTask.actualArea}}</td>
 				<td class="textright">{{data.P2 | currency:''}}</td>
 				<td class="textright">{{data.O | currency:''}}</td>
 
@@ -450,9 +449,13 @@
 				<td class=""></td>
 				<td class=""></td>
 				<td class="textcenter">㎡</td>
-				<td class="">{{data.decorationTask.actualArea}}</td>
+				<td class="textcenter">{{data.decorationTask.actualArea}}</td>
 				<td class="textright">{{data.P3 | currency:''}}</td>
 				<td class="textright">{{data.Z | currency:''}}</td>
+			</tr>
+			<tr style="background: #eee">
+				<td colspan="7"><b class="totalbold">其他费用小计</b></td>
+				<td class="textright"><b class="totalbold">{{data.Z  | currency:''}}</b></td>
 			</tr>
 
 			 <!-- The fourth section -->
@@ -489,10 +492,15 @@
 				<td class=""></td>
 				<td class="textright">{{data.totalPriceBean.taxTotal | currency:''}}</td>
 			</tr>
+			<tr style="background: #eee">
+				<td colspan="7"><b class="totalbold">户内税费及利润小计</b></td>
+				<td class="textright"><b class="totalbold">{{(data.A+data.B+data.C)  | currency:''}}</b></td>
+			</tr>
 
-			<tr>
+			<!-- all total -->
+			<tr style="background: #d6d6d6">
 				<td colspan="8" align="right">
-					<p class="">合计: {{data.totalPriceBean.valence | currency:''}}</p>
+					<b>总合计: {{data.totalPriceBean.valence | currency:'RMB ￥'}}</b>
 				</td>
 			</tr>
 		</table>

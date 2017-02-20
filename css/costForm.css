@@ -1,3 +1,10 @@
+.cost_details h3 {
+  font-size: 20px; }
+
+.cost_details .cost_detail_info > p > span {
+  color: #aaa;
+  font-size: 14px; }
+
 .cost_details table tbody ul li > span {
   display: block;
   float: left;
@@ -11,8 +18,17 @@
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap; }
-  .cost_details table tbody ul li > span input {
-    width: 100%; }
+  .cost_details table tbody ul li > span span {
+    font-size: 14px; }
+  .cost_details table tbody ul li > span input.inputamount {
+    width: 60px;
+    text-align: center;
+    color: #666666;
+    border: 1px solid #ddd; }
+
+.cost_details .table tbody td b.totalbold {
+  font-weight: 700;
+  font-size: 14px; }
 
 .cost_details table tbody ul li > span:nth-child(1) {
   width: 4.6%;
@@ -25,13 +41,13 @@
   width: 25%; }
 
 .cost_details table tbody ul li > span:nth-child(4) {
-  width: 11.0%; }
+  width: 21.0%; }
 
 .cost_details table tbody ul li > span:nth-child(5) {
-  width: 11.0%; }
+  width: 6.0%; }
 
 .cost_details table tbody ul li > span:nth-child(6) {
-  width: 11.0%; }
+  width: 6.0%; }
 
 .cost_details table tbody ul li > span:nth-child(7) {
   width: 11.0%; }
