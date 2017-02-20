@@ -3,7 +3,13 @@
  --------------------*/
 
  .report_details_form {
-
+	
+	td,th {
+		font-size: 14px;
+		span {
+			font-size: 14px;
+		}
+	}
 	.report_tab_steptwo {
 		h3 {
 			color:#555;

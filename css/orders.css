@@ -9,3 +9,5 @@
   .main_body .my_orders .main_content .table td {
     font-size: 14px;
     line-height: 35px; }
+    .main_body .my_orders .main_content .table td:last-child {
+      text-align: right; }

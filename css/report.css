@@ -2,6 +2,11 @@
 /*-------------------
 	量房报告 
  --------------------*/
+.report_details_form td, .report_details_form th {
+  font-size: 14px; }
+  .report_details_form td span, .report_details_form th span {
+    font-size: 14px; }
+
 .report_details_form .report_tab_steptwo h3 {
   color: #555; }
 
