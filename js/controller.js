@@ -487,7 +487,7 @@ app.controller("bom", function($scope, $http, $location, $cookies){
 	        }
 
 		}).success(function(data) {
-			console.log(data);
+			// console.log(data);
 
 			if (g.checkData(data)) {
 				// alert("提交成功");

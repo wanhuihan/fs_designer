@@ -17,7 +17,7 @@
 				display: inline-block;
 				border-bottom:1px solid;
 				box-sizing: border-box;
-				padding: 10px 0;
+				padding: 10px 0 10px 20px;
 				// &.order_num {
 				// 	width: 5%;
 				// }
@@ -69,9 +69,10 @@
 					display: inline-block;
 					float: left;
 					box-sizing: border-box;
+					font-size: 14px;
 					// border-bottom:1px solid;
 					// min-height: 35px;
-					padding: 10px 0;
+					padding: 10px 0 10px 20px;
 
 					&:nth-child(1) {
 						width: 10%;
