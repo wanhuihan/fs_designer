@@ -10,10 +10,10 @@
 		a {
 			font-size: 16px;
 			cursor: pointer;
-			color: #fff;
+			// color: #fff;
 		}
 		.navbar-inverse .navbar-nav > li > a {
-			color: #fff;
+			// color: #fff;
 		}
 		.nav:first-child {
 			li {
@@ -24,6 +24,17 @@
 					visibility: hidden;
 				}
 			}
+		}
+		.navbar-right {
+			
+			& > li {
+				&:first-child {
+					a {
+						color: #fff;
+					}
+				}
+			}
+
 		}
 	}
 
