@@ -8,7 +8,10 @@
   border: 0; }
   .header .navbar a {
     font-size: 16px;
-    cursor: pointer; }
+    cursor: pointer;
+    color: #fff; }
+  .header .navbar .navbar-inverse .navbar-nav > li > a {
+    color: #fff; }
   .header .navbar .nav:first-child li:nth-child(4) {
     visibility: hidden; }
   .header .navbar .nav:first-child li:nth-child(3) {

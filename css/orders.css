@@ -1,6 +1,21 @@
 /*--------------------------------
 	#order details page
  --------------------------------*/
+.order_details .order_detail_info > .row ul li {
+  padding: 8px 15px; }
+
+.order_details .order_detail_info > .row .panel-heading {
+  border-bottom: 1px solid #eee; }
+
+.order_details .order_detail_info > .row .col-md-4 {
+  border-right: 1px solid #eee; }
+  .order_details .order_detail_info > .row .col-md-4:last-child {
+    border-right: 0; }
+  .order_details .order_detail_info > .row .col-md-4 .panel-body > li span {
+    font-size: 15px; }
+    .order_details .order_detail_info > .row .col-md-4 .panel-body > li span:last-child {
+      color: #888; }
+
 /* ----------------------------
 	#my orders
 ------------------------------ */

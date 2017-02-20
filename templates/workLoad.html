@@ -3,7 +3,7 @@
 	<div class="left_side_bar">
 		<ul>
 			
-			<li ng-if="roleCode==15">
+			<li>
 				<a  ui-sref="dashboard.orders.details({id:orderId,code:orderCode})"><i class="fa fa-file-text-o"></i>订单详情 </a>
 			</li>
 
@@ -35,17 +35,11 @@
 
 		<ol class="breadcrumb">
 			<li>
-			<a href="#">
-			<i class="fa fa-home" aria-hidden="true">装修管理</i>
-			</a>
-			</li>
-			<li>
-			<a href="#">
-			<i class="fa fa-angle-right" aria-hidden="true">装修配置</i>
-			</a>
-			</li>
-			<li class="active">
-			<i class="fa fa-angle-right" aria-hidden="true">工序配置</i>
+				<a ui-sref="dashboard.orders({id:orderId,code:orderCode})">我的订单</a><i class="fa fa-angle-right"></i>
+			</li><li class="active">
+				{{currentProject}}<i class="fa fa-angle-right"></i>
+			</li><li class="active">
+				工程量
 			</li>
 		</ol>	
 

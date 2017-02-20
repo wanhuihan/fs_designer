@@ -52,6 +52,8 @@ app.controller("orders", function($http, $scope, $location, $cookies, $window) {
 
 		$scope.data  = '';
 
+		$scope.currentProject = window.localStorage.currentProject;
+
 		$http({
 			url: g.host+'/decoration_designer/decorationTask/order/selectList',
 			method: 'post',
@@ -198,6 +200,7 @@ app.controller("dashboard", function($scope, $http, $location, $cookies, $window
 	} else {
 		$window.location.href = '#/dashboard/orders';
 		$window.location.reload();
+		$scope.currentProject = window.localStorage.currentProject;
 	}
 
 })
@@ -213,6 +216,7 @@ app.controller("orderDetails", function($http, $scope, $location, $cookies) {
 
 	}  else {
 
+		$scope.currentProject = window.localStorage.currentProject;
 		// console.log($location.search());
 		$scope.orderId = $location.search().id;
 		$scope.orderCode = $location.search().code;
@@ -242,8 +246,11 @@ app.controller("orderDetails", function($http, $scope, $location, $cookies) {
 	            return str.join("&");    
 	        },		
 		}).success(function(data) {
+
 			$scope.data = data.datas;
-			console.log(window.localStorage.fs_design_role_code)
+
+			window.localStorage.currentProject = $scope.data.projectName;
+			// console.log(window.localStorage.fs_design_role_code)
 			$scope.roleCode = window.localStorage.fs_design_role_code;
 
 		})
@@ -262,6 +269,7 @@ app.controller("workLoad", function($scope, $http, $location, $cookies) {
 
 	} else {
 
+		$scope.currentProject = window.localStorage.currentProject;
 		$scope.orderId = $location.search().id;
 		$scope.orderCode = $location.search().code;
 
@@ -452,6 +460,7 @@ app.controller("bom", function($scope, $http, $location, $cookies){
 
 	} else {
 
+		$scope.currentProject = window.localStorage.currentProject;
 		$http({
 
 			method:'post',
@@ -635,7 +644,7 @@ app.controller("design", function($scope, $http, $location, $cookies, ngDialog, 
 
 	} else {
 
-		
+		$scope.currentProject = window.localStorage.currentProject;
 		$http({
 			method: 'post',
 			url: g.host+'/decoration_designer/decorationDesignDraw/selectDecorationDesignDrawList',		
@@ -944,6 +953,8 @@ app.controller("costForm", function($scope, $http, $location, $cookies){
 
 	} else {
 
+		$scope.currentProject = window.localStorage.currentProject;
+
 		$scope.roleCode = window.localStorage.fs_design_role_code;
 
 		function objCom(obj) {
@@ -1226,6 +1237,7 @@ app.controller("myAccount", function($http, $scope,$location, $cookies) {
 
 	} else {
 
+		$scope.currentProject = window.localStorage.currentProject;
 		// $scope.data  = '';
 
 		// $http({
@@ -1252,6 +1264,9 @@ app.controller("gallery", function($http, $scope, ngDialog, $location, $cookies)
 		$location.path("/login");
 
 	} else {
+
+
+		$scope.currentProject = window.localStorage.currentProject;
 		// $scope.data  = '';
 
 		// $http({

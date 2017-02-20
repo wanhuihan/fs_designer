@@ -62,11 +62,11 @@ body, html {
   display: none; }
 
 .breadcrumb {
-  display: none;
+  margin: 0 -25px 25px;
   padding: 15px;
   border-radius: 0; }
   .breadcrumb i:before {
-    margin: 0 5px; }
+    margin: 0 10px; }
 
 .main_body {
   box-sizing: border-box; }

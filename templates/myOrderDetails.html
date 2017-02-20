@@ -5,7 +5,7 @@
 
 		<ul>
 			
-			<li ng-if="roleCode==15">
+			<li>
 				<a  ui-sref="dashboard.orders.details({id:orderId,code:orderCode})"><i class="fa fa-file-text-o"></i>订单详情 </a>
 			</li>
 
@@ -34,135 +34,136 @@
 	</div>
 
 	<div class="order_detail_info main_content">
+
+		<ol class="breadcrumb">
+			<li>
+				<a ui-sref="dashboard.orders({id:orderId,code:orderCode})">我的订单</a><i class="fa fa-angle-right"></i>
+			</li><li class="active">
+				{{data.projectName}}<i class="fa fa-angle-right"></i>
+			</li><li class="active">
+				订单详情</a>
+			</li>
+		</ol>	
+
 		<div class="row">
-			<div class="col-md-4 col-md-offset-2">
-				<div class="panel panel-default">		
-					<div class="panel-heading">订单信息</div>
-					<ul class="row panel-body">
-						<li class="">
-							<span>订单编号：</span>
-							<span>{{data.decorationTaskCode}}</span>
-						</li>
-						<li class="">
-							<span>订单名称：</span>
-							<span>{{data.projectName}}</span>											
-						</li>
-						<li class="">
-							<span>业主姓名：</span>
-							<span>{{data.dataMap.ownerName}}</span>											
-						</li>
-						<li class="">
-							<span>手机号码：</span>
-							<span>{{data.dataMap.ownerTelPhone}}</span>											
-						</li>
-						<li class="">
-							<span>年龄：</span>
-							<span>{{data.dataMap.ownerAge}}</span>											
-						</li>	
-						<li class="">
-							<span>性别：</span>
-							<span>{{data.dataMap.ownerSex}}</span>											
-						</li>																			
-						<li class="">
-							<span>所在区域：</span>
-							<span>{{data.districtName}}</span>											
-						</li>
-<!-- 						<li class="">
-							<span>年收入：</span>
-							<span>{{data.dataMap.ownerAge}}</span>											
-						</li>	 -->														
-						<li class="">
-							<span>剩余时间：</span>
-							<span>{{data.dataMap.ownerAge}}</span>											
-						</li>								
-						<li class="">
-							<span>派单时间：</span>
-							<span>{{data.createTime | date:'yyyy年MM月dd日'}}</span>											
-						</li>																							
-					</ul>								
-					
-				</div>
+			<div class="col-md-4">
+				<div class="panel-heading">订单信息</div>
+				<ul class="row panel-body">
+					<li class="">
+						<span>订单编号：</span>
+						<span>{{data.decorationTaskCode}}</span>
+					</li>
+					<li class="">
+						<span>订单名称：</span>
+						<span>{{data.projectName}}</span>											
+					</li>
+					<li class="">
+						<span>业主姓名：</span>
+						<span>{{data.dataMap.ownerName}}</span>											
+					</li>
+					<li class="">
+						<span>手机号码：</span>
+						<span>{{data.dataMap.ownerTelPhone}}</span>											
+					</li>
+					<li class="">
+						<span>年龄：</span>
+						<span>{{data.dataMap.ownerAge}}</span>											
+					</li>	
+					<li class="">
+						<span>性别：</span>
+						<span>{{data.dataMap.ownerSex}}</span>											
+					</li>																			
+					<li class="">
+						<span>所在区域：</span>
+						<span>{{data.districtName}}</span>											
+					</li>
+				<!-- <li class="">
+						<span>年收入：</span>
+						<span>{{data.dataMap.ownerAge}}</span>											
+					</li>	 -->														
+					<li class="">
+						<span>剩余时间：</span>
+						<span>{{data.dataMap.ownerAge}}</span>											
+					</li>								
+					<li class="">
+						<span>派单时间：</span>
+						<span>{{data.createTime | date:'yyyy年MM月dd日'}}</span>											
+					</li>																							
+				</ul>								
 			</div>
 
-			<div class="col-md-6">
-				<div class="panel panel-default">
-					
-					<div class="panel-heading">预约信息</div>
-					<ul class="row panel-body">
-						<li class="col-md-6">
-							<span>预约业主：</span>
-							<span>{{data.ownerName}}</span>
-						</li>
-						<li class="col-md-6">
-							<span>联系方式：</span>
-							<span>{{data.ownerPhone}}</span>											
-						</li>
-						<li class="col-md-6">
-							<span>建筑面积：</span>
-							<span>{{data.dataMap.acreageText}}</span>											
-						</li>
-						<li class="col-md-6">
-							<span>户型：</span>
-							<span>{{data.houseTypeStr}}</span>											
-						</li>																		
-						<li class="col-md-6">
-							<span>装修预算：</span>
-							<span>{{data.ownerBudgetText}} 元</span>											
-						</li>								
-						<li class="col-md-6">
-							<span>房屋地址：</span>
-							<span>{{data.address}}</span>										
-						</li>								
-						<li class="col-md-6">
-							<span>备注信息：</span>
-							<span>{{data.remark}}</span>			
-						</li>								
-						<li class="col-md-6">
-							<span>预约时间：</span>
-							<span>{{data.reservationRoomTime | date:'yyyy年MM月dd日'}}</span>		
-						</li>												
-					</ul>								
-					
-				</div>
+			<div class="col-md-4 ">
+				<div class="panel-heading">预约信息</div>
+				<ul class="row panel-body">
+					<li class="">
+						<span>预约业主：</span>
+						<span>{{data.ownerName}}</span>
+					</li>
+					<li class="">
+						<span>联系方式：</span>
+						<span>{{data.ownerPhone}}</span>											
+					</li>
+					<li class="">
+						<span>建筑面积：</span>
+						<span>{{data.dataMap.acreageText}}</span>											
+					</li>
+					<li class="">
+						<span>户型：</span>
+						<span>{{data.houseTypeStr}}</span>											
+					</li>																		
+					<li class="">
+						<span>装修预算：</span>
+						<span>{{data.ownerBudgetText}} 元</span>											
+					</li>								
+					<li class="">
+						<span>房屋地址：</span>
+						<span>{{data.address}}</span>										
+					</li>								
+					<li class="">
+						<span>备注信息：</span>
+						<span>{{data.remark}}</span>			
+					</li>								
+					<li class="">
+						<span>预约时间：</span>
+						<span>{{data.reservationRoomTime | date:'yyyy年MM月dd日'}}</span>		
+					</li>												
+				</ul>								
 			</div>
-		</div>	
-		<!-- <div class="row">	
-			<div class="col-md-6">
-				<div class="panel panel-default">	
+
+			<div class="col-md-4">
 					<div class="panel-heading">合同信息</div>
-					<ul class="row panel-body">
-						<li class="col-md-6">
+					<!-- <ul class="row panel-body">
+						<li class="">
 							<span>合同名称：</span>
 							<span></span>
 						</li>
-						<li class="col-md-6">
+						<li class="">
 							<span>合同编号：</span>
 							<span></span>											
 						</li>
-						<li class="col-md-6">
+						<li class="">
 							<span>合同类型：</span>
 							<span></span>											
 						</li>
-						<li class="col-md-6">
+						<li class="">
 							<span>签署日期：</span>
 							<span></span>											
 						</li>																		
-						<li class="col-md-6">
+						<li class="">
 							<span>签署人：</span>
 							<span></span>											
 						</li>								
-						<li class="col-md-6">
+						<li class="">
 							<span>合同金额：</span>
 							<span></span>											
 						</li>
-						<li class="col-md-6">
+						<li class="">
 							<i class="fa fa-download"></i>
 							<a href="#">下载合同</a>			
 						</li>																											
-					</ul>									
-				</div>
+					</ul>				 -->					
 			</div>
-		</div> -->
+		</div>		
 	</div>
 </div>
 
