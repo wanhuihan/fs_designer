@@ -1084,9 +1084,7 @@ app.controller("costForm", function($scope, $http, $location, $cookies){
 
 				$scope.data = data.datas;
 				$scope.hasSubmit = data.hasSubmit;
-				// $scope.data.P1 = $scope.data.P1;
-				console.log($scope.data);
-
+				// console.log($scope.data);
 			} else {
 
 				alert(data.msg);

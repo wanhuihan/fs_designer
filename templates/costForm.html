@@ -184,21 +184,6 @@
 				</td>
 				
 			</tr>
-
-			<tr>
-				<td class="textright" colspan="8"><b class="totalbold">第二部分小计&nbsp;&nbsp;{{data.totalPriceBean.greenTechnologySubtotal | currency:''}}</b></td>
-			</tr>
-			<tr>
-				<td></td>
-				<td>材料设备采购</td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td class="textright">N</td>
-
-			</tr>
 			<tr>
 				<td></td>			
 				<td>设备系统施工</td>
@@ -209,7 +194,24 @@
 				<td class="textright">{{data.P2}}</td>
 				<td class="textright">{{data.O}}</td>
 
-			</tr>	
+			</tr>
+			<tr>
+				<td></td>
+				<td>材料设备采购</td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td class="textright">{{data.totalPriceBean.purchasingTotal | currency:''}}</td>
+
+			</tr>
+
+			<tr>
+				<td class="textright" colspan="8"><b class="totalbold">第二部分小计&nbsp;&nbsp;{{data.totalPriceBean.greenTechnologySubtotal | currency:''}}</b></td>
+			</tr>
+
+	
 		</table>					
             <!-- The third section -->
 
@@ -236,7 +238,7 @@
 				<td class="textright">{{data.Z}}</td>
 			</tr>
 			<tr>
-				<td class="textright" colspan="7"><b class="totalbold">其他费用小计&nbsp;&nbsp;{{data.Z  | currency:''}}</b></td>
+				<td class="textright" colspan="8"><b class="totalbold">其他费用小计&nbsp;&nbsp;{{data.Z  | currency:''}}</b></td>
 			</tr>
 		</table>
 			 <!-- The fourth section -->
@@ -260,7 +262,7 @@
 				<td class="textcenter">㎡</td>
 				<td class=""></td>
 				<td class=""></td>
-				<td class="textright"></td>
+				<td class="textright">{{data.totalPriceBean.managementTotal | currency:''}}</td>
 			</tr>
 			<tr>
 				<td class="">2</td>
@@ -270,7 +272,7 @@
 				<td class="textcenter">㎡</td>
 				<td class=""></td>
 				<td class=""></td>
-				<td class="textright">B</td>
+				<td class="textright">{{data.totalPriceBean.profitTotal | currency:''}}</td>
 			</tr>
 			<tr>
 				<td class="">3</td>
@@ -280,10 +282,10 @@
 				<td class="textcenter">㎡</td>
 				<td class=""></td>
 				<td class=""></td>
-				<td class="textright">C</td>
+				<td class="textright">{{data.totalPriceBean.taxTotal | currency:''}}</td>
 			</tr>
 			<tr>
-				<td class="textright" colspan="8"><b class="totalbold">第四部分小计&nbsp;&nbsp;{{(data.A+data.B+data.C)  | currency:''}}</b></td>
+				<td class="textright" colspan="8"><b class="totalbold">第四部分小计&nbsp;&nbsp;{{(data.totalPriceBean.managementTotal+data.totalPriceBean.profitTotal+data.totalPriceBean.taxTotal)  | currency:'¥'}}</b></td>
 			</tr>
 		</table>
 			<!-- all total -->
@@ -467,7 +469,14 @@
 					
 				</tr>
 				<tr>
-					<td class="textright" colspan="8"><b class="totalbold">第二部分小计&nbsp;&nbsp;{{data.totalPriceBean.greenTechnologySubtotal | currency:'¥'}}</b></td>
+					<td></td>			
+					<td>设备系统施工</td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td class="textcenter">{{data.decorationTask.actualArea}}</td>
+					<td class="textright">{{data.P2 | currency:''}}</td>
+					<td class="textright">{{data.O | currency:''}}</td>
 				</tr>
 				<tr>
 					<td></td>		
@@ -478,16 +487,9 @@
 					<td></td>
 					<td></td>
 					<td class="textright">{{data.totalPriceBean.purchasingTotal | currency:''}}</td>
-				</tr>
+				</tr>								
 				<tr>
-					<td></td>			
-					<td>设备系统施工</td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td class="textcenter">{{data.decorationTask.actualArea}}</td>
-					<td class="textright">{{data.P2 | currency:''}}</td>
-					<td class="textright">{{data.O | currency:''}}</td>
+					<td class="textright" colspan="8"><b class="totalbold">第二部分小计&nbsp;&nbsp;{{data.totalPriceBean.greenTechnologySubtotal | currency:'¥'}}</b></td>
 				</tr>
 			</table>
 

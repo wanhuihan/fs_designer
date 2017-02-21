@@ -48,6 +48,11 @@
 
 .cost_details table tbody ul li > span:nth-child(6) {
   width: 6.0%; }
+  .cost_details table tbody ul li > span:nth-child(6) input {
+    width: 60px;
+    text-align: center;
+    color: #666;
+    border: 1px solid #ddd; }
 
 .cost_details table tbody ul li > span:nth-child(7) {
   width: 11.0%; }
@@ -64,6 +69,9 @@
 
 .cost_details .section-2 {
   padding: 0; }
+
+.cost_details .cost_detail_info.main_content {
+  padding-bottom: 100px; }
 
 .cost_details .cost_detail_info .table {
   margin-bottom: 10px; }
