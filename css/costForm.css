@@ -66,7 +66,7 @@
   padding: 0; }
 
 .cost_details .cost_detail_info .table {
-  margin-bottom: 60px; }
+  margin-bottom: 10px; }
 
 .cost_details .table > tbody > tr > td, .cost_details .table > tbody > tr > th {
   vertical-align: middle; }
