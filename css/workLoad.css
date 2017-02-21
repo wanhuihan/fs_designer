@@ -53,8 +53,11 @@
       width: 10%;
       text-align: center; }
       .work_load .work_load_list ul li span:nth-child(5) input {
-        width: 50px;
+        width: 60px;
         text-align: center; }
+        .work_load .work_load_list ul li span:nth-child(5) input:disabled {
+          border: 1px solid #ddd;
+          color: #666; }
 
 /* project amount 工程量 */
 #amount {
