@@ -125,22 +125,17 @@
 						</div>
 					</div>
 					<div class="col-md-3 btn-box"> 
-					
-<!-- 						<div ng-if="item.hasEndVersion!=1 && item.hasLoginDesigner">
-							hello
-						</div> -->
+
 						<div ng-if="item.hasLoginDesigner">
 								
 								<div ng-if="item.hasEndVersion==1" class="version_set_success">
-
 									<span  >
 										<i class="fa fa-check-circle"></i>
 										已设为终版
 									</span>
-
 								</div>
 
-								<div ng-if="!item.hasEndVersion==1">
+								<div ng-if="!item.hasEndVersion==1" class="btn-box-btn">
 									<div >
 										<button type="button" class="btn btn-default btn-block" ng-disabled="!item.hasLoginDesigner"  ng-click="designDrawsEdit(item.decorationDesignDrawId)"><i class="fa fa-pencil-square-o" ></i>修改</button>
 										<br />
@@ -161,7 +156,7 @@
 
 							</div>
 
-							<div ng-if="item.hasEndVersion!=1">
+							<div ng-if="item.hasEndVersion!=1" class="btn-box-btn">
 								<div  >
 									<button type="button" class="btn btn-default btn-block" ng-disabled="!item.hasLoginDesigner" ng-show="!item.hasSubmit" ng-click="designDrawsEdit(item.decorationDesignDrawId)"><i class="fa fa-pencil-square-o" ></i>修改</button>
 									<br />

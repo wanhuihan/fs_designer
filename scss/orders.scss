@@ -23,8 +23,12 @@
 				}
 				.panel-body > li span {
 					font-size: 15px;
+					min-width: 75px;
+					text-align: right;
+					display: inline-block;
 					&:last-child {
 						color: #888;
+						text-align: left;
 					}
 				}
 			}
