@@ -98,8 +98,12 @@
 						width: 10%;
 						text-align: center;
 						input {
-							width: 50px;
+							width: 60px;
 							text-align: center;
+							&:disabled {
+								border:1px solid #ddd;
+								color: #666;
+							}
 						}
 					}
 					// &:nth-child(6) {

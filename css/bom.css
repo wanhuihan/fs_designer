@@ -44,12 +44,11 @@
           margin: 0;
           padding: 0;
           box-sizing: border-box;
-          width: 50px;
-          height: 18px;
+          width: 60px;
           text-align: center; }
           .bom_detail_info ul li span.qty input:disabled {
             border: 1px solid #ddd;
-            color: #ccc; }
+            color: #666; }
     .bom_detail_info ul li ul li span img {
       margin: 0 5px; }
     .bom_detail_info ul li ul li ul li span img {
