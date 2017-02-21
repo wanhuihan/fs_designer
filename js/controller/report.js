@@ -1005,33 +1005,36 @@ app.controller("report", function($scope, $http, $location, design, $location, g
 			// console.log(data);
 			$scope.hasSubmit = true;
 			if (data.code == 0) {
-
-				$http({
-					method: 'post',
-					url: g.host+'/decoration_designer/designerSubmitStatus/updateCanOrdersStatus',
-					data: {
-						decorationTaskCode: $scope.orderCode,
-						token: $cookies.fs_designer_token
-					},
-		            headers: { 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8' },
-		            
-		            transformRequest: function(obj) {    
-		                var str = [];    
-		                for (var p in obj) {    
-		                    
-		                    if (typeof obj[p] == 'object' ) {
-		                        // console.log(p, JSON.stringify(obj[p]));
-		                        str.push(encodeURIComponent(p) + "=" + encodeURIComponent(JSON.stringify(obj[p])))
-		                    } else {
-		                        str.push(encodeURIComponent(p) + "=" + encodeURIComponent(obj[p]));  
-		                    }                     
-		                }    
-		                return str.join("&");    
-		            }					
-				}).success(function(data) {
-					alert('保存成功');
-				})	
+				alert('保存成功');
 			}
+			// if (data.code == 0) {
+
+			// 	$http({
+			// 		method: 'post',
+			// 		url: g.host+'/decoration_designer/designerSubmitStatus/updateCanOrdersStatus',
+			// 		data: {
+			// 			decorationTaskCode: $scope.orderCode,
+			// 			token: $cookies.fs_designer_token
+			// 		},
+		 //            headers: { 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8' },
+		            
+		 //            transformRequest: function(obj) {    
+		 //                var str = [];    
+		 //                for (var p in obj) {    
+		                    
+		 //                    if (typeof obj[p] == 'object' ) {
+		 //                        // console.log(p, JSON.stringify(obj[p]));
+		 //                        str.push(encodeURIComponent(p) + "=" + encodeURIComponent(JSON.stringify(obj[p])))
+		 //                    } else {
+		 //                        str.push(encodeURIComponent(p) + "=" + encodeURIComponent(obj[p]));  
+		 //                    }                     
+		 //                }    
+		 //                return str.join("&");    
+		 //            }					
+			// 	}).success(function(data) {
+			// 		alert('保存成功');
+			// 	})	
+			// }
 
 		})		
 	}
