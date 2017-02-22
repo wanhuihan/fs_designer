@@ -727,7 +727,17 @@ app.controller("design", function($scope, $http, $location, $cookies, ngDialog, 
 			var arr = '';
 			for (var i = 0; i < fileArr.length; i++) {
 
-				formData.append('files', fileArr[i].files[0]);
+				if (jQuery(fileArr[i]).val() != "") {
+
+					formData.append('files', fileArr[i].files[0]);
+
+				} else {
+
+					alert("请上传所有文件");
+
+					return false;
+				}
+				
 			}
 
 			// 如果是效果图设计师需要获取效果图连接
@@ -768,28 +778,43 @@ app.controller("design", function($scope, $http, $location, $cookies, ngDialog, 
 			});
 
 		})
-
 		// bind edit upload file function - edit files upload
 		jQuery("body").on("click", ".design_draw_edit_form #EditForm .btn", function() {
 
 			var thisFormDiv = jQuery(this).parents("#EditForm").find("input[type='file']");
 			// return false;
+
 			var formData = new FormData();
 
 			var arr = '';
+
 			for (var i = 0; i < thisFormDiv.length; i++) {
 
-				formData.append('files', thisFormDiv[i].files[0]);
+				if (jQuery(thisFormDiv[i]).val() != "") {
+
+					formData.append('files', thisFormDiv[i].files[0]);
+
+				} else {
+
+					alert("请上传所有文件");
+
+					return false;
+				}
+				
 			}
 
 			if (jQuery("#EditForm #designUrl")) {
+
 				var url = jQuery("#EditForm #designUrl").val();
+
 			}
 		
 			jQuery(".loading_box").show();
+
+			console.log(formData)
 			// return false;
 			jQuery.ajax({
-			    url: g.host+'/decoration_designer/decorationDesignDraw/updateDecorationDesignDraw?token='+$cookies.fs_designer_token+'&decorationTaskCode='+$scope.orderCode+'&designType='+$scope.designTypeFile+'&decorationDesignDrawId='+$scope.designDrawingId+'&panoramaUrl='+url,
+			    url: g.host+'/decoration_designer/decorationDesignDraw/updateDecorationDesignDraw?token='+$cookies.fs_designer_token+'&decorationTaskCode='+$scope.orderCode+'&designType='+''+'&decorationDesignDrawId='+$scope.designDrawingId+'&panoramaUrl=',
 			    type: 'POST',
 			    cache: false,
 			    data: formData,
@@ -797,7 +822,7 @@ app.controller("design", function($scope, $http, $location, $cookies, ngDialog, 
 			    contentType: false
 			}).done(function(res) {
 
-				console.log(res)
+				// console.log(res)
 				if (res.success) {
 					
 					jQuery(".loading_box").hide();
@@ -824,6 +849,7 @@ app.controller("design", function($scope, $http, $location, $cookies, ngDialog, 
 
 		// console.log(arguments.length);
 		if (arguments.length > 0) {
+
 			if ($scope.designType == 13) {
 
 				if (e == '4') {

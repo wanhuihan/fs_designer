@@ -18,7 +18,7 @@ var g = {
 	// host server
 	// host: 'http://192.168.0.87',
 	// host: 'http://192.168.0.6:8080',
-	host: 'http://192.168.0.224:8088',
+	host: 'http://192.168.0.224:8080',
 
 	// user: {
 	// 	name: '',
@@ -34,8 +34,7 @@ var g = {
 
 		now.setTime(now.getTime()+time);
 		// console.log(exp);
-		console.log(now.toGMTString());
-
+		// console.log(now.toGMTString());
 		document.cookie = 'fs_designer_token =' + token + "; expires="+now.toGMTString();
 
 	},
@@ -54,12 +53,12 @@ var g = {
 
 	getCookie: function() {
 
-		console.log(document.cookie);
+		// console.log(document.cookie);
 	},
 
 	// get the date text
 	a: function(e) {
-		console.log(e)
+		// console.log(e)
 	},
 
 	// check the json data from back end

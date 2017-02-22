@@ -151,6 +151,7 @@
         .design_details_cont .blueprints .row .col-md-3:last-child .version_set_success {
           padding-left: 150px;
           line-height: 132px;
+          padding-right: 20px;
           display: block;
           text-align: right; }
           .design_details_cont .blueprints .row .col-md-3:last-child .version_set_success span {

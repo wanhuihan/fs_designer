@@ -78,7 +78,7 @@
 			<!-- repest here -->
 				<div class="row" ng-repeat="item in data" ng-if="!data == ''">
 					<div class="col-md-2 img_box">
-						<img src="{{item.urlPath}}" alt="" /> 
+						<img ng-src="{{item.urlPath}}" alt="" /> 
 						<span>{{item.designTypeText}}</span>
 					</div>
 					<div class="col-md-7 info-box">
