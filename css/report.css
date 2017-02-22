@@ -197,6 +197,8 @@
       padding: 0 10px; }
       .report-details-form .step_content .report-page-three-child .row:last-child span:first-child {
         padding-left: 0; }
+    .report-details-form .step_content .report-page-three-child .row:last-child .input-cont .inputtext {
+      width: 80px; }
   .report-details-form .step_content .radio-inline {
     cursor: default; }
   .report-details-form .step_content .checkbox-inline {

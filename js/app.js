@@ -127,8 +127,41 @@ var g = {
 			}
 
 		})
+	},
 
+	// date string must be 2017年02月08日
+	dateFormatExchange : function(dateStr) {
+
+		if (dateStr) {
+
+			var year = dateStr.slice(0,4);
+			var month = dateStr.slice(5,7);
+			var day = dateStr.slice(8,10);
+		}
+
+		var newStr = month+',' + day+',' + year;
+
+		return newStr; 
+	},
+
+	timeStamptoDateStr: function(timeStamp) {
+
+		if (timeStamp) {
+
+			var date = new Date(timeStamp);
+
+			var month = date.getMonth() + 1;
+
+			if (month < 10) {
+
+				month = '0'+month;
+			}
+
+			var dateStr = date.getFullYear() + '年' + month + '月' + date.getDate() + '日';
+
+		}
+
+		return dateStr;
 	}
-
 }
 

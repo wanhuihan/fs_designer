@@ -620,7 +620,6 @@ app.controller("report", function($scope, $http, $location, design, $location, g
 		}).success(function(data) {
 
 			// console.log(data);
-
 			if (data.data.volumeList.length == 0) {
 
 				$scope.formData.generalInfo.createName = window.localStorage.fs_design_realName;
@@ -664,13 +663,14 @@ app.controller("report", function($scope, $http, $location, design, $location, g
 
 			var planTime = new Date();
 			
-			surveyTime.setTime($scope.formData.generalInfo.ownerSurveyTime);
+			// surveyTime.setTime($scope.formData.generalInfo.ownerSurveyTime);
 
-			planTime.setTime($scope.formData.generalInfo.ownerPlanTime); 
+			// planTime.setTime($scope.formData.generalInfo.ownerPlanTime); 
 
-			jQuery("#surveyTime").val(surveyTime.toLocaleDateString());
-
-			jQuery("#decorationTime").val(planTime.toLocaleDateString());
+			$scope.formData.generalInfo.ownerSurveyTime = g.timeStamptoDateStr($scope.formData.generalInfo.ownerSurveyTime);
+			// jQuery("#surveyTime").val(surveyTime.toLocaleDateString());
+			$scope.formData.generalInfo.ownerPlanTime = g.timeStamptoDateStr($scope.formData.generalInfo.ownerPlanTime);
+			// jQuery("#decorationTime").val(planTime.toLocaleDateString());
 
 			if ($scope.formData.houseBasicInfo.houseFaultView) {
 				$scope.formData.houseBasicInfo.houseFaultView = eval($scope.formData.houseBasicInfo.houseFaultView);
@@ -878,8 +878,7 @@ app.controller("report", function($scope, $http, $location, design, $location, g
 	// 下一步操作的时候进行判断显示下一步的样式和内容
 	$scope.nextStep = function(step) {
 
-		console.log($scope.formData.generalInfo.createTime, $scope.formData.generalInfo.createName);
-		
+		// console.log($scope.formData.generalInfo.createTime, $scope.formData.generalInfo.createName);	
 		if (step == 'step_1') {
 
 		}
@@ -904,9 +903,9 @@ app.controller("report", function($scope, $http, $location, design, $location, g
 		form.validate(step, function() {
 		
 			if (step == 'step_1') {
-				// console.log($scope.formData.generalInfo);
-				$scope.formData.generalInfo.ownerSurveyTime = Date.parse(jQuery("#surveyTime").val());
-				$scope.formData.generalInfo.ownerPlanTime = Date.parse(jQuery("#decorationTime").val());
+
+				$scope.formData.generalInfo.ownerSurveyTime = Date.parse(g.dateFormatExchange(jQuery("#surveyTime").val()));
+				$scope.formData.generalInfo.ownerPlanTime = Date.parse(g.dateFormatExchange(jQuery("#decorationTime").val()));
 				
 			}
 
@@ -940,21 +939,20 @@ app.controller("report", function($scope, $http, $location, design, $location, g
 		                }                     
 		            }    
 
-		            // console.log(str.join("&"))  
 		            return str.join("&");  
 
 		        }			
 			}).success(function(data) {
 
+				$scope.formData.generalInfo.ownerSurveyTime = g.timeStamptoDateStr($scope.formData.generalInfo.ownerSurveyTime);
+				// jQuery("#surveyTime").val(surveyTime.toLocaleDateString());
+				$scope.formData.generalInfo.ownerPlanTime = g.timeStamptoDateStr($scope.formData.generalInfo.ownerPlanTime);
+				// jQuery("#decorationTime").val(planTime.toLocaleDateString());
 				alert('保存成功');
-
-			}).error(function(data) {
-				console.log(data);
+				
 			})
 		});
 		// return;
-
-
 	}
 
 	// 上一步操作的时候判断显示上一步内容并隐藏当前步骤；
