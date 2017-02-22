@@ -52,7 +52,14 @@ var form = {
 
 			}
 
-		} 
+		} else {
+
+			if (inputs.length == 0) {
+
+				fun();
+				
+			}
+		}
 
 	},
 

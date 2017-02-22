@@ -1,8 +1,8 @@
 /*-------------------
-	量房报告 
+ measuring report 量房报告 * 
  --------------------*/
 
- .report_details_form {
+ .report-details-form {
 	
 	td,th {
 		font-size: 14px;
@@ -10,81 +10,259 @@
 			font-size: 14px;
 		}
 	}
-	.report_tab_steptwo {
-		h3 {
-			color:#555;
-		}
-		span {
-			height: 50px;
-			display: inline-block;
-			width:50px;		
-			border-left: 50px solid;	
-		}
-		div {
-			background:#eee;
+	// 步骤条样式
+	.tab-pane {
+		width: 80%;
+		margin: 0 auto;
+
+		.step_box {
+
+			margin: 0 auto;
+
+			.col-md-3 {
+				padding: 0 2px;
+			}
+
+			.report_tab_stepall{
+
+				position: relative;
+				text-align:center;
+
+				h3{
+					font-size:14px;
+					color:#169BD5;
+				}
+
+				span{
+					display:inline-block;
+					width:50px;
+					height:50px;
+					line-height:50px;
+					text-align:center;
+					color:#fff;
+					background:#169BD5;
+					// border-radius:50%;
+				}
+
+				div{
+					position: absolute;
+					z-index:-1;
+				    left: 200px;
+				    top: 65px;
+				    width: 400px;
+				    height: 9px;
+				    background-color: rgba(22, 155, 213, 1);
+				    border: none;
+				    border-radius: 10px;
+				    -moz-box-shadow: none;
+				    -webkit-box-shadow: none;
+				    box-shadow: none;
+				}	
+			}
+
+			.report_tab_step {
+				h3 {
+					color:#555;
+				}
+				
+				div {
+					background:#eee;
+				}
+			}
+
+			.step {
+				position: relative;
+				
+				h3 {
+					font-size:14px;
+					display: inline-block;
+					margin: 0;
+					line-height: 60px;
+					width: 100%;
+					text-align: center;
+					height: 60px;
+					font-size: 16px;
+					color: #ddd;
+					border-bottom: 3px solid #ddd;
+				}
+				
+				div {
+					position: absolute;
+					z-index:-1;
+				    left: 42%;
+				    top: 65px;
+				    width: 100%;
+				    height: 9px;
+				    background: #eee;
+				    border: none;
+				    border-radius: 10px;
+				    -moz-box-shadow: none;
+				    -webkit-box-shadow: none;
+				    box-shadow: none;
+				}			
+			}
+		 	.viewed {
+				
+				h3 {
+					border-bottom: 3px solid #2ec1eb;
+					color: #666;
+				}
+
+				div {
+					background: #169BD5;
+				}
+			}		
 		}
 	}
-	.report_tab_listone {
-		margin:60px 170px 0 25px;
+
+	
+	// report-page-one 和 report-page-two都有的样式
+	.report-tab-listcont {
+
+		margin:60px 25px 0 25px;
 
 		& > div {
-			margin-bottom:20px;
-			padding-bottom:20px;
-			border-bottom:2px solid #eee;
+			margin-bottom:5px;
+			padding-bottom:5px;
+
 			& > div > p span {
 				color:#f00;
 			}
-			& > div >input {
-				// margin-left:20px;
-			}
 		}
-		& > div:last-child {
-			border: none;
-		}
+		
 	}
-	.report_tab_listtwo {
-		margin:60px 170px 0 160px;
-		.radio-success {
-			label{
-				margin: 0 20px;
-			}
-		}
-		.checkbox-success {
-			label{
-				margin: 0 20px;
-			}
-		}
-		&  h3 {
-			padding-bottom:20px;
-			color:#169BD5;
+	
+	// report-page-three的样式
+	.report-page-three {
+
+		.report-page-three-listcont{
+	
+		margin:60px 25px 0 25px;
+
+		&  h3{
+			padding-bottom:5px;
+			margin-bottom:20px;
+			color:#2ec1eb;
 			font-size:16px;
 			font-weight:700;
 			border-bottom:2px solid #eee;
 		}
-		& > div > div {
-			margin-bottom:20px;
-			padding-bottom:20px;
-			border-bottom:2px solid #eee;
-			& > div > p span {
-				color:#f00;
-			}
-			& > div >input {
-				margin-right: 20px;
-			}
-			&.btm_btn_group {
-				    margin-bottom: 0;
-				    // padding-bottom: 0;
-				    border-bottom: none;
-			}
+
+		.row {
+			padding-bottom: 10px;
+			vertical-align: top;
 		}
-		& > div:last-child {
-			border: none;
+		&.btm_btn_group {
+		    margin-bottom: 0;
+		    border-bottom: none;
+		}
+		p.input-cont {
+			padding-top:10px;
 		}
 	}
+	}
+	
 
+	// report-page-one，report-page-two，report-page-three的样式
 	.step_content {
+		font-size: 14px;
+
+		.radio {
+
+			label{
+				margin: 0 10px;
+				padding-left: 10px;
+				font-size: 14px;
+			}
+		}
+		.radio label::before {
+			content: "";
+		    display: inline-block;
+		    position: absolute;
+		    width: 14px;
+		    height: 14px;
+		    left: 0;
+		    top:3px;
+		    margin-left: -10px;
+		    border: 1px solid #cccccc;
+		    border-radius: 50%;
+		    background-color: #fff;
+		    -webkit-transition: border 0.15s ease-in-out;
+		    -o-transition: border 0.15s ease-in-out;
+		    transition: border 0.15s ease-in-out;
+		}
+		.radio label::after {
+			display: inline-block;
+		    position: absolute;
+		    content: " ";
+		    width: 10px;
+		    height: 10px;
+		    left: 3px;
+		    top: 5px;
+		    margin-left: -11px;
+		    border-radius: 50%;
+		    background-color: #555555;
+		}
+		.radio-success input[type="radio"]:checked + label::after {
+			background-color: #666;
+		}
+		.radio-success input[type="radio"]:checked + label::before {
+			border-color:#999;
+		}
+		.checkbox {
+
+			label{
+				font-size:14px;
+				margin: 0 16px;
+				padding-left: 6px;
+			}
+		}
+		.checkbox label::before {
+			content: "";
+		    display: inline-block;
+		    position: absolute;
+		    width: 14px;
+		    height: 14px;
+		    left: 0;
+		    top: 3px;
+		    margin-left: -15px;
+		    border: 1px solid #cccccc;
+		    border-radius: 3px;
+		    background-color: #fff;
+		}
+		.checkbox label::after {
+			display: inline-block;
+		    position: absolute;
+		    width: 10px;
+		    height: 10px;
+		    left: 4px;
+		    top: 2px;
+		    margin-left: -20px;
+		    font-size: 10px;
+		    color: #555555;
+		}
+		.checkbox-success input[type="checkbox"]:checked + label::before, .checkbox-success input[type="radio"]:checked + label::before {
+			background-color: #666;
+			border-color: #666;
+		}
+
+		.row {
+			vertical-align: top;
+			font-size: 14px;
+			width: 50%;
+			display: inline-block;
+		}
+		.col-md-12 p {
+			font-size: 14px;
+    		color: #666;
+    		span {
+    			font-size: 14px;
+    		}
+		}
+
 		padding-bottom: 100px;
 		display: none;
+
 		.additional_info {
 			display: none;
 			label {
@@ -96,36 +274,53 @@
 				}
 			}
 		}
-		.report_tab_listone .radio-success {
-			label{
-				margin: 0 20px;
+		.report-page-three-study {
+			.input-cont {
+				span {
+					display: inline-block;
+					padding: 0 10px;
+				}
 			}
-		} 
+
+		}
+		.report-page-three-child {
+			& .row:last-child {
+				display: block;
+				width:100%;
+				span {
+					display: inline-block;
+					padding: 0 10px;
+					&:first-child {
+						padding-left: 0;
+					}
+				}
+			}
+		}
+		
 		.radio-inline {
 			cursor: default;
 		}
-		// .btn_group {
-		// 	position: fixed;
-		// 	bottom: 0;
-		// 	margin: 0;
-		// 	padding: 20px 0;
-		// 	background: rgba(75,86,100,0.8);
-		// 	width: 100%;
-		// 	left: 0;
-		// 	text-align: center;
-		// 	.btn {
-		// 		margin: 0 10px;
-		// 		&.btn-primary {
-		// 			letter-spacing: 12px;
-		// 			text-indent: 12px;
-		// 		}
-		// 	}
-		// }
+		.checkbox-inline {
+			cursor: default;
+		}
+		
 		.table {
 			margin: 20px auto;
 		}
 		.inputtext {
-			line-height: 30px;
+			line-height: 25px;
+		    width: 300px;
+		    margin-left: 0;
+		    padding: 2px 5px;
+		    font-size: 14px;
+		    border: 1px solid #ccc;
+		}
+		.input-brief {
+			line-height: 25px;
+			padding: 2px 5px;
+			width:70px;
+			font-size: 14px;
+		    border: 1px solid #ccc;
 		}
 		.additional_info {
 			margin-top: 10px;
@@ -168,210 +363,107 @@
 		    border: 10px solid transparent;
 		    border-bottom-color: #eee;	   
 		}
+	}
 
-		// .house_fault_opinion .radio label:before{
-		// 	content: "";
-		// }
+
+	// 量房报告样式
+	.report_page_four {
+
+		.report_table {
+			width: 1000px;
+			.tabletitle {
+				font-size:20px;
+				text-align:center;
+			}
+			.trtitle {
+				font-size:16px;
+				text-align:center;
+			}
+			.leftmenu {
+				width: 36px;
+			}
+			tr {
+				td {
+					vertical-align: middle;
+					&:nth-child(2) {
+						width: 120px;
+					}
+					&:nth-child(3) {
+						width: 120px;
+					}
+					&:nth-child(5) {
+						// width: 200px;
+					}
+				}
+			}
+		}	
 	}
 	
-	.step_box {
-		.step {
-			position: relative;
-			// text-align:center;
-			h3 {
-				font-size:14px;
-				// color:#169BD5;
-				display: inline-block;
-				margin: 0;
-				line-height: 60px;
-				background: #ddd;
-				width: 100%;
-				text-align: center;
-				height: 60px;
-				font-size: 16px;
-				// position: absolute;
-			}
-			span {
-				display:inline-block;
-				width:30px;
-				height:30px;
-				// line-height:50px;
-				position: absolute;
-				right: 0;
-				text-align:center;
-				border-left: 30px solid #ddd;	
-				border-top: 30px solid #fff;
-				border-bottom: 30px solid #fff;
-				// color:#fff;
-				// background:#999;
-				// border-radius:50%;
-			}
-			div {
-				position: absolute;
-				z-index:-1;
-			    left: 42%;
-			    top: 65px;
-			    width: 100%;
-			    height: 9px;
-			    background: #eee;
-			    // background-color: rgba(22, 155, 213, 1);
-			    border: none;
-			    border-radius: 10px;
-			    -moz-box-shadow: none;
-			    -webkit-box-shadow: none;
-			    box-shadow: none;
-			}			
-		}
-	 	.viewed {
-			// span {
-			// 	display:inline-block;
-			// 	width:50px;
-			// 	height:50px;
-			// 	line-height:50px;
-			// 	text-align:center;
-			// 	color:#fff;
-			// 	background:#169BD5;
-			// 	border-radius:50%;
-			// }
-			span {
-				background: #169BD5;
-				border-left-color: #4b5664;
-			}
-			
-			h3 {
-				background: #4b5664;
-				color: #fff;
+	// step 2
+	.report_page_two {
+		
+		.radio-inline {
+
+			&.house-fault-item {
+				
+				.house-fault-item-radio {
+					
+					input, label, .houseFaultView {
+						float: left;
+						line-height: 25px;
+					}
+
+					.houseFaultView {
+						margin-top: 0;
+					}
+
+					label {
+						&:after {
+							top: 8px;
+						}
+						&:before {
+							top: 6px;
+						}
+					}
+
+					.inputtext {
+						width: 120px;
+						padding: 1px 5px;	
+					}
+
+					.btn {
+						line-height: 25px;
+						padding: 1px 10px;
+						margin-left: 5px;
+					}
+
+					&:after {
+						clear: both;
+						content: "";
+						display: block;
+					}
+				}
+
+				.house-fault-item-list {
+					& > span {
+						background: #eee;
+						padding: 2px 5px;
+						color: #666;
+						display: inline-block;
+						margin: 5px 5px 0 0;
+						.glyphicon {
+							color: #666;
+						}
+					}
+				}	
+
 			}
 
-			div {
-				background: #169BD5;
-			}
-			
-
-		}		
-	}
-	.report_table {
-		width: 1000px;
-		.tabletitle {
-			font-size:20px;
-			text-align:center;
-		}
-		.trtitle {
-			font-size:16px;
-			text-align:center;
-		}
-		.leftmenu {
-			width: 36px;
-		}
-		tr {
-			td {
-				vertical-align: middle;
-				&:nth-child(2) {
-					width: 120px;
-				}
-				&:nth-child(3) {
-					width: 120px;
-				}
-				&:nth-child(5) {
-					// width: 200px;
-				}
-			}
 		}
 	}
  }
  
- /* measuring report 量房报告 */
-.report_tab_stepone{
-	position: relative;
-	text-align:center;
-	h3{
-		font-size:14px;
-		color:#169BD5;
-	}
-	span{
-		display:inline-block;
-		width:50px;
-		height:50px;
-		line-height:50px;
-		text-align:center;
-		color:#fff;
-		background:#169BD5;
-		// border-radius:50%;
-	}
-	div{
-		position: absolute;
-		z-index:-1;
-	    left: 200px;
-	    top: 65px;
-	    width: 400px;
-	    height: 9px;
-	    background-color: rgba(22, 155, 213, 1);
-	    border: none;
-	    border-radius: 10px;
-	    -moz-box-shadow: none;
-	    -webkit-box-shadow: none;
-	    box-shadow: none;
-	}
-	
-}
-.report_tab_steptwo{
-	h3{
-		color:#555;
-	}
-	span{
-		background:#999;
-	}
-	div{
-		background:#eee;
-	}
-}
-.report_tab_listone{
-	margin:60px 170px 0 160px;
-	& > div {
-		margin-bottom:20px;
-		padding-bottom:20px;
-		border-bottom:2px solid #eee;
-		& > div >p span{
-			color:#f00;
-		}
-		& > div >input{
-			margin-left:20px;
-		}
-	}
-}
-.report_tab_listtwo{
-	margin:60px 170px 0 160px;
-	&  h3{
-		padding-bottom:20px;
-		color:#169BD5;
-		font-size:16px;
-		font-weight:700;
-		border-bottom:2px solid #eee;
-	}
-	& > div > div{
-		margin-bottom:20px;
-		padding-bottom:20px;
-		border-bottom:2px solid #eee;
-		& > div >p span{
-			color:#f00;
-		}
-		& > div >input{
-			margin-left:20px;
-		}
-	}
-}
-.report_page_four table{
-		width:80%;
-		margin: 0 auto;
-		.tabletitle{
-			font-size:20px;
-			text-align:center;
-		}
-		.trtitle{
-			font-size:16px;
-			text-align:center;
-		}
-		.leftmenu{
-			width:2%;
-		}		
-}
+
+
+
+
