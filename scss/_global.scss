@@ -1,5 +1,5 @@
 @import '_var';
-*,dl, dt,dd, ul, li {
+dl, dt,dd, ul, li {
 	text-decoration: none;
 	font-size: 16px;
 	// color: #000;
@@ -82,10 +82,17 @@ body, html {
 	display: none;
 }
 .breadcrumb {
-	// display: none;
 	margin: 0 -25px 25px;
 	padding: 15px;
 	border-radius: 0;
+	
+	a {
+		color: #777;
+	}
+
+	> .active {
+		color: #bbb;
+	}
 
 	i {
 		&:before {

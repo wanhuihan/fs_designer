@@ -57,7 +57,7 @@ app.controller("report", function($scope, $http, $location, design, $location, g
 			houseHouseStructureType: '0',
 
 			// 请填写原房屋结构是否有缺陷之处（如：墙体裂开、平整度、顶面漏水）
-			houseHouseStructureFault: '0',
+			houseHouseStructureFault: '1',
 			houseFaultView: [],
 			faultViewShow: '',
 			faultArr: [],
@@ -553,6 +553,15 @@ app.controller("report", function($scope, $http, $location, design, $location, g
 
 	$scope.switch = function(name, val) {
 
+		if (name == 'radiodefect') {
+
+			if (val == 0) {
+
+				$scope.formData.houseBasicInfo.houseFaultView.length = 0;
+
+			}
+		}
+
 		design.showSwitch(name, val);
 
 	}
@@ -939,6 +948,8 @@ app.controller("report", function($scope, $http, $location, design, $location, g
 
 				alert('保存成功');
 
+			}).error(function(data) {
+				console.log(data);
 			})
 		});
 		// return;
