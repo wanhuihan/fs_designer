@@ -24,7 +24,7 @@ app.controller("report", function($scope, $http, $location, design, $location, g
 
 			type: 1,
 
-			ownerSurveyTime: '',
+			ownerSurveyTime: g.timeStamptoDateStr(new Date().getTime()),
 
 			ownerName: '',
 
@@ -44,7 +44,7 @@ app.controller("report", function($scope, $http, $location, design, $location, g
 
 			ownerMPlannedInvests: '1',
 
-			ownerPlanTime: '',
+			ownerPlanTime: g.timeStamptoDateStr(new Date().getTime()),
 
 			ownerAddress: '',
 

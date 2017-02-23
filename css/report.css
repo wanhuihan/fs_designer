@@ -186,6 +186,8 @@
       margin-left: 0 !important; }
       .report-details-form .step_content .additional_info label[for='house_fault_opinion']:before {
         display: none; }
+  .report-details-form .step_content .report-page-three-green .col-md-12 p span {
+    color: #f00; }
   .report-details-form .step_content .report-page-three-study .input-cont span {
     display: inline-block;
     padding: 0 10px; }

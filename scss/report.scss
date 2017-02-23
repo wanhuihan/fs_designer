@@ -175,6 +175,7 @@
 				font-size: 14px;
 			}
 		}
+
 		.radio label::before {
 			content: "";
 		    display: inline-block;
@@ -191,6 +192,7 @@
 		    -o-transition: border 0.15s ease-in-out;
 		    transition: border 0.15s ease-in-out;
 		}
+
 		.radio label::after {
 			display: inline-block;
 		    position: absolute;
@@ -203,12 +205,15 @@
 		    border-radius: 50%;
 		    background-color: #555555;
 		}
+
 		.radio-success input[type="radio"]:checked + label::after {
 			background-color: #666;
 		}
+
 		.radio-success input[type="radio"]:checked + label::before {
 			border-color:#999;
 		}
+
 		.checkbox {
 
 			label{
@@ -217,6 +222,7 @@
 				padding-left: 6px;
 			}
 		}
+
 		.checkbox label::before {
 			content: "";
 		    display: inline-block;
@@ -230,6 +236,7 @@
 		    border-radius: 3px;
 		    background-color: #fff;
 		}
+
 		.checkbox label::after {
 			display: inline-block;
 		    position: absolute;
@@ -241,6 +248,7 @@
 		    font-size: 10px;
 		    color: #555555;
 		}
+
 		.checkbox-success input[type="checkbox"]:checked + label::before, .checkbox-success input[type="radio"]:checked + label::before {
 			background-color: #666;
 			border-color: #666;
@@ -252,9 +260,11 @@
 			width: 50%;
 			display: inline-block;
 		}
+
 		.col-md-12 p {
 			font-size: 14px;
     		color: #666;
+
     		span {
     			font-size: 14px;
     		}
@@ -265,17 +275,34 @@
 
 		.additional_info {
 			display: none;
+
 			label {
+
 				&[for='house_fault_opinion'] {
 					margin-left: 0 !important;
+
 					&:before {
 						display: none;
 					}
 				}
 			}
 		}
+		
+		.report-page-three-green {
+
+			.col-md-12 {
+
+				p {
+					span {
+						color: #f00;
+					}
+				}
+			}
+		}
 		.report-page-three-study {
+
 			.input-cont {
+
 				span {
 					display: inline-block;
 					padding: 0 10px;
@@ -283,18 +310,24 @@
 			}
 
 		}
+		
 		.report-page-three-child {
+
 			& .row:last-child {
 				display: block;
 				width:100%;
+
 				span {
 					display: inline-block;
 					padding: 0 10px;
+
 					&:first-child {
 						padding-left: 0;
 					}
 				}
+
 				.input-cont {
+
 					.inputtext  {
 						width: 80px;
 					}
@@ -305,6 +338,7 @@
 		.radio-inline {
 			cursor: default;
 		}
+
 		.checkbox-inline {
 			cursor: default;
 		}
@@ -312,6 +346,7 @@
 		.table {
 			margin: 20px auto;
 		}
+
 		.inputtext {
 			line-height: 25px;
 		    width: 300px;
@@ -320,6 +355,7 @@
 		    font-size: 14px;
 		    border: 1px solid #ccc;
 		}
+
 		.input-brief {
 			line-height: 25px;
 			padding: 2px 5px;
@@ -327,9 +363,11 @@
 			font-size: 14px;
 		    border: 1px solid #ccc;
 		}
+
 		.additional_info {
 			margin-top: 10px;
 		}
+
 		.additional_info_radio {
 			position: relative;
 			width: 230px;
@@ -337,6 +375,7 @@
 			text-align: center;
 			border: 1px solid #eee;
 		}
+
 		.additional_info_radio:before {
 			// z-index: 1;
 			position: absolute;
@@ -349,6 +388,7 @@
 		    border: 10px solid transparent;
 		    border-bottom-color: #eee;	   
 		}
+
 		.additional_info_text {
 			position: relative;
 			width: 290px;
@@ -356,6 +396,7 @@
 			text-align: center;
 			border: 1px solid #eee;
 		}
+
 		.additional_info_text:before {
 			// z-index: 1;
 			position: absolute;
@@ -376,26 +417,33 @@
 
 		.report_table {
 			width: 1000px;
+
 			.tabletitle {
 				font-size:20px;
 				text-align:center;
 			}
+
 			.trtitle {
 				font-size:16px;
 				text-align:center;
 			}
+
 			.leftmenu {
 				width: 36px;
 			}
+
 			tr {
+
 				td {
 					vertical-align: middle;
 					&:nth-child(2) {
 						width: 120px;
 					}
+
 					&:nth-child(3) {
 						width: 120px;
 					}
+
 					&:nth-child(5) {
 						// width: 200px;
 					}
